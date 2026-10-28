@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:ingots/zirconium"
-  },
-  "heat_capacity": 2.857,
-  "forging_temperature": 1113,
-  "welding_temperature": 1484
-}

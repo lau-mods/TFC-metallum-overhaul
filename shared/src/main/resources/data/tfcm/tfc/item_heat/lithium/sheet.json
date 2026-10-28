@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:sheets/lithium"
-  },
-  "heat_capacity": 6.667,
-  "forging_temperature": 108,
-  "welding_temperature": 145
-}

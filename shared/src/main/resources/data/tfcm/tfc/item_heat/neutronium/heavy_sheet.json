@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:heavy_sheets/neutronium"
-  },
-  "heat_capacity": 14.286,
-  "forging_temperature": 1800,
-  "welding_temperature": 2400
-}

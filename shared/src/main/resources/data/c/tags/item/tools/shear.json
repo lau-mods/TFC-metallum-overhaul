@@ -1,8 +1,0 @@
-{
-  "values": [
-    "tfcm:metal/shears/invar",
-    "tfcm:metal/shears/titanium",
-    "tfcm:metal/shears/tungsten_steel",
-    "tfcm:metal/shears/netherite"
-  ]
-}

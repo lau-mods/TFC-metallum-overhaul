@@ -1,1 +1,0 @@
-{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"tfcorewashing"},{"type":"neoforge:mod_loaded","modid":"create"}],"type":"create:milling","ingredients":[{"item":"tfcm:metal/chunks/native_naquadah"}],"results":[{"id":"tfcm:metal/dirty_dust/native_naquadah"},{"id":"tfcm:metal/dirty_pile/native_naquadah","chance":0.15}],"processingTime":300}

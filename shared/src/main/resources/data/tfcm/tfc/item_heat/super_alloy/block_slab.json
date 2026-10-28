@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/super_alloy_slab"
-  },
-  "heat_capacity": 1.429,
-  "forging_temperature": 1080,
-  "welding_temperature": 1440
-}

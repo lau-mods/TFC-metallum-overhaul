@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/tough_alloy_slab"
-  },
-  "heat_capacity": 1.429,
-  "forging_temperature": 960,
-  "welding_temperature": 1280
-}

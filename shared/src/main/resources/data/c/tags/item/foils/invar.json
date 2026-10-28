@@ -1,9 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/foil/invar",
-                       "required":  false
-                   }
-               ]
-}
-

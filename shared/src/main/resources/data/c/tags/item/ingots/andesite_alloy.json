@@ -1,9 +1,0 @@
-{
-  "values": [
-    "tfcm:metal/ingot/andesite_alloy",
-    {
-      "id": "create:andesite_alloy",
-      "required": false
-    }
-  ]
-}

@@ -1,8 +1,0 @@
-{
-    "parent":  "block/stairs",
-    "textures":  {
-                     "bottom":  "tfcm:block/metal/block/solder",
-                     "top":  "tfcm:block/metal/block/solder",
-                     "side":  "tfcm:block/metal/block/solder"
-                 }
-}

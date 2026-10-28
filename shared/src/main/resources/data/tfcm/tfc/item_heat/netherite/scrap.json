@@ -1,9 +1,0 @@
-{
-    "ingredient":  {
-                       "item":  "minecraft:netherite_scrap"
-                   },
-    "heat_capacity":  5,
-    "forging_temperature":  921,
-    "welding_temperature":  1228
-}
-

@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "tfcm:block/metal/block/zirconium",
-    "top": "tfcm:block/metal/block/zirconium",
-    "side": "tfcm:block/metal/block/zirconium"
-  }
-}

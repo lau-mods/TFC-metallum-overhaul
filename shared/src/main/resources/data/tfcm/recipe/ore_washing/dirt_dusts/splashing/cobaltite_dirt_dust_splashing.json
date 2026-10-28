@@ -1,1 +1,0 @@
-{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"tfcorewashing"},{"type":"neoforge:mod_loaded","modid":"create"}],"type":"create:splashing","ingredients":[{"item":"tfcm:metal/dirty_dust/cobaltite"}],"results":[{"id":"tfcm:metal/powder/cobaltite"},{"id":"tfcorewashing:pile_brown_sand"},{"id":"tfcm:metal/dirty_pile/cobaltite","chance":0.15}],"processingTime":1200}

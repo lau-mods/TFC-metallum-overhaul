@@ -1,8 +1,0 @@
-{
-  "forging_temperature": 921,
-  "heat_capacity": 26.664,
-  "ingredient": {
-    "item": "tfcm:metal/chestplate/titanium"
-  },
-  "welding_temperature": 1228
-}

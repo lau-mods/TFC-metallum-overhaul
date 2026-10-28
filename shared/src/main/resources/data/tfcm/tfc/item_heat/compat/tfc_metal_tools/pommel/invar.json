@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/pommel/invar"
-  },
-  "heat_capacity": 1.428572,
-  "forging_temperature": 870,
-  "welding_temperature": 1160
-}

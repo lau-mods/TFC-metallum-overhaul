@@ -1,8 +1,0 @@
-{
-  "forging_temperature": 870,
-  "heat_capacity": 22.857144,
-  "ingredient": {
-    "item": "tfcm:metal/chestplate/invar"
-  },
-  "welding_temperature": 1160
-}

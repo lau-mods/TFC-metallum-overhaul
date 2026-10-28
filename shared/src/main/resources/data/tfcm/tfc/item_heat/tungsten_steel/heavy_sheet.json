@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:heavy_sheets/tungsten_steel"
-                   },
-    "heat_capacity":  25,
-    "forging_temperature":  921,
-    "welding_temperature":  1228
-}

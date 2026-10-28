@@ -1,1 +1,0 @@
-{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"tfcorewashing"},{"type":"neoforge:mod_loaded","modid":"create"}],"type":"create:splashing","ingredients":[{"item":"tfcm:metal/dirty_dust/rutile"}],"results":[{"id":"tfcm:metal/powder/rutile"},{"id":"tfcorewashing:pile_brown_sand"},{"id":"tfcm:metal/dirty_pile/rutile","chance":0.15}],"processingTime":1200}

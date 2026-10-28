@@ -1,6 +1,0 @@
-{
-  "textures": {
-    "all": "tfcm:block/metal/block/hsla_steel"
-  },
-  "parent": "minecraft:block/cube_all"
-}

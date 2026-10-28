@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:wires/mithril"
-                   },
-    "heat_capacity":  1.428,
-    "forging_temperature":  564,
-    "welding_temperature":  752
-}

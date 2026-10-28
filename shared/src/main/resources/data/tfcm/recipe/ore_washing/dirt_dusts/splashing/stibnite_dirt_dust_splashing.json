@@ -1,1 +1,0 @@
-{"neoforge:conditions":[{"type":"neoforge:mod_loaded","modid":"tfcorewashing"},{"type":"neoforge:mod_loaded","modid":"create"}],"type":"create:splashing","ingredients":[{"item":"tfcm:metal/dirty_dust/stibnite"}],"results":[{"id":"tfcm:metal/powder/stibnite"},{"id":"tfcorewashing:pile_black_sand"},{"id":"tfcm:metal/dirty_pile/stibnite","chance":0.15}],"processingTime":1200}

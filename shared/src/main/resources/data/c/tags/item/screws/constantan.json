@@ -1,9 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/screw/constantan",
-                       "required":  false
-                   }
-               ]
-}
-

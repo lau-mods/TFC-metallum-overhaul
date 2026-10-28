@@ -1,8 +1,0 @@
-{
-  "parent": "tfc:block/ore",
-  "textures": {
-    "all": "minecraft:block/end_stone",
-    "particle": "minecraft:block/end_stone",
-    "overlay": "tfcm:block/ore/rich_native_osmium"
-  }
-}

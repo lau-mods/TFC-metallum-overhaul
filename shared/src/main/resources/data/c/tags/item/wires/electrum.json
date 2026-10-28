@@ -1,9 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/wire/electrum",
-                       "required":  false
-                   }
-               ]
-}
-

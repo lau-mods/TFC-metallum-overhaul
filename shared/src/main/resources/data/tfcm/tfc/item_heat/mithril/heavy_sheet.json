@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:heavy_sheets/mithril"
-                   },
-    "heat_capacity":  14.285,
-    "forging_temperature":  564,
-    "welding_temperature":  752
-}

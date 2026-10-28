@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:metal/powder/borax"
-  },
-  "heat_capacity": 3.333,
-  "forging_temperature": 772,
-  "welding_temperature": 1030
-}

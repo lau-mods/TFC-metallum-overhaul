@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/lithium_stairs"
-  },
-  "heat_capacity": 2.5,
-  "forging_temperature": 108,
-  "welding_temperature": 145
-}

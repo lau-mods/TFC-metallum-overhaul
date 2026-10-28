@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/boron_stairs"
-  },
-  "heat_capacity": 2.143,
-  "forging_temperature": 1246,
-  "welding_temperature": 1661
-}

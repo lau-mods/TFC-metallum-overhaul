@@ -1,16 +1,9 @@
 pluginManagement {
     repositories {
         gradlePluginPortal()
-        maven { url = 'https://maven.neoforged.net/releases' }
-        maven { url = 'https://maven.minecraftforge.net' }
     }
 }
 
 plugins {
     id 'org.gradle.toolchains.foojay-resolver-convention' version '1.0.0'
 }
-
-rootProject.name = 'tfcm'
-
-include 'versions:mc1_20_1'
-include 'versions:mc1_21_1'

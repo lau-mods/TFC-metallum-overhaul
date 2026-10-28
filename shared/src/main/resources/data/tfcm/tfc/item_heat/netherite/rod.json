@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:rods/netherite"
-                   },
-    "heat_capacity":  2.5,
-    "forging_temperature":  921,
-    "welding_temperature":  1228
-}

@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/lithium_slab"
-  },
-  "heat_capacity": 1.667,
-  "forging_temperature": 108,
-  "welding_temperature": 145
-}

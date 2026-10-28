@@ -1,8 +1,0 @@
-{
-    "ingredient": {
-        "item": "tfcm:metal/block/osmiridium_stairs"
-    },
-    "heat_capacity": 2.143,
-    "forging_temperature": 900,
-    "welding_temperature": 1200
-}

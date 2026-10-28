@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:storage_blocks/dawnstone"
-  },
-  "heat_capacity": 1.818182,
-  "forging_temperature": 600,
-  "welding_temperature": 800
-}

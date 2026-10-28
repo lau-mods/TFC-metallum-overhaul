@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:wires/osmiridium"
-                   },
-    "heat_capacity":  1.428,
-    "forging_temperature":  900,
-    "welding_temperature":  1200
-}

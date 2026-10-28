@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:wires/osmium"
-                   },
-    "heat_capacity":  1.428,
-    "forging_temperature":  921,
-    "welding_temperature":  1228
-}

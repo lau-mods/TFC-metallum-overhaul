@@ -1,8 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/ring/solder",
-                       "required":  false
-                   }
-               ]
-}

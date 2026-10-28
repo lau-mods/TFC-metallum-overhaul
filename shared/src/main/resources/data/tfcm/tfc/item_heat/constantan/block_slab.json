@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/constantan_slab"
-  },
-  "heat_capacity": 1.429,
-  "forging_temperature": 750,
-  "welding_temperature": 1000
-}

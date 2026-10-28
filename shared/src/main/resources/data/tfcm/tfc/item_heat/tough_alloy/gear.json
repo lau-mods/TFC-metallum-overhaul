@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:gears/tough_alloy"
-  },
-  "heat_capacity": 11.429,
-  "forging_temperature": 960,
-  "welding_temperature": 1280
-}

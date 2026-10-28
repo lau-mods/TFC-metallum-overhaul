@@ -1,8 +1,0 @@
-{
-  "forging_temperature": 921,
-  "heat_capacity": 39.996,
-  "ingredient": {
-    "item": "tfcm:metal/horse_armor/titanium"
-  },
-  "welding_temperature": 1228
-}

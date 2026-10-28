@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab",
-  "textures": {
-    "bottom": "tfcm:block/metal/block/dawnstone",
-    "top": "tfcm:block/metal/block/dawnstone",
-    "side": "tfcm:block/metal/block/dawnstone"
-  }
-}

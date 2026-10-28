@@ -1,8 +1,0 @@
-{
-    "ingredient": {
-        "item": "tfcm:metal/block/refined_obsidian_stairs"
-    },
-    "heat_capacity": 2.143,
-    "forging_temperature": 564,
-    "welding_temperature": 752
-}

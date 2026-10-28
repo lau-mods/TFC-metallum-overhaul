@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/beryllium_slab"
-  },
-  "heat_capacity": 1.429,
-  "forging_temperature": 772,
-  "welding_temperature": 1030
-}

@@ -1,8 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "minecraft:block/medium_amethyst_bud",
-    "particle": "minecraft:block/medium_amethyst_bud"
-  }
-}
