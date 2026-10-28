@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfc:rock/loose/andesite"
+  },
+  "result_fluid": {
+    "amount": 90,
+    "id": "tfcm:molten_andesite"
+  },
+  "temperature": 1300.0
+}

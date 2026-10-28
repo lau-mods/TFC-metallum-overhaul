@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/thorium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

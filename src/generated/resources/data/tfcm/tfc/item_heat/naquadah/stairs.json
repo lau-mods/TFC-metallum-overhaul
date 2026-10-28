@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/naquadah_stairs"
+  },
+  "heat_capacity": 2.14286,
+  "forging_temperature": 1200.0,
+  "welding_temperature": 1600.0
+}

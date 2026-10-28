@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/magnesium",
+    "tfcm:metal/flowing_magnesium"
+  ]
+}

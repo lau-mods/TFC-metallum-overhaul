@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/zircaloy"
+  },
+  "size": "huge",
+  "weight": "very_heavy"
+}

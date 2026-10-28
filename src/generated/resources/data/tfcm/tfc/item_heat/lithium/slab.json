@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/lithium_slab"
+  },
+  "heat_capacity": 1.66667,
+  "forging_temperature": 108.6,
+  "welding_temperature": 144.8
+}

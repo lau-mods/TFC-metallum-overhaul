@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    }
+  ],
+  "fluid": "tfcm:metal/boron",
+  "melt_temperature": 2076.0,
+  "specific_heat_capacity": 0.01
+}

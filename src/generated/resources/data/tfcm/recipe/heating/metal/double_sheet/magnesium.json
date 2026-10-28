@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/magnesium"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/magnesium"
+  },
+  "temperature": 650.0
+}

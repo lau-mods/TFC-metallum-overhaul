@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/uranium"
+  },
+  "heat_capacity": 6.66666667,
+  "forging_temperature": 678.0,
+  "welding_temperature": 904.0
+}

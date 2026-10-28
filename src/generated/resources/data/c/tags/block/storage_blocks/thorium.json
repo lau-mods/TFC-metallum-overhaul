@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/block/thorium"
+  ]
+}

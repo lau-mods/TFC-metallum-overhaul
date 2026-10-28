@@ -3,8 +3,9 @@
   "phase": "checkpoint",
   "current": null,
   "completed": [
-    "M01"
+    "M01",
+    "M02"
   ],
-  "lastCheckpoint": "968e511a1dcea4632d349c929e8e573533a00175",
+  "lastCheckpoint": "aa3dd76431951b3edd340ae80d4b68104061b846",
   "fatal": null
 }

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/awakened_draconium"
+  },
+  "heat_capacity": 3.33333,
+  "forging_temperature": 1200,
+  "welding_temperature": 1600
+}

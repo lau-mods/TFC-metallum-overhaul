@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfc:metal/gold",
+      "min": 0.4,
+      "max": 0.6
+    },
+    {
+      "fluid": "tfc:metal/silver",
+      "min": 0.4,
+      "max": 0.6
+    }
+  ],
+  "result": "tfcm:metal/electrum"
+}

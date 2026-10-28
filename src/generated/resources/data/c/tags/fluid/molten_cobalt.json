@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "values": [
+    "tfcm:metal/cobalt",
+    "tfcm:metal/flowing_cobalt"
+  ]
+}

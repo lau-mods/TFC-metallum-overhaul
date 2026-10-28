@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/lithium"
+  },
+  "heat_capacity": 3.33333,
+  "forging_temperature": 108.6,
+  "welding_temperature": 144.8
+}

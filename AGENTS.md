@@ -12,6 +12,13 @@
 - 各runは`tfcm.gametest.report`と`tfcm.gametest.structures`を設定する。JUnit XMLはそれぞれ`build/test-results/gametest/`と`build/test-results/gametest-firmalife/`に出力する。
 - `./gradlew classes build runGameTestServer`でcompile、build、両GameTest環境を検証する。`tests/e2e/foundation-boot.mjs`はTFC・Patchouliのみの専用サーバーとclient `tfcm-a`の接続を検証する。
 
+## M02 metals
+
+- 39金属の通常item IDは`tfcm:metal/<form>/<metal>`、block IDは`tfcm:metal/block/<metal>`、slab/stairsはblock ID末尾に`_slab`/`_stairs`を付ける。溶融流体は`tfcm:metal/<metal>`、bucketは`tfcm:bucket/metal/<metal>`を使用する。
+- 高炭素中間素材は`tfcm:metal/ingot/high_carbon_tungsten_steel`、独立流体は`tfcm:molten_andesite`とする。金属別データには`tfcm:metal_enabled` load conditionを付ける。
+- `MetalDataProvider`がcasting、anvil、welding、heating、alloy、fluid/item heat、item size、common item/block/fluid tag、採掘tag、block lootを`src/generated/resources`へ生成する。変更後は`./gradlew runData`で生成物を同期する。
+- M02のGameTestは登録参照、仕様値とheat、鋳造、金床・溶接、合金、Andesite Alloyを検証する。`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを実行する。
+
 ## Harness runtime
 
 - 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。

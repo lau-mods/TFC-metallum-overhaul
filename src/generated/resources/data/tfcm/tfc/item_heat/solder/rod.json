@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/solder"
+  },
+  "heat_capacity": 1.4285715,
+  "forging_temperature": 240.0,
+  "welding_temperature": 320.0
+}

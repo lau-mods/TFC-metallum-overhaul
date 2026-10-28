@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    }
+  ],
+  "fluid": "tfcm:metal/hsla_steel",
+  "melt_temperature": 1450.0,
+  "specific_heat_capacity": 0.01
+}

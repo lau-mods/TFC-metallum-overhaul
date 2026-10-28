@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/magnesium"
+  },
+  "heat_capacity": 13.3333333,
+  "forging_temperature": 390.0,
+  "welding_temperature": 520.0
+}

@@ -1,0 +1,201 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_glowstone"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "values": [
+    "#c:rods/compressed_iron",
+    "#c:rods/platinum",
+    "#c:rods/naquadah",
+    "#c:rods/iridium",
+    "#c:rods/osmium",
+    "#c:rods/osmiridium",
+    "#c:rods/mithril",
+    "#c:rods/arcane",
+    "#c:rods/refined_glowstone",
+    "#c:rods/refined_obsidian",
+    "#c:rods/antimony",
+    "#c:rods/titanium",
+    "#c:rods/cobalt",
+    "#c:rods/lithium",
+    "#c:rods/aluminum",
+    "#c:rods/constantan",
+    "#c:rods/invar",
+    "#c:rods/electrum",
+    "#c:rods/lead",
+    "#c:rods/uranium",
+    "#c:rods/tungsten",
+    "#c:rods/solder",
+    "#c:rods/tungsten_steel",
+    "#c:rods/netherite",
+    "#c:rods/dawnstone",
+    "#c:rods/andesite_alloy",
+    "#c:rods/draconium",
+    "#c:rods/awakened_draconium",
+    "#c:rods/boron",
+    "#c:rods/thorium",
+    "#c:rods/magnesium",
+    "#c:rods/beryllium",
+    "#c:rods/zirconium",
+    "#c:rods/neutronium",
+    "#c:rods/ferroboron",
+    "#c:rods/tough_alloy",
+    "#c:rods/zircaloy",
+    "#c:rods/hsla_steel",
+    "#c:rods/super_alloy"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/iridium",
+    "tfcm:metal/flowing_iridium"
+  ]
+}

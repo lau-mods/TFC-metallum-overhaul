@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/refined_obsidian"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfcm:metal/refined_obsidian"
+  },
+  "temperature": 940.0
+}

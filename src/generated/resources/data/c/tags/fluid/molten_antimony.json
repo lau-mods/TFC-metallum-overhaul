@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "values": [
+    "tfcm:metal/antimony",
+    "tfcm:metal/flowing_antimony"
+  ]
+}

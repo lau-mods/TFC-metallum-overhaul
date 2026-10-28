@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/osmiridium_stairs"
+  },
+  "size": "large",
+  "weight": "very_heavy"
+}

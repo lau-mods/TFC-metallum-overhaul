@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/constantan"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

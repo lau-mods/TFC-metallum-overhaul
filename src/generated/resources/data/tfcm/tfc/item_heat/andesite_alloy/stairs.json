@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/andesite_alloy_stairs"
+  },
+  "heat_capacity": 2.5,
+  "forging_temperature": 312.0,
+  "welding_temperature": 416.0
+}

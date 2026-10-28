@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "fluid": "tfcm:metal/lithium",
+  "melt_temperature": 181.0,
+  "specific_heat_capacity": 0.01
+}

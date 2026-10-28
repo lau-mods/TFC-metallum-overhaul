@@ -23,6 +23,48 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
       "classname": "tfcm:empty",
       "name": "dependencymetadatarejectsunsupportedenvironments"
+    },
+    {
+      "acId": "AC-F002-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsandbasicformsareregistered"
+    },
+    {
+      "acId": "AC-F002-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalspecificationvaluesmatch"
+    },
+    {
+      "acId": "AC-F002-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "highcarbontungstensteelisanintermediate"
+    },
+    {
+      "acId": "AC-F003-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "bothingotmoldscastwithspecifiedbreakchance"
+    },
+    {
+      "acId": "AC-F003-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "anvilweldingandheatingpreservemetalamounts"
+    },
+    {
+      "acId": "AC-F003-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "onlyspecifiedalloyrecipesload"
+    },
+    {
+      "acId": "AC-F003-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "andesitemeltsandalloysatspecifiedamounts"
     }
   ],
   "e2e": [

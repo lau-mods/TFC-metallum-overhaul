@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/aluminum"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

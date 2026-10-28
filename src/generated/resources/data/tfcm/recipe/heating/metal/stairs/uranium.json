@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/uranium_stairs"
+  },
+  "result_fluid": {
+    "amount": 75,
+    "id": "tfcm:metal/uranium"
+  },
+  "temperature": 1130.0
+}

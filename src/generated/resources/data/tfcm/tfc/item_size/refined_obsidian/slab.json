@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/refined_obsidian_slab"
+  },
+  "size": "small",
+  "weight": "heavy"
+}

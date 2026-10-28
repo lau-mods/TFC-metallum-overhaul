@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/thorium_slab"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfcm:metal/thorium"
+  },
+  "temperature": 1750.0
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/electrum_stairs"
+  },
+  "size": "large",
+  "weight": "very_heavy"
+}

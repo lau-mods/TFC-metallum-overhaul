@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/cobalt"
+  },
+  "size": "huge",
+  "weight": "very_heavy"
+}

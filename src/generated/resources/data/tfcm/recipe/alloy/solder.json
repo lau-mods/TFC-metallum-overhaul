@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfcm:metal/antimony",
+      "min": 0.4,
+      "max": 0.6
+    },
+    {
+      "fluid": "tfc:metal/bismuth",
+      "min": 0.2,
+      "max": 0.4
+    },
+    {
+      "fluid": "tfc:metal/tin",
+      "min": 0.2,
+      "max": 0.4
+    }
+  ],
+  "result": "tfcm:metal/solder"
+}

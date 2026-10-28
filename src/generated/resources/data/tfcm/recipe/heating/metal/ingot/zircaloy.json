@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ingot/zircaloy"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/zircaloy"
+  },
+  "temperature": 1855.0
+}

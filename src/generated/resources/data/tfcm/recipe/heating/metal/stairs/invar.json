@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/invar_stairs"
+  },
+  "result_fluid": {
+    "amount": 75,
+    "id": "tfcm:metal/invar"
+  },
+  "temperature": 1250.0
+}

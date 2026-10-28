@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:double_ingots/draconium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/sheet/draconium"
+  },
+  "rules": [
+    "hit_last",
+    "hit_second_last",
+    "hit_third_last"
+  ],
+  "tier": 7
+}

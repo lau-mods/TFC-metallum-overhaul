@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/electrum"
+  },
+  "heat_capacity": 1.66666667,
+  "forging_temperature": 600.0,
+  "welding_temperature": 800.0
+}

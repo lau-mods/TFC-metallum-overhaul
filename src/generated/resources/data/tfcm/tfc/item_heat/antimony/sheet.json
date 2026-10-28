@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/sheet/antimony"
+  },
+  "heat_capacity": 8,
+  "forging_temperature": 378.0,
+  "welding_temperature": 504.0
+}

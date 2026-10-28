@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/lithium",
+    "tfcm:metal/flowing_lithium"
+  ]
+}

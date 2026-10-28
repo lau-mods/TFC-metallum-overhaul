@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "values": [
+    "tfcm:metal/constantan",
+    "tfcm:metal/flowing_constantan"
+  ]
+}

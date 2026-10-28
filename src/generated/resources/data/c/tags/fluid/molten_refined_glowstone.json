@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_glowstone"
+    }
+  ],
+  "values": [
+    "tfcm:metal/refined_glowstone",
+    "tfcm:metal/flowing_refined_glowstone"
+  ]
+}

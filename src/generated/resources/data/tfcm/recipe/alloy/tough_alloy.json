@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfcm:metal/ferroboron",
+      "min": 0.5,
+      "max": 0.5
+    },
+    {
+      "fluid": "tfcm:metal/lithium",
+      "min": 0.5,
+      "max": 0.5
+    }
+  ],
+  "result": "tfcm:metal/tough_alloy"
+}

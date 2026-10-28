@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ingot/tungsten"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/tungsten"
+  },
+  "temperature": 1535.0
+}

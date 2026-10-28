@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/zircaloy"
+  },
+  "heat_capacity": 6.66666667,
+  "forging_temperature": 1113.0,
+  "welding_temperature": 1484.0
+}

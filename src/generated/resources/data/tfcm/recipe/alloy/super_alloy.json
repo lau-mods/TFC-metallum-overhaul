@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfcm:metal/tough_alloy",
+      "min": 0.45,
+      "max": 0.55
+    },
+    {
+      "fluid": "tfcm:metal/titanium",
+      "min": 0.45,
+      "max": 0.55
+    }
+  ],
+  "result": "tfcm:metal/super_alloy"
+}

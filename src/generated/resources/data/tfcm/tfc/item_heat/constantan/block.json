@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/constantan"
+  },
+  "heat_capacity": 3.33333,
+  "forging_temperature": 750.0,
+  "welding_temperature": 1000.0
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/iridium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/uranium",
+    "tfcm:metal/flowing_uranium"
+  ]
+}

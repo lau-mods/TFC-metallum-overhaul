@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/dawnstone"
+  },
+  "heat_capacity": 13.3333333,
+  "forging_temperature": 600.0,
+  "welding_temperature": 800.0
+}

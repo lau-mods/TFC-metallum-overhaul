@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/beryllium_stairs"
+  },
+  "size": "large",
+  "weight": "very_heavy"
+}

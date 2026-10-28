@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/magnesium_stairs"
+  },
+  "result_fluid": {
+    "amount": 75,
+    "id": "tfcm:metal/magnesium"
+  },
+  "temperature": 650.0
+}

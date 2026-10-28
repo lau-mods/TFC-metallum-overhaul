@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/platinum_stairs"
+  },
+  "heat_capacity": 2.14286,
+  "forging_temperature": 1038.0,
+  "welding_temperature": 1384.0
+}

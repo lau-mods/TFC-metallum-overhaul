@@ -1,0 +1,279 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_glowstone"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "values": [
+    "tfcm:metal/block/compressed_iron",
+    "tfcm:metal/block/compressed_iron_slab",
+    "tfcm:metal/block/compressed_iron_stairs",
+    "tfcm:metal/block/platinum",
+    "tfcm:metal/block/platinum_slab",
+    "tfcm:metal/block/platinum_stairs",
+    "tfcm:metal/block/naquadah",
+    "tfcm:metal/block/naquadah_slab",
+    "tfcm:metal/block/naquadah_stairs",
+    "tfcm:metal/block/iridium",
+    "tfcm:metal/block/iridium_slab",
+    "tfcm:metal/block/iridium_stairs",
+    "tfcm:metal/block/osmium",
+    "tfcm:metal/block/osmium_slab",
+    "tfcm:metal/block/osmium_stairs",
+    "tfcm:metal/block/osmiridium",
+    "tfcm:metal/block/osmiridium_slab",
+    "tfcm:metal/block/osmiridium_stairs",
+    "tfcm:metal/block/mithril",
+    "tfcm:metal/block/mithril_slab",
+    "tfcm:metal/block/mithril_stairs",
+    "tfcm:metal/block/arcane",
+    "tfcm:metal/block/arcane_slab",
+    "tfcm:metal/block/arcane_stairs",
+    "tfcm:metal/block/refined_glowstone",
+    "tfcm:metal/block/refined_glowstone_slab",
+    "tfcm:metal/block/refined_glowstone_stairs",
+    "tfcm:metal/block/refined_obsidian",
+    "tfcm:metal/block/refined_obsidian_slab",
+    "tfcm:metal/block/refined_obsidian_stairs",
+    "tfcm:metal/block/antimony",
+    "tfcm:metal/block/antimony_slab",
+    "tfcm:metal/block/antimony_stairs",
+    "tfcm:metal/block/titanium",
+    "tfcm:metal/block/titanium_slab",
+    "tfcm:metal/block/titanium_stairs",
+    "tfcm:metal/block/cobalt",
+    "tfcm:metal/block/cobalt_slab",
+    "tfcm:metal/block/cobalt_stairs",
+    "tfcm:metal/block/lithium",
+    "tfcm:metal/block/lithium_slab",
+    "tfcm:metal/block/lithium_stairs",
+    "tfcm:metal/block/aluminum",
+    "tfcm:metal/block/aluminum_slab",
+    "tfcm:metal/block/aluminum_stairs",
+    "tfcm:metal/block/constantan",
+    "tfcm:metal/block/constantan_slab",
+    "tfcm:metal/block/constantan_stairs",
+    "tfcm:metal/block/invar",
+    "tfcm:metal/block/invar_slab",
+    "tfcm:metal/block/invar_stairs",
+    "tfcm:metal/block/electrum",
+    "tfcm:metal/block/electrum_slab",
+    "tfcm:metal/block/electrum_stairs",
+    "tfcm:metal/block/lead",
+    "tfcm:metal/block/lead_slab",
+    "tfcm:metal/block/lead_stairs",
+    "tfcm:metal/block/uranium",
+    "tfcm:metal/block/uranium_slab",
+    "tfcm:metal/block/uranium_stairs",
+    "tfcm:metal/block/tungsten",
+    "tfcm:metal/block/tungsten_slab",
+    "tfcm:metal/block/tungsten_stairs",
+    "tfcm:metal/block/solder",
+    "tfcm:metal/block/solder_slab",
+    "tfcm:metal/block/solder_stairs",
+    "tfcm:metal/block/tungsten_steel",
+    "tfcm:metal/block/tungsten_steel_slab",
+    "tfcm:metal/block/tungsten_steel_stairs",
+    "tfcm:metal/block/netherite",
+    "tfcm:metal/block/netherite_slab",
+    "tfcm:metal/block/netherite_stairs",
+    "tfcm:metal/block/dawnstone",
+    "tfcm:metal/block/dawnstone_slab",
+    "tfcm:metal/block/dawnstone_stairs",
+    "tfcm:metal/block/andesite_alloy",
+    "tfcm:metal/block/andesite_alloy_slab",
+    "tfcm:metal/block/andesite_alloy_stairs",
+    "tfcm:metal/block/draconium",
+    "tfcm:metal/block/draconium_slab",
+    "tfcm:metal/block/draconium_stairs",
+    "tfcm:metal/block/awakened_draconium",
+    "tfcm:metal/block/awakened_draconium_slab",
+    "tfcm:metal/block/awakened_draconium_stairs",
+    "tfcm:metal/block/boron",
+    "tfcm:metal/block/boron_slab",
+    "tfcm:metal/block/boron_stairs",
+    "tfcm:metal/block/thorium",
+    "tfcm:metal/block/thorium_slab",
+    "tfcm:metal/block/thorium_stairs",
+    "tfcm:metal/block/magnesium",
+    "tfcm:metal/block/magnesium_slab",
+    "tfcm:metal/block/magnesium_stairs",
+    "tfcm:metal/block/beryllium",
+    "tfcm:metal/block/beryllium_slab",
+    "tfcm:metal/block/beryllium_stairs",
+    "tfcm:metal/block/zirconium",
+    "tfcm:metal/block/zirconium_slab",
+    "tfcm:metal/block/zirconium_stairs",
+    "tfcm:metal/block/neutronium",
+    "tfcm:metal/block/neutronium_slab",
+    "tfcm:metal/block/neutronium_stairs",
+    "tfcm:metal/block/ferroboron",
+    "tfcm:metal/block/ferroboron_slab",
+    "tfcm:metal/block/ferroboron_stairs",
+    "tfcm:metal/block/tough_alloy",
+    "tfcm:metal/block/tough_alloy_slab",
+    "tfcm:metal/block/tough_alloy_stairs",
+    "tfcm:metal/block/zircaloy",
+    "tfcm:metal/block/zircaloy_slab",
+    "tfcm:metal/block/zircaloy_stairs",
+    "tfcm:metal/block/hsla_steel",
+    "tfcm:metal/block/hsla_steel_slab",
+    "tfcm:metal/block/hsla_steel_stairs",
+    "tfcm:metal/block/super_alloy",
+    "tfcm:metal/block/super_alloy_slab",
+    "tfcm:metal/block/super_alloy_stairs"
+  ]
+}

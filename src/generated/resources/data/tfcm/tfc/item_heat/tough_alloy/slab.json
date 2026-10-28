@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/tough_alloy_slab"
+  },
+  "heat_capacity": 1.66667,
+  "forging_temperature": 960.0,
+  "welding_temperature": 1280.0
+}

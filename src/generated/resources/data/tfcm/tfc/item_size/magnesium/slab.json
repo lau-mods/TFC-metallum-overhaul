@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/magnesium_slab"
+  },
+  "size": "small",
+  "weight": "heavy"
+}

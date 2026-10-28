@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/antimony"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/antimony"
+  },
+  "temperature": 630.0
+}

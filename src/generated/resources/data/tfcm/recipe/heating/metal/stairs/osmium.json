@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/osmium_stairs"
+  },
+  "result_fluid": {
+    "amount": 75,
+    "id": "tfcm:metal/osmium"
+  },
+  "temperature": 1535.0
+}

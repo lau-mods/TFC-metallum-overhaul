@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "values": [
+    "tfcm:metal/sheet/invar"
+  ]
+}

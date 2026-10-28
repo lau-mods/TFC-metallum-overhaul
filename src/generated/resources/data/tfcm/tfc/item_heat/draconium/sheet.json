@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/sheet/draconium"
+  },
+  "heat_capacity": 6.66666667,
+  "forging_temperature": 1200,
+  "welding_temperature": 1600
+}

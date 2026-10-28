@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/draconium_stairs"
+  },
+  "heat_capacity": 2.5,
+  "forging_temperature": 1200,
+  "welding_temperature": 1600
+}

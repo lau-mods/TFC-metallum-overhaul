@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    }
+  ],
+  "fluid": "tfcm:metal/ferroboron",
+  "melt_temperature": 1500.0,
+  "specific_heat_capacity": 0.01
+}

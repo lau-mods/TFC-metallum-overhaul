@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/dawnstone"
+  },
+  "size": "small",
+  "weight": "medium"
+}

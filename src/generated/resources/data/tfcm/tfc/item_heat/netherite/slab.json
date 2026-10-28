@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/netherite_slab"
+  },
+  "heat_capacity": 2.5,
+  "forging_temperature": 921.0,
+  "welding_temperature": 1228.0
+}

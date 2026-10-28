@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/tough_alloy"
+  },
+  "second_input": {
+    "tag": "c:ingots/tough_alloy"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/double_ingot/tough_alloy"
+  },
+  "tier": 5
+}

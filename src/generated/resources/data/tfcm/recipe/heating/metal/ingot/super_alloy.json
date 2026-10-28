@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ingot/super_alloy"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/super_alloy"
+  },
+  "temperature": 1800.0
+}

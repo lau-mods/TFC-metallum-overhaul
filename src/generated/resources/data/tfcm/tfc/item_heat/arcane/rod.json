@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/arcane"
+  },
+  "heat_capacity": 1.4285715,
+  "forging_temperature": 564.0,
+  "welding_temperature": 752.0
+}

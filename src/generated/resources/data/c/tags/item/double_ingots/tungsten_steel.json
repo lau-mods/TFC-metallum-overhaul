@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "values": [
+    "tfcm:metal/double_ingot/tungsten_steel"
+  ]
+}

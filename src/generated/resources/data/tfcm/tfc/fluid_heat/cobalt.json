@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "fluid": "tfcm:metal/cobalt",
+  "melt_temperature": 1700.0,
+  "specific_heat_capacity": 0.01
+}

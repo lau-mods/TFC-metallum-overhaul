@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/zirconium",
+    "tfcm:metal/flowing_zirconium"
+  ]
+}

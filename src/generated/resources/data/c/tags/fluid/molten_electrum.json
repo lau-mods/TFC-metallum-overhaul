@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "values": [
+    "tfcm:metal/electrum",
+    "tfcm:metal/flowing_electrum"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/double_sheet/zirconium"
+  ]
+}

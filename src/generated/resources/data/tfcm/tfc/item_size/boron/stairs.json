@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/boron_stairs"
+  },
+  "size": "large",
+  "weight": "very_heavy"
+}

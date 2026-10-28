@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/awakened_draconium"
+  },
+  "heat_capacity": 13.3333333,
+  "forging_temperature": 1200,
+  "welding_temperature": 1600
+}

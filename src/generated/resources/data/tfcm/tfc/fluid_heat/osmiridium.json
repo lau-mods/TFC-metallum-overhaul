@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    }
+  ],
+  "fluid": "tfcm:metal/osmiridium",
+  "melt_temperature": 1500.0,
+  "specific_heat_capacity": 0.008571429
+}

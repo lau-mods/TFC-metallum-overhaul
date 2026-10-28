@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "fluid": "tfcm:metal/refined_obsidian",
+  "melt_temperature": 940.0,
+  "specific_heat_capacity": 0.008571429
+}

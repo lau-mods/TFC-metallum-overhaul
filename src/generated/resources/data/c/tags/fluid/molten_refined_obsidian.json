@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "values": [
+    "tfcm:metal/refined_obsidian",
+    "tfcm:metal/flowing_refined_obsidian"
+  ]
+}

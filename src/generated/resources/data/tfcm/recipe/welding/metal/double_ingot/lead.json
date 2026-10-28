@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/lead"
+  },
+  "second_input": {
+    "tag": "c:ingots/lead"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/double_ingot/lead"
+  },
+  "tier": 1
+}

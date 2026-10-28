@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/sheet/uranium"
+  },
+  "size": "large",
+  "weight": "medium"
+}

@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "fluid": "tfcm:metal/titanium",
+  "melt_temperature": 1700.0,
+  "specific_heat_capacity": 0.01
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/beryllium"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/beryllium"
+  },
+  "temperature": 1287.0
+}

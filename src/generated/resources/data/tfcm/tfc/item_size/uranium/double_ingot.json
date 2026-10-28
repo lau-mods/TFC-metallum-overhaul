@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/uranium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

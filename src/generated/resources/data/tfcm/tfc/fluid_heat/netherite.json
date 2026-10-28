@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "fluid": "tfcm:metal/netherite",
+  "melt_temperature": 1535.0,
+  "specific_heat_capacity": 0.015
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/sheet/invar"
+  },
+  "size": "large",
+  "weight": "medium"
+}

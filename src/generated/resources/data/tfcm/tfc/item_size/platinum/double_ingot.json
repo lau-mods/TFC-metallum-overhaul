@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/platinum"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

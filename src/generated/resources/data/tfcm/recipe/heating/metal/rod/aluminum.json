@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/rod/aluminum"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfcm:metal/aluminum"
+  },
+  "temperature": 1740.0
+}

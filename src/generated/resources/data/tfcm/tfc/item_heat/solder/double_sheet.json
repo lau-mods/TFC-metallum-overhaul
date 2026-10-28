@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/solder"
+  },
+  "heat_capacity": 11.428572,
+  "forging_temperature": 240.0,
+  "welding_temperature": 320.0
+}

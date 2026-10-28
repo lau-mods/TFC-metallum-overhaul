@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ingot/solder"
+  },
+  "heat_capacity": 2.8571429999997147,
+  "forging_temperature": 240.0,
+  "welding_temperature": 320.0
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/arcane"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/rod/solder"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfcm:metal/solder"
+  },
+  "temperature": 400.0
+}

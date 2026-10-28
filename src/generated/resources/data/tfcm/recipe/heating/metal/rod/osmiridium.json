@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/rod/osmiridium"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfcm:metal/osmiridium"
+  },
+  "temperature": 1500.0
+}

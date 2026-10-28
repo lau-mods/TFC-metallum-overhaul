@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ingot/high_carbon_tungsten_steel"
+  },
+  "heat_capacity": 5.0,
+  "forging_temperature": 921.0,
+  "welding_temperature": 1228.0
+}

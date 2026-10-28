@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "fluid": "tfcm:molten_andesite",
+  "melt_temperature": 1300.0,
+  "specific_heat_capacity": 0.006923076923076923
+}

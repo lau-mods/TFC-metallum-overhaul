@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ingot/zirconium"
+  },
+  "heat_capacity": 3.333333333333,
+  "forging_temperature": 1113.0,
+  "welding_temperature": 1484.0
+}

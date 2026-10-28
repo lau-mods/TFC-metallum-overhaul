@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/osmiridium",
+    "tfcm:metal/flowing_osmiridium"
+  ]
+}

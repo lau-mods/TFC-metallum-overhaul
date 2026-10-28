@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/arcane_stairs"
+  },
+  "heat_capacity": 2.14286,
+  "forging_temperature": 564.0,
+  "welding_temperature": 752.0
+}
