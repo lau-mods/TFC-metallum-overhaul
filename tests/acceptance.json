@@ -1,4 +1,34 @@
 {
-  "gameTests": [],
-  "e2e": []
+  "gameTests": [
+    {
+      "acId": "AC-F001-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "standaloneenvironmentloads"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeenvironmentmatchesrun"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeenvironmentmatchesrun"
+    },
+    {
+      "acId": "AC-F001-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "dependencymetadatarejectsunsupportedenvironments"
+    }
+  ],
+  "e2e": [
+    {
+      "acId": "AC-F001-001",
+      "scenario": "tests/e2e/foundation-boot.mjs"
+    }
+  ]
 }

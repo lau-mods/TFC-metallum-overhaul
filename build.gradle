@@ -28,6 +28,23 @@ sourceSets.main.resources {
 
 repositories {
     // Add here additional repositories if required by some of the dependencies below.
+    maven {
+        name = 'Modrinth'
+        url = 'https://api.modrinth.com/maven'
+        content { includeGroup 'maven.modrinth' }
+    }
+    maven {
+        name = 'CurseMaven'
+        url = 'https://www.cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
+}
+
+sourceSets {
+    gameTest {
+        compileClasspath += sourceSets.main.output + configurations.compileClasspath
+        runtimeClasspath += output + sourceSets.main.runtimeClasspath
+    }
 }
 
 base {
@@ -70,6 +87,18 @@ neoForge {
         gameTestServer {
             type = "gameTestServer"
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'tfcm.gametest.report', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
+            systemProperty 'tfcm.gametest.firmalife', 'false'
+        }
+
+        gameTestServerFirmaLife {
+            type = "gameTestServer"
+            gameDirectory = layout.buildDirectory.dir('run-gametest-firmalife')
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'tfcm.gametest.report', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
+            systemProperty 'tfcm.gametest.firmalife', 'true'
         }
 
         data {
@@ -103,6 +132,7 @@ neoForge {
         // multi mod projects should define one per mod
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            sourceSet(sourceSets.gameTest)
         }
     }
 }
@@ -113,6 +143,7 @@ neoForge {
 // "optional", meaning it will not be pulled by dependents of this mod.
 configurations {
     runtimeClasspath.extendsFrom localRuntime
+    firmaLifeGameTestRuntime
 }
 
 dependencies {
@@ -134,9 +165,26 @@ dependencies {
     // Example project dependency using a sister or child project:
     // implementation project(":myproject")
 
+    implementation "maven.modrinth:terrafirmacraft:4.2.12"
+    implementation "maven.modrinth:patchouli:1.21.1-93-neoforge"
+    firmaLifeGameTestRuntime "curse.maven:firmalife-453394:8994973"
+
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
+}
+
+var stageFirmaLifeGameTestMod = tasks.register('stageFirmaLifeGameTestMod', Sync) {
+    from configurations.firmaLifeGameTestRuntime
+    into layout.buildDirectory.dir('run-gametest-firmalife/mods')
+}
+
+tasks.named('runGameTestServerFirmaLife').configure {
+    dependsOn stageFirmaLifeGameTestMod
+}
+
+tasks.named('runGameTestServer').configure {
+    finalizedBy tasks.named('runGameTestServerFirmaLife')
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.
