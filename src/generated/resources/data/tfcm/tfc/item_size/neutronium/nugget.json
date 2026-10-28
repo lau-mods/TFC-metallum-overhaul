@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nugget/neutronium"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

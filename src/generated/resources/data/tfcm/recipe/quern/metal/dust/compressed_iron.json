@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/compressed_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/compressed_iron"
+  }
+}

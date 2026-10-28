@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/beryllium"
+  },
+  "heat_capacity": 20.0000004,
+  "forging_temperature": 772.1999999999999,
+  "welding_temperature": 1029.6000000000001
+}

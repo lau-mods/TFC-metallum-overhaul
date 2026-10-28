@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/antimony"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/antimony"
+  }
+}

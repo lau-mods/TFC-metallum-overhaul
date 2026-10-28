@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/awakened_draconium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/awakened_draconium"
+  }
+}

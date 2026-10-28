@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/andesite_alloy"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/andesite_alloy"
+  }
+}

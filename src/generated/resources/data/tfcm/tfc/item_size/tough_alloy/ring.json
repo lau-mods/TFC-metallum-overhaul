@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/tough_alloy"
+  },
+  "size": "small",
+  "weight": "very_light"
+}

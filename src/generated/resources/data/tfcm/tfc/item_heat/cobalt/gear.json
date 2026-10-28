@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/gear/cobalt"
+  },
+  "heat_capacity": 13.333333600000001,
+  "forging_temperature": 1020.0,
+  "welding_temperature": 1360.0
+}

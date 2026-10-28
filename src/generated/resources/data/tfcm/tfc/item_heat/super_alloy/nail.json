@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/super_alloy"
+  },
+  "heat_capacity": 0.16666667000000002,
+  "forging_temperature": 1080.0,
+  "welding_temperature": 1440.0
+}

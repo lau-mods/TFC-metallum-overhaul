@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/magnesium"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

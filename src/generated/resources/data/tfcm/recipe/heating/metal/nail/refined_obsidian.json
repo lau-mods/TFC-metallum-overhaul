@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nail/refined_obsidian"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/refined_obsidian"
+  },
+  "temperature": 940
+}

@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/zirconium"
+  },
+  "second_input": {
+    "tag": "c:sheets/zirconium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/zirconium"
+  },
+  "tier": 2
+}

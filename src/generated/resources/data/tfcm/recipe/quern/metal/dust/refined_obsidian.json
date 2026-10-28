@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/refined_obsidian"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/refined_obsidian"
+  }
+}

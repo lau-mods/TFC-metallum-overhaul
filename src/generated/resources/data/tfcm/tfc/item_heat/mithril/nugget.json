@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nugget/mithril"
+  },
+  "heat_capacity": 0.285714305714286,
+  "forging_temperature": 564.0,
+  "welding_temperature": 752.0
+}

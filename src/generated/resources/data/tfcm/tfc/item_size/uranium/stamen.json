@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/stamen/uranium"
+  },
+  "size": "small",
+  "weight": "very_light"
+}

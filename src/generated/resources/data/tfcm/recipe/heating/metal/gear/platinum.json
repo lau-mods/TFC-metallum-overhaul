@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/gear/platinum"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/platinum"
+  },
+  "temperature": 1730
+}

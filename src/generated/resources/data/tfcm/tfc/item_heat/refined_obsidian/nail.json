@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/refined_obsidian"
+  },
+  "heat_capacity": 0.142857152857143,
+  "forging_temperature": 564.0,
+  "welding_temperature": 752.0
+}

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nugget/lead"
+  },
+  "heat_capacity": 0.33333334000000003,
+  "forging_temperature": 198.0,
+  "welding_temperature": 264.0
+}

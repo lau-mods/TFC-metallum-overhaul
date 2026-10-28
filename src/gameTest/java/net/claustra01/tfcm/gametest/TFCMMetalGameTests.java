@@ -1,9 +1,17 @@
 package net.claustra01.tfcm.gametest;
 
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
+
+import com.google.gson.JsonParser;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.common.metal.MetalForm;
 import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
@@ -11,10 +19,12 @@ import net.dries007.tfc.common.component.heat.HeatCapability;
 import net.dries007.tfc.common.component.heat.HeatDefinition;
 import net.dries007.tfc.common.component.fluid.FluidContainerInfo;
 import net.dries007.tfc.common.component.mold.IMold;
+import net.dries007.tfc.common.component.size.ItemSizeManager;
 import net.dries007.tfc.common.recipes.AlloyRecipe;
 import net.dries007.tfc.common.recipes.AnvilRecipe;
 import net.dries007.tfc.common.recipes.CastingRecipe;
 import net.dries007.tfc.common.recipes.HeatingRecipe;
+import net.dries007.tfc.common.recipes.QuernRecipe;
 import net.dries007.tfc.common.recipes.WeldingRecipe;
 import net.dries007.tfc.util.FluidAlloy;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,6 +38,8 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -39,8 +51,187 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 @PrefixGameTestTemplate(false)
 public final class TFCMMetalGameTests {
     private static final String BATCH = "tfcm_foundation";
+    private static final List<MetalForm> EXTENDED = List.of(MetalForm.FOIL, MetalForm.GEAR,
+            MetalForm.HEAVY_SHEET, MetalForm.NAIL, MetalForm.RING, MetalForm.RIVET,
+            MetalForm.SCREW, MetalForm.STAMEN, MetalForm.WIRE);
 
     private TFCMMetalGameTests() {
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void allExtendedFormsAreRegistered(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (Metal metal : Metal.values()) {
+                for (MetalForm metalForm : EXTENDED) {
+                    String form = metalForm.id;
+                    require(item("metal/" + form + "/" + metal.id()), "Missing " + form + " for " + metal.id());
+                }
+            }
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void extendedFormsHaveWorkingAndHeating(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (Metal metal : Metal.values()) {
+                for (MetalForm metalForm : EXTENDED) {
+                    if (metalForm == MetalForm.HEAVY_SHEET) continue;
+                    String form = metalForm.id;
+                    AnvilRecipe anvil = (AnvilRecipe) recipe(helper, "anvil/metal/" + form + "/" + metal.id());
+                    require(anvil.getMinTier() == metal.forgingTier(), "Wrong anvil tier for " + form + " " + metal.id());
+                    String input = metalForm.anvilInput().id;
+                    require(anvil.matches(anvilInput(itemValue("metal/" + input + "/" + metal.id()).getDefaultInstance(),
+                            metal.forgingTier()), helper.getLevel()), "Wrong anvil input for " + form + " " + metal.id());
+                    List<String> rules = metalForm.anvilRules();
+                    require(anvil.getRules().stream().map(rule -> rule.getSerializedName()).toList().equals(rules),
+                            "Wrong forge rules for " + form + " " + metal.id());
+                    int count = metalForm.anvilCount();
+                    ItemStack output = anvil.getResultItem(helper.getLevel().registryAccess());
+                    require(output.is(itemValue("metal/" + form + "/" + metal.id())) && output.getCount() == count,
+                            "Wrong anvil output for " + form + " " + metal.id());
+                }
+                WeldingRecipe heavy = (WeldingRecipe) recipe(helper, "welding/metal/heavy_sheet/" + metal.id());
+                require(heavy.matches(weldingInput(itemValue("metal/double_sheet/" + metal.id()).getDefaultInstance(),
+                        itemValue("metal/sheet/" + metal.id()).getDefaultInstance(), metal.forgingTier())),
+                        "Heavy sheet welding does not match " + metal.id());
+                require(!heavy.matches(weldingInput(itemValue("metal/double_sheet/" + metal.id()).getDefaultInstance(),
+                        itemValue("metal/double_sheet/" + metal.id()).getDefaultInstance(), metal.forgingTier())),
+                        "Heavy sheet welding accepts two double sheets " + metal.id());
+                for (MetalForm metalForm : EXTENDED) {
+                    String form = metalForm.id;
+                    ItemStack stack = itemValue("metal/" + form + "/" + metal.id()).getDefaultInstance();
+                    HeatingRecipe heat = (HeatingRecipe) recipe(helper, "heating/metal/" + form + "/" + metal.id());
+                    int amount = metalForm.amount;
+                    require(heat.matches(stack) && heat.getTemperature() == metal.meltingPoint()
+                            && heat.assembleFluid(stack).getFluid() == TFCMFluids.METALS.get(metal).source().get()
+                            && heat.assembleFluid(stack).getAmount() == amount,
+                            "Missing melting route for " + form + " " + metal.id());
+                    require(HeatCapability.getDefinition(stack) != null, "Missing heat for " + form + " " + metal.id());
+                    require(ItemSizeManager.getDefinition(stack) != null, "Missing size for " + form + " " + metal.id());
+                    String tag = metalForm.tag();
+                    require(stack.is(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", tag + "/" + metal.id()))),
+                            "Missing common tag for " + form + " " + metal.id());
+                    checkModelTexture(form, metal);
+                }
+            }
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void platesUseAnvilAndMeltToOneIngot(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            AnvilRecipe tfcSheet = (AnvilRecipe) helper.getLevel().getServer().getRecipeManager()
+                    .byKey(ResourceLocation.parse("tfc:anvil/metal/sheet/copper")).orElseThrow().value();
+            for (Metal metal : Metal.values()) {
+                AnvilRecipe anvil = (AnvilRecipe) recipe(helper, "anvil/metal/plate/" + metal.id());
+                ItemStack ingot = itemValue("metal/ingot/" + metal.id()).getDefaultInstance();
+                require(anvil.matches(anvilInput(ingot, metal.forgingTier()), helper.getLevel()), "Plate anvil input fails " + metal.id());
+                require(anvil.getRules().equals(tfcSheet.getRules()), "Plate does not use TFC metal forming rules " + metal.id());
+                require(anvil.isCorrectTier(metal.forgingTier()), "Plate rejects correct tier " + metal.id());
+                require(!anvil.isCorrectTier(metal.forgingTier() - 1), "Plate accepts lower tier " + metal.id());
+                ItemStack plate = anvil.getResultItem(helper.getLevel().registryAccess());
+                require(plate.is(itemValue("metal/plate/" + metal.id())) && plate.getCount() == 1,
+                        "Wrong plate result " + metal.id());
+                require(!plate.is(itemValue("metal/sheet/" + metal.id())), "Plate aliases sheet " + metal.id());
+                HeatingRecipe heating = (HeatingRecipe) recipe(helper, "heating/metal/plate/" + metal.id());
+                require(heating.matches(plate) && heating.getTemperature() == metal.meltingPoint()
+                        && heating.assembleFluid(plate).getFluid() == TFCMFluids.METALS.get(metal).source().get()
+                        && heating.assembleFluid(plate).getAmount() == 100, "Plate melt route is wrong " + metal.id());
+                require(HeatCapability.getDefinition(plate) != null, "Plate heat is missing " + metal.id());
+            }
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void nuggetsCraftBothWaysAndMeltAtTen(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (Metal metal : Metal.values()) {
+                ItemStack ingot = itemValue("metal/ingot/" + metal.id()).getDefaultInstance();
+                ItemStack nugget = itemValue("metal/nugget/" + metal.id()).getDefaultInstance();
+                CraftingRecipe split = (CraftingRecipe) recipe(helper, "crafting/metal/nugget/" + metal.id());
+                CraftingRecipe join = (CraftingRecipe) recipe(helper, "crafting/metal/ingot_from_nuggets/" + metal.id());
+                require(split.matches(CraftingInput.of(1, 1, List.of(ingot)), helper.getLevel()),
+                        "Ingot does not split into nuggets " + metal.id());
+                require(split.getResultItem(helper.getLevel().registryAccess()).is(nugget.getItem())
+                        && split.getResultItem(helper.getLevel().registryAccess()).getCount() == 9,
+                        "Wrong nugget split count " + metal.id());
+                require(join.matches(CraftingInput.of(3, 3, Collections.nCopies(9, nugget)), helper.getLevel()),
+                        "Nine nuggets do not rejoin " + metal.id());
+                require(join.getResultItem(helper.getLevel().registryAccess()).is(ingot.getItem())
+                        && join.getResultItem(helper.getLevel().registryAccess()).getCount() == 1,
+                        "Wrong nugget join output " + metal.id());
+                HeatingRecipe heating = (HeatingRecipe) recipe(helper, "heating/metal/nugget/" + metal.id());
+                require(heating.matches(nugget)
+                        && heating.assembleFluid(nugget).getFluid() == TFCMFluids.METALS.get(metal).source().get()
+                        && heating.assembleFluid(nugget).getAmount() == 10, "Nugget melt route is wrong " + metal.id());
+                int melted = 0;
+                for (ItemStack input : Collections.nCopies(9, nugget)) melted += heating.assembleFluid(input).getAmount();
+                require(melted == 90, "Nine nuggets must melt to 90 " + metal.id());
+            }
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void ingotsQuernToSeparateMetalDust(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (Metal metal : Metal.values()) {
+                QuernRecipe quern = (QuernRecipe) recipe(helper, "quern/metal/dust/" + metal.id());
+                ItemStack ingot = itemValue("metal/ingot/" + metal.id()).getDefaultInstance();
+                require(quern.matches(ingot), "Quern rejects ingot " + metal.id());
+                ItemStack dust = quern.assemble(ingot);
+                require(dust.is(itemValue("metal/dust/" + metal.id())) && dust.getCount() == 1,
+                        "Quern does not produce one metal dust " + metal.id());
+                HeatingRecipe heating = (HeatingRecipe) recipe(helper, "heating/metal/dust/" + metal.id());
+                require(heating.matches(dust)
+                        && heating.assembleFluid(dust).getFluid() == TFCMFluids.METALS.get(metal).source().get()
+                        && heating.assembleFluid(dust).getAmount() == 100, "Dust melt route is wrong " + metal.id());
+                require(!dust.is(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "powders"))),
+                        "Metal dust entered ore powder tag " + metal.id());
+                for (String powderTag : List.of("gem_powders", "bowl_powders", "glass_powders")) {
+                    require(!dust.is(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("tfc", powderTag))),
+                            "Metal dust entered TFC powder tag " + metal.id());
+                }
+                require(dust.is(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", "dusts/" + metal.id()))),
+                        "Dust is missing its separate common tag " + metal.id());
+            }
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void allMetalsHavePlateNuggetDustDataAndAssets(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (Metal metal : Metal.values()) {
+                ItemStack ingot = itemValue("metal/ingot/" + metal.id()).getDefaultInstance();
+                AnvilRecipe plateRecipe = (AnvilRecipe) recipe(helper, "anvil/metal/plate/" + metal.id());
+                require(plateRecipe.matches(anvilInput(ingot, metal.forgingTier()), helper.getLevel())
+                        && plateRecipe.getResultItem(helper.getLevel().registryAccess()).is(itemValue("metal/plate/" + metal.id())),
+                        "Missing plate recipe " + metal.id());
+                CraftingRecipe split = (CraftingRecipe) recipe(helper, "crafting/metal/nugget/" + metal.id());
+                ItemStack nugget = itemValue("metal/nugget/" + metal.id()).getDefaultInstance();
+                CraftingRecipe join = (CraftingRecipe) recipe(helper, "crafting/metal/ingot_from_nuggets/" + metal.id());
+                require(split.matches(CraftingInput.of(1, 1, List.of(ingot)), helper.getLevel())
+                        && split.getResultItem(helper.getLevel().registryAccess()).is(nugget.getItem())
+                        && join.matches(CraftingInput.of(3, 3, Collections.nCopies(9, nugget)), helper.getLevel())
+                        && join.getResultItem(helper.getLevel().registryAccess()).is(ingot.getItem()),
+                        "Missing nugget recipes " + metal.id());
+                QuernRecipe quern = (QuernRecipe) recipe(helper, "quern/metal/dust/" + metal.id());
+                require(quern.matches(ingot) && quern.assemble(ingot).is(itemValue("metal/dust/" + metal.id())),
+                        "Missing dust recipe " + metal.id());
+                for (MetalForm metalForm : List.of(MetalForm.PLATE, MetalForm.NUGGET, MetalForm.DUST)) {
+                    String form = metalForm.id;
+                    ItemStack stack = itemValue("metal/" + form + "/" + metal.id()).getDefaultInstance();
+                    HeatingRecipe heating = (HeatingRecipe) recipe(helper, "heating/metal/" + form + "/" + metal.id());
+                    require(heating.matches(stack) && heating.assembleFluid(stack).getFluid() == TFCMFluids.METALS.get(metal).source().get(),
+                            "Missing form heating " + form + " " + metal.id());
+                    require(HeatCapability.getDefinition(stack) != null, "Missing heat for " + form + " " + metal.id());
+                    require(ItemSizeManager.getDefinition(stack) != null, "Missing size for " + form + " " + metal.id());
+                    require(stack.is(TagKey.create(Registries.ITEM, ResourceLocation.fromNamespaceAndPath("c", metalForm.tag() + "/" + metal.id()))),
+                            "Missing tag for " + form + " " + metal.id());
+                    checkTagEntries(metalForm.tag(), metal);
+                    checkModelTexture(form, metal);
+                }
+            }
+        });
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -293,6 +484,34 @@ public final class TFCMMetalGameTests {
                 return 2;
             }
         };
+    }
+
+    private static void checkTagEntries(String form, Metal metal) {
+        String path = "/data/c/tags/item/" + form + "/" + metal.id() + ".json";
+        try (var stream = TFCM.class.getResourceAsStream(path)) {
+            require(stream != null, "Missing tag file " + path);
+            var values = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
+                    .getAsJsonObject().getAsJsonArray("values");
+            require(values.size() > 0, "Empty tag " + path);
+            values.forEach(value -> require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(value.getAsString())),
+                    "Unregistered tag item " + value.getAsString()));
+        } catch (IOException error) {
+            throw new GameTestAssertException("Cannot read tag " + path);
+        }
+    }
+
+    private static void checkModelTexture(String form, Metal metal) {
+        String path = "/assets/tfcm/models/item/metal/" + form + "/" + metal.id() + ".json";
+        try (var stream = TFCM.class.getResourceAsStream(path)) {
+            require(stream != null, "Missing model for " + form + " " + metal.id());
+            String texture = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
+                    .getAsJsonObject().getAsJsonObject("textures").get("layer0").getAsString();
+            ResourceLocation id = ResourceLocation.parse(texture);
+            require(TFCM.class.getResource("/assets/" + id.getNamespace() + "/textures/" + id.getPath() + ".png") != null,
+                    "Missing model texture " + texture);
+        } catch (IOException error) {
+            throw new GameTestAssertException("Cannot read model " + path);
+        }
     }
 
     private static Recipe<?> recipe(GameTestHelper helper, String path) {

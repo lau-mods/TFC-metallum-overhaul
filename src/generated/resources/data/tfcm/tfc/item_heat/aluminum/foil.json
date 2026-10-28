@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/foil/aluminum"
+  },
+  "heat_capacity": 3.3333334000000003,
+  "forging_temperature": 1044.0,
+  "welding_temperature": 1392.0
+}

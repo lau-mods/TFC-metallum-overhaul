@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nugget/electrum"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfcm:metal/electrum"
+  },
+  "temperature": 1000
+}

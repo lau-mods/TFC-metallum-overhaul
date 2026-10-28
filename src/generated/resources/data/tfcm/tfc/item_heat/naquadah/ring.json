@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/naquadah"
+  },
+  "heat_capacity": 0.34285716685714335,
+  "forging_temperature": 1200.0,
+  "welding_temperature": 1600.0
+}

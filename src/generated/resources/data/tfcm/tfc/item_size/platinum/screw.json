@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/platinum"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

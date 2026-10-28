@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/cobalt"
+  },
+  "second_input": {
+    "tag": "c:sheets/cobalt"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/cobalt"
+  },
+  "tier": 3
+}

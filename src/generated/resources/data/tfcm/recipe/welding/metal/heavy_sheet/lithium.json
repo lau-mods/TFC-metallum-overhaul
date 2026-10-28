@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/lithium"
+  },
+  "second_input": {
+    "tag": "c:sheets/lithium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/lithium"
+  },
+  "tier": 3
+}

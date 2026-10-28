@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/foil/andesite_alloy"
+  },
+  "heat_capacity": 3.3333334000000003,
+  "forging_temperature": 312.0,
+  "welding_temperature": 416.0
+}

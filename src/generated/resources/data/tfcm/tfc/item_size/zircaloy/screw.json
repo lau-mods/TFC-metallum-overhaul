@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/zircaloy"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

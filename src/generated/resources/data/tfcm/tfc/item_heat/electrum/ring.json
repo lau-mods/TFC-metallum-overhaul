@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/electrum"
+  },
+  "heat_capacity": 0.400000008,
+  "forging_temperature": 600.0,
+  "welding_temperature": 800.0
+}

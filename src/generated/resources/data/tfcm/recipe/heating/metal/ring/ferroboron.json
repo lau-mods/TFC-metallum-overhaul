@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ring/ferroboron"
+  },
+  "result_fluid": {
+    "amount": 12,
+    "id": "tfcm:metal/ferroboron"
+  },
+  "temperature": 1500
+}

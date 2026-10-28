@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/foil/boron"
+  },
+  "heat_capacity": 3.3333334000000003,
+  "forging_temperature": 1245.6,
+  "welding_temperature": 1660.8000000000002
+}

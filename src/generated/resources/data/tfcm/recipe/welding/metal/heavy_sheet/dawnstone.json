@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/dawnstone"
+  },
+  "second_input": {
+    "tag": "c:sheets/dawnstone"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/dawnstone"
+  },
+  "tier": 1
+}

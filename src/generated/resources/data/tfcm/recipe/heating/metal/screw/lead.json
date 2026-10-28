@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/screw/lead"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/lead"
+  },
+  "temperature": 330
+}

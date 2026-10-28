@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/lead"
+  },
+  "heat_capacity": 0.16666667000000002,
+  "forging_temperature": 198.0,
+  "welding_temperature": 264.0
+}

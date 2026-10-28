@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/hsla_steel"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

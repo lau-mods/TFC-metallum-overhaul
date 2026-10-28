@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/wire/lead"
+  },
+  "size": "small",
+  "weight": "very_light"
+}

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/ferroboron"
+  },
+  "heat_capacity": 0.400000008,
+  "forging_temperature": 900.0,
+  "welding_temperature": 1200.0
+}

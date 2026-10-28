@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/wire/zircaloy"
+  },
+  "heat_capacity": 0.8333333500000001,
+  "forging_temperature": 1113.0,
+  "welding_temperature": 1484.0
+}

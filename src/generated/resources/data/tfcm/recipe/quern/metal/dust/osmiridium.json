@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/osmiridium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/osmiridium"
+  }
+}

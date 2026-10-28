@@ -65,12 +65,56 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
       "classname": "tfcm:empty",
       "name": "andesitemeltsandalloysatspecifiedamounts"
+    },
+    {
+      "acId": "AC-F004-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allextendedformsareregistered"
+    },
+    {
+      "acId": "AC-F004-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "extendedformshaveworkingandheating"
+    },
+    {
+      "acId": "AC-F005-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "platesuseanvilandmelttooneingot"
+    },
+    {
+      "acId": "AC-F005-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "nuggetscraftbothwaysandmeltatten"
+    },
+    {
+      "acId": "AC-F005-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "ingotsquerntoseparatemetaldust"
+    },
+    {
+      "acId": "AC-F005-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalshaveplatenuggetdustdataandassets"
     }
   ],
   "e2e": [
     {
       "acId": "AC-F001-001",
       "scenario": "tests/e2e/foundation-boot.mjs"
+    },
+    {
+      "acId": "AC-F004-001",
+      "scenario": "tests/e2e/metal-forms.mjs"
+    },
+    {
+      "acId": "AC-F005-004",
+      "scenario": "tests/e2e/metal-forms.mjs"
     }
   ]
 }

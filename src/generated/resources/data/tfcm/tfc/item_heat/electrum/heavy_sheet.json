@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/electrum"
+  },
+  "heat_capacity": 20.0000004,
+  "forging_temperature": 600.0,
+  "welding_temperature": 800.0
+}

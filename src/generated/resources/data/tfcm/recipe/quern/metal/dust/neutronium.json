@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/neutronium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/neutronium"
+  }
+}

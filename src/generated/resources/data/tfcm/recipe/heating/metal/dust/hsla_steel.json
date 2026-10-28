@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/dust/hsla_steel"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/hsla_steel"
+  },
+  "temperature": 1450
+}

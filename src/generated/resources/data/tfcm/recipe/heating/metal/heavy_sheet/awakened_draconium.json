@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/awakened_draconium"
+  },
+  "result_fluid": {
+    "amount": 600,
+    "id": "tfcm:metal/awakened_draconium"
+  },
+  "temperature": 2000
+}

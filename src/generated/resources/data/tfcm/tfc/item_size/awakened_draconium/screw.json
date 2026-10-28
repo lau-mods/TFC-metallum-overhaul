@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/awakened_draconium"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

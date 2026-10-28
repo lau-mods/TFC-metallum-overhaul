@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/iridium"
+  },
+  "heat_capacity": 17.142858342857163,
+  "forging_temperature": 921.0,
+  "welding_temperature": 1228.0
+}

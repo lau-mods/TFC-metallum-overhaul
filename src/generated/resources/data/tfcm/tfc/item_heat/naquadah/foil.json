@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/foil/naquadah"
+  },
+  "heat_capacity": 2.857143057142861,
+  "forging_temperature": 1200.0,
+  "welding_temperature": 1600.0
+}

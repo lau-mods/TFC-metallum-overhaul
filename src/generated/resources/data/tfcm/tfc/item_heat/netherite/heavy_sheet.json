@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/netherite"
+  },
+  "heat_capacity": 30.000000600000003,
+  "forging_temperature": 921.0,
+  "welding_temperature": 1228.0
+}

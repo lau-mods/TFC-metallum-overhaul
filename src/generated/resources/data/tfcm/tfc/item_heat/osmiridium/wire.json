@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/wire/osmiridium"
+  },
+  "heat_capacity": 0.7142857642857152,
+  "forging_temperature": 900.0,
+  "welding_temperature": 1200.0
+}

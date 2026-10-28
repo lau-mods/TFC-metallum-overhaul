@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/zircaloy"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/zircaloy"
+  }
+}

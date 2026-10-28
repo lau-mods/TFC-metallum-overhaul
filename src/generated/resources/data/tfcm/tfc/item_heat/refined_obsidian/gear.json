@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/gear/refined_obsidian"
+  },
+  "heat_capacity": 11.428572228571444,
+  "forging_temperature": 564.0,
+  "welding_temperature": 752.0
+}

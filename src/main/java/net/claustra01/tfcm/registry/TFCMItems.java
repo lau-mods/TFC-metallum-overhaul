@@ -5,6 +5,7 @@ import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.common.metal.MetalForm;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
@@ -23,8 +24,8 @@ public final class TFCMItems {
 
     static {
         for (Metal metal : Metal.values()) {
-            for (String form : new String[] {"ingot", "double_ingot", "sheet", "double_sheet", "rod"}) {
-                ITEMS.registerSimpleItem("metal/" + form + "/" + metal.id());
+            for (MetalForm form : MetalForm.values()) {
+                if (form.isItem()) ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
             }
             ITEMS.register("metal/block/" + metal.id(),
                     () -> new BlockItem(TFCMBlocks.METAL_BLOCKS.get(metal).get(), new Item.Properties()));

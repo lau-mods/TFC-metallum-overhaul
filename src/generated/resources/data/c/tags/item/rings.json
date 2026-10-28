@@ -1,0 +1,201 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_glowstone"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "values": [
+    "#c:rings/compressed_iron",
+    "#c:rings/platinum",
+    "#c:rings/naquadah",
+    "#c:rings/iridium",
+    "#c:rings/osmium",
+    "#c:rings/osmiridium",
+    "#c:rings/mithril",
+    "#c:rings/arcane",
+    "#c:rings/refined_glowstone",
+    "#c:rings/refined_obsidian",
+    "#c:rings/antimony",
+    "#c:rings/titanium",
+    "#c:rings/cobalt",
+    "#c:rings/lithium",
+    "#c:rings/aluminum",
+    "#c:rings/constantan",
+    "#c:rings/invar",
+    "#c:rings/electrum",
+    "#c:rings/lead",
+    "#c:rings/uranium",
+    "#c:rings/tungsten",
+    "#c:rings/solder",
+    "#c:rings/tungsten_steel",
+    "#c:rings/netherite",
+    "#c:rings/dawnstone",
+    "#c:rings/andesite_alloy",
+    "#c:rings/draconium",
+    "#c:rings/awakened_draconium",
+    "#c:rings/boron",
+    "#c:rings/thorium",
+    "#c:rings/magnesium",
+    "#c:rings/beryllium",
+    "#c:rings/zirconium",
+    "#c:rings/neutronium",
+    "#c:rings/ferroboron",
+    "#c:rings/tough_alloy",
+    "#c:rings/zircaloy",
+    "#c:rings/hsla_steel",
+    "#c:rings/super_alloy"
+  ]
+}

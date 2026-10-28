@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/aluminum"
+  },
+  "heat_capacity": 0.400000008,
+  "forging_temperature": 1044.0,
+  "welding_temperature": 1392.0
+}

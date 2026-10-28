@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/wire/thorium"
+  },
+  "heat_capacity": 0.8333333500000001,
+  "forging_temperature": 1050.0,
+  "welding_temperature": 1400.0
+}

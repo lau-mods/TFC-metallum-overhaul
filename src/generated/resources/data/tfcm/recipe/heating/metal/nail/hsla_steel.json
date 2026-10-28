@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nail/hsla_steel"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/hsla_steel"
+  },
+  "temperature": 1450
+}

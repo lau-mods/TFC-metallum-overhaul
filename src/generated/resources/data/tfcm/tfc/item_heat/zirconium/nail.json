@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/zirconium"
+  },
+  "heat_capacity": 0.16666667000000002,
+  "forging_temperature": 1113.0,
+  "welding_temperature": 1484.0
+}

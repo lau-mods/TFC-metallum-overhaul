@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/solder"
+  },
+  "heat_capacity": 0.34285716685714335,
+  "forging_temperature": 240.0,
+  "welding_temperature": 320.0
+}

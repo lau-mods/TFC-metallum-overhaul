@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/wire/lithium"
+  },
+  "size": "small",
+  "weight": "very_light"
+}

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/arcane"
+  },
+  "heat_capacity": 0.142857152857143,
+  "forging_temperature": 564.0,
+  "welding_temperature": 752.0
+}

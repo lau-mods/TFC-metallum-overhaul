@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nugget/titanium"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfcm:metal/titanium"
+  },
+  "temperature": 1700
+}

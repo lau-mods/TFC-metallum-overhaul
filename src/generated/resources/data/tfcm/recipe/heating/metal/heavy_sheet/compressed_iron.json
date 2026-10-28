@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/compressed_iron"
+  },
+  "result_fluid": {
+    "amount": 600,
+    "id": "tfcm:metal/compressed_iron"
+  },
+  "temperature": 1535
+}

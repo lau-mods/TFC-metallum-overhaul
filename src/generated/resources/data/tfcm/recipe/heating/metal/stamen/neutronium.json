@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/stamen/neutronium"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfcm:metal/neutronium"
+  },
+  "temperature": 3000
+}

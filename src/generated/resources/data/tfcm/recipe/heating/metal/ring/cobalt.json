@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ring/cobalt"
+  },
+  "result_fluid": {
+    "amount": 12,
+    "id": "tfcm:metal/cobalt"
+  },
+  "temperature": 1700
+}

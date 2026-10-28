@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/tungsten"
+  },
+  "heat_capacity": 0.600000012,
+  "forging_temperature": 921.0,
+  "welding_temperature": 1228.0
+}

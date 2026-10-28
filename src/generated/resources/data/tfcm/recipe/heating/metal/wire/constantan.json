@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/wire/constantan"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfcm:metal/constantan"
+  },
+  "temperature": 1250
+}

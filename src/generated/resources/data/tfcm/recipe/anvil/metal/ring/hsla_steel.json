@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/hsla_steel"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:metal/ring/hsla_steel"
+  },
+  "rules": [
+    "hit_last",
+    "draw_second_last",
+    "draw_third_last"
+  ],
+  "tier": 5
+}
