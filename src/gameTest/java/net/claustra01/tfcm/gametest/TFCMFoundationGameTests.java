@@ -10,9 +10,11 @@ import net.minecraft.gametest.framework.BeforeBatch;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestAssertException;
 import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.gametest.framework.GameTestInfo;
 import net.minecraft.gametest.framework.GlobalTestReporter;
 import net.minecraft.gametest.framework.JUnitLikeTestReporter;
 import net.minecraft.gametest.framework.StructureUtils;
+import net.minecraft.gametest.framework.TestReporter;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.gametest.GameTestHolder;
@@ -33,8 +35,10 @@ public final class TFCMFoundationGameTests {
     @BeforeBatch(batch = BATCH)
     public static void configureReport(net.minecraft.server.level.ServerLevel level) throws Exception {
         Path report = Path.of(System.getProperty("tfcm.gametest.report"));
+        Path equipmentReport = Path.of(System.getProperty("tfcm.gametest.equipmentReport"));
         Files.createDirectories(report.getParent());
-        GlobalTestReporter.replaceWith(new JUnitLikeTestReporter(report.toFile()));
+        GlobalTestReporter.replaceWith(new CombinedTestReporter(new JUnitLikeTestReporter(report.toFile()),
+                new JUnitLikeTestReporter(equipmentReport.toFile())));
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -100,6 +104,26 @@ public final class TFCMFoundationGameTests {
     private static void require(boolean condition, String message) {
         if (!condition) {
             throw new GameTestAssertException(message);
+        }
+    }
+
+    private record CombinedTestReporter(TestReporter foundation, TestReporter equipment) implements TestReporter {
+        @Override
+        public void onTestFailed(GameTestInfo test) {
+            foundation.onTestFailed(test);
+            equipment.onTestFailed(test);
+        }
+
+        @Override
+        public void onTestSuccess(GameTestInfo test) {
+            foundation.onTestSuccess(test);
+            equipment.onTestSuccess(test);
+        }
+
+        @Override
+        public void finish() {
+            foundation.finish();
+            equipment.finish();
         }
     }
 }

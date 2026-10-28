@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/propick/tungsten_steel"
+  },
+  "size": "very_large",
+  "weight": "very_heavy"
+}

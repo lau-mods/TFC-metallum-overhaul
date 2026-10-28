@@ -4,7 +4,8 @@ const parts = [
   'leather_string', 'leather_strap', 'leather_strip', 'plant_fiber', 'plant_string', 'plant_fabric',
   'plant_clothing', 'bamboo_fiber', 'bamboo_string', 'bow_limb', 'bow_chord', 'bow_grip',
   'crossbow_limb', 'crossbow_chord', 'crossbow_stock', 'crossbow_trigger', 'arrow_tread',
-  'arrow_fletch', 'arrow_shaft', 'tool_handle', 'tool_binding', 'tool_riveting'
+  'arrow_fletch', 'arrow_shaft', 'tool_handle', 'tool_binding', 'tool_riveting',
+  'sword_crossguard', 'sword_pommel'
 ];
 
 await scenario(async ({ clients }) => {

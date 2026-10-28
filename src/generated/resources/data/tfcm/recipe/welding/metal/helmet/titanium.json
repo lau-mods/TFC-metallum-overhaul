@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:welding",
+  "bonus": "copy_best",
+  "first_input": {
+    "item": "tfcm:metal/unfinished_helmet/titanium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/helmet/titanium"
+  },
+  "second_input": {
+    "tag": "c:sheets/titanium"
+  },
+  "tier": 4
+}

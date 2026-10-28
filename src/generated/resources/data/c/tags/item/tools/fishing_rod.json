@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:metal/fishing_rod/invar",
+    "tfcm:metal/fishing_rod/titanium",
+    "tfcm:metal/fishing_rod/netherite",
+    "tfcm:metal/fishing_rod/tungsten_steel"
+  ]
+}

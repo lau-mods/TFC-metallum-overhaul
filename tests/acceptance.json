@@ -119,6 +119,48 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
       "classname": "tfcm:empty",
       "name": "bowcrossbowarrowandtoolpartsassemblewithknifedamage"
+    },
+    {
+      "acId": "AC-F007-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "fourmetalsprovidecompletetfcequipment"
+    },
+    {
+      "acId": "AC-F007-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "assemblyrequiresspecifiedpartsandrepairswithingot"
+    },
+    {
+      "acId": "AC-F007-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "equipmentheatsizerackandtooltagsagree"
+    },
+    {
+      "acId": "AC-F007-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tongsexistonlywithhotornot"
+    },
+    {
+      "acId": "AC-F007-004",
+      "report": "build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tongsexistonlywithhotornot"
+    },
+    {
+      "acId": "AC-F008-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customanvilsusetfcuitierandsevendoubleingots"
+    },
+    {
+      "acId": "AC-F008-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customanvilsmelttofourteenhundred"
     }
   ],
   "e2e": [
@@ -137,6 +179,14 @@
     {
       "acId": "AC-F006-001",
       "scenario": "tests/e2e/material-parts.mjs"
+    },
+    {
+      "acId": "AC-F007-001",
+      "scenario": "tests/e2e/equipment-anvils.mjs"
+    },
+    {
+      "acId": "AC-F008-001",
+      "scenario": "tests/e2e/equipment-anvils.mjs"
     }
   ]
 }

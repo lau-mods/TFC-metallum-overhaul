@@ -88,6 +88,7 @@ neoForge {
             type = "gameTestServer"
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
             systemProperty 'tfcm.gametest.report', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.equipmentReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }
@@ -97,8 +98,20 @@ neoForge {
             gameDirectory = layout.buildDirectory.dir('run-gametest-firmalife')
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
             systemProperty 'tfcm.gametest.report', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.equipmentReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'true'
+        }
+
+        gameTestServerHotOrNot {
+            type = "gameTestServer"
+            gameDirectory = layout.buildDirectory.dir('run-gametest-hotornot')
+            loadedMods.set([])
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+            systemProperty 'tfcm.gametest.report', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.equipmentReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
+            systemProperty 'tfcm.gametest.firmalife', 'false'
         }
 
         data {
@@ -144,6 +157,7 @@ neoForge {
 configurations {
     runtimeClasspath.extendsFrom localRuntime
     firmaLifeGameTestRuntime
+    hotOrNotGameTestRuntime
 }
 
 dependencies {
@@ -167,7 +181,13 @@ dependencies {
 
     implementation "maven.modrinth:terrafirmacraft:4.2.12"
     implementation "maven.modrinth:patchouli:1.21.1-93-neoforge"
+    // TFC Hot or Not's public TongsItem API is optional at runtime.
+    compileOnly("maven.modrinth:6fOyWxrE:YtVlCFtf") {
+        transitive = false
+    }
     firmaLifeGameTestRuntime "curse.maven:firmalife-453394:8994973"
+    hotOrNotGameTestRuntime "maven.modrinth:6fOyWxrE:YtVlCFtf"
+    hotOrNotGameTestRuntime "maven.modrinth:mrSESjNK:qh51dOax"
 
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
@@ -185,6 +205,27 @@ tasks.named('runGameTestServerFirmaLife').configure {
 
 tasks.named('runGameTestServer').configure {
     finalizedBy tasks.named('runGameTestServerFirmaLife')
+}
+
+var gameTestModJar = tasks.register('gameTestModJar', Jar) {
+    archiveClassifier = 'gametest'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    from sourceSets.main.output
+    from sourceSets.gameTest.output
+}
+
+var stageHotOrNotGameTestMods = tasks.register('stageHotOrNotGameTestMods', Sync) {
+    from configurations.hotOrNotGameTestRuntime
+    from gameTestModJar.flatMap { it.archiveFile }
+    into layout.buildDirectory.dir('run-gametest-hotornot/mods')
+}
+
+tasks.named('runGameTestServerHotOrNot').configure {
+    dependsOn stageHotOrNotGameTestMods
+}
+
+tasks.named('runGameTestServerFirmaLife').configure {
+    finalizedBy tasks.named('runGameTestServerHotOrNot')
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "tfcm:block/metal/anvil/titanium",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tfcm:block/metal/anvil/titanium"
+    },
+    "facing=south": {
+      "model": "tfcm:block/metal/anvil/titanium",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "tfcm:block/metal/anvil/titanium",
+      "y": 270
+    }
+  }
+}

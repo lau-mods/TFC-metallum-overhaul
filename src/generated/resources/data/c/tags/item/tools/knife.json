@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:metal/knife/invar",
+    "tfcm:metal/knife/titanium",
+    "tfcm:metal/knife/netherite",
+    "tfcm:metal/knife/tungsten_steel"
+  ]
+}

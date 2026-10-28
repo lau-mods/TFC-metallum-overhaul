@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:tool_riveting"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:sword_pommel"
+  }
+}

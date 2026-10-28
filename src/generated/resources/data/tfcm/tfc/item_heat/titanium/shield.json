@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "forging_temperature": 1020.0,
+  "heat_capacity": 13.333332,
+  "ingredient": {
+    "item": "tfcm:metal/shield/titanium"
+  },
+  "welding_temperature": 1360.0
+}

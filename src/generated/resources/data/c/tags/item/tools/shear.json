@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:metal/shears/invar",
+    "tfcm:metal/shears/titanium",
+    "tfcm:metal/shears/netherite",
+    "tfcm:metal/shears/tungsten_steel"
+  ]
+}

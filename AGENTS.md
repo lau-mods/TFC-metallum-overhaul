@@ -36,6 +36,15 @@
 - 完成Bow、Crossbow、Arrowは独自完成品を登録せず、各中間部品からVanillaの完成品へ組み立てる。全素材部品とPlant BlockにTFC item size/weightを定義する。
 - `MaterialDataProvider`がrecipe、grass/block loot、item size、model、blockstateを`src/generated/resources`へ生成する。M04 GameTestは登録と属性、植物・竹加工と乾燥、完成品組立とKnife損耗を検証し、`tests/e2e/material-parts.mjs`は全素材モデルを一画面で検証する。
 
+## M05 equipment and anvils
+
+- Invar、Titanium、Netherite、Tungsten Steelの工具・工具頭・武器・防具・補助装備は`tfcm:metal/<part>/<metal>`、金床は`tfcm:metal/anvil/<metal>`を使用する。工具tierは順にlevel `3/5/6/7`、耐久`2200/3300/6500/8125`、速度`8/11/12/13`、攻撃補正`4.75/7/9/10.5`、Enchantability `12/17/22/25`とする。
+- 防具のBoots/Leggings/Chestplate/Helmet防御はInvar `1/4/5/2`、Titanium `2/5/6/2`、Netherite `3/6/8/3`、Tungsten Steel `4/7/9/4`。耐久は順に`429/495/528/370`、`650/750/800/550`、`884/1020/1010/715`、`1105/1275/1360/935`、Enchantabilityは`12/17/23/25`、Toughnessは`0/2/3/4`、Knockback抵抗は`0/0.05/0.10/0.15`とする。
+- 工具組立にはF-006のHandle、Binding、Tool Riveting由来のCrossguard/Pommelと、F-004のRing・Rivet・Wireを使用する。Crossguard/Pommelは専用アートが確定するまで中立な小金属部品モデルを用いる。
+- Tong PartとTongsは`tfchotornot`導入時だけ登録し、Tongsは同Modの公開`TongsItem`を使用する。`tfchotornot:tongs`へ統合するが`insulating`には追加せず、独自の耐熱倍率や保持効果を付けない。
+- 4金属の金床tierは`3/5/6/7`。同金属のDouble Ingot 7個で製作し、Heatingで同金属1400 mBへ戻す。TFC Anvil block entityと`tfc:anvils`、pickaxe採掘tagへ統合する。
+- `EquipmentDataProvider`が装備のAnvil/Welding/Crafting/Heating、item heat・size、tool/tag、model、金床のrecipe・loot・blockstateを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/equipment-anvils.mjs`で検証する。
+
 ## Harness runtime
 
 - 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。

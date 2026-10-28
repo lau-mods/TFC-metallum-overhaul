@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfchotornot"
+    }
+  ],
+  "forging_temperature": 750.0,
+  "heat_capacity": 3.333333,
+  "ingredient": {
+    "tag": "tfcm:hotornot/tong_part/invar"
+  },
+  "welding_temperature": 1000.0
+}

@@ -4,8 +4,12 @@ import java.util.EnumMap;
 import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
-import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.block.PlantBlock;
+import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.common.tool.ToolMetal;
+import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.common.blocks.ExtendedProperties;
+import net.dries007.tfc.common.blocks.devices.AnvilBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -21,6 +25,7 @@ public final class TFCMBlocks {
     public static final Map<Metal, DeferredBlock<SlabBlock>> METAL_SLABS = new EnumMap<>(Metal.class);
     public static final Map<Metal, DeferredBlock<StairBlock>> METAL_STAIRS = new EnumMap<>(Metal.class);
     public static final Map<Metal, DeferredBlock<LiquidBlock>> METAL_FLUID_BLOCKS = new EnumMap<>(Metal.class);
+    public static final Map<ToolMetal, DeferredBlock<AnvilBlock>> ANVILS = new EnumMap<>(ToolMetal.class);
     public static final DeferredBlock<PlantBlock> PLANT_BLOCK = BLOCKS.register("plant_block",
             () -> new PlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(.5f)));
     public static final DeferredBlock<LiquidBlock> MOLTEN_ANDESITE = BLOCKS.register("molten_andesite",
@@ -38,6 +43,12 @@ public final class TFCMBlocks {
             METAL_FLUID_BLOCKS.put(metal, BLOCKS.register("fluid/metal/" + metal.id(),
                     () -> new LiquidBlock(TFCMFluids.METALS.get(metal).source().get(),
                             BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).noCollission().strength(100f).noLootTable())));
+        }
+        for (ToolMetal metal : ToolMetal.values()) {
+            ANVILS.put(metal, BLOCKS.register("metal/anvil/" + metal.getSerializedName(),
+                    () -> new AnvilBlock(ExtendedProperties.of(MapColor.METAL).strength(5, 10)
+                            .requiresCorrectToolForDrops().blockEntity(TFCBlockEntities.ANVIL),
+                            metal.toolTier().level())));
         }
     }
 

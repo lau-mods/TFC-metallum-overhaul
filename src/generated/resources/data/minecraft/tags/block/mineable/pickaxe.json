@@ -274,6 +274,10 @@
     "tfcm:metal/block/hsla_steel_stairs",
     "tfcm:metal/block/super_alloy",
     "tfcm:metal/block/super_alloy_slab",
-    "tfcm:metal/block/super_alloy_stairs"
+    "tfcm:metal/block/super_alloy_stairs",
+    "tfcm:metal/anvil/invar",
+    "tfcm:metal/anvil/titanium",
+    "tfcm:metal/anvil/netherite",
+    "tfcm:metal/anvil/tungsten_steel"
   ]
 }

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:metal/hoe/invar",
+    "tfcm:metal/hoe/titanium",
+    "tfcm:metal/hoe/netherite",
+    "tfcm:metal/hoe/tungsten_steel"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/tong_part/tungsten_steel",
+      "required": false
+    }
+  ],
+  "replace": false
+}

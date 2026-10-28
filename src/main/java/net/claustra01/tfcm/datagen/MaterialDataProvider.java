@@ -37,7 +37,9 @@ public final class MaterialDataProvider implements DataProvider {
             Map.entry(MaterialPart.ARROW_SHAFT, "minecraft:item/stick"),
             Map.entry(MaterialPart.TOOL_HANDLE, "minecraft:item/stick"),
             Map.entry(MaterialPart.TOOL_BINDING, "minecraft:item/string"),
-            Map.entry(MaterialPart.TOOL_RIVETING, "minecraft:item/iron_nugget"));
+            Map.entry(MaterialPart.TOOL_RIVETING, "minecraft:item/iron_nugget"),
+            Map.entry(MaterialPart.SWORD_CROSSGUARD, "minecraft:item/iron_nugget"),
+            Map.entry(MaterialPart.SWORD_POMMEL, "minecraft:item/iron_nugget"));
 
     private final Path data;
     private final Path assets;
@@ -97,6 +99,8 @@ public final class MaterialDataProvider implements DataProvider {
         files.add(recipe(output, "tool_handle", advanced("tfcm:tool_handle", 1, "#c:rods/wooden", "tfcm:leather_strap")));
         files.add(recipe(output, "tool_binding", shapeless("tfcm:tool_binding", 1, "tfcm:leather_string", "tfcm:leather_strap")));
         files.add(recipe(output, "tool_riveting", shapeless("tfcm:tool_riveting", 1, "#c:rivets", "tfcm:leather_strap")));
+        files.add(recipe(output, "sword_crossguard", shapeless("tfcm:sword_crossguard", 1, "tfcm:tool_riveting")));
+        files.add(recipe(output, "sword_pommel", shapeless("tfcm:sword_pommel", 1, "tfcm:tool_riveting")));
     }
 
     private CompletableFuture<?> recipe(CachedOutput output, String name, JsonObject json) {

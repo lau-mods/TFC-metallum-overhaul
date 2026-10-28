@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 1,
+  "input_row": 2,
+  "key": {
+    "H": {
+      "item": "tfcm:metal/fish_hook/invar"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    },
+    "W": {
+      "tag": "c:wires/invar"
+    }
+  },
+  "pattern": [
+    "  S",
+    " SW",
+    "SHW"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfcm:metal/fishing_rod/invar"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "tag": "c:double_ingots/tungsten_steel"
+    }
+  },
+  "pattern": [
+    "###",
+    " # ",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/anvil/tungsten_steel"
+  }
+}

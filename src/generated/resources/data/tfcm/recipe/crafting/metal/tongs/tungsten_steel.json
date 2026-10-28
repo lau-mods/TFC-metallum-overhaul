@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfchotornot"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "tfcm:metal/tong_part/tungsten_steel"
+    },
+    "R": {
+      "tag": "c:rivets/tungsten_steel"
+    }
+  },
+  "pattern": [
+    "PP",
+    " R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/tongs/tungsten_steel"
+  }
+}

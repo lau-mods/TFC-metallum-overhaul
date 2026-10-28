@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:metal/shovel/invar",
+    "tfcm:metal/shovel/titanium",
+    "tfcm:metal/shovel/netherite",
+    "tfcm:metal/shovel/tungsten_steel"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/fish_hook/invar"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfcm:metal/invar"
+  },
+  "temperature": 1250
+}

@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfchotornot"
+    }
+  ],
+  "forging_temperature": 1020.0,
+  "heat_capacity": 6.666666,
+  "ingredient": {
+    "tag": "tfcm:hotornot/tongs/titanium"
+  },
+  "welding_temperature": 1360.0
+}

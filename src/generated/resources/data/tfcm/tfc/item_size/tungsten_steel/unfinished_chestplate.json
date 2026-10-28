@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/unfinished_chestplate/tungsten_steel"
+  },
+  "size": "large",
+  "weight": "medium"
+}

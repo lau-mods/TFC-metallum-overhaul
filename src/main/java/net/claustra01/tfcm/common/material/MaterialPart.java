@@ -22,7 +22,9 @@ public enum MaterialPart {
     ARROW_SHAFT("arrow_shaft", "small", "very_light"),
     TOOL_HANDLE("tool_handle", "large", "light"),
     TOOL_BINDING("tool_binding", "small", "very_light"),
-    TOOL_RIVETING("tool_riveting", "tiny", "very_light");
+    TOOL_RIVETING("tool_riveting", "tiny", "very_light"),
+    SWORD_CROSSGUARD("sword_crossguard", "small", "light"),
+    SWORD_POMMEL("sword_pommel", "small", "light");
 
     private final String id;
     private final String size;

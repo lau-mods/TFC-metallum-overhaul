@@ -10,6 +10,7 @@ import com.google.gson.JsonObject;
 
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.metal.MetalForm;
+import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
@@ -271,7 +272,11 @@ public final class MetalDataProvider implements DataProvider {
     }
 
     private void addCollectionTags(CachedOutput output, List<CompletableFuture<?>> files) {
-        files.add(save(output, "minecraft/tags/block/mineable/pickaxe", allMetalBlocks("", "_slab", "_stairs")));
+        JsonObject mineable = allMetalBlocks("", "_slab", "_stairs");
+        for (ToolMetal metal : ToolMetal.values()) {
+            mineable.getAsJsonArray("values").add("tfcm:metal/anvil/" + metal.getSerializedName());
+        }
+        files.add(save(output, "minecraft/tags/block/mineable/pickaxe", mineable));
         files.add(save(output, "minecraft/tags/block/slabs", allMetalBlocks("_slab")));
         files.add(save(output, "minecraft/tags/block/stairs", allMetalBlocks("_stairs")));
         files.add(save(output, "tfc/tags/fluid/molten_metals", allMetalFluids(false)));

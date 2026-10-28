@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/saw_blade/netherite"
+  },
+  "size": "large",
+  "weight": "medium"
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/chestplate/netherite"
+  },
+  "size": "large",
+  "weight": "very_heavy"
+}

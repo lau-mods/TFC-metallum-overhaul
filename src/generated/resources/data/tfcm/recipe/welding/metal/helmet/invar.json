@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:welding",
+  "bonus": "copy_best",
+  "first_input": {
+    "item": "tfcm:metal/unfinished_helmet/invar"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/helmet/invar"
+  },
+  "second_input": {
+    "tag": "c:sheets/invar"
+  },
+  "tier": 2
+}

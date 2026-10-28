@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:metal/mace/invar",
+    "tfcm:metal/mace/titanium",
+    "tfcm:metal/mace/netherite",
+    "tfcm:metal/mace/tungsten_steel"
+  ]
+}

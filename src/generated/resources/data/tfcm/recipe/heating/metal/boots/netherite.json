@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/boots/netherite"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/netherite"
+  },
+  "temperature": 1535
+}

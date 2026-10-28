@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:metal/javelin/invar",
+    "tfcm:metal/javelin/titanium",
+    "tfcm:metal/javelin/netherite",
+    "tfcm:metal/javelin/tungsten_steel"
+  ]
+}
