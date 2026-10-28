@@ -959,4 +959,4 @@ Expected Result: F-007〜F-008、F-017〜F-025の受入条件を満たす。
 
 ## Open Questions
 
-なし。
+None.
