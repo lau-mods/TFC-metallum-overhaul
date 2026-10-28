@@ -8,5 +8,6 @@ public final class TFCMDataGenerators {
 
     public static void gatherData(GatherDataEvent event) {
         event.getGenerator().addProvider(event.includeServer(), new MetalDataProvider(event.getGenerator().getPackOutput()));
+        event.getGenerator().addProvider(event.includeServer(), new MaterialDataProvider(event.getGenerator().getPackOutput()));
     }
 }

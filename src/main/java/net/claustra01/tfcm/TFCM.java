@@ -3,6 +3,7 @@ package net.claustra01.tfcm;
 import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
+import net.claustra01.tfcm.registry.TFCMLootModifiers;
 import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
 import net.claustra01.tfcm.datagen.TFCMDataGenerators;
 import net.neoforged.bus.api.IEventBus;
@@ -17,6 +18,7 @@ public final class TFCM {
         TFCMBlocks.BLOCKS.register(modBus);
         TFCMFluids.FLUID_TYPES.register(modBus);
         TFCMFluids.FLUIDS.register(modBus);
+        TFCMLootModifiers.LOOT_MODIFIERS.register(modBus);
         MetalEnabledCondition.CONDITIONS.register(modBus);
         modBus.addListener(TFCMDataGenerators::gatherData);
     }

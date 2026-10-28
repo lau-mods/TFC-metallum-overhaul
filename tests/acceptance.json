@@ -101,6 +101,24 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
       "classname": "tfcm:empty",
       "name": "allmetalshaveplatenuggetdustdataandassets"
+    },
+    {
+      "acId": "AC-F006-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "materialpartshaveregistrationnamesmodelsandsize"
+    },
+    {
+      "acId": "AC-F006-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "grassbambooandplantblockproduceanddry"
+    },
+    {
+      "acId": "AC-F006-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "bowcrossbowarrowandtoolpartsassemblewithknifedamage"
     }
   ],
   "e2e": [
@@ -115,6 +133,10 @@
     {
       "acId": "AC-F005-004",
       "scenario": "tests/e2e/metal-forms.mjs"
+    },
+    {
+      "acId": "AC-F006-001",
+      "scenario": "tests/e2e/material-parts.mjs"
     }
   ]
 }

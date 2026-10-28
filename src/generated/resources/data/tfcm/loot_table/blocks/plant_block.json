@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:plant_block"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "tfcm:blocks/plant_block"
+}

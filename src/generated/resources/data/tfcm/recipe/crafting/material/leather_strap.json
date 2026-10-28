@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:leather_strip"
+    },
+    {
+      "item": "tfcm:leather_strip"
+    }
+  ],
+  "result": {
+    "id": "tfcm:leather_strap",
+    "count": 1
+  }
+}

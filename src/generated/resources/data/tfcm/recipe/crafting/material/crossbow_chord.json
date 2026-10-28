@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:bamboo_string"
+    },
+    {
+      "item": "tfcm:bamboo_string"
+    },
+    {
+      "item": "tfcm:bamboo_string"
+    }
+  ],
+  "result": {
+    "id": "tfcm:crossbow_chord",
+    "count": 1
+  }
+}

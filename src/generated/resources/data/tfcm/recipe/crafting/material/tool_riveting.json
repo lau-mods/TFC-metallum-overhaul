@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:rivets"
+    },
+    {
+      "item": "tfcm:leather_strap"
+    }
+  ],
+  "result": {
+    "id": "tfcm:tool_riveting",
+    "count": 1
+  }
+}

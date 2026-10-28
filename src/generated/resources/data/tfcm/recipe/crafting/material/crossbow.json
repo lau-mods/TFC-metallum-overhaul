@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:crossbow_limb"
+    },
+    {
+      "item": "tfcm:crossbow_chord"
+    },
+    {
+      "item": "tfcm:crossbow_stock"
+    },
+    {
+      "item": "tfcm:crossbow_trigger"
+    }
+  ],
+  "result": {
+    "id": "minecraft:crossbow",
+    "count": 1
+  }
+}

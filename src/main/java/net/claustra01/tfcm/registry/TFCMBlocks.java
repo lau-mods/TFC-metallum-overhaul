@@ -5,6 +5,7 @@ import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.common.block.PlantBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -20,6 +21,8 @@ public final class TFCMBlocks {
     public static final Map<Metal, DeferredBlock<SlabBlock>> METAL_SLABS = new EnumMap<>(Metal.class);
     public static final Map<Metal, DeferredBlock<StairBlock>> METAL_STAIRS = new EnumMap<>(Metal.class);
     public static final Map<Metal, DeferredBlock<LiquidBlock>> METAL_FLUID_BLOCKS = new EnumMap<>(Metal.class);
+    public static final DeferredBlock<PlantBlock> PLANT_BLOCK = BLOCKS.register("plant_block",
+            () -> new PlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(.5f)));
     public static final DeferredBlock<LiquidBlock> MOLTEN_ANDESITE = BLOCKS.register("molten_andesite",
             () -> new LiquidBlock(TFCMFluids.MOLTEN_ANDESITE_SOURCE.get(),
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).noCollission().strength(100f).noLootTable()));

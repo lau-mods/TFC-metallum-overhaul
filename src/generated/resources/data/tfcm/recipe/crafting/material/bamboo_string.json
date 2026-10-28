@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:bamboo_fiber"
+    },
+    {
+      "item": "tfcm:bamboo_fiber"
+    },
+    {
+      "item": "tfcm:bamboo_fiber"
+    }
+  ],
+  "result": {
+    "id": "tfcm:bamboo_string",
+    "count": 1
+  }
+}

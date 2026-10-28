@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:plant_fiber"
+    },
+    {
+      "item": "tfcm:plant_fiber"
+    },
+    {
+      "item": "tfcm:plant_fiber"
+    }
+  ],
+  "result": {
+    "id": "tfcm:plant_string",
+    "count": 1
+  }
+}

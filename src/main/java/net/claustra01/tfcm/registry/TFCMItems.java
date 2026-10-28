@@ -6,6 +6,7 @@ import java.util.Map;
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.metal.MetalForm;
+import net.claustra01.tfcm.common.material.MaterialPart;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
@@ -16,6 +17,9 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 public final class TFCMItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(TFCM.MOD_ID);
     public static final Map<Metal, DeferredItem<BucketItem>> METAL_BUCKETS = new EnumMap<>(Metal.class);
+    public static final Map<MaterialPart, DeferredItem<Item>> MATERIAL_PARTS = new EnumMap<>(MaterialPart.class);
+    public static final DeferredItem<BlockItem> PLANT_BLOCK = ITEMS.register("plant_block",
+            () -> new BlockItem(TFCMBlocks.PLANT_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<Item> HIGH_CARBON_TUNGSTEN_STEEL = ITEMS.registerSimpleItem(
             "metal/ingot/high_carbon_tungsten_steel");
     public static final DeferredItem<BucketItem> MOLTEN_ANDESITE_BUCKET = ITEMS.register(
@@ -23,6 +27,9 @@ public final class TFCMItems {
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     static {
+        for (MaterialPart part : MaterialPart.values()) {
+            MATERIAL_PARTS.put(part, ITEMS.registerSimpleItem(part.id()));
+        }
         for (Metal metal : Metal.values()) {
             for (MetalForm form : MetalForm.values()) {
                 if (form.isItem()) ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
