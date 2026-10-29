@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/bismuthinite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/bismuthinite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/bismuthinite",
+    "tfcm:item/ore_processing/dirty_dust/bismuthinite",
+    "tfcm:item/ore_processing/dirty_dust/bismuthinite"
+  ]
+}

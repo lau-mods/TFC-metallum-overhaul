@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/malachite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/malachite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/malachite",
+    "tfcm:item/ore_processing/rocky_chunks/malachite",
+    "tfcm:item/ore_processing/rocky_chunks/malachite"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/uraninite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/uraninite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/uraninite",
+    "tfcm:item/ore_processing/rocky_chunks/uraninite",
+    "tfcm:item/ore_processing/rocky_chunks/uraninite"
+  ]
+}

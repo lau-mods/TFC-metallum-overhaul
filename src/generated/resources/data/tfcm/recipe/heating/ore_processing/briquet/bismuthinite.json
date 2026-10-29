@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/bismuthinite"
+  },
+  "result_fluid": {
+    "amount": 80,
+    "id": "tfc:metal/bismuth"
+  },
+  "temperature": 270
+}

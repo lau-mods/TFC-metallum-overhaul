@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/graphite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/graphite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/graphite",
+    "tfcm:item/ore_processing/dirty_dust/graphite",
+    "tfcm:item/ore_processing/dirty_dust/graphite"
+  ]
+}

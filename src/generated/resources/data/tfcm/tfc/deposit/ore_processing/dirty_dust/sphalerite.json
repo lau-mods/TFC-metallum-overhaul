@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/sphalerite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/sphalerite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/sphalerite",
+    "tfcm:item/ore_processing/dirty_dust/sphalerite",
+    "tfcm:item/ore_processing/dirty_dust/sphalerite"
+  ]
+}

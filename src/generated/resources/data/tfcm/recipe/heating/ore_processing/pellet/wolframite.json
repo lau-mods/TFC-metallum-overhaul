@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/wolframite"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfcm:metal/tungsten"
+  },
+  "temperature": 1535
+}

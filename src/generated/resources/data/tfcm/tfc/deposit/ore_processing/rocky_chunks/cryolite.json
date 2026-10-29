@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/cryolite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/cryolite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/cryolite",
+    "tfcm:item/ore_processing/rocky_chunks/cryolite",
+    "tfcm:item/ore_processing/rocky_chunks/cryolite"
+  ]
+}

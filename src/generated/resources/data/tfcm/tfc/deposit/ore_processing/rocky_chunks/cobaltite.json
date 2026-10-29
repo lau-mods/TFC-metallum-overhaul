@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/cobaltite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/cobaltite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/cobaltite",
+    "tfcm:item/ore_processing/rocky_chunks/cobaltite",
+    "tfcm:item/ore_processing/rocky_chunks/cobaltite"
+  ]
+}

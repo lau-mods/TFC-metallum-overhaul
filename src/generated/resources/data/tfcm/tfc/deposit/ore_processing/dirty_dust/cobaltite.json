@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/cobaltite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/cobaltite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/cobaltite",
+    "tfcm:item/ore_processing/dirty_dust/cobaltite",
+    "tfcm:item/ore_processing/dirty_dust/cobaltite"
+  ]
+}

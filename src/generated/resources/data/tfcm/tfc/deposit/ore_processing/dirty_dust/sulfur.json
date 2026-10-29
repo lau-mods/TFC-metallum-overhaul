@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/sulfur"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/sulfur",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/sulfur",
+    "tfcm:item/ore_processing/dirty_dust/sulfur",
+    "tfcm:item/ore_processing/dirty_dust/sulfur"
+  ]
+}

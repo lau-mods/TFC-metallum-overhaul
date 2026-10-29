@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/galena"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/galena",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/galena",
+    "tfcm:item/ore_processing/rocky_chunks/galena",
+    "tfcm:item/ore_processing/rocky_chunks/galena"
+  ]
+}

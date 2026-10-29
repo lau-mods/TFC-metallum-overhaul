@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/powder/native_silver"
+        }
+      ],
+      "name": "powder",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.15,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/sand_pile/white"
+        }
+      ],
+      "name": "sand_pile_15_percent",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.05,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/dirty_dust/native_silver"
+        }
+      ],
+      "name": "same_dirty_dust_5_percent",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.01,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/dirty_dust/galena"
+        }
+      ],
+      "name": "byproduct_dirty_dust_1_percent",
+      "rolls": 1
+    }
+  ]
+}

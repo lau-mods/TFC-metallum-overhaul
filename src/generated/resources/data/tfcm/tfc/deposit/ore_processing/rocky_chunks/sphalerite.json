@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/sphalerite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/sphalerite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/sphalerite",
+    "tfcm:item/ore_processing/rocky_chunks/sphalerite",
+    "tfcm:item/ore_processing/rocky_chunks/sphalerite"
+  ]
+}

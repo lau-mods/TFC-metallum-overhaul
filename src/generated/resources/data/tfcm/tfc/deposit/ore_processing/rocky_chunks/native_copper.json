@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/native_copper"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/native_copper",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/native_copper",
+    "tfcm:item/ore_processing/rocky_chunks/native_copper",
+    "tfcm:item/ore_processing/rocky_chunks/native_copper"
+  ]
+}

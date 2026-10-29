@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/native_copper"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/native_copper",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/native_copper",
+    "tfcm:item/ore_processing/dirty_dust/native_copper",
+    "tfcm:item/ore_processing/dirty_dust/native_copper"
+  ]
+}

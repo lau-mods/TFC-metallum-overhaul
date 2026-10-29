@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/cassiterite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/cassiterite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/cassiterite",
+    "tfcm:item/ore_processing/dirty_dust/cassiterite",
+    "tfcm:item/ore_processing/dirty_dust/cassiterite"
+  ]
+}

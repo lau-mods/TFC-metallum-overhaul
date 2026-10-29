@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/rutile"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/rutile",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/rutile",
+    "tfcm:item/ore_processing/rocky_chunks/rutile",
+    "tfcm:item/ore_processing/rocky_chunks/rutile"
+  ]
+}

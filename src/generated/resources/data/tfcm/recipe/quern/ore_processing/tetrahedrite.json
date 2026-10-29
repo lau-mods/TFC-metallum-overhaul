@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfcm:ore_processing/chunks/tetrahedrite"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/dirty_dust/tetrahedrite"
+  }
+}

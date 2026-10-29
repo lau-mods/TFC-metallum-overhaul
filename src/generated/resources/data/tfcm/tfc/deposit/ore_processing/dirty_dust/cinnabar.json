@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/cinnabar"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/cinnabar",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/cinnabar",
+    "tfcm:item/ore_processing/dirty_dust/cinnabar",
+    "tfcm:item/ore_processing/dirty_dust/cinnabar"
+  ]
+}

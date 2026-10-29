@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/cassiterite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/cassiterite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/cassiterite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/cassiterite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/cassiterite"
+  }
+}

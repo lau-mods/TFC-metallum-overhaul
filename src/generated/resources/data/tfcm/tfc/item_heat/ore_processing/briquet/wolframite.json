@@ -1,0 +1,6 @@
+{
+  "heat_capacity": 4.0,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/wolframite"
+  }
+}

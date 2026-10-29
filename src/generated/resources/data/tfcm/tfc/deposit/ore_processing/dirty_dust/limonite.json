@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/limonite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/limonite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/limonite",
+    "tfcm:item/ore_processing/dirty_dust/limonite",
+    "tfcm:item/ore_processing/dirty_dust/limonite"
+  ]
+}

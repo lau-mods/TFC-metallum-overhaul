@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/carobbiite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/carobbiite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/carobbiite",
+    "tfcm:item/ore_processing/rocky_chunks/carobbiite",
+    "tfcm:item/ore_processing/rocky_chunks/carobbiite"
+  ]
+}

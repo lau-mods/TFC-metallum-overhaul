@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/carobbiite"
+  },
+  "result_fluid": {
+    "amount": 80,
+    "id": "tfcm:metal/beryllium"
+  },
+  "temperature": 1287
+}

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/thorianite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/thorianite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/thorianite",
+    "tfcm:item/ore_processing/dirty_dust/thorianite",
+    "tfcm:item/ore_processing/dirty_dust/thorianite"
+  ]
+}

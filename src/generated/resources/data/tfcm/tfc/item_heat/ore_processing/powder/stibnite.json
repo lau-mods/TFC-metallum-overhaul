@@ -1,0 +1,6 @@
+{
+  "heat_capacity": 0.2,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/stibnite"
+  }
+}

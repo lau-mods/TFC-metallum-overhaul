@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/graphite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/graphite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/graphite",
+    "tfcm:item/ore_processing/rocky_chunks/graphite",
+    "tfcm:item/ore_processing/rocky_chunks/graphite"
+  ]
+}

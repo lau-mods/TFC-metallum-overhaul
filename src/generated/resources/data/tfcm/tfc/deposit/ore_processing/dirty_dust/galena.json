@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/galena"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/galena",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/galena",
+    "tfcm:item/ore_processing/dirty_dust/galena",
+    "tfcm:item/ore_processing/dirty_dust/galena"
+  ]
+}

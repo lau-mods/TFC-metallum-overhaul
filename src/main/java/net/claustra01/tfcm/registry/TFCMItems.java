@@ -9,6 +9,9 @@ import net.claustra01.tfcm.common.metal.MetalForm;
 import net.claustra01.tfcm.common.material.MaterialPart;
 import net.claustra01.tfcm.common.ore.Ore;
 import net.claustra01.tfcm.common.ore.OreGrade;
+import net.claustra01.tfcm.common.processing.ProcessingForm;
+import net.claustra01.tfcm.common.processing.ProcessingSeries;
+import net.claustra01.tfcm.common.processing.SandPile;
 import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.claustra01.tfcm.common.tool.ToolPart;
 import net.minecraft.world.item.BlockItem;
@@ -27,6 +30,9 @@ public final class TFCMItems {
     public static final Map<Ore, DeferredItem<Item>> ORES = new EnumMap<>(Ore.class);
     public static final Map<Ore, DeferredItem<BlockItem>> SMALL_ORES = new EnumMap<>(Ore.class);
     public static final Map<Ore, DeferredItem<Item>> ORE_POWDERS = new EnumMap<>(Ore.class);
+    public static final Map<ProcessingSeries, Map<ProcessingForm, DeferredItem<Item>>> ORE_PROCESSING =
+            new EnumMap<>(ProcessingSeries.class);
+    public static final Map<SandPile, DeferredItem<Item>> SAND_PILES = new EnumMap<>(SandPile.class);
     public static final DeferredItem<Item> CUT_QUARTZ = ITEMS.registerSimpleItem("gem/cut_quartz");
     public static final DeferredItem<Item> CERTUS_QUARTZ = ITEMS.registerSimpleItem("gem/certus_quartz");
     public static final DeferredItem<BlockItem> PLANT_BLOCK = ITEMS.register("plant_block",
@@ -79,6 +85,16 @@ public final class TFCMItems {
         }
         ORE_POWDERS.put(Ore.QUARTZ, ITEMS.registerSimpleItem("powder/quartz"));
         ORE_POWDERS.put(Ore.FLUORITE, ITEMS.registerSimpleItem("powder/fluorite"));
+        for (SandPile sand : SandPile.values()) {
+            SAND_PILES.put(sand, ITEMS.registerSimpleItem("ore_processing/sand_pile/" + sand.id()));
+        }
+        for (ProcessingSeries series : ProcessingSeries.values()) {
+            Map<ProcessingForm, DeferredItem<Item>> forms = new EnumMap<>(ProcessingForm.class);
+            for (ProcessingForm form : ProcessingForm.values()) {
+                forms.put(form, ITEMS.registerSimpleItem("ore_processing/" + form.id() + "/" + series.id()));
+            }
+            ORE_PROCESSING.put(series, forms);
+        }
         TFCMBlocks.ORES.values().forEach(blocks -> blocks.forEach((name, block) -> ITEMS.register("ore/" + name,
                 () -> new BlockItem(block.get(), new Item.Properties()))));
         TFCMBlocks.TFC_ORES.forEach((name, block) -> ITEMS.register("ore/" + name,

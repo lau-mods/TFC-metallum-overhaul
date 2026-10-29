@@ -37,9 +37,11 @@ public final class TFCMFoundationGameTests {
         Path report = Path.of(System.getProperty("tfcm.gametest.report"));
         Path equipmentReport = Path.of(System.getProperty("tfcm.gametest.equipmentReport"));
         Path oreReport = Path.of(System.getProperty("tfcm.gametest.oreReport"));
+        Path processingReport = Path.of(System.getProperty("tfcm.gametest.processingReport"));
         Files.createDirectories(report.getParent());
         GlobalTestReporter.replaceWith(new CombinedTestReporter(new JUnitLikeTestReporter(report.toFile()),
-                new JUnitLikeTestReporter(equipmentReport.toFile()), new JUnitLikeTestReporter(oreReport.toFile())));
+                new JUnitLikeTestReporter(equipmentReport.toFile()), new JUnitLikeTestReporter(oreReport.toFile()),
+                new JUnitLikeTestReporter(processingReport.toFile())));
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -61,12 +63,12 @@ public final class TFCMFoundationGameTests {
             boolean loaded = ModList.get().isLoaded("firmalife");
             require(loaded == expected, "FirmaLife presence did not match the GameTest environment");
             ResourceLocation chromite = ResourceLocation.fromNamespaceAndPath("firmalife", "ore/normal_chromite");
-            ResourceLocation chromiteHeating = ResourceLocation.fromNamespaceAndPath(
-                    "firmalife", "heating/ore/normal_chromite");
+            ResourceLocation chromiteProcessing = ResourceLocation.fromNamespaceAndPath(
+                    TFCM.MOD_ID, "crafting/ore_processing/hammer/normal_chromite");
             require(BuiltInRegistries.ITEM.containsKey(chromite) == expected,
                     "FirmaLife Chromite registration did not match the GameTest environment");
             require(helper.getLevel().getServer().getRecipeManager().getRecipes().stream()
-                    .anyMatch(recipe -> recipe.id().equals(chromiteHeating)) == expected,
+                    .anyMatch(recipe -> recipe.id().equals(chromiteProcessing)) == expected,
                     "FirmaLife Chromite processing did not match the GameTest environment");
             if (expected) {
                 require(version("firmalife").equals("3.0.15"), "FirmaLife 3.0.15 was not loaded");
@@ -108,12 +110,14 @@ public final class TFCMFoundationGameTests {
         }
     }
 
-    private record CombinedTestReporter(TestReporter foundation, TestReporter equipment, TestReporter ore) implements TestReporter {
+    private record CombinedTestReporter(TestReporter foundation, TestReporter equipment, TestReporter ore,
+            TestReporter processing) implements TestReporter {
         @Override
         public void onTestFailed(GameTestInfo test) {
             foundation.onTestFailed(test);
             equipment.onTestFailed(test);
             ore.onTestFailed(test);
+            processing.onTestFailed(test);
         }
 
         @Override
@@ -121,6 +125,7 @@ public final class TFCMFoundationGameTests {
             foundation.onTestSuccess(test);
             equipment.onTestSuccess(test);
             ore.onTestSuccess(test);
+            processing.onTestSuccess(test);
         }
 
         @Override
@@ -128,6 +133,7 @@ public final class TFCMFoundationGameTests {
             foundation.finish();
             equipment.finish();
             ore.finish();
+            processing.finish();
         }
     }
 }

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/zircon"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/zircon",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/zircon",
+    "tfcm:item/ore_processing/dirty_dust/zircon",
+    "tfcm:item/ore_processing/dirty_dust/zircon"
+  ]
+}

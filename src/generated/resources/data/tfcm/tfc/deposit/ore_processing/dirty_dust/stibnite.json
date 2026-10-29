@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/stibnite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/stibnite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/stibnite",
+    "tfcm:item/ore_processing/dirty_dust/stibnite",
+    "tfcm:item/ore_processing/dirty_dust/stibnite"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/hematite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/hematite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/hematite",
+    "tfcm:item/ore_processing/dirty_dust/hematite",
+    "tfcm:item/ore_processing/dirty_dust/hematite"
+  ]
+}

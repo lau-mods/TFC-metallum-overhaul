@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/spodumene"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/spodumene",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/spodumene",
+    "tfcm:item/ore_processing/dirty_dust/spodumene",
+    "tfcm:item/ore_processing/dirty_dust/spodumene"
+  ]
+}

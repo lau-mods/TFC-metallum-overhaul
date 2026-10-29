@@ -1,0 +1,6 @@
+{
+  "heat_capacity": 0.25,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/wolframite"
+  }
+}

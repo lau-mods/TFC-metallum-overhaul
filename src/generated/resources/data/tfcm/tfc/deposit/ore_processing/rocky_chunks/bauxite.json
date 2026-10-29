@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/bauxite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/bauxite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/bauxite",
+    "tfcm:item/ore_processing/rocky_chunks/bauxite",
+    "tfcm:item/ore_processing/rocky_chunks/bauxite"
+  ]
+}

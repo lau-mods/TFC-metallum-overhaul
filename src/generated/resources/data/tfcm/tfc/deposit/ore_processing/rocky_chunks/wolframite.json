@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/wolframite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/wolframite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/wolframite",
+    "tfcm:item/ore_processing/rocky_chunks/wolframite",
+    "tfcm:item/ore_processing/rocky_chunks/wolframite"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/powder/native_silver"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/native_silver"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/native_silver"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/native_silver"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/pellet/native_silver"
+  }
+}

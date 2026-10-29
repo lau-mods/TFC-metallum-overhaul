@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/native_gold"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/native_gold"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/native_gold"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/native_gold"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/native_gold"
+  }
+}

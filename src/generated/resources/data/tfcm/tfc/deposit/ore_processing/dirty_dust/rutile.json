@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/rutile"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/rutile",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/rutile",
+    "tfcm:item/ore_processing/dirty_dust/rutile",
+    "tfcm:item/ore_processing/dirty_dust/rutile"
+  ]
+}

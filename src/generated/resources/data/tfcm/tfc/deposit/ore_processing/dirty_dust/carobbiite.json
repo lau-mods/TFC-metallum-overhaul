@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/carobbiite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/carobbiite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/carobbiite",
+    "tfcm:item/ore_processing/dirty_dust/carobbiite",
+    "tfcm:item/ore_processing/dirty_dust/carobbiite"
+  ]
+}

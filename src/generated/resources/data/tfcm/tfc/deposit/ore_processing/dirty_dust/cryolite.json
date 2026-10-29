@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/cryolite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/cryolite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/cryolite",
+    "tfcm:item/ore_processing/dirty_dust/cryolite",
+    "tfcm:item/ore_processing/dirty_dust/cryolite"
+  ]
+}

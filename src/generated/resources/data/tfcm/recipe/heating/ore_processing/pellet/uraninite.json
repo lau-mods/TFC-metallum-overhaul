@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/uraninite"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfcm:metal/uranium"
+  },
+  "temperature": 1130
+}

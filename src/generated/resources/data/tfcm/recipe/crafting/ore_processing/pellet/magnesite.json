@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/powder/magnesite"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/magnesite"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/magnesite"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/magnesite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/pellet/magnesite"
+  }
+}

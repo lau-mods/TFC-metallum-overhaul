@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/garnierite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/garnierite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/garnierite",
+    "tfcm:item/ore_processing/rocky_chunks/garnierite",
+    "tfcm:item/ore_processing/rocky_chunks/garnierite"
+  ]
+}

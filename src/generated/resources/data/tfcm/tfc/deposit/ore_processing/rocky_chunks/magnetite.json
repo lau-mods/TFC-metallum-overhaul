@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/magnetite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/magnetite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/magnetite",
+    "tfcm:item/ore_processing/rocky_chunks/magnetite",
+    "tfcm:item/ore_processing/rocky_chunks/magnetite"
+  ]
+}

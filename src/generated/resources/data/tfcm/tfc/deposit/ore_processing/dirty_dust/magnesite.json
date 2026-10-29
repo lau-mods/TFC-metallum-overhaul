@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/magnesite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/magnesite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/magnesite",
+    "tfcm:item/ore_processing/dirty_dust/magnesite",
+    "tfcm:item/ore_processing/dirty_dust/magnesite"
+  ]
+}

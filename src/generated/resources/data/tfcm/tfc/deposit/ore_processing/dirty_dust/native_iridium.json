@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/native_iridium"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/native_iridium",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/native_iridium",
+    "tfcm:item/ore_processing/dirty_dust/native_iridium",
+    "tfcm:item/ore_processing/dirty_dust/native_iridium"
+  ]
+}

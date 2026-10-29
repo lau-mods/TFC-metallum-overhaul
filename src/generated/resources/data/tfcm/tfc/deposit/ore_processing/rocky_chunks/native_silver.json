@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/native_silver"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/native_silver",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/native_silver",
+    "tfcm:item/ore_processing/rocky_chunks/native_silver",
+    "tfcm:item/ore_processing/rocky_chunks/native_silver"
+  ]
+}

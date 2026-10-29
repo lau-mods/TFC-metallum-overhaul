@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/native_gold"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/native_gold",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/native_gold",
+    "tfcm:item/ore_processing/dirty_dust/native_gold",
+    "tfcm:item/ore_processing/dirty_dust/native_gold"
+  ]
+}

@@ -1,5 +1,6 @@
 package net.claustra01.tfcm;
 
+import java.util.HashMap;
 import java.util.function.Supplier;
 
 import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
@@ -12,10 +13,15 @@ import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
 import net.claustra01.tfcm.registry.TFCMLootModifiers;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.util.data.Deposit;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.common.NeoForge;
+import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 
 @Mod(TFCM.MOD_ID)
@@ -38,10 +44,24 @@ public final class TFCM {
         MetalEnabledCondition.CONDITIONS.register(modBus);
         modBus.addListener(TFCMDataGenerators::gatherData);
         modBus.addListener(TFCM::addAnvilBlocks);
+        NeoForge.EVENT_BUS.addListener(TFCM::addReloadListeners);
     }
 
     private static void addAnvilBlocks(BlockEntityTypeAddBlocksEvent event) {
         event.modify(TFCBlockEntities.ANVIL.get(), TFCMBlocks.ANVILS.values().stream()
                 .map(Supplier::get).toArray(Block[]::new));
+    }
+
+    private static void addReloadListeners(AddReloadListenerEvent event) {
+        if (ModList.get().isLoaded("firmalife")) return;
+        event.addListener((ResourceManagerReloadListener) resourceManager -> {
+            var deposits = new HashMap<>(Deposit.MANAGER.getElements());
+            deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
+                    "ore_processing/rocky_chunks/chromite"));
+            deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
+                    "ore_processing/dirty_dust/chromite"));
+            Deposit.MANAGER.bindValues(deposits);
+            Deposit.CACHE.reload(deposits.values());
+        });
     }
 }

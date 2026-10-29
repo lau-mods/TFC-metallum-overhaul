@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/cobaltite"
+  },
+  "result_fluid": {
+    "amount": 80,
+    "id": "tfcm:metal/cobalt"
+  },
+  "temperature": 1700
+}

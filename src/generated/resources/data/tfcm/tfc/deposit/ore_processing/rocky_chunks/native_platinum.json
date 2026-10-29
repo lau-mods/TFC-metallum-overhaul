@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/native_platinum"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/native_platinum",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/native_platinum",
+    "tfcm:item/ore_processing/rocky_chunks/native_platinum",
+    "tfcm:item/ore_processing/rocky_chunks/native_platinum"
+  ]
+}

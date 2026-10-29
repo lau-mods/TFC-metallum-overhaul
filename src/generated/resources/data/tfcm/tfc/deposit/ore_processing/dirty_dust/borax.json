@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/borax"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/borax",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/borax",
+    "tfcm:item/ore_processing/dirty_dust/borax",
+    "tfcm:item/ore_processing/dirty_dust/borax"
+  ]
+}

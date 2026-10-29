@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/cinnabar"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/cinnabar",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/cinnabar",
+    "tfcm:item/ore_processing/rocky_chunks/cinnabar",
+    "tfcm:item/ore_processing/rocky_chunks/cinnabar"
+  ]
+}

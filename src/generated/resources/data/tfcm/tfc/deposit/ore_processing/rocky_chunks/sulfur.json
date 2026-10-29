@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/sulfur"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/sulfur",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/sulfur",
+    "tfcm:item/ore_processing/rocky_chunks/sulfur",
+    "tfcm:item/ore_processing/rocky_chunks/sulfur"
+  ]
+}

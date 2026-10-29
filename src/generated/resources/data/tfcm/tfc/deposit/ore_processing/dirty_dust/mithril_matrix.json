@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/mithril_matrix"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/mithril_matrix",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/mithril_matrix",
+    "tfcm:item/ore_processing/dirty_dust/mithril_matrix",
+    "tfcm:item/ore_processing/dirty_dust/mithril_matrix"
+  ]
+}

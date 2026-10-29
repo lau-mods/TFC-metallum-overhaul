@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/wolframite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/wolframite",
+  "model_stages": [
+    "tfcm:item/ore_processing/dirty_dust/wolframite",
+    "tfcm:item/ore_processing/dirty_dust/wolframite",
+    "tfcm:item/ore_processing/dirty_dust/wolframite"
+  ]
+}

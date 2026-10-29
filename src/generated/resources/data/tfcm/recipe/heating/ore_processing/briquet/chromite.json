@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/chromite"
+  },
+  "result_fluid": {
+    "amount": 80,
+    "id": "firmalife:metal/chromium"
+  },
+  "temperature": 1250
+}

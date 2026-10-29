@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/cassiterite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/cassiterite",
+  "model_stages": [
+    "tfcm:item/ore_processing/rocky_chunks/cassiterite",
+    "tfcm:item/ore_processing/rocky_chunks/cassiterite",
+    "tfcm:item/ore_processing/rocky_chunks/cassiterite"
+  ]
+}

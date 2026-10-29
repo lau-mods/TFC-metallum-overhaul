@@ -215,6 +215,114 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
       "classname": "tfcm:empty",
       "name": "dimensionoresareprospectablemineableanddroptheirore"
+    },
+    {
+      "acId": "AC-F010-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "processingtablehasthirtymetalandfivenonmetalseries"
+    },
+    {
+      "acId": "AC-F010-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "processingtablehasthirtymetalandfivenonmetalseries"
+    },
+    {
+      "acId": "AC-F010-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "naquadahandmithriluseprojectprocessingdefinitions"
+    },
+    {
+      "acId": "AC-F010-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "processinglootusesonlydefinedoutputs"
+    },
+    {
+      "acId": "AC-F011-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "gradedhammercrushingyieldsonethreefivesevenanddamageshammer"
+    },
+    {
+      "acId": "AC-F011-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "ungradedmetalandmineralhammercrushingyieldfiveandseven"
+    },
+    {
+      "acId": "AC-F012-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "primarysluicealwayshaschunkoutput"
+    },
+    {
+      "acId": "AC-F012-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "primarysluiceusesindependentthirtyfifteenandgempools"
+    },
+    {
+      "acId": "AC-F013-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chunkquernstoonlymatchingdirtydust"
+    },
+    {
+      "acId": "AC-F014-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "secondarysluiceusesfourspecifiedindependentpools"
+    },
+    {
+      "acId": "AC-F014-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "dirtypileisabsentwhilesevensandpilesremain"
+    },
+    {
+      "acId": "AC-F014-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "naquadahandmithrilsecondaryoutputsstaydistinct"
+    },
+    {
+      "acId": "AC-F015-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalpowderheatingreturnsfivemillibuckets"
+    },
+    {
+      "acId": "AC-F015-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalpowderheatingreturnsfivemillibuckets"
+    },
+    {
+      "acId": "AC-F015-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "pelletandbriquetcompressionpreservesamounts"
+    },
+    {
+      "acId": "AC-F015-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "nonmetalpowdershavenoinventedheatingfluid"
+    },
+    {
+      "acId": "AC-F015-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "onlysmallraworemeltsdirectly"
+    },
+    {
+      "acId": "AC-F015-004",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "onlysmallraworemeltsdirectly"
     }
   ],
   "e2e": [

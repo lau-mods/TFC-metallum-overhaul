@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/zircon"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfcm:metal/zirconium"
+  },
+  "temperature": 1855
+}
