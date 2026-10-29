@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tfcm:block/mineral/quartz_block"
+    }
+  }
+}

@@ -6,6 +6,8 @@ import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.block.PlantBlock;
+import net.claustra01.tfcm.common.block.geode.GeodeMineral;
+import net.claustra01.tfcm.common.block.geode.MineralBuddingBlock;
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.ore.Ore;
 import net.claustra01.tfcm.common.ore.OreGrade;
@@ -16,7 +18,9 @@ import net.dries007.tfc.common.blocks.GroundcoverBlock;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.devices.AnvilBlock;
 import net.dries007.tfc.common.blocks.rock.Rock;
+import net.minecraft.world.level.block.AmethystClusterBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
@@ -37,6 +41,17 @@ public final class TFCMBlocks {
     public static final Map<String, DeferredBlock<Block>> TFC_ORES = new LinkedHashMap<>();
     public static final Map<String, DeferredBlock<Block>> CHROMITE_ORES = new LinkedHashMap<>();
     public static final Map<Ore, DeferredBlock<GroundcoverBlock>> ORE_GROUNDCOVER = new EnumMap<>(Ore.class);
+    public static final Map<GeodeMineral, DeferredBlock<Block>> MINERAL_BLOCKS = new EnumMap<>(GeodeMineral.class);
+    public static final Map<GeodeMineral, DeferredBlock<MineralBuddingBlock>> BUDDING_BLOCKS =
+            new EnumMap<>(GeodeMineral.class);
+    public static final Map<GeodeMineral, DeferredBlock<AmethystClusterBlock>> SMALL_BUDS =
+            new EnumMap<>(GeodeMineral.class);
+    public static final Map<GeodeMineral, DeferredBlock<AmethystClusterBlock>> MEDIUM_BUDS =
+            new EnumMap<>(GeodeMineral.class);
+    public static final Map<GeodeMineral, DeferredBlock<AmethystClusterBlock>> LARGE_BUDS =
+            new EnumMap<>(GeodeMineral.class);
+    public static final Map<GeodeMineral, DeferredBlock<AmethystClusterBlock>> CLUSTERS =
+            new EnumMap<>(GeodeMineral.class);
     public static final DeferredBlock<PlantBlock> PLANT_BLOCK = BLOCKS.register("plant_block",
             () -> new PlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(.5f)));
     public static final DeferredBlock<LiquidBlock> MOLTEN_ANDESITE = BLOCKS.register("molten_andesite",
@@ -62,6 +77,7 @@ public final class TFCMBlocks {
                             metal.toolTier().level())));
         }
         registerOres();
+        registerGeodeBlocks();
     }
 
     private TFCMBlocks() {
@@ -91,6 +107,30 @@ public final class TFCMBlocks {
             for (OreGrade grade : OreGrade.values()) registerDimensionOre(TFC_ORES, grade.id() + "_" + ore);
         }
         for (String ore : TfcOre.UNGRADED) registerDimensionOre(TFC_ORES, ore);
+    }
+
+    private static void registerGeodeBlocks() {
+        for (GeodeMineral mineral : GeodeMineral.values()) {
+            String id = mineral.id();
+            MINERAL_BLOCKS.put(mineral, BLOCKS.register("mineral/" + id + "_block",
+                    () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_BLOCK))));
+            SMALL_BUDS.put(mineral, BLOCKS.register("mineral/small_" + id + "_bud",
+                    () -> new AmethystClusterBlock(3, 4,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.SMALL_AMETHYST_BUD))));
+            MEDIUM_BUDS.put(mineral, BLOCKS.register("mineral/medium_" + id + "_bud",
+                    () -> new AmethystClusterBlock(4, 3,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.MEDIUM_AMETHYST_BUD))));
+            LARGE_BUDS.put(mineral, BLOCKS.register("mineral/large_" + id + "_bud",
+                    () -> new AmethystClusterBlock(5, 3,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LARGE_AMETHYST_BUD))));
+            CLUSTERS.put(mineral, BLOCKS.register("mineral/" + id + "_cluster",
+                    () -> new AmethystClusterBlock(7, 3,
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.AMETHYST_CLUSTER))));
+            BUDDING_BLOCKS.put(mineral, BLOCKS.register("mineral/budding_" + id,
+                    () -> new MineralBuddingBlock(SMALL_BUDS.get(mineral), MEDIUM_BUDS.get(mineral),
+                            LARGE_BUDS.get(mineral), CLUSTERS.get(mineral),
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.BUDDING_AMETHYST).randomTicks())));
+        }
     }
 
     private static void registerCustomOre(Map<String, DeferredBlock<Block>> blocks, Ore ore, OreGrade grade) {

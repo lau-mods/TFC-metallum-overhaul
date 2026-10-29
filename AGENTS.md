@@ -80,6 +80,16 @@
 - 完成工具・Headのitem heatは金属固有値を使う。サイズ/重量は完成工具が`very_large/very_heavy`、Headが`large/medium`、Moldが`small/light`とする。外観はTFCのHammer、Mace、Shovelと各Head/Mold modelを再利用する。
 - 範囲工具データ変更後は`./gradlew runData`で同期し、`./gradlew classes build runGameTestServer`と`node tests/e2e/area-tools.mjs`で検証する。
 
+## M10 geodes
+
+- Quartz、Amethyst、Certus Quartzは`mineral/<mineral>_block`、`mineral/budding_<mineral>`、`mineral/small_<mineral>_bud`、`mineral/medium_<mineral>_bud`、`mineral/large_<mineral>_bud`、`mineral/<mineral>_cluster`を使用する。
+- 成熟ClusterはQuartzがCut Quartz 2個、AmethystがTFC Amethyst Gem 2個、Certus QuartzがCertus Quartz 2個を落とす。Budding BlockはSmall、Medium、Large、Clusterの順に成長させる。
+- Budding Blockはrandom tickの1/5で6方向から1方向を等確率に選び、その方向の空気または水源に成長する。既存Budは向きを保ち、最初のSmall Budは選択方向を向く。
+- Bud/Clusterの高さと底面幅はSmall=`3/4`、Medium=`4/3`、Large=`5/3`、Cluster=`7/3`。Amethyst系はVanilla Amethystのblock・bud・cluster textureを再利用し、全Bud/Cluster modelはcutoutで描画する。
+- 3種の標準晶洞は外殻TFC Hardened Basalt、中間Raw Quartzite、内層Budding:鉱物:Raw Quartziteを2:5:1とする。層厚設定はfilling/inner/middle/outer=`1.7/2.2/3.2/4.2`。Bud配置はalternate層を必須とせず、内層候補に含まれるBudding Blockから成長できる。
+- 配置はY -48..32、各300チャンクに平均1回、`underground_ores` stepで行う。TFC 4.2.12に全Overworld biome用tagがないため`tfcm:tfc_overworld`をTFC biome registryから生成し、`tfcm:geode_blocks`には6 block種すべてを含めてpickaxe採掘tagへ接続する。
+- `GeodeDataProvider`がmodel、blockstate、loot、configured/placed feature、biome modifierを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/geodes.mjs`で検証する。
+
 ## Harness runtime
 
 - 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。

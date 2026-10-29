@@ -18,5 +18,7 @@ public final class TFCMDataGenerators {
                 new SurfaceResourceDataProvider(event.getGenerator().getPackOutput()));
         event.getGenerator().addProvider(event.includeServer(),
                 new AreaToolDataProvider(event.getGenerator().getPackOutput()));
+        event.getGenerator().addProvider(event.includeServer(),
+                new GeodeDataProvider(event.getGenerator().getPackOutput()));
     }
 }

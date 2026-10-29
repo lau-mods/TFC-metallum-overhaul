@@ -443,6 +443,18 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
       "classname": "tfcm:empty",
       "name": "moldsforgecastandassemblealltools"
+    },
+    {
+      "acId": "AC-F023-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "threemineralshaveeveryblockitemmodelanddrop"
+    },
+    {
+      "acId": "AC-F023-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "geodesusespecifiedlayersplacementgrowthanddrops"
     }
   ],
   "e2e": [
@@ -493,6 +505,10 @@
     {
       "acId": "AC-F021-003",
       "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F023-001",
+      "scenario": "tests/e2e/geodes.mjs"
     }
   ]
 }

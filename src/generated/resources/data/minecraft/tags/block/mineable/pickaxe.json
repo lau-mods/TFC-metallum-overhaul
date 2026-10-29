@@ -279,6 +279,7 @@
     "tfcm:metal/anvil/titanium",
     "tfcm:metal/anvil/netherite",
     "tfcm:metal/anvil/tungsten_steel",
-    "#tfcm:ores"
+    "#tfcm:ores",
+    "#tfcm:geode_blocks"
   ]
 }

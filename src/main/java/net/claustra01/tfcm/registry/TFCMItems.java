@@ -2,8 +2,10 @@ package net.claustra01.tfcm.registry;
 
 import java.util.EnumMap;
 import java.util.Map;
+import java.util.function.Supplier;
 
 import net.claustra01.tfcm.TFCM;
+import net.claustra01.tfcm.common.block.geode.GeodeMineral;
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.metal.MetalForm;
 import net.claustra01.tfcm.common.material.MaterialPart;
@@ -25,6 +27,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -136,6 +139,18 @@ public final class TFCMItems {
                 () -> new BlockItem(block.get(), new Item.Properties())));
         TFCMBlocks.CHROMITE_ORES.forEach((name, block) -> ITEMS.register("ore/" + name,
                 () -> new BlockItem(block.get(), new Item.Properties())));
+        for (GeodeMineral mineral : GeodeMineral.values()) {
+            registerGeodeBlock("mineral/" + mineral.id() + "_block", TFCMBlocks.MINERAL_BLOCKS.get(mineral));
+            registerGeodeBlock("mineral/budding_" + mineral.id(), TFCMBlocks.BUDDING_BLOCKS.get(mineral));
+            registerGeodeBlock("mineral/small_" + mineral.id() + "_bud", TFCMBlocks.SMALL_BUDS.get(mineral));
+            registerGeodeBlock("mineral/medium_" + mineral.id() + "_bud", TFCMBlocks.MEDIUM_BUDS.get(mineral));
+            registerGeodeBlock("mineral/large_" + mineral.id() + "_bud", TFCMBlocks.LARGE_BUDS.get(mineral));
+            registerGeodeBlock("mineral/" + mineral.id() + "_cluster", TFCMBlocks.CLUSTERS.get(mineral));
+        }
+    }
+
+    private static void registerGeodeBlock(String id, Supplier<? extends Block> block) {
+        ITEMS.register(id, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
     private TFCMItems() {

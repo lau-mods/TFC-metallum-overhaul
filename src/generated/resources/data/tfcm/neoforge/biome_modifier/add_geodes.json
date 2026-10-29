@@ -1,0 +1,10 @@
+{
+  "type": "neoforge:add_features",
+  "biomes": "#tfcm:tfc_overworld",
+  "features": [
+    "tfcm:quartz_geode",
+    "tfcm:amethyst_geode",
+    "tfcm:certus_quartz_geode"
+  ],
+  "step": "underground_ores"
+}

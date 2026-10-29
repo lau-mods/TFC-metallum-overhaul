@@ -93,6 +93,7 @@ neoForge {
             systemProperty 'tfcm.gametest.processingReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.surfaceResourceReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.areaToolReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.geodeReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }
@@ -107,6 +108,7 @@ neoForge {
             systemProperty 'tfcm.gametest.processingReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.surfaceResourceReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.areaToolReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.geodeReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'true'
         }
@@ -122,6 +124,7 @@ neoForge {
             systemProperty 'tfcm.gametest.processingReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.surfaceResourceReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.areaToolReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.geodeReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }
