@@ -47,6 +47,9 @@ public final class GeodeDataProvider implements DataProvider {
         files.add(save(output, data, "tfcm/tags/worldgen/biome/tfc_overworld", tfcBiomes()));
         files.add(save(output, data, "tfcm/neoforge/biome_modifier/add_geodes",
                 biomeModifier(features)));
+        JsonObject customWorldgen = new JsonObject();
+        customWorldgen.addProperty("type", "tfcm:custom_worldgen");
+        files.add(save(output, data, "tfcm/neoforge/biome_modifier/custom_worldgen", customWorldgen));
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new));
     }
 

@@ -455,6 +455,24 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml",
       "classname": "tfcm:empty",
       "name": "geodesusespecifiedlayersplacementgrowthanddrops"
+    },
+    {
+      "acId": "AC-F024-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "threedimensionfileskeeptheirowndefinitions"
+    },
+    {
+      "acId": "AC-F024-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "templatesweightsrockstiersandindicatorsreachtfcconfig"
+    },
+    {
+      "acId": "AC-F024-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "invalidduplicateandemptydefinitionsusedimensionfallbackrules"
     }
   ],
   "e2e": [

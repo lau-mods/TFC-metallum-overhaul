@@ -4,10 +4,12 @@ import java.util.HashMap;
 import java.util.function.Supplier;
 
 import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.claustra01.tfcm.compat.firmalife.FirmaLifeCompat;
 import net.claustra01.tfcm.compat.hotornot.HotOrNotCompat;
 import net.claustra01.tfcm.datagen.TFCMDataGenerators;
 import net.claustra01.tfcm.registry.TFCMArmorMaterials;
+import net.claustra01.tfcm.registry.TFCMBiomeModifiers;
 import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
@@ -22,6 +24,8 @@ import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModList;
+import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.config.ModConfig;
 import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
@@ -31,7 +35,9 @@ import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
 public final class TFCM {
     public static final String MOD_ID = "tfcm";
 
-    public TFCM(IEventBus modBus) {
+    public TFCM(IEventBus modBus, ModContainer container) {
+        container.registerConfig(ModConfig.Type.COMMON, TFCMConfig.SPEC);
+        TFCMBiomeModifiers.SERIALIZERS.register(modBus);
         TFCMArmorMaterials.ARMOR_MATERIALS.register(modBus);
         if (ModList.get().isLoaded("firmalife")) {
             FirmaLifeCompat.register();

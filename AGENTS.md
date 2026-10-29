@@ -90,6 +90,18 @@
 - 配置はY -48..32、各300チャンクに平均1回、`underground_ores` stepで行う。TFC 4.2.12に全Overworld biome用tagがないため`tfcm:tfc_overworld`をTFC biome registryから生成し、`tfcm:geode_blocks`には6 block種すべてを含めてpickaxe採掘tagへ接続する。
 - `GeodeDataProvider`がmodel、blockstate、loot、configured/placed feature、biome modifierを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/geodes.mjs`で検証する。
 
+## M11 YAML worldgen
+
+- Common Configの`enableCustomVeinGeneration`が有効な場合、`config/tfcm/overworld.yaml`、`nether.yaml`、`end.yaml`を正規パスとして読み込む。旧パス・旧構文は扱わない。
+- 各YAMLは`veins`と`geodes`の配列を持つ。Veinは`id`、`type`、`ymin`、`ymax`、`blocks`が必須で、`type`は`tfc:cluster_vein`、`tfc:disc_vein`、`tfc:kaolin_disc_vein`、`tfc:pipe_vein`のいずれかとする。`blocks`は`block`と省略時1の正有限`weight`を持ち、`rocks`はOverworldで必須、Nether/Endでは省略時にそれぞれ`minecraft:netherrack`/`minecraft:end_stone`を使う。
+- Veinの既定値は`rarity=1`、`density=1`、`size=1`、`height=1`、`radius=1`、`min_skew=max_skew=min_slant=max_slant=0`、`sign=0`、`project=false`、`project_offset=false`、`near_lava=false`。`tier`は品位名から正整数weightへのmapで、`{rock}`と`{tier}`を展開し、最終weightはblock weight×tier weightとする。`seed`指定を優先し、未指定時は`random_name`（既定は`id`）のMinecraft hash seedの上下64 bitをXORした値を使う。
+- `indicator`は`block`が必須で、既定値は`rarity=1`、`depth=0`、`underground_rarity=1`、`underground_count=0`。Veinの`ymin`/`ymax`は必須で、type別の`density`、`size`、`height`、`radius`、`min_skew`、`max_skew`、`min_slant`、`max_slant`、`sign`と投影・溶岩条件をTFC configへ渡す。
+- Geodeは`id`、`ymin`、`ymax`、`outer`、`middle`、`inner`、`filling`、`inner_placements`を持ち、`type`は省略時を含め`minecraft:geode`、`rarity`は省略時1とする。`inner`、`filling`、`inner_placements`は`{block, weight}`配列で、`outer`と`middle`は単一blockを指定する。
+- Overworldに有効なYAML鉱脈があればTFCの鉱石鉱脈だけを置換し、なければTFC鉱脈を維持する。既存のGravel・Dike等は維持する。標準TFCM晶洞は除外してYAML晶洞だけを追加する。
+- 置換対象は`tfc:vein/`配下のplaced featureのうち`vein/gravel`と`*_dike`以外とする。`GeodeDataProvider`がmodifier入口の`custom_worldgen.json`を生成する。
+- Nether・Endは各YAMLに明示された鉱脈・晶洞だけを追加し、空設定では追加しない。未登録block、不正type・数値、重複IDは警告してエントリ単位で除外し、重複は先頭を採用する。
+- M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallbackを検証する。
+
 ## Harness runtime
 
 - 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。

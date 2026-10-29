@@ -94,6 +94,7 @@ neoForge {
             systemProperty 'tfcm.gametest.surfaceResourceReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.areaToolReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.geodeReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.worldgenReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }
@@ -109,6 +110,7 @@ neoForge {
             systemProperty 'tfcm.gametest.surfaceResourceReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.areaToolReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.geodeReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.worldgenReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'true'
         }
@@ -125,6 +127,7 @@ neoForge {
             systemProperty 'tfcm.gametest.surfaceResourceReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.areaToolReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.geodeReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.worldgenReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }
@@ -175,6 +178,10 @@ configurations {
     hotOrNotGameTestRuntime
 }
 
+neoForge.runs.configureEach {
+    additionalRuntimeClasspathConfiguration.extendsFrom(configurations.localRuntime)
+}
+
 dependencies {
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
@@ -196,6 +203,8 @@ dependencies {
 
     implementation "maven.modrinth:terrafirmacraft:4.2.12"
     implementation "maven.modrinth:patchouli:1.21.1-93-neoforge"
+    implementation(jarJar("org.yaml:snakeyaml:2.2"))
+    localRuntime "org.yaml:snakeyaml:2.2"
     // TFC Hot or Not's public TongsItem API is optional at runtime.
     compileOnly("maven.modrinth:6fOyWxrE:YtVlCFtf") {
         transitive = false
