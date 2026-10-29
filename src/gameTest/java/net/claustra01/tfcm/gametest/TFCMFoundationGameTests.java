@@ -42,11 +42,13 @@ public final class TFCMFoundationGameTests {
         Path oreReport = Path.of(System.getProperty("tfcm.gametest.oreReport"));
         Path processingReport = Path.of(System.getProperty("tfcm.gametest.processingReport"));
         Path surfaceResourceReport = Path.of(System.getProperty("tfcm.gametest.surfaceResourceReport"));
+        Path areaToolReport = Path.of(System.getProperty("tfcm.gametest.areaToolReport"));
         Files.createDirectories(report.getParent());
         GlobalTestReporter.replaceWith(new CombinedTestReporter(new JUnitLikeTestReporter(report.toFile()),
                 new JUnitLikeTestReporter(equipmentReport.toFile()), new JUnitLikeTestReporter(oreReport.toFile()),
                 new JUnitLikeTestReporter(processingReport.toFile()),
-                new JUnitLikeTestReporter(surfaceResourceReport.toFile())));
+                new JUnitLikeTestReporter(surfaceResourceReport.toFile()),
+                new JUnitLikeTestReporter(areaToolReport.toFile())));
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -116,7 +118,7 @@ public final class TFCMFoundationGameTests {
     }
 
     private record CombinedTestReporter(TestReporter foundation, TestReporter equipment, TestReporter ore,
-            TestReporter processing, TestReporter surfaceResource) implements TestReporter {
+            TestReporter processing, TestReporter surfaceResource, TestReporter areaTool) implements TestReporter {
         @Override
         public void onTestFailed(GameTestInfo test) {
             foundation.onTestFailed(test);
@@ -124,6 +126,7 @@ public final class TFCMFoundationGameTests {
             ore.onTestFailed(test);
             processing.onTestFailed(test);
             surfaceResource.onTestFailed(test);
+            areaTool.onTestFailed(test);
         }
 
         @Override
@@ -133,6 +136,7 @@ public final class TFCMFoundationGameTests {
             ore.onTestSuccess(test);
             processing.onTestSuccess(test);
             surfaceResource.onTestSuccess(test);
+            areaTool.onTestSuccess(test);
         }
 
         @Override
@@ -142,6 +146,7 @@ public final class TFCMFoundationGameTests {
             ore.finish();
             processing.finish();
             surfaceResource.finish();
+            areaTool.finish();
         }
     }
 }

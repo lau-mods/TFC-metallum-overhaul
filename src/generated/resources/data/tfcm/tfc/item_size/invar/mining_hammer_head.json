@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/mining_hammer_head/invar"
+  },
+  "size": "large",
+  "weight": "medium"
+}

@@ -1,0 +1,8 @@
+{
+  "values": [
+    "tfcm:ceramic/mining_hammer_head_mold",
+    "tfcm:ceramic/quarry_hammer_head_mold",
+    "tfcm:ceramic/excavator_head_mold"
+  ],
+  "replace": false
+}

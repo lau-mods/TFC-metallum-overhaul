@@ -1,0 +1,15 @@
+{
+  "type": "tfc:knapping",
+  "knapping_type": "tfc:clay",
+  "pattern": [
+    "#####",
+    " # # ",
+    "     ",
+    "#   #",
+    "#####"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ceramic/unfired_quarry_hammer_head_mold"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:ingots/titanium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/quarry_hammer_head/titanium"
+  },
+  "rules": [
+    "punch_last",
+    "shrink_not_last"
+  ],
+  "tier": 5
+}

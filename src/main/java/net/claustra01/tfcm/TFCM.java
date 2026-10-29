@@ -13,13 +13,16 @@ import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
 import net.claustra01.tfcm.registry.TFCMLootModifiers;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.common.capabilities.ItemCapabilities;
 import net.dries007.tfc.util.data.Deposit;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
@@ -44,12 +47,21 @@ public final class TFCM {
         MetalEnabledCondition.CONDITIONS.register(modBus);
         modBus.addListener(TFCMDataGenerators::gatherData);
         modBus.addListener(TFCM::addAnvilBlocks);
+        modBus.addListener(TFCM::registerCapabilities);
         NeoForge.EVENT_BUS.addListener(TFCM::addReloadListeners);
     }
 
     private static void addAnvilBlocks(BlockEntityTypeAddBlocksEvent event) {
         event.modify(TFCBlockEntities.ANVIL.get(), TFCMBlocks.ANVILS.values().stream()
                 .map(Supplier::get).toArray(Block[]::new));
+    }
+
+    private static void registerCapabilities(RegisterCapabilitiesEvent event) {
+        var molds = TFCMItems.AREA_TOOL_MOLDS.values().stream()
+                .map(Supplier::get).toArray(ItemLike[]::new);
+        event.registerItem(ItemCapabilities.MOLD, ItemCapabilities::forMold, molds);
+        event.registerItem(ItemCapabilities.HEAT, ItemCapabilities::forMold, molds);
+        event.registerItem(ItemCapabilities.FLUID, ItemCapabilities::forMold, molds);
     }
 
     private static void addReloadListeners(AddReloadListenerEvent event) {

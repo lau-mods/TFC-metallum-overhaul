@@ -14,10 +14,18 @@ import net.claustra01.tfcm.common.processing.ProcessingSeries;
 import net.claustra01.tfcm.common.processing.SandPile;
 import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.claustra01.tfcm.common.tool.ToolPart;
+import net.claustra01.tfcm.common.tool.area.AreaMiningTool;
+import net.claustra01.tfcm.common.tool.area.AreaToolMetal;
+import net.claustra01.tfcm.common.tool.area.AreaToolType;
+import net.dries007.tfc.common.items.MoldItem;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -26,6 +34,14 @@ public final class TFCMItems {
     public static final Map<Metal, DeferredItem<BucketItem>> METAL_BUCKETS = new EnumMap<>(Metal.class);
     public static final Map<MaterialPart, DeferredItem<Item>> MATERIAL_PARTS = new EnumMap<>(MaterialPart.class);
     public static final Map<ToolMetal, Map<ToolPart, DeferredItem<Item>>> METAL_ITEMS = new EnumMap<>(ToolMetal.class);
+    public static final Map<AreaToolMetal, Map<AreaToolType, DeferredItem<AreaMiningTool>>> AREA_TOOLS =
+            new EnumMap<>(AreaToolMetal.class);
+    public static final Map<AreaToolMetal, Map<AreaToolType, DeferredItem<Item>>> AREA_TOOL_HEADS =
+            new EnumMap<>(AreaToolMetal.class);
+    public static final Map<AreaToolType, DeferredItem<Item>> UNFIRED_AREA_TOOL_MOLDS =
+            new EnumMap<>(AreaToolType.class);
+    public static final Map<AreaToolType, DeferredItem<MoldItem>> AREA_TOOL_MOLDS =
+            new EnumMap<>(AreaToolType.class);
     public static final Map<Ore, Map<OreGrade, DeferredItem<Item>>> GRADED_ORES = new EnumMap<>(Ore.class);
     public static final Map<Ore, DeferredItem<Item>> ORES = new EnumMap<>(Ore.class);
     public static final Map<Ore, DeferredItem<BlockItem>> SMALL_ORES = new EnumMap<>(Ore.class);
@@ -45,6 +61,24 @@ public final class TFCMItems {
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     static {
+        TagKey<Fluid> moldFluids = TagKey.create(Registries.FLUID,
+                ResourceLocation.fromNamespaceAndPath("tfc", "usable_in_tool_head_mold"));
+        for (AreaToolType type : AreaToolType.values()) {
+            UNFIRED_AREA_TOOL_MOLDS.put(type, ITEMS.registerSimpleItem("ceramic/unfired_" + type.id() + "_head_mold"));
+            AREA_TOOL_MOLDS.put(type, ITEMS.register("ceramic/" + type.id() + "_head_mold",
+                    () -> new MoldItem(() -> 100, moldFluids, new Item.Properties())));
+        }
+        for (AreaToolMetal metal : AreaToolMetal.values()) {
+            Map<AreaToolType, DeferredItem<AreaMiningTool>> tools = new EnumMap<>(AreaToolType.class);
+            Map<AreaToolType, DeferredItem<Item>> heads = new EnumMap<>(AreaToolType.class);
+            for (AreaToolType type : AreaToolType.values()) {
+                tools.put(type, ITEMS.register("metal/" + type.id() + "/" + metal.id(),
+                        () -> new AreaMiningTool(type, metal.tier(), metal.repairIngredient())));
+                heads.put(type, ITEMS.registerSimpleItem("metal/" + type.id() + "_head/" + metal.id()));
+            }
+            AREA_TOOLS.put(metal, tools);
+            AREA_TOOL_HEADS.put(metal, heads);
+        }
         for (MaterialPart part : MaterialPart.values()) {
             MATERIAL_PARTS.put(part, ITEMS.registerSimpleItem(part.id()));
         }

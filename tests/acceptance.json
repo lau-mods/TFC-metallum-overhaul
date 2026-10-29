@@ -341,6 +341,108 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml",
       "classname": "tfcm:empty",
       "name": "sandandrockpowderusespecifiedpoolswithoutdirtypile"
+    },
+    {
+      "acId": "AC-F017-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "mininghammerusescenteredplanesandfilterscandidates"
+    },
+    {
+      "acId": "AC-F017-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "normalplayerbreaktriggerscenteredareamining"
+    },
+    {
+      "acId": "AC-F017-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "mininghammerusescenteredplanesandfilterscandidates"
+    },
+    {
+      "acId": "AC-F017-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsregistermatchingtoolsheadsandtiers"
+    },
+    {
+      "acId": "AC-F018-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryhammerusesspecifiedplanesineverydirection"
+    },
+    {
+      "acId": "AC-F018-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryhammerusesspecifiedplanesineverydirection"
+    },
+    {
+      "acId": "AC-F018-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryandalltoolsrespectcandidateprotection"
+    },
+    {
+      "acId": "AC-F018-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsregistermatchingtoolsheadsandtiers"
+    },
+    {
+      "acId": "AC-F019-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "excavatoronlybreaksshovelcandidates"
+    },
+    {
+      "acId": "AC-F019-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsregistermatchingtoolsheadsandtiers"
+    },
+    {
+      "acId": "AC-F020-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryandalltoolsrespectcandidateprotection"
+    },
+    {
+      "acId": "AC-F020-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "areabreakpreserveslootandblockentities"
+    },
+    {
+      "acId": "AC-F020-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "durabilitystopsandcreativehasnocostordrops"
+    },
+    {
+      "acId": "AC-F020-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "layerspeelonceandareadoesnotrecurse"
+    },
+    {
+      "acId": "AC-F021-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "moldsforgecastandassemblealltools"
+    },
+    {
+      "acId": "AC-F021-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "moldsforgecastandassemblealltools"
+    },
+    {
+      "acId": "AC-F021-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "moldsforgecastandassemblealltools"
     }
   ],
   "e2e": [
@@ -371,6 +473,26 @@
     {
       "acId": "AC-F009-003",
       "scenario": "tests/e2e/ore-samples.mjs"
+    },
+    {
+      "acId": "AC-F017-003",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F018-004",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F019-002",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F021-001",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F021-003",
+      "scenario": "tests/e2e/area-tools.mjs"
     }
   ]
 }

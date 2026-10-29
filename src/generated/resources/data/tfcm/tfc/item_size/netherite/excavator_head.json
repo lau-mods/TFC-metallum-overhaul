@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/excavator_head/netherite"
+  },
+  "size": "large",
+  "weight": "medium"
+}

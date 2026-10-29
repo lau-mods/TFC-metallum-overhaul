@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 5.0,
+  "ingredient": [
+    {
+      "item": "tfcm:metal/mining_hammer/netherite"
+    },
+    {
+      "item": "tfcm:metal/mining_hammer_head/netherite"
+    }
+  ],
+  "welding_temperature": 1228.0
+}

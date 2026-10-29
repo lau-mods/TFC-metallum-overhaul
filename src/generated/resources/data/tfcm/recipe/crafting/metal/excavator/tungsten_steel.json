@@ -1,0 +1,38 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "type": "tfc:advanced_shaped_crafting",
+  "key": {
+    "B": {
+      "item": "tfcm:tool_binding"
+    },
+    "H": {
+      "item": "tfcm:metal/excavator_head/tungsten_steel"
+    },
+    "R": {
+      "item": "tfcm:tool_riveting"
+    },
+    "T": {
+      "item": "tfcm:tool_handle"
+    }
+  },
+  "pattern": [
+    "HBR",
+    " T "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfcm:metal/excavator/tungsten_steel"
+    }
+  }
+}

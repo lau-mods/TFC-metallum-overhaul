@@ -1,0 +1,13 @@
+{
+  "forging_temperature": 642.0,
+  "heat_capacity": 2.857143,
+  "ingredient": [
+    {
+      "item": "tfcm:metal/mining_hammer/black_bronze"
+    },
+    {
+      "item": "tfcm:metal/mining_hammer_head/black_bronze"
+    }
+  ],
+  "welding_temperature": 856.0
+}

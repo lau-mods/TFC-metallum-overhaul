@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/excavator/netherite"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/netherite"
+  },
+  "temperature": 1535.0
+}

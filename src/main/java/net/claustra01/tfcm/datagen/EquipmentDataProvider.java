@@ -10,6 +10,8 @@ import com.google.gson.JsonObject;
 
 import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.claustra01.tfcm.common.tool.ToolPart;
+import net.claustra01.tfcm.common.tool.area.AreaToolMetal;
+import net.claustra01.tfcm.common.tool.area.AreaToolType;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
@@ -64,9 +66,11 @@ public final class EquipmentDataProvider implements DataProvider {
         }
         files.add(save(output, data, "tfc/tags/block/anvils", anvilTag()));
         files.add(save(output, data, "tfc/tags/item/usable_on_tool_rack", toolRack()));
-        files.add(save(output, data, "minecraft/tags/item/pickaxes", toolTag(ToolPart.PICKAXE)));
+        files.add(save(output, data, "minecraft/tags/item/pickaxes", toolTagWithArea(ToolPart.PICKAXE,
+                AreaToolType.MINING_HAMMER, AreaToolType.QUARRY_HAMMER)));
         files.add(save(output, data, "minecraft/tags/item/axes", toolTag(ToolPart.AXE)));
-        files.add(save(output, data, "minecraft/tags/item/shovels", toolTag(ToolPart.SHOVEL)));
+        files.add(save(output, data, "minecraft/tags/item/shovels", toolTagWithArea(ToolPart.SHOVEL,
+                AreaToolType.EXCAVATOR)));
         files.add(save(output, data, "minecraft/tags/item/hoes", toolTag(ToolPart.HOE)));
         files.add(save(output, data, "minecraft/tags/item/swords", toolTag(ToolPart.SWORD)));
         files.add(save(output, data, "c/tags/item/tools/propick", toolTag(ToolPart.PROPICK)));
@@ -534,6 +538,8 @@ public final class EquipmentDataProvider implements DataProvider {
         JsonArray values = new JsonArray();
         for (ToolMetal metal : ToolMetal.values()) for (ToolPart part : ToolPart.values())
             if (part.isFinishedTool()) values.add(id(metal, part));
+        for (AreaToolMetal metal : AreaToolMetal.values()) for (AreaToolType type : AreaToolType.values())
+            values.add("tfcm:metal/" + type.id() + "/" + metal.id());
         json.add("values", values);
         json.addProperty("replace", false);
         return json;
@@ -545,6 +551,14 @@ public final class EquipmentDataProvider implements DataProvider {
         for (ToolMetal metal : ToolMetal.values()) for (ToolPart part : parts) values.add(id(metal, part));
         json.add("values", values);
         json.addProperty("replace", false);
+        return json;
+    }
+
+    private static JsonObject toolTagWithArea(ToolPart part, AreaToolType... types) {
+        JsonObject json = toolTag(part);
+        JsonArray values = json.getAsJsonArray("values");
+        for (AreaToolMetal metal : AreaToolMetal.values()) for (AreaToolType type : types)
+            values.add("tfcm:metal/" + type.id() + "/" + metal.id());
         return json;
     }
 
