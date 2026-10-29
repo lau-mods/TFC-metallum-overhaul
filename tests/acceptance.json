@@ -323,6 +323,24 @@
       "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
       "classname": "tfcm:empty",
       "name": "onlysmallraworemeltsdirectly"
+    },
+    {
+      "acId": "AC-F016-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "alldepositsusefiveindependentspecifiedpools"
+    },
+    {
+      "acId": "AC-F016-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allrockgravelusesspecifiedpoolswithoutgoldnuggets"
+    },
+    {
+      "acId": "AC-F016-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "sandandrockpowderusespecifiedpoolswithoutdirtypile"
     }
   ],
   "e2e": [

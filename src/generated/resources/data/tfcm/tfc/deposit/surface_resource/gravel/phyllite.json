@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/phyllite"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/phyllite",
+  "model_stages": [
+    "tfc:item/pan/full",
+    "tfc:item/pan/half",
+    "tfc:item/pan/empty"
+  ]
+}

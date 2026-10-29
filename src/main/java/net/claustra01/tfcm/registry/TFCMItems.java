@@ -33,6 +33,7 @@ public final class TFCMItems {
     public static final Map<ProcessingSeries, Map<ProcessingForm, DeferredItem<Item>>> ORE_PROCESSING =
             new EnumMap<>(ProcessingSeries.class);
     public static final Map<SandPile, DeferredItem<Item>> SAND_PILES = new EnumMap<>(SandPile.class);
+    public static final DeferredItem<Item> ROCK_POWDER = ITEMS.registerSimpleItem("ore_processing/rock_powder");
     public static final DeferredItem<Item> CUT_QUARTZ = ITEMS.registerSimpleItem("gem/cut_quartz");
     public static final DeferredItem<Item> CERTUS_QUARTZ = ITEMS.registerSimpleItem("gem/certus_quartz");
     public static final DeferredItem<BlockItem> PLANT_BLOCK = ITEMS.register("plant_block",

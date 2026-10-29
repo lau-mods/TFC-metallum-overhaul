@@ -24,6 +24,7 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 @PrefixGameTestTemplate(false)
 public final class TFCMFoundationGameTests {
     private static final String BATCH = "tfcm_foundation";
+    private static boolean reportConfigured;
 
     static {
         StructureUtils.testStructuresDir = System.getProperty("tfcm.gametest.structures");
@@ -34,14 +35,18 @@ public final class TFCMFoundationGameTests {
 
     @BeforeBatch(batch = BATCH)
     public static void configureReport(net.minecraft.server.level.ServerLevel level) throws Exception {
+        if (reportConfigured) return;
+        reportConfigured = true;
         Path report = Path.of(System.getProperty("tfcm.gametest.report"));
         Path equipmentReport = Path.of(System.getProperty("tfcm.gametest.equipmentReport"));
         Path oreReport = Path.of(System.getProperty("tfcm.gametest.oreReport"));
         Path processingReport = Path.of(System.getProperty("tfcm.gametest.processingReport"));
+        Path surfaceResourceReport = Path.of(System.getProperty("tfcm.gametest.surfaceResourceReport"));
         Files.createDirectories(report.getParent());
         GlobalTestReporter.replaceWith(new CombinedTestReporter(new JUnitLikeTestReporter(report.toFile()),
                 new JUnitLikeTestReporter(equipmentReport.toFile()), new JUnitLikeTestReporter(oreReport.toFile()),
-                new JUnitLikeTestReporter(processingReport.toFile())));
+                new JUnitLikeTestReporter(processingReport.toFile()),
+                new JUnitLikeTestReporter(surfaceResourceReport.toFile())));
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -111,13 +116,14 @@ public final class TFCMFoundationGameTests {
     }
 
     private record CombinedTestReporter(TestReporter foundation, TestReporter equipment, TestReporter ore,
-            TestReporter processing) implements TestReporter {
+            TestReporter processing, TestReporter surfaceResource) implements TestReporter {
         @Override
         public void onTestFailed(GameTestInfo test) {
             foundation.onTestFailed(test);
             equipment.onTestFailed(test);
             ore.onTestFailed(test);
             processing.onTestFailed(test);
+            surfaceResource.onTestFailed(test);
         }
 
         @Override
@@ -126,6 +132,7 @@ public final class TFCMFoundationGameTests {
             equipment.onTestSuccess(test);
             ore.onTestSuccess(test);
             processing.onTestSuccess(test);
+            surfaceResource.onTestSuccess(test);
         }
 
         @Override
@@ -134,6 +141,7 @@ public final class TFCMFoundationGameTests {
             equipment.finish();
             ore.finish();
             processing.finish();
+            surfaceResource.finish();
         }
     }
 }

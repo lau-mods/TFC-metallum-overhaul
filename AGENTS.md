@@ -63,6 +63,14 @@
 - 処理itemのmodelはM06の鉱石ごとの`textureSource`とTFC powderを意図的に再利用する。Rocky/Chunkおよび粉体の工程差は形状別modelで表し、新しい第三者textureは追加しない。
 - 変更後は`./gradlew runData`で生成物を同期し、`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを検証する。GameTestは独立した35行の期待表と生成loot JSONを照合する。
 
+## M08 surface resources
+
+- 4鉱石×21岩石のTFC既存Deposit lootだけは、TFC 4.2.12の同一IDを置換する互換データとして`data/tfc/loot_table/deposit/`へ生成する。その他のDeposit定義とlootは`tfcm`名前空間を使用する。
+- Gravel、Sand、Rock PowderのDeposit定義は`data/tfcm/tfc/deposit/surface_resource/`、loot IDは`tfcm:surface_resource/...`とし、loot pool名は出力と確率を表す一意名（Sandだけは表順の`output_<index>`）を使用する。
+- Deposit、Gravel、7色Sand、Rock Powderの各出力は確率を正規化せず、出力ごとに独立したloot poolを生成する。GravelとSandのPowder、およびRock PowderのDirty DustはM07の処理itemへ直接接続する。
+- Gravel、Sand、Rock Powderは鉱石を含む見た目を示さないTFC 4.2.12の汎用Pan model stages `tfc:item/pan/full`、`half`、`empty`を使用する。
+- Rock Powderは`tfcm:ore_processing/rock_powder`として登録し、item modelのtextureに`tfc:item/powder/flux`を再利用するが、製作・採取レシピは追加しない。変更後は`./gradlew runData`と両GameTest runで生成データとTFC Deposit登録を検証する。
+
 ## Harness runtime
 
 - 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。
