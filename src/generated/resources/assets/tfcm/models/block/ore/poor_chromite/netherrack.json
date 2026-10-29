@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "minecraft:block/netherrack",
+    "overlay": "firmalife:block/ore/poor_chromite",
+    "particle": "minecraft:block/netherrack"
+  }
+}

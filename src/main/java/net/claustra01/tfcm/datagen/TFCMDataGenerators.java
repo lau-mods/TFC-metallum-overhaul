@@ -11,5 +11,6 @@ public final class TFCMDataGenerators {
         event.getGenerator().addProvider(event.includeServer(), new MaterialDataProvider(event.getGenerator().getPackOutput()));
         event.getGenerator().addProvider(event.includeServer(),
                 new EquipmentDataProvider(event.getGenerator().getPackOutput()));
+        event.getGenerator().addProvider(event.includeServer(), new OreDataProvider(event.getGenerator().getPackOutput()));
     }
 }

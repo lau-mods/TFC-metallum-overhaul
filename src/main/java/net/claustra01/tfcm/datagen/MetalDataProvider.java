@@ -276,6 +276,7 @@ public final class MetalDataProvider implements DataProvider {
         for (ToolMetal metal : ToolMetal.values()) {
             mineable.getAsJsonArray("values").add("tfcm:metal/anvil/" + metal.getSerializedName());
         }
+        mineable.getAsJsonArray("values").add("#tfcm:ores");
         files.add(save(output, "minecraft/tags/block/mineable/pickaxe", mineable));
         files.add(save(output, "minecraft/tags/block/slabs", allMetalBlocks("_slab")));
         files.add(save(output, "minecraft/tags/block/stairs", allMetalBlocks("_stairs")));

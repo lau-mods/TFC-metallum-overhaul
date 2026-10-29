@@ -45,6 +45,14 @@
 - 4金属の金床tierは`3/5/6/7`。同金属のDouble Ingot 7個で製作し、Heatingで同金属1400 mBへ戻す。TFC Anvil block entityと`tfc:anvils`、pickaxe採掘tagへ統合する。
 - `EquipmentDataProvider`が装備のAnvil/Welding/Crafting/Heating、item heat・size、tool/tag、model、金床のrecipe・loot・blockstateを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/equipment-anvils.mjs`で検証する。
 
+## M06 ores and gems
+
+- 独自鉱石は品位あり16種と品位なし3種を`Ore`で定義する。各TFC母岩、Netherrack、End Stone版は`tfcm:ore/<ore item name>/<host>`、Small Oreと地表sampleは`tfcm:ore/small_<ore>`を使用する。
+- TFCの12×3品位鉱石と17品位なし鉱石にはNetherrack・End Stone版を追加し、元のTFC鉱石itemをdropする。FirmaLife Chromite 3品位×2版はFirmaLife導入時だけ登録し、生成データはmod-loaded conditionを付ける。
+- Nether鉱石は硬度3・耐爆10、End鉱石は硬度3・耐爆9、TFC母岩版はTFCの母岩category hardnessを使用する。全鉱石blockを`c:ores`、`minecraft:mineable/pickaxe`、`tfc:prospectable`、`tfc:mineable/propick`へ追加する。探鉱表示は標準block translation key末尾の`.prospected`を使用する。
+- QuartzとFluoriteはQuernで各Powder 4個にし、両PowderをTFC gem powder・bowl powder tagへ追加する。Cut QuartzはTFC Sandpaperの損耗を使い、Certus Quartzとは別itemとして登録する。
+- `OreDataProvider`がblockstate、model、loot、tag、heating、quern、研磨を`src/generated/resources`へ生成し、langは`src/main/resources/assets/tfcm/lang/`で手動管理する。変更後は`./gradlew runData`と両GameTest runで機能を検証し、`node tests/e2e/ore-samples.mjs`で地表sampleの表示を検証する。
+
 ## Harness runtime
 
 - 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。

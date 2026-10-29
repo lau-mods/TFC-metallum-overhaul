@@ -89,6 +89,7 @@ neoForge {
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
             systemProperty 'tfcm.gametest.report', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.equipmentReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.oreReport', file('build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }
@@ -99,6 +100,7 @@ neoForge {
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
             systemProperty 'tfcm.gametest.report', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.equipmentReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.oreReport', file('build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'true'
         }
@@ -110,6 +112,7 @@ neoForge {
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
             systemProperty 'tfcm.gametest.report', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.equipmentReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.oreReport', file('build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml').getAbsolutePath()
             systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }

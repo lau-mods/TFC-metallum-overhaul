@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tfcm:block/ore/poor_uraninite/chert"
+    }
+  }
+}

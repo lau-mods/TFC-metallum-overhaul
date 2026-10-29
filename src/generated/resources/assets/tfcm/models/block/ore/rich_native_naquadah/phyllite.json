@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/phyllite",
+    "overlay": "tfc:block/ore/rich_garnierite",
+    "particle": "tfc:block/rock/raw/phyllite"
+  }
+}

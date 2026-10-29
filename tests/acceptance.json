@@ -161,6 +161,60 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
       "classname": "tfcm:empty",
       "name": "customanvilsmelttofourteenhundred"
+    },
+    {
+      "acId": "AC-F009-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customoreitemsandgradesarecomplete"
+    },
+    {
+      "acId": "AC-F009-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customorehostsuserockanddimensionstrength"
+    },
+    {
+      "acId": "AC-F009-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "smalloreandgroundcoverhavedistinctacquisition"
+    },
+    {
+      "acId": "AC-F022-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quartzgemsregisterandpolishliketfcgems"
+    },
+    {
+      "acId": "AC-F022-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quartzandfluoritequerntofourtaggedpowders"
+    },
+    {
+      "acId": "AC-F025-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tfcoreshavetwodimensionvariants"
+    },
+    {
+      "acId": "AC-F025-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chromiteexistsonlywithfirmalife"
+    },
+    {
+      "acId": "AC-F025-002",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chromiteexistsonlywithfirmalife"
+    },
+    {
+      "acId": "AC-F025-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "dimensionoresareprospectablemineableanddroptheirore"
     }
   ],
   "e2e": [
@@ -187,6 +241,10 @@
     {
       "acId": "AC-F008-001",
       "scenario": "tests/e2e/equipment-anvils.mjs"
+    },
+    {
+      "acId": "AC-F009-003",
+      "scenario": "tests/e2e/ore-samples.mjs"
     }
   ]
 }

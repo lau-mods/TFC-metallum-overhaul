@@ -1,15 +1,21 @@
 package net.claustra01.tfcm.registry;
 
 import java.util.EnumMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.block.PlantBlock;
 import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.common.ore.Ore;
+import net.claustra01.tfcm.common.ore.OreGrade;
+import net.claustra01.tfcm.common.ore.TfcOre;
 import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
+import net.dries007.tfc.common.blocks.GroundcoverBlock;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
 import net.dries007.tfc.common.blocks.devices.AnvilBlock;
+import net.dries007.tfc.common.blocks.rock.Rock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.SlabBlock;
@@ -26,6 +32,11 @@ public final class TFCMBlocks {
     public static final Map<Metal, DeferredBlock<StairBlock>> METAL_STAIRS = new EnumMap<>(Metal.class);
     public static final Map<Metal, DeferredBlock<LiquidBlock>> METAL_FLUID_BLOCKS = new EnumMap<>(Metal.class);
     public static final Map<ToolMetal, DeferredBlock<AnvilBlock>> ANVILS = new EnumMap<>(ToolMetal.class);
+    public static final Map<Ore, Map<String, DeferredBlock<Block>>> ORES = new EnumMap<>(Ore.class);
+    public static final Map<Ore, DeferredBlock<GroundcoverBlock>> SMALL_ORES = new EnumMap<>(Ore.class);
+    public static final Map<String, DeferredBlock<Block>> TFC_ORES = new LinkedHashMap<>();
+    public static final Map<String, DeferredBlock<Block>> CHROMITE_ORES = new LinkedHashMap<>();
+    public static final Map<Ore, DeferredBlock<GroundcoverBlock>> ORE_GROUNDCOVER = new EnumMap<>(Ore.class);
     public static final DeferredBlock<PlantBlock> PLANT_BLOCK = BLOCKS.register("plant_block",
             () -> new PlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(.5f)));
     public static final DeferredBlock<LiquidBlock> MOLTEN_ANDESITE = BLOCKS.register("molten_andesite",
@@ -50,6 +61,7 @@ public final class TFCMBlocks {
                             .requiresCorrectToolForDrops().blockEntity(TFCBlockEntities.ANVIL),
                             metal.toolTier().level())));
         }
+        registerOres();
     }
 
     private TFCMBlocks() {
@@ -57,5 +69,52 @@ public final class TFCMBlocks {
 
     private static BlockBehaviour.Properties metalProperties() {
         return BlockBehaviour.Properties.of().mapColor(MapColor.METAL).requiresCorrectToolForDrops().strength(5f, 6f);
+    }
+
+    private static void registerOres() {
+        for (Ore ore : Ore.values()) {
+            Map<String, DeferredBlock<Block>> blocks = new LinkedHashMap<>();
+            ORES.put(ore, blocks);
+            if (ore.graded()) {
+                SMALL_ORES.put(ore, BLOCKS.register("ore/small_" + ore.id(),
+                        () -> GroundcoverBlock.looseOre(BlockBehaviour.Properties.of().strength(.4f).noOcclusion())));
+                for (OreGrade grade : OreGrade.values()) registerCustomOre(blocks, ore, grade);
+            } else {
+                registerCustomOre(blocks, ore, null);
+                if (ore == Ore.FLUORITE || ore == Ore.QUARTZ) {
+                    ORE_GROUNDCOVER.put(ore, BLOCKS.register("ore/small_" + ore.id(),
+                            () -> GroundcoverBlock.looseOre(BlockBehaviour.Properties.of().strength(.4f).noOcclusion())));
+                }
+            }
+        }
+        for (String ore : TfcOre.GRADED) {
+            for (OreGrade grade : OreGrade.values()) registerDimensionOre(TFC_ORES, grade.id() + "_" + ore);
+        }
+        for (String ore : TfcOre.UNGRADED) registerDimensionOre(TFC_ORES, ore);
+    }
+
+    private static void registerCustomOre(Map<String, DeferredBlock<Block>> blocks, Ore ore, OreGrade grade) {
+        String name = ore.itemName(grade);
+        for (Rock rock : Rock.values()) {
+            registerOre(blocks, name, rock.getSerializedName(), rock.category().hardness(6.5f), 10);
+        }
+        registerOre(blocks, name, "netherrack", 3, 10);
+        registerOre(blocks, name, "end_stone", 3, 9);
+    }
+
+    public static void registerDimensionOre(Map<String, DeferredBlock<Block>> target, String name) {
+        registerOre(target, name, "netherrack", 3, 10);
+        registerOre(target, name, "end_stone", 3, 9);
+    }
+
+    private static void registerOre(Map<String, DeferredBlock<Block>> target, String name, String host,
+            float hardness, float resistance) {
+        String key = name + "/" + host;
+        target.put(key, BLOCKS.register("ore/" + key, () -> new Block(oreProperties(hardness, resistance))));
+    }
+
+    private static BlockBehaviour.Properties oreProperties(float hardness, float resistance) {
+        return BlockBehaviour.Properties.of().mapColor(MapColor.STONE).requiresCorrectToolForDrops()
+                .strength(hardness, resistance);
     }
 }

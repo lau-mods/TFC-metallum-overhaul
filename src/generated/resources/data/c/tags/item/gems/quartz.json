@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:gem/cut_quartz",
+    "tfcm:gem/certus_quartz"
+  ]
+}

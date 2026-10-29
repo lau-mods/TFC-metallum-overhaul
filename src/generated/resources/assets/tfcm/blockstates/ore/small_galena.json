@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/galena"
+      },
+      {
+        "model": "tfcm:block/groundcover/galena",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/galena",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/galena",
+        "y": 270
+      }
+    ]
+  }
+}

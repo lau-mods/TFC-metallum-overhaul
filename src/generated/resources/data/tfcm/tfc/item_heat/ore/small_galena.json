@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore/small_galena"
+  },
+  "heat_capacity": 0.33333334,
+  "forging_temperature": 198.0,
+  "welding_temperature": 264.0
+}

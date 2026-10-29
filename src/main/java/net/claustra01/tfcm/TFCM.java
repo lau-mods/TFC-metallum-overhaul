@@ -3,6 +3,7 @@ package net.claustra01.tfcm;
 import java.util.function.Supplier;
 
 import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
+import net.claustra01.tfcm.compat.firmalife.FirmaLifeCompat;
 import net.claustra01.tfcm.compat.hotornot.HotOrNotCompat;
 import net.claustra01.tfcm.datagen.TFCMDataGenerators;
 import net.claustra01.tfcm.registry.TFCMArmorMaterials;
@@ -23,6 +24,9 @@ public final class TFCM {
 
     public TFCM(IEventBus modBus) {
         TFCMArmorMaterials.ARMOR_MATERIALS.register(modBus);
+        if (ModList.get().isLoaded("firmalife")) {
+            FirmaLifeCompat.register();
+        }
         if (ModList.get().isLoaded("tfchotornot")) {
             HotOrNotCompat.register(modBus);
         }

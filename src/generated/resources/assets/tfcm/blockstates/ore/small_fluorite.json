@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/fluorite"
+      },
+      {
+        "model": "tfcm:block/groundcover/fluorite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/fluorite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/fluorite",
+        "y": 270
+      }
+    ]
+  }
+}

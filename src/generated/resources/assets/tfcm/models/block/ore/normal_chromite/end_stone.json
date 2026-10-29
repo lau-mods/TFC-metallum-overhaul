@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "minecraft:block/end_stone",
+    "overlay": "firmalife:block/ore/normal_chromite",
+    "particle": "minecraft:block/end_stone"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/zircon"
+      },
+      {
+        "model": "tfcm:block/groundcover/zircon",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/zircon",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/zircon",
+        "y": 270
+      }
+    ]
+  }
+}

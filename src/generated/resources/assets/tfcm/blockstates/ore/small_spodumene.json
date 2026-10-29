@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/spodumene"
+      },
+      {
+        "model": "tfcm:block/groundcover/spodumene",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/spodumene",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/spodumene",
+        "y": 270
+      }
+    ]
+  }
+}

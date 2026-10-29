@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/mithril_matrix"
+      },
+      {
+        "model": "tfcm:block/groundcover/mithril_matrix",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/mithril_matrix",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/mithril_matrix",
+        "y": 270
+      }
+    ]
+  }
+}

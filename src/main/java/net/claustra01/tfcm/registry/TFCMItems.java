@@ -7,6 +7,8 @@ import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.metal.MetalForm;
 import net.claustra01.tfcm.common.material.MaterialPart;
+import net.claustra01.tfcm.common.ore.Ore;
+import net.claustra01.tfcm.common.ore.OreGrade;
 import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.claustra01.tfcm.common.tool.ToolPart;
 import net.minecraft.world.item.BlockItem;
@@ -21,6 +23,12 @@ public final class TFCMItems {
     public static final Map<Metal, DeferredItem<BucketItem>> METAL_BUCKETS = new EnumMap<>(Metal.class);
     public static final Map<MaterialPart, DeferredItem<Item>> MATERIAL_PARTS = new EnumMap<>(MaterialPart.class);
     public static final Map<ToolMetal, Map<ToolPart, DeferredItem<Item>>> METAL_ITEMS = new EnumMap<>(ToolMetal.class);
+    public static final Map<Ore, Map<OreGrade, DeferredItem<Item>>> GRADED_ORES = new EnumMap<>(Ore.class);
+    public static final Map<Ore, DeferredItem<Item>> ORES = new EnumMap<>(Ore.class);
+    public static final Map<Ore, DeferredItem<BlockItem>> SMALL_ORES = new EnumMap<>(Ore.class);
+    public static final Map<Ore, DeferredItem<Item>> ORE_POWDERS = new EnumMap<>(Ore.class);
+    public static final DeferredItem<Item> CUT_QUARTZ = ITEMS.registerSimpleItem("gem/cut_quartz");
+    public static final DeferredItem<Item> CERTUS_QUARTZ = ITEMS.registerSimpleItem("gem/certus_quartz");
     public static final DeferredItem<BlockItem> PLANT_BLOCK = ITEMS.register("plant_block",
             () -> new BlockItem(TFCMBlocks.PLANT_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<Item> HIGH_CARBON_TUNGSTEN_STEEL = ITEMS.registerSimpleItem(
@@ -57,6 +65,26 @@ public final class TFCMItems {
                     () -> new BucketItem(TFCMFluids.METALS.get(metal).source().get(),
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))));
         }
+        for (Ore ore : Ore.values()) {
+            if (ore.graded()) {
+                Map<OreGrade, DeferredItem<Item>> grades = new EnumMap<>(OreGrade.class);
+                for (OreGrade grade : OreGrade.values()) grades.put(grade,
+                        ITEMS.registerSimpleItem("ore/" + ore.itemName(grade)));
+                GRADED_ORES.put(ore, grades);
+                SMALL_ORES.put(ore, ITEMS.register("ore/small_" + ore.id(),
+                        () -> new BlockItem(TFCMBlocks.SMALL_ORES.get(ore).get(), new Item.Properties())));
+            } else {
+                ORES.put(ore, ITEMS.registerSimpleItem("ore/" + ore.id()));
+            }
+        }
+        ORE_POWDERS.put(Ore.QUARTZ, ITEMS.registerSimpleItem("powder/quartz"));
+        ORE_POWDERS.put(Ore.FLUORITE, ITEMS.registerSimpleItem("powder/fluorite"));
+        TFCMBlocks.ORES.values().forEach(blocks -> blocks.forEach((name, block) -> ITEMS.register("ore/" + name,
+                () -> new BlockItem(block.get(), new Item.Properties()))));
+        TFCMBlocks.TFC_ORES.forEach((name, block) -> ITEMS.register("ore/" + name,
+                () -> new BlockItem(block.get(), new Item.Properties())));
+        TFCMBlocks.CHROMITE_ORES.forEach((name, block) -> ITEMS.register("ore/" + name,
+                () -> new BlockItem(block.get(), new Item.Properties())));
     }
 
     private TFCMItems() {

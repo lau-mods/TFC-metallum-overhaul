@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "minecraft:block/end_stone",
+    "overlay": "tfc:block/ore/poor_hematite",
+    "particle": "minecraft:block/end_stone"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/native_naquadah"
+      },
+      {
+        "model": "tfcm:block/groundcover/native_naquadah",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/native_naquadah",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/native_naquadah",
+        "y": 270
+      }
+    ]
+  }
+}

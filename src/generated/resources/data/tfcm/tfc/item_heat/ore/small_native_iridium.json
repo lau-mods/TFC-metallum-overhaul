@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore/small_native_iridium"
+  },
+  "heat_capacity": 0.28571433,
+  "forging_temperature": 921.0,
+  "welding_temperature": 1228.0
+}

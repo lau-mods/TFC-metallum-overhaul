@@ -1,0 +1,8 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore/small_native_platinum"
+  },
+  "heat_capacity": 0.28571433,
+  "forging_temperature": 1038.0,
+  "welding_temperature": 1384.0
+}

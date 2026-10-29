@@ -36,9 +36,10 @@ public final class TFCMFoundationGameTests {
     public static void configureReport(net.minecraft.server.level.ServerLevel level) throws Exception {
         Path report = Path.of(System.getProperty("tfcm.gametest.report"));
         Path equipmentReport = Path.of(System.getProperty("tfcm.gametest.equipmentReport"));
+        Path oreReport = Path.of(System.getProperty("tfcm.gametest.oreReport"));
         Files.createDirectories(report.getParent());
         GlobalTestReporter.replaceWith(new CombinedTestReporter(new JUnitLikeTestReporter(report.toFile()),
-                new JUnitLikeTestReporter(equipmentReport.toFile())));
+                new JUnitLikeTestReporter(equipmentReport.toFile()), new JUnitLikeTestReporter(oreReport.toFile())));
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -107,23 +108,26 @@ public final class TFCMFoundationGameTests {
         }
     }
 
-    private record CombinedTestReporter(TestReporter foundation, TestReporter equipment) implements TestReporter {
+    private record CombinedTestReporter(TestReporter foundation, TestReporter equipment, TestReporter ore) implements TestReporter {
         @Override
         public void onTestFailed(GameTestInfo test) {
             foundation.onTestFailed(test);
             equipment.onTestFailed(test);
+            ore.onTestFailed(test);
         }
 
         @Override
         public void onTestSuccess(GameTestInfo test) {
             foundation.onTestSuccess(test);
             equipment.onTestSuccess(test);
+            ore.onTestSuccess(test);
         }
 
         @Override
         public void finish() {
             foundation.finish();
             equipment.finish();
+            ore.finish();
         }
     }
 }
