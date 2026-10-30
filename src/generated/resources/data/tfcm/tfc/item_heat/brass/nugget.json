@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 558.0,
+  "heat_capacity": 0.2857143,
+  "ingredient": {
+    "item": "tfcm:metal/nugget/brass"
+  },
+  "welding_temperature": 744.0
+}

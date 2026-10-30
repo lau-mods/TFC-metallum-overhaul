@@ -17,6 +17,7 @@ import com.google.gson.JsonParser;
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.metal.MetalForm;
+import net.claustra01.tfcm.common.metal.TfcMetal;
 import net.claustra01.tfcm.common.material.MaterialPart;
 import net.claustra01.tfcm.common.ore.Ore;
 import net.claustra01.tfcm.common.processing.ProcessingForm;
@@ -130,6 +131,17 @@ public final class TFCMAssetIntegrityGameTests {
                         ResourceLocation.parse("c:" + form.tag() + "/" + metal.id()));
                 require(stack.is(tag), "Metal form tag " + form.item(metal));
             }
+        }
+        for (TfcMetal metal : TfcMetal.values()) for (MetalForm form : MetalForm.values()) {
+            if (!form.isAddedForm()) continue;
+            require(metalShapes.add(metal.item(form)), "Duplicate metal shape " + metal.item(form));
+            ItemStack stack = BuiltInRegistries.ITEM.get(ResourceLocation.parse(metal.item(form))).getDefaultInstance();
+            require(!stack.isEmpty(), "TFC metal form " + metal.item(form));
+            require(HeatCapability.getDefinition(stack) != null, "TFC metal heat " + metal.item(form));
+            require(ItemSizeManager.getDefinition(stack) != null, "TFC metal size " + metal.item(form));
+            require(stack.is(TagKey.create(Registries.ITEM, ResourceLocation.parse("c:" + form.tag() + "/" + metal.id())))
+                    && stack.is(TagKey.create(Registries.ITEM, ResourceLocation.parse("c:" + form.tag()))),
+                    "TFC metal form tag " + metal.item(form));
         }
     }
 

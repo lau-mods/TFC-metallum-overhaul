@@ -155,6 +155,25 @@
     {
       "id": "#c:nuggets/super_alloy",
       "required": false
-    }
+    },
+    "#c:nuggets/bismuth",
+    "#c:nuggets/bismuth_bronze",
+    "#c:nuggets/black_bronze",
+    "#c:nuggets/black_steel",
+    "#c:nuggets/blue_steel",
+    "#c:nuggets/brass",
+    "#c:nuggets/bronze",
+    "#c:nuggets/cast_iron",
+    "#c:nuggets/copper",
+    "#c:nuggets/gold",
+    "#c:nuggets/nickel",
+    "#c:nuggets/red_steel",
+    "#c:nuggets/rose_gold",
+    "#c:nuggets/silver",
+    "#c:nuggets/steel",
+    "#c:nuggets/sterling_silver",
+    "#c:nuggets/tin",
+    "#c:nuggets/wrought_iron",
+    "#c:nuggets/zinc"
   ]
 }

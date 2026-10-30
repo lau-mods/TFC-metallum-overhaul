@@ -2,20 +2,29 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/blue_steel"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/blue_steel"
+    },
+    "R": {
+      "tag": "c:rings/blue_steel"
+    },
     "X": {
       "item": "tfcm:metal/mining_hammer_head/blue_steel"
-    },
-    "Y": {
-      "item": "tfc:metal/rod/blue_steel"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    "GHR",
+    "RL "
   ],
   "result": {
     "modifiers": [

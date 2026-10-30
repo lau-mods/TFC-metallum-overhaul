@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 924.00006,
+  "heat_capacity": 0.34285712,
+  "ingredient": {
+    "item": "tfcm:metal/ring/blue_steel"
+  },
+  "welding_temperature": 1232.0
+}

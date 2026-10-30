@@ -2,20 +2,22 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/bronze"
+    },
+    "N": {
+      "tag": "c:rivets/bronze"
+    },
     "X": {
       "item": "tfcm:metal/quarry_hammer_head/bronze"
-    },
-    "Y": {
-      "item": "tfc:metal/rod/bronze"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    " HG"
   ],
   "result": {
     "modifiers": [

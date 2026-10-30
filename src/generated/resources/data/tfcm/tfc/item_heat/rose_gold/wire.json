@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 576.0,
+  "heat_capacity": 0.71428573,
+  "ingredient": {
+    "item": "tfcm:metal/wire/rose_gold"
+  },
+  "welding_temperature": 768.0
+}

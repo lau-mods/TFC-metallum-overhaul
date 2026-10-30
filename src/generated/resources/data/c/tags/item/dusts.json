@@ -155,6 +155,25 @@
     {
       "id": "#c:dusts/super_alloy",
       "required": false
-    }
+    },
+    "#c:dusts/bismuth",
+    "#c:dusts/bismuth_bronze",
+    "#c:dusts/black_bronze",
+    "#c:dusts/black_steel",
+    "#c:dusts/blue_steel",
+    "#c:dusts/brass",
+    "#c:dusts/bronze",
+    "#c:dusts/cast_iron",
+    "#c:dusts/copper",
+    "#c:dusts/gold",
+    "#c:dusts/nickel",
+    "#c:dusts/red_steel",
+    "#c:dusts/rose_gold",
+    "#c:dusts/silver",
+    "#c:dusts/steel",
+    "#c:dusts/sterling_silver",
+    "#c:dusts/tin",
+    "#c:dusts/wrought_iron",
+    "#c:dusts/zinc"
   ]
 }

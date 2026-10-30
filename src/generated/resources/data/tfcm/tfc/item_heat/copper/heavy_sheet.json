@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 648.0,
+  "heat_capacity": 17.142859,
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/copper"
+  },
+  "welding_temperature": 864.0
+}

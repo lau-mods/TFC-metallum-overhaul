@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/black_bronze"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/rivet/black_bronze"
+  },
+  "rules": [
+    "draw_not_last",
+    "bend_any",
+    "hit_any"
+  ],
+  "tier": 2
+}

@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/sterling_silver"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/sterling_silver"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ]
+}

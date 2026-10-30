@@ -2,20 +2,29 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/wrought_iron"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/wrought_iron"
+    },
+    "R": {
+      "tag": "c:rings/wrought_iron"
+    },
     "X": {
       "item": "tfcm:metal/mining_hammer_head/wrought_iron"
-    },
-    "Y": {
-      "item": "tfc:metal/rod/wrought_iron"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    "GHR",
+    "RL "
   ],
   "result": {
     "modifiers": [

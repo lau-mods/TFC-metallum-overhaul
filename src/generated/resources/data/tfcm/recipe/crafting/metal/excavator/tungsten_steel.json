@@ -8,20 +8,29 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/tungsten_steel"
+    },
+    "L": {
+      "tag": "c:leather/strip"
+    },
+    "N": {
+      "tag": "c:rivets/tungsten_steel"
+    },
+    "R": {
+      "tag": "c:rings/tungsten_steel"
+    },
     "X": {
       "item": "tfcm:metal/excavator_head/tungsten_steel"
-    },
-    "Y": {
-      "item": "tfcm:metal/rod/tungsten_steel"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    "GHR",
+    "RL "
   ],
   "result": {
     "modifiers": [

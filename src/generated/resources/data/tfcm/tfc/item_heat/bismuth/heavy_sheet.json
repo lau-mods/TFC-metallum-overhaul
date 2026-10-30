@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 162.0,
+  "heat_capacity": 42.857143,
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/bismuth"
+  },
+  "welding_temperature": 216.0
+}

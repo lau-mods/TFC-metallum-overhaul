@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/wrought_iron"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/wrought_iron"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ],
+  "tier": 3
+}

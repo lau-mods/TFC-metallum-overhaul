@@ -2,20 +2,22 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/copper"
+    },
+    "N": {
+      "tag": "c:rivets/copper"
+    },
     "X": {
       "item": "tfcm:metal/mining_hammer_head/copper"
-    },
-    "Y": {
-      "item": "tfc:metal/rod/copper"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    " HG"
   ],
   "result": {
     "modifiers": [

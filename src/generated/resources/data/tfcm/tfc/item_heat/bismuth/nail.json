@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 162.0,
+  "heat_capacity": 0.35714287,
+  "ingredient": {
+    "item": "tfcm:metal/nail/bismuth"
+  },
+  "welding_temperature": 216.0
+}

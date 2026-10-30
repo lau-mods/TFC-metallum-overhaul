@@ -26,6 +26,7 @@
 - Gearは`punch_last,hit_second_last,upset_third_last`、Nailは`punch_last,hit_not_last,bend_not_last`、Ringは`hit_last,draw_second_last,draw_third_last`、Rivetは`draw_not_last,bend_any,hit_any`、Screwは`hit_any,hit_any,draw_last`、Stamenは`bend_last,draw_second_last,draw_third_last`、それ以外のAnvil形状はTFC Sheet/Rodと同じ`hit_last,hit_second_last,hit_third_last`を使用する。TFC 4.2.12本体には拡張形状とPlateの同名レシピはないため、拡張形状の数値・操作列はTFC本体からは照合できない。
 - NuggetはIngot 1→9、Nugget 9→Ingot 1のCrafting Grid加工。溶融量はNugget 1個10 mB、9個90 mBとし、100 mBへの補正を行わない。DustはIngot 1→Dust 1のTFC Quern加工、PlateとDustの溶融量は各100 mB。Dustは鉱石Powderと別アイテム・別タグにする。
 - 金属別common item tagは`c:<form>s/<metal>`（Heavy Sheetは`c:heavy_sheets/<metal>`）を用い、集合タグ`c:<form>s`にも含める。各形状のHeating、item heat、size/weight、翻訳、modelとtextureを生成・登録する。
+- TFC More Items・TFC Metal Tools相当として、SheetとRodを持つTFC 4.2.12の19金属（`TfcMetal`: Bismuth、Bismuth Bronze、Black Bronze、Black Steel、Blue Steel、Brass、Bronze、Cast Iron、Copper、Gold、Nickel、Red Steel、Rose Gold、Silver、Steel、Sterling Silver、Tin、Wrought Iron、Zinc）にもF-004・F-005の12形状を`tfcm:metal/<form>/<metal>`で常設する。加工規則、個数、溶融量、size/weightは上記の同形状と同じとし、Anvil・Welding tierはTFC本体の同金属Rod/Sheetレシピに合わせる（TFCがtierを持たない金属は省略）。熱特性はTFCの同金属Ingot item heatとfluid heat、溶融先は`tfc:metal/<metal>`、Nugget 9個はTFC Ingotへ戻す。`c:<form>s/<metal>`と集合タグへ含め、textureはInvarの同形状をTFCの同金属Ingot配色へ置き換えた派生物とする。
 - `./gradlew runData`で生成物を同期し、`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両GameTest runを検証する。M03 GameTestは9拡張形状の登録・加工・熱、Plate、Nugget、Dust、39金属への適用を確認する。
 
 ## M04 material parts
@@ -76,6 +77,8 @@
 - Mining HammerとExcavatorは起点中央の3×3、Quarry Hammerは床・天井で起点中央の5×5、壁で起点の上3・下1・左右2の5×5を処理する。各工具の採掘速度は素材tierの40%とする。
 - 追加候補ごとにmineable tagとtierを確認し、個別のBreak Eventと通常のサーバー破壊・loot処理を通す。Survivalでは1ブロックごとに耐久1を消費し、Creativeではdropと耐久消費を行わない。多層blockは通常破壊経路を通して1層だけ減らし、追加破壊を再帰起動しない。
 - 3工具とHeadはTFCの工具金属9種とInvar、Titanium、Netherite、Tungsten Steelへ展開する。HeadはIngot 1個を金属tierの金床で加工し、Mining/Quarry Hammerは`punch_last,shrink_not_last`、Excavatorは`punch_last,hit_not_last`を使用する。鋳造可能な4金属は焼成済みMoldと100 mBで鋳造する。
+- 完成工具の組立はTFC Mining HammerのTFC Metal Tools版を常に使い、`crafting/metal/<tool>/<metal>`へ条件なしで生成する。tier 2以下は` NX/ HG`（`#c:rivets/<metal>`、Head、`#c:rods/<metal>`、`#c:glue`）、tier 3以上は` NX/GHR/RL `で`#c:rings/<metal>`とLeather（Mining/Quarry Hammerは`#c:leather/string`、Excavatorは`#c:leather/strip`）を加え、Headの鍛造bonusを引き継ぐ。
+- 3工具の持ち手は同金属のHammer（TFC金属はTFC 4.2.12、TFCM金属はTFCM）の柄に合わせ、木材色は共通、Head直下の上3段と末端3段の金属部（キャップ・カラーの有無と形）だけを金属ごとに変える。
 - 未焼成MoldのKnapping patternはMining Hammer=`#####/     /     /## ##/#####`、Quarry Hammer=`##   /##   /     /   ##/   ##`、Excavator=`#####/ ### /  #  /  #  /     `とし、1399℃で焼成する。
 - 完成工具・Headのitem heatは金属固有値を使う。サイズ/重量は完成工具が`very_large/very_heavy`、Headが`large/medium`、Moldが`small/light`とする。外観はTFCのHammer、Mace、Shovelと各Head/Mold modelを再利用する。
 - 範囲工具データ変更後は`./gradlew runData`で同期し、`./gradlew classes build runGameTestServer`と`node tests/e2e/area-tools.mjs`で検証する。

@@ -155,6 +155,25 @@
     {
       "id": "#c:foils/super_alloy",
       "required": false
-    }
+    },
+    "#c:foils/bismuth",
+    "#c:foils/bismuth_bronze",
+    "#c:foils/black_bronze",
+    "#c:foils/black_steel",
+    "#c:foils/blue_steel",
+    "#c:foils/brass",
+    "#c:foils/bronze",
+    "#c:foils/cast_iron",
+    "#c:foils/copper",
+    "#c:foils/gold",
+    "#c:foils/nickel",
+    "#c:foils/red_steel",
+    "#c:foils/rose_gold",
+    "#c:foils/silver",
+    "#c:foils/steel",
+    "#c:foils/sterling_silver",
+    "#c:foils/tin",
+    "#c:foils/wrought_iron",
+    "#c:foils/zinc"
   ]
 }

@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/bronze"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/bronze"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ],
+  "tier": 2
+}

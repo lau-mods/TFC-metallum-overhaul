@@ -1,0 +1,14 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/blue_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/blue_steel"
+  },
+  "second_input": {
+    "tag": "c:sheets/blue_steel"
+  },
+  "tier": 6
+}

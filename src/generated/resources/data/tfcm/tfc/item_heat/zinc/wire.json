@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 252.00002,
+  "heat_capacity": 1.1904763,
+  "ingredient": {
+    "item": "tfcm:metal/wire/zinc"
+  },
+  "welding_temperature": 336.0
+}

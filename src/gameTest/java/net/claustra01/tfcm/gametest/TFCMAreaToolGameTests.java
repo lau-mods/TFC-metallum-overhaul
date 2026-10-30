@@ -377,13 +377,23 @@ public final class TFCMAreaToolGameTests {
                     var manager = helper.getLevel().getServer().getRecipeManager();
                     CraftingRecipe assembly = (CraftingRecipe) manager.byKey(ResourceLocation.parse(
                             "tfcm:crafting/metal/" + type.id() + "/" + metal.id())).orElseThrow().value();
-                    ItemStack rod = BuiltInRegistries.ITEM.get(ResourceLocation.parse(
-                            metal.namespace() + ":metal/rod/" + metal.id())).getDefaultInstance();
-                    CraftingInput input = CraftingInput.of(3, 3, List.of(ItemStack.EMPTY, ItemStack.EMPTY, head,
-                            ItemStack.EMPTY, rod, ItemStack.EMPTY, Items.STICK.getDefaultInstance(), ItemStack.EMPTY, ItemStack.EMPTY));
+                    ItemStack rod = stack(metal.namespace() + ":metal/rod/" + metal.id());
+                    ItemStack rivet = stack("tfcm:metal/rivet/" + metal.id());
+                    ItemStack glue = stack("tfc:glue");
+                    CraftingInput input;
+                    if (metal.tierLevel() <= 2) {
+                        input = CraftingInput.of(3, 2, List.of(ItemStack.EMPTY, rivet, head,
+                                ItemStack.EMPTY, rod, glue));
+                    } else {
+                        ItemStack ring = stack("tfcm:metal/ring/" + metal.id());
+                        ItemStack leather = stack(type == AreaToolType.EXCAVATOR
+                                ? "tfcm:leather_strip" : "tfcm:leather_string");
+                        input = CraftingInput.of(3, 3, List.of(ItemStack.EMPTY, rivet, head,
+                                glue, rod, ring, ring, leather, ItemStack.EMPTY));
+                    }
                     require(assembly.matches(input, helper.getLevel())
                             && assembly.assemble(input, helper.getLevel().registryAccess()).is(finished.getItem()),
-                            "Head, metal rod and wooden handle do not assemble " + type.id());
+                            "Head and metal tool parts do not assemble " + type.id() + " " + metal.id());
                     HeatingRecipe headHeating = (HeatingRecipe) manager.byKey(ResourceLocation.parse(
                             "tfcm:heating/metal/" + type.id() + "_head/" + metal.id())).orElseThrow().value();
                     HeatingRecipe toolHeating = (HeatingRecipe) manager.byKey(ResourceLocation.parse(
@@ -427,6 +437,12 @@ public final class TFCMAreaToolGameTests {
 
     private static ItemStack tool(AreaToolMetal metal, AreaToolType type) {
         return TFCMItems.AREA_TOOLS.get(metal).get(type).toStack();
+    }
+
+    private static ItemStack stack(String id) {
+        ItemStack stack = BuiltInRegistries.ITEM.get(ResourceLocation.parse(id)).getDefaultInstance();
+        require(!stack.isEmpty(), "Missing assembly part " + id);
+        return stack;
     }
 
     private static boolean recipeExists(GameTestHelper helper, String id) {

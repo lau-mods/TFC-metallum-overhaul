@@ -8,20 +8,29 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/titanium"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/titanium"
+    },
+    "R": {
+      "tag": "c:rings/titanium"
+    },
     "X": {
       "item": "tfcm:metal/mining_hammer_head/titanium"
-    },
-    "Y": {
-      "item": "tfcm:metal/rod/titanium"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    "GHR",
+    "RL "
   ],
   "result": {
     "modifiers": [

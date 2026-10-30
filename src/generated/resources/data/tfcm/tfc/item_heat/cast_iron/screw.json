@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 921.00006,
+  "heat_capacity": 0.14285715,
+  "ingredient": {
+    "item": "tfcm:metal/screw/cast_iron"
+  },
+  "welding_temperature": 1228.0
+}

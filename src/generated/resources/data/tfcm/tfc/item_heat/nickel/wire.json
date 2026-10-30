@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 871.80005,
+  "heat_capacity": 0.5208333,
+  "ingredient": {
+    "item": "tfcm:metal/wire/nickel"
+  },
+  "welding_temperature": 1162.4
+}

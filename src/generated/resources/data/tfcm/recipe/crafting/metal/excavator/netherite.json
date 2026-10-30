@@ -8,20 +8,29 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/netherite"
+    },
+    "L": {
+      "tag": "c:leather/strip"
+    },
+    "N": {
+      "tag": "c:rivets/netherite"
+    },
+    "R": {
+      "tag": "c:rings/netherite"
+    },
     "X": {
       "item": "tfcm:metal/excavator_head/netherite"
-    },
-    "Y": {
-      "item": "tfcm:metal/rod/netherite"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    "GHR",
+    "RL "
   ],
   "result": {
     "modifiers": [

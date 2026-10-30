@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 558.0,
+  "heat_capacity": 0.14285715,
+  "ingredient": {
+    "item": "tfcm:metal/rivet/brass"
+  },
+  "welding_temperature": 744.0
+}

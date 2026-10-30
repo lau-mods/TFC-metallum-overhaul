@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/rose_gold"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/rose_gold"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ]
+}

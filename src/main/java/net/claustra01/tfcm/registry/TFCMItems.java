@@ -8,6 +8,7 @@ import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.block.geode.GeodeMineral;
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.metal.MetalForm;
+import net.claustra01.tfcm.common.metal.TfcMetal;
 import net.claustra01.tfcm.common.material.MaterialPart;
 import net.claustra01.tfcm.common.ore.Ore;
 import net.claustra01.tfcm.common.ore.OreGrade;
@@ -83,6 +84,11 @@ public final class TFCMItems {
             }
             AREA_TOOLS.put(metal, tools);
             AREA_TOOL_HEADS.put(metal, heads);
+        }
+        for (TfcMetal metal : TfcMetal.values()) {
+            for (MetalForm form : MetalForm.values()) {
+                if (form.isAddedForm()) ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
+            }
         }
         for (MaterialPart part : MaterialPart.values()) {
             MATERIAL_PARTS.put(part, ITEMS.registerSimpleItem(part.id()));

@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nugget/rose_gold"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfc:metal/rose_gold"
+  },
+  "temperature": 960.0
+}

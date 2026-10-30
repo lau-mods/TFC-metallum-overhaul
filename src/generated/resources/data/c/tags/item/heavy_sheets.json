@@ -155,6 +155,25 @@
     {
       "id": "#c:heavy_sheets/super_alloy",
       "required": false
-    }
+    },
+    "#c:heavy_sheets/bismuth",
+    "#c:heavy_sheets/bismuth_bronze",
+    "#c:heavy_sheets/black_bronze",
+    "#c:heavy_sheets/black_steel",
+    "#c:heavy_sheets/blue_steel",
+    "#c:heavy_sheets/brass",
+    "#c:heavy_sheets/bronze",
+    "#c:heavy_sheets/cast_iron",
+    "#c:heavy_sheets/copper",
+    "#c:heavy_sheets/gold",
+    "#c:heavy_sheets/nickel",
+    "#c:heavy_sheets/red_steel",
+    "#c:heavy_sheets/rose_gold",
+    "#c:heavy_sheets/silver",
+    "#c:heavy_sheets/steel",
+    "#c:heavy_sheets/sterling_silver",
+    "#c:heavy_sheets/tin",
+    "#c:heavy_sheets/wrought_iron",
+    "#c:heavy_sheets/zinc"
   ]
 }

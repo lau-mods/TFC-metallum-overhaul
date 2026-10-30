@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:rods/black_steel"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:metal/stamen/black_steel"
+  },
+  "rules": [
+    "bend_last",
+    "draw_second_last",
+    "draw_third_last"
+  ],
+  "tier": 5
+}

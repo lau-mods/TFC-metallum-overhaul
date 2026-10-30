@@ -155,6 +155,25 @@
     {
       "id": "#c:screws/super_alloy",
       "required": false
-    }
+    },
+    "#c:screws/bismuth",
+    "#c:screws/bismuth_bronze",
+    "#c:screws/black_bronze",
+    "#c:screws/black_steel",
+    "#c:screws/blue_steel",
+    "#c:screws/brass",
+    "#c:screws/bronze",
+    "#c:screws/cast_iron",
+    "#c:screws/copper",
+    "#c:screws/gold",
+    "#c:screws/nickel",
+    "#c:screws/red_steel",
+    "#c:screws/rose_gold",
+    "#c:screws/silver",
+    "#c:screws/steel",
+    "#c:screws/sterling_silver",
+    "#c:screws/tin",
+    "#c:screws/wrought_iron",
+    "#c:screws/zinc"
   ]
 }

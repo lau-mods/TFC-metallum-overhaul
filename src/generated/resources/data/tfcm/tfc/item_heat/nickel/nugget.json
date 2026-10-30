@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 871.80005,
+  "heat_capacity": 0.20833331,
+  "ingredient": {
+    "item": "tfcm:metal/nugget/nickel"
+  },
+  "welding_temperature": 1162.4
+}

@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/gold"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/gold"
+  }
+}

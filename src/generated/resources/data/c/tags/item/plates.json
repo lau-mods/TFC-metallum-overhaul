@@ -155,6 +155,25 @@
     {
       "id": "#c:plates/super_alloy",
       "required": false
-    }
+    },
+    "#c:plates/bismuth",
+    "#c:plates/bismuth_bronze",
+    "#c:plates/black_bronze",
+    "#c:plates/black_steel",
+    "#c:plates/blue_steel",
+    "#c:plates/brass",
+    "#c:plates/bronze",
+    "#c:plates/cast_iron",
+    "#c:plates/copper",
+    "#c:plates/gold",
+    "#c:plates/nickel",
+    "#c:plates/red_steel",
+    "#c:plates/rose_gold",
+    "#c:plates/silver",
+    "#c:plates/steel",
+    "#c:plates/sterling_silver",
+    "#c:plates/tin",
+    "#c:plates/wrought_iron",
+    "#c:plates/zinc"
   ]
 }

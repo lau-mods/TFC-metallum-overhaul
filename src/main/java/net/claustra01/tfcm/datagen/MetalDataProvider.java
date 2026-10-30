@@ -10,6 +10,7 @@ import com.google.gson.JsonObject;
 
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.common.metal.MetalForm;
+import net.claustra01.tfcm.common.metal.TfcMetal;
 import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
@@ -64,9 +65,90 @@ public final class MetalDataProvider implements DataProvider {
             files.add(save(output, "tfcm/loot_table/blocks/metal/block/" + metal.id() + "_slab", slabLoot(metal)));
             files.add(save(output, "tfcm/loot_table/blocks/metal/block/" + metal.id() + "_stairs", blockLoot(metal, "_stairs")));
         }
+        for (TfcMetal metal : TfcMetal.values()) addTfcMetalForms(output, files, metal);
         addCollectionTags(output, files);
         addSpecialRecipes(output, files);
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new));
+    }
+
+    // the added forms for the TFC metals, made with the same rules as the TFCM metals but TFC's tier and fluid
+    private void addTfcMetalForms(CachedOutput output, List<CompletableFuture<?>> files, TfcMetal metal) {
+        String recipe = "tfcm/recipe/";
+        files.add(save(output, recipe + "anvil/metal/plate/" + metal.id(), tfcAnvil(metal, MetalForm.PLATE, "ingots",
+                1, forgeRules())));
+        JsonObject welding = new JsonObject();
+        welding.addProperty("type", "tfc:welding");
+        welding.add("first_input", tagIngredient("c:double_sheets/" + metal.id()));
+        welding.add("second_input", tagIngredient("c:sheets/" + metal.id()));
+        welding.add("result", item(metal.item(MetalForm.HEAVY_SHEET), 1));
+        if (metal.tier() > 0) welding.addProperty("tier", metal.tier());
+        files.add(save(output, recipe + "welding/metal/heavy_sheet/" + metal.id(), welding));
+        JsonObject nugget = new JsonObject();
+        nugget.addProperty("type", "minecraft:crafting_shapeless");
+        JsonArray ingredients = new JsonArray();
+        ingredients.add(tagIngredient("c:ingots/" + metal.id()));
+        nugget.add("ingredients", ingredients);
+        nugget.add("result", item(metal.item(MetalForm.NUGGET), 9));
+        files.add(save(output, recipe + "crafting/metal/nugget/" + metal.id(), nugget));
+        JsonObject ingot = new JsonObject();
+        ingot.addProperty("type", "minecraft:crafting_shaped");
+        JsonArray pattern = new JsonArray();
+        for (int row = 0; row < 3; row++) pattern.add("NNN");
+        ingot.add("pattern", pattern);
+        JsonObject key = new JsonObject();
+        key.add("N", tagIngredient("c:nuggets/" + metal.id()));
+        ingot.add("key", key);
+        ingot.add("result", item("tfc:metal/ingot/" + metal.id(), 1));
+        files.add(save(output, recipe + "crafting/metal/ingot_from_nuggets/" + metal.id(), ingot));
+        JsonObject dust = new JsonObject();
+        dust.addProperty("type", "tfc:quern");
+        dust.add("ingredient", tagIngredient("c:ingots/" + metal.id()));
+        dust.add("result", item(metal.item(MetalForm.DUST), 1));
+        files.add(save(output, recipe + "quern/metal/dust/" + metal.id(), dust));
+
+        for (MetalForm form : MetalForm.values()) {
+            if (!form.isAddedForm()) continue;
+            String item = metal.item(form);
+            if (form.isAnvilForm() && form != MetalForm.PLATE)
+                files.add(save(output, recipe + "anvil/metal/" + form.id + "/" + metal.id(), tfcAnvil(metal, form,
+                        form.anvilInput().tag(), form.anvilCount(), forgeRules(form.anvilRules().toArray(String[]::new)))));
+
+            JsonObject heating = new JsonObject();
+            heating.addProperty("type", "tfc:heating");
+            heating.add("ingredient", itemIngredient(item));
+            heating.add("result_fluid", fluid("id", "tfc:metal/" + metal.id(), form.amount));
+            heating.addProperty("temperature", metal.meltingPoint());
+            files.add(save(output, "tfcm/recipe/heating/metal/" + form.id + "/" + metal.id(), heating));
+
+            JsonObject heat = new JsonObject();
+            heat.add("ingredient", itemIngredient(item));
+            heat.addProperty("heat_capacity", metal.heatCapacity() * form.amount / 100f);
+            heat.addProperty("forging_temperature", metal.forgingTemperature());
+            heat.addProperty("welding_temperature", metal.weldingTemperature());
+            files.add(save(output, "tfcm/tfc/item_heat/" + metal.id() + "/" + form.id, heat));
+
+            JsonObject size = new JsonObject();
+            size.add("ingredient", itemIngredient(item));
+            size.addProperty("size", form.size);
+            size.addProperty("weight", form.weight);
+            files.add(save(output, "tfcm/tfc/item_size/" + metal.id() + "/" + form.id, size));
+
+            JsonObject tag = new JsonObject();
+            JsonArray values = new JsonArray();
+            values.add(item);
+            tag.add("values", values);
+            files.add(save(output, "c/tags/item/" + form.tag() + "/" + metal.id(), tag));
+        }
+    }
+
+    private static JsonObject tfcAnvil(TfcMetal metal, MetalForm result, String input, int count, JsonArray rules) {
+        JsonObject json = new JsonObject();
+        json.addProperty("type", "tfc:anvil");
+        json.add("ingredient", tagIngredient("c:" + input + "/" + metal.id()));
+        json.add("result", item(metal.item(result), count));
+        json.add("rules", rules);
+        if (metal.tier() > 0) json.addProperty("tier", metal.tier());
+        return json;
     }
 
     private void addSpecialRecipes(CachedOutput output, List<CompletableFuture<?>> files) {
@@ -315,6 +397,11 @@ public final class MetalDataProvider implements DataProvider {
         JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
         for (Metal metal : Metal.values()) values.add(ContentConditions.optional("#c:" + form + "/" + metal.id()));
+        boolean added = false;
+        for (MetalForm metalForm : MetalForm.values()) added |= metalForm.isAddedForm() && metalForm.tag().equals(form);
+        if (added) {
+            for (TfcMetal metal : TfcMetal.values()) values.add("#c:" + form + "/" + metal.id());
+        }
         json.add("values", values);
         return json;
     }

@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/tin"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/tin"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ]
+}

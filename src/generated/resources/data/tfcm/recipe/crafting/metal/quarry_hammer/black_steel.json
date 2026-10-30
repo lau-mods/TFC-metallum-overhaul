@@ -2,20 +2,29 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/black_steel"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/black_steel"
+    },
+    "R": {
+      "tag": "c:rings/black_steel"
+    },
     "X": {
       "item": "tfcm:metal/quarry_hammer_head/black_steel"
-    },
-    "Y": {
-      "item": "tfc:metal/rod/black_steel"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    "GHR",
+    "RL "
   ],
   "result": {
     "modifiers": [

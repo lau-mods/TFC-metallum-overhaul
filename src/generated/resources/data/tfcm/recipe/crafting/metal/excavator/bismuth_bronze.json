@@ -2,20 +2,22 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/bismuth_bronze"
+    },
+    "N": {
+      "tag": "c:rivets/bismuth_bronze"
+    },
     "X": {
       "item": "tfcm:metal/excavator_head/bismuth_bronze"
-    },
-    "Y": {
-      "item": "tfc:metal/rod/bismuth_bronze"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    " HG"
   ],
   "result": {
     "modifiers": [

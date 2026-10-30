@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 576.60004,
+  "heat_capacity": 0.20833331,
+  "ingredient": {
+    "item": "tfcm:metal/nugget/silver"
+  },
+  "welding_temperature": 768.8
+}

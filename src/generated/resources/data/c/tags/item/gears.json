@@ -155,6 +155,25 @@
     {
       "id": "#c:gears/super_alloy",
       "required": false
-    }
+    },
+    "#c:gears/bismuth",
+    "#c:gears/bismuth_bronze",
+    "#c:gears/black_bronze",
+    "#c:gears/black_steel",
+    "#c:gears/blue_steel",
+    "#c:gears/brass",
+    "#c:gears/bronze",
+    "#c:gears/cast_iron",
+    "#c:gears/copper",
+    "#c:gears/gold",
+    "#c:gears/nickel",
+    "#c:gears/red_steel",
+    "#c:gears/rose_gold",
+    "#c:gears/silver",
+    "#c:gears/steel",
+    "#c:gears/sterling_silver",
+    "#c:gears/tin",
+    "#c:gears/wrought_iron",
+    "#c:gears/zinc"
   ]
 }

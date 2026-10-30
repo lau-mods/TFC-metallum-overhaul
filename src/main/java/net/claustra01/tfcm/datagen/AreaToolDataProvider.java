@@ -160,20 +160,37 @@ public final class AreaToolDataProvider implements DataProvider {
         return json;
     }
 
+    // TFC Metal Tools style assembly from TFC Mining Hammer: tier 1-2 metals use rivet, rod and glue,
+    // higher tiers add rings and leather (string for hammers, strip for the Excavator)
     private static JsonObject assembly(AreaToolMetal metal, AreaToolType type) {
         JsonObject json = conditioned(metal);
         json.addProperty("type", "tfc:advanced_shaped_crafting");
+        boolean simple = metal.tierLevel() <= 2;
         JsonArray pattern = new JsonArray();
-        pattern.add("  X");
-        pattern.add(" Y ");
-        pattern.add("Z  ");
+        pattern.add(" NX");
+        if (simple) {
+            pattern.add(" HG");
+        } else {
+            pattern.add("GHR");
+            pattern.add("RL ");
+        }
         json.add("pattern", pattern);
         json.addProperty("input_column", 2);
         JsonObject key = new JsonObject();
+        key.add("N", tag("c:rivets/" + metal.id()));
         key.add("X", item(id(metal, type, true)));
-        key.add("Y", item(metal.namespace() + ":metal/rod/" + metal.id()));
-        key.add("Z", tag("c:rods/wooden"));
+        key.add("G", tag("c:glue"));
+        key.add("H", tag("c:rods/" + metal.id()));
+        if (!simple) {
+            key.add("R", tag("c:rings/" + metal.id()));
+            key.add("L", tag(type == AreaToolType.EXCAVATOR ? "c:leather/strip" : "c:leather/string"));
+        }
         json.add("key", key);
+        json.add("result", assemblyResult(metal, type));
+        return json;
+    }
+
+    private static JsonObject assemblyResult(AreaToolMetal metal, AreaToolType type) {
         JsonObject advancedResult = new JsonObject();
         advancedResult.add("stack", result(id(metal, type, false)));
         JsonArray modifiers = new JsonArray();
@@ -181,8 +198,7 @@ public final class AreaToolDataProvider implements DataProvider {
         modifier.addProperty("type", "tfc:copy_forging_bonus");
         modifiers.add(modifier);
         advancedResult.add("modifiers", modifiers);
-        json.add("result", advancedResult);
-        return json;
+        return advancedResult;
     }
 
     private static JsonObject heating(AreaToolMetal metal, AreaToolType type, boolean head) {

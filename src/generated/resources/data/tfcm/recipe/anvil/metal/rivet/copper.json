@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/copper"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/rivet/copper"
+  },
+  "rules": [
+    "draw_not_last",
+    "bend_any",
+    "hit_any"
+  ],
+  "tier": 1
+}

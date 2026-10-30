@@ -155,6 +155,25 @@
     {
       "id": "#c:nails/super_alloy",
       "required": false
-    }
+    },
+    "#c:nails/bismuth",
+    "#c:nails/bismuth_bronze",
+    "#c:nails/black_bronze",
+    "#c:nails/black_steel",
+    "#c:nails/blue_steel",
+    "#c:nails/brass",
+    "#c:nails/bronze",
+    "#c:nails/cast_iron",
+    "#c:nails/copper",
+    "#c:nails/gold",
+    "#c:nails/nickel",
+    "#c:nails/red_steel",
+    "#c:nails/rose_gold",
+    "#c:nails/silver",
+    "#c:nails/steel",
+    "#c:nails/sterling_silver",
+    "#c:nails/tin",
+    "#c:nails/wrought_iron",
+    "#c:nails/zinc"
   ]
 }

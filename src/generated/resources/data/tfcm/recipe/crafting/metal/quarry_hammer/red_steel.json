@@ -2,20 +2,29 @@
   "type": "tfc:advanced_shaped_crafting",
   "input_column": 2,
   "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/red_steel"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/red_steel"
+    },
+    "R": {
+      "tag": "c:rings/red_steel"
+    },
     "X": {
       "item": "tfcm:metal/quarry_hammer_head/red_steel"
-    },
-    "Y": {
-      "item": "tfc:metal/rod/red_steel"
-    },
-    "Z": {
-      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "  X",
-    " Y ",
-    "Z  "
+    " NX",
+    "GHR",
+    "RL "
   ],
   "result": {
     "modifiers": [

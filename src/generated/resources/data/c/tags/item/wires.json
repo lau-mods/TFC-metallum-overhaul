@@ -155,6 +155,25 @@
     {
       "id": "#c:wires/super_alloy",
       "required": false
-    }
+    },
+    "#c:wires/bismuth",
+    "#c:wires/bismuth_bronze",
+    "#c:wires/black_bronze",
+    "#c:wires/black_steel",
+    "#c:wires/blue_steel",
+    "#c:wires/brass",
+    "#c:wires/bronze",
+    "#c:wires/cast_iron",
+    "#c:wires/copper",
+    "#c:wires/gold",
+    "#c:wires/nickel",
+    "#c:wires/red_steel",
+    "#c:wires/rose_gold",
+    "#c:wires/silver",
+    "#c:wires/steel",
+    "#c:wires/sterling_silver",
+    "#c:wires/tin",
+    "#c:wires/wrought_iron",
+    "#c:wires/zinc"
   ]
 }

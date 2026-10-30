@@ -155,6 +155,25 @@
     {
       "id": "#c:rings/super_alloy",
       "required": false
-    }
+    },
+    "#c:rings/bismuth",
+    "#c:rings/bismuth_bronze",
+    "#c:rings/black_bronze",
+    "#c:rings/black_steel",
+    "#c:rings/blue_steel",
+    "#c:rings/brass",
+    "#c:rings/bronze",
+    "#c:rings/cast_iron",
+    "#c:rings/copper",
+    "#c:rings/gold",
+    "#c:rings/nickel",
+    "#c:rings/red_steel",
+    "#c:rings/rose_gold",
+    "#c:rings/silver",
+    "#c:rings/steel",
+    "#c:rings/sterling_silver",
+    "#c:rings/tin",
+    "#c:rings/wrought_iron",
+    "#c:rings/zinc"
   ]
 }

@@ -155,6 +155,25 @@
     {
       "id": "#c:rivets/super_alloy",
       "required": false
-    }
+    },
+    "#c:rivets/bismuth",
+    "#c:rivets/bismuth_bronze",
+    "#c:rivets/black_bronze",
+    "#c:rivets/black_steel",
+    "#c:rivets/blue_steel",
+    "#c:rivets/brass",
+    "#c:rivets/bronze",
+    "#c:rivets/cast_iron",
+    "#c:rivets/copper",
+    "#c:rivets/gold",
+    "#c:rivets/nickel",
+    "#c:rivets/red_steel",
+    "#c:rivets/rose_gold",
+    "#c:rivets/silver",
+    "#c:rivets/steel",
+    "#c:rivets/sterling_silver",
+    "#c:rivets/tin",
+    "#c:rivets/wrought_iron",
+    "#c:rivets/zinc"
   ]
 }
