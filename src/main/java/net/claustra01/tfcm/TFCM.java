@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.function.Supplier;
 
 import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
+import net.claustra01.tfcm.common.condition.OreEnabledCondition;
 import net.claustra01.tfcm.config.TFCMConfig;
 import net.claustra01.tfcm.compat.firmalife.FirmaLifeCompat;
 import net.claustra01.tfcm.compat.hotornot.HotOrNotCompat;
@@ -37,6 +38,7 @@ public final class TFCM {
 
     public TFCM(IEventBus modBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.COMMON, TFCMConfig.SPEC);
+        TFCMConfig.loadDisabledContent();
         TFCMBiomeModifiers.SERIALIZERS.register(modBus);
         TFCMArmorMaterials.ARMOR_MATERIALS.register(modBus);
         if (ModList.get().isLoaded("firmalife")) {
@@ -51,6 +53,7 @@ public final class TFCM {
         TFCMFluids.FLUIDS.register(modBus);
         TFCMLootModifiers.LOOT_MODIFIERS.register(modBus);
         MetalEnabledCondition.CONDITIONS.register(modBus);
+        OreEnabledCondition.CONDITIONS.register(modBus);
         modBus.addListener(TFCMDataGenerators::gatherData);
         modBus.addListener(TFCM::addAnvilBlocks);
         modBus.addListener(TFCM::registerCapabilities);
@@ -71,13 +74,21 @@ public final class TFCM {
     }
 
     private static void addReloadListeners(AddReloadListenerEvent event) {
-        if (ModList.get().isLoaded("firmalife")) return;
         event.addListener((ResourceManagerReloadListener) resourceManager -> {
             var deposits = new HashMap<>(Deposit.MANAGER.getElements());
-            deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
-                    "ore_processing/rocky_chunks/chromite"));
-            deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
-                    "ore_processing/dirty_dust/chromite"));
+            if (!ModList.get().isLoaded("firmalife")) {
+                deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
+                        "ore_processing/rocky_chunks/chromite"));
+                deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
+                        "ore_processing/dirty_dust/chromite"));
+            }
+            for (String ore : TFCMConfig.oreIds()) {
+                if (TFCMConfig.isOreEnabled(ore)) continue;
+                deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
+                        "ore_processing/rocky_chunks/" + ore));
+                deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
+                        "ore_processing/dirty_dust/" + ore));
+            }
             Deposit.MANAGER.bindValues(deposits);
             Deposit.CACHE.reload(deposits.values());
         });

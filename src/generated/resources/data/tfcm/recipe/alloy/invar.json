@@ -9,13 +9,13 @@
   "contents": [
     {
       "fluid": "tfc:metal/wrought_iron",
-      "min": 0.6,
-      "max": 0.7
+      "max": 0.7,
+      "min": 0.6
     },
     {
       "fluid": "tfc:metal/nickel",
-      "min": 0.3,
-      "max": 0.4
+      "max": 0.4,
+      "min": 0.3
     }
   ],
   "result": "tfcm:metal/invar"

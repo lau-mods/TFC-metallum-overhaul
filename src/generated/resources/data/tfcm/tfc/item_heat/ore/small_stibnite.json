@@ -1,8 +1,18 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "stibnite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "forging_temperature": 378.0,
+  "heat_capacity": 0.40000004,
   "ingredient": {
     "item": "tfcm:ore/small_stibnite"
   },
-  "heat_capacity": 0.40000004,
-  "forging_temperature": 378.0,
   "welding_temperature": 504.0
 }

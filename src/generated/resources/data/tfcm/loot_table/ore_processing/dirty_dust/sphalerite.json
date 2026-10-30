@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sphalerite"
+    }
+  ],
   "type": "minecraft:empty",
   "pools": [
     {
@@ -44,6 +50,12 @@
       "rolls": 1
     },
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "galena"
+        }
+      ],
       "conditions": [
         {
           "chance": 0.01,

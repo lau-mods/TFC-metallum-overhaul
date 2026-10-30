@@ -19,6 +19,7 @@ import net.claustra01.tfcm.common.tool.ToolPart;
 import net.claustra01.tfcm.common.tool.area.AreaMiningTool;
 import net.claustra01.tfcm.common.tool.area.AreaToolMetal;
 import net.claustra01.tfcm.common.tool.area.AreaToolType;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.dries007.tfc.common.items.MoldItem;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -57,13 +58,13 @@ public final class TFCMItems {
     public static final DeferredItem<Item> CERTUS_QUARTZ = ITEMS.registerSimpleItem("gem/certus_quartz");
     public static final DeferredItem<BlockItem> PLANT_BLOCK = ITEMS.register("plant_block",
             () -> new BlockItem(TFCMBlocks.PLANT_BLOCK.get(), new Item.Properties()));
-    public static final DeferredItem<Item> HIGH_CARBON_TUNGSTEN_STEEL = ITEMS.registerSimpleItem(
-            "metal/ingot/high_carbon_tungsten_steel");
     public static final DeferredItem<BucketItem> MOLTEN_ANDESITE_BUCKET = ITEMS.register(
             "molten_andesite_bucket", () -> new BucketItem(TFCMFluids.MOLTEN_ANDESITE_SOURCE.get(),
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     static {
+        if (TFCMConfig.isMetalEnabled(Metal.TUNGSTEN_STEEL))
+            ITEMS.registerSimpleItem("metal/ingot/high_carbon_tungsten_steel");
         TagKey<Fluid> moldFluids = TagKey.create(Registries.FLUID,
                 ResourceLocation.fromNamespaceAndPath("tfc", "usable_in_tool_head_mold"));
         for (AreaToolType type : AreaToolType.values()) {
@@ -72,6 +73,7 @@ public final class TFCMItems {
                     () -> new MoldItem(() -> 100, moldFluids, new Item.Properties())));
         }
         for (AreaToolMetal metal : AreaToolMetal.values()) {
+            if (metal.isTFCM() && !TFCMConfig.isMetalEnabled(Metal.valueOf(metal.name()))) continue;
             Map<AreaToolType, DeferredItem<AreaMiningTool>> tools = new EnumMap<>(AreaToolType.class);
             Map<AreaToolType, DeferredItem<Item>> heads = new EnumMap<>(AreaToolType.class);
             for (AreaToolType type : AreaToolType.values()) {
@@ -86,6 +88,7 @@ public final class TFCMItems {
             MATERIAL_PARTS.put(part, ITEMS.registerSimpleItem(part.id()));
         }
         for (ToolMetal metal : ToolMetal.values()) {
+            if (!TFCMConfig.isMetalEnabled(metal.metal())) continue;
             Map<ToolPart, DeferredItem<Item>> parts = new EnumMap<>(ToolPart.class);
             for (ToolPart part : ToolPart.values()) {
                 parts.put(part, ITEMS.register("metal/" + part.id() + "/" + metal.getSerializedName(),
@@ -96,6 +99,7 @@ public final class TFCMItems {
                     () -> new BlockItem(TFCMBlocks.ANVILS.get(metal).get(), new Item.Properties()));
         }
         for (Metal metal : Metal.values()) {
+            if (!TFCMConfig.isMetalEnabled(metal)) continue;
             for (MetalForm form : MetalForm.values()) {
                 if (form.isItem()) ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
             }
@@ -110,6 +114,7 @@ public final class TFCMItems {
                             new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1))));
         }
         for (Ore ore : Ore.values()) {
+            if (!TFCMConfig.isOreEnabled(ore.id())) continue;
             if (ore.graded()) {
                 Map<OreGrade, DeferredItem<Item>> grades = new EnumMap<>(OreGrade.class);
                 for (OreGrade grade : OreGrade.values()) grades.put(grade,
@@ -121,12 +126,15 @@ public final class TFCMItems {
                 ORES.put(ore, ITEMS.registerSimpleItem("ore/" + ore.id()));
             }
         }
-        ORE_POWDERS.put(Ore.QUARTZ, ITEMS.registerSimpleItem("powder/quartz"));
-        ORE_POWDERS.put(Ore.FLUORITE, ITEMS.registerSimpleItem("powder/fluorite"));
+        if (TFCMConfig.isOreEnabled("quartz"))
+            ORE_POWDERS.put(Ore.QUARTZ, ITEMS.registerSimpleItem("powder/quartz"));
+        if (TFCMConfig.isOreEnabled("fluorite"))
+            ORE_POWDERS.put(Ore.FLUORITE, ITEMS.registerSimpleItem("powder/fluorite"));
         for (SandPile sand : SandPile.values()) {
             SAND_PILES.put(sand, ITEMS.registerSimpleItem("ore_processing/sand_pile/" + sand.id()));
         }
         for (ProcessingSeries series : ProcessingSeries.values()) {
+            if (!TFCMConfig.isOreEnabled(series.id())) continue;
             Map<ProcessingForm, DeferredItem<Item>> forms = new EnumMap<>(ProcessingForm.class);
             for (ProcessingForm form : ProcessingForm.values()) {
                 forms.put(form, ITEMS.registerSimpleItem("ore_processing/" + form.id() + "/" + series.id()));

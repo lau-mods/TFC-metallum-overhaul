@@ -7,6 +7,7 @@ import java.util.Locale;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -23,7 +24,7 @@ public record MetalEnabledCondition(Metal metal) implements ICondition {
 
     @Override
     public boolean test(IContext context) {
-        return true;
+        return TFCMConfig.isMetalEnabled(metal);
     }
 
     @Override

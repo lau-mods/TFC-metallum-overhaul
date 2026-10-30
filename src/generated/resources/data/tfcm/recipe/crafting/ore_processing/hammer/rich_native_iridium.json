@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_iridium"
+    }
+  ],
   "type": "tfc:advanced_shapeless_crafting",
   "ingredients": [
     {

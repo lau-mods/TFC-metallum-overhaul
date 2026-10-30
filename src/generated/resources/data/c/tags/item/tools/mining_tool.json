@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/pickaxe/invar",
-    "tfcm:metal/pickaxe/titanium",
-    "tfcm:metal/pickaxe/netherite",
-    "tfcm:metal/pickaxe/tungsten_steel"
+    {
+      "id": "tfcm:metal/pickaxe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/tungsten_steel",
+      "required": false
+    }
   ]
 }

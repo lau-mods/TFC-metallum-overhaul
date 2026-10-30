@@ -120,10 +120,10 @@ public final class ProcessingDataProvider implements DataProvider {
     private void addHeating(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series,
             ProcessingForm form, int amount) {
         files.add(save(output, data, "tfcm/recipe/heating/ore_processing/" + form.id() + "/" + series.id(),
-                conditional(series, heating(item(series, form), series.recoveryFluid(), amount,
+                conditionalRecovery(series, heating(item(series, form), series.recoveryFluid(), amount,
                         series.recoveryTemperature()))));
         files.add(save(output, data, "tfcm/tfc/item_heat/ore_processing/" + form.id() + "/" + series.id(),
-                conditional(series, itemHeat(item(series, form), amount, specificHeat(series)))));
+                conditionalRecovery(series, itemHeat(item(series, form), amount, specificHeat(series)))));
     }
 
     private static JsonObject primaryWash(ProcessingSeries series) {
@@ -143,7 +143,8 @@ public final class ProcessingDataProvider implements DataProvider {
         pools.add(pool("sand_pile_15_percent", "tfcm:ore_processing/sand_pile/" + series.sand().id(), 0.15f));
         pools.add(pool("same_dirty_dust_5_percent", item(series, ProcessingForm.DIRTY_DUST), 0.05f));
         pools.add(pool("byproduct_dirty_dust_1_percent",
-                "tfcm:ore_processing/dirty_dust/" + series.byproduct(), 0.01f));
+                "tfcm:ore_processing/dirty_dust/" + series.byproduct(), 0.01f,
+                ContentConditions.ore(series.byproduct())));
         return json;
     }
 
@@ -155,6 +156,10 @@ public final class ProcessingDataProvider implements DataProvider {
     }
 
     private static JsonObject pool(String name, String item, Float chance) {
+        return pool(name, item, chance, null);
+    }
+
+    private static JsonObject pool(String name, String item, Float chance, JsonObject loadCondition) {
         JsonObject entry = new JsonObject();
         entry.addProperty("type", "minecraft:item");
         entry.addProperty("name", item);
@@ -164,6 +169,11 @@ public final class ProcessingDataProvider implements DataProvider {
         pool.addProperty("name", name);
         pool.addProperty("rolls", 1);
         pool.add("entries", entries);
+        if (loadCondition != null) {
+            JsonArray loadConditions = new JsonArray();
+            loadConditions.add(loadCondition);
+            pool.add("neoforge:conditions", loadConditions);
+        }
         if (chance != null) {
             JsonObject condition = new JsonObject();
             condition.addProperty("condition", "minecraft:random_chance");
@@ -274,13 +284,24 @@ public final class ProcessingDataProvider implements DataProvider {
     }
 
     private static JsonObject conditional(ProcessingSeries series, JsonObject json) {
+        JsonArray conditions = json.has("neoforge:conditions")
+                ? json.getAsJsonArray("neoforge:conditions") : new JsonArray();
+        conditions.add(ContentConditions.ore(series.id()));
         if (series.firmaLifeOnly()) {
             JsonObject condition = new JsonObject();
             condition.addProperty("type", "neoforge:mod_loaded");
             condition.addProperty("modid", "firmalife");
-            JsonArray conditions = new JsonArray();
             conditions.add(condition);
-            json.add("neoforge:conditions", conditions);
+        }
+        json.add("neoforge:conditions", conditions);
+        return json;
+    }
+
+    private static JsonObject conditionalRecovery(ProcessingSeries series, JsonObject json) {
+        conditional(series, json);
+        if (series.recoveryFluid().startsWith("tfcm:metal/")) {
+            String id = series.recoveryFluid().substring("tfcm:metal/".length());
+            json.getAsJsonArray("neoforge:conditions").add(ContentConditions.metal(id));
         }
         return json;
     }

@@ -80,10 +80,7 @@ public final class AreaToolDataProvider implements DataProvider {
         JsonObject json = new JsonObject();
         if (metal.isTFCM()) {
             JsonArray conditions = new JsonArray();
-            JsonObject condition = new JsonObject();
-            condition.addProperty("type", "tfcm:metal_enabled");
-            condition.addProperty("metal", metal.id());
-            conditions.add(condition);
+            conditions.add(ContentConditions.metal(metal.id()));
             json.add("neoforge:conditions", conditions);
         }
         return json;
@@ -252,7 +249,9 @@ public final class AreaToolDataProvider implements DataProvider {
         JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
         for (AreaToolMetal metal : AreaToolMetal.values()) {
-            for (AreaToolType type : types) values.add(id(metal, type, false));
+            for (AreaToolType type : types) {
+                values.add(ContentConditions.optional(id(metal, type, false)));
+            }
         }
         json.add("values", values);
         json.addProperty("replace", false);

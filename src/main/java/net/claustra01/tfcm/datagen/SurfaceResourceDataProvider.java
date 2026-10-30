@@ -163,6 +163,13 @@ public final class SurfaceResourceDataProvider implements DataProvider {
         pool.addProperty("name", poolName);
         pool.addProperty("rolls", 1);
         pool.add("entries", entries);
+        String ore = referencedOre(item);
+        if (ore != null) {
+            JsonObject loadCondition = ContentConditions.ore(ore);
+            JsonArray loadConditions = new JsonArray();
+            loadConditions.add(loadCondition);
+            pool.add("neoforge:conditions", loadConditions);
+        }
         if (chance < 1f) {
             JsonObject condition = new JsonObject();
             condition.addProperty("condition", "minecraft:random_chance");
@@ -172,6 +179,16 @@ public final class SurfaceResourceDataProvider implements DataProvider {
             pool.add("conditions", conditions);
         }
         return pool;
+    }
+
+    private static String referencedOre(String item) {
+        if (item.startsWith("tfcm:ore_processing/powder/")
+                || item.startsWith("tfcm:ore_processing/dirty_dust/")) {
+            return item.substring(item.lastIndexOf('/') + 1);
+        }
+        if (item.startsWith("tfc:ore/small_")) return item.substring("tfc:ore/small_".length());
+        if (item.equals("tfcm:ore/quartz")) return "quartz";
+        return null;
     }
 
     private static JsonObject deposit(String ingredientItem, String lootTable) {

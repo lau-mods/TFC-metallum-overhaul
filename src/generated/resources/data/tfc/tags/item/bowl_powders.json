@@ -1,7 +1,13 @@
 {
   "replace": false,
   "values": [
-    "tfcm:powder/quartz",
-    "tfcm:powder/fluorite"
+    {
+      "id": "tfcm:powder/quartz",
+      "required": false
+    },
+    {
+      "id": "tfcm:powder/fluorite",
+      "required": false
+    }
   ]
 }

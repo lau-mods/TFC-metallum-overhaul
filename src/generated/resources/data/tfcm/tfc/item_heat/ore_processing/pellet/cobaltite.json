@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cobaltite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
   "heat_capacity": 0.6666666,
   "ingredient": {
     "item": "tfcm:ore_processing/pellet/cobaltite"

@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/hoe/invar",
-    "tfcm:metal/hoe/titanium",
-    "tfcm:metal/hoe/netherite",
-    "tfcm:metal/hoe/tungsten_steel"
+    {
+      "id": "tfcm:metal/hoe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/tungsten_steel",
+      "required": false
+    }
   ]
 }

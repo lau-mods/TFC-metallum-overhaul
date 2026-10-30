@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "opal"
+    }
+  ],
   "type": "minecraft:block",
   "pools": [
     {

@@ -12,6 +12,12 @@
       "rolls": 1
     },
     {
+      "conditions": [
+        {
+          "chance": 0.15,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -19,15 +25,21 @@
         }
       ],
       "name": "output_1",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.15,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "sphalerite"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.015,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -35,15 +47,21 @@
         }
       ],
       "name": "output_2",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.015,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "native_silver"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.01,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -51,15 +69,21 @@
         }
       ],
       "name": "output_3",
-      "rolls": 1,
+      "rolls": 1
+    },
+    {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "quartz"
+        }
+      ],
       "conditions": [
         {
           "chance": 0.01,
           "condition": "minecraft:random_chance"
         }
-      ]
-    },
-    {
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -67,15 +91,15 @@
         }
       ],
       "name": "output_4",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.01,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "conditions": [
+        {
+          "chance": 0.025,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -83,15 +107,15 @@
         }
       ],
       "name": "output_5",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.025,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "conditions": [
+        {
+          "chance": 5.0E-4,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -99,13 +123,7 @@
         }
       ],
       "name": "output_6",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.0005,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     }
   ]
 }

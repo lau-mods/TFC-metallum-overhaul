@@ -473,6 +473,30 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
       "classname": "tfcm:empty",
       "name": "invalidduplicateandemptydefinitionsusedimensionfallbackrules"
+    },
+    {
+      "acId": "AC-F026-001",
+      "report": "build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml",
+      "classname": "tfcm_m12:empty",
+      "name": "disabledmetalremovesonlyitscontent"
+    },
+    {
+      "acId": "AC-F026-002",
+      "report": "build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml",
+      "classname": "tfcm_m12:empty",
+      "name": "disabledoreremovesonlyitsseries"
+    },
+    {
+      "acId": "AC-F026-003",
+      "report": "build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml",
+      "classname": "tfcm_m12:empty",
+      "name": "unknownnamesareignored"
+    },
+    {
+      "acId": "AC-F026-004",
+      "report": "build/test-results/gametest-fresh-config/TEST-net.claustra01.tfcm.gametest.TFCMFreshConfigGameTests.xml",
+      "classname": "tfcm_m12_fresh:empty",
+      "name": "generatedconfiglistseveryacceptedidwithoutdisablingcontent"
     }
   ],
   "e2e": [

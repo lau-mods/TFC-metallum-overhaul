@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sulfur"
+    }
+  ],
   "ingredient": {
     "item": "tfcm:ore_processing/dirty_dust/sulfur"
   },

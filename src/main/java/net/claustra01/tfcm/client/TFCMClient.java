@@ -39,7 +39,8 @@ public final class TFCMClient {
     @SubscribeEvent
     public static void registerFluidExtensions(RegisterClientExtensionsEvent event) {
         for (Metal metal : Metal.values()) {
-            event.registerFluidType(extension(metal.color()), TFCMFluids.METALS.get(metal).type().get());
+            TFCMFluids.MetalFluid fluid = TFCMFluids.METALS.get(metal);
+            if (fluid != null) event.registerFluidType(extension(metal.color()), fluid.type().get());
         }
         event.registerFluidType(extension(0xFF77736B), TFCMFluids.MOLTEN_ANDESITE_TYPE.get());
     }

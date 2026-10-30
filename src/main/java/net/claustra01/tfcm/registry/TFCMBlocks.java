@@ -13,6 +13,7 @@ import net.claustra01.tfcm.common.ore.Ore;
 import net.claustra01.tfcm.common.ore.OreGrade;
 import net.claustra01.tfcm.common.ore.TfcOre;
 import net.claustra01.tfcm.common.tool.ToolMetal;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.blocks.GroundcoverBlock;
 import net.dries007.tfc.common.blocks.ExtendedProperties;
@@ -60,6 +61,7 @@ public final class TFCMBlocks {
 
     static {
         for (Metal metal : Metal.values()) {
+            if (!TFCMConfig.isMetalEnabled(metal)) continue;
             DeferredBlock<Block> block = BLOCKS.register("metal/block/" + metal.id(), () -> new Block(metalProperties()));
             METAL_BLOCKS.put(metal, block);
             METAL_SLABS.put(metal, BLOCKS.register("metal/block/" + metal.id() + "_slab",
@@ -71,6 +73,7 @@ public final class TFCMBlocks {
                             BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).noCollission().strength(100f).noLootTable())));
         }
         for (ToolMetal metal : ToolMetal.values()) {
+            if (!TFCMConfig.isMetalEnabled(metal.metal())) continue;
             ANVILS.put(metal, BLOCKS.register("metal/anvil/" + metal.getSerializedName(),
                     () -> new AnvilBlock(ExtendedProperties.of(MapColor.METAL).strength(5, 10)
                             .requiresCorrectToolForDrops().blockEntity(TFCBlockEntities.ANVIL),
@@ -89,6 +92,7 @@ public final class TFCMBlocks {
 
     private static void registerOres() {
         for (Ore ore : Ore.values()) {
+            if (!TFCMConfig.isOreEnabled(ore.id())) continue;
             Map<String, DeferredBlock<Block>> blocks = new LinkedHashMap<>();
             ORES.put(ore, blocks);
             if (ore.graded()) {
@@ -104,9 +108,12 @@ public final class TFCMBlocks {
             }
         }
         for (String ore : TfcOre.GRADED) {
+            if (!TFCMConfig.isOreEnabled(ore)) continue;
             for (OreGrade grade : OreGrade.values()) registerDimensionOre(TFC_ORES, grade.id() + "_" + ore);
         }
-        for (String ore : TfcOre.UNGRADED) registerDimensionOre(TFC_ORES, ore);
+        for (String ore : TfcOre.UNGRADED) {
+            if (TFCMConfig.isOreEnabled(ore)) registerDimensionOre(TFC_ORES, ore);
+        }
     }
 
     private static void registerGeodeBlocks() {

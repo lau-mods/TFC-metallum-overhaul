@@ -128,10 +128,7 @@ public final class EquipmentDataProvider implements DataProvider {
     private static JsonObject conditioned(ToolMetal metal) {
         JsonObject json = new JsonObject();
         JsonArray conditions = new JsonArray();
-        JsonObject condition = new JsonObject();
-        condition.addProperty("type", "tfcm:metal_enabled");
-        condition.addProperty("metal", metal.getSerializedName());
-        conditions.add(condition);
+        conditions.add(ContentConditions.metal(metal.getSerializedName()));
         json.add("neoforge:conditions", conditions);
         return json;
     }
@@ -502,10 +499,7 @@ public final class EquipmentDataProvider implements DataProvider {
         JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
         for (ToolMetal metal : ToolMetal.values()) {
-            JsonObject optional = new JsonObject();
-            optional.addProperty("id", "tfcm:metal/tongs/" + metal.getSerializedName());
-            optional.addProperty("required", false);
-            values.add(optional);
+            values.add(ContentConditions.optional("tfcm:metal/tongs/" + metal.getSerializedName()));
         }
         json.add("values", values);
         json.addProperty("replace", false);
@@ -515,10 +509,7 @@ public final class EquipmentDataProvider implements DataProvider {
     private static JsonObject optionalItemTag(ToolMetal metal, String part) {
         JsonObject json = conditioned(metal);
         JsonArray values = new JsonArray();
-        JsonObject optional = new JsonObject();
-        optional.addProperty("id", "tfcm:metal/" + part + "/" + metal.getSerializedName());
-        optional.addProperty("required", false);
-        values.add(optional);
+        values.add(ContentConditions.optional("tfcm:metal/" + part + "/" + metal.getSerializedName()));
         json.add("values", values);
         json.addProperty("replace", false);
         return json;
@@ -527,7 +518,7 @@ public final class EquipmentDataProvider implements DataProvider {
     private static JsonObject anvilTag() {
         JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
-        for (ToolMetal metal : ToolMetal.values()) values.add("tfcm:metal/anvil/" + metal.getSerializedName());
+        for (ToolMetal metal : ToolMetal.values()) values.add(ContentConditions.optional("tfcm:metal/anvil/" + metal.getSerializedName()));
         json.add("values", values);
         json.addProperty("replace", false);
         return json;
@@ -537,9 +528,9 @@ public final class EquipmentDataProvider implements DataProvider {
         JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
         for (ToolMetal metal : ToolMetal.values()) for (ToolPart part : ToolPart.values())
-            if (part.isFinishedTool()) values.add(id(metal, part));
+            if (part.isFinishedTool()) values.add(ContentConditions.optional(id(metal, part)));
         for (AreaToolMetal metal : AreaToolMetal.values()) for (AreaToolType type : AreaToolType.values())
-            values.add("tfcm:metal/" + type.id() + "/" + metal.id());
+            values.add(ContentConditions.optional("tfcm:metal/" + type.id() + "/" + metal.id()));
         json.add("values", values);
         json.addProperty("replace", false);
         return json;
@@ -548,7 +539,7 @@ public final class EquipmentDataProvider implements DataProvider {
     private static JsonObject toolTag(ToolPart... parts) {
         JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
-        for (ToolMetal metal : ToolMetal.values()) for (ToolPart part : parts) values.add(id(metal, part));
+        for (ToolMetal metal : ToolMetal.values()) for (ToolPart part : parts) values.add(ContentConditions.optional(id(metal, part)));
         json.add("values", values);
         json.addProperty("replace", false);
         return json;
@@ -558,9 +549,11 @@ public final class EquipmentDataProvider implements DataProvider {
         JsonObject json = toolTag(part);
         JsonArray values = json.getAsJsonArray("values");
         for (AreaToolMetal metal : AreaToolMetal.values()) for (AreaToolType type : types)
-            values.add("tfcm:metal/" + type.id() + "/" + metal.id());
+            values.add(ContentConditions.optional("tfcm:metal/" + type.id() + "/" + metal.id()));
         return json;
     }
+
+
 
     private static JsonObject anvilLoot(ToolMetal metal) {
         JsonObject json = new JsonObject();

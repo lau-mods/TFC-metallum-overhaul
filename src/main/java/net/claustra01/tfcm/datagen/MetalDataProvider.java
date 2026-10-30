@@ -274,7 +274,7 @@ public final class MetalDataProvider implements DataProvider {
     private void addCollectionTags(CachedOutput output, List<CompletableFuture<?>> files) {
         JsonObject mineable = allMetalBlocks("", "_slab", "_stairs");
         for (ToolMetal metal : ToolMetal.values()) {
-            mineable.getAsJsonArray("values").add("tfcm:metal/anvil/" + metal.getSerializedName());
+            mineable.getAsJsonArray("values").add(ContentConditions.optional("tfcm:metal/anvil/" + metal.getSerializedName()));
         }
         mineable.getAsJsonArray("values").add("#tfcm:ores");
         mineable.getAsJsonArray("values").add("#tfcm:geode_blocks");
@@ -291,30 +291,30 @@ public final class MetalDataProvider implements DataProvider {
     }
 
     private static JsonObject allMetalBlocks(String... suffixes) {
-        JsonObject json = conditionedAllMetals();
+        JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
         for (Metal metal : Metal.values()) {
-            for (String suffix : suffixes) values.add(blockId(metal, suffix));
+            for (String suffix : suffixes) values.add(ContentConditions.optional(blockId(metal, suffix)));
         }
         json.add("values", values);
         return json;
     }
 
     private static JsonObject allMetalFluids(boolean includeFlowing) {
-        JsonObject json = conditionedAllMetals();
+        JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
         for (Metal metal : Metal.values()) {
-            values.add("tfcm:metal/" + metal.id());
-            if (includeFlowing) values.add("tfcm:metal/flowing_" + metal.id());
+            values.add(ContentConditions.optional("tfcm:metal/" + metal.id()));
+            if (includeFlowing) values.add(ContentConditions.optional("tfcm:metal/flowing_" + metal.id()));
         }
         json.add("values", values);
         return json;
     }
 
     private static JsonObject allFormTags(String form) {
-        JsonObject json = conditionedAllMetals();
+        JsonObject json = new JsonObject();
         JsonArray values = new JsonArray();
-        for (Metal metal : Metal.values()) values.add("#c:" + form + "/" + metal.id());
+        for (Metal metal : Metal.values()) values.add(ContentConditions.optional("#c:" + form + "/" + metal.id()));
         json.add("values", values);
         return json;
     }
@@ -381,7 +381,16 @@ public final class MetalDataProvider implements DataProvider {
         JsonObject json = conditioned(result);
         json.addProperty("type", "tfc:alloy");
         JsonArray contents = new JsonArray();
-        for (JsonObject range : ranges) contents.add(range);
+        for (JsonObject range : ranges) {
+            contents.add(range);
+            String fluid = range.get("fluid").getAsString();
+            if (fluid.startsWith("tfcm:metal/")) {
+                String input = fluid.substring("tfcm:metal/".length());
+                if (!input.equals(result.id())) {
+                    json.getAsJsonArray("neoforge:conditions").add(ContentConditions.metal(input));
+                }
+            }
+        }
         json.add("contents", contents);
         json.addProperty("result", "tfcm:metal/" + result.id());
         return json;
@@ -440,28 +449,14 @@ public final class MetalDataProvider implements DataProvider {
     }
 
     private static JsonObject conditioned(Metal metal) {
-        JsonObject condition = new JsonObject();
-        condition.addProperty("type", "tfcm:metal_enabled");
-        condition.addProperty("metal", metal.id());
         JsonArray conditions = new JsonArray();
-        conditions.add(condition);
+        conditions.add(ContentConditions.metal(metal.id()));
         JsonObject json = new JsonObject();
         json.add("neoforge:conditions", conditions);
         return json;
     }
 
-    private static JsonObject conditionedAllMetals() {
-        JsonArray conditions = new JsonArray();
-        for (Metal metal : Metal.values()) {
-            JsonObject condition = new JsonObject();
-            condition.addProperty("type", "tfcm:metal_enabled");
-            condition.addProperty("metal", metal.id());
-            conditions.add(condition);
-        }
-        JsonObject json = new JsonObject();
-        json.add("neoforge:conditions", conditions);
-        return json;
-    }
+
 
     private static String itemId(Metal metal, String form) {
         return "tfcm:metal/" + form + "/" + metal.id();

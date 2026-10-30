@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/scythe/invar",
-    "tfcm:metal/scythe/titanium",
-    "tfcm:metal/scythe/netherite",
-    "tfcm:metal/scythe/tungsten_steel"
+    {
+      "id": "tfcm:metal/scythe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/tungsten_steel",
+      "required": false
+    }
   ]
 }

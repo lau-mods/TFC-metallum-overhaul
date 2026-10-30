@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "rutile"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
   "type": "tfc:heating",
   "ingredient": {
     "item": "tfcm:ore_processing/powder/rutile"

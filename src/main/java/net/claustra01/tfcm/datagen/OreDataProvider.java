@@ -63,9 +63,9 @@ public final class OreDataProvider implements DataProvider {
         files.add(save(output, data, "tfc/tags/item/bowl_powders", tag(List.of("tfcm:powder/quartz", "tfcm:powder/fluorite"), false)));
         files.add(save(output, data, "c/tags/item/gems/quartz", tag(List.of("tfcm:gem/cut_quartz", "tfcm:gem/certus_quartz"), false)));
         files.add(save(output, data, "c/tags/item/gems", tag(List.of("#c:gems/quartz"), false)));
-        files.add(save(output, data, "tfcm/recipe/quern/quartz", quern("quartz")));
-        files.add(save(output, data, "tfcm/recipe/quern/fluorite", quern("fluorite")));
-        files.add(save(output, data, "tfcm/recipe/crafting/cut_quartz", polishing()));
+        files.add(save(output, data, "tfcm/recipe/quern/quartz", conditioned("quartz", null, quern("quartz"))));
+        files.add(save(output, data, "tfcm/recipe/quern/fluorite", conditioned("fluorite", null, quern("fluorite"))));
+        files.add(save(output, data, "tfcm/recipe/crafting/cut_quartz", conditioned("quartz", null, polishing())));
         files.add(save(output, assets, "tfcm/models/item/powder/quartz", generatedModel("tfcm:item/powder/quartz")));
         files.add(save(output, assets, "tfcm/models/item/powder/fluorite", generatedModel("tfcm:item/powder/fluorite")));
         files.add(save(output, assets, "tfcm/models/item/gem/cut_quartz", generatedModel("tfcm:item/gem/cut_quartz")));
@@ -86,7 +86,7 @@ public final class OreDataProvider implements DataProvider {
                 files.add(save(output, assets, "tfcm/models/item/ore/" + name,
                         generatedModel("tfc:item/ore/" + grade.id() + "_" + ore.textureSource())));
                 addHosts(output, files, ores, pickaxes, name, "tfc:block/ore/" + grade.id() + "_" + ore.textureSource(),
-                        "tfcm:ore/" + name, false);
+                        "tfcm:ore/" + name, ore.id(), false);
             }
             String small = "small_" + ore.id();
             files.add(save(output, assets, "tfcm/models/item/ore/" + small,
@@ -95,44 +95,47 @@ public final class OreDataProvider implements DataProvider {
                     groundcoverModel("tfc:item/ore/small_" + ore.textureSource())));
             files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore)));
             files.add(save(output, data, "tfcm/loot_table/blocks/ore/" + small,
-                    blockLoot("tfcm:ore/" + small, false)));
+                    blockLoot("tfcm:ore/" + small, ore.id(), false)));
             Metal metal = ORE_METALS.get(ore);
-            files.add(save(output, data, "tfcm/recipe/heating/ore/" + small, smallOreHeating(ore, metal)));
-            files.add(save(output, data, "tfcm/tfc/item_heat/ore/" + small, smallOreHeat(ore, metal)));
+            files.add(save(output, data, "tfcm/recipe/heating/ore/" + small,
+                    conditioned(ore.id(), metal, smallOreHeating(ore, metal))));
+            files.add(save(output, data, "tfcm/tfc/item_heat/ore/" + small,
+                    conditioned(ore.id(), metal, smallOreHeat(ore, metal))));
         } else {
             files.add(save(output, assets, "tfcm/models/item/ore/" + ore.id(),
                     generatedModel("tfc:item/ore/" + ore.textureSource())));
             addHosts(output, files, ores, pickaxes, ore.id(), "tfc:block/ore/" + ore.textureSource(),
-                    "tfcm:ore/" + ore.id(), false);
+                    "tfcm:ore/" + ore.id(), ore.id(), false);
             if (ore == Ore.FLUORITE || ore == Ore.QUARTZ) {
                 files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
                         groundcoverModel("tfc:item/gem/" + ore.textureSource())));
                 files.add(save(output, assets, "tfcm/blockstates/ore/small_" + ore.id(), smallBlockState(ore)));
                 files.add(save(output, data, "tfcm/loot_table/blocks/ore/small_" + ore.id(),
-                        blockLoot("tfcm:ore/" + ore.id(), false)));
+                        blockLoot("tfcm:ore/" + ore.id(), ore.id(), false)));
             }
         }
     }
 
     private void addHosts(CachedOutput output, List<CompletableFuture<?>> files, List<String> ores,
-            List<String> pickaxes, String name, String overlay, String drop, boolean conditional) {
+            List<String> pickaxes, String name, String overlay, String drop, String oreId, boolean conditional) {
         for (Rock rock : Rock.values()) addHost(output, files, ores, pickaxes, name, rock.getSerializedName(),
-                "tfc:block/rock/raw/" + rock.getSerializedName(), overlay, drop, conditional);
-        addHost(output, files, ores, pickaxes, name, "netherrack", "minecraft:block/netherrack", overlay, drop, conditional);
-        addHost(output, files, ores, pickaxes, name, "end_stone", "minecraft:block/end_stone", overlay, drop, conditional);
+                "tfc:block/rock/raw/" + rock.getSerializedName(), overlay, drop, oreId, conditional);
+        addHost(output, files, ores, pickaxes, name, "netherrack", "minecraft:block/netherrack", overlay, drop, oreId, conditional);
+        addHost(output, files, ores, pickaxes, name, "end_stone", "minecraft:block/end_stone", overlay, drop, oreId, conditional);
     }
 
     private void addForeignOre(CachedOutput output, List<CompletableFuture<?>> files, List<String> ores,
             List<String> pickaxes, String name, String namespace, boolean conditional) {
         String overlay = namespace + ":block/ore/" + name;
         String drop = namespace + ":ore/" + name;
-        addHost(output, files, ores, pickaxes, name, "netherrack", "minecraft:block/netherrack", overlay, drop, conditional);
-        addHost(output, files, ores, pickaxes, name, "end_stone", "minecraft:block/end_stone", overlay, drop, conditional);
+        String oreId = name.replaceFirst("^(poor|normal|rich)_", "");
+        addHost(output, files, ores, pickaxes, name, "netherrack", "minecraft:block/netherrack", overlay, drop, oreId, conditional);
+        addHost(output, files, ores, pickaxes, name, "end_stone", "minecraft:block/end_stone", overlay, drop, oreId, conditional);
     }
 
     private void addHost(CachedOutput output, List<CompletableFuture<?>> files, List<String> ores,
             List<String> pickaxes, String name, String host, String base, String overlay, String drop,
-            boolean conditional) {
+            String oreId, boolean conditional) {
         String id = "tfcm:ore/" + name + "/" + host;
         String tagEntry = conditional ? "#tfcm:firmalife_ores" : id;
         if (!ores.contains(tagEntry)) ores.add(tagEntry);
@@ -143,7 +146,7 @@ public final class OreDataProvider implements DataProvider {
         files.add(save(output, assets, "tfcm/blockstates/ore/" + name + "/" + host,
                 blockState("tfcm:block/ore/" + name + "/" + host)));
         files.add(save(output, data, "tfcm/loot_table/blocks/ore/" + name + "/" + host,
-                blockLoot(drop, conditional)));
+                blockLoot(drop, oreId, conditional)));
     }
 
     private CompletableFuture<?> save(CachedOutput output, Path root, String location, JsonObject json) {
@@ -211,10 +214,10 @@ public final class OreDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject blockLoot(String drop, boolean conditional) {
+    private static JsonObject blockLoot(String drop, String ore, boolean conditional) {
         JsonObject json = new JsonObject();
         json.addProperty("type", "minecraft:block");
-        if (conditional) json.add("neoforge:conditions", conditions());
+        json.add("neoforge:conditions", conditions(ore, conditional));
         JsonObject entry = new JsonObject();
         entry.addProperty("type", "minecraft:item");
         entry.addProperty("name", drop);
@@ -238,7 +241,9 @@ public final class OreDataProvider implements DataProvider {
         JsonObject json = new JsonObject();
         json.addProperty("replace", replace);
         JsonArray array = new JsonArray();
-        values.forEach(array::add);
+        for (String value : values) {
+            array.add(ContentConditions.optional(value));
+        }
         json.add("values", array);
         return json;
     }
@@ -248,22 +253,31 @@ public final class OreDataProvider implements DataProvider {
         json.addProperty("replace", false);
         JsonArray array = new JsonArray();
         for (String value : values) {
-            JsonObject entry = new JsonObject();
-            entry.addProperty("id", value);
-            entry.addProperty("required", false);
-            array.add(entry);
+            array.add(ContentConditions.optional(value));
         }
         json.add("values", array);
         return json;
     }
 
-    private static JsonArray conditions() {
-        JsonObject condition = new JsonObject();
-        condition.addProperty("type", "neoforge:mod_loaded");
-        condition.addProperty("modid", "firmalife");
+    private static JsonArray conditions(String ore, boolean modLoaded) {
         JsonArray conditions = new JsonArray();
-        conditions.add(condition);
+        conditions.add(ContentConditions.ore(ore));
+        if (modLoaded) {
+            JsonObject condition = new JsonObject();
+            condition.addProperty("type", "neoforge:mod_loaded");
+            condition.addProperty("modid", "firmalife");
+            conditions.add(condition);
+        }
         return conditions;
+    }
+
+    private static JsonObject conditioned(String ore, Metal metal, JsonObject json) {
+        JsonArray conditions = conditions(ore, false);
+        if (metal != null) {
+            conditions.add(ContentConditions.metal(metal.id()));
+        }
+        json.add("neoforge:conditions", conditions);
+        return json;
     }
 
     private static JsonObject smallOreHeating(Ore ore, Metal metal) {

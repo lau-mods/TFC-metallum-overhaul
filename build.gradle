@@ -132,6 +132,24 @@ neoForge {
             systemProperty 'tfcm.gametest.firmalife', 'false'
         }
 
+        gameTestServerContentConfig {
+            type = "gameTestServer"
+            gameDirectory = layout.buildDirectory.dir('run-gametest-content-config')
+            loadedMods.set([])
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'tfcm_m12'
+            systemProperty 'tfcm.gametest.contentConfigReport', file('build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
+        }
+
+        gameTestServerFreshConfig {
+            type = "gameTestServer"
+            gameDirectory = layout.buildDirectory.dir('run-gametest-fresh-config')
+            loadedMods.set([])
+            systemProperty 'neoforge.enabledGameTestNamespaces', 'tfcm_m12_fresh'
+            systemProperty 'tfcm.gametest.freshConfigReport', file('build/test-results/gametest-fresh-config/TEST-net.claustra01.tfcm.gametest.TFCMFreshConfigGameTests.xml').getAbsolutePath()
+            systemProperty 'tfcm.gametest.structures', file('src/gameTest/resources/gameteststructures').getAbsolutePath()
+        }
+
         data {
             data()
             // example of overriding the workingDirectory set in configureEach above, uncomment if you want to use it
@@ -250,6 +268,41 @@ tasks.named('runGameTestServerHotOrNot').configure {
 
 tasks.named('runGameTestServerFirmaLife').configure {
     finalizedBy tasks.named('runGameTestServerHotOrNot')
+}
+
+var stageContentConfigGameTest = tasks.register('stageContentConfigGameTest', Copy) {
+    dependsOn gameTestModJar
+    from gameTestModJar.flatMap { it.archiveFile }
+    into layout.buildDirectory.dir('run-gametest-content-config/mods')
+}
+
+var stageContentConfigFile = tasks.register('stageContentConfigFile', Copy) {
+    from 'src/gameTest/resources/m12/tfcm-common.toml'
+    into layout.buildDirectory.dir('run-gametest-content-config/config')
+}
+
+tasks.named('runGameTestServerContentConfig').configure {
+    dependsOn stageContentConfigGameTest, stageContentConfigFile
+    finalizedBy tasks.named('runGameTestServerFreshConfig')
+}
+
+var stageFreshConfigGameTest = tasks.register('stageFreshConfigGameTest', Copy) {
+    dependsOn gameTestModJar
+    from gameTestModJar.flatMap { it.archiveFile }
+    into layout.buildDirectory.dir('run-gametest-fresh-config/mods')
+}
+
+var clearFreshConfigFile = tasks.register('clearFreshConfigFile', Delete) {
+    delete layout.buildDirectory.file('run-gametest-fresh-config/config/tfcm-common.toml')
+}
+
+tasks.named('runGameTestServerFreshConfig').configure {
+    dependsOn stageFreshConfigGameTest, clearFreshConfigFile
+    mustRunAfter tasks.named('runGameTestServerContentConfig')
+}
+
+tasks.named('runGameTestServerHotOrNot').configure {
+    finalizedBy tasks.named('runGameTestServerContentConfig'), tasks.named('runGameTestServerFreshConfig')
 }
 
 // This block of code expands all declared replace properties in the specified resource targets.

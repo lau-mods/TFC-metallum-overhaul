@@ -102,6 +102,13 @@
 - Nether・Endは各YAMLに明示された鉱脈・晶洞だけを追加し、空設定では追加しない。未登録block、不正type・数値、重複IDは警告してエントリ単位で除外し、重複は先頭を採用する。
 - M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallbackを検証する。
 
+## M12 content toggles
+
+- Common Configの`disabledMetals`は`Metal`の39 ID、`disabledOres`は`Ore`、`ProcessingSeries`、`TfcOre`のIDを受け付ける。指定可能な全IDは設定ファイルのコメントへ自動出力する。
+- 未知名は無視する。設定はレジストリ登録前に読み込み、変更反映にはゲーム再起動が必要。
+- 登録対象と生成データには`tfcm:metal_enabled`、`tfcm:ore_enabled`のload conditionを適用し、集合tagでは任意entryを用いる。参照元のloot poolや合金入力は該当entryだけを無効化する。
+- `runGameTestServerContentConfig`でLead、Galena、未知名を検証し、続く`runGameTestServerFreshConfig`で新規設定のコメントと既定値を検証する。
+
 ## Harness runtime
 
 - 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。

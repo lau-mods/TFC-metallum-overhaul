@@ -1,6 +1,10 @@
 {
   "neoforge:conditions": [
     {
+      "type": "tfcm:ore_enabled",
+      "ore": "chromite"
+    },
+    {
       "type": "neoforge:mod_loaded",
       "modid": "firmalife"
     }
@@ -50,6 +54,12 @@
       "rolls": 1
     },
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "cobaltite"
+        }
+      ],
       "conditions": [
         {
           "chance": 0.01,

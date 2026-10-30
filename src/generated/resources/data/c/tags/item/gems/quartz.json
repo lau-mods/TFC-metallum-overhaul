@@ -1,7 +1,13 @@
 {
   "replace": false,
   "values": [
-    "tfcm:gem/cut_quartz",
-    "tfcm:gem/certus_quartz"
+    {
+      "id": "tfcm:gem/cut_quartz",
+      "required": false
+    },
+    {
+      "id": "tfcm:gem/certus_quartz",
+      "required": false
+    }
   ]
 }

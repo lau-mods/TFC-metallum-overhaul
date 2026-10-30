@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "magnesite"
+    }
+  ],
   "type": "minecraft:empty",
   "pools": [
     {

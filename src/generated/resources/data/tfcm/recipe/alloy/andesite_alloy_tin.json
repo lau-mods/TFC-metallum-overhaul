@@ -9,13 +9,13 @@
   "contents": [
     {
       "fluid": "tfcm:molten_andesite",
-      "min": 0.89,
-      "max": 0.91
+      "max": 0.91,
+      "min": 0.89
     },
     {
       "fluid": "tfc:metal/tin",
-      "min": 0.09,
-      "max": 0.11
+      "max": 0.11,
+      "min": 0.09
     }
   ],
   "result": "tfcm:metal/andesite_alloy"

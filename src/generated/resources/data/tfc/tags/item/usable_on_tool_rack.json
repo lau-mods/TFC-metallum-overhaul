@@ -1,108 +1,417 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/mining_hammer/copper",
-    "tfcm:metal/quarry_hammer/copper",
-    "tfcm:metal/excavator/copper",
-    "tfcm:metal/mining_hammer/bismuth_bronze",
-    "tfcm:metal/quarry_hammer/bismuth_bronze",
-    "tfcm:metal/excavator/bismuth_bronze",
-    "tfcm:metal/mining_hammer/black_bronze",
-    "tfcm:metal/quarry_hammer/black_bronze",
-    "tfcm:metal/excavator/black_bronze",
-    "tfcm:metal/mining_hammer/bronze",
-    "tfcm:metal/quarry_hammer/bronze",
-    "tfcm:metal/excavator/bronze",
-    "tfcm:metal/mining_hammer/wrought_iron",
-    "tfcm:metal/quarry_hammer/wrought_iron",
-    "tfcm:metal/excavator/wrought_iron",
-    "tfcm:metal/mining_hammer/steel",
-    "tfcm:metal/quarry_hammer/steel",
-    "tfcm:metal/excavator/steel",
-    "tfcm:metal/mining_hammer/black_steel",
-    "tfcm:metal/quarry_hammer/black_steel",
-    "tfcm:metal/excavator/black_steel",
-    "tfcm:metal/mining_hammer/blue_steel",
-    "tfcm:metal/quarry_hammer/blue_steel",
-    "tfcm:metal/excavator/blue_steel",
-    "tfcm:metal/mining_hammer/red_steel",
-    "tfcm:metal/quarry_hammer/red_steel",
-    "tfcm:metal/excavator/red_steel",
-    "tfcm:metal/mining_hammer/invar",
-    "tfcm:metal/quarry_hammer/invar",
-    "tfcm:metal/excavator/invar",
-    "tfcm:metal/mining_hammer/titanium",
-    "tfcm:metal/quarry_hammer/titanium",
-    "tfcm:metal/excavator/titanium",
-    "tfcm:metal/mining_hammer/netherite",
-    "tfcm:metal/quarry_hammer/netherite",
-    "tfcm:metal/excavator/netherite",
-    "tfcm:metal/mining_hammer/tungsten_steel",
-    "tfcm:metal/quarry_hammer/tungsten_steel",
-    "tfcm:metal/excavator/tungsten_steel",
-    "tfcm:metal/fishing_rod/invar",
-    "tfcm:metal/pickaxe/invar",
-    "tfcm:metal/propick/invar",
-    "tfcm:metal/axe/invar",
-    "tfcm:metal/shovel/invar",
-    "tfcm:metal/hoe/invar",
-    "tfcm:metal/chisel/invar",
-    "tfcm:metal/hammer/invar",
-    "tfcm:metal/saw/invar",
-    "tfcm:metal/javelin/invar",
-    "tfcm:metal/sword/invar",
-    "tfcm:metal/mace/invar",
-    "tfcm:metal/knife/invar",
-    "tfcm:metal/scythe/invar",
-    "tfcm:metal/shears/invar",
-    "tfcm:metal/shield/invar",
-    "tfcm:metal/fishing_rod/titanium",
-    "tfcm:metal/pickaxe/titanium",
-    "tfcm:metal/propick/titanium",
-    "tfcm:metal/axe/titanium",
-    "tfcm:metal/shovel/titanium",
-    "tfcm:metal/hoe/titanium",
-    "tfcm:metal/chisel/titanium",
-    "tfcm:metal/hammer/titanium",
-    "tfcm:metal/saw/titanium",
-    "tfcm:metal/javelin/titanium",
-    "tfcm:metal/sword/titanium",
-    "tfcm:metal/mace/titanium",
-    "tfcm:metal/knife/titanium",
-    "tfcm:metal/scythe/titanium",
-    "tfcm:metal/shears/titanium",
-    "tfcm:metal/shield/titanium",
-    "tfcm:metal/fishing_rod/netherite",
-    "tfcm:metal/pickaxe/netherite",
-    "tfcm:metal/propick/netherite",
-    "tfcm:metal/axe/netherite",
-    "tfcm:metal/shovel/netherite",
-    "tfcm:metal/hoe/netherite",
-    "tfcm:metal/chisel/netherite",
-    "tfcm:metal/hammer/netherite",
-    "tfcm:metal/saw/netherite",
-    "tfcm:metal/javelin/netherite",
-    "tfcm:metal/sword/netherite",
-    "tfcm:metal/mace/netherite",
-    "tfcm:metal/knife/netherite",
-    "tfcm:metal/scythe/netherite",
-    "tfcm:metal/shears/netherite",
-    "tfcm:metal/shield/netherite",
-    "tfcm:metal/fishing_rod/tungsten_steel",
-    "tfcm:metal/pickaxe/tungsten_steel",
-    "tfcm:metal/propick/tungsten_steel",
-    "tfcm:metal/axe/tungsten_steel",
-    "tfcm:metal/shovel/tungsten_steel",
-    "tfcm:metal/hoe/tungsten_steel",
-    "tfcm:metal/chisel/tungsten_steel",
-    "tfcm:metal/hammer/tungsten_steel",
-    "tfcm:metal/saw/tungsten_steel",
-    "tfcm:metal/javelin/tungsten_steel",
-    "tfcm:metal/sword/tungsten_steel",
-    "tfcm:metal/mace/tungsten_steel",
-    "tfcm:metal/knife/tungsten_steel",
-    "tfcm:metal/scythe/tungsten_steel",
-    "tfcm:metal/shears/tungsten_steel",
-    "tfcm:metal/shield/tungsten_steel"
+    {
+      "id": "tfcm:metal/fishing_rod/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shield/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shield/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shield/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shield/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/tungsten_steel",
+      "required": false
+    }
   ]
 }

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "#tfcm:ores"
+    {
+      "id": "#tfcm:ores",
+      "required": false
+    }
   ]
 }

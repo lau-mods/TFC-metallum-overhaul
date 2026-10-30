@@ -2,6 +2,18 @@
   "type": "minecraft:empty",
   "pools": [
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "native_copper"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -9,15 +21,21 @@
         }
       ],
       "name": "copper_powder_50_percent",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.5,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "native_copper"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.25,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -25,15 +43,15 @@
         }
       ],
       "name": "copper_powder_25_percent",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.25,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -41,15 +59,15 @@
         }
       ],
       "name": "loose_rock_50_percent",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.5,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "conditions": [
+        {
+          "chance": 0.15,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -57,15 +75,15 @@
         }
       ],
       "name": "flint_15_percent",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.15,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     },
     {
+      "conditions": [
+        {
+          "chance": 0.1,
+          "condition": "minecraft:random_chance"
+        }
+      ],
       "entries": [
         {
           "type": "minecraft:item",
@@ -73,13 +91,7 @@
         }
       ],
       "name": "bone_10_percent",
-      "rolls": 1,
-      "conditions": [
-        {
-          "chance": 0.1,
-          "condition": "minecraft:random_chance"
-        }
-      ]
+      "rolls": 1
     }
   ]
 }

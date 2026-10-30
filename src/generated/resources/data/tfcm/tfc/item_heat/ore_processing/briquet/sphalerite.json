@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sphalerite"
+    }
+  ],
   "heat_capacity": 3.8095243,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/sphalerite"

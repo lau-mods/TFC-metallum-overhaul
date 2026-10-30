@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "spodumene"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
   "heat_capacity": 0.16666666,
   "ingredient": {
     "item": "tfcm:ore_processing/powder/spodumene"

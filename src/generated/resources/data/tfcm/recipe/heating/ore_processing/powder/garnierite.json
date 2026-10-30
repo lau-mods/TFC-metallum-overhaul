@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "garnierite"
+    }
+  ],
   "type": "tfc:heating",
   "ingredient": {
     "item": "tfcm:ore_processing/powder/garnierite"

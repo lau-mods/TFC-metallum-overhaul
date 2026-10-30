@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "stibnite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
   "heat_capacity": 3.2,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/stibnite"

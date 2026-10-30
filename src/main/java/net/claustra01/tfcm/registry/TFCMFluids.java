@@ -5,6 +5,7 @@ import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
@@ -33,6 +34,7 @@ public final class TFCMFluids {
         MOLTEN_ANDESITE_SOURCE = andesiteSource[0];
 
         for (Metal metal : Metal.values()) {
+            if (!TFCMConfig.isMetalEnabled(metal)) continue;
             DeferredHolder<FluidType, FluidType> type = FLUID_TYPES.register("metal/" + metal.id(),
                     () -> new FluidType(FluidType.Properties.create().density(3000).viscosity(6000)
                             .temperature(metal.meltingPoint() + 273)));

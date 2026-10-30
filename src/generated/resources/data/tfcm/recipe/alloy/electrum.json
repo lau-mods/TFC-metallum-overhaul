@@ -9,13 +9,13 @@
   "contents": [
     {
       "fluid": "tfc:metal/gold",
-      "min": 0.4,
-      "max": 0.6
+      "max": 0.6,
+      "min": 0.4
     },
     {
       "fluid": "tfc:metal/silver",
-      "min": 0.4,
-      "max": 0.6
+      "max": 0.6,
+      "min": 0.4
     }
   ],
   "result": "tfcm:metal/electrum"

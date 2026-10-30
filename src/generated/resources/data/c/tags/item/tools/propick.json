@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/propick/invar",
-    "tfcm:metal/propick/titanium",
-    "tfcm:metal/propick/netherite",
-    "tfcm:metal/propick/tungsten_steel"
+    {
+      "id": "tfcm:metal/propick/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/tungsten_steel",
+      "required": false
+    }
   ]
 }

@@ -3,19 +3,23 @@
     {
       "type": "tfcm:metal_enabled",
       "metal": "ferroboron"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
     }
   ],
   "type": "tfc:alloy",
   "contents": [
     {
       "fluid": "tfcm:metal/boron",
-      "min": 0.5,
-      "max": 0.5
+      "max": 0.5,
+      "min": 0.5
     },
     {
       "fluid": "tfc:metal/steel",
-      "min": 0.5,
-      "max": 0.5
+      "max": 0.5,
+      "min": 0.5
     }
   ],
   "result": "tfcm:metal/ferroboron"

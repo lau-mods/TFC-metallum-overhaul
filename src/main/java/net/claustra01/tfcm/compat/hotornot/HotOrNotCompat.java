@@ -5,6 +5,7 @@ import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.tool.ToolMetal;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.minecraft.world.item.Item;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
@@ -18,6 +19,7 @@ public final class HotOrNotCompat {
 
     static {
         for (ToolMetal metal : ToolMetal.values()) {
+            if (!TFCMConfig.isMetalEnabled(metal.metal())) continue;
             TONG_PARTS.put(metal, ITEMS.registerSimpleItem("metal/tong_part/" + metal.getSerializedName()));
             TONGS.put(metal, ITEMS.register("metal/tongs/" + metal.getSerializedName(),
                     () -> new TongsItem(new Item.Properties().durability(metal.toolTier().getUses()),

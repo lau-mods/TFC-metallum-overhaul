@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "wolframite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
   "heat_capacity": 0.25,
   "ingredient": {
     "item": "tfcm:ore_processing/powder/wolframite"

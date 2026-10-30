@@ -1,0 +1,2 @@
+disabledMetals = ["lead", "unknown_metal"]
+disabledOres = ["galena", "unknown_ore"]

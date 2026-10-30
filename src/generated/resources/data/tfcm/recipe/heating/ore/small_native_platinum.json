@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_platinum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
   "type": "tfc:heating",
   "ingredient": {
     "item": "tfcm:ore/small_native_platinum"

@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_silver"
+    }
+  ],
   "ingredient": {
     "item": "tfcm:ore_processing/rocky_chunks/native_silver"
   },

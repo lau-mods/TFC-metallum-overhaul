@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/fishing_rod/invar",
-    "tfcm:metal/fishing_rod/titanium",
-    "tfcm:metal/fishing_rod/netherite",
-    "tfcm:metal/fishing_rod/tungsten_steel"
+    {
+      "id": "tfcm:metal/fishing_rod/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/tungsten_steel",
+      "required": false
+    }
   ]
 }

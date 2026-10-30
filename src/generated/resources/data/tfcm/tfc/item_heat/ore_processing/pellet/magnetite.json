@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "magnetite"
+    }
+  ],
   "heat_capacity": 0.57142866,
   "ingredient": {
     "item": "tfcm:ore_processing/pellet/magnetite"

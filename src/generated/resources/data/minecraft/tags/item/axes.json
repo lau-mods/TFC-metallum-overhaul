@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/axe/invar",
-    "tfcm:metal/axe/titanium",
-    "tfcm:metal/axe/netherite",
-    "tfcm:metal/axe/tungsten_steel"
+    {
+      "id": "tfcm:metal/axe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/tungsten_steel",
+      "required": false
+    }
   ]
 }

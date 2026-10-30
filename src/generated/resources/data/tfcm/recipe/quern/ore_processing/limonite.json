@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "limonite"
+    }
+  ],
   "type": "tfc:quern",
   "ingredient": {
     "item": "tfcm:ore_processing/chunks/limonite"

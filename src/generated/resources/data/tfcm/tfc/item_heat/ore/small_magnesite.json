@@ -1,8 +1,18 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "magnesite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "forging_temperature": 390.0,
+  "heat_capacity": 0.33333334,
   "ingredient": {
     "item": "tfcm:ore/small_magnesite"
   },
-  "heat_capacity": 0.33333334,
-  "forging_temperature": 390.0,
   "welding_temperature": 520.0
 }

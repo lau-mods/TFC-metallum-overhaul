@@ -1,8 +1,18 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "uraninite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "forging_temperature": 678.0,
+  "heat_capacity": 0.33333334,
   "ingredient": {
     "item": "tfcm:ore/small_uraninite"
   },
-  "heat_capacity": 0.33333334,
-  "forging_temperature": 678.0,
   "welding_temperature": 904.0
 }

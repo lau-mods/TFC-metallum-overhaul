@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_platinum"
+    }
+  ],
   "type": "minecraft:empty",
   "pools": [
     {

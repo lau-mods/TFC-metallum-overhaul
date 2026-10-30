@@ -1,8 +1,18 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "spodumene"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "forging_temperature": 108.6,
+  "heat_capacity": 0.33333334,
   "ingredient": {
     "item": "tfcm:ore/small_spodumene"
   },
-  "heat_capacity": 0.33333334,
-  "forging_temperature": 108.6,
   "welding_temperature": 144.8
 }

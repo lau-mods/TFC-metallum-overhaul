@@ -6,6 +6,7 @@ import java.util.Map;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.tool.ToolMetal;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -33,6 +34,7 @@ public final class TFCMArmorMaterials {
 
     private static void register(ToolMetal metal, int boots, int leggings, int chestplate, int helmet,
             int enchantment, float toughness, float knockbackResistance) {
+        if (!TFCMConfig.isMetalEnabled(metal.metal())) return;
         MATERIALS.put(metal, ARMOR_MATERIALS.register(metal.getSerializedName(), () -> {
             Map<ArmorItem.Type, Integer> defense = new EnumMap<>(ArmorItem.Type.class);
             defense.put(ArmorItem.Type.BOOTS, boots);

@@ -1,4 +1,14 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_osmium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    }
+  ],
   "type": "tfc:heating",
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/native_osmium"

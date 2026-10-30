@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cryolite"
+    }
+  ],
   "type": "minecraft:empty",
   "pools": [
     {
@@ -44,6 +50,12 @@
       "rolls": 1
     },
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "spodumene"
+        }
+      ],
       "conditions": [
         {
           "chance": 0.01,

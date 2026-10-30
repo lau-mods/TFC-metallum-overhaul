@@ -1,35 +1,125 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/mining_hammer/copper",
-    "tfcm:metal/quarry_hammer/copper",
-    "tfcm:metal/mining_hammer/bismuth_bronze",
-    "tfcm:metal/quarry_hammer/bismuth_bronze",
-    "tfcm:metal/mining_hammer/black_bronze",
-    "tfcm:metal/quarry_hammer/black_bronze",
-    "tfcm:metal/mining_hammer/bronze",
-    "tfcm:metal/quarry_hammer/bronze",
-    "tfcm:metal/mining_hammer/wrought_iron",
-    "tfcm:metal/quarry_hammer/wrought_iron",
-    "tfcm:metal/mining_hammer/steel",
-    "tfcm:metal/quarry_hammer/steel",
-    "tfcm:metal/mining_hammer/black_steel",
-    "tfcm:metal/quarry_hammer/black_steel",
-    "tfcm:metal/mining_hammer/blue_steel",
-    "tfcm:metal/quarry_hammer/blue_steel",
-    "tfcm:metal/mining_hammer/red_steel",
-    "tfcm:metal/quarry_hammer/red_steel",
-    "tfcm:metal/mining_hammer/invar",
-    "tfcm:metal/quarry_hammer/invar",
-    "tfcm:metal/mining_hammer/titanium",
-    "tfcm:metal/quarry_hammer/titanium",
-    "tfcm:metal/mining_hammer/netherite",
-    "tfcm:metal/quarry_hammer/netherite",
-    "tfcm:metal/mining_hammer/tungsten_steel",
-    "tfcm:metal/quarry_hammer/tungsten_steel",
-    "tfcm:metal/pickaxe/invar",
-    "tfcm:metal/pickaxe/titanium",
-    "tfcm:metal/pickaxe/netherite",
-    "tfcm:metal/pickaxe/tungsten_steel"
+    {
+      "id": "tfcm:metal/pickaxe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/tungsten_steel",
+      "required": false
+    }
   ]
 }

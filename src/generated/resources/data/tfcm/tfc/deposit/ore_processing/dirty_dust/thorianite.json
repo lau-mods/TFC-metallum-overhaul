@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorianite"
+    }
+  ],
   "ingredient": {
     "item": "tfcm:ore_processing/dirty_dust/thorianite"
   },

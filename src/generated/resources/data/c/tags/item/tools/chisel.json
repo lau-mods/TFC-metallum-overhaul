@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/chisel/invar",
-    "tfcm:metal/chisel/titanium",
-    "tfcm:metal/chisel/netherite",
-    "tfcm:metal/chisel/tungsten_steel"
+    {
+      "id": "tfcm:metal/chisel/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/tungsten_steel",
+      "required": false
+    }
   ]
 }

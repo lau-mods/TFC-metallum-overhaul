@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/javelin/invar",
-    "tfcm:metal/javelin/titanium",
-    "tfcm:metal/javelin/netherite",
-    "tfcm:metal/javelin/tungsten_steel"
+    {
+      "id": "tfcm:metal/javelin/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/tungsten_steel",
+      "required": false
+    }
   ]
 }

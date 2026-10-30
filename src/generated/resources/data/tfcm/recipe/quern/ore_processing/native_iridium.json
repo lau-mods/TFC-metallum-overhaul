@@ -1,4 +1,10 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_iridium"
+    }
+  ],
   "type": "tfc:quern",
   "ingredient": {
     "item": "tfcm:ore_processing/chunks/native_iridium"

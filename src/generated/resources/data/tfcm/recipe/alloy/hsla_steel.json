@@ -9,13 +9,13 @@
   "contents": [
     {
       "fluid": "tfc:metal/cast_iron",
-      "min": 0.9375,
-      "max": 0.9375
+      "max": 0.9375,
+      "min": 0.9375
     },
     {
       "fluid": "tfc:metal/steel",
-      "min": 0.0625,
-      "max": 0.0625
+      "max": 0.0625,
+      "min": 0.0625
     }
   ],
   "result": "tfcm:metal/hsla_steel"

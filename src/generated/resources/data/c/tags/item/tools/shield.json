@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/shield/invar",
-    "tfcm:metal/shield/titanium",
-    "tfcm:metal/shield/netherite",
-    "tfcm:metal/shield/tungsten_steel"
+    {
+      "id": "tfcm:metal/shield/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shield/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shield/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shield/tungsten_steel",
+      "required": false
+    }
   ]
 }

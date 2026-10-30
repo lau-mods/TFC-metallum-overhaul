@@ -1,8 +1,18 @@
 {
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "rutile"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "forging_temperature": 1020.0,
+  "heat_capacity": 0.33333334,
   "ingredient": {
     "item": "tfcm:ore/small_rutile"
   },
-  "heat_capacity": 0.33333334,
-  "forging_temperature": 1020.0,
   "welding_temperature": 1360.0
 }

@@ -1,9 +1,21 @@
 {
   "replace": false,
   "values": [
-    "tfcm:metal/mace/invar",
-    "tfcm:metal/mace/titanium",
-    "tfcm:metal/mace/netherite",
-    "tfcm:metal/mace/tungsten_steel"
+    {
+      "id": "tfcm:metal/mace/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/tungsten_steel",
+      "required": false
+    }
   ]
 }
