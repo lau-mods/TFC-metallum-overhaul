@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/tuyere/blue_steel"
+  "parent": "tfc:item/metal/tuyere/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/tuyere/tungsten_steel"
+  }
 }

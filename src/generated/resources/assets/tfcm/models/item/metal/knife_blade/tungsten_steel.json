@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/knife_blade/blue_steel"
+  "parent": "tfc:item/metal/knife_blade/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/knife_blade/tungsten_steel"
+  }
 }

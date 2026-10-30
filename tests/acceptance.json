@@ -497,6 +497,48 @@
       "report": "build/test-results/gametest-fresh-config/TEST-net.claustra01.tfcm.gametest.TFCMFreshConfigGameTests.xml",
       "classname": "tfcm_m12_fresh:empty",
       "name": "generatedconfiglistseveryacceptedidwithoutdisablingcontent"
+    },
+    {
+      "acId": "AC-F027-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
+    },
+    {
+      "acId": "AC-F027-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalsoresandtoolshavetfcattributes"
+    },
+    {
+      "acId": "AC-F028-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
+    },
+    {
+      "acId": "AC-F028-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "neutroniumtextureshaveanimationframes"
+    },
+    {
+      "acId": "AC-F027-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "equipmentheatsizerackandtooltagsagree"
+    },
+    {
+      "acId": "AC-F027-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
+    },
+    {
+      "acId": "AC-F028-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
     }
   ],
   "e2e": [
@@ -551,6 +593,14 @@
     {
       "acId": "AC-F023-001",
       "scenario": "tests/e2e/geodes.mjs"
+    },
+    {
+      "acId": "AC-F028-001",
+      "scenario": "tests/e2e/asset-integrity.mjs"
+    },
+    {
+      "acId": "AC-F028-002",
+      "scenario": "tests/e2e/asset-integrity.mjs"
     }
   ]
 }

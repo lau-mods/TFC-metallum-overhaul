@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/helmet/wrought_iron"
+  "parent": "tfc:item/metal/helmet/wrought_iron",
+  "textures": {
+    "armor": "tfcm:item/metal/helmet/invar"
+  }
 }

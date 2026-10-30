@@ -1,3 +1,7 @@
 {
-  "parent": "tfc:item/metal/shield/black_steel"
+  "parent": "tfc:item/metal/shield/black_steel",
+  "textures": {
+    "1": "tfcm:item/metal/shield/titanium_front",
+    "2": "tfcm:item/metal/shield/titanium_back"
+  }
 }

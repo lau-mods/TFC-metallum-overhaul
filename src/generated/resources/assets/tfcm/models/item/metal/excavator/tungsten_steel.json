@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/shovel/blue_steel"
+  "parent": "tfc:item/metal/shovel/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/shovel/tungsten_steel"
+  }
 }

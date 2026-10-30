@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/knife_blade/red_steel"
+  "parent": "tfc:item/metal/knife_blade/red_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/knife_blade/netherite"
+  }
 }

@@ -267,15 +267,39 @@ public final class AreaToolDataProvider implements DataProvider {
 
     private static JsonObject toolModel(AreaToolMetal metal, AreaToolType type) {
         JsonObject json = new JsonObject();
-        String reference = type == AreaToolType.EXCAVATOR ? "shovel" : type == AreaToolType.QUARRY_HAMMER ? "mace" : "hammer";
+        if (type != AreaToolType.EXCAVATOR) {
+            json.addProperty("parent", "minecraft:item/handheld");
+            JsonObject textures = new JsonObject();
+            textures.addProperty("layer0", "tfcm:item/metal/" + type.id() + "/" + metal.id());
+            json.add("textures", textures);
+            return json;
+        }
+        String reference = "shovel";
         json.addProperty("parent", "tfc:item/metal/" + reference + "/" + modelMetal(metal));
+        if (metal.isTFCM()) {
+            JsonObject textures = new JsonObject();
+            textures.addProperty("layer0", "tfcm:item/metal/" + reference + "/" + metal.id());
+            json.add("textures", textures);
+        }
         return json;
     }
 
     private static JsonObject headModel(AreaToolMetal metal, AreaToolType type) {
         JsonObject json = new JsonObject();
-        String reference = type == AreaToolType.EXCAVATOR ? "shovel_head" : type == AreaToolType.QUARRY_HAMMER ? "mace_head" : "hammer_head";
+        if (type != AreaToolType.EXCAVATOR) {
+            json.addProperty("parent", "minecraft:item/generated");
+            JsonObject textures = new JsonObject();
+            textures.addProperty("layer0", "tfcm:item/metal/" + type.id() + "_head/" + metal.id());
+            json.add("textures", textures);
+            return json;
+        }
+        String reference = "shovel_head";
         json.addProperty("parent", "tfc:item/metal/" + reference + "/" + modelMetal(metal));
+        if (metal.isTFCM()) {
+            JsonObject textures = new JsonObject();
+            textures.addProperty("layer0", "tfcm:item/metal/" + reference + "/" + metal.id());
+            json.add("textures", textures);
+        }
         return json;
     }
 

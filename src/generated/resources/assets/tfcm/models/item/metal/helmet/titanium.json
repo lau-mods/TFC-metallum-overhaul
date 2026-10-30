@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/helmet/black_steel"
+  "parent": "tfc:item/metal/helmet/black_steel",
+  "textures": {
+    "armor": "tfcm:item/metal/helmet/titanium"
+  }
 }

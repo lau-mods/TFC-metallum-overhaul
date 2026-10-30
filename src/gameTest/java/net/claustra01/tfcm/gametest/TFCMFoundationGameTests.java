@@ -45,13 +45,14 @@ public final class TFCMFoundationGameTests {
         Path areaToolReport = Path.of(System.getProperty("tfcm.gametest.areaToolReport"));
         Path geodeReport = Path.of(System.getProperty("tfcm.gametest.geodeReport"));
         Path worldgenReport = Path.of(System.getProperty("tfcm.gametest.worldgenReport"));
+        Path assetReport = Path.of(System.getProperty("tfcm.gametest.assetReport"));
         Files.createDirectories(report.getParent());
         GlobalTestReporter.replaceWith(new CombinedTestReporter(new JUnitLikeTestReporter(report.toFile()),
                 new JUnitLikeTestReporter(equipmentReport.toFile()), new JUnitLikeTestReporter(oreReport.toFile()),
                 new JUnitLikeTestReporter(processingReport.toFile()),
                 new JUnitLikeTestReporter(surfaceResourceReport.toFile()),
                 new JUnitLikeTestReporter(areaToolReport.toFile()), new JUnitLikeTestReporter(geodeReport.toFile()),
-                new JUnitLikeTestReporter(worldgenReport.toFile())));
+                new JUnitLikeTestReporter(worldgenReport.toFile()), new JUnitLikeTestReporter(assetReport.toFile())));
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -122,7 +123,7 @@ public final class TFCMFoundationGameTests {
 
     private record CombinedTestReporter(TestReporter foundation, TestReporter equipment, TestReporter ore,
             TestReporter processing, TestReporter surfaceResource, TestReporter areaTool,
-            TestReporter geode, TestReporter worldgen) implements TestReporter {
+            TestReporter geode, TestReporter worldgen, TestReporter asset) implements TestReporter {
         @Override
         public void onTestFailed(GameTestInfo test) {
             foundation.onTestFailed(test);
@@ -133,6 +134,7 @@ public final class TFCMFoundationGameTests {
             areaTool.onTestFailed(test);
             geode.onTestFailed(test);
             worldgen.onTestFailed(test);
+            asset.onTestFailed(test);
         }
 
         @Override
@@ -145,6 +147,7 @@ public final class TFCMFoundationGameTests {
             areaTool.onTestSuccess(test);
             geode.onTestSuccess(test);
             worldgen.onTestSuccess(test);
+            asset.onTestSuccess(test);
         }
 
         @Override
@@ -157,6 +160,7 @@ public final class TFCMFoundationGameTests {
             areaTool.finish();
             geode.finish();
             worldgen.finish();
+            asset.finish();
         }
     }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/shears/blue_steel"
+  "parent": "tfc:item/metal/shears/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/shears/tungsten_steel"
+  }
 }

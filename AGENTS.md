@@ -119,3 +119,10 @@
 - server/client双方にTFC `4.2.12` とPatchouli `1.21.1-93-NEOFORGE` を配置する。現状はFirmaLifeなしの基本構成。FirmaLife `3.0.15` の有無を比較する試験では別途双方へ配置・除去する。
 - `node .harness/dist/cli/main.js doctor` と `validate` で構成を確認する。`plan` はClaude CLIへ仕様を送って計画を生成し、仕様・plan・progressをローカルGitへcommitする。
 - runtime準備だけではTFCMの受入条件を検証したことにならない。Modの実装・build・GameTest・E2Eは後続の開発工程で行う。
+
+## M13 content audit and assets
+
+- GameTest `TFCMAssetIntegrityGameTests` audits registered resources, tags, heat and size, and Neutronium animation metadata. Its JUnit cases are registered in `tests/acceptance.json`.
+- Equipment and Excavator models inherit TFC parent geometry. Their texture overrides must use texture keys from the actual TFC 4.2.12 parent models; armor uses the `tfcm` armor layer namespace. Mining Hammer and Quarry Hammer use dedicated item and head textures. The hammer tools belong to `c:tools/mining_tool`.
+- Asset source: published TFC Metallum Overhaul `tfcm-1.5.1-mc1.21.1.jar`, https://www.curseforge.com/minecraft/mc-mods/tfc-metallum-overhaul/files/8553056, MIT licence (https://www.curseforge.com/minecraft/mc-mods/tfc-metallum-overhaul/license). Imported paths are `assets/tfcm/textures/block/metal/`, `block/mineral/`, `block/ore/`, `entity/projectiles/`, `item/gem/`, `item/metal/`, `item/ore/`, `item/powder/`, and `models/armor/`. Neutronium textures and `.png.mcmeta` animation files are in the metal paths. The plate, nugget, dust, Mining Hammer, and Quarry Hammer textures are project-created derivatives of the imported metal palette.
+- Run `./gradlew runData`, `./gradlew classes build runGameTestServer`, then `node tests/e2e/asset-integrity.mjs` with the client harness running.

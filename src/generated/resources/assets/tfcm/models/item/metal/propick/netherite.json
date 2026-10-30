@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/propick/red_steel"
+  "parent": "tfc:item/metal/propick/red_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/propick/netherite"
+  }
 }

@@ -1,3 +1,7 @@
 {
-  "parent": "tfc:item/metal/shield/wrought_iron"
+  "parent": "tfc:item/metal/shield/wrought_iron",
+  "textures": {
+    "texture": "tfcm:item/metal/shield/invar",
+    "layer0": "tfcm:item/metal/shield/invar"
+  }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/greaves/black_steel"
+  "parent": "tfc:item/metal/greaves/black_steel",
+  "textures": {
+    "armor": "tfcm:item/metal/greaves/titanium"
+  }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/greaves/wrought_iron"
+  "parent": "tfc:item/metal/greaves/wrought_iron",
+  "textures": {
+    "armor": "tfcm:item/metal/greaves/invar"
+  }
 }

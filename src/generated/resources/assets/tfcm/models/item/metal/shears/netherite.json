@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/shears/red_steel"
+  "parent": "tfc:item/metal/shears/red_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/shears/netherite"
+  }
 }

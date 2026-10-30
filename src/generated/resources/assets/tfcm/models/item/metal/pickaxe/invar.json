@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/pickaxe/wrought_iron"
+  "parent": "tfc:item/metal/pickaxe/wrought_iron",
+  "textures": {
+    "layer0": "tfcm:item/metal/pickaxe/invar"
+  }
 }

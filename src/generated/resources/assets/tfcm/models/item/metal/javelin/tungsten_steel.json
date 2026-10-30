@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/javelin/blue_steel"
+  "parent": "tfc:item/metal/javelin/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/javelin/tungsten_steel"
+  }
 }

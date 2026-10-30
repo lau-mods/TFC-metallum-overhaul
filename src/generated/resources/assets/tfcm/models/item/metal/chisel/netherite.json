@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/chisel/red_steel"
+  "parent": "tfc:item/metal/chisel/red_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/chisel/netherite"
+  }
 }

@@ -44,12 +44,8 @@ public final class TFCMArmorMaterials {
             defense.put(ArmorItem.Type.BODY, chestplate);
             return new ArmorMaterial(defense, enchantment, SoundEvents.ARMOR_EQUIP_IRON,
                     metal::repairIngredient,
-                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath("tfc", switch (metal) {
-                        case INVAR -> "wrought_iron";
-                        case TITANIUM -> "black_steel";
-                        case NETHERITE -> "red_steel";
-                        case TUNGSTEN_STEEL -> "blue_steel";
-                    }))), toughness, knockbackResistance);
+                    List.of(new ArmorMaterial.Layer(ResourceLocation.fromNamespaceAndPath(TFCM.MOD_ID,
+                            metal.getSerializedName()))), toughness, knockbackResistance);
         }));
     }
 }

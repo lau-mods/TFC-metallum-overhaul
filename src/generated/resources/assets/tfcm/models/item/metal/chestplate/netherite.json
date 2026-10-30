@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/chestplate/red_steel"
+  "parent": "tfc:item/metal/chestplate/red_steel",
+  "textures": {
+    "armor": "tfcm:item/metal/chestplate/netherite"
+  }
 }

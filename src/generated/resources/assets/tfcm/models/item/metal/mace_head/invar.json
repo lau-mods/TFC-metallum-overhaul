@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/mace_head/wrought_iron"
+  "parent": "tfc:item/metal/mace_head/wrought_iron",
+  "textures": {
+    "layer0": "tfcm:item/metal/mace_head/invar"
+  }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/unfinished_chestplate/black_steel"
+  "parent": "tfc:item/metal/unfinished_chestplate/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/unfinished_chestplate/titanium"
+  }
 }

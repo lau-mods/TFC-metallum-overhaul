@@ -38,7 +38,7 @@ public final class ProcessingDataProvider implements DataProvider {
         List<CompletableFuture<?>> files = new ArrayList<>();
         for (SandPile sand : SandPile.values()) {
             files.add(save(output, assets, "tfcm/models/item/ore_processing/sand_pile/" + sand.id(),
-                    model("tfc:item/ore/" + sandTexture(sand))));
+                    model("tfc:item/ore/normal_" + sandTexture(sand))));
         }
         for (ProcessingSeries series : ProcessingSeries.values()) addSeries(output, files, series);
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new))
@@ -355,8 +355,9 @@ public final class ProcessingDataProvider implements DataProvider {
 
     private static String oreTexture(ProcessingSeries series) {
         Ore ore = ore(series);
-        if (ore != null) return "tfc:item/ore/" + ore.textureSource();
-        return "tfc:item/ore/" + (series == ProcessingSeries.CHROMITE ? "magnetite" : series.id());
+        if (ore != null) return "tfc:item/ore/" + (ore.graded() ? "normal_" : "") + ore.textureSource();
+        String texture = series == ProcessingSeries.CHROMITE ? "magnetite" : series.id();
+        return "tfc:item/ore/" + (series.nonMetal() ? "" : "normal_") + texture;
     }
 
     private static String powderTexture(ProcessingSeries series) {

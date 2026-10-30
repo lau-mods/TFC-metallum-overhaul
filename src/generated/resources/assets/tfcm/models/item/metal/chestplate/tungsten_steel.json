@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/chestplate/blue_steel"
+  "parent": "tfc:item/metal/chestplate/blue_steel",
+  "textures": {
+    "armor": "tfcm:item/metal/chestplate/tungsten_steel"
+  }
 }

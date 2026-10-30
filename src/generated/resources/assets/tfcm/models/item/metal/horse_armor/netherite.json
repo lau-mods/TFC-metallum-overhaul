@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/horse_armor/red_steel"
+  "parent": "tfc:item/metal/horse_armor/red_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/horse_armor/netherite"
+  }
 }

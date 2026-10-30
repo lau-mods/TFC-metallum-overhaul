@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/tuyere/black_steel"
+  "parent": "tfc:item/metal/tuyere/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/tuyere/titanium"
+  }
 }

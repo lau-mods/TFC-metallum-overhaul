@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/boots/red_steel"
+  "parent": "tfc:item/metal/boots/red_steel",
+  "textures": {
+    "armor": "tfcm:item/metal/boots/netherite"
+  }
 }

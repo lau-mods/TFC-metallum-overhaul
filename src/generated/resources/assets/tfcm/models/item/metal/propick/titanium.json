@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/propick/black_steel"
+  "parent": "tfc:item/metal/propick/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/propick/titanium"
+  }
 }

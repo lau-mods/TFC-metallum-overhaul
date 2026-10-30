@@ -1,3 +1,1 @@
-{
-  "parent": "tfc:item/metal/hammer/wrought_iron"
-}
+{"parent":"minecraft:item/handheld","textures":{"layer0":"tfcm:item/metal/mining_hammer/invar"}}

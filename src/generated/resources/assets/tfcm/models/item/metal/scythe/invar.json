@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/scythe/wrought_iron"
+  "parent": "tfc:item/metal/scythe/wrought_iron",
+  "textures": {
+    "layer0": "tfcm:item/metal/scythe/invar"
+  }
 }

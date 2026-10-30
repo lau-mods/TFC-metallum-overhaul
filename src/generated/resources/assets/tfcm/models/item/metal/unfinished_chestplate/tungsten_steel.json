@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/unfinished_chestplate/blue_steel"
+  "parent": "tfc:item/metal/unfinished_chestplate/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/unfinished_chestplate/tungsten_steel"
+  }
 }

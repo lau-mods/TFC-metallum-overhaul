@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/javelin_head/black_steel"
+  "parent": "tfc:item/metal/javelin_head/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/javelin_head/titanium"
+  }
 }

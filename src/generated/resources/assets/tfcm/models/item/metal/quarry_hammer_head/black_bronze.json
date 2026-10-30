@@ -1,3 +1,1 @@
-{
-  "parent": "tfc:item/metal/mace_head/black_bronze"
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"tfcm:item/metal/quarry_hammer_head/black_bronze"}}

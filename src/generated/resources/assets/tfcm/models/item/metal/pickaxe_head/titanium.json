@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/pickaxe_head/black_steel"
+  "parent": "tfc:item/metal/pickaxe_head/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/pickaxe_head/titanium"
+  }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/mace_head/red_steel"
+  "parent": "tfc:item/metal/mace_head/red_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/mace_head/netherite"
+  }
 }

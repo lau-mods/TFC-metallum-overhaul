@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/scythe/black_steel"
+  "parent": "tfc:item/metal/scythe/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/scythe/titanium"
+  }
 }

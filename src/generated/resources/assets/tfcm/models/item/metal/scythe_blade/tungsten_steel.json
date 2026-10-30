@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/scythe_blade/blue_steel"
+  "parent": "tfc:item/metal/scythe_blade/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/scythe_blade/tungsten_steel"
+  }
 }

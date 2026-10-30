@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/saw/black_steel"
+  "parent": "tfc:item/metal/saw/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/saw/titanium"
+  }
 }

@@ -31,7 +31,7 @@ public final class MaterialDataProvider implements DataProvider {
             Map.entry(MaterialPart.CROSSBOW_LIMB, "minecraft:item/stick"),
             Map.entry(MaterialPart.CROSSBOW_CHORD, "minecraft:item/string"),
             Map.entry(MaterialPart.CROSSBOW_STOCK, "minecraft:item/stick"),
-            Map.entry(MaterialPart.CROSSBOW_TRIGGER, "minecraft:item/tripwire_hook"),
+            Map.entry(MaterialPart.CROSSBOW_TRIGGER, "minecraft:block/tripwire_hook"),
             Map.entry(MaterialPart.ARROW_TREAD, "minecraft:item/flint"),
             Map.entry(MaterialPart.ARROW_FLETCH, "minecraft:item/feather"),
             Map.entry(MaterialPart.ARROW_SHAFT, "minecraft:item/stick"),

@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/chisel_head/blue_steel"
+  "parent": "tfc:item/metal/chisel_head/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/chisel_head/tungsten_steel"
+  }
 }

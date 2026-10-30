@@ -19,7 +19,12 @@ import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.capabilities.ItemCapabilities;
 import net.dries007.tfc.util.data.Deposit;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
@@ -31,6 +36,7 @@ import net.neoforged.neoforge.capabilities.RegisterCapabilitiesEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import net.neoforged.neoforge.event.BlockEntityTypeAddBlocksEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 @Mod(TFCM.MOD_ID)
 public final class TFCM {
@@ -48,6 +54,15 @@ public final class TFCM {
             HotOrNotCompat.register(modBus);
         }
         TFCMItems.ITEMS.register(modBus);
+        var creativeTabs = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MOD_ID);
+        creativeTabs.register("items", () -> CreativeModeTab.builder()
+                        .title(Component.translatable("itemGroup.tfcm"))
+                        .icon(() -> new ItemStack(TFCMItems.CERTUS_QUARTZ.get()))
+                        .displayItems((parameters, output) -> BuiltInRegistries.ITEM.stream()
+                                .filter(item -> BuiltInRegistries.ITEM.getKey(item).getNamespace().equals(MOD_ID))
+                                .forEach(output::accept))
+                        .build());
+        creativeTabs.register(modBus);
         TFCMBlocks.BLOCKS.register(modBus);
         TFCMFluids.FLUID_TYPES.register(modBus);
         TFCMFluids.FLUIDS.register(modBus);

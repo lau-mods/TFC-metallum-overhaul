@@ -82,7 +82,8 @@ public final class EquipmentDataProvider implements DataProvider {
         files.add(save(output, data, "c/tags/item/tools/saw", toolTag(ToolPart.SAW)));
         files.add(save(output, data, "c/tags/item/tools/mace", toolTag(ToolPart.MACE)));
         files.add(save(output, data, "c/tags/item/tools/knife", toolTag(ToolPart.KNIFE)));
-        files.add(save(output, data, "c/tags/item/tools/mining_tool", toolTag(ToolPart.PICKAXE)));
+        files.add(save(output, data, "c/tags/item/tools/mining_tool", toolTagWithArea(ToolPart.PICKAXE,
+                AreaToolType.MINING_HAMMER, AreaToolType.QUARRY_HAMMER)));
         files.add(save(output, data, "c/tags/item/tools/shear", toolTag(ToolPart.SHEARS)));
         files.add(save(output, data, "c/tags/item/tools/spear", toolTag(ToolPart.JAVELIN)));
         files.add(save(output, data, "c/tags/item/tools/melee_weapon",
@@ -477,6 +478,29 @@ public final class EquipmentDataProvider implements DataProvider {
     private static JsonObject model(ToolMetal metal, ToolPart part) {
         JsonObject json = new JsonObject();
         json.addProperty("parent", "tfc:item/metal/" + part.id() + "/" + reference(metal));
+        JsonObject textures = new JsonObject();
+        String texture = "tfcm:item/metal/" + part.id() + "/" + metal.getSerializedName();
+        if (part == ToolPart.HELMET || part == ToolPart.CHESTPLATE || part == ToolPart.GREAVES
+                || part == ToolPart.BOOTS) {
+            textures.addProperty("armor", texture);
+        } else if (part == ToolPart.SHIELD) {
+            if (metal == ToolMetal.TITANIUM) {
+                textures.addProperty("1", texture + "_front");
+                textures.addProperty("2", texture + "_back");
+            } else if (metal == ToolMetal.INVAR) {
+                textures.addProperty("texture", texture);
+                textures.addProperty("layer0", texture);
+            } else if (metal == ToolMetal.NETHERITE) {
+                textures.addProperty("texture", texture);
+                textures.addProperty("particle", texture);
+            } else {
+                textures.addProperty("0", texture);
+                textures.addProperty("particle", texture);
+            }
+        } else {
+            textures.addProperty("layer0", texture);
+        }
+        json.add("textures", textures);
         return json;
     }
 

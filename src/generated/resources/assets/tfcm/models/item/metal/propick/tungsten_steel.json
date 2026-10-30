@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/propick/blue_steel"
+  "parent": "tfc:item/metal/propick/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/propick/tungsten_steel"
+  }
 }

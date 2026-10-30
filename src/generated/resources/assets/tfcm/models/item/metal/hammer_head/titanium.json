@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/hammer_head/black_steel"
+  "parent": "tfc:item/metal/hammer_head/black_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/hammer_head/titanium"
+  }
 }

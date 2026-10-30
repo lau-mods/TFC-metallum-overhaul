@@ -1,3 +1,1 @@
-{
-  "parent": "tfc:item/metal/hammer_head/black_steel"
-}
+{"parent":"minecraft:item/generated","textures":{"layer0":"tfcm:item/metal/mining_hammer_head/titanium"}}

@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/saw/blue_steel"
+  "parent": "tfc:item/metal/saw/blue_steel",
+  "textures": {
+    "layer0": "tfcm:item/metal/saw/tungsten_steel"
+  }
 }

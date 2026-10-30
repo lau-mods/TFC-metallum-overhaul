@@ -1,3 +1,6 @@
 {
-  "parent": "tfc:item/metal/greaves/blue_steel"
+  "parent": "tfc:item/metal/greaves/blue_steel",
+  "textures": {
+    "armor": "tfcm:item/metal/greaves/tungsten_steel"
+  }
 }
