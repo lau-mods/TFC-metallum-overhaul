@@ -2,6 +2,7 @@ package net.claustra01.tfcm.gametest;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -34,6 +35,8 @@ import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 @PrefixGameTestTemplate(false)
 public final class TFCMProcessingGameTests {
     private static final String BATCH = "tfcm_foundation";
+    private static final Map<String, Integer> GRADED_OUTPUTS = Map.of("small", 1, "poor", 3,
+            "normal", 5, "rich", 7);
     private static final List<ExpectedSeries> EXPECTED = List.of(
             series("native_copper", "red", "basalt", "andesite", "opal", "hematite", "tfc:metal/copper", true, false, "tfc"),
             series("native_gold", "yellow", "quartzite", "granite", "quartz", "native_silver", "tfc:metal/gold", true, false, "tfc"),
@@ -90,7 +93,7 @@ public final class TFCMProcessingGameTests {
                     "Chromite Sluice input availability does not match FirmaLife");
             for (ExpectedSeries expected : EXPECTED) {
                 ProcessingSeries actual = ProcessingSeries.valueOf(expected.id().toUpperCase());
-                require(TFCMItems.ORE_PROCESSING.get(actual).size() == ProcessingForm.values().length - (expected.nonMetal() ? (expected.id().equals("borax") ? 2 : 3) : 0),
+                require(TFCMItems.ORE_PROCESSING.get(actual).size() == ProcessingForm.values().length - (expected.nonMetal() && !expected.id().equals("borax") ? 1 : 0),
                         "Missing processing form for " + expected.id());
             }
         });
@@ -122,8 +125,7 @@ public final class TFCMProcessingGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void gradedHammerCrushingYieldsOneThreeFiveSevenAndDamagesHammer(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            for (int i = 0; i < 4; i++) checkHammer(helper, "native_naquadah",
-                    List.of("small", "poor", "normal", "rich").get(i), List.of(1, 3, 5, 7).get(i), "tfcm");
+            GRADED_OUTPUTS.forEach((grade, count) -> checkHammer(helper, "native_naquadah", grade, count, "tfcm"));
         });
     }
 
@@ -172,14 +174,7 @@ public final class TFCMProcessingGameTests {
 
     @GameTest(template = "empty", batch = BATCH)
     public static void dirtyPileIsAbsentWhileSevenSandPilesRemain(GameTestHelper helper) {
-        helper.succeedIf(() -> {
-            require(TFCMItems.SAND_PILES.size() == 7, "Seven Sand Piles must remain registered");
-            require(BuiltInRegistries.ITEM.keySet().stream().noneMatch(key ->
-                    key.getNamespace().equals(TFCM.MOD_ID) && key.getPath().contains("dirty_pile")),
-                    "Dirty Pile item is registered");
-            require(helper.getLevel().getServer().getRecipeManager().getRecipeIds().noneMatch(key ->
-                    key.getPath().contains("dirty_pile")), "Dirty Pile recipe was loaded");
-        });
+        helper.succeedIf(() -> checkDirtyPile(helper));
     }
 
     @GameTest(template = "empty", batch = BATCH)
@@ -263,6 +258,80 @@ public final class TFCMProcessingGameTests {
                         "Washed Powder cannot be heated: " + expected.id());
             }
         });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void everySeriesCompletesFiveProcessingSteps(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            boolean firmaLife = ModList.get().isLoaded("firmalife");
+            for (ExpectedSeries expected : EXPECTED) {
+                if (expected.id().equals("chromite") && !firmaLife) continue;
+                ProcessingSeries series = ProcessingSeries.valueOf(expected.id().toUpperCase());
+                if (expected.graded()) {
+                    GRADED_OUTPUTS.forEach((grade, count) -> checkHammer(helper, expected.id(), grade,
+                            count, expected.oreNamespace()));
+                } else {
+                    checkHammer(helper, expected.id(), null, expected.nonMetal() ? 7 : 5,
+                            expected.oreNamespace());
+                }
+                require(Deposit.get(stack(series, ProcessingForm.ROCKY_CHUNKS)) != null,
+                        "Primary Sluice input is missing: " + expected.id());
+                checkPrimaryJson(expected);
+                QuernRecipe quern = (QuernRecipe) recipe(helper, "quern/ore_processing/" + expected.id());
+                ItemStack dirtyDust = quern.assemble(stack(series, ProcessingForm.CHUNKS));
+                require(dirtyDust.is(stack(series, ProcessingForm.DIRTY_DUST).getItem())
+                        && dirtyDust.getCount() == 1, "Quern output is wrong: " + expected.id());
+                require(Deposit.get(dirtyDust) != null, "Secondary Sluice input is missing: " + expected.id());
+                checkSecondaryJson(expected);
+                checkExpected(expected);
+                if (expected.id().equals("native_naquadah")) {
+                    require(expected.byproduct().equals("native_osmium")
+                            && expected.recoveryFluid().equals("tfcm:metal/naquadah"),
+                            "Native Naquadah recovery differs from the project table");
+                }
+                if (expected.id().equals("mithril_matrix")) {
+                    require(expected.byproduct().equals("native_platinum")
+                            && expected.recoveryFluid().equals("tfcm:metal/mithril"),
+                            "Mithril Matrix recovery differs from the project table");
+                }
+                if (expected.recoveryFluid() != null) {
+                    checkHeating(helper, series, ProcessingForm.POWDER, 5, expected.recoveryFluid());
+                }
+                checkCraft(helper, "pellet", series, ProcessingForm.POWDER, 4, ProcessingForm.PELLET, 1);
+                checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 4, ProcessingForm.BRIQUET, 1);
+                checkCraft(helper, "unpack_pellet", series, ProcessingForm.PELLET, 1, ProcessingForm.POWDER, 4);
+                checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 4);
+                if (expected.nonMetal()) {
+                    require(!recipePresent(helper, "heating/ore_processing/pellet/" + expected.id())
+                            && !recipePresent(helper, "heating/ore_processing/briquet/" + expected.id()),
+                            "Non-metal compressed form has a heating recipe: " + expected.id());
+                } else {
+                    checkHeating(helper, series, ProcessingForm.PELLET, 20, expected.recoveryFluid());
+                    checkHeating(helper, series, ProcessingForm.BRIQUET, 80, expected.recoveryFluid());
+                }
+            }
+            checkDirtyPile(helper);
+        });
+    }
+
+    private static void checkDirtyPile(GameTestHelper helper) {
+        require(TFCMItems.SAND_PILES.size() == 7, "Seven Sand Piles must remain registered");
+        require(BuiltInRegistries.ITEM.keySet().stream().noneMatch(key ->
+                key.getNamespace().equals(TFCM.MOD_ID) && key.getPath().contains("dirty_pile")),
+                "Dirty Pile item is registered");
+        require(helper.getLevel().getServer().getRecipeManager().getRecipeIds().noneMatch(key ->
+                key.getPath().contains("dirty_pile")), "Dirty Pile recipe was loaded");
+        var resources = helper.getLevel().getServer().getResourceManager().listResources("", id ->
+                id.getNamespace().equals(TFCM.MOD_ID) && id.getPath().endsWith(".json"));
+        for (var entry : resources.entrySet()) {
+            require(!entry.getKey().getPath().contains("dirty_pile"), "Dirty Pile resource exists: " + entry.getKey());
+            try (var stream = entry.getValue().open()) {
+                require(!new String(stream.readAllBytes(), StandardCharsets.UTF_8).contains("dirty_pile"),
+                        "Dirty Pile resource reference exists: " + entry.getKey());
+            } catch (java.io.IOException exception) {
+                throw new GameTestAssertException("Could not inspect " + entry.getKey() + ": " + exception.getMessage());
+            }
+        }
     }
 
     private static void checkExpected(ExpectedSeries expected) {
@@ -356,6 +425,7 @@ public final class TFCMProcessingGameTests {
         List<ItemStack> items = new ArrayList<>();
         for (int i = 0; i < inputCount; i++) items.add(stack(series, inputForm));
         CraftingInput input = CraftingInput.of(inputCount == 4 ? 2 : 1, inputCount == 4 ? 2 : 1, items);
+        require(recipe.matches(input, helper.getLevel()), "Compression recipe does not match: " + recipeName);
         ItemStack result = recipe.assemble(input, helper.getLevel().registryAccess());
         require(result.is(stack(series, outputForm).getItem()) && result.getCount() == outputCount,
                 "Compression recipe has the wrong amount: " + recipeName);

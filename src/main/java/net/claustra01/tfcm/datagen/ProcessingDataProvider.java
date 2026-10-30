@@ -77,7 +77,7 @@ public final class ProcessingDataProvider implements DataProvider {
                         "tfcm:item/ore_processing/dirty_dust/" + series.id()))));
         files.add(save(output, data, "tfcm/loot_table/ore_processing/dirty_dust/" + series.id(),
                 conditional(series, secondaryWash(series))));
-        if (!series.nonMetal()) addCompression(output, files, series);
+        addCompression(output, files, series);
         if (series.recoveryFluid() != null) addHeating(output, files, series);
     }
 

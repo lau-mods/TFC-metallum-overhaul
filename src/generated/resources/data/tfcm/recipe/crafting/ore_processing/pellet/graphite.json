@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "graphite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfc:powder/graphite"
+    },
+    {
+      "item": "tfc:powder/graphite"
+    },
+    {
+      "item": "tfc:powder/graphite"
+    },
+    {
+      "item": "tfc:powder/graphite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/pellet/graphite"
+  }
+}

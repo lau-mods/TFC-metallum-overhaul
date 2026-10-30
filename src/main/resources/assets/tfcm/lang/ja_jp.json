@@ -4065,5 +4065,15 @@
   "item.tfcm.metal.pommel.netherite": "Netherite Pommel",
   "item.tfcm.metal.crossguard.tungsten_steel": "Tungsten Steel Crossguard",
   "item.tfcm.metal.pommel.tungsten_steel": "Tungsten Steel Pommel",
-  "item.tfcm.ore_processing.powder.borax": "Borax Powder"
+  "item.tfcm.ore_processing.powder.borax": "Borax Powder",
+  "item.tfcm.ore_processing.pellet.cinnabar": "Cinnabar Pellet",
+  "item.tfcm.ore_processing.briquet.cinnabar": "Cinnabar Briquet",
+  "item.tfcm.ore_processing.pellet.cryolite": "Cryolite Pellet",
+  "item.tfcm.ore_processing.briquet.cryolite": "Cryolite Briquet",
+  "item.tfcm.ore_processing.pellet.graphite": "Graphite Pellet",
+  "item.tfcm.ore_processing.briquet.graphite": "Graphite Briquet",
+  "item.tfcm.ore_processing.pellet.sulfur": "Sulfur Pellet",
+  "item.tfcm.ore_processing.briquet.sulfur": "Sulfur Briquet",
+  "item.tfcm.ore_processing.pellet.borax": "Borax Pellet",
+  "item.tfcm.ore_processing.briquet.borax": "Borax Briquet"
 }

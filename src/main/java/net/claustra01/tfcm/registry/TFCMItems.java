@@ -139,8 +139,7 @@ public final class TFCMItems {
             if (!TFCMConfig.isOreEnabled(series.id())) continue;
             Map<ProcessingForm, DeferredItem<Item>> forms = new EnumMap<>(ProcessingForm.class);
             for (ProcessingForm form : ProcessingForm.values()) {
-                if (series.nonMetal() && (form == ProcessingForm.PELLET || form == ProcessingForm.BRIQUET
-                        || series != ProcessingSeries.BORAX && form == ProcessingForm.POWDER)) continue;
+                if (series.nonMetal() && series != ProcessingSeries.BORAX && form == ProcessingForm.POWDER) continue;
                 forms.put(form, ITEMS.registerSimpleItem("ore_processing/" + form.id() + "/" + series.id()));
             }
             ORE_PROCESSING.put(series, forms);
