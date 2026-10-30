@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/quartzite",
-    "overlay": "tfc:block/ore/rich_magnetite",
+    "overlay": "tfcm:block/ore/rich_wolframite",
     "particle": "tfc:block/rock/raw/quartzite"
   }
 }

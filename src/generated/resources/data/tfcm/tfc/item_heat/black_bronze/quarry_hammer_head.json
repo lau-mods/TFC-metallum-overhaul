@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 642.0,
+  "heat_capacity": 5.714286,
+  "ingredient": {
+    "item": "tfcm:metal/quarry_hammer_head/black_bronze"
+  },
+  "welding_temperature": 856.0
+}

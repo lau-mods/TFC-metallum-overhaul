@@ -70,6 +70,12 @@ public final class TFCMWorldgenGameTests {
                     && overworldFeatures.get(0).value().feature().value().config() instanceof ClusterVeinConfig
                     && overworldFeatures.get(1).value().feature().value().config() instanceof GeodeConfiguration,
                     "Overworld did not receive only its vein and geode");
+            GeodeConfiguration geode = (GeodeConfiguration) overworldFeatures.get(1).value().feature().value().config();
+            var placements = geode.geodeBlockSettings.innerPlacements;
+            require(placements.size() == 100001
+                    && placements.get(99999).is(net.minecraft.world.level.block.Blocks.AMETHYST_CLUSTER)
+                    && placements.get(100000).is(net.minecraft.world.level.block.Blocks.SMALL_AMETHYST_BUD),
+                    "Small fractional geode weights lost their configured ratio");
             require(netherFeatures.size() == 1
                     && netherFeatures.getFirst().value().feature().value().config() instanceof DiscVeinConfig,
                     "Nether did not receive only its disc vein");
@@ -158,7 +164,7 @@ public final class TFCMWorldgenGameTests {
                     weights.add(output.getSecond() - previous);
                     previous = output.getSecond();
                 }
-                require(weights.containsAll(List.of(14.0, 6.0)),
+                require(weights.equals(List.of(14.0, 6.0)),
                         "Block and tier weights were not multiplied");
             }
             require(cluster.config().indicator().isPresent()
@@ -277,7 +283,7 @@ public final class TFCMWorldgenGameTests {
                     middle: minecraft:calcite
                     inner: [{block: minecraft:amethyst_block, weight: 2}]
                     filling: [{block: minecraft:air, weight: 1}]
-                    inner_placements: [{block: minecraft:amethyst_cluster, weight: 1}]
+                    inner_placements: [{block: minecraft:amethyst_cluster, weight: 1}, {block: minecraft:small_amethyst_bud, weight: 0.00001}]
                 """.formatted(outer);
     }
 

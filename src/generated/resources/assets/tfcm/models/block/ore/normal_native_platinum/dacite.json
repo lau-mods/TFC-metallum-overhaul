@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/dacite",
-    "overlay": "tfc:block/ore/normal_native_silver",
+    "overlay": "tfcm:block/ore/normal_native_platinum",
     "particle": "tfc:block/rock/raw/dacite"
   }
 }

@@ -5,10 +5,10 @@
       "metal": "magnesium"
     }
   ],
+  "forging_temperature": 390.0,
+  "heat_capacity": 0.83333325,
   "ingredient": {
     "item": "tfcm:metal/stamen/magnesium"
   },
-  "heat_capacity": 0.8333333500000001,
-  "forging_temperature": 390.0,
   "welding_temperature": 520.0
 }

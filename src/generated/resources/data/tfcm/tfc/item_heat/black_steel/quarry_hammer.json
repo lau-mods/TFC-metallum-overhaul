@@ -1,13 +1,8 @@
 {
   "forging_temperature": 891.00006,
-  "heat_capacity": 2.857143,
-  "ingredient": [
-    {
-      "item": "tfcm:metal/quarry_hammer/black_steel"
-    },
-    {
-      "item": "tfcm:metal/quarry_hammer_head/black_steel"
-    }
-  ],
+  "heat_capacity": 7.1428576,
+  "ingredient": {
+    "item": "tfcm:metal/quarry_hammer/black_steel"
+  },
   "welding_temperature": 1188.0
 }

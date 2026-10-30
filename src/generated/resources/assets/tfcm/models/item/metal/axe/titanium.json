@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/axe/black_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/axe/titanium"
-  }
-}

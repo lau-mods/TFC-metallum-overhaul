@@ -97,7 +97,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/sulfur"
+          "name": "tfc:powder/sulfur"
         }
       ],
       "name": "output_5",

@@ -1,0 +1,8 @@
+{
+  "loader": "tfc:trim",
+  "parent": "neoforge:item/default",
+  "textures": {
+    "armor": "tfcm:item/metal/boots/invar",
+    "trim": "tfc:item/boots_trim"
+  }
+}

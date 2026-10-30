@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/dolomite",
-    "overlay": "tfc:block/ore/poor_magnetite",
+    "overlay": "tfcm:block/ore/poor_stibnite",
     "particle": "tfc:block/rock/raw/dolomite"
   }
 }

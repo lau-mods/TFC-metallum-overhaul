@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S  ",
+    " LX",
+    " X "
+  ],
+  "key": {
+    "X": {
+      "tag": "c:bow_part/chord"
+    },
+    "S": {
+      "tag": "c:string"
+    },
+    "L": {
+      "tag": "c:bow_part/limb"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:bow"
+  }
+}

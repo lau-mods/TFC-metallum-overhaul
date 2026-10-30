@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/end_stone",
-    "overlay": "tfc:block/ore/normal_tetrahedrite",
+    "overlay": "tfcm:block/ore/normal_cobaltite",
     "particle": "minecraft:block/end_stone"
   }
 }

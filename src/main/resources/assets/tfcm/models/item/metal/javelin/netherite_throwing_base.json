@@ -1,0 +1,6 @@
+{
+  "parent": "item/trident_throwing",
+  "textures": {
+    "particle": "tfcm:item/metal/javelin/netherite"
+  }
+}

@@ -5,10 +5,10 @@
       "metal": "tough_alloy"
     }
   ],
+  "forging_temperature": 960.0,
+  "heat_capacity": 0.3333333,
   "ingredient": {
     "item": "tfcm:metal/nugget/tough_alloy"
   },
-  "heat_capacity": 0.33333334000000003,
-  "forging_temperature": 960.0,
   "welding_temperature": 1280.0
 }

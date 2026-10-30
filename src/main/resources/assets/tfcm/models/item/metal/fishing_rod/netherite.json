@@ -1,0 +1,14 @@
+{
+  "parent": "item/handheld_rod",
+  "textures": {
+    "layer0": "tfcm:item/metal/fishing_rod/netherite"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "tfc:cast": 1.0
+      },
+      "model": "tfcm:item/metal/fishing_rod/netherite_cast"
+    }
+  ]
+}

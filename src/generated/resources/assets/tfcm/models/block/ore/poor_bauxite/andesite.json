@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/andesite",
-    "overlay": "tfc:block/ore/poor_hematite",
+    "overlay": "tfcm:block/ore/poor_bauxite",
     "particle": "tfc:block/rock/raw/andesite"
   }
 }

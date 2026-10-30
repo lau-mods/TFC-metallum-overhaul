@@ -1,7 +1,7 @@
 {
   "parent": "tfc:block/groundcover/native_copper",
   "textures": {
-    "0": "tfc:item/ore/small_cassiterite",
-    "particle": "tfc:item/ore/small_cassiterite"
+    "0": "tfcm:item/ore/small_spodumene",
+    "particle": "tfcm:item/ore/small_spodumene"
   }
 }

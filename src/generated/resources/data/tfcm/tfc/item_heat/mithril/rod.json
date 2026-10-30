@@ -5,10 +5,10 @@
       "metal": "mithril"
     }
   ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 1.4285716,
   "ingredient": {
     "item": "tfcm:metal/rod/mithril"
   },
-  "heat_capacity": 1.4285715,
-  "forging_temperature": 564.0,
   "welding_temperature": 752.0
 }

@@ -90,7 +90,7 @@ public final class TFCMProcessingGameTests {
                     "Chromite Sluice input availability does not match FirmaLife");
             for (ExpectedSeries expected : EXPECTED) {
                 ProcessingSeries actual = ProcessingSeries.valueOf(expected.id().toUpperCase());
-                require(TFCMItems.ORE_PROCESSING.get(actual).size() == ProcessingForm.values().length,
+                require(TFCMItems.ORE_PROCESSING.get(actual).size() == ProcessingForm.values().length - (expected.nonMetal() ? (expected.id().equals("borax") ? 2 : 3) : 0),
                         "Missing processing form for " + expected.id());
             }
         });
@@ -229,7 +229,7 @@ public final class TFCMProcessingGameTests {
                         TFCMItems.ORE_PROCESSING.get(series).get(ProcessingForm.DIRTY_DUST)),
                         "Non-metal Quern output is wrong: " + expected.id());
                 checkPool(secondary(expected), 0, "powder", processingItem("powder", expected.id()), null);
-                require(BuiltInRegistries.ITEM.containsKey(id("ore_processing/powder/" + expected.id())),
+                require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(processingItem("powder", expected.id()))),
                         "Non-metal Powder item is missing: " + expected.id());
                 require(!recipePresent(helper, "heating/ore_processing/pellet/" + expected.id())
                         && !recipePresent(helper, "heating/ore_processing/briquet/" + expected.id()),
@@ -357,7 +357,7 @@ public final class TFCMProcessingGameTests {
         for (int i = 0; i < inputCount; i++) items.add(stack(series, inputForm));
         CraftingInput input = CraftingInput.of(inputCount == 4 ? 2 : 1, inputCount == 4 ? 2 : 1, items);
         ItemStack result = recipe.assemble(input, helper.getLevel().registryAccess());
-        require(result.is(TFCMItems.ORE_PROCESSING.get(series).get(outputForm)) && result.getCount() == outputCount,
+        require(result.is(stack(series, outputForm).getItem()) && result.getCount() == outputCount,
                 "Compression recipe has the wrong amount: " + recipeName);
     }
 
@@ -380,7 +380,7 @@ public final class TFCMProcessingGameTests {
     }
 
     private static ItemStack stack(ProcessingSeries series, ProcessingForm form) {
-        return TFCMItems.ORE_PROCESSING.get(series).get(form).toStack();
+        return BuiltInRegistries.ITEM.get(ResourceLocation.parse(processingItem(form.id(), series.id()))).getDefaultInstance();
     }
 
     private static ExpectedSeries expected(String id) {
@@ -388,6 +388,10 @@ public final class TFCMProcessingGameTests {
     }
 
     private static String processingItem(String form, String name) {
+        if (form.equals("powder")) {
+            if (name.equals("cinnabar") || name.equals("cryolite")) return "minecraft:redstone";
+            if (List.of("graphite", "sulfur").contains(name)) return "tfc:powder/" + name;
+        }
         return "tfcm:ore_processing/" + form + "/" + name;
     }
 

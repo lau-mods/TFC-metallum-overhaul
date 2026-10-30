@@ -5,10 +5,10 @@
       "metal": "naquadah"
     }
   ],
+  "forging_temperature": 1200.0,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/block/naquadah"
   },
-  "heat_capacity": 2.85714,
-  "forging_temperature": 1200.0,
   "welding_temperature": 1600.0
 }

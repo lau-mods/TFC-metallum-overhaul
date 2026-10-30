@@ -3,9 +3,12 @@ const { scenario, command, camera, screenshot, mct } = await import(process.env.
 await scenario(async ({ clients }) => {
   const client = clients[0];
   command(client, 'gamemode creative');
+  for (const type of ['item_frame', 'armor_stand', 'item']) {
+    command(client, `execute if entity @e[type=minecraft:${type}] run kill @e[type=minecraft:${type}]`);
+  }
+  command(client, 'fill -12 1 -12 12 12 8 minecraft:air');
   command(client, 'gamerule sendCommandFeedback false');
   command(client, 'time set day');
-  command(client, 'weather clear');
   command(client, 'fill -6 0 -8 6 0 2 minecraft:smooth_stone');
   command(client, 'fill -6 1 2 6 7 2 minecraft:smooth_stone');
   const metals = ['invar', 'titanium', 'netherite', 'tungsten_steel'];
@@ -19,7 +22,8 @@ await scenario(async ({ clients }) => {
     }
   }
   await new Promise(resolve => setTimeout(resolve, 12000));
-  await camera(client, { x: 0.5, y: 4, z: -5.5, yaw: 0, pitch: 0 });
+  command(client, 'setblock 0 2 -6 minecraft:smooth_stone');
+  await camera(client, { x: 0.5, y: 3, z: -5.5, yaw: 0, pitch: 0 });
   screenshot(client, 'AC-F017-003', 'mining-hammer-tools-and-heads');
   screenshot(client, 'AC-F018-004', 'quarry-hammer-tools-and-heads');
   screenshot(client, 'AC-F019-002', 'excavator-tools-and-heads');

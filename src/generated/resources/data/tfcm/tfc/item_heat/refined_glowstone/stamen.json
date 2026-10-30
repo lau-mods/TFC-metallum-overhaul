@@ -5,10 +5,10 @@
       "metal": "refined_glowstone"
     }
   ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 0.7142858,
   "ingredient": {
     "item": "tfcm:metal/stamen/refined_glowstone"
   },
-  "heat_capacity": 0.7142857642857152,
-  "forging_temperature": 564.0,
   "welding_temperature": 752.0
 }

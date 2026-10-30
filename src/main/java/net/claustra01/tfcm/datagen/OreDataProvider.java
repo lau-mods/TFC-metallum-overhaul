@@ -54,15 +54,15 @@ public final class OreDataProvider implements DataProvider {
             chromiteBlocks.add("tfcm:ore/" + grade.id() + "_chromite/netherrack");
             chromiteBlocks.add("tfcm:ore/" + grade.id() + "_chromite/end_stone");
         }
-        files.add(save(output, data, "tfcm/tags/block/firmalife_ores", conditionalTag(chromiteBlocks)));
-        files.add(save(output, data, "c/tags/block/ores", tag(oreBlocks, false)));
-        files.add(save(output, data, "tfcm/tags/block/ores", tag(pickaxeBlocks, false)));
-        files.add(save(output, data, "tfc/tags/block/prospectable", tag(List.of("#tfcm:ores"), false)));
-        files.add(save(output, data, "tfc/tags/block/mineable/propick", tag(List.of("#tfcm:ores"), false)));
-        files.add(save(output, data, "tfc/tags/item/gem_powders", tag(List.of("tfcm:powder/quartz", "tfcm:powder/fluorite"), false)));
-        files.add(save(output, data, "tfc/tags/item/bowl_powders", tag(List.of("tfcm:powder/quartz", "tfcm:powder/fluorite"), false)));
-        files.add(save(output, data, "c/tags/item/gems/quartz", tag(List.of("tfcm:gem/cut_quartz", "tfcm:gem/certus_quartz"), false)));
-        files.add(save(output, data, "c/tags/item/gems", tag(List.of("#c:gems/quartz"), false)));
+        files.add(save(output, data, "tfcm/tags/block/firmalife_ores", tag(chromiteBlocks)));
+        files.add(save(output, data, "c/tags/block/ores", tag(oreBlocks)));
+        files.add(save(output, data, "tfcm/tags/block/ores", tag(pickaxeBlocks)));
+        files.add(save(output, data, "tfc/tags/block/prospectable", tag(List.of("#tfcm:ores"))));
+        files.add(save(output, data, "tfc/tags/block/mineable/propick", tag(List.of("#tfcm:ores"))));
+        files.add(save(output, data, "tfc/tags/item/gem_powders", tag(List.of("tfcm:powder/quartz", "tfcm:powder/fluorite"))));
+        files.add(save(output, data, "tfc/tags/item/bowl_powders", tag(List.of("tfcm:powder/quartz", "tfcm:powder/fluorite"))));
+        files.add(save(output, data, "c/tags/item/gems/quartz", tag(List.of("tfcm:gem/cut_quartz", "tfcm:gem/certus_quartz"))));
+        files.add(save(output, data, "c/tags/item/gems", tag(List.of("#c:gems/quartz"))));
         files.add(save(output, data, "tfcm/recipe/quern/quartz", conditioned("quartz", null, quern("quartz"))));
         files.add(save(output, data, "tfcm/recipe/quern/fluorite", conditioned("fluorite", null, quern("fluorite"))));
         files.add(save(output, data, "tfcm/recipe/crafting/cut_quartz", conditioned("quartz", null, polishing())));
@@ -84,15 +84,15 @@ public final class OreDataProvider implements DataProvider {
             for (OreGrade grade : OreGrade.values()) {
                 String name = ore.itemName(grade);
                 files.add(save(output, assets, "tfcm/models/item/ore/" + name,
-                        generatedModel("tfc:item/ore/" + grade.id() + "_" + ore.textureSource())));
-                addHosts(output, files, ores, pickaxes, name, "tfc:block/ore/" + grade.id() + "_" + ore.textureSource(),
+                        generatedModel("tfcm:item/ore/" + name)));
+                addHosts(output, files, ores, pickaxes, name, "tfcm:block/ore/" + name,
                         "tfcm:ore/" + name, ore.id(), false);
             }
             String small = "small_" + ore.id();
             files.add(save(output, assets, "tfcm/models/item/ore/" + small,
                     parentModel("tfcm:block/groundcover/" + ore.id())));
             files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
-                    groundcoverModel("tfc:item/ore/small_" + ore.textureSource())));
+                    groundcoverModel("tfcm:item/ore/small_" + ore.id())));
             files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore)));
             files.add(save(output, data, "tfcm/loot_table/blocks/ore/" + small,
                     blockLoot("tfcm:ore/" + small, ore.id(), false)));
@@ -103,12 +103,12 @@ public final class OreDataProvider implements DataProvider {
                     conditioned(ore.id(), metal, smallOreHeat(ore, metal))));
         } else {
             files.add(save(output, assets, "tfcm/models/item/ore/" + ore.id(),
-                    generatedModel("tfc:item/ore/" + ore.textureSource())));
-            addHosts(output, files, ores, pickaxes, ore.id(), "tfc:block/ore/" + ore.textureSource(),
+                    generatedModel("tfcm:item/ore/" + ore.id())));
+            addHosts(output, files, ores, pickaxes, ore.id(), "tfcm:block/ore/" + ore.id(),
                     "tfcm:ore/" + ore.id(), ore.id(), false);
             if (ore == Ore.FLUORITE || ore == Ore.QUARTZ) {
                 files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
-                        groundcoverModel("tfc:item/gem/" + ore.textureSource())));
+                        groundcoverModel("tfcm:item/ore/" + ore.id())));
                 files.add(save(output, assets, "tfcm/blockstates/ore/small_" + ore.id(), smallBlockState(ore)));
                 files.add(save(output, data, "tfcm/loot_table/blocks/ore/small_" + ore.id(),
                         blockLoot("tfcm:ore/" + ore.id(), ore.id(), false)));
@@ -237,18 +237,7 @@ public final class OreDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject tag(List<String> values, boolean replace) {
-        JsonObject json = new JsonObject();
-        json.addProperty("replace", replace);
-        JsonArray array = new JsonArray();
-        for (String value : values) {
-            array.add(ContentConditions.optional(value));
-        }
-        json.add("values", array);
-        return json;
-    }
-
-    private static JsonObject conditionalTag(List<String> values) {
+    private static JsonObject tag(List<String> values) {
         JsonObject json = new JsonObject();
         json.addProperty("replace", false);
         JsonArray array = new JsonArray();

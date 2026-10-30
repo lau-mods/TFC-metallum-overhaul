@@ -5,10 +5,10 @@
       "metal": "solder"
     }
   ],
+  "forging_temperature": 240.0,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/block/solder"
   },
-  "heat_capacity": 2.85714,
-  "forging_temperature": 240.0,
   "welding_temperature": 320.0
 }

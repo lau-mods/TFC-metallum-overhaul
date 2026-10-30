@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "tfcm:item/ore_processing/rocky_chunks/native_iridium",
+    "layer1": "tfcm:item/ore_processing/rocky_chunks/rock_overlay"
+  }
+}

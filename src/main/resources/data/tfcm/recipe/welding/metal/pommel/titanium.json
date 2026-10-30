@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:rings/titanium"
+  },
+  "second_input": {
+    "tag": "c:rings/titanium"
+  },
+  "tier": 4,
+  "result": {
+    "id": "tfcm:metal/pommel/titanium"
+  }
+}

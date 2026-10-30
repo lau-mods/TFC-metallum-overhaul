@@ -86,51 +86,52 @@ public final class TFCMMaterialGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void bowCrossbowArrowAndToolPartsAssembleWithKnifeDamage(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            assertAssembly(helper, "crafting/material/bow", Items.BOW, MaterialPart.BOW_LIMB,
-                    MaterialPart.BOW_LIMB, MaterialPart.BOW_CHORD, MaterialPart.BOW_GRIP);
-            assertAssembly(helper, "crafting/material/crossbow", Items.CROSSBOW, MaterialPart.CROSSBOW_LIMB,
-                    MaterialPart.CROSSBOW_CHORD, MaterialPart.CROSSBOW_STOCK, MaterialPart.CROSSBOW_TRIGGER);
-            assertAssembly(helper, "crafting/material/arrow", Items.ARROW, MaterialPart.ARROW_TREAD,
-                    MaterialPart.ARROW_FLETCH, MaterialPart.ARROW_SHAFT, MaterialPart.PLANT_STRING);
-            assertKnifeCraft(helper, "leather_strip", MaterialPart.LEATHER_STRIP, 4, Items.LEATHER.getDefaultInstance());
-            assertKnifeCraft(helper, "leather_string", MaterialPart.LEATHER_STRING, 2, part(MaterialPart.LEATHER_STRIP));
-            assertCraft(helper, "leather_strap", MaterialPart.LEATHER_STRAP, 1,
-                    part(MaterialPart.LEATHER_STRIP), part(MaterialPart.LEATHER_STRIP));
+            ItemStack empty = ItemStack.EMPTY;
+            assertGrid(helper, "bow", Items.BOW, 1, 3, 3,
+                    part(MaterialPart.PLANT_STRING), empty, empty,
+                    empty, part(MaterialPart.BOW_LIMB), part(MaterialPart.BOW_CHORD),
+                    empty, part(MaterialPart.BOW_CHORD), empty);
+            ItemStack lumber = BuiltInRegistries.ITEM.get(ResourceLocation.parse("tfc:wood/lumber/oak")).getDefaultInstance();
+            assertGrid(helper, "crossbow", Items.CROSSBOW, 1, 3, 3,
+                    BuiltInRegistries.ITEM.get(id("metal/ring/invar")).getDefaultInstance(), lumber, part(MaterialPart.LEATHER_STRAP),
+                    lumber, part(MaterialPart.BOW_LIMB), part(MaterialPart.BOW_CHORD),
+                    part(MaterialPart.LEATHER_STRAP), part(MaterialPart.BOW_CHORD), lumber);
+            assertGrid(helper, "arrow", Items.ARROW, 1, 3, 3,
+                    empty, part(MaterialPart.ARROW_TREAD), part(MaterialPart.ARROW_HEAD),
+                    empty, part(MaterialPart.ARROW_SHAFT), empty,
+                    part(MaterialPart.ARROW_FLETCH), part(MaterialPart.ARROW_TREAD), empty);
+            assertGrid(helper, "plant_block", TFCMItems.PLANT_BLOCK.get(), 1, 2, 2,
+                    part(MaterialPart.PLANT_FIBER), part(MaterialPart.PLANT_FIBER),
+                    part(MaterialPart.PLANT_FIBER), part(MaterialPart.PLANT_FIBER));
+            assertKnifeCraft(helper, "leather_sheet_knives", MaterialPart.LEATHER_SHEET, 2, Items.LEATHER.getDefaultInstance());
+            assertKnifeCraft(helper, "leather_strip_knives", MaterialPart.LEATHER_STRIP, 2, part(MaterialPart.LEATHER_SHEET));
+            assertKnifeCraft(helper, "leather_strap_knives", MaterialPart.LEATHER_STRAP, 2, part(MaterialPart.LEATHER_STRIP));
+            assertKnifeCraft(helper, "leather_string", MaterialPart.LEATHER_STRING, 2, part(MaterialPart.LEATHER_STRAP));
             assertCraft(helper, "plant_string", MaterialPart.PLANT_STRING, 1,
                     part(MaterialPart.PLANT_FIBER), part(MaterialPart.PLANT_FIBER), part(MaterialPart.PLANT_FIBER));
             assertCraft(helper, "plant_fabric", MaterialPart.PLANT_FABRIC, 1,
                     part(MaterialPart.PLANT_STRING), part(MaterialPart.PLANT_STRING),
                     part(MaterialPart.PLANT_STRING), part(MaterialPart.PLANT_STRING));
-            assertCraft(helper, "plant_clothing", MaterialPart.PLANT_CLOTHING, 1,
+            assertGrid(helper, "plant_clothing", TFCMItems.MATERIAL_PARTS.get(MaterialPart.PLANT_CLOTHING).get(), 1, 3, 3,
+                    part(MaterialPart.PLANT_FABRIC), empty, part(MaterialPart.PLANT_FABRIC),
+                    part(MaterialPart.PLANT_FABRIC), part(MaterialPart.PLANT_FABRIC), part(MaterialPart.PLANT_FABRIC),
                     part(MaterialPart.PLANT_FABRIC), part(MaterialPart.PLANT_FABRIC), part(MaterialPart.PLANT_FABRIC));
+            assertKnifeCraft(helper, "handle_short", MaterialPart.SHORT_WOOD_HANDLE, 2, Items.STICK.getDefaultInstance());
+            assertKnifeCraft(helper, "handle_saw", MaterialPart.SAW_WOOD_HANDLE, 2, lumber);
             assertKnifeCraft(helper, "bow_limb", MaterialPart.BOW_LIMB, 1,
-                    Items.STICK.getDefaultInstance(), Items.STICK.getDefaultInstance());
-            assertKnifeCraft(helper, "bow_grip", MaterialPart.BOW_GRIP, 1, part(MaterialPart.LEATHER_STRAP));
-            assertKnifeCraft(helper, "crossbow_limb", MaterialPart.CROSSBOW_LIMB, 1,
-                    Items.STICK.getDefaultInstance(), Items.STICK.getDefaultInstance(), Items.STICK.getDefaultInstance());
-            assertKnifeCraft(helper, "crossbow_stock", MaterialPart.CROSSBOW_STOCK, 1,
-                    Items.STICK.getDefaultInstance(), Items.STICK.getDefaultInstance());
-            assertKnifeCraft(helper, "arrow_tread", MaterialPart.ARROW_TREAD, 2, Items.FLINT.getDefaultInstance());
+                    BuiltInRegistries.ITEM.get(ResourceLocation.parse("tfc:wood/support/oak")).getDefaultInstance());
             assertKnifeCraft(helper, "arrow_fletch", MaterialPart.ARROW_FLETCH, 2, Items.FEATHER.getDefaultInstance());
-            assertKnifeCraft(helper, "tool_handle", MaterialPart.TOOL_HANDLE, 1,
-                    Items.STICK.getDefaultInstance(), part(MaterialPart.LEATHER_STRAP));
-            assertCraft(helper, "tool_binding", MaterialPart.TOOL_BINDING, 1,
-                    part(MaterialPart.LEATHER_STRING), part(MaterialPart.LEATHER_STRAP));
-            assertCraft(helper, "tool_riveting", MaterialPart.TOOL_RIVETING, 1,
-                    BuiltInRegistries.ITEM.get(id("metal/rivet/compressed_iron")).getDefaultInstance(),
-                    part(MaterialPart.LEATHER_STRAP));
-            assertKnifeCraft(helper, "arrow_shaft", MaterialPart.ARROW_SHAFT, 2, Items.STICK.getDefaultInstance());
+            assertKnifeCraft(helper, "arrow_shaft", MaterialPart.ARROW_SHAFT, 1, Items.STICK.getDefaultInstance());
         });
     }
 
-    private static void assertAssembly(GameTestHelper helper, String recipeId, Item output, MaterialPart... parts) {
-        CraftingRecipe recipe = crafting(helper, recipeId);
-        List<ItemStack> stacks = Arrays.stream(parts)
-                .map(part -> TFCMItems.MATERIAL_PARTS.get(part).get().getDefaultInstance()).toList();
-        int width = stacks.size() == 4 ? 2 : stacks.size();
-        CraftingInput input = CraftingInput.of(width, stacks.size() / width, stacks);
-        require(recipe.matches(input, helper.getLevel()), recipeId + " does not match its parts");
-        require(recipe.assemble(input, helper.getLevel().registryAccess()).is(output), recipeId + " has the wrong result");
+    private static void assertGrid(GameTestHelper helper, String name, Item output, int count,
+            int width, int height, ItemStack... stacks) {
+        CraftingRecipe recipe = crafting(helper, "crafting/material/" + name);
+        CraftingInput input = CraftingInput.of(width, height, List.of(stacks));
+        require(recipe.matches(input, helper.getLevel()), name + " does not match the original assembly");
+        ItemStack result = recipe.assemble(input, helper.getLevel().registryAccess());
+        require(result.is(output) && result.getCount() == count, name + " has the wrong result");
     }
 
     private static void assertCraft(GameTestHelper helper, String name, MaterialPart output, int count, ItemStack... stacks) {
@@ -147,9 +148,11 @@ public final class TFCMMaterialGameTests {
         ItemStack knife = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("tfc", "metal/knife/copper"))
                 .getDefaultInstance();
         List<ItemStack> stacks = new ArrayList<>(List.of(ingredients));
-        stacks.add(knife);
+        stacks.addFirst(knife);
         CraftingRecipe recipe = crafting(helper, "crafting/material/" + name);
-        CraftingInput input = craftingInput(stacks);
+        boolean vertical = List.of("bamboo_fiber", "bow_limb", "arrow_fletch", "leather_sheet_knives",
+                "leather_strip_knives", "leather_strap_knives", "handle_short", "handle_saw").contains(name);
+        CraftingInput input = vertical ? CraftingInput.of(1, 2, stacks) : craftingInput(stacks);
         require(recipe.matches(input, helper.getLevel()), name + " recipe does not match");
         ItemStack result = recipe.assemble(input, helper.getLevel().registryAccess());
         require(result.is(TFCMItems.MATERIAL_PARTS.get(output).get()) && result.getCount() == count,

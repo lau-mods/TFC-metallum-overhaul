@@ -5,10 +5,10 @@
       "metal": "lithium"
     }
   ],
+  "forging_temperature": 108.6,
+  "heat_capacity": 0.83333325,
   "ingredient": {
     "item": "tfcm:metal/wire/lithium"
   },
-  "heat_capacity": 0.8333333500000001,
-  "forging_temperature": 108.6,
   "welding_temperature": 144.8
 }

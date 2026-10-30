@@ -1,7 +1,7 @@
 {
   "parent": "tfc:block/groundcover/native_copper",
   "textures": {
-    "0": "tfc:item/ore/small_sphalerite",
-    "particle": "tfc:item/ore/small_sphalerite"
+    "0": "tfcm:item/ore/small_galena",
+    "particle": "tfcm:item/ore/small_galena"
   }
 }

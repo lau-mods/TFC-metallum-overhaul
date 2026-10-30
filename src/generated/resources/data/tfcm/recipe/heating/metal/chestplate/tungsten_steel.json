@@ -13,5 +13,6 @@
     "amount": 800,
     "id": "tfcm:metal/tungsten_steel"
   },
-  "temperature": 1535
+  "temperature": 1535,
+  "use_durability": true
 }

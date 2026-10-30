@@ -5,10 +5,10 @@
       "metal": "antimony"
     }
   ],
+  "forging_temperature": 378.0,
+  "heat_capacity": 4.0,
   "ingredient": {
     "item": "tfcm:metal/dust/antimony"
   },
-  "heat_capacity": 4.00000008,
-  "forging_temperature": 378.0,
   "welding_temperature": 504.0
 }

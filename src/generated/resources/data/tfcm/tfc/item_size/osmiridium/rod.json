@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/rod/osmiridium"
   },
-  "size": "small",
-  "weight": "medium"
+  "size": "normal",
+  "weight": "light"
 }

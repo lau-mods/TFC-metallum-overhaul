@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/foil/dawnstone"
   },
-  "size": "small",
-  "weight": "very_light"
+  "size": "large",
+  "weight": "medium"
 }

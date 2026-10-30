@@ -5,10 +5,10 @@
       "metal": "refined_obsidian"
     }
   ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/block/refined_obsidian"
   },
-  "heat_capacity": 2.85714,
-  "forging_temperature": 564.0,
   "welding_temperature": 752.0
 }

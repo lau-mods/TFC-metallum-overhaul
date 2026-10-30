@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/rod/beryllium"
   },
-  "size": "small",
-  "weight": "medium"
+  "size": "normal",
+  "weight": "light"
 }

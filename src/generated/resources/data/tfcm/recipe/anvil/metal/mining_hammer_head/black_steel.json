@@ -2,7 +2,7 @@
   "type": "tfc:anvil",
   "apply_bonus": true,
   "ingredient": {
-    "tag": "c:ingots/black_steel"
+    "tag": "c:double_ingots/black_steel"
   },
   "result": {
     "count": 1,
@@ -10,7 +10,8 @@
   },
   "rules": [
     "punch_last",
-    "shrink_not_last"
+    "upset_second_last",
+    "upset_third_last"
   ],
   "tier": 5
 }

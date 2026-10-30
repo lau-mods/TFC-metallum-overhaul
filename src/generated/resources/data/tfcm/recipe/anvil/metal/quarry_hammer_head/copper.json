@@ -2,7 +2,7 @@
   "type": "tfc:anvil",
   "apply_bonus": true,
   "ingredient": {
-    "tag": "c:ingots/copper"
+    "tag": "c:double_ingots/copper"
   },
   "result": {
     "count": 1,
@@ -10,7 +10,8 @@
   },
   "rules": [
     "punch_last",
-    "shrink_not_last"
+    "upset_second_last",
+    "upset_third_last"
   ],
   "tier": 1
 }

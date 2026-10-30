@@ -1,0 +1,32 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "textures": {
+    "particle": "tfcm:item/metal/javelin/netherite"
+  },
+  "gui_light": "front",
+  "overrides": [
+    {
+      "predicate": {
+        "tfc:throwing": 1
+      },
+      "model": "tfcm:item/metal/javelin/netherite_throwing"
+    }
+  ],
+  "base": {
+    "parent": "tfcm:item/metal/javelin/netherite_in_hand"
+  },
+  "perspectives": {
+    "none": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    },
+    "fixed": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    },
+    "ground": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    },
+    "gui": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    }
+  }
+}

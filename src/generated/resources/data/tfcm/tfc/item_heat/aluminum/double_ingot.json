@@ -5,10 +5,10 @@
       "metal": "aluminum"
     }
   ],
+  "forging_temperature": 1044.0,
+  "heat_capacity": 6.666666,
   "ingredient": {
     "item": "tfcm:metal/double_ingot/aluminum"
   },
-  "heat_capacity": 6.66666667,
-  "forging_temperature": 1044.0,
   "welding_temperature": 1392.0
 }

@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/diorite",
-    "overlay": "tfc:block/ore/normal_magnetite",
+    "overlay": "tfcm:block/ore/normal_uraninite",
     "particle": "tfc:block/rock/raw/diorite"
   }
 }

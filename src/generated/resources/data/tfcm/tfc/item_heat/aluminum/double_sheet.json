@@ -5,10 +5,10 @@
       "metal": "aluminum"
     }
   ],
+  "forging_temperature": 1044.0,
+  "heat_capacity": 13.333332,
   "ingredient": {
     "item": "tfcm:metal/double_sheet/aluminum"
   },
-  "heat_capacity": 13.3333333,
-  "forging_temperature": 1044.0,
   "welding_temperature": 1392.0
 }

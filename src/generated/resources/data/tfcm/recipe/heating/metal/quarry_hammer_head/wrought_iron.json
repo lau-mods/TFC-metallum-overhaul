@@ -4,7 +4,7 @@
     "item": "tfcm:metal/quarry_hammer_head/wrought_iron"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 200,
     "id": "tfc:metal/cast_iron"
   },
   "temperature": 1535.0

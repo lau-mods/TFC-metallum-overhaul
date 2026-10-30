@@ -5,10 +5,10 @@
       "metal": "compressed_iron"
     }
   ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/block/compressed_iron"
   },
-  "heat_capacity": 2.85714,
-  "forging_temperature": 921.0,
   "welding_temperature": 1228.0
 }

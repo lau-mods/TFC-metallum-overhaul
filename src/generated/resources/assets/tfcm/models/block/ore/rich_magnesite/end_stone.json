@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/end_stone",
-    "overlay": "tfc:block/ore/rich_cassiterite",
+    "overlay": "tfcm:block/ore/rich_magnesite",
     "particle": "minecraft:block/end_stone"
   }
 }

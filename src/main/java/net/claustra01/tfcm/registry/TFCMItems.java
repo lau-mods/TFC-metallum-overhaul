@@ -70,7 +70,7 @@ public final class TFCMItems {
         for (AreaToolType type : AreaToolType.values()) {
             UNFIRED_AREA_TOOL_MOLDS.put(type, ITEMS.registerSimpleItem("ceramic/unfired_" + type.id() + "_head_mold"));
             AREA_TOOL_MOLDS.put(type, ITEMS.register("ceramic/" + type.id() + "_head_mold",
-                    () -> new MoldItem(() -> 100, moldFluids, new Item.Properties())));
+                    () -> new MoldItem(() -> 200, moldFluids, new Item.Properties())));
         }
         for (AreaToolMetal metal : AreaToolMetal.values()) {
             if (metal.isTFCM() && !TFCMConfig.isMetalEnabled(Metal.valueOf(metal.name()))) continue;
@@ -95,6 +95,8 @@ public final class TFCMItems {
                         () -> part.itemType().create(metal)));
             }
             METAL_ITEMS.put(metal, parts);
+            ITEMS.registerSimpleItem("metal/crossguard/" + metal.getSerializedName());
+            ITEMS.registerSimpleItem("metal/pommel/" + metal.getSerializedName());
             ITEMS.register("metal/anvil/" + metal.getSerializedName(),
                     () -> new BlockItem(TFCMBlocks.ANVILS.get(metal).get(), new Item.Properties()));
         }
@@ -137,6 +139,8 @@ public final class TFCMItems {
             if (!TFCMConfig.isOreEnabled(series.id())) continue;
             Map<ProcessingForm, DeferredItem<Item>> forms = new EnumMap<>(ProcessingForm.class);
             for (ProcessingForm form : ProcessingForm.values()) {
+                if (series.nonMetal() && (form == ProcessingForm.PELLET || form == ProcessingForm.BRIQUET
+                        || series != ProcessingSeries.BORAX && form == ProcessingForm.POWDER)) continue;
                 forms.put(form, ITEMS.registerSimpleItem("ore_processing/" + form.id() + "/" + series.id()));
             }
             ORE_PROCESSING.put(series, forms);

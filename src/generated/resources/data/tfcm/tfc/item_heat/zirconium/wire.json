@@ -5,10 +5,10 @@
       "metal": "zirconium"
     }
   ],
+  "forging_temperature": 1113.0,
+  "heat_capacity": 0.83333325,
   "ingredient": {
     "item": "tfcm:metal/wire/zirconium"
   },
-  "heat_capacity": 0.8333333500000001,
-  "forging_temperature": 1113.0,
   "welding_temperature": 1484.0
 }

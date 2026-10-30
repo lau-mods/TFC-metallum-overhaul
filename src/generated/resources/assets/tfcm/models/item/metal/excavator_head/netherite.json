@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/shovel_head/red_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/shovel_head/netherite"
-  }
-}

@@ -1,0 +1,8 @@
+{
+  "loader": "tfc:trim",
+  "parent": "neoforge:item/default",
+  "textures": {
+    "armor": "tfcm:item/metal/helmet/invar",
+    "trim": "tfc:item/helmet_trim"
+  }
+}

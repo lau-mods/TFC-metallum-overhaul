@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/end_stone",
-    "overlay": "tfc:block/ore/opal",
+    "overlay": "tfcm:block/ore/quartz",
     "particle": "minecraft:block/end_stone"
   }
 }

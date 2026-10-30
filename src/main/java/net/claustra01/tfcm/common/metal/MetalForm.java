@@ -7,11 +7,11 @@ public enum MetalForm {
     SHEET("sheet", 200, "large", "medium"), DOUBLE_SHEET("double_sheet", 400, "large", "heavy"),
     ROD("rod", 50, "normal", "light"), BLOCK("block", 100, "large", "medium"),
     SLAB("slab", 50, "small", "very_light"), STAIRS("stairs", 75, "small", "light"),
-    FOIL("foil", 100, "small", "very_light"), GEAR("gear", 400, "normal", "medium"),
-    HEAVY_SHEET("heavy_sheet", 600, "large", "very_heavy"), NAIL("nail", 5, "tiny", "very_light"),
-    RING("ring", 12, "small", "very_light"), RIVET("rivet", 5, "tiny", "very_light"),
-    SCREW("screw", 5, "tiny", "very_light"), STAMEN("stamen", 25, "small", "very_light"),
-    WIRE("wire", 25, "small", "very_light"), PLATE("plate", 100, "normal", "medium"),
+    FOIL("foil", 100, "large", "medium"), GEAR("gear", 400, "large", "heavy"),
+    HEAVY_SHEET("heavy_sheet", 600, "large", "heavy"), NAIL("nail", 5, "very_small", "very_light"),
+    RING("ring", 12, "small", "light"), RIVET("rivet", 5, "very_small", "very_light"),
+    SCREW("screw", 5, "very_small", "very_light"), STAMEN("stamen", 25, "small", "light"),
+    WIRE("wire", 25, "small", "light"), PLATE("plate", 100, "normal", "medium"),
     NUGGET("nugget", 10, "tiny", "very_light"), DUST("dust", 100, "small", "light");
 
     public final String id;

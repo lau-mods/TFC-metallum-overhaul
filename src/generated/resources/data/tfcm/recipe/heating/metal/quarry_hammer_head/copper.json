@@ -4,7 +4,7 @@
     "item": "tfcm:metal/quarry_hammer_head/copper"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 200,
     "id": "tfc:metal/copper"
   },
   "temperature": 1080.0

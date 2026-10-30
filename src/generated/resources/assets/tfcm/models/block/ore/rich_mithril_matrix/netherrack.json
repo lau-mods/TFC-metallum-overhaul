@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/netherrack",
-    "overlay": "tfc:block/ore/rich_native_silver",
+    "overlay": "tfcm:block/ore/rich_mithril_matrix",
     "particle": "minecraft:block/netherrack"
   }
 }

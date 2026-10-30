@@ -2,7 +2,7 @@
   "type": "tfc:anvil",
   "apply_bonus": true,
   "ingredient": {
-    "tag": "c:ingots/bronze"
+    "tag": "c:double_ingots/bronze"
   },
   "result": {
     "count": 1,
@@ -10,7 +10,8 @@
   },
   "rules": [
     "punch_last",
-    "shrink_not_last"
+    "upset_second_last",
+    "upset_third_last"
   ],
   "tier": 2
 }

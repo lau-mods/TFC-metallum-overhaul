@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/block/antimony_stairs"
   },
-  "size": "large",
-  "weight": "very_heavy"
+  "size": "small",
+  "weight": "light"
 }

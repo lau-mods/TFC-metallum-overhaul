@@ -27,6 +27,7 @@ import net.dries007.tfc.common.recipes.HeatingRecipe;
 import net.dries007.tfc.common.recipes.QuernRecipe;
 import net.dries007.tfc.common.recipes.WeldingRecipe;
 import net.dries007.tfc.util.FluidAlloy;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTest;
@@ -40,6 +41,9 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.SlabType;
 import net.minecraft.world.level.material.FlowingFluid;
 import net.minecraft.world.level.material.Fluid;
 import net.neoforged.neoforge.fluids.FluidStack;
@@ -247,6 +251,14 @@ public final class TFCMMetalGameTests {
                 require(block("metal/block/" + metal.id()), "Missing block for " + metal.id());
                 require(block("metal/block/" + metal.id() + "_slab"), "Missing slab for " + metal.id());
                 require(block("metal/block/" + metal.id() + "_stairs"), "Missing stairs for " + metal.id());
+                Block slab = TFCMBlocks.METAL_SLABS.get(metal).get();
+                for (SlabType type : new SlabType[] {SlabType.BOTTOM, SlabType.DOUBLE}) {
+                    List<ItemStack> drops = Block.getDrops(slab.defaultBlockState().setValue(BlockStateProperties.SLAB_TYPE, type),
+                            helper.getLevel(), helper.absolutePos(new BlockPos(1, 1, 1)), null, null,
+                            itemValue("metal/pickaxe/tungsten_steel").getDefaultInstance());
+                    int count = drops.stream().filter(stack -> stack.is(slab.asItem())).mapToInt(ItemStack::getCount).sum();
+                    require(count == (type == SlabType.DOUBLE ? 2 : 1), "Wrong slab loot for " + metal.id() + "/" + type);
+                }
                 require(fluid("metal/" + metal.id()), "Missing molten fluid for " + metal.id());
                 FlowingFluid source = TFCMFluids.METALS.get(metal).source().get();
                 require(source.getBucket() == TFCMItems.METAL_BUCKETS.get(metal).get(), "Wrong bucket for " + metal.id());

@@ -1,0 +1,6 @@
+{
+  "parent": "item/trident_in_hand",
+  "textures": {
+    "particle": "tfcm:item/metal/javelin/tungsten_steel"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "K": {
+      "tag": "c:tools/knife"
+    }
+  },
+  "pattern": [
+    "K",
+    "S"
+  ],
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:short_wood_handle"
+  }
+}

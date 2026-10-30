@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/chestplate/wrought_iron",
-  "textures": {
-    "armor": "tfcm:item/metal/chestplate/invar"
-  }
-}

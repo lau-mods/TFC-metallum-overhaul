@@ -3,6 +3,16 @@ package net.claustra01.tfcm.client;
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.registry.TFCMBlocks;
+import net.claustra01.tfcm.registry.TFCMItems;
+import net.claustra01.tfcm.common.tool.ToolPart;
+import net.dries007.tfc.client.render.entity.ThrownJavelinRenderer;
+import net.dries007.tfc.common.items.TFCFishingRodItem;
+import net.dries007.tfc.common.items.JavelinItem;
+import net.dries007.tfc.client.extensions.ItemRendererExtension;
+import net.dries007.tfc.client.render.blockentity.JavelinItemRenderer;
+import net.minecraft.client.renderer.item.ItemProperties;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.monster.Monster;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -24,6 +34,20 @@ public final class TFCMClient {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
+        event.enqueueWork(() -> TFCMItems.METAL_ITEMS.forEach((metal, parts) -> {
+            ItemProperties.register(parts.get(ToolPart.FISHING_ROD).get(), ResourceLocation.parse("tfc:cast"),
+                    (stack, level, entity, seed) -> entity instanceof Player player
+                            && TFCFishingRodItem.isThisTheHeldRod(player, stack) && player.fishing != null ? 1 : 0);
+            ItemProperties.register(parts.get(ToolPart.SHIELD).get(), ResourceLocation.parse("minecraft:blocking"),
+                    (stack, level, entity, seed) -> entity instanceof Player && entity.isUsingItem()
+                            && entity.getUseItem() == stack ? 1 : 0);
+            ItemProperties.register(parts.get(ToolPart.JAVELIN).get(), ResourceLocation.parse("tfc:throwing"),
+                    (stack, level, entity, seed) -> entity != null && (entity.isUsingItem()
+                            && entity.getUseItem() == stack || entity instanceof Monster monster && monster.isAggressive()) ? 1 : 0);
+            ThrownJavelinRenderer.JAVELIN_TEXTURES.put(parts.get(ToolPart.JAVELIN).get(),
+                    ResourceLocation.fromNamespaceAndPath(TFCM.MOD_ID,
+                            "textures/entity/projectiles/" + metal.getSerializedName() + "_javelin.png"));
+        }));
         TFCMBlocks.ORES.values().forEach(blocks -> blocks.values().forEach(
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout())));
         TFCMBlocks.SMALL_ORES.values().forEach(
@@ -37,7 +61,11 @@ public final class TFCMClient {
     }
 
     @SubscribeEvent
-    public static void registerFluidExtensions(RegisterClientExtensionsEvent event) {
+    public static void registerClientExtensions(RegisterClientExtensionsEvent event) {
+        TFCMItems.METAL_ITEMS.values().forEach(parts -> {
+            JavelinItem javelin = (JavelinItem) parts.get(ToolPart.JAVELIN).get();
+            event.registerItem(ItemRendererExtension.cached(() -> new JavelinItemRenderer(javelin)), javelin);
+        });
         for (Metal metal : Metal.values()) {
             TFCMFluids.MetalFluid fluid = TFCMFluids.METALS.get(metal);
             if (fluid != null) event.registerFluidType(extension(metal.color()), fluid.type().get());

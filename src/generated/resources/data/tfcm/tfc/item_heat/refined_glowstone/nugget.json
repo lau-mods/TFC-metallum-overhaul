@@ -5,10 +5,10 @@
       "metal": "refined_glowstone"
     }
   ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 0.28571433,
   "ingredient": {
     "item": "tfcm:metal/nugget/refined_glowstone"
   },
-  "heat_capacity": 0.285714305714286,
-  "forging_temperature": 564.0,
   "welding_temperature": 752.0
 }

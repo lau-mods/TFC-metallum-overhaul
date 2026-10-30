@@ -5,10 +5,10 @@
       "metal": "platinum"
     }
   ],
+  "forging_temperature": 1038.0,
+  "heat_capacity": 1.4285716,
   "ingredient": {
     "item": "tfcm:metal/rod/platinum"
   },
-  "heat_capacity": 1.4285715,
-  "forging_temperature": 1038.0,
   "welding_temperature": 1384.0
 }

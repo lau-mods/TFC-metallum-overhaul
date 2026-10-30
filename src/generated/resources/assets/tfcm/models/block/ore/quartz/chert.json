@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/chert",
-    "overlay": "tfc:block/ore/opal",
+    "overlay": "tfcm:block/ore/quartz",
     "particle": "tfc:block/rock/raw/chert"
   }
 }

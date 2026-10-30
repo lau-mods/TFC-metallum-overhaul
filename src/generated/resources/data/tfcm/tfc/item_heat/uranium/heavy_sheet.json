@@ -5,10 +5,10 @@
       "metal": "uranium"
     }
   ],
+  "forging_temperature": 678.0,
+  "heat_capacity": 20.0,
   "ingredient": {
     "item": "tfcm:metal/heavy_sheet/uranium"
   },
-  "heat_capacity": 20.0000004,
-  "forging_temperature": 678.0,
   "welding_temperature": 904.0
 }

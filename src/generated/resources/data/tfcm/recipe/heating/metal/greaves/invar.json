@@ -13,5 +13,6 @@
     "amount": 600,
     "id": "tfcm:metal/invar"
   },
-  "temperature": 1250
+  "temperature": 1250,
+  "use_durability": true
 }

@@ -36,10 +36,6 @@ public final class ProcessingDataProvider implements DataProvider {
     @Override
     public CompletableFuture<?> run(CachedOutput output) {
         List<CompletableFuture<?>> files = new ArrayList<>();
-        for (SandPile sand : SandPile.values()) {
-            files.add(save(output, assets, "tfcm/models/item/ore_processing/sand_pile/" + sand.id(),
-                    model("tfc:item/ore/normal_" + sandTexture(sand))));
-        }
         for (ProcessingSeries series : ProcessingSeries.values()) addSeries(output, files, series);
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new))
                 .thenRun(() -> validateNoDirtyPile(generatedFiles));
@@ -51,9 +47,6 @@ public final class ProcessingDataProvider implements DataProvider {
     }
 
     private void addSeries(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series) {
-        for (ProcessingForm form : ProcessingForm.values()) {
-            files.add(save(output, assets, modelPath(series, form), model(texture(series, form))));
-        }
         if (series.graded()) {
             addHammer(output, files, series, "small", 1);
             addHammer(output, files, series, "poor", 3);
@@ -84,7 +77,7 @@ public final class ProcessingDataProvider implements DataProvider {
                         "tfcm:item/ore_processing/dirty_dust/" + series.id()))));
         files.add(save(output, data, "tfcm/loot_table/ore_processing/dirty_dust/" + series.id(),
                 conditional(series, secondaryWash(series))));
-        addCompression(output, files, series);
+        if (!series.nonMetal()) addCompression(output, files, series);
         if (series.recoveryFluid() != null) addHeating(output, files, series);
     }
 
@@ -274,15 +267,6 @@ public final class ProcessingDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject model(String texture) {
-        JsonObject json = new JsonObject();
-        json.addProperty("parent", "minecraft:item/generated");
-        JsonObject textures = new JsonObject();
-        textures.addProperty("layer0", texture);
-        json.add("textures", textures);
-        return json;
-    }
-
     private static JsonObject conditional(ProcessingSeries series, JsonObject json) {
         JsonArray conditions = json.has("neoforge:conditions")
                 ? json.getAsJsonArray("neoforge:conditions") : new JsonArray();
@@ -322,7 +306,8 @@ public final class ProcessingDataProvider implements DataProvider {
     }
 
     private static String item(ProcessingSeries series, ProcessingForm form) {
-        return "tfcm:ore_processing/" + form.id() + "/" + series.id();
+        return form == ProcessingForm.POWDER ? series.powderItem()
+                : "tfcm:ore_processing/" + form.id() + "/" + series.id();
     }
 
     private static String oreItem(ProcessingSeries series, String grade) {
@@ -340,46 +325,6 @@ public final class ProcessingDataProvider implements DataProvider {
 
     private static String gem(String gem) {
         return gem.equals("quartz") ? "tfcm:ore/quartz" : "tfc:gem/" + gem;
-    }
-
-    private static String modelPath(ProcessingSeries series, ProcessingForm form) {
-        return "tfcm/models/item/ore_processing/" + form.id() + "/" + series.id();
-    }
-
-    private static String texture(ProcessingSeries series, ProcessingForm form) {
-        return switch (form) {
-            case ROCKY_CHUNKS, CHUNKS -> oreTexture(series);
-            case DIRTY_DUST, POWDER, PELLET, BRIQUET -> "tfc:item/powder/" + powderTexture(series);
-        };
-    }
-
-    private static String oreTexture(ProcessingSeries series) {
-        Ore ore = ore(series);
-        if (ore != null) return "tfc:item/ore/" + (ore.graded() ? "normal_" : "") + ore.textureSource();
-        String texture = series == ProcessingSeries.CHROMITE ? "magnetite" : series.id();
-        return "tfc:item/ore/" + (series.nonMetal() ? "" : "normal_") + texture;
-    }
-
-    private static String powderTexture(ProcessingSeries series) {
-        Ore ore = ore(series);
-        if (ore != null) return ore.textureSource();
-        return switch (series) {
-            case CHROMITE -> "magnetite";
-            case CINNABAR -> "hematite";
-            case CRYOLITE, BORAX -> "native_silver";
-            default -> series.id();
-        };
-    }
-
-    private static String sandTexture(SandPile sand) {
-        return switch (sand) {
-            case BLACK -> "magnetite";
-            case BROWN -> "limonite";
-            case GREEN -> "garnierite";
-            case PINK, RED -> "hematite";
-            case WHITE -> "native_silver";
-            case YELLOW -> "native_gold";
-        };
     }
 
     private static Ore ore(ProcessingSeries series) {

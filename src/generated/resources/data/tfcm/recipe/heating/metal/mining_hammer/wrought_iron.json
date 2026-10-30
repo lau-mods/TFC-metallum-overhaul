@@ -4,8 +4,9 @@
     "item": "tfcm:metal/mining_hammer/wrought_iron"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 250,
     "id": "tfc:metal/cast_iron"
   },
-  "temperature": 1535.0
+  "temperature": 1535.0,
+  "use_durability": true
 }

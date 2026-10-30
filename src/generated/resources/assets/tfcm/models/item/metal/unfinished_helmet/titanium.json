@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/unfinished_helmet/black_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/unfinished_helmet/titanium"
-  }
-}

@@ -1,6 +1,10 @@
 package net.claustra01.tfcm.worldgen;
 
+import java.math.BigDecimal;
+import java.math.BigInteger;
+import java.util.AbstractList;
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -76,7 +80,14 @@ public final class CustomWorldgenBiomeModifier implements BiomeModifier {
         definitions.forEach((dimension, definition) -> {
             List<Holder<PlacedFeature>> dimensionFeatures = new ArrayList<>();
             definition.veins().forEach(vein -> dimensionFeatures.add(Holder.direct(placedVein(vein))));
-            definition.geodes().forEach(geode -> dimensionFeatures.add(Holder.direct(placedGeode(geode))));
+            definition.geodes().forEach(geode -> {
+                try {
+                    dimensionFeatures.add(Holder.direct(placedGeode(geode)));
+                } catch (ArithmeticException exception) {
+                    com.mojang.logging.LogUtils.getLogger().warn(
+                            "Skipping TFCM geode {}: weights exceed the vanilla integer range", geode);
+                }
+            });
             built.put(dimension, List.copyOf(dimensionFeatures));
         });
         this.features = Map.copyOf(built);
@@ -150,7 +161,7 @@ public final class CustomWorldgenBiomeModifier implements BiomeModifier {
     }
 
     private static PlacedFeature placedGeode(Geode geode) {
-        List<BlockState> placements = new ArrayList<>();
+        List<BlockState> states = new ArrayList<>();
         List<Integer> placementWeights = integerWeights(geode.innerPlacements());
         for (int index = 0; index < geode.innerPlacements().size(); index++) {
             WeightedBlock value = geode.innerPlacements().get(index);
@@ -159,8 +170,26 @@ public final class CustomWorldgenBiomeModifier implements BiomeModifier {
                 state = state.setValue(AmethystClusterBlock.FACING, Direction.UP);
             if (state.hasProperty(AmethystClusterBlock.WATERLOGGED))
                 state = state.setValue(AmethystClusterBlock.WATERLOGGED, false);
-            for (int count = 0; count < placementWeights.get(index); count++) placements.add(state);
+            states.add(state);
         }
+        int totalWeight = placementWeights.stream().reduce(0, Math::addExact);
+        // Vanilla samples this list by index; represent weighted entries without allocating repeated states.
+        List<BlockState> placements = new AbstractList<>() {
+            @Override
+            public BlockState get(int index) {
+                Objects.checkIndex(index, totalWeight);
+                for (int entry = 0; entry < states.size(); entry++) {
+                    index -= placementWeights.get(entry);
+                    if (index < 0) return states.get(entry);
+                }
+                throw new IndexOutOfBoundsException();
+            }
+
+            @Override
+            public int size() {
+                return totalWeight;
+            }
+        };
         GeodeBlockSettings blocks = new GeodeBlockSettings(provider(geode.filling()), provider(geode.inner()),
                 provider(geode.inner()), provider(List.of(geode.middle())), provider(List.of(geode.outer())),
                 placements, BlockTags.FEATURES_CANNOT_REPLACE, BlockTags.GEODE_INVALID_BLOCKS);
@@ -184,22 +213,15 @@ public final class CustomWorldgenBiomeModifier implements BiomeModifier {
     }
 
     private static List<Integer> integerWeights(List<WeightedBlock> values) {
-        List<Integer> weights = values.stream()
-                .map(value -> Math.max(1, (int) Math.round(value.weight() * 1000))).toList();
-        int divisor = weights.getFirst();
-        for (int weight : weights) {
-            int left = divisor;
-            int right = weight;
-            while (right != 0) {
-                int remainder = left % right;
-                left = right;
-                right = remainder;
-            }
-            divisor = left;
-        }
-        int commonDivisor = divisor;
-        // Vanilla geode providers use integer weights; three decimals preserve normal YAML ratios.
-        return weights.stream().map(weight -> weight / commonDivisor).toList();
+        List<BigDecimal> decimals = values.stream()
+                .map(value -> BigDecimal.valueOf(value.weight()).stripTrailingZeros()).toList();
+        int scale = decimals.stream().mapToInt(BigDecimal::scale).max().orElseThrow();
+        List<BigInteger> integers = decimals.stream()
+                .map(value -> value.setScale(scale).unscaledValue()).toList();
+        BigInteger divisor = integers.stream().reduce(BigInteger.ZERO, BigInteger::gcd);
+        List<Integer> weights = integers.stream().map(value -> value.divide(divisor).intValueExact()).toList();
+        weights.stream().reduce(0, Math::addExact);
+        return weights;
     }
 
     private static Block block(String id) {

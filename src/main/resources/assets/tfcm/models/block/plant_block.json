@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "tfcm:block/plant_block",
+    "particle": "tfcm:block/plant_block"
+  },
+  "render_type": "solid"
+}

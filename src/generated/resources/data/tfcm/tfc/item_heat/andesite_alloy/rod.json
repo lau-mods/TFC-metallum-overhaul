@@ -5,10 +5,10 @@
       "metal": "andesite_alloy"
     }
   ],
+  "forging_temperature": 312.0,
+  "heat_capacity": 1.6666665,
   "ingredient": {
     "item": "tfcm:metal/rod/andesite_alloy"
   },
-  "heat_capacity": 1.66666667,
-  "forging_temperature": 312.0,
   "welding_temperature": 416.0
 }

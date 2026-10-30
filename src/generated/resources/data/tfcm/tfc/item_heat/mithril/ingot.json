@@ -5,10 +5,10 @@
       "metal": "mithril"
     }
   ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/ingot/mithril"
   },
-  "heat_capacity": 2.8571429999997147,
-  "forging_temperature": 564.0,
   "welding_temperature": 752.0
 }

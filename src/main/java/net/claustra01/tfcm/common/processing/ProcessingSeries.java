@@ -73,6 +73,14 @@ public enum ProcessingSeries {
         this.firmaLifeOnly = firmaLifeOnly;
     }
 
+    public String powderItem() {
+        return switch (this) {
+            case CINNABAR, CRYOLITE -> "minecraft:redstone";
+            case GRAPHITE, SULFUR -> "tfc:powder/" + id();
+            default -> "tfcm:ore_processing/powder/" + id();
+        };
+    }
+
     public String id() {
         return name().toLowerCase(Locale.ROOT);
     }

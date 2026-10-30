@@ -8,19 +8,35 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "rolls": 1.0,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "tfcm:metal/block/netherite_slab"
-        }
-      ],
+      "bonus_rolls": 0,
       "conditions": [
         {
           "condition": "minecraft:survives_explosion"
         }
-      ]
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "tfcm:metal/block/netherite_slab",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "type": "double"
+                  }
+                }
+              ],
+              "count": 2,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "tfcm:metal/block/netherite_slab"
+        }
+      ],
+      "rolls": 1
     }
   ],
   "random_sequence": "tfcm:blocks/metal/block/netherite_slab"

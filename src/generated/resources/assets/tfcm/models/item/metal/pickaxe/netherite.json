@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/pickaxe/red_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/pickaxe/netherite"
-  }
-}

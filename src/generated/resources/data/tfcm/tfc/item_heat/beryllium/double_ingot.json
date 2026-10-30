@@ -5,10 +5,10 @@
       "metal": "beryllium"
     }
   ],
+  "forging_temperature": 772.2,
+  "heat_capacity": 6.666666,
   "ingredient": {
     "item": "tfcm:metal/double_ingot/beryllium"
   },
-  "heat_capacity": 6.66666667,
-  "forging_temperature": 772.1999999999999,
-  "welding_temperature": 1029.6000000000001
+  "welding_temperature": 1029.6
 }

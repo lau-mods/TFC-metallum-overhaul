@@ -5,10 +5,10 @@
       "metal": "osmiridium"
     }
   ],
+  "forging_temperature": 900.0,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/plate/osmiridium"
   },
-  "heat_capacity": 2.857143057142861,
-  "forging_temperature": 900.0,
   "welding_temperature": 1200.0
 }

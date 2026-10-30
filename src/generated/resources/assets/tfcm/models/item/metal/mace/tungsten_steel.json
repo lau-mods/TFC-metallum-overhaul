@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/mace/blue_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/mace/tungsten_steel"
-  }
-}

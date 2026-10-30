@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/gear/super_alloy"
   },
-  "size": "normal",
-  "weight": "medium"
+  "size": "large",
+  "weight": "heavy"
 }

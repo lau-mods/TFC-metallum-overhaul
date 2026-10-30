@@ -6,14 +6,9 @@
     }
   ],
   "forging_temperature": 1020.0,
-  "heat_capacity": 3.3333335,
-  "ingredient": [
-    {
-      "item": "tfcm:metal/excavator/titanium"
-    },
-    {
-      "item": "tfcm:metal/excavator_head/titanium"
-    }
-  ],
+  "heat_capacity": 8.333334,
+  "ingredient": {
+    "item": "tfcm:metal/excavator/titanium"
+  },
   "welding_temperature": 1360.0
 }

@@ -5,10 +5,10 @@
       "metal": "lead"
     }
   ],
+  "forging_temperature": 198.0,
+  "heat_capacity": 3.333333,
   "ingredient": {
     "item": "tfcm:metal/block/lead"
   },
-  "heat_capacity": 3.33333,
-  "forging_temperature": 198.0,
   "welding_temperature": 264.0
 }

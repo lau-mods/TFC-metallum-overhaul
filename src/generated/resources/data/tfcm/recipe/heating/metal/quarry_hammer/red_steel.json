@@ -4,8 +4,9 @@
     "item": "tfcm:metal/quarry_hammer/red_steel"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 250,
     "id": "tfc:metal/red_steel"
   },
-  "temperature": 1540.0
+  "temperature": 1540.0,
+  "use_durability": true
 }

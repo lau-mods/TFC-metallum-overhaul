@@ -5,10 +5,10 @@
       "metal": "netherite"
     }
   ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 0.25,
   "ingredient": {
     "item": "tfcm:metal/screw/netherite"
   },
-  "heat_capacity": 0.250000005,
-  "forging_temperature": 921.0,
   "welding_temperature": 1228.0
 }

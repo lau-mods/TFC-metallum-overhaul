@@ -5,10 +5,10 @@
       "metal": "platinum"
     }
   ],
+  "forging_temperature": 1038.0,
+  "heat_capacity": 5.7142863,
   "ingredient": {
     "item": "tfcm:metal/sheet/platinum"
   },
-  "heat_capacity": 5.714286,
-  "forging_temperature": 1038.0,
   "welding_temperature": 1384.0
 }

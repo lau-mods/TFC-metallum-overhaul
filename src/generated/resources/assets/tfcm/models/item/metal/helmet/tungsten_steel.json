@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/helmet/blue_steel",
-  "textures": {
-    "armor": "tfcm:item/metal/helmet/tungsten_steel"
-  }
-}

@@ -10,7 +10,7 @@
     "item": "tfcm:metal/mining_hammer_head/tungsten_steel"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 200,
     "id": "tfcm:metal/tungsten_steel"
   },
   "temperature": 1535.0

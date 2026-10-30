@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/netherrack",
-    "overlay": "tfc:block/ore/amethyst",
+    "overlay": "tfcm:block/ore/fluorite",
     "particle": "minecraft:block/netherrack"
   }
 }

@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/netherrack",
-    "overlay": "tfc:block/ore/poor_magnetite",
+    "overlay": "tfcm:block/ore/poor_native_osmium",
     "particle": "minecraft:block/netherrack"
   }
 }

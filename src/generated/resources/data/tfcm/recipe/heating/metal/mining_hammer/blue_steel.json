@@ -4,8 +4,9 @@
     "item": "tfcm:metal/mining_hammer/blue_steel"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 250,
     "id": "tfc:metal/blue_steel"
   },
-  "temperature": 1540.0
+  "temperature": 1540.0,
+  "use_durability": true
 }

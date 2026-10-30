@@ -6,14 +6,9 @@
     }
   ],
   "forging_temperature": 921.0,
-  "heat_capacity": 5.0,
-  "ingredient": [
-    {
-      "item": "tfcm:metal/excavator/netherite"
-    },
-    {
-      "item": "tfcm:metal/excavator_head/netherite"
-    }
-  ],
+  "heat_capacity": 12.5,
+  "ingredient": {
+    "item": "tfcm:metal/excavator/netherite"
+  },
   "welding_temperature": 1228.0
 }

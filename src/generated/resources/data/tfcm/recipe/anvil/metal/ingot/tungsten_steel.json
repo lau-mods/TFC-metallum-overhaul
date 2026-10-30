@@ -14,9 +14,9 @@
     "id": "tfcm:metal/ingot/tungsten_steel"
   },
   "rules": [
-    "hit_third_last",
+    "hit_last",
     "hit_second_last",
-    "hit_last"
+    "hit_third_last"
   ],
   "tier": 7
 }

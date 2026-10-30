@@ -1,0 +1,15 @@
+{
+  "type": "tfc:barrel_sealed",
+  "input_item": {
+    "tag": "c:string"
+  },
+  "input_fluid": {
+    "fluid": "tfc:limewater",
+    "amount": 100
+  },
+  "output_item": {
+    "count": 1,
+    "id": "tfcm:arrow_tread"
+  },
+  "duration": 6000
+}

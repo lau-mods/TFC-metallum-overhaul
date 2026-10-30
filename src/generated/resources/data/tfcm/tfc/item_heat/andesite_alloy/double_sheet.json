@@ -5,10 +5,10 @@
       "metal": "andesite_alloy"
     }
   ],
+  "forging_temperature": 312.0,
+  "heat_capacity": 13.333332,
   "ingredient": {
     "item": "tfcm:metal/double_sheet/andesite_alloy"
   },
-  "heat_capacity": 13.3333333,
-  "forging_temperature": 312.0,
   "welding_temperature": 416.0
 }

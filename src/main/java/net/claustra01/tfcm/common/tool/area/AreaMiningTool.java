@@ -34,6 +34,10 @@ public final class AreaMiningTool extends ToolItem {
         return result;
     }
 
+    AreaToolType type() {
+        return type;
+    }
+
     boolean canStart(BlockState state) {
         return state.is(type.mineable());
     }

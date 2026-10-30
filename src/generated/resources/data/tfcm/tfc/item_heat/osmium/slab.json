@@ -5,10 +5,10 @@
       "metal": "osmium"
     }
   ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 1.4285716,
   "ingredient": {
     "item": "tfcm:metal/block/osmium_slab"
   },
-  "heat_capacity": 1.42857,
-  "forging_temperature": 921.0,
   "welding_temperature": 1228.0
 }

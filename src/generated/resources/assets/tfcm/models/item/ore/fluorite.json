@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tfc:item/ore/amethyst"
+    "layer0": "tfcm:item/ore/fluorite"
   }
 }

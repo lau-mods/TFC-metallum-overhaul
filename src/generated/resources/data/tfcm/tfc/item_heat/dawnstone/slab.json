@@ -5,10 +5,10 @@
       "metal": "dawnstone"
     }
   ],
+  "forging_temperature": 600.0,
+  "heat_capacity": 1.6666665,
   "ingredient": {
     "item": "tfcm:metal/block/dawnstone_slab"
   },
-  "heat_capacity": 1.66667,
-  "forging_temperature": 600.0,
   "welding_temperature": 800.0
 }

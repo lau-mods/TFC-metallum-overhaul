@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/graphite"
+          "name": "tfc:powder/graphite"
         }
       ],
       "name": "powder",

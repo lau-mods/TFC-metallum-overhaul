@@ -13,5 +13,6 @@
     "amount": 1200,
     "id": "tfcm:metal/titanium"
   },
-  "temperature": 1700
+  "temperature": 1700,
+  "use_durability": true
 }

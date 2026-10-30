@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/marble",
-    "overlay": "tfc:block/ore/poor_tetrahedrite",
+    "overlay": "tfcm:block/ore/poor_cobaltite",
     "particle": "tfc:block/rock/raw/marble"
   }
 }

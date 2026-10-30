@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tfcm:item/metal/quarry_hammer_head/red_steel"
+  }
+}

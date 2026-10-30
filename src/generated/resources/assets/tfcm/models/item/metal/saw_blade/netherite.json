@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/saw_blade/red_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/saw_blade/netherite"
-  }
-}

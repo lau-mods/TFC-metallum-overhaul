@@ -5,10 +5,10 @@
       "metal": "arcane"
     }
   ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 0.34285718,
   "ingredient": {
     "item": "tfcm:metal/ring/arcane"
   },
-  "heat_capacity": 0.34285716685714335,
-  "forging_temperature": 564.0,
   "welding_temperature": 752.0
 }

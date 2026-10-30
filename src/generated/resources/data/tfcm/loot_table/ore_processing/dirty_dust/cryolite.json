@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/cryolite"
+          "name": "minecraft:redstone"
         }
       ],
       "name": "powder",

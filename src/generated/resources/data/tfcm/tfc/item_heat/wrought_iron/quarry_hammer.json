@@ -1,13 +1,8 @@
 {
   "forging_temperature": 921.00006,
-  "heat_capacity": 2.857143,
-  "ingredient": [
-    {
-      "item": "tfcm:metal/quarry_hammer/wrought_iron"
-    },
-    {
-      "item": "tfcm:metal/quarry_hammer_head/wrought_iron"
-    }
-  ],
+  "heat_capacity": 7.1428576,
+  "ingredient": {
+    "item": "tfcm:metal/quarry_hammer/wrought_iron"
+  },
   "welding_temperature": 1228.0
 }

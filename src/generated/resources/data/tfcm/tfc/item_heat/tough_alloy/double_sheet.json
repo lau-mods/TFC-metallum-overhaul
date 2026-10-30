@@ -5,10 +5,10 @@
       "metal": "tough_alloy"
     }
   ],
+  "forging_temperature": 960.0,
+  "heat_capacity": 13.333332,
   "ingredient": {
     "item": "tfcm:metal/double_sheet/tough_alloy"
   },
-  "heat_capacity": 13.3333333,
-  "forging_temperature": 960.0,
   "welding_temperature": 1280.0
 }

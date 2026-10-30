@@ -5,10 +5,10 @@
       "metal": "magnesium"
     }
   ],
+  "forging_temperature": 390.0,
+  "heat_capacity": 6.666666,
   "ingredient": {
     "item": "tfcm:metal/double_ingot/magnesium"
   },
-  "heat_capacity": 6.66666667,
-  "forging_temperature": 390.0,
   "welding_temperature": 520.0
 }

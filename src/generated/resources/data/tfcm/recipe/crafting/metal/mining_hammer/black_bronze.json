@@ -1,22 +1,21 @@
 {
   "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
   "key": {
-    "B": {
-      "item": "tfcm:tool_binding"
-    },
-    "H": {
+    "X": {
       "item": "tfcm:metal/mining_hammer_head/black_bronze"
     },
-    "R": {
-      "item": "tfcm:tool_riveting"
+    "Y": {
+      "item": "tfc:metal/rod/black_bronze"
     },
-    "T": {
-      "item": "tfcm:tool_handle"
+    "Z": {
+      "tag": "c:rods/wooden"
     }
   },
   "pattern": [
-    "HBR",
-    " T "
+    "  X",
+    " Y ",
+    "Z  "
   ],
   "result": {
     "modifiers": [

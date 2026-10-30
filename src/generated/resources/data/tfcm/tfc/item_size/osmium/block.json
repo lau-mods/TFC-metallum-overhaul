@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/block/osmium"
   },
-  "size": "huge",
-  "weight": "very_heavy"
+  "size": "large",
+  "weight": "medium"
 }

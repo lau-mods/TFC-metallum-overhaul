@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/rod/compressed_iron"
   },
-  "size": "small",
-  "weight": "medium"
+  "size": "normal",
+  "weight": "light"
 }

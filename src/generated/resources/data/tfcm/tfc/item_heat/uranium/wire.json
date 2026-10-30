@@ -5,10 +5,10 @@
       "metal": "uranium"
     }
   ],
+  "forging_temperature": 678.0,
+  "heat_capacity": 0.83333325,
   "ingredient": {
     "item": "tfcm:metal/wire/uranium"
   },
-  "heat_capacity": 0.8333333500000001,
-  "forging_temperature": 678.0,
   "welding_temperature": 904.0
 }

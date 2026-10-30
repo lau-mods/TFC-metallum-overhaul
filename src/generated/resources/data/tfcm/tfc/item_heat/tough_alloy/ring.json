@@ -5,10 +5,10 @@
       "metal": "tough_alloy"
     }
   ],
+  "forging_temperature": 960.0,
+  "heat_capacity": 0.4,
   "ingredient": {
     "item": "tfcm:metal/ring/tough_alloy"
   },
-  "heat_capacity": 0.400000008,
-  "forging_temperature": 960.0,
   "welding_temperature": 1280.0
 }

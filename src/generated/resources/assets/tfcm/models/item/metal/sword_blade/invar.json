@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/sword_blade/wrought_iron",
-  "textures": {
-    "layer0": "tfcm:item/metal/sword_blade/invar"
-  }
-}

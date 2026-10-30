@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tfc:item/ore/opal"
+    "layer0": "tfcm:item/ore/quartz"
   }
 }

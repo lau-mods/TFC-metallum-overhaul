@@ -5,10 +5,10 @@
       "metal": "titanium"
     }
   ],
+  "forging_temperature": 1020.0,
+  "heat_capacity": 0.4,
   "ingredient": {
     "item": "tfcm:metal/ring/titanium"
   },
-  "heat_capacity": 0.400000008,
-  "forging_temperature": 1020.0,
   "welding_temperature": 1360.0
 }

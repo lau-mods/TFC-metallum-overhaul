@@ -5,10 +5,10 @@
       "metal": "ferroboron"
     }
   ],
+  "forging_temperature": 900.0,
+  "heat_capacity": 13.333332,
   "ingredient": {
     "item": "tfcm:metal/double_sheet/ferroboron"
   },
-  "heat_capacity": 13.3333333,
-  "forging_temperature": 900.0,
   "welding_temperature": 1200.0
 }

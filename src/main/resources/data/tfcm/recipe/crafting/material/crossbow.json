@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OXS",
+    "XLW",
+    "SWX"
+  ],
+  "key": {
+    "O": {
+      "tag": "c:rings"
+    },
+    "X": {
+      "tag": "tfc:lumber"
+    },
+    "L": {
+      "tag": "c:bow_part/limb"
+    },
+    "W": {
+      "tag": "c:bow_part/chord"
+    },
+    "S": {
+      "tag": "c:string/leather"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:crossbow"
+  }
+}

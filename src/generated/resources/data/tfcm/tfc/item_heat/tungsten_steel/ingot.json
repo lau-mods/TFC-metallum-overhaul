@@ -5,10 +5,10 @@
       "metal": "tungsten_steel"
     }
   ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 5.0,
   "ingredient": {
     "item": "tfcm:metal/ingot/tungsten_steel"
   },
-  "heat_capacity": 4.9999999999995,
-  "forging_temperature": 921.0,
   "welding_temperature": 1228.0
 }

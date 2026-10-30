@@ -5,10 +5,10 @@
       "metal": "platinum"
     }
   ],
+  "forging_temperature": 1038.0,
+  "heat_capacity": 0.28571433,
   "ingredient": {
     "item": "tfcm:metal/nugget/platinum"
   },
-  "heat_capacity": 0.285714305714286,
-  "forging_temperature": 1038.0,
   "welding_temperature": 1384.0
 }

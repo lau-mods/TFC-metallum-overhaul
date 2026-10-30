@@ -8,7 +8,7 @@
   "type": "tfc:anvil",
   "apply_bonus": true,
   "ingredient": {
-    "tag": "c:ingots/netherite"
+    "tag": "c:double_ingots/netherite"
   },
   "result": {
     "count": 1,
@@ -16,7 +16,8 @@
   },
   "rules": [
     "punch_last",
-    "shrink_not_last"
+    "upset_second_last",
+    "upset_third_last"
   ],
   "tier": 6
 }

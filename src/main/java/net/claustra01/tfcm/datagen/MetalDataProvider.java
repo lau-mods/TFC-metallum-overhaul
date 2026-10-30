@@ -336,7 +336,7 @@ public final class MetalDataProvider implements DataProvider {
         JsonObject json = conditioned(metal);
         json.addProperty("type", "minecraft:block");
         JsonObject count = new JsonObject();
-        count.addProperty("type", "minecraft:set_count");
+        count.addProperty("function", "minecraft:set_count");
         count.addProperty("add", false);
         count.addProperty("count", 2);
         JsonObject properties = new JsonObject();

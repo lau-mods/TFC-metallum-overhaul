@@ -1,7 +1,7 @@
 {
   "parent": "tfc:block/groundcover/native_copper",
   "textures": {
-    "0": "tfc:item/ore/small_native_silver",
-    "particle": "tfc:item/ore/small_native_silver"
+    "0": "tfcm:item/ore/small_mithril_matrix",
+    "particle": "tfcm:item/ore/small_mithril_matrix"
   }
 }

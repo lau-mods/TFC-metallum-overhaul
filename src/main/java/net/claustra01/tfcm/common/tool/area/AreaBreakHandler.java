@@ -8,6 +8,10 @@ import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.neoforged.neoforge.common.CommonHooks;
+import net.neoforged.neoforge.event.EventHooks;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -27,7 +31,7 @@ public final class AreaBreakHandler {
                 if (tool.isEmpty()) break;
                 BlockState state = level.getBlockState(pos);
                 if (!state.is(type.mineable()) || !tool.isCorrectToolForDrops(state)) continue;
-                if (state.hasProperty(BlockStateProperties.LAYERS)) {
+                if (state.hasProperty(BlockStateProperties.LAYERS) && state.getValue(BlockStateProperties.LAYERS) > 1) {
                     peelLayer(level, player, pos, state);
                 } else {
                     player.gameMode.destroyBlock(pos);
@@ -59,14 +63,25 @@ public final class AreaBreakHandler {
         return positions;
     }
 
+    static boolean isBreaking() {
+        return BREAKING.get();
+    }
+
     private static void peelLayer(ServerLevel level, ServerPlayer player, BlockPos pos, BlockState state) {
-        int layers = state.getValue(BlockStateProperties.LAYERS);
-        level.setBlock(pos, state.setValue(BlockStateProperties.LAYERS, 1), Block.UPDATE_CLIENTS);
-        boolean destroyed = player.gameMode.destroyBlock(pos);
-        if (destroyed) {
-            if (layers > 1) level.setBlock(pos, state.setValue(BlockStateProperties.LAYERS, layers - 1), Block.UPDATE_ALL);
-        } else {
-            level.setBlock(pos, state, Block.UPDATE_ALL);
+        if (CommonHooks.fireBlockBreak(level, player.gameMode.getGameModeForPlayer(), player, pos, state).isCanceled()) return;
+        BlockEntity blockEntity = level.getBlockEntity(pos);
+        ItemStack tool = player.getMainHandItem();
+        ItemStack originalTool = tool.copy();
+        BlockState layer = state.setValue(BlockStateProperties.LAYERS, 1);
+        state.getBlock().playerWillDestroy(level, pos, state, player);
+        boolean harvest = state.canHarvestBlock(level, pos, player);
+        if (!level.setBlock(pos, state.setValue(BlockStateProperties.LAYERS,
+                state.getValue(BlockStateProperties.LAYERS) - 1), Block.UPDATE_ALL)) return;
+        if (!player.isCreative()) {
+            tool.mineBlock(level, layer, pos, player);
+            if (harvest) layer.getBlock().playerDestroy(level, player, pos, layer, blockEntity, originalTool);
+            if (tool.isEmpty() && !originalTool.isEmpty())
+                EventHooks.onPlayerDestroyItem(player, originalTool, InteractionHand.MAIN_HAND);
         }
     }
 }

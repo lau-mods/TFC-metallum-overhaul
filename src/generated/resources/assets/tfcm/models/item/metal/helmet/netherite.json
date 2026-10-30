@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/helmet/red_steel",
-  "textures": {
-    "armor": "tfcm:item/metal/helmet/netherite"
-  }
-}

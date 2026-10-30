@@ -5,10 +5,10 @@
       "metal": "dawnstone"
     }
   ],
+  "forging_temperature": 600.0,
+  "heat_capacity": 3.333333,
   "ingredient": {
     "item": "tfcm:metal/dust/dawnstone"
   },
-  "heat_capacity": 3.3333334000000003,
-  "forging_temperature": 600.0,
   "welding_temperature": 800.0
 }

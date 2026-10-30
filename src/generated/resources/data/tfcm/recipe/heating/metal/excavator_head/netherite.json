@@ -10,7 +10,7 @@
     "item": "tfcm:metal/excavator_head/netherite"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 200,
     "id": "tfcm:metal/netherite"
   },
   "temperature": 1535.0

@@ -16,6 +16,13 @@ import net.claustra01.tfcm.registry.TFCMItems;
 import net.dries007.tfc.common.component.heat.HeatCapability;
 import net.dries007.tfc.common.component.size.ItemSizeManager;
 import net.dries007.tfc.common.recipes.KnappingRecipe;
+import net.dries007.tfc.common.recipes.CastingRecipe;
+import net.dries007.tfc.common.recipes.HeatingRecipe;
+import net.dries007.tfc.common.component.mold.IMold;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.CraftingInput;
+import net.neoforged.neoforge.fluids.FluidStack;
+import net.neoforged.neoforge.fluids.capability.IFluidHandler.FluidAction;
 import net.dries007.tfc.util.data.KnappingPattern;
 import net.minecraft.commands.arguments.EntityAnchorArgument;
 import net.minecraft.core.BlockPos;
@@ -268,12 +275,11 @@ public final class TFCMAreaToolGameTests {
 
     @GameTest(template = "empty", batch = BATCH)
     public static void durabilityStopsAndCreativeHasNoCostOrDrops(GameTestHelper helper) {
-        helper.succeedIf(() -> {
             ServerPlayer player = survivalPlayer(helper);
             ItemStack hammer = tool(AreaToolMetal.COPPER, AreaToolType.MINING_HAMMER);
             hammer.setDamageValue(hammer.getMaxDamage() - 2);
             player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, hammer);
-            BlockPos origin = helper.absolutePos(new BlockPos(5, 4, 5));
+            BlockPos origin = helper.absolutePos(new BlockPos(5, 24, 5));
             List<BlockPos> positions = AreaBreakHandler.positions(origin, Direction.NORTH,
                     AreaToolType.MINING_HAMMER);
             positions.forEach(pos -> helper.getLevel().setBlock(pos, Blocks.STONE.defaultBlockState(), 3));
@@ -287,11 +293,15 @@ public final class TFCMAreaToolGameTests {
             player.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, creativeHammer);
             positions.forEach(pos -> helper.getLevel().setBlock(pos, Blocks.STONE.defaultBlockState(), 3));
             helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(origin).inflate(5)).forEach(ItemEntity::discard);
-            AreaBreakHandler.breakArea(helper.getLevel(), player, creativeHammer, origin, Direction.NORTH,
-                    AreaToolType.MINING_HAMMER);
+            helper.getLevel().setBlock(origin, Blocks.STONE.defaultBlockState(), 3);
+            lookAtFace(player, origin, Direction.NORTH);
+            require(player.gameMode.destroyBlock(origin), "Creative origin break failed");
+            helper.runAfterDelay(2, () -> {
+            require(positions.stream().allMatch(helper.getLevel()::isEmptyBlock), "Creative normal break did not mine the area");
             require(creativeHammer.getDamageValue() == 0, "Creative area mining damaged the tool");
             require(helper.getLevel().getEntitiesOfClass(ItemEntity.class, new AABB(origin).inflate(5)).isEmpty(),
                     "Creative area mining spawned drops");
+            helper.succeed();
         });
     }
 
@@ -312,10 +322,12 @@ public final class TFCMAreaToolGameTests {
             helper.getLevel().setBlock(layerPos,
                     Blocks.SNOW.defaultBlockState().setValue(BlockStateProperties.LAYERS, 8), 3);
             protectedPosition = layerPos;
+            observedLayers = 0;
             AreaBreakHandler.breakArea(helper.getLevel(), player, excavator, origin, Direction.UP,
                     AreaToolType.EXCAVATOR);
             require(helper.getLevel().getBlockState(layerPos).getValue(BlockStateProperties.LAYERS) == 8,
                     "Canceled layered candidate was changed");
+            require(observedLayers == 8, "Protection saw a modified layer count");
             protectedPosition = null;
 
             ItemStack hammer = tool(AreaToolMetal.COPPER, AreaToolType.MINING_HAMMER);
@@ -349,6 +361,10 @@ public final class TFCMAreaToolGameTests {
                 require(knapping.getPattern().matches(knappingPattern(type))
                         && knapping.assemble().is(TFCMItems.UNFIRED_AREA_TOOL_MOLDS.get(type).get()),
                         "Area tool mold knapping pattern does not match its own result");
+                for (AreaToolType other : AreaToolType.values()) {
+                    if (other != type) require(!knapping.getPattern().matches(knappingPattern(other)),
+                            "Two molds share a knapping recipe");
+                }
                 for (AreaToolMetal metal : AreaToolMetal.values()) {
                     boolean castingMatchesTfc = recipeExists(helper,
                             "casting/" + metal.id() + "_" + type.id() + "_head") == metal.isCastable();
@@ -358,6 +374,33 @@ public final class TFCMAreaToolGameTests {
                             "Area tool head processing or assembly is missing");
                     ItemStack finished = tool(metal, type);
                     ItemStack head = TFCMItems.AREA_TOOL_HEADS.get(metal).get(type).toStack();
+                    var manager = helper.getLevel().getServer().getRecipeManager();
+                    CraftingRecipe assembly = (CraftingRecipe) manager.byKey(ResourceLocation.parse(
+                            "tfcm:crafting/metal/" + type.id() + "/" + metal.id())).orElseThrow().value();
+                    ItemStack rod = BuiltInRegistries.ITEM.get(ResourceLocation.parse(
+                            metal.namespace() + ":metal/rod/" + metal.id())).getDefaultInstance();
+                    CraftingInput input = CraftingInput.of(3, 3, List.of(ItemStack.EMPTY, ItemStack.EMPTY, head,
+                            ItemStack.EMPTY, rod, ItemStack.EMPTY, Items.STICK.getDefaultInstance(), ItemStack.EMPTY, ItemStack.EMPTY));
+                    require(assembly.matches(input, helper.getLevel())
+                            && assembly.assemble(input, helper.getLevel().registryAccess()).is(finished.getItem()),
+                            "Head, metal rod and wooden handle do not assemble " + type.id());
+                    HeatingRecipe headHeating = (HeatingRecipe) manager.byKey(ResourceLocation.parse(
+                            "tfcm:heating/metal/" + type.id() + "_head/" + metal.id())).orElseThrow().value();
+                    HeatingRecipe toolHeating = (HeatingRecipe) manager.byKey(ResourceLocation.parse(
+                            "tfcm:heating/metal/" + type.id() + "/" + metal.id())).orElseThrow().value();
+                    require(headHeating.assembleFluid(head).getAmount() == 200
+                            && toolHeating.assembleFluid(finished).getAmount() == 250, "Area tool metal amounts");
+                    if (metal.isCastable()) {
+                        ItemStack moldStack = TFCMItems.AREA_TOOL_MOLDS.get(type).toStack();
+                        IMold mold = IMold.get(moldStack);
+                        require(mold != null && mold.fill(new FluidStack(BuiltInRegistries.FLUID.get(ResourceLocation.parse(
+                                metal.namespace() + ":metal/" + metal.id())), 200), FluidAction.EXECUTE) == 200,
+                                "Head mold must hold 200 mB");
+                        HeatCapability.setTemperature(moldStack, 0);
+                        CastingRecipe casting = (CastingRecipe) manager.byKey(ResourceLocation.parse(
+                                "tfcm:casting/" + metal.id() + "_" + type.id() + "_head")).orElseThrow().value();
+                        require(casting.matches(mold) && casting.assemble(mold).is(head.getItem()), "Head casting route");
+                    }
                     require(HeatCapability.getDefinition(finished) != null && HeatCapability.getDefinition(head) != null,
                             "Area tool or head is missing TFC heat data");
                     require(ItemSizeManager.getDefinition(finished) != null
@@ -399,7 +442,12 @@ public final class TFCMAreaToolGameTests {
         };
     }
 
+    private static int observedLayers;
+
     private static void protectCandidate(BlockEvent.BreakEvent event) {
+        if (protectedPosition != null && protectedPosition.equals(event.getPos())
+                && event.getState().hasProperty(BlockStateProperties.LAYERS))
+            observedLayers = event.getState().getValue(BlockStateProperties.LAYERS);
         if (protectedPosition != null && protectedPosition.equals(event.getPos())) event.setCanceled(true);
     }
 
@@ -415,9 +463,9 @@ public final class TFCMAreaToolGameTests {
 
     private static KnappingPattern knappingPattern(AreaToolType type) {
         return switch (type) {
-            case MINING_HAMMER -> KnappingPattern.from(true, "#####", "     ", "     ", "## ##", "#####");
+            case MINING_HAMMER -> KnappingPattern.from(true, "  ###", "    #", "#   #", "#    ", "###  ");
             case QUARRY_HAMMER -> KnappingPattern.from(true, "#####", " # # ", "     ", "#   #", "#####");
-            case EXCAVATOR -> KnappingPattern.from(true, "#####", " ### ", "  #  ", "  #  ", "     ");
+            case EXCAVATOR -> KnappingPattern.from(true, "#####", "#   #", "#   #", "#   #", "#   #");
         };
     }
 

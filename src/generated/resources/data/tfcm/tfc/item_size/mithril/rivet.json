@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/rivet/mithril"
   },
-  "size": "tiny",
+  "size": "very_small",
   "weight": "very_light"
 }

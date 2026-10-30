@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/boots/wrought_iron",
-  "textures": {
-    "armor": "tfcm:item/metal/boots/invar"
-  }
-}

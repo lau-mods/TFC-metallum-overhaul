@@ -5,10 +5,10 @@
       "metal": "compressed_iron"
     }
   ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 2.1428573,
   "ingredient": {
     "item": "tfcm:metal/block/compressed_iron_stairs"
   },
-  "heat_capacity": 2.14286,
-  "forging_temperature": 921.0,
   "welding_temperature": 1228.0
 }

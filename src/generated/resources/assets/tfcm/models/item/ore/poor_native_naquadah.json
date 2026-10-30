@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tfc:item/ore/poor_garnierite"
+    "layer0": "tfcm:item/ore/poor_native_naquadah"
   }
 }

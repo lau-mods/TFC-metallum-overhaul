@@ -5,10 +5,10 @@
       "metal": "zircaloy"
     }
   ],
+  "forging_temperature": 1113.0,
+  "heat_capacity": 3.333333,
   "ingredient": {
     "item": "tfcm:metal/plate/zircaloy"
   },
-  "heat_capacity": 3.3333334000000003,
-  "forging_temperature": 1113.0,
   "welding_temperature": 1484.0
 }

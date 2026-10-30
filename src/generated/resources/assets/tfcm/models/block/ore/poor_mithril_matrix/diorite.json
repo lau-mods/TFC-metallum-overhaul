@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/diorite",
-    "overlay": "tfc:block/ore/poor_native_silver",
+    "overlay": "tfcm:block/ore/poor_mithril_matrix",
     "particle": "tfc:block/rock/raw/diorite"
   }
 }

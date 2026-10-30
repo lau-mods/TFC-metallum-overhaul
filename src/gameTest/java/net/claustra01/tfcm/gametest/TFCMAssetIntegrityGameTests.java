@@ -3,6 +3,8 @@ package net.claustra01.tfcm.gametest;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.util.HexFormat;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -62,8 +64,8 @@ public final class TFCMAssetIntegrityGameTests {
         checkFluids(language);
         checkShield("invar", "texture", "layer0");
         checkShield("titanium", "1", "2");
-        checkShield("netherite", "texture", "particle");
-        checkShield("tungsten_steel", "0", "particle");
+        checkShield("netherite", "1", "2");
+        checkShield("tungsten_steel", "1", "2");
         helper.getLevel().getServer().getResourceManager().listResources("tags", id -> id.getPath().endsWith(".json"))
                 .forEach(TFCMAssetIntegrityGameTests::checkTag);
         helper.succeed();
@@ -225,7 +227,37 @@ public final class TFCMAssetIntegrityGameTests {
             checkAnimation("item/metal/" + form + "/neutronium");
         }
         checkAnimation("block/metal/block/neutronium");
+        checkHash("assets/tfcm/textures/item/metal/ingot/neutronium.png", "dc86ab921b1202467ca6eed71c33e14ca362a50f55b80c212e35c0f6d208d2bb");
+        checkHash("assets/tfcm/textures/block/metal/block/neutronium.png", "31769d374ca6d87ed5b4ad200e735ce9b0f6868886aaa26f0b58f8ba708867a3");
+        checkHash("assets/tfcm/textures/item/metal/mining_hammer/copper.png", "7b40b4374cdeab65a9881964604c5cc333437abfe89a5e3f71b188743f7de313");
+        for (Metal metal : Metal.values()) {
+            try (var nuggetStream = TFCMAssetIntegrityGameTests.class.getResourceAsStream(
+                    "/assets/tfcm/textures/item/metal/nugget/" + metal.id() + ".png");
+                 var dustStream = TFCMAssetIntegrityGameTests.class.getResourceAsStream(
+                    "/assets/tfcm/textures/item/metal/dust/" + metal.id() + ".png")) {
+                var nugget = ImageIO.read(nuggetStream);
+                var dust = ImageIO.read(dustStream);
+                boolean different = false;
+                boolean transparent = false;
+                for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) {
+                    different |= nugget.getRGB(x, y) != dust.getRGB(x, y);
+                    transparent |= (nugget.getRGB(x, y) >>> 24) == 0 && (dust.getRGB(x, y) >>> 24) == 0;
+                }
+                require(different && transparent, "Distinct transparent metal shapes " + metal.id());
+            } catch (IOException exception) {
+                throw new GameTestAssertException("Cannot read metal shapes " + metal.id());
+            }
+        }
         helper.succeed();
+    }
+
+    private static void checkHash(String path, String expected) {
+        try (var stream = TFCMAssetIntegrityGameTests.class.getClassLoader().getResourceAsStream(path)) {
+            require(stream != null && HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256")
+                    .digest(stream.readAllBytes())).equals(expected), "Changed source sprite " + path);
+        } catch (java.security.NoSuchAlgorithmException | IOException exception) {
+            throw new GameTestAssertException("Cannot verify sprite " + path);
+        }
     }
 
     private static void checkAnimation(String texture) {
@@ -320,21 +352,32 @@ public final class TFCMAssetIntegrityGameTests {
     }
 
     private static void checkModel(ResourceLocation id) {
-        String path = "assets/" + id.getNamespace() + "/models/" + id.getPath() + ".json";
-        JsonObject model = readJson(path);
-        if (model.has("parent")) {
-            ResourceLocation parent = ResourceLocation.parse(model.get("parent").getAsString());
-            if (parent.getNamespace().equals(TFCM.MOD_ID)) checkModel(parent);
-            else if (parent.getNamespace().equals("tfc")) require(resourceExists("assets/tfc/models/" + parent.getPath() + ".json"),
-                    "Model parent " + parent);
-        }
-        if (model.has("textures")) for (var entry : model.getAsJsonObject("textures").entrySet()) {
-            String name = entry.getValue().getAsString();
-            if (name.startsWith("#")) continue;
-            ResourceLocation location = ResourceLocation.parse(name);
-            if (location.getNamespace().equals(TFCM.MOD_ID) || location.getNamespace().equals("tfc"))
-                require(resourceExists("assets/" + location.getNamespace() + "/textures/" + location.getPath() + ".png"),
-                        "Texture " + location);
+        checkModelReferences(readJson("assets/" + id.getNamespace() + "/models/" + id.getPath() + ".json"), new HashSet<>());
+    }
+
+    private static void checkModelReferences(JsonElement element, Set<ResourceLocation> visited) {
+        if (element.isJsonArray()) {
+            element.getAsJsonArray().forEach(value -> checkModelReferences(value, visited));
+        } else if (element.isJsonObject()) {
+            JsonObject object = element.getAsJsonObject();
+            for (var entry : object.entrySet()) {
+                if ((entry.getKey().equals("parent") || entry.getKey().equals("model")) && entry.getValue().isJsonPrimitive()) {
+                    ResourceLocation model = ResourceLocation.parse(entry.getValue().getAsString());
+                    if (model.getPath().startsWith("builtin/") || !visited.add(model)) continue;
+                    String path = "assets/" + model.getNamespace() + "/models/" + model.getPath() + ".json";
+                    require(resourceExists(path), "Model dependency " + model);
+                    if (model.getNamespace().equals(TFCM.MOD_ID)) checkModelReferences(readJson(path), visited);
+                } else if (entry.getKey().equals("textures")) {
+                    for (var texture : entry.getValue().getAsJsonObject().entrySet()) {
+                        String name = texture.getValue().getAsString();
+                        if (name.startsWith("#")) continue;
+                        ResourceLocation id = ResourceLocation.parse(name);
+                        require(!id.getPath().startsWith("port/"), "Noncanonical texture " + id);
+                        require(resourceExists("assets/" + id.getNamespace() + "/textures/" + id.getPath() + ".png"),
+                                "Texture " + id);
+                    }
+                } else checkModelReferences(entry.getValue(), visited);
+            }
         }
     }
 

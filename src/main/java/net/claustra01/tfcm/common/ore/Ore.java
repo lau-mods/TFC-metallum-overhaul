@@ -3,32 +3,30 @@ package net.claustra01.tfcm.common.ore;
 import java.util.Locale;
 
 public enum Ore {
-    NATIVE_PLATINUM(true, "native_silver"),
-    NATIVE_NAQUADAH(true, "garnierite"),
-    NATIVE_IRIDIUM(true, "native_silver"),
-    NATIVE_OSMIUM(true, "magnetite"),
-    RUTILE(true, "hematite"),
-    COBALTITE(true, "tetrahedrite"),
-    SPODUMENE(true, "cassiterite"),
-    BAUXITE(true, "hematite"),
-    GALENA(true, "sphalerite"),
-    URANINITE(true, "magnetite"),
-    MITHRIL_MATRIX(true, "native_silver"),
-    STIBNITE(true, "tetrahedrite"),
-    WOLFRAMITE(true, "magnetite"),
-    THORIANITE(true, "magnetite"),
-    MAGNESITE(true, "cassiterite"),
-    ZIRCON(true, "garnierite"),
-    FLUORITE(false, "amethyst"),
-    QUARTZ(false, "opal"),
-    CAROBBIITE(false, "emerald");
+    NATIVE_PLATINUM(true),
+    NATIVE_NAQUADAH(true),
+    NATIVE_IRIDIUM(true),
+    NATIVE_OSMIUM(true),
+    RUTILE(true),
+    COBALTITE(true),
+    SPODUMENE(true),
+    BAUXITE(true),
+    GALENA(true),
+    URANINITE(true),
+    MITHRIL_MATRIX(true),
+    STIBNITE(true),
+    WOLFRAMITE(true),
+    THORIANITE(true),
+    MAGNESITE(true),
+    ZIRCON(true),
+    FLUORITE(false),
+    QUARTZ(false),
+    CAROBBIITE(false);
 
     private final boolean graded;
-    private final String textureSource;
 
-    Ore(boolean graded, String textureSource) {
+    Ore(boolean graded) {
         this.graded = graded;
-        this.textureSource = textureSource;
     }
 
     public String id() {
@@ -37,10 +35,6 @@ public enum Ore {
 
     public boolean graded() {
         return graded;
-    }
-
-    public String textureSource() {
-        return textureSource;
     }
 
     public String itemName(OreGrade grade) {

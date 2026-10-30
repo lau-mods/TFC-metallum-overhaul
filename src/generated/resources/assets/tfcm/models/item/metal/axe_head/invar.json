@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/axe_head/wrought_iron",
-  "textures": {
-    "layer0": "tfcm:item/metal/axe_head/invar"
-  }
-}

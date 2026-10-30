@@ -5,10 +5,10 @@
       "metal": "constantan"
     }
   ],
+  "forging_temperature": 750.0,
+  "heat_capacity": 20.0,
   "ingredient": {
     "item": "tfcm:metal/heavy_sheet/constantan"
   },
-  "heat_capacity": 20.0000004,
-  "forging_temperature": 750.0,
   "welding_temperature": 1000.0
 }

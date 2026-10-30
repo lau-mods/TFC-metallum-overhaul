@@ -5,10 +5,10 @@
       "metal": "constantan"
     }
   ],
+  "forging_temperature": 750.0,
+  "heat_capacity": 3.333333,
   "ingredient": {
     "item": "tfcm:metal/ingot/constantan"
   },
-  "heat_capacity": 3.333333333333,
-  "forging_temperature": 750.0,
   "welding_temperature": 1000.0
 }

@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/netherrack",
-    "overlay": "tfc:block/ore/normal_sphalerite",
+    "overlay": "tfcm:block/ore/normal_galena",
     "particle": "minecraft:block/netherrack"
   }
 }

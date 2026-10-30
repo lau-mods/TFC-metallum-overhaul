@@ -93,7 +93,7 @@ public final class TFCMSurfaceResourceGameTests {
         helper.succeedIf(() -> {
             checkSand(helper, "black", items("tfcm:ore_processing/sand_pile/white", "tfcm:ore_processing/sand_pile/black",
                     "tfcm:ore_processing/dirty_dust/galena", "tfc:powder/charcoal", "minecraft:bone",
-                    "tfcm:ore_processing/powder/sulfur", "tfc:gem/sapphire"),
+                    "tfc:powder/sulfur", "tfc:gem/sapphire"),
                     chances(1f, 0.30f, 0.05f, 0.05f, 0.03f, 0.01f, 0.001f));
             checkSand(helper, "brown", items("tfcm:ore_processing/sand_pile/white", "tfcm:ore_processing/sand_pile/brown",
                     "tfc:ore/gypsum", "tfc:ore/sylvite", "minecraft:bone", "tfc:gem/topaz"),

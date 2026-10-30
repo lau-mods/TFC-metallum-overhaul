@@ -5,10 +5,10 @@
       "metal": "beryllium"
     }
   ],
+  "forging_temperature": 772.2,
+  "heat_capacity": 3.333333,
   "ingredient": {
     "item": "tfcm:metal/block/beryllium"
   },
-  "heat_capacity": 3.33333,
-  "forging_temperature": 772.1999999999999,
-  "welding_temperature": 1029.6000000000001
+  "welding_temperature": 1029.6
 }

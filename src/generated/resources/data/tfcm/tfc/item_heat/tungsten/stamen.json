@@ -5,10 +5,10 @@
       "metal": "tungsten"
     }
   ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 1.25,
   "ingredient": {
     "item": "tfcm:metal/stamen/tungsten"
   },
-  "heat_capacity": 1.250000025,
-  "forging_temperature": 921.0,
   "welding_temperature": 1228.0
 }

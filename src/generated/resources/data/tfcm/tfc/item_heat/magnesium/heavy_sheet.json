@@ -5,10 +5,10 @@
       "metal": "magnesium"
     }
   ],
+  "forging_temperature": 390.0,
+  "heat_capacity": 20.0,
   "ingredient": {
     "item": "tfcm:metal/heavy_sheet/magnesium"
   },
-  "heat_capacity": 20.0000004,
-  "forging_temperature": 390.0,
   "welding_temperature": 520.0
 }

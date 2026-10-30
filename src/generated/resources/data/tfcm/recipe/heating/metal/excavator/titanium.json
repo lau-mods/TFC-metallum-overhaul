@@ -10,8 +10,9 @@
     "item": "tfcm:metal/excavator/titanium"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 250,
     "id": "tfcm:metal/titanium"
   },
-  "temperature": 1700.0
+  "temperature": 1700.0,
+  "use_durability": true
 }

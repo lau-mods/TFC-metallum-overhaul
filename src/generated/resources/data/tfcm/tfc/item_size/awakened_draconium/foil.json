@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/foil/awakened_draconium"
   },
-  "size": "small",
-  "weight": "very_light"
+  "size": "large",
+  "weight": "medium"
 }

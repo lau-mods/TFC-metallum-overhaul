@@ -5,10 +5,10 @@
       "metal": "neutronium"
     }
   ],
+  "forging_temperature": 1800.0,
+  "heat_capacity": 6.666666,
   "ingredient": {
     "item": "tfcm:metal/double_ingot/neutronium"
   },
-  "heat_capacity": 6.66666667,
-  "forging_temperature": 1800.0,
   "welding_temperature": 2400.0
 }

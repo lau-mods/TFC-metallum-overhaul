@@ -5,10 +5,10 @@
       "metal": "arcane"
     }
   ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 0.14285716,
   "ingredient": {
     "item": "tfcm:metal/nail/arcane"
   },
-  "heat_capacity": 0.142857152857143,
-  "forging_temperature": 564.0,
   "welding_temperature": 752.0
 }

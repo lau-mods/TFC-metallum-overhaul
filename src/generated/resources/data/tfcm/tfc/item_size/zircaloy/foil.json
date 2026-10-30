@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/foil/zircaloy"
   },
-  "size": "small",
-  "weight": "very_light"
+  "size": "large",
+  "weight": "medium"
 }

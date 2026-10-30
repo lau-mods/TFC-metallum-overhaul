@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -45,7 +46,7 @@ public final class YamlWorldgenLoader {
                 result.put(name, Dimension.EMPTY);
             }
         }
-        return Map.copyOf(result);
+        return Collections.unmodifiableMap(result);
     }
 
     public static Dimension parse(String dimension, String yaml) {
@@ -135,7 +136,7 @@ public final class YamlWorldgenLoader {
         Indicator indicator = indicator(entry.get("indicator"), rocks, tiers);
         String randomName = string(entry, "random_name", id);
         long seed = entry.containsKey("seed") ? longValue(entry, "seed", 0) : hash(randomName);
-        return new Vein(id, type, Map.copyOf(blocksByRock), minY, maxY, rarity, density, size,
+        return new Vein(id, type, Collections.unmodifiableMap(blocksByRock), minY, maxY, rarity, density, size,
                 height, radius, minSkew, maxSkew, minSlant, maxSlant, sign, seed,
                 bool(entry, "project", false), bool(entry, "project_offset", false),
                 bool(entry, "near_lava", false), indicator);
@@ -234,7 +235,7 @@ public final class YamlWorldgenLoader {
                     && exact > 0 && exact <= Integer.MAX_VALUE, "tier weights must be positive integers");
             result.put(key, (int) exact);
         });
-        return Map.copyOf(result);
+        return Collections.unmodifiableMap(result);
     }
 
     private static void block(String id) {

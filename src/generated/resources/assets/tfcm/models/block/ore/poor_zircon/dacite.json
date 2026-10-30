@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/dacite",
-    "overlay": "tfc:block/ore/poor_garnierite",
+    "overlay": "tfcm:block/ore/poor_zircon",
     "particle": "tfc:block/rock/raw/dacite"
   }
 }

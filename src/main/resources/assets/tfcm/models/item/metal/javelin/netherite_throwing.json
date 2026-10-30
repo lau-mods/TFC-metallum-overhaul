@@ -1,0 +1,21 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "gui_light": "front",
+  "base": {
+    "parent": "tfcm:item/metal/javelin/netherite_throwing_base"
+  },
+  "perspectives": {
+    "none": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    },
+    "fixed": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    },
+    "ground": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    },
+    "gui": {
+      "parent": "tfcm:item/metal/javelin/netherite_gui"
+    }
+  }
+}

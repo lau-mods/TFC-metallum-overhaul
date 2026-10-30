@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/chestplate/black_steel",
-  "textures": {
-    "armor": "tfcm:item/metal/chestplate/titanium"
-  }
-}

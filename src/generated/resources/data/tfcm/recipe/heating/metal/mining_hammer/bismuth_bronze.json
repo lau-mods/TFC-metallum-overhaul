@@ -4,8 +4,9 @@
     "item": "tfcm:metal/mining_hammer/bismuth_bronze"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 250,
     "id": "tfc:metal/bismuth_bronze"
   },
-  "temperature": 985.0
+  "temperature": 985.0,
+  "use_durability": true
 }

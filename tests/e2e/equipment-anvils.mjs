@@ -3,9 +3,12 @@ const { scenario, command, camera, screenshot, mct } = await import(process.env.
 await scenario(async ({ clients }) => {
   const client = clients[0];
   command(client, 'gamemode creative');
+  for (const type of ['item_frame', 'armor_stand', 'item']) {
+    command(client, `execute if entity @e[type=minecraft:${type}] run kill @e[type=minecraft:${type}]`);
+  }
+  command(client, 'fill -12 1 -12 12 12 8 minecraft:air');
   command(client, 'gamerule sendCommandFeedback false');
   command(client, 'time set day');
-  command(client, 'weather clear');
   command(client, 'fill -7 0 -10 7 0 5 minecraft:smooth_stone');
   command(client, 'fill -5 1 5 5 8 5 minecraft:smooth_stone');
   const metals = ['invar', 'titanium', 'netherite', 'tungsten_steel'];
@@ -19,11 +22,14 @@ await scenario(async ({ clients }) => {
     command(client, `summon minecraft:armor_stand ${x} 1 2.5 {NoGravity:1b,ShowArms:1b,Rotation:[180f],ArmorItems:[{id:"tfcm:metal/boots/${metals[index]}",count:1},{id:"tfcm:metal/greaves/${metals[index]}",count:1},{id:"tfcm:metal/chestplate/${metals[index]}",count:1},{id:"tfcm:metal/helmet/${metals[index]}",count:1}],HandItems:[{id:"tfcm:metal/sword/${metals[index]}",count:1},{}]}`);
   }
   await new Promise(resolve => setTimeout(resolve, 12000));
-  await camera(client, { x: 0.5, y: 4.4, z: -2.5, yaw: 0, pitch: 0 });
+  command(client, 'setblock 0 3 -7 minecraft:smooth_stone');
+  await camera(client, { x: 0.5, y: 4, z: -6.5, yaw: 0, pitch: 5 });
   await new Promise(resolve => setTimeout(resolve, 3000));
   const status = mct(client, 'status', 'health');
   if (status.health <= 0) throw new Error('Player died before the equipment and anvil screenshot');
   screenshot(client, 'AC-F007-001', 'four-metal-equipment');
+  command(client, 'kill @e[type=minecraft:armor_stand]');
+  screenshot(client, 'AC-F007-001', 'all-equipment-icons');
   await camera(client, { x: 0.5, y: 2.1, z: -9.5, yaw: 0, pitch: 8 });
   await new Promise(resolve => setTimeout(resolve, 3000));
   screenshot(client, 'AC-F008-001', 'four-metal-anvils');

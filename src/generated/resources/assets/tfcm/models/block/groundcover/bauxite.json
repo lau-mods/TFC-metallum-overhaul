@@ -1,7 +1,7 @@
 {
   "parent": "tfc:block/groundcover/native_copper",
   "textures": {
-    "0": "tfc:item/ore/small_hematite",
-    "particle": "tfc:item/ore/small_hematite"
+    "0": "tfcm:item/ore/small_bauxite",
+    "particle": "tfcm:item/ore/small_bauxite"
   }
 }

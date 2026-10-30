@@ -5,10 +5,10 @@
       "metal": "platinum"
     }
   ],
+  "forging_temperature": 1038.0,
+  "heat_capacity": 0.14285716,
   "ingredient": {
     "item": "tfcm:metal/nail/platinum"
   },
-  "heat_capacity": 0.142857152857143,
-  "forging_temperature": 1038.0,
   "welding_temperature": 1384.0
 }

@@ -5,10 +5,10 @@
       "metal": "lithium"
     }
   ],
+  "forging_temperature": 108.6,
+  "heat_capacity": 6.666666,
   "ingredient": {
     "item": "tfcm:metal/double_ingot/lithium"
   },
-  "heat_capacity": 6.66666667,
-  "forging_temperature": 108.6,
   "welding_temperature": 144.8
 }

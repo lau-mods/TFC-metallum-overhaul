@@ -5,10 +5,10 @@
       "metal": "osmiridium"
     }
   ],
+  "forging_temperature": 900.0,
+  "heat_capacity": 0.14285716,
   "ingredient": {
     "item": "tfcm:metal/nail/osmiridium"
   },
-  "heat_capacity": 0.142857152857143,
-  "forging_temperature": 900.0,
   "welding_temperature": 1200.0
 }

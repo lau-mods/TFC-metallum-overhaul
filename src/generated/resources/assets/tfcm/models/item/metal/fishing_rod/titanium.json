@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/fishing_rod/black_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/fishing_rod/titanium"
-  }
-}

@@ -8,6 +8,6 @@
   "ingredient": {
     "item": "tfcm:metal/gear/zircaloy"
   },
-  "size": "normal",
-  "weight": "medium"
+  "size": "large",
+  "weight": "heavy"
 }

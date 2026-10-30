@@ -10,8 +10,9 @@
     "item": "tfcm:metal/mining_hammer/invar"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 250,
     "id": "tfcm:metal/invar"
   },
-  "temperature": 1250.0
+  "temperature": 1250.0,
+  "use_durability": true
 }

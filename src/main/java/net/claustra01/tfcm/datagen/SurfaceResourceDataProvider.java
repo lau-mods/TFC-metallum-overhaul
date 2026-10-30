@@ -41,7 +41,7 @@ public final class SurfaceResourceDataProvider implements DataProvider {
                     new Output("tfcm:ore_processing/sand_pile/black", 0.30f),
                     new Output("tfcm:ore_processing/dirty_dust/galena", 0.05f),
                     new Output("tfc:powder/charcoal", 0.05f), new Output("minecraft:bone", 0.03f),
-                    new Output("tfcm:ore_processing/powder/sulfur", 0.01f),
+                    new Output("tfc:powder/sulfur", 0.01f),
                     new Output("tfc:gem/sapphire", 0.001f)),
             new SandOutput("brown", new Output("tfcm:ore_processing/sand_pile/white", 1f),
                     new Output("tfcm:ore_processing/sand_pile/brown", 0.30f),
@@ -182,6 +182,7 @@ public final class SurfaceResourceDataProvider implements DataProvider {
     }
 
     private static String referencedOre(String item) {
+        if (item.equals("tfc:powder/sulfur")) return "sulfur";
         if (item.startsWith("tfcm:ore_processing/powder/")
                 || item.startsWith("tfcm:ore_processing/dirty_dust/")) {
             return item.substring(item.lastIndexOf('/') + 1);

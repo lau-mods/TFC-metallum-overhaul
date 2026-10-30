@@ -4,7 +4,7 @@
     "item": "tfcm:metal/quarry_hammer_head/bismuth_bronze"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 200,
     "id": "tfc:metal/bismuth_bronze"
   },
   "temperature": 985.0

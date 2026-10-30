@@ -17,5 +17,6 @@
     "amount": 200,
     "id": "tfcm:metal/netherite"
   },
-  "temperature": 1535
+  "temperature": 1535,
+  "use_durability": true
 }

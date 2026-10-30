@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/end_stone",
-    "overlay": "tfc:block/ore/poor_garnierite",
+    "overlay": "tfcm:block/ore/poor_native_naquadah",
     "particle": "minecraft:block/end_stone"
   }
 }

@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/hoe_head/blue_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/hoe_head/tungsten_steel"
-  }
-}

@@ -5,10 +5,10 @@
       "metal": "cobalt"
     }
   ],
+  "forging_temperature": 1020.0,
+  "heat_capacity": 0.16666666,
   "ingredient": {
     "item": "tfcm:metal/nail/cobalt"
   },
-  "heat_capacity": 0.16666667000000002,
-  "forging_temperature": 1020.0,
   "welding_temperature": 1360.0
 }

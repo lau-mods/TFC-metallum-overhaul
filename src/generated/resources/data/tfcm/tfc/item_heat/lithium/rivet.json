@@ -5,10 +5,10 @@
       "metal": "lithium"
     }
   ],
+  "forging_temperature": 108.6,
+  "heat_capacity": 0.16666666,
   "ingredient": {
     "item": "tfcm:metal/rivet/lithium"
   },
-  "heat_capacity": 0.16666667000000002,
-  "forging_temperature": 108.6,
   "welding_temperature": 144.8
 }

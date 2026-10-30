@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "tfc:block/rock/raw/marble",
-    "overlay": "tfc:block/ore/amethyst",
+    "overlay": "tfcm:block/ore/fluorite",
     "particle": "tfc:block/rock/raw/marble"
   }
 }

@@ -5,10 +5,10 @@
       "metal": "super_alloy"
     }
   ],
+  "forging_temperature": 1080.0,
+  "heat_capacity": 1.6666665,
   "ingredient": {
     "item": "tfcm:metal/rod/super_alloy"
   },
-  "heat_capacity": 1.66666667,
-  "forging_temperature": 1080.0,
   "welding_temperature": 1440.0
 }

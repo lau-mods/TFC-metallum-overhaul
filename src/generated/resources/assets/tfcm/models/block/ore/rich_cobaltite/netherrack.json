@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/netherrack",
-    "overlay": "tfc:block/ore/rich_tetrahedrite",
+    "overlay": "tfcm:block/ore/rich_cobaltite",
     "particle": "minecraft:block/netherrack"
   }
 }

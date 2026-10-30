@@ -5,10 +5,10 @@
       "metal": "neutronium"
     }
   ],
+  "forging_temperature": 1800.0,
+  "heat_capacity": 3.333333,
   "ingredient": {
     "item": "tfcm:metal/dust/neutronium"
   },
-  "heat_capacity": 3.3333334000000003,
-  "forging_temperature": 1800.0,
   "welding_temperature": 2400.0
 }

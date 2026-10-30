@@ -1,0 +1,32 @@
+{
+  "loader": "neoforge:separate_transforms",
+  "textures": {
+    "particle": "tfcm:item/metal/javelin/invar"
+  },
+  "gui_light": "front",
+  "overrides": [
+    {
+      "predicate": {
+        "tfc:throwing": 1
+      },
+      "model": "tfcm:item/metal/javelin/invar_throwing"
+    }
+  ],
+  "base": {
+    "parent": "tfcm:item/metal/javelin/invar_in_hand"
+  },
+  "perspectives": {
+    "none": {
+      "parent": "tfcm:item/metal/javelin/invar_gui"
+    },
+    "fixed": {
+      "parent": "tfcm:item/metal/javelin/invar_gui"
+    },
+    "ground": {
+      "parent": "tfcm:item/metal/javelin/invar_gui"
+    },
+    "gui": {
+      "parent": "tfcm:item/metal/javelin/invar_gui"
+    }
+  }
+}

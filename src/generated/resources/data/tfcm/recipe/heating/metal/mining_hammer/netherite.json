@@ -10,8 +10,9 @@
     "item": "tfcm:metal/mining_hammer/netherite"
   },
   "result_fluid": {
-    "amount": 100,
+    "amount": 250,
     "id": "tfcm:metal/netherite"
   },
-  "temperature": 1535.0
+  "temperature": 1535.0,
+  "use_durability": true
 }

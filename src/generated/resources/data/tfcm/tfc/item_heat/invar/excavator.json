@@ -6,14 +6,9 @@
     }
   ],
   "forging_temperature": 750.0,
-  "heat_capacity": 3.3333335,
-  "ingredient": [
-    {
-      "item": "tfcm:metal/excavator/invar"
-    },
-    {
-      "item": "tfcm:metal/excavator_head/invar"
-    }
-  ],
+  "heat_capacity": 8.333334,
+  "ingredient": {
+    "item": "tfcm:metal/excavator/invar"
+  },
   "welding_temperature": 1000.0
 }

@@ -2,7 +2,7 @@
   "parent": "tfc:block/ore",
   "textures": {
     "all": "minecraft:block/end_stone",
-    "overlay": "tfc:block/ore/emerald",
+    "overlay": "tfcm:block/ore/carobbiite",
     "particle": "minecraft:block/end_stone"
   }
 }

@@ -5,10 +5,10 @@
       "metal": "boron"
     }
   ],
+  "forging_temperature": 1245.6,
+  "heat_capacity": 0.16666666,
   "ingredient": {
     "item": "tfcm:metal/nail/boron"
   },
-  "heat_capacity": 0.16666667000000002,
-  "forging_temperature": 1245.6,
-  "welding_temperature": 1660.8000000000002
+  "welding_temperature": 1660.8
 }

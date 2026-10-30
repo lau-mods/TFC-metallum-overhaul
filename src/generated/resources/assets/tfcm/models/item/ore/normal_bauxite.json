@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tfc:item/ore/normal_hematite"
+    "layer0": "tfcm:item/ore/normal_bauxite"
   }
 }

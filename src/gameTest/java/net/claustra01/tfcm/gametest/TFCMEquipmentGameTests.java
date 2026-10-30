@@ -79,14 +79,17 @@ public final class TFCMEquipmentGameTests {
                 CraftingRecipe sword = (CraftingRecipe) recipe(helper, "crafting/metal/sword/" + metal.getSerializedName());
                 ItemStack empty = ItemStack.EMPTY;
                 List<ItemStack> pickaxeParts = List.of(
+                        empty, item("metal/rivet/" + metal.getSerializedName()),
                         TFCMItems.METAL_ITEMS.get(metal).get(ToolPart.PICKAXE_HEAD).toStack(),
-                        item("tool_binding"), item("metal/ring/" + metal.getSerializedName()),
-                        empty, item("tool_handle"), empty);
+                        BuiltInRegistries.ITEM.get(ResourceLocation.parse("tfc:glue")).getDefaultInstance(),
+                        net.minecraft.world.item.Items.STICK.getDefaultInstance(), item("metal/ring/" + metal.getSerializedName()),
+                        item("metal/ring/" + metal.getSerializedName()), item("leather_strap"), empty);
                 List<ItemStack> swordParts = List.of(
-                        empty, TFCMItems.METAL_ITEMS.get(metal).get(ToolPart.SWORD_BLADE).toStack(), empty,
-                        item("sword_crossguard"), item("tool_handle"), item("sword_pommel"));
-                CraftingInput pickaxeInput = CraftingInput.of(3, 2, pickaxeParts);
-                CraftingInput swordInput = CraftingInput.of(3, 2, swordParts);
+                        item("leather_strap"), empty, TFCMItems.METAL_ITEMS.get(metal).get(ToolPart.SWORD_BLADE).toStack(),
+                        item("metal/rivet/" + metal.getSerializedName()), item("metal/crossguard/" + metal.getSerializedName()), empty,
+                        item("metal/pommel/" + metal.getSerializedName()), item("metal/ring/" + metal.getSerializedName()), item("leather_strap"));
+                CraftingInput pickaxeInput = CraftingInput.of(3, 3, pickaxeParts);
+                CraftingInput swordInput = CraftingInput.of(3, 3, swordParts);
                 require(pickaxe.matches(pickaxeInput, helper.getLevel()),
                         "Pickaxe does not require head, binding, ring, and handle");
                 require(sword.matches(swordInput, helper.getLevel()),
@@ -142,7 +145,7 @@ public final class TFCMEquipmentGameTests {
                         "Pickaxe did not retain its heated state");
                 HeatingRecipe pickaxeHeating = (HeatingRecipe) recipe(helper,
                         "heating/metal/pickaxe/" + metal.getSerializedName());
-                require(pickaxeHeating.matches(pickaxe) && pickaxeHeating.assembleFluid(pickaxe).getAmount() == 100,
+                require(pickaxeHeating.matches(pickaxe) && pickaxeHeating.assembleFluid(pickaxe).getAmount() == (int) (100f * (pickaxe.getMaxDamage() - 100) / pickaxe.getMaxDamage()),
                         "Pickaxe does not melt to its one-ingot metal amount");
 
                 ItemStack chestplate = TFCMItems.METAL_ITEMS.get(metal).get(ToolPart.CHESTPLATE).toStack();
@@ -151,7 +154,7 @@ public final class TFCMEquipmentGameTests {
                         "Damaged armor cannot use its metal ingot for repair");
                 HeatingRecipe armorHeating = (HeatingRecipe) recipe(helper,
                         "heating/metal/chestplate/" + metal.getSerializedName());
-                require(armorHeating.matches(chestplate) && armorHeating.assembleFluid(chestplate).getAmount() == 800,
+                require(armorHeating.matches(chestplate) && armorHeating.assembleFluid(chestplate).getAmount() == (int) (800f * (chestplate.getMaxDamage() - 100) / chestplate.getMaxDamage()),
                         "Chestplate heat and metal amount disagree");
                 HeatDefinition armorHeat = HeatCapability.getDefinition(chestplate);
                 require(armorHeat != null
@@ -244,7 +247,7 @@ public final class TFCMEquipmentGameTests {
             if (!parts.get(index).isEmpty()) {
                 List<ItemStack> missing = new ArrayList<>(parts);
                 missing.set(index, ItemStack.EMPTY);
-                require(!recipe.matches(CraftingInput.of(3, 2, missing), helper.getLevel()),
+                require(!recipe.matches(CraftingInput.of(3, 3, missing), helper.getLevel()),
                         "Recipe still matches with required part " + index + " removed");
             }
         }

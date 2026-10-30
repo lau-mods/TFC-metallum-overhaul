@@ -37,19 +37,21 @@ public final class EquipmentDataProvider implements DataProvider {
                         itemHeat(metal, part)));
                 files.add(save(output, data, "tfcm/tfc/item_size/" + metal.getSerializedName() + "/" + id,
                         itemSize(metal, part)));
-                files.add(save(output, assets, "tfcm/models/item/metal/" + id + "/" + metal.getSerializedName(),
-                        model(metal, part)));
                 if (isForged(part)) {
                     files.add(save(output, data, "tfcm/recipe/anvil/metal/" + id + "/" + metal.getSerializedName(),
                             anvilPart(metal, part)));
                 }
-                if (hasAssembly(part)) {
-                    files.add(save(output, data, "tfcm/recipe/crafting/metal/" + id + "/" + metal.getSerializedName(),
-                            assembly(metal, part)));
-                }
             }
             files.add(save(output, data, "tfcm/recipe/welding/metal/shears/" + metal.getSerializedName(), shears(metal)));
-            files.add(save(output, data, "tfcm/recipe/crafting/metal/fishing_rod/" + metal.getSerializedName(), fishingRod(metal)));
+            for (String part : List.of("crossguard", "pommel")) {
+                int amount = part.equals("crossguard") ? 25 : 24;
+                files.add(save(output, data, "tfcm/recipe/heating/metal/" + part + "/" + metal.getSerializedName(),
+                        heating(metal, part, amount, false)));
+                files.add(save(output, data, "tfcm/tfc/item_heat/" + metal.getSerializedName() + "/" + part,
+                        itemHeat(metal, part, amount, false)));
+                files.add(save(output, data, "tfcm/tfc/item_size/" + metal.getSerializedName() + "/" + part,
+                        itemSize(metal, part, "small", "light", false)));
+            }
             for (String armor : List.of("helmet", "chestplate", "greaves", "boots")) {
                 files.add(save(output, data, "tfcm/recipe/welding/metal/" + armor + "/" + metal.getSerializedName(),
                         armorWelding(metal, armor)));
@@ -61,8 +63,6 @@ public final class EquipmentDataProvider implements DataProvider {
             files.add(save(output, data, "tfcm/tfc/item_size/" + metal.getSerializedName() + "/anvil", anvilSize(metal)));
             files.add(save(output, data, "tfcm/loot_table/blocks/metal/anvil/" + metal.getSerializedName(), anvilLoot(metal)));
             files.add(save(output, assets, "tfcm/blockstates/metal/anvil/" + metal.getSerializedName(), anvilBlockstate(metal)));
-            files.add(save(output, assets, "tfcm/models/block/metal/anvil/" + metal.getSerializedName(), anvilBlockModel(metal)));
-            files.add(save(output, assets, "tfcm/models/item/metal/anvil/" + metal.getSerializedName(), anvilItemModel(metal)));
         }
         files.add(save(output, data, "tfc/tags/block/anvils", anvilTag()));
         files.add(save(output, data, "tfc/tags/item/usable_on_tool_rack", toolRack()));
@@ -109,10 +109,6 @@ public final class EquipmentDataProvider implements DataProvider {
                     itemSize(metal, "tong_part", "large", "medium", true)));
             files.add(save(output, data, "tfcm/tfc/item_size/" + metal.getSerializedName() + "/tongs",
                     itemSize(metal, "tongs", "large", "medium", true)));
-            files.add(save(output, assets, "tfcm/models/item/metal/tong_part/" + metal.getSerializedName(),
-                    hotOrNotModel(metal, "tong_part")));
-            files.add(save(output, assets, "tfcm/models/item/metal/tongs/" + metal.getSerializedName(),
-                    hotOrNotModel(metal, "tongs")));
         }
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new));
     }
@@ -170,11 +166,6 @@ public final class EquipmentDataProvider implements DataProvider {
         return part.name().endsWith("_HEAD") || part == ToolPart.SAW_BLADE || part == ToolPart.SWORD_BLADE
                 || part == ToolPart.KNIFE_BLADE || part == ToolPart.SCYTHE_BLADE || part == ToolPart.TUYERE
                 || part == ToolPart.FISH_HOOK || part == ToolPart.SHIELD || part.name().startsWith("UNFINISHED_");
-    }
-
-    private static boolean hasAssembly(ToolPart part) {
-        return part.isFinishedTool() && part != ToolPart.SHEARS && part != ToolPart.FISHING_ROD
-                && part != ToolPart.SHIELD;
     }
 
     private static JsonObject anvilPart(ToolMetal metal, ToolPart part) {
@@ -251,48 +242,6 @@ public final class EquipmentDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject assembly(ToolMetal metal, ToolPart part) {
-        JsonObject json = conditioned(metal);
-        json.addProperty("type", "tfc:advanced_shaped_crafting");
-        JsonArray pattern = new JsonArray();
-        JsonObject key = new JsonObject();
-        ToolPart head = switch (part) {
-            case SAW -> ToolPart.SAW_BLADE;
-            case SWORD -> ToolPart.SWORD_BLADE;
-            case KNIFE -> ToolPart.KNIFE_BLADE;
-            case SCYTHE -> ToolPart.SCYTHE_BLADE;
-            case JAVELIN -> ToolPart.JAVELIN_HEAD;
-            default -> ToolPart.valueOf(part.name() + "_HEAD");
-        };
-        if (part == ToolPart.SWORD) {
-            pattern.add(" B ");
-            pattern.add("CHP");
-            key.add("B", item(id(metal, head)));
-            key.add("C", item("tfcm:sword_crossguard"));
-            key.add("H", item("tfcm:tool_handle"));
-            key.add("P", item("tfcm:sword_pommel"));
-        } else {
-            pattern.add("XBR");
-            pattern.add(" H ");
-            key.add("X", item(id(metal, head)));
-            key.add("B", item("tfcm:tool_binding"));
-            key.add("R", tag("c:rings/" + metal.getSerializedName()));
-            key.add("H", item("tfcm:tool_handle"));
-        }
-        json.add("pattern", pattern);
-        json.add("key", key);
-        JsonObject stack = result(id(metal, part));
-        JsonArray modifiers = new JsonArray();
-        JsonObject modifier = new JsonObject();
-        modifier.addProperty("type", "tfc:copy_forging_bonus");
-        modifiers.add(modifier);
-        JsonObject advancedResult = new JsonObject();
-        advancedResult.add("stack", stack);
-        advancedResult.add("modifiers", modifiers);
-        json.add("result", advancedResult);
-        return json;
-    }
-
     private static JsonObject shears(ToolMetal metal) {
         JsonObject json = conditioned(metal);
         json.addProperty("type", "tfc:welding");
@@ -301,32 +250,6 @@ public final class EquipmentDataProvider implements DataProvider {
         json.add("result", result(id(metal, ToolPart.SHEARS)));
         json.addProperty("tier", metal.toolTier().level() - 1);
         json.addProperty("bonus", "copy_worst");
-        return json;
-    }
-
-    private static JsonObject fishingRod(ToolMetal metal) {
-        JsonObject json = conditioned(metal);
-        json.addProperty("type", "tfc:advanced_shaped_crafting");
-        JsonArray pattern = new JsonArray();
-        pattern.add("  S");
-        pattern.add(" SW");
-        pattern.add("SHW");
-        json.add("pattern", pattern);
-        JsonObject key = new JsonObject();
-        key.add("S", tag("c:rods/wooden"));
-        key.add("W", tag("c:wires/" + metal.getSerializedName()));
-        key.add("H", item(id(metal, ToolPart.FISH_HOOK)));
-        json.add("key", key);
-        JsonObject advancedResult = new JsonObject();
-        advancedResult.add("stack", result(id(metal, ToolPart.FISHING_ROD)));
-        JsonArray modifiers = new JsonArray();
-        JsonObject modifier = new JsonObject();
-        modifier.addProperty("type", "tfc:copy_forging_bonus");
-        modifiers.add(modifier);
-        advancedResult.add("modifiers", modifiers);
-        json.add("result", advancedResult);
-        json.addProperty("input_row", 2);
-        json.addProperty("input_column", 1);
         return json;
     }
 
@@ -374,7 +297,11 @@ public final class EquipmentDataProvider implements DataProvider {
     }
 
     private static JsonObject heating(ToolMetal metal, ToolPart part) {
-        return heating(metal, part.id(), metalAmount(part), false);
+        JsonObject json = heating(metal, part.id(), metalAmount(part), false);
+        if (part.isFinishedTool() || part == ToolPart.TUYERE || part == ToolPart.HELMET
+                || part == ToolPart.CHESTPLATE || part == ToolPart.GREAVES || part == ToolPart.BOOTS
+                || part == ToolPart.HORSE_ARMOR) json.addProperty("use_durability", true);
+        return json;
     }
 
     private static JsonObject heating(ToolMetal metal, String part, int amount, boolean hotOrNot) {
@@ -386,6 +313,7 @@ public final class EquipmentDataProvider implements DataProvider {
         fluid.addProperty("amount", amount);
         json.add("result_fluid", fluid);
         json.addProperty("temperature", metal.metal().meltingPoint());
+        if (part.equals("tongs")) json.addProperty("use_durability", true);
         return json;
     }
 
@@ -473,50 +401,6 @@ public final class EquipmentDataProvider implements DataProvider {
             case HORSE_ARMOR -> 1200;
             default -> 100;
         };
-    }
-
-    private static JsonObject model(ToolMetal metal, ToolPart part) {
-        JsonObject json = new JsonObject();
-        json.addProperty("parent", "tfc:item/metal/" + part.id() + "/" + reference(metal));
-        JsonObject textures = new JsonObject();
-        String texture = "tfcm:item/metal/" + part.id() + "/" + metal.getSerializedName();
-        if (part == ToolPart.HELMET || part == ToolPart.CHESTPLATE || part == ToolPart.GREAVES
-                || part == ToolPart.BOOTS) {
-            textures.addProperty("armor", texture);
-        } else if (part == ToolPart.SHIELD) {
-            if (metal == ToolMetal.TITANIUM) {
-                textures.addProperty("1", texture + "_front");
-                textures.addProperty("2", texture + "_back");
-            } else if (metal == ToolMetal.INVAR) {
-                textures.addProperty("texture", texture);
-                textures.addProperty("layer0", texture);
-            } else if (metal == ToolMetal.NETHERITE) {
-                textures.addProperty("texture", texture);
-                textures.addProperty("particle", texture);
-            } else {
-                textures.addProperty("0", texture);
-                textures.addProperty("particle", texture);
-            }
-        } else {
-            textures.addProperty("layer0", texture);
-        }
-        json.add("textures", textures);
-        return json;
-    }
-
-    private static String reference(ToolMetal metal) {
-        return switch (metal) {
-            case INVAR -> "wrought_iron";
-            case TITANIUM -> "black_steel";
-            case NETHERITE -> "red_steel";
-            case TUNGSTEN_STEEL -> "blue_steel";
-        };
-    }
-
-    private static JsonObject hotOrNotModel(ToolMetal metal, String part) {
-        JsonObject json = new JsonObject();
-        json.addProperty("parent", "tfchotornot:item/" + part + "/" + reference(metal));
-        return json;
     }
 
     private static JsonObject hotOrNotTongsTag() {
@@ -620,15 +504,4 @@ public final class EquipmentDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject anvilBlockModel(ToolMetal metal) {
-        JsonObject json = new JsonObject();
-        json.addProperty("parent", "tfc:block/metal/anvil/" + reference(metal));
-        return json;
-    }
-
-    private static JsonObject anvilItemModel(ToolMetal metal) {
-        JsonObject json = new JsonObject();
-        json.addProperty("parent", "tfcm:block/metal/anvil/" + metal.getSerializedName());
-        return json;
-    }
 }

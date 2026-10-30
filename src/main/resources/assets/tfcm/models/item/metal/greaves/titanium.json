@@ -1,0 +1,8 @@
+{
+  "loader": "tfc:trim",
+  "parent": "neoforge:item/default",
+  "textures": {
+    "armor": "tfcm:item/metal/greaves/titanium",
+    "trim": "tfc:item/greaves_trim"
+  }
+}

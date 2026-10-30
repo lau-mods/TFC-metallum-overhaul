@@ -1,6 +1,0 @@
-{
-  "parent": "tfc:item/metal/unfinished_greaves/blue_steel",
-  "textures": {
-    "layer0": "tfcm:item/metal/unfinished_greaves/tungsten_steel"
-  }
-}
