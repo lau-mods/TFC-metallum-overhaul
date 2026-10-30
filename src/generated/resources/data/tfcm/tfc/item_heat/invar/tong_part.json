@@ -10,7 +10,7 @@
     }
   ],
   "forging_temperature": 750.0,
-  "heat_capacity": 3.333333,
+  "heat_capacity": 2.8566666,
   "ingredient": {
     "tag": "tfcm:hotornot/tong_part/invar"
   },

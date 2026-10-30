@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/aluminum",
-  "melt_temperature": 1740.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 1740,
+  "specific_heat_capacity": 0.0042857146
 }

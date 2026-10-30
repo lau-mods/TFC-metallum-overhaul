@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 198.0,
-  "heat_capacity": 3.333333,
+  "heat_capacity": 7.692308,
   "ingredient": {
     "item": "tfcm:metal/plate/lead"
   },

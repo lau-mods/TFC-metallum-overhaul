@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 750.0,
-  "heat_capacity": 46.666664,
+  "heat_capacity": 39.993332,
   "ingredient": {
     "item": "tfcm:metal/anvil/invar"
   },

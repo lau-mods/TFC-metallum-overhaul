@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1044.0,
-  "heat_capacity": 1.6666665,
+  "heat_capacity": 0.7142858,
   "ingredient": {
     "item": "tfcm:metal/rod/aluminum"
   },

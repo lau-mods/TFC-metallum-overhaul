@@ -5,10 +5,10 @@
       "metal": "tough_alloy"
     }
   ],
+  "forging_temperature": 960.0,
+  "heat_capacity": 2.1428573,
   "ingredient": {
     "item": "tfcm:metal/block/tough_alloy_stairs"
   },
-  "heat_capacity": 2.5,
-  "forging_temperature": 960.0,
   "welding_temperature": 1280.0
 }

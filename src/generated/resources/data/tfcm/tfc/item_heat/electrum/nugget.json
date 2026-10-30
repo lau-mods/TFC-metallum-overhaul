@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 600.0,
-  "heat_capacity": 0.3333333,
+  "heat_capacity": 0.18181819,
   "ingredient": {
     "item": "tfcm:metal/nugget/electrum"
   },

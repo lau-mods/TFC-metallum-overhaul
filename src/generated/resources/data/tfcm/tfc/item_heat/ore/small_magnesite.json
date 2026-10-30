@@ -10,7 +10,7 @@
     }
   ],
   "forging_temperature": 390.0,
-  "heat_capacity": 0.33333334,
+  "heat_capacity": 0.28571433,
   "ingredient": {
     "item": "tfcm:ore/small_magnesite"
   },

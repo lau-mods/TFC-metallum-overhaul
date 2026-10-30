@@ -5,10 +5,10 @@
       "metal": "super_alloy"
     }
   ],
+  "forging_temperature": 1080.0,
+  "heat_capacity": 2.1428573,
   "ingredient": {
     "item": "tfcm:metal/block/super_alloy_stairs"
   },
-  "heat_capacity": 2.5,
-  "forging_temperature": 1080.0,
   "welding_temperature": 1440.0
 }

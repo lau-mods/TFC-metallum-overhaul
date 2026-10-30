@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 312.0,
-  "heat_capacity": 3.333333,
+  "heat_capacity": 4.0,
   "ingredient": {
     "item": "tfcm:metal/foil/andesite_alloy"
   },

@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 750.0,
-  "heat_capacity": 40.0,
+  "heat_capacity": 34.28,
   "ingredient": {
     "item": "tfcm:metal/horse_armor/invar"
   },

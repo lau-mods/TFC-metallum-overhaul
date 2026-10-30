@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 772.2,
-  "heat_capacity": 2.5,
+  "heat_capacity": 2.1428573,
   "ingredient": {
     "item": "tfcm:metal/block/beryllium_stairs"
   },

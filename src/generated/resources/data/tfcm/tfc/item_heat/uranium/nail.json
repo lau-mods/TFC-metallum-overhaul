@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 678.0,
-  "heat_capacity": 0.16666666,
+  "heat_capacity": 0.41666672,
   "ingredient": {
     "item": "tfcm:metal/nail/uranium"
   },

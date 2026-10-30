@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/super_alloy",
-  "melt_temperature": 1800.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 1800,
+  "specific_heat_capacity": 0.008571429
 }

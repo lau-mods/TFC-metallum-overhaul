@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/beryllium",
-  "melt_temperature": 1287.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 1287,
+  "specific_heat_capacity": 0.008571429
 }

@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 678.0,
-  "heat_capacity": 0.4,
+  "heat_capacity": 1.0000001,
   "ingredient": {
     "item": "tfcm:metal/ring/uranium"
   },

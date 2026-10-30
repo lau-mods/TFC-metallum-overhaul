@@ -10,7 +10,7 @@
     }
   ],
   "forging_temperature": 1044.0,
-  "heat_capacity": 0.33333334,
+  "heat_capacity": 0.14285716,
   "ingredient": {
     "item": "tfcm:ore/small_bauxite"
   },

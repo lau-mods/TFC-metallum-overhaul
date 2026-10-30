@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 312.0,
-  "heat_capacity": 20.0,
+  "heat_capacity": 24.0,
   "ingredient": {
     "item": "tfcm:metal/heavy_sheet/andesite_alloy"
   },

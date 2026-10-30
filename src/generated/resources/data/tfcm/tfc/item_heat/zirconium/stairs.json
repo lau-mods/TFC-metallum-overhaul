@@ -5,10 +5,10 @@
       "metal": "zirconium"
     }
   ],
+  "forging_temperature": 1113.0,
+  "heat_capacity": 2.1428573,
   "ingredient": {
     "item": "tfcm:metal/block/zirconium_stairs"
   },
-  "heat_capacity": 2.5,
-  "forging_temperature": 1113.0,
   "welding_temperature": 1484.0
 }

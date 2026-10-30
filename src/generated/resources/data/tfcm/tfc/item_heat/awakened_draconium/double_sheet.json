@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1200.0,
-  "heat_capacity": 13.333332,
+  "heat_capacity": 11.428573,
   "ingredient": {
     "item": "tfcm:metal/double_sheet/awakened_draconium"
   },

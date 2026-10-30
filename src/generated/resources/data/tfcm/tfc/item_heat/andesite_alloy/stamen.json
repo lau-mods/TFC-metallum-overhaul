@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 312.0,
-  "heat_capacity": 0.83333325,
+  "heat_capacity": 1.0,
   "ingredient": {
     "item": "tfcm:metal/stamen/andesite_alloy"
   },

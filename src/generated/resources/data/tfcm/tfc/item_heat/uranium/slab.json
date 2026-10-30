@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 678.0,
-  "heat_capacity": 1.6666665,
+  "heat_capacity": 4.166667,
   "ingredient": {
     "item": "tfcm:metal/block/uranium_slab"
   },

@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/invar",
-  "melt_temperature": 1250.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 1250,
+  "specific_heat_capacity": 0.00857
 }

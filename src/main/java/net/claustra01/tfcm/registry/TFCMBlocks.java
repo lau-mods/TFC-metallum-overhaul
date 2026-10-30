@@ -21,8 +21,9 @@ import net.dries007.tfc.common.blocks.devices.AnvilBlock;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.minecraft.world.level.block.AmethystClusterBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.LiquidBlock;
+import net.minecraft.world.level.block.Blocks;
+import net.dries007.tfc.common.blocks.MoltenFluidBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -56,8 +57,8 @@ public final class TFCMBlocks {
     public static final DeferredBlock<PlantBlock> PLANT_BLOCK = BLOCKS.register("plant_block",
             () -> new PlantBlock(BlockBehaviour.Properties.of().mapColor(MapColor.PLANT).strength(.5f)));
     public static final DeferredBlock<LiquidBlock> MOLTEN_ANDESITE = BLOCKS.register("molten_andesite",
-            () -> new LiquidBlock(TFCMFluids.MOLTEN_ANDESITE_SOURCE.get(),
-                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_GRAY).noCollission().strength(100f).noLootTable()));
+            () -> new MoltenFluidBlock(TFCMFluids.MOLTEN_ANDESITE.source(),
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA).noLootTable()));
 
     static {
         for (Metal metal : Metal.values()) {
@@ -69,8 +70,8 @@ public final class TFCMBlocks {
             METAL_STAIRS.put(metal, BLOCKS.register("metal/block/" + metal.id() + "_stairs",
                     () -> new StairBlock(block.get().defaultBlockState(), metalProperties())));
             METAL_FLUID_BLOCKS.put(metal, BLOCKS.register("fluid/metal/" + metal.id(),
-                    () -> new LiquidBlock(TFCMFluids.METALS.get(metal).source().get(),
-                            BlockBehaviour.Properties.of().mapColor(MapColor.FIRE).noCollission().strength(100f).noLootTable())));
+                    () -> new MoltenFluidBlock(TFCMFluids.METALS.get(metal).source(),
+                            BlockBehaviour.Properties.ofFullCopy(Blocks.LAVA).noLootTable())));
         }
         for (ToolMetal metal : ToolMetal.values()) {
             if (!TFCMConfig.isMetalEnabled(metal.metal())) continue;

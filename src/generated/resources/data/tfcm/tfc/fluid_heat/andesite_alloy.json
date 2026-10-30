@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/andesite_alloy",
-  "melt_temperature": 520.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 520,
+  "specific_heat_capacity": 0.012
 }

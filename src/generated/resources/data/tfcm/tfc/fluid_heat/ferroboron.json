@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/ferroboron",
-  "melt_temperature": 1500.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 1500,
+  "specific_heat_capacity": 0.008571429
 }

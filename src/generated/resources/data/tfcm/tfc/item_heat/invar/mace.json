@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 750.0,
-  "heat_capacity": 6.666666,
+  "heat_capacity": 5.713333,
   "ingredient": {
     "item": "tfcm:metal/mace/invar"
   },

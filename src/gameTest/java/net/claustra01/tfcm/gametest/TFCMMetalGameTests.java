@@ -27,6 +27,15 @@ import net.dries007.tfc.common.recipes.HeatingRecipe;
 import net.dries007.tfc.common.recipes.QuernRecipe;
 import net.dries007.tfc.common.recipes.WeldingRecipe;
 import net.dries007.tfc.util.FluidAlloy;
+import net.dries007.tfc.util.data.FluidHeat;
+import net.dries007.tfc.common.fluids.MoltenFluid;
+import net.dries007.tfc.common.blocks.MoltenFluidBlock;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.animal.Pig;
+import net.minecraft.world.level.material.Fluids;
+import net.minecraft.sounds.SoundEvents;
+import net.neoforged.neoforge.common.SoundActions;
+import net.neoforged.neoforge.fluids.FluidType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -261,6 +270,7 @@ public final class TFCMMetalGameTests {
                 }
                 require(fluid("metal/" + metal.id()), "Missing molten fluid for " + metal.id());
                 FlowingFluid source = TFCMFluids.METALS.get(metal).source().get();
+                assertMoltenFluid(helper, source);
                 require(source.getBucket() == TFCMItems.METAL_BUCKETS.get(metal).get(), "Wrong bucket for " + metal.id());
                 require(source.defaultFluidState().createLegacyBlock().getBlock() == TFCMBlocks.METAL_FLUID_BLOCKS.get(metal).get(),
                         "Wrong fluid block for " + metal.id());
@@ -280,13 +290,19 @@ public final class TFCMMetalGameTests {
         helper.succeedIf(() -> {
             int[] tiers = {3,3,7,3,3,3,2,2,2,2,1,5,3,3,3,1,3,1,1,3,3,3,7,6,1,2,7,7,3,3,2,3,2,7,5,5,5,5,5};
             int[] melts = {1535,1730,2000,1535,1535,1500,940,940,940,940,630,1700,1700,181,1740,1250,1250,1000,330,1130,1535,400,1535,1535,1000,520,2000,2000,2076,1750,650,1287,1855,3000,1500,1600,1855,1450,1800};
+            // Values from Metallum 1.5.1, independent of the implementation enum.
+            int[] colors = {0xFF6F6C6B, 0xFF627C8B, 0xFF4D5742, 0xFFADC4CE, 0xFFA5B4CA, 0xFF718383, 0xFF8DB4BC, 0xFF888CCC, 0xFFE2B446, 0xFF473752, 0xFFB4AFBD, 0xFF898B93, 0xFF175AB3, 0xFFC5CBD1, 0xFF929799, 0xFFA45B49, 0xFF869A97, 0xFFA67F3A, 0xFF393D4A, 0xFF4E5946, 0xFF585F6B, 0xFF888888, 0xFF2F353E, 0xFF111111, 0xFFB18143, 0xFF757E76, 0xFF6C3F99, 0xFFE06100, 0xFF676767, 0xFF242424, 0xFFBCA3BA, 0xFFD3DCC3, 0xFFDFE0B7, 0xFF120E1A, 0xFF3D3D3D, 0xFF130F1B, 0xFFBABAB0, 0xFF726C9B, 0xFF62595C};
+            float[] capacities = {0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.012f, 0.01f, 0.01f, 0.01f, 0.0042857146f, 0.008571429f, 0.00857f, 0.0054545454f, 0.023076924f, 0.025f, 0.015f, 0.008571429f, 0.015f, 0.015f, 0.0054545454f, 0.012f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f};
             Set<Metal> tools = Set.of(Metal.TITANIUM, Metal.INVAR, Metal.TUNGSTEN_STEEL, Metal.NETHERITE);
             Metal[] metals = Metal.values();
             for (int index = 0; index < metals.length; index++) {
                 require(metals[index].forgingTier() == tiers[index], "Wrong tier for " + metals[index].id());
                 require(metals[index].meltingPoint() == melts[index], "Wrong melting point for " + metals[index].id());
                 require(metals[index].providesTools() == tools.contains(metals[index]), "Wrong tool flag for " + metals[index].id());
-                require(metals[index].specificHeat() > 0, "Missing specific heat for " + metals[index].id());
+                require(metals[index].color() == colors[index], "Source color differs for " + metals[index].id());
+                FluidHeat fluidHeat = FluidHeat.get(TFCMFluids.METALS.get(metals[index]).getSource());
+                require(fluidHeat != null && fluidHeat.specificHeatCapacity() == capacities[index],
+                        "Source fluid heat capacity differs for " + metals[index].id());
                 ItemStack ingot = itemValue("metal/ingot/" + metals[index].id()).getDefaultInstance();
                 HeatDefinition heat = HeatCapability.getDefinition(ingot);
                 AnvilRecipe sheet = (AnvilRecipe) recipe(helper, "anvil/metal/sheet/" + metals[index].id());
@@ -387,6 +403,9 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void andesiteMeltsAndAlloysAtSpecifiedAmounts(GameTestHelper helper) {
         helper.succeedIf(() -> {
+            assertMoltenFluid(helper, TFCMFluids.MOLTEN_ANDESITE.getSource());
+            require(FluidHeat.get(TFCMFluids.MOLTEN_ANDESITE.getSource()).specificHeatCapacity() == 0.012f,
+                    "Molten andesite heat capacity differs from source");
             HeatingRecipe heating = (HeatingRecipe) recipe(helper, "heating/loose_andesite");
             require(heating.getTemperature() == 1300, "Andesite melting temperature is not 1300 C");
             require(heating.getDisplayOutputFluid().getAmount() == 90, "Loose andesite does not melt to 90 mB");
@@ -404,6 +423,35 @@ public final class TFCMMetalGameTests {
             require(HeatCapability.getDefinition(BuiltInRegistries.ITEM.get(ResourceLocation.parse("tfc:rock/loose/andesite"))
                     .getDefaultInstance()) != null, "Loose andesite has no loaded heat data");
         });
+    }
+
+    private static void assertMoltenFluid(GameTestHelper helper, FlowingFluid fluid) {
+        require(fluid instanceof MoltenFluid && fluid.getFlowing() instanceof MoltenFluid,
+                "Source and flowing states must use TFC molten behavior");
+        FluidType type = fluid.getFluidType();
+        require(type.getLightLevel() == 15 && type.getTemperature() == 1300
+                        && type.getDensity() == 3000 && type.getViscosity() == 6000,
+                "Molten fluid properties differ from source");
+        require(type.getSound(SoundActions.BUCKET_FILL) == SoundEvents.BUCKET_FILL
+                        && type.getSound(SoundActions.BUCKET_EMPTY) == SoundEvents.BUCKET_EMPTY_LAVA,
+                "Molten bucket sounds differ from source");
+        for (var level : helper.getLevel().getServer().getAllLevels()) {
+            require(fluid.getTickDelay(level) == Fluids.LAVA.getTickDelay(level),
+                    "Molten flow must follow lava timing in " + level.dimension().location());
+        }
+        BlockPos pos = helper.absolutePos(new BlockPos(1, 2, 1));
+        Pig pig = new Pig(EntityType.PIG, helper.getLevel());
+        pig.setPos(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5);
+        require(!type.canDrownIn(pig) && !type.canSwim(pig) && !type.canPushEntity(pig)
+                        && !type.canExtinguish(pig) && !type.canHydrate(pig)
+                        && !type.canConvertToSource(new FluidStack(fluid, 1000)),
+                "Molten fluid has water-like behavior");
+        var state = fluid.defaultFluidState().createLegacyBlock();
+        require(state.getBlock() instanceof MoltenFluidBlock && state.getLightEmission() == 15,
+                "Placed fluid must use the luminous TFC molten block");
+        float health = pig.getHealth();
+        ((MoltenFluidBlock) state.getBlock()).entityInside(state, helper.getLevel(), pos, pig);
+        require(pig.getHealth() < health && pig.isOnFire(), "Molten contact did not damage and ignite an entity");
     }
 
     private static void assertCasts(CastingRecipe recipe, String moldId) {

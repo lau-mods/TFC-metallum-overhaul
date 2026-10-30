@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1200.0,
-  "heat_capacity": 0.4,
+  "heat_capacity": 0.34285718,
   "ingredient": {
     "item": "tfcm:metal/ring/awakened_draconium"
   },

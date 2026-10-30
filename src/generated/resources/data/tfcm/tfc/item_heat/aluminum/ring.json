@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1044.0,
-  "heat_capacity": 0.4,
+  "heat_capacity": 0.17142859,
   "ingredient": {
     "item": "tfcm:metal/ring/aluminum"
   },

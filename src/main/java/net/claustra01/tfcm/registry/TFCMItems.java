@@ -59,7 +59,7 @@ public final class TFCMItems {
     public static final DeferredItem<BlockItem> PLANT_BLOCK = ITEMS.register("plant_block",
             () -> new BlockItem(TFCMBlocks.PLANT_BLOCK.get(), new Item.Properties()));
     public static final DeferredItem<BucketItem> MOLTEN_ANDESITE_BUCKET = ITEMS.register(
-            "molten_andesite_bucket", () -> new BucketItem(TFCMFluids.MOLTEN_ANDESITE_SOURCE.get(),
+            "molten_andesite_bucket", () -> new BucketItem(TFCMFluids.MOLTEN_ANDESITE.getSource(),
                     new Item.Properties().craftRemainder(Items.BUCKET).stacksTo(1)));
 
     static {

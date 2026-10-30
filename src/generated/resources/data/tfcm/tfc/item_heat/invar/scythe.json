@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 750.0,
-  "heat_capacity": 3.333333,
+  "heat_capacity": 2.8566666,
   "ingredient": {
     "item": "tfcm:metal/scythe/invar"
   },

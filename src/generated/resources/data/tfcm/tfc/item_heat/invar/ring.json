@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 750.0,
-  "heat_capacity": 0.4,
+  "heat_capacity": 0.3428,
   "ingredient": {
     "item": "tfcm:metal/ring/invar"
   },

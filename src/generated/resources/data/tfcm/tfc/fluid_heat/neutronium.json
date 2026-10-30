@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/neutronium",
-  "melt_temperature": 3000.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 3000,
+  "specific_heat_capacity": 0.008571429
 }

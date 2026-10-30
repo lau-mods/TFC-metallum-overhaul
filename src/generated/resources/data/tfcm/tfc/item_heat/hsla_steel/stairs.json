@@ -5,10 +5,10 @@
       "metal": "hsla_steel"
     }
   ],
+  "forging_temperature": 870.0,
+  "heat_capacity": 2.1428573,
   "ingredient": {
     "item": "tfcm:metal/block/hsla_steel_stairs"
   },
-  "heat_capacity": 2.5,
-  "forging_temperature": 870.0,
   "welding_temperature": 1160.0
 }

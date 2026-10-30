@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 198.0,
-  "heat_capacity": 0.83333325,
+  "heat_capacity": 1.923077,
   "ingredient": {
     "item": "tfcm:metal/stamen/lead"
   },

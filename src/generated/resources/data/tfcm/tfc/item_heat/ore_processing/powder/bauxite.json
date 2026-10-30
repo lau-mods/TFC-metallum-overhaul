@@ -9,7 +9,7 @@
       "metal": "aluminum"
     }
   ],
-  "heat_capacity": 0.16666666,
+  "heat_capacity": 0.07142858,
   "ingredient": {
     "item": "tfcm:ore_processing/powder/bauxite"
   }

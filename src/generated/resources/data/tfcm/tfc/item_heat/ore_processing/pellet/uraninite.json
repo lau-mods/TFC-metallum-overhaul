@@ -9,7 +9,7 @@
       "metal": "uranium"
     }
   ],
-  "heat_capacity": 0.6666666,
+  "heat_capacity": 1.6666669,
   "ingredient": {
     "item": "tfcm:ore_processing/pellet/uraninite"
   }

@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1200.0,
-  "heat_capacity": 3.333333,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/plate/draconium"
   },

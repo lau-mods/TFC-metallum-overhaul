@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 600.0,
-  "heat_capacity": 0.4,
+  "heat_capacity": 0.21818182,
   "ingredient": {
     "item": "tfcm:metal/ring/dawnstone"
   },

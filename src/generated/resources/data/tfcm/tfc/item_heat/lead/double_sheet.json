@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 198.0,
-  "heat_capacity": 13.333332,
+  "heat_capacity": 30.769232,
   "ingredient": {
     "item": "tfcm:metal/double_sheet/lead"
   },

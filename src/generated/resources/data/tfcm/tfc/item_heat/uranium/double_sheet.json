@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 678.0,
-  "heat_capacity": 13.333332,
+  "heat_capacity": 33.333336,
   "ingredient": {
     "item": "tfcm:metal/double_sheet/uranium"
   },

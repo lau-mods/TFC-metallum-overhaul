@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1245.6,
-  "heat_capacity": 0.3333333,
+  "heat_capacity": 0.28571433,
   "ingredient": {
     "item": "tfcm:metal/nugget/boron"
   },

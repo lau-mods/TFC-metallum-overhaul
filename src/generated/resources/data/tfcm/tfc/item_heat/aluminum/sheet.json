@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1044.0,
-  "heat_capacity": 6.666666,
+  "heat_capacity": 2.8571432,
   "ingredient": {
     "item": "tfcm:metal/sheet/aluminum"
   },

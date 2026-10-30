@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 678.0,
-  "heat_capacity": 0.83333325,
+  "heat_capacity": 2.0833335,
   "ingredient": {
     "item": "tfcm:metal/stamen/uranium"
   },

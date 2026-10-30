@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 198.0,
-  "heat_capacity": 6.666666,
+  "heat_capacity": 15.384616,
   "ingredient": {
     "item": "tfcm:metal/double_ingot/lead"
   },

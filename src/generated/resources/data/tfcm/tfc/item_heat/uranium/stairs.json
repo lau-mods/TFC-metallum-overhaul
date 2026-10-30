@@ -5,10 +5,10 @@
       "metal": "uranium"
     }
   ],
+  "forging_temperature": 678.0,
+  "heat_capacity": 6.2500005,
   "ingredient": {
     "item": "tfcm:metal/block/uranium_stairs"
   },
-  "heat_capacity": 2.5,
-  "forging_temperature": 678.0,
   "welding_temperature": 904.0
 }

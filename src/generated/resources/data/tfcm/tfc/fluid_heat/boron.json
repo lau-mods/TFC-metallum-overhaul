@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/boron",
-  "melt_temperature": 2076.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 2076,
+  "specific_heat_capacity": 0.008571429
 }

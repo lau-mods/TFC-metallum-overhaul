@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 198.0,
-  "heat_capacity": 0.3333333,
+  "heat_capacity": 0.7692308,
   "ingredient": {
     "item": "tfcm:metal/nugget/lead"
   },

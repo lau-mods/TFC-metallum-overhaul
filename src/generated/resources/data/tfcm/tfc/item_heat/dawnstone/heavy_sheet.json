@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 600.0,
-  "heat_capacity": 20.0,
+  "heat_capacity": 10.909092,
   "ingredient": {
     "item": "tfcm:metal/heavy_sheet/dawnstone"
   },

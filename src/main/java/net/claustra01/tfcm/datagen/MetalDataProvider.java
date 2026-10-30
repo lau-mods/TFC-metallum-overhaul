@@ -260,14 +260,14 @@ public final class MetalDataProvider implements DataProvider {
         JsonObject json = conditioned(Metal.ANDESITE_ALLOY);
         json.addProperty("fluid", "tfcm:molten_andesite");
         json.addProperty("melt_temperature", 1300);
-        json.addProperty("specific_heat_capacity", .006923077);
+        json.addProperty("specific_heat_capacity", .012);
         return json;
     }
 
     private static JsonObject andesiteItemHeat() {
         JsonObject json = conditioned(Metal.ANDESITE_ALLOY);
         json.add("ingredient", itemIngredient("tfc:rock/loose/andesite"));
-        json.addProperty("heat_capacity", .006923077f * 333.33334f * .9f);
+        json.addProperty("heat_capacity", 1.2f);
         return json;
     }
 

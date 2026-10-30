@@ -7,5 +7,5 @@
   ],
   "fluid": "tfcm:molten_andesite",
   "melt_temperature": 1300,
-  "specific_heat_capacity": 0.006923077
+  "specific_heat_capacity": 0.012
 }

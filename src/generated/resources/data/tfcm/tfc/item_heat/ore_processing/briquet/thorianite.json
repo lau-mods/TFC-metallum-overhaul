@@ -9,7 +9,7 @@
       "metal": "thorium"
     }
   ],
-  "heat_capacity": 2.6666665,
+  "heat_capacity": 2.2857146,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/thorianite"
   }

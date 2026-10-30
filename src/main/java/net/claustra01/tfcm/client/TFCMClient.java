@@ -1,7 +1,6 @@
 package net.claustra01.tfcm.client;
 
 import net.claustra01.tfcm.TFCM;
-import net.claustra01.tfcm.common.metal.Metal;
 import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMItems;
 import net.claustra01.tfcm.common.tool.ToolPart;
@@ -21,13 +20,13 @@ import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientFluidTypeExtensions;
+import net.dries007.tfc.client.extensions.FluidRendererExtension;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
 @EventBusSubscriber(modid = TFCM.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public final class TFCMClient {
-    private static final ResourceLocation STILL = ResourceLocation.fromNamespaceAndPath(TFCM.MOD_ID, "block/molten_still");
-    private static final ResourceLocation FLOW = ResourceLocation.fromNamespaceAndPath(TFCM.MOD_ID, "block/molten_flow");
+    private static final ResourceLocation STILL = ResourceLocation.fromNamespaceAndPath("tfc", "block/molten_still");
+    private static final ResourceLocation FLOW = ResourceLocation.fromNamespaceAndPath("tfc", "block/molten_flow");
 
     private TFCMClient() {
     }
@@ -66,29 +65,9 @@ public final class TFCMClient {
             JavelinItem javelin = (JavelinItem) parts.get(ToolPart.JAVELIN).get();
             event.registerItem(ItemRendererExtension.cached(() -> new JavelinItemRenderer(javelin)), javelin);
         });
-        for (Metal metal : Metal.values()) {
-            TFCMFluids.MetalFluid fluid = TFCMFluids.METALS.get(metal);
-            if (fluid != null) event.registerFluidType(extension(metal.color()), fluid.type().get());
-        }
-        event.registerFluidType(extension(0xFF77736B), TFCMFluids.MOLTEN_ANDESITE_TYPE.get());
-    }
-
-    private static IClientFluidTypeExtensions extension(int color) {
-        return new IClientFluidTypeExtensions() {
-            @Override
-            public ResourceLocation getStillTexture() {
-                return STILL;
-            }
-
-            @Override
-            public ResourceLocation getFlowingTexture() {
-                return FLOW;
-            }
-
-            @Override
-            public int getTintColor() {
-                return color;
-            }
-        };
+        TFCMFluids.METALS.forEach((metal, fluid) -> event.registerFluidType(
+                new FluidRendererExtension(metal.color(), STILL, FLOW, null, null), fluid.getType()));
+        event.registerFluidType(new FluidRendererExtension(0xFF74736C, STILL, FLOW, null, null),
+                TFCMFluids.MOLTEN_ANDESITE.getType());
     }
 }

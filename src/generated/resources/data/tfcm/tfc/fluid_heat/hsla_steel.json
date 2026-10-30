@@ -6,6 +6,6 @@
     }
   ],
   "fluid": "tfcm:metal/hsla_steel",
-  "melt_temperature": 1450.0,
-  "specific_heat_capacity": 0.01
+  "melt_temperature": 1450,
+  "specific_heat_capacity": 0.008571429
 }

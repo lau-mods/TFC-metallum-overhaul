@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 600.0,
-  "heat_capacity": 0.83333325,
+  "heat_capacity": 0.45454547,
   "ingredient": {
     "item": "tfcm:metal/stamen/electrum"
   },

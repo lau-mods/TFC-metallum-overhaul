@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1113.0,
-  "heat_capacity": 1.6666665,
+  "heat_capacity": 1.4285716,
   "ingredient": {
     "item": "tfcm:metal/rod/zirconium"
   },

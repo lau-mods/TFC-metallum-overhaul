@@ -9,7 +9,7 @@
       "metal": "lead"
     }
   ],
-  "heat_capacity": 0.6666666,
+  "heat_capacity": 1.5384616,
   "ingredient": {
     "item": "tfcm:ore_processing/pellet/galena"
   }
