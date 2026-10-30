@@ -108,7 +108,7 @@ public final class AreaToolDataProvider implements DataProvider {
         JsonArray pattern = new JsonArray();
         List<String> rows = switch (type) {
             case MINING_HAMMER -> List.of("  ###", "    #", "#   #", "#    ", "###  ");
-            case QUARRY_HAMMER -> List.of("#####", " # # ", "     ", "#   #", "#####");
+            case QUARRY_HAMMER -> List.of("##   ", "##   ", "     ", "   ##", "   ##");
             case EXCAVATOR -> List.of("#####", "#   #", "#   #", "#   #", "#   #");
         };
         rows.forEach(pattern::add);

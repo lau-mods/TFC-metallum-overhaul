@@ -464,7 +464,7 @@ public final class TFCMAreaToolGameTests {
     private static KnappingPattern knappingPattern(AreaToolType type) {
         return switch (type) {
             case MINING_HAMMER -> KnappingPattern.from(true, "  ###", "    #", "#   #", "#    ", "###  ");
-            case QUARRY_HAMMER -> KnappingPattern.from(true, "#####", " # # ", "     ", "#   #", "#####");
+            case QUARRY_HAMMER -> KnappingPattern.from(true, "##   ", "##   ", "     ", "   ##", "   ##");
             case EXCAVATOR -> KnappingPattern.from(true, "#####", "#   #", "#   #", "#   #", "#   #");
         };
     }

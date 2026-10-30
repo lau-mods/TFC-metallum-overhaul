@@ -76,7 +76,7 @@
 - Mining HammerとExcavatorは起点中央の3×3、Quarry Hammerは床・天井で起点中央の5×5、壁で起点の上3・下1・左右2の5×5を処理する。各工具の採掘速度は素材tierの40%とする。
 - 追加候補ごとにmineable tagとtierを確認し、個別のBreak Eventと通常のサーバー破壊・loot処理を通す。Survivalでは1ブロックごとに耐久1を消費し、Creativeではdropと耐久消費を行わない。多層blockは通常破壊経路を通して1層だけ減らし、追加破壊を再帰起動しない。
 - 3工具とHeadはTFCの工具金属9種とInvar、Titanium、Netherite、Tungsten Steelへ展開する。HeadはIngot 1個を金属tierの金床で加工し、Mining/Quarry Hammerは`punch_last,shrink_not_last`、Excavatorは`punch_last,hit_not_last`を使用する。鋳造可能な4金属は焼成済みMoldと100 mBで鋳造する。
-- 未焼成MoldのKnapping patternはMining Hammer=`#####/     /     /## ##/#####`、Quarry Hammer=`#####/ # # /     /#   #/#####`、Excavator=`#####/ ### /  #  /  #  /     `とし、1399℃で焼成する。
+- 未焼成MoldのKnapping patternはMining Hammer=`#####/     /     /## ##/#####`、Quarry Hammer=`##   /##   /     /   ##/   ##`、Excavator=`#####/ ### /  #  /  #  /     `とし、1399℃で焼成する。
 - 完成工具・Headのitem heatは金属固有値を使う。サイズ/重量は完成工具が`very_large/very_heavy`、Headが`large/medium`、Moldが`small/light`とする。外観はTFCのHammer、Mace、Shovelと各Head/Mold modelを再利用する。
 - 範囲工具データ変更後は`./gradlew runData`で同期し、`./gradlew classes build runGameTestServer`と`node tests/e2e/area-tools.mjs`で検証する。
 
