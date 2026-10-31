@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/sphalerite"
+          "name": "tfc:powder/sphalerite"
         }
       ],
       "name": "powder",

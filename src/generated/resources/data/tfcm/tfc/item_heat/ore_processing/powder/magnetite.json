@@ -7,6 +7,6 @@
   ],
   "heat_capacity": 0.14285716,
   "ingredient": {
-    "item": "tfcm:ore_processing/powder/magnetite"
+    "item": "tfc:powder/magnetite"
   }
 }

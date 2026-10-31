@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:double_sheets/tungsten"
   },
-  "second_input": {
-    "tag": "c:sheets/tungsten"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/heavy_sheet/tungsten"
   },
-  "tier": 3
+  "second_input": {
+    "tag": "c:sheets/tungsten"
+  },
+  "tier": 2
 }

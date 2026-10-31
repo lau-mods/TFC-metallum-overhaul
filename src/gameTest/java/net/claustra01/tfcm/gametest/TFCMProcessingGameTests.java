@@ -98,8 +98,8 @@ public final class TFCMProcessingGameTests {
                             "Chromite items must only exist with FirmaLife");
                     if (!firmaLife) continue;
                 }
-                require(TFCMItems.ORE_PROCESSING.get(actual).size() == (expected.nonMetal() && !expected.id().equals("borax")
-                        ? 3 : ProcessingForm.values().length),
+                require(TFCMItems.ORE_PROCESSING.get(actual).size() == (expected.nonMetal() && !expected.id().equals("borax") ? 3
+                        : actual.powderItem().startsWith("tfcm:") ? ProcessingForm.values().length : 5),
                         "Missing processing form for " + expected.id());
             }
         });
@@ -471,7 +471,9 @@ public final class TFCMProcessingGameTests {
     private static String processingItem(String form, String name) {
         if (form.equals("powder")) {
             if (name.equals("cinnabar") || name.equals("cryolite")) return "minecraft:redstone";
-            if (List.of("graphite", "sulfur").contains(name)) return "tfc:powder/" + name;
+            if (List.of("graphite", "sulfur", "bismuthinite", "cassiterite", "garnierite", "hematite", "limonite",
+                    "magnetite", "malachite", "native_copper", "native_gold", "native_silver", "sphalerite",
+                    "tetrahedrite").contains(name)) return "tfc:powder/" + name;
         }
         return "tfcm:ore_processing/" + form + "/" + name;
     }

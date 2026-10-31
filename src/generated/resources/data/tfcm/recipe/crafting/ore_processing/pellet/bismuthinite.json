@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/bismuthinite"
+      "item": "tfc:powder/bismuthinite"
     },
     {
-      "item": "tfcm:ore_processing/powder/bismuthinite"
+      "item": "tfc:powder/bismuthinite"
     },
     {
-      "item": "tfcm:ore_processing/powder/bismuthinite"
+      "item": "tfc:powder/bismuthinite"
     },
     {
-      "item": "tfcm:ore_processing/powder/bismuthinite"
+      "item": "tfc:powder/bismuthinite"
     }
   ],
   "result": {

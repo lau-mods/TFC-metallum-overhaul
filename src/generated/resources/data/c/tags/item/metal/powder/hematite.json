@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "tfcm:ore_processing/powder/hematite",
+      "id": "tfc:powder/hematite",
       "required": false
     }
   ]

@@ -7,6 +7,7 @@ import java.util.List;
 
 import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.material.MaterialPart;
+import net.claustra01.tfcm.common.material.PlantFiberHarvest;
 import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMItems;
 import net.dries007.tfc.common.blocks.TFCBlocks;
@@ -14,17 +15,22 @@ import net.dries007.tfc.common.component.size.ItemSizeManager;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestAssertException;
 import net.minecraft.gametest.framework.GameTestHelper;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.GameType;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.gametest.GameTestHolder;
@@ -60,19 +66,28 @@ public final class TFCMMaterialGameTests {
     public static void grassBambooAndPlantBlockProduceAndDry(GameTestHelper helper) {
         helper.succeedIf(() -> {
             BlockPos grassPos = helper.absolutePos(new BlockPos(1, 1, 1));
-            List<ItemStack> handDrops = Block.getDrops(Blocks.SHORT_GRASS.defaultBlockState(), helper.getLevel(), grassPos,
-                    null, null, ItemStack.EMPTY);
             Item knife = BuiltInRegistries.ITEM.get(ResourceLocation.fromNamespaceAndPath("tfc", "metal/knife/copper"));
-            List<ItemStack> knifeDrops = Block.getDrops(Blocks.SHORT_GRASS.defaultBlockState(), helper.getLevel(), grassPos,
-                    null, null, knife.getDefaultInstance());
-            require(count(handDrops, MaterialPart.PLANT_FIBER) == 1, "Grass by hand did not yield one plant fiber");
-            require(count(knifeDrops, MaterialPart.PLANT_FIBER) == 2, "Grass with a knife did not yield two plant fibers");
+            RandomSource random = RandomSource.create(1);
+            int hand = 0;
+            int knifeFibers = 0;
+            for (int roll = 0; roll < 10000; roll++) {
+                hand += PlantFiberHarvest.fibers(random, false);
+                knifeFibers += PlantFiberHarvest.fibers(random, true);
+            }
+            require(hand > 10500 && hand < 11500, "Hand harvest is not 80% and 30%: " + hand);
+            require(knifeFibers > 36000 && knifeFibers < 38000, "Knife harvest is not 3 at 90% and 2 at 50%: " + knifeFibers);
             Block tfcGrass = BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath("tfc", "plant/bluegrass"));
-            require(count(Block.getDrops(tfcGrass.defaultBlockState(), helper.getLevel(), grassPos, null, null,
-                    knife.getDefaultInstance()), MaterialPart.PLANT_FIBER) == 2, "TFC grass did not yield plant fiber");
-            Block notGrass = BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath("tfc", "plant/goldenrod"));
-            require(count(Block.getDrops(notGrass.defaultBlockState(), helper.getLevel(), grassPos, null, null,
-                    knife.getDefaultInstance()), MaterialPart.PLANT_FIBER) == 0, "A flower yielded plant fiber");
+            require(tfcGrass.defaultBlockState().is(TagKey.create(Registries.BLOCK, ResourceLocation.parse("c:plant/grass"))),
+                    "TFC grass is not harvestable");
+            helper.getLevel().setBlock(grassPos, Blocks.SHORT_GRASS.defaultBlockState(), Block.UPDATE_ALL);
+            Player player = helper.makeMockPlayer(GameType.SURVIVAL);
+            player.setItemInHand(InteractionHand.MAIN_HAND, knife.getDefaultInstance());
+            PlantFiberHarvest.harvest(helper.getLevel(), grassPos, player, InteractionHand.MAIN_HAND);
+            require(player.getMainHandItem().getDamageValue() == 1, "The Knife was not damaged");
+            require(player.getCooldowns().isOnCooldown(knife), "The harvest cooldown is missing");
+            require(Block.getDrops(Blocks.SHORT_GRASS.defaultBlockState(), helper.getLevel(), grassPos, null, null,
+                    knife.getDefaultInstance()).stream().noneMatch(stack -> stack.is(part(MaterialPart.PLANT_FIBER).getItem())),
+                    "Breaking grass must not drop plant fiber");
 
             assertKnifeCraft(helper, "bamboo_fiber", MaterialPart.BAMBOO_FIBER, 4, Items.BAMBOO.getDefaultInstance());
             assertCraft(helper, "bamboo_string", MaterialPart.BAMBOO_STRING, 1,
@@ -80,12 +95,13 @@ public final class TFCMMaterialGameTests {
 
             BlockPos plantPos = helper.absolutePos(new BlockPos(2, 1, 1));
             helper.getLevel().setBlock(plantPos, TFCMBlocks.PLANT_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
-            RandomSource random = RandomSource.create(1);
-            for (int tick = 0; tick < 4; tick++) {
+            int dried = 0;
+            for (int tick = 0; tick < 2000; tick++) {
+                helper.getLevel().setBlock(plantPos, TFCMBlocks.PLANT_BLOCK.get().defaultBlockState(), Block.UPDATE_ALL);
                 helper.getLevel().getBlockState(plantPos).randomTick(helper.getLevel(), plantPos, random);
+                if (helper.getLevel().getBlockState(plantPos).is(TFCBlocks.THATCH.get())) dried++;
             }
-            require(helper.getLevel().getBlockState(plantPos).is(TFCBlocks.THATCH.get()),
-                    "Plant block did not dry into TFC thatch");
+            require(dried > 140 && dried < 260, "Plant block must dry at 10% per random tick: " + dried);
         });
     }
 

@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/hematite"
+      "item": "tfc:powder/hematite"
     },
     {
-      "item": "tfcm:ore_processing/powder/hematite"
+      "item": "tfc:powder/hematite"
     },
     {
-      "item": "tfcm:ore_processing/powder/hematite"
+      "item": "tfc:powder/hematite"
     },
     {
-      "item": "tfcm:ore_processing/powder/hematite"
+      "item": "tfc:powder/hematite"
     }
   ],
   "result": {

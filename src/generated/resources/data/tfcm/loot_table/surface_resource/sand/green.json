@@ -43,7 +43,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/malachite"
+          "name": "tfc:powder/malachite"
         }
       ],
       "name": "output_2",
@@ -65,7 +65,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/bismuthinite"
+          "name": "tfc:powder/bismuthinite"
         }
       ],
       "name": "output_3",
@@ -87,7 +87,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/garnierite"
+          "name": "tfc:powder/garnierite"
         }
       ],
       "name": "output_4",

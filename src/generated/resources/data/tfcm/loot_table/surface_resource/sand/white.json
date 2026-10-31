@@ -43,7 +43,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/sphalerite"
+          "name": "tfc:powder/sphalerite"
         }
       ],
       "name": "output_2",
@@ -65,7 +65,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/native_silver"
+          "name": "tfc:powder/native_silver"
         }
       ],
       "name": "output_3",

@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:double_sheets/dawnstone"
   },
-  "second_input": {
-    "tag": "c:sheets/dawnstone"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/heavy_sheet/dawnstone"
   },
-  "tier": 1
+  "second_input": {
+    "tag": "c:sheets/dawnstone"
+  },
+  "tier": 0
 }

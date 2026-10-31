@@ -37,8 +37,6 @@ public final class MaterialDataProvider implements DataProvider {
         files.add(save(output, assets, "tfcm/models/item/plant_block", blockItemModel()));
         files.add(save(output, assets, "tfcm/blockstates/plant_block", blockState()));
         files.add(save(output, data, "tfcm/loot_table/blocks/plant_block", plantBlockLoot()));
-        files.add(save(output, data, "neoforge/loot_modifiers/global_loot_modifiers", globalLootModifiers()));
-        files.add(save(output, data, "tfcm/loot_modifiers/plant_fiber_from_grass", grassLootModifier()));
 
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new));
     }
@@ -69,7 +67,22 @@ public final class MaterialDataProvider implements DataProvider {
     private static JsonObject blockItemModel() {
         JsonObject json = new JsonObject();
         json.addProperty("parent", "tfcm:block/plant_block");
+        JsonObject thirdPerson = new JsonObject();
+        thirdPerson.add("rotation", floats(10, -45, 170));
+        thirdPerson.add("translation", floats(0, 1.5f, -2.75f));
+        thirdPerson.add("scale", floats(.375f, .375f, .375f));
+        JsonObject display = new JsonObject();
+        display.add("thirdperson_righthand", thirdPerson);
+        json.add("display", display);
         return json;
+    }
+
+    private static JsonArray floats(float x, float y, float z) {
+        JsonArray array = new JsonArray();
+        array.add(x);
+        array.add(y);
+        array.add(z);
+        return array;
     }
 
     private static JsonObject blockState() {
@@ -99,21 +112,4 @@ public final class MaterialDataProvider implements DataProvider {
         json.addProperty("random_sequence", "tfcm:blocks/plant_block");
         return json;
     }
-
-    private static JsonObject globalLootModifiers() {
-        JsonObject json = new JsonObject();
-        json.addProperty("replace", false);
-        JsonArray entries = new JsonArray();
-        entries.add("tfcm:plant_fiber_from_grass");
-        json.add("entries", entries);
-        return json;
-    }
-
-    private static JsonObject grassLootModifier() {
-        JsonObject json = new JsonObject();
-        json.addProperty("type", "tfcm:grass_plant_fiber");
-        json.add("conditions", new JsonArray());
-        return json;
-    }
-
 }

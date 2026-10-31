@@ -17,7 +17,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/native_copper"
+          "name": "tfc:powder/native_copper"
         }
       ],
       "name": "copper_powder_50_percent",
@@ -39,7 +39,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/native_copper"
+          "name": "tfc:powder/native_copper"
         }
       ],
       "name": "copper_powder_25_percent",

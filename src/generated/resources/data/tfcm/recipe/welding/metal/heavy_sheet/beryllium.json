@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:double_sheets/beryllium"
   },
-  "second_input": {
-    "tag": "c:sheets/beryllium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/heavy_sheet/beryllium"
   },
-  "tier": 3
+  "second_input": {
+    "tag": "c:sheets/beryllium"
+  },
+  "tier": 2
 }

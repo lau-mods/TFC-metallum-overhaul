@@ -89,7 +89,7 @@ public enum ToolMetal implements RegistryMetal {
 
     @Override
     public Rarity rarity() {
-        return Rarity.COMMON;
+        return metal.rarity();
     }
 
     @Override

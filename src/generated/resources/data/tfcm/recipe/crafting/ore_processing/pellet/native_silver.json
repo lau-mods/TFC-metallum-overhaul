@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/native_silver"
+      "item": "tfc:powder/native_silver"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_silver"
+      "item": "tfc:powder/native_silver"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_silver"
+      "item": "tfc:powder/native_silver"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_silver"
+      "item": "tfc:powder/native_silver"
     }
   ],
   "result": {

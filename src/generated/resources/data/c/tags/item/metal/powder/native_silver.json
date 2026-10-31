@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "tfcm:ore_processing/powder/native_silver",
+      "id": "tfc:powder/native_silver",
       "required": false
     }
   ]

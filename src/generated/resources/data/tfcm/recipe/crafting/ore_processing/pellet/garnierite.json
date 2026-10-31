@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/garnierite"
+      "item": "tfc:powder/garnierite"
     },
     {
-      "item": "tfcm:ore_processing/powder/garnierite"
+      "item": "tfc:powder/garnierite"
     },
     {
-      "item": "tfcm:ore_processing/powder/garnierite"
+      "item": "tfc:powder/garnierite"
     },
     {
-      "item": "tfcm:ore_processing/powder/garnierite"
+      "item": "tfc:powder/garnierite"
     }
   ],
   "result": {

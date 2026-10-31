@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/native_copper"
+          "name": "tfc:powder/native_copper"
         }
       ],
       "name": "powder",

@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/malachite"
+      "item": "tfc:powder/malachite"
     },
     {
-      "item": "tfcm:ore_processing/powder/malachite"
+      "item": "tfc:powder/malachite"
     },
     {
-      "item": "tfcm:ore_processing/powder/malachite"
+      "item": "tfc:powder/malachite"
     },
     {
-      "item": "tfcm:ore_processing/powder/malachite"
+      "item": "tfc:powder/malachite"
     }
   ],
   "result": {

@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "item": "tfcm:ore_processing/powder/garnierite"
+    "item": "tfc:powder/garnierite"
   },
   "result_fluid": {
     "amount": 5,

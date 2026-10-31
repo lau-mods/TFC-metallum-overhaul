@@ -49,9 +49,9 @@ public final class SurfaceResourceDataProvider implements DataProvider {
                     new Output("minecraft:bone", 0.03f), new Output("tfc:gem/topaz", 0.001f)),
             new SandOutput("green", new Output("tfcm:ore_processing/sand_pile/white", 1f),
                     new Output("tfcm:ore_processing/sand_pile/green", 0.30f),
-                    new Output("tfcm:ore_processing/powder/malachite", 0.05f),
-                    new Output("tfcm:ore_processing/powder/bismuthinite", 0.05f),
-                    new Output("tfcm:ore_processing/powder/garnierite", 0.02f),
+                    new Output("tfc:powder/malachite", 0.05f),
+                    new Output("tfc:powder/bismuthinite", 0.05f),
+                    new Output("tfc:powder/garnierite", 0.02f),
                     new Output("minecraft:bone", 0.03f), new Output("tfc:gem/emerald", 0.001f)),
             new SandOutput("pink", new Output("tfcm:ore_processing/sand_pile/white", 1f),
                     new Output("tfcm:ore_processing/sand_pile/pink", 0.30f),
@@ -61,18 +61,18 @@ public final class SurfaceResourceDataProvider implements DataProvider {
             new SandOutput("red", new Output("tfcm:ore_processing/sand_pile/white", 1f),
                     new Output("tfcm:ore_processing/sand_pile/red", 0.30f),
                     new Output("minecraft:redstone", 0.04f),
-                    new Output("tfcm:ore_processing/powder/hematite", 0.04f),
+                    new Output("tfc:powder/hematite", 0.04f),
                     new Output("minecraft:bone", 0.03f), new Output("tfc:gem/ruby", 0.001f)),
             new SandOutput("white", new Output("tfcm:ore_processing/sand_pile/white", 1f),
                     new Output("minecraft:bone_meal", 0.15f),
-                    new Output("tfcm:ore_processing/powder/sphalerite", 0.015f),
-                    new Output("tfcm:ore_processing/powder/native_silver", 0.01f),
+                    new Output("tfc:powder/sphalerite", 0.015f),
+                    new Output("tfc:powder/native_silver", 0.01f),
                     new Output("tfcm:ore/quartz", 0.01f), new Output("minecraft:bone", 0.025f),
                     new Output("tfc:gem/opal", 0.0005f)),
             new SandOutput("yellow", new Output("tfcm:ore_processing/sand_pile/white", 1f),
                     new Output("tfcm:ore_processing/sand_pile/yellow", 0.30f),
-                    new Output("tfcm:ore_processing/powder/limonite", 0.08f),
-                    new Output("tfcm:ore_processing/powder/native_gold", 0.03f),
+                    new Output("tfc:powder/limonite", 0.08f),
+                    new Output("tfc:powder/native_gold", 0.03f),
                     new Output("minecraft:bone", 0.03f), new Output("tfc:ore/pyrite", 0.001f)));
 
     private final Path data;
@@ -186,7 +186,7 @@ public final class SurfaceResourceDataProvider implements DataProvider {
     }
 
     private static String referencedOre(String item) {
-        if (item.equals("tfc:powder/sulfur")) return "sulfur";
+        if (item.startsWith("tfc:powder/")) return item.substring("tfc:powder/".length());
         if (item.startsWith("tfcm:ore_processing/powder/")
                 || item.startsWith("tfcm:ore_processing/dirty_dust/")) {
             return item.substring(item.lastIndexOf('/') + 1);
@@ -244,7 +244,7 @@ public final class SurfaceResourceDataProvider implements DataProvider {
     }
 
     private static String powder(String series) {
-        return "tfcm:ore_processing/powder/" + series;
+        return "tfc:powder/" + series;
     }
 
     private static String dirtyDust(String series) {

@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/native_copper"
+      "item": "tfc:powder/native_copper"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_copper"
+      "item": "tfc:powder/native_copper"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_copper"
+      "item": "tfc:powder/native_copper"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_copper"
+      "item": "tfc:powder/native_copper"
     }
   ],
   "result": {

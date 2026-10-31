@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "item": "tfcm:ore_processing/powder/magnetite"
+    "item": "tfc:powder/magnetite"
   },
   "result_fluid": {
     "amount": 5,

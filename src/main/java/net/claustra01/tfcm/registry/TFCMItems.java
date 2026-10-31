@@ -80,8 +80,9 @@ public final class TFCMItems {
             Map<AreaToolType, DeferredItem<Item>> heads = new EnumMap<>(AreaToolType.class);
             for (AreaToolType type : AreaToolType.values()) {
                 tools.put(type, ITEMS.register("metal/" + type.id() + "/" + metal.id(),
-                        () -> new AreaMiningTool(type, metal.tier(), metal.repairIngredient())));
-                heads.put(type, ITEMS.registerSimpleItem("metal/" + type.id() + "_head/" + metal.id()));
+                        () -> new AreaMiningTool(type, metal.tier(), metal.repairIngredient(), metal.rarity())));
+                heads.put(type, ITEMS.registerSimpleItem("metal/" + type.id() + "_head/" + metal.id(),
+                        new Item.Properties().rarity(metal.rarity())));
             }
             AREA_TOOLS.put(metal, tools);
             AREA_TOOL_HEADS.put(metal, heads);
@@ -152,7 +153,7 @@ public final class TFCMItems {
                     || series.firmaLifeOnly() && !ModList.get().isLoaded("firmalife")) continue;
             Map<ProcessingForm, DeferredItem<Item>> forms = new EnumMap<>(ProcessingForm.class);
             for (ProcessingForm form : ProcessingForm.values()) {
-                if (!series.hasForm(form)) continue;
+                if (!series.hasForm(form) || form == ProcessingForm.POWDER && !series.powderItem().startsWith("tfcm:")) continue;
                 forms.put(form, ITEMS.registerSimpleItem("ore_processing/" + form.id() + "/" + series.id()));
             }
             ORE_PROCESSING.put(series, forms);

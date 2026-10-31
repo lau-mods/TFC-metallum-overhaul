@@ -38,6 +38,8 @@ public final class ProcessingDataProvider implements DataProvider {
         List<CompletableFuture<?>> files = new ArrayList<>();
         for (ProcessingSeries series : ProcessingSeries.values()) addSeries(output, files, series);
         addCommonTags(output, files);
+        addSandPiles(output, files);
+        addQuernBypassRemoval(output, files);
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new))
                 .thenRun(() -> validateNoDirtyPile(generatedFiles));
     }
@@ -45,6 +47,32 @@ public final class ProcessingDataProvider implements DataProvider {
     @Override
     public String getName() {
         return "TFCM ore processing";
+    }
+
+    private void addSandPiles(CachedOutput output, List<CompletableFuture<?>> files) {
+        for (SandPile sand : SandPile.values()) {
+            String pile = "tfcm:ore_processing/sand_pile/" + sand.id();
+            String block = "tfc:sand/" + sand.id();
+            files.add(save(output, data, "tfcm/recipe/crafting/ore_processing/sand/" + sand.id(),
+                    shapeless(pile, 4, block, 1)));
+            files.add(save(output, data, "tfcm/recipe/crafting/ore_processing/uncompress_sand/" + sand.id(),
+                    shapeless(block, 1, pile, 4)));
+        }
+    }
+
+    // TFC's Quern turns raw ore straight into what the washing steps yield
+    private void addQuernBypassRemoval(CachedOutput output, List<CompletableFuture<?>> files) {
+        for (ProcessingSeries series : ProcessingSeries.values()) {
+            if (!oreNamespace(series).equals("tfc")) continue;
+            if (series.graded()) {
+                for (String grade : List.of("small", "poor", "normal", "rich")) {
+                    files.add(save(output, data, "tfc/recipe/quern/powder/" + series.id() + "_" + grade, disabledRecipe()));
+                }
+            }
+        }
+        files.add(save(output, data, "tfc/recipe/quern/powder/sulfur", disabledRecipe()));
+        files.add(save(output, data, "tfc/recipe/quern/powder/graphite", disabledRecipe()));
+        files.add(save(output, data, "tfc/recipe/quern/redstone", disabledRecipe()));
     }
 
     private void addCommonTags(CachedOutput output, List<CompletableFuture<?>> files) {

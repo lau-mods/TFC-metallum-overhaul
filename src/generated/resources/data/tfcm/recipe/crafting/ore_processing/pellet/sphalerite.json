@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/sphalerite"
+      "item": "tfc:powder/sphalerite"
     },
     {
-      "item": "tfcm:ore_processing/powder/sphalerite"
+      "item": "tfc:powder/sphalerite"
     },
     {
-      "item": "tfcm:ore_processing/powder/sphalerite"
+      "item": "tfc:powder/sphalerite"
     },
     {
-      "item": "tfcm:ore_processing/powder/sphalerite"
+      "item": "tfc:powder/sphalerite"
     }
   ],
   "result": {

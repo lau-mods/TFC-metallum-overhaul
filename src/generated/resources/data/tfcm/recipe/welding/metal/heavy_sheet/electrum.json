@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:double_sheets/electrum"
   },
-  "second_input": {
-    "tag": "c:sheets/electrum"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/heavy_sheet/electrum"
   },
-  "tier": 1
+  "second_input": {
+    "tag": "c:sheets/electrum"
+  },
+  "tier": 0
 }

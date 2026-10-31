@@ -43,7 +43,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/limonite"
+          "name": "tfc:powder/limonite"
         }
       ],
       "name": "output_2",
@@ -65,7 +65,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/native_gold"
+          "name": "tfc:powder/native_gold"
         }
       ],
       "name": "output_3",

@@ -7,7 +7,7 @@
   ],
   "type": "tfc:heating",
   "ingredient": {
-    "item": "tfcm:ore_processing/powder/hematite"
+    "item": "tfc:powder/hematite"
   },
   "result_fluid": {
     "amount": 5,

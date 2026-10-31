@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "tfcm:ore_processing/powder/sphalerite",
+      "id": "tfc:powder/sphalerite",
       "required": false
     }
   ]

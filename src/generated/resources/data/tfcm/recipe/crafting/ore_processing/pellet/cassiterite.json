@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/cassiterite"
+      "item": "tfc:powder/cassiterite"
     },
     {
-      "item": "tfcm:ore_processing/powder/cassiterite"
+      "item": "tfc:powder/cassiterite"
     },
     {
-      "item": "tfcm:ore_processing/powder/cassiterite"
+      "item": "tfc:powder/cassiterite"
     },
     {
-      "item": "tfcm:ore_processing/powder/cassiterite"
+      "item": "tfc:powder/cassiterite"
     }
   ],
   "result": {

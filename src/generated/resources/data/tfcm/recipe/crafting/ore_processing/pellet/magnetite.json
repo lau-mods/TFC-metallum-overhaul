@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/magnetite"
+      "item": "tfc:powder/magnetite"
     },
     {
-      "item": "tfcm:ore_processing/powder/magnetite"
+      "item": "tfc:powder/magnetite"
     },
     {
-      "item": "tfcm:ore_processing/powder/magnetite"
+      "item": "tfc:powder/magnetite"
     },
     {
-      "item": "tfcm:ore_processing/powder/magnetite"
+      "item": "tfc:powder/magnetite"
     }
   ],
   "result": {

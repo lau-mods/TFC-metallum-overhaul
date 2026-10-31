@@ -34,7 +34,7 @@ public final class MetalDataProvider implements DataProvider {
             files.add(save(output, "tfcm/recipe/anvil/metal/rod/" + metal.id(), anvil(metal, "rod", "ingots", 2, forgeRules())));
             files.add(save(output, "tfcm/recipe/welding/metal/double_ingot/" + metal.id(), welding(metal, "double_ingot", "ingots", "ingots", doubleTier(metal))));
             files.add(save(output, "tfcm/recipe/welding/metal/double_sheet/" + metal.id(), welding(metal, "double_sheet", "sheets", "sheets", doubleTier(metal))));
-            files.add(save(output, "tfcm/recipe/welding/metal/heavy_sheet/" + metal.id(), welding(metal, "heavy_sheet", "double_sheets", "sheets", metal.forgingTier())));
+            files.add(save(output, "tfcm/recipe/welding/metal/heavy_sheet/" + metal.id(), welding(metal, "heavy_sheet", "double_sheets", "sheets", doubleTier(metal))));
             for (MetalForm form : MetalForm.values()) {
                 if (form.isAnvilForm() && form != MetalForm.PLATE)
                     files.add(save(output, "tfcm/recipe/anvil/metal/" + form.id + "/" + metal.id(), extendedAnvil(metal, form)));
@@ -84,7 +84,7 @@ public final class MetalDataProvider implements DataProvider {
         welding.add("first_input", tagIngredient("c:double_sheets/" + metal.id()));
         welding.add("second_input", tagIngredient("c:sheets/" + metal.id()));
         welding.add("result", item(metal.item(MetalForm.HEAVY_SHEET), 1));
-        if (metal.tier() > 0) welding.addProperty("tier", metal.tier());
+        if (metal.weldingTier() > 0) welding.addProperty("tier", metal.weldingTier());
         files.add(save(output, recipe + "welding/metal/heavy_sheet/" + metal.id(), welding));
         JsonObject nugget = tfcConditioned(metal);
         nugget.addProperty("type", "minecraft:crafting_shapeless");

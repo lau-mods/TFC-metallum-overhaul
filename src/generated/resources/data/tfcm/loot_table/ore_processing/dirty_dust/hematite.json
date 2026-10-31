@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/hematite"
+          "name": "tfc:powder/hematite"
         }
       ],
       "name": "powder",

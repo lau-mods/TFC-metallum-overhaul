@@ -11,7 +11,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/powder/garnierite"
+          "name": "tfc:powder/garnierite"
         }
       ],
       "name": "powder",

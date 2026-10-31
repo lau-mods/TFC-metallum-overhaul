@@ -6,7 +6,7 @@ import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.DiggerItem;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Tier;
@@ -15,12 +15,13 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.dries007.tfc.common.items.ToolItem;
+import net.dries007.tfc.common.items.ToolItem;
 
 public final class AreaMiningTool extends ToolItem {
     private final AreaToolType type;
 
-    public AreaMiningTool(AreaToolType type, Tier sourceTier, Ingredient repairIngredient) {
-        super(new MiningTier(sourceTier, repairIngredient), type.mineable(), properties(type, sourceTier));
+    public AreaMiningTool(AreaToolType type, Tier sourceTier, Ingredient repairIngredient, Rarity rarity) {
+        super(new MiningTier(sourceTier, repairIngredient), type.mineable(), properties(type, sourceTier, rarity));
         this.type = type;
     }
 
@@ -47,11 +48,10 @@ public final class AreaMiningTool extends ToolItem {
         return getTier().getRepairIngredient().test(repairCandidate);
     }
 
-    private static Item.Properties properties(AreaToolType type, Tier tier) {
-        float attackDamage = type == AreaToolType.EXCAVATOR ? 1.5f : 1;
-        float attackSpeed = type == AreaToolType.EXCAVATOR ? -3 : -2.8f;
-        return new Item.Properties().durability(tier.getUses())
-                .attributes(DiggerItem.createAttributes(tier, attackDamage, attackSpeed));
+    private static Item.Properties properties(AreaToolType type, Tier tier, Rarity rarity) {
+        float attackDamage = type == AreaToolType.EXCAVATOR ? .9f : 1;
+        return new Item.Properties().durability(tier.getUses()).rarity(rarity)
+                .attributes(ToolItem.productAttributes(tier, attackDamage, -3.1f));
     }
 
     private record MiningTier(Tier source, Ingredient repairIngredient) implements Tier {

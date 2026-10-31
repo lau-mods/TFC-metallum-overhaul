@@ -50,6 +50,7 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
@@ -326,6 +327,21 @@ public final class TFCMAssetIntegrityGameTests {
                 requireTags(item, "c:strings");
             }
             require(!stack("tfcm:leather_strap").is(tag("c:strings")), "Leather Strap must not count as string");
+            for (String sand : new String[] {"black", "brown", "green", "pink", "red", "white", "yellow"}) {
+                requireRecipe(helper, "tfcm", "crafting/ore_processing/sand/" + sand);
+                requireRecipe(helper, "tfcm", "crafting/ore_processing/uncompress_sand/" + sand);
+            }
+            for (String quern : new String[] {"powder/hematite_rich", "powder/native_copper_small", "powder/sulfur",
+                    "powder/graphite", "redstone"}) {
+                require(helper.getLevel().getRecipeManager().byKey(ResourceLocation.fromNamespaceAndPath("tfc", "quern/" + quern))
+                        .isEmpty(), "Quern still bypasses washing: " + quern);
+            }
+            requireRecipe(helper, "tfc", "quern/powder/amethyst");
+            require(!BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse("tfcm:ore_processing/powder/hematite")),
+                    "TFC already has this Powder");
+            for (String rare : new String[] {"mining_hammer/titanium", "quarry_hammer_head/tungsten_steel", "excavator/netherite"}) {
+                require(stack("tfcm:metal/" + rare).getRarity() != Rarity.COMMON, "Metal rarity is missing: " + rare);
+            }
             CraftingRecipe pickaxe = (CraftingRecipe) requireRecipe(helper, "tfc", "crafting/metal/pickaxe/copper");
             ItemStack head = stack("tfc:metal/pickaxe_head/copper");
             ItemStack handle = stack("minecraft:stick");
@@ -415,7 +431,7 @@ public final class TFCMAssetIntegrityGameTests {
                         .equals("tfcm:item/ore/small_" + ore.id()), "Small ore item model " + ore.id());
             }
             require(!opaquePixels(items + "metal/dust/invar.png").equals(opaquePixels(items + "ore_processing/powder/galena.png"))
-                    && !opaquePixels(items + "metal/dust/invar.png").equals(opaquePixels(items + "ore_processing/powder/bismuthinite.png")),
+                    && !opaquePixels(items + "metal/dust/invar.png").equals(opaquePixels(items + "ore_processing/powder/chromite.png")),
                     "Metal Dust shares an outline with Ore Powder");
             for (String model : new String[] {"pan/empty", "pan/gravel/andesite_full", "pan/gravel/andesite_half",
                     "pan/sand/black_full", "pan/rock_powder_half", "pan/rocky_chunks/galena_full", "pan/dirty_dust/galena_half"}) {

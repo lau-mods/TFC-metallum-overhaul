@@ -6,6 +6,7 @@ import java.util.function.Supplier;
 
 import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
 import net.claustra01.tfcm.common.condition.OreEnabledCondition;
+import net.claustra01.tfcm.common.material.PlantFiberHarvest;
 import net.claustra01.tfcm.common.processing.ProcessingForm;
 import net.claustra01.tfcm.common.processing.ProcessingSeries;
 import net.claustra01.tfcm.common.processing.SluiceRecipeSync;
@@ -18,7 +19,6 @@ import net.claustra01.tfcm.registry.TFCMBiomeModifiers;
 import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
-import net.claustra01.tfcm.registry.TFCMLootModifiers;
 import net.claustra01.tfcm.worldgen.YamlWorldgenLoader;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.capabilities.ItemCapabilities;
@@ -74,7 +74,6 @@ public final class TFCM {
         TFCMBlocks.BLOCKS.register(modBus);
         TFCMFluids.FLUID_TYPES.register(modBus);
         TFCMFluids.FLUIDS.register(modBus);
-        TFCMLootModifiers.LOOT_MODIFIERS.register(modBus);
         MetalEnabledCondition.CONDITIONS.register(modBus);
         OreEnabledCondition.CONDITIONS.register(modBus);
         modBus.addListener(TFCMDataGenerators::gatherData);
@@ -82,6 +81,7 @@ public final class TFCM {
         modBus.addListener(TFCM::registerCapabilities);
         modBus.addListener(SluiceRecipeSync::registerPayloads);
         NeoForge.EVENT_BUS.addListener(SluiceRecipeSync::onDatapackSync);
+        NeoForge.EVENT_BUS.addListener(PlantFiberHarvest::onRightClickBlock);
         NeoForge.EVENT_BUS.addListener(TFCM::addReloadListeners);
     }
 

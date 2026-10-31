@@ -50,6 +50,12 @@
       "rolls": 1
     },
     {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "charcoal"
+        }
+      ],
       "conditions": [
         {
           "chance": 0.05,

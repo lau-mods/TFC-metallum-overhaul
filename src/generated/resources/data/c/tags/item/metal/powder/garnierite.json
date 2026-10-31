@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "tfcm:ore_processing/powder/garnierite",
+      "id": "tfc:powder/garnierite",
       "required": false
     }
   ]

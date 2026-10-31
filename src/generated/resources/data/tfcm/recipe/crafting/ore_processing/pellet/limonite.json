@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/limonite"
+      "item": "tfc:powder/limonite"
     },
     {
-      "item": "tfcm:ore_processing/powder/limonite"
+      "item": "tfc:powder/limonite"
     },
     {
-      "item": "tfcm:ore_processing/powder/limonite"
+      "item": "tfc:powder/limonite"
     },
     {
-      "item": "tfcm:ore_processing/powder/limonite"
+      "item": "tfc:powder/limonite"
     }
   ],
   "result": {

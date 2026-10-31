@@ -76,7 +76,8 @@ public enum ProcessingSeries {
     public String powderItem() {
         return switch (this) {
             case CINNABAR, CRYOLITE -> "minecraft:redstone";
-            case GRAPHITE, SULFUR -> "tfc:powder/" + id();
+            case GRAPHITE, SULFUR, BISMUTHINITE, CASSITERITE, GARNIERITE, HEMATITE, LIMONITE, MAGNETITE, MALACHITE,
+                    NATIVE_COPPER, NATIVE_GOLD, NATIVE_SILVER, SPHALERITE, TETRAHEDRITE -> "tfc:powder/" + id();
             default -> "tfcm:ore_processing/powder/" + id();
         };
     }

@@ -78,8 +78,8 @@ public final class TFCMSurfaceResourceGameTests {
                 JsonArray pools = resource(helper, "tfcm",
                         "loot_table/surface_resource/gravel/" + rock.id() + ".json");
                 require(pools.size() == 5, "Gravel must have five independent pools: " + rock.id());
-                checkPool(pools, 0, "tfcm:ore_processing/powder/native_copper", 0.50f);
-                checkPool(pools, 1, "tfcm:ore_processing/powder/native_copper", 0.25f);
+                checkPool(pools, 0, "tfc:powder/native_copper", 0.50f);
+                checkPool(pools, 1, "tfc:powder/native_copper", 0.25f);
                 checkPool(pools, 2, "tfc:rock/loose/" + rock.id(), 0.50f);
                 checkPool(pools, 3, "minecraft:flint", 0.15f);
                 checkPool(pools, 4, "minecraft:bone", 0.10f);
@@ -99,21 +99,21 @@ public final class TFCMSurfaceResourceGameTests {
                     "tfc:ore/gypsum", "tfc:ore/sylvite", "minecraft:bone", "tfc:gem/topaz"),
                     chances(1f, 0.30f, 0.05f, 0.05f, 0.03f, 0.001f));
             checkSand(helper, "green", items("tfcm:ore_processing/sand_pile/white", "tfcm:ore_processing/sand_pile/green",
-                    "tfcm:ore_processing/powder/malachite", "tfcm:ore_processing/powder/bismuthinite",
-                    "tfcm:ore_processing/powder/garnierite", "minecraft:bone", "tfc:gem/emerald"),
+                    "tfc:powder/malachite", "tfc:powder/bismuthinite",
+                    "tfc:powder/garnierite", "minecraft:bone", "tfc:gem/emerald"),
                     chances(1f, 0.30f, 0.05f, 0.05f, 0.02f, 0.03f, 0.001f));
             checkSand(helper, "pink", items("tfcm:ore_processing/sand_pile/white", "tfcm:ore_processing/sand_pile/pink",
                     "minecraft:redstone", "tfcm:ore_processing/powder/bauxite", "minecraft:bone", "tfc:gem/ruby"),
                     chances(1f, 0.30f, 0.04f, 0.04f, 0.03f, 0.001f));
             checkSand(helper, "red", items("tfcm:ore_processing/sand_pile/white", "tfcm:ore_processing/sand_pile/red",
-                    "minecraft:redstone", "tfcm:ore_processing/powder/hematite", "minecraft:bone", "tfc:gem/ruby"),
+                    "minecraft:redstone", "tfc:powder/hematite", "minecraft:bone", "tfc:gem/ruby"),
                     chances(1f, 0.30f, 0.04f, 0.04f, 0.03f, 0.001f));
             checkSand(helper, "white", items("tfcm:ore_processing/sand_pile/white", "minecraft:bone_meal",
-                    "tfcm:ore_processing/powder/sphalerite", "tfcm:ore_processing/powder/native_silver",
+                    "tfc:powder/sphalerite", "tfc:powder/native_silver",
                     "tfcm:ore/quartz", "minecraft:bone", "tfc:gem/opal"),
                     chances(1f, 0.15f, 0.015f, 0.01f, 0.01f, 0.025f, 0.0005f));
             checkSand(helper, "yellow", items("tfcm:ore_processing/sand_pile/white", "tfcm:ore_processing/sand_pile/yellow",
-                    "tfcm:ore_processing/powder/limonite", "tfcm:ore_processing/powder/native_gold",
+                    "tfc:powder/limonite", "tfc:powder/native_gold",
                     "minecraft:bone", "tfc:ore/pyrite"), chances(1f, 0.30f, 0.08f, 0.03f, 0.03f, 0.001f));
             for (String color : List.of("black", "brown", "green", "pink", "red", "white", "yellow")) {
                 ResourceLocation sandPile = ResourceLocation.fromNamespaceAndPath(TFCM.MOD_ID,

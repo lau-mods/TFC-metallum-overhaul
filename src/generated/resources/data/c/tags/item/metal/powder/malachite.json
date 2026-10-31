@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "tfcm:ore_processing/powder/malachite",
+      "id": "tfc:powder/malachite",
       "required": false
     }
   ]

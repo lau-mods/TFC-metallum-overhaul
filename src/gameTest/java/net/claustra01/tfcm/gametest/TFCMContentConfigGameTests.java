@@ -118,9 +118,9 @@ public final class TFCMContentConfigGameTests {
                 require(!BuiltInRegistries.ITEM.containsKey(id("ore_processing/" + form.id() + "/galena")),
                         "A Galena processing form remains");
             }
-            require(BuiltInRegistries.ITEM.containsKey(id("ore_processing/powder/sphalerite")),
+            require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse("tfc:powder/sphalerite")),
                     "Disabling Galena removed Sphalerite");
-            ItemStack sphalerite = new ItemStack(BuiltInRegistries.ITEM.get(id("ore_processing/powder/sphalerite")));
+            ItemStack sphalerite = new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse("tfc:powder/sphalerite")));
             require(HeatCapability.getDefinition(sphalerite) != null
                     && ItemSizeManager.getDefinition(sphalerite) != null,
                     "Other ore heat or size data were removed");
@@ -151,7 +151,7 @@ public final class TFCMContentConfigGameTests {
             for (int seed = 0; seed < 512; seed++) {
                 var washDrops = sphaleriteWash.getRandomItems(lootParams, seed);
                 require(washDrops.stream().anyMatch(stack -> BuiltInRegistries.ITEM.getKey(stack.getItem())
-                        .equals(id("ore_processing/powder/sphalerite"))),
+                        .equals(ResourceLocation.parse("tfc:powder/sphalerite"))),
                         "Sphalerite's primary output was removed");
                 require(washDrops.stream().noneMatch(stack -> BuiltInRegistries.ITEM.getKey(stack.getItem())
                         .equals(id("ore_processing/dirty_dust/galena"))),

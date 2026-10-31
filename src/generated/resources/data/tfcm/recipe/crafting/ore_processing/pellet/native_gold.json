@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/native_gold"
+      "item": "tfc:powder/native_gold"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_gold"
+      "item": "tfc:powder/native_gold"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_gold"
+      "item": "tfc:powder/native_gold"
     },
     {
-      "item": "tfcm:ore_processing/powder/native_gold"
+      "item": "tfc:powder/native_gold"
     }
   ],
   "result": {

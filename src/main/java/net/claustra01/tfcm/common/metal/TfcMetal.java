@@ -55,6 +55,11 @@ public enum TfcMetal {
         return tier;
     }
 
+    /** TFC welds a metal's double forms one tier below its own. */
+    public int weldingTier() {
+        return Math.max(tier - 1, 0);
+    }
+
     public float meltingPoint() {
         return meltingPoint;
     }

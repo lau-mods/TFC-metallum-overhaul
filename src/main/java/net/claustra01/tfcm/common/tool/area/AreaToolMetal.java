@@ -8,6 +8,7 @@ import net.dries007.tfc.util.registry.RegistryMetal;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 
@@ -88,6 +89,10 @@ public enum AreaToolMetal {
 
     public float heatCapacity() {
         return heatCapacity;
+    }
+
+    public Rarity rarity() {
+        return metal.get().rarity();
     }
 
     public boolean isCastable() {

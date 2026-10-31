@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "tfcm:ore_processing/powder/limonite",
+      "id": "tfc:powder/limonite",
       "required": false
     }
   ]

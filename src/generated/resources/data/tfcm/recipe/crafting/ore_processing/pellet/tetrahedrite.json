@@ -8,16 +8,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "item": "tfcm:ore_processing/powder/tetrahedrite"
+      "item": "tfc:powder/tetrahedrite"
     },
     {
-      "item": "tfcm:ore_processing/powder/tetrahedrite"
+      "item": "tfc:powder/tetrahedrite"
     },
     {
-      "item": "tfcm:ore_processing/powder/tetrahedrite"
+      "item": "tfc:powder/tetrahedrite"
     },
     {
-      "item": "tfcm:ore_processing/powder/tetrahedrite"
+      "item": "tfc:powder/tetrahedrite"
     }
   ],
   "result": {
