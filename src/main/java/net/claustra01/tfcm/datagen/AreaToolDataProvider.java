@@ -30,7 +30,9 @@ public final class AreaToolDataProvider implements DataProvider {
             files.add(save(output, data, "tfcm/recipe/heating/ceramic/" + type.id() + "_head_mold",
                     moldHeating(type)));
             for (AreaToolMetal metal : AreaToolMetal.values()) {
-                files.add(save(output, data, "tfcm/recipe/anvil/metal/" + type.id() + "_head/" + metal.id(),
+                if (type == AreaToolType.QUARRY_HAMMER) files.add(save(output, data,
+                        "tfcm/recipe/welding/metal/" + type.id() + "_head/" + metal.id(), quarryHeadWelding(metal)));
+                else files.add(save(output, data, "tfcm/recipe/anvil/metal/" + type.id() + "_head/" + metal.id(),
                         anvil(metal, type)));
                 if (metal.isCastable()) files.add(save(output, data,
                         "tfcm/recipe/casting/" + metal.id() + "_" + type.id() + "_head", casting(metal, type)));
@@ -152,11 +154,22 @@ public final class AreaToolDataProvider implements DataProvider {
         return json;
     }
 
+    private static JsonObject quarryHeadWelding(AreaToolMetal metal) {
+        JsonObject json = conditioned(metal);
+        json.addProperty("type", "tfc:welding");
+        json.add("first_input", item(id(metal, AreaToolType.MINING_HAMMER, true)));
+        json.add("second_input", tag("c:heavy_sheets/" + metal.id()));
+        json.add("result", result(id(metal, AreaToolType.QUARRY_HAMMER, true)));
+        json.addProperty("tier", metal.tierLevel());
+        json.addProperty("bonus", "copy_best");
+        return json;
+    }
+
     private static JsonObject casting(AreaToolMetal metal, AreaToolType type) {
         JsonObject json = conditioned(metal);
         json.addProperty("type", "tfc:casting");
         JsonObject fluid = new JsonObject();
-        fluid.addProperty("amount", 200);
+        fluid.addProperty("amount", type.headAmount());
         fluid.addProperty("fluid", metal.namespace() + ":metal/" + metal.id());
         json.add("fluid", fluid);
         json.add("mold", item("tfcm:ceramic/" + type.id() + "_head_mold"));
@@ -203,7 +216,7 @@ public final class AreaToolDataProvider implements DataProvider {
         json.addProperty("type", "tfc:heating");
         json.add("ingredient", item(id(metal, type, head)));
         JsonObject fluid = new JsonObject();
-        fluid.addProperty("amount", head ? 200 : 250);
+        fluid.addProperty("amount", head ? type.headAmount() : type.toolAmount());
         fluid.addProperty("id", metal.namespace() + ":metal/" + meltMetal(metal));
         json.add("result_fluid", fluid);
         json.addProperty("temperature", metal.meltingPoint());
@@ -214,7 +227,7 @@ public final class AreaToolDataProvider implements DataProvider {
     private static JsonObject itemHeat(AreaToolMetal metal, AreaToolType type, boolean head) {
         JsonObject json = conditioned(metal);
         json.add("ingredient", item(id(metal, type, head)));
-        json.addProperty("heat_capacity", metal.heatCapacity() * (head ? 2 : 2.5f));
+        json.addProperty("heat_capacity", metal.heatCapacity() * (head ? type.headAmount() : type.toolAmount()) / 100f);
         json.addProperty("forging_temperature", metal.forgingTemperature());
         json.addProperty("welding_temperature", metal.weldingTemperature());
         return json;

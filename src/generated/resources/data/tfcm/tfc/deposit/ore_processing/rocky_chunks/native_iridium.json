@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/native_iridium",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/native_iridium",
-    "tfcm:item/ore_processing/rocky_chunks/native_iridium",
-    "tfcm:item/ore_processing/rocky_chunks/native_iridium"
+    "tfcm:item/pan/rocky_chunks/native_iridium_full",
+    "tfcm:item/pan/rocky_chunks/native_iridium_half",
+    "tfcm:item/pan/empty"
   ]
 }

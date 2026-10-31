@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/borax",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/borax",
-    "tfcm:item/ore_processing/rocky_chunks/borax",
-    "tfcm:item/ore_processing/rocky_chunks/borax"
+    "tfcm:item/pan/rocky_chunks/borax_full",
+    "tfcm:item/pan/rocky_chunks/borax_half",
+    "tfcm:item/pan/empty"
   ]
 }

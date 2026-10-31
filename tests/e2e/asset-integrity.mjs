@@ -44,7 +44,7 @@ await scenario(async ({ clients }) => {
   for (const [query, label, item] of [
     ['neutronium', 'creative-neutronium-items', 'tfcm:metal/ingot/neutronium'],
     ['Mining Hammer', 'creative-hammer-items', 'tfcm:metal/mining_hammer/invar'],
-    ['Normal Native Platinum in Granite', 'creative-ore-items', 'tfcm:ore/normal_native_platinum/granite'],
+    ['Normal Granite Native Platinum', 'creative-ore-items', 'tfcm:ore/normal_native_platinum/granite'],
     ['Quartz Block', 'creative-quartz-items', 'tfcm:mineral/quartz_block']
   ]) {
     mct(client, 'input', 'key', 'press', 'e');

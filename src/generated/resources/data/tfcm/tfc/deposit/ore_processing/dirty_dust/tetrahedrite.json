@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/tetrahedrite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/tetrahedrite",
-    "tfcm:item/ore_processing/dirty_dust/tetrahedrite",
-    "tfcm:item/ore_processing/dirty_dust/tetrahedrite"
+    "tfcm:item/pan/dirty_dust/tetrahedrite_full",
+    "tfcm:item/pan/dirty_dust/tetrahedrite_half",
+    "tfcm:item/pan/empty"
   ]
 }

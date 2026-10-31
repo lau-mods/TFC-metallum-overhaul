@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/galena",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/galena",
-    "tfcm:item/ore_processing/dirty_dust/galena",
-    "tfcm:item/ore_processing/dirty_dust/galena"
+    "tfcm:item/pan/dirty_dust/galena_full",
+    "tfcm:item/pan/dirty_dust/galena_half",
+    "tfcm:item/pan/empty"
   ]
 }

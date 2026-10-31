@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "N": {
+      "tag": "c:nuggets/chromium"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "firmalife:metal/ingot/chromium"
+  }
+}

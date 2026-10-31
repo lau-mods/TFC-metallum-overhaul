@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/lead"
   },
-  "second_input": {
-    "tag": "c:sheets/lead"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/lead"
   },
-  "tier": 1
+  "second_input": {
+    "tag": "c:sheets/lead"
+  },
+  "tier": 0
 }

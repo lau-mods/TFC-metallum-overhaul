@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/mithril"
   },
-  "second_input": {
-    "tag": "c:sheets/mithril"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/mithril"
   },
-  "tier": 2
+  "second_input": {
+    "tag": "c:sheets/mithril"
+  },
+  "tier": 1
 }

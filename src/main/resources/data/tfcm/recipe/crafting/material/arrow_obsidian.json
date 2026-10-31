@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " SH",
+    " L ",
+    "XS "
+  ],
+  "key": {
+    "H": {
+      "item": "tfc:groundcover/obsidian_shard"
+    },
+    "X": {
+      "tag": "c:arrow_fletch"
+    },
+    "S": {
+      "tag": "c:arrow_tread"
+    },
+    "L": {
+      "tag": "c:arrow_shaft"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "minecraft:arrow"
+  }
+}

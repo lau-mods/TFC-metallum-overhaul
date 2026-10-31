@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/neutronium"
   },
-  "second_input": {
-    "tag": "c:sheets/neutronium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/neutronium"
   },
-  "tier": 7
+  "second_input": {
+    "tag": "c:sheets/neutronium"
+  },
+  "tier": 6
 }

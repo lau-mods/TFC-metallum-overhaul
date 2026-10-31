@@ -24,6 +24,13 @@ final class ContentConditions {
         return condition;
     }
 
+    static JsonObject firmaLife() {
+        JsonObject condition = new JsonObject();
+        condition.addProperty("type", "neoforge:mod_loaded");
+        condition.addProperty("modid", "firmalife");
+        return condition;
+    }
+
     private ContentConditions() {
     }
 }

@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/sulfur",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/sulfur",
-    "tfcm:item/ore_processing/rocky_chunks/sulfur",
-    "tfcm:item/ore_processing/rocky_chunks/sulfur"
+    "tfcm:item/pan/rocky_chunks/sulfur_full",
+    "tfcm:item/pan/rocky_chunks/sulfur_half",
+    "tfcm:item/pan/empty"
   ]
 }

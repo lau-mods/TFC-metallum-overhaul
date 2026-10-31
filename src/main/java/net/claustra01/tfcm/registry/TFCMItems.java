@@ -72,7 +72,7 @@ public final class TFCMItems {
         for (AreaToolType type : AreaToolType.values()) {
             UNFIRED_AREA_TOOL_MOLDS.put(type, ITEMS.registerSimpleItem("ceramic/unfired_" + type.id() + "_head_mold"));
             AREA_TOOL_MOLDS.put(type, ITEMS.register("ceramic/" + type.id() + "_head_mold",
-                    () -> new MoldItem(() -> 200, moldFluids, new Item.Properties())));
+                    () -> new MoldItem(type::headAmount, moldFluids, new Item.Properties())));
         }
         for (AreaToolMetal metal : AreaToolMetal.values()) {
             if (metal.isTFCM() && !TFCMConfig.isMetalEnabled(Metal.valueOf(metal.name()))) continue;
@@ -88,8 +88,8 @@ public final class TFCMItems {
         }
         for (TfcMetal metal : TfcMetal.values()) {
             if (metal.isFirmaLife() && !ModList.get().isLoaded("firmalife")) continue;
-            for (MetalForm form : metal.addedForms()) {
-                ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
+            for (MetalForm form : MetalForm.values()) {
+                if (form.isAddedForm()) ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
             }
             if (metal.hasTools()) {
                 ITEMS.registerSimpleItem("metal/crossguard/" + metal.id());
@@ -149,7 +149,8 @@ public final class TFCMItems {
             SAND_PILES.put(sand, ITEMS.registerSimpleItem("ore_processing/sand_pile/" + sand.id()));
         }
         for (ProcessingSeries series : ProcessingSeries.values()) {
-            if (!TFCMConfig.isOreEnabled(series.id())) continue;
+            if (!TFCMConfig.isOreEnabled(series.id())
+                    || series.firmaLifeOnly() && !ModList.get().isLoaded("firmalife")) continue;
             Map<ProcessingForm, DeferredItem<Item>> forms = new EnumMap<>(ProcessingForm.class);
             for (ProcessingForm form : ProcessingForm.values()) {
                 if (series.nonMetal() && series != ProcessingSeries.BORAX && form == ProcessingForm.POWDER) continue;

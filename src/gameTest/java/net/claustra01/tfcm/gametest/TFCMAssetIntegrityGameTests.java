@@ -139,8 +139,8 @@ public final class TFCMAssetIntegrityGameTests {
                 require(stack.is(tag), "Metal form tag " + form.item(metal));
             }
         }
-        for (TfcMetal metal : TfcMetal.values()) for (MetalForm form : metal.addedForms()) {
-            if (metal.isFirmaLife() && !ModList.get().isLoaded("firmalife")) continue;
+        for (TfcMetal metal : TfcMetal.values()) for (MetalForm form : MetalForm.values()) {
+            if (!form.isAddedForm() || metal.isFirmaLife() && !ModList.get().isLoaded("firmalife")) continue;
             require(metalShapes.add(metal.item(form)), "Duplicate metal shape " + metal.item(form));
             ItemStack stack = BuiltInRegistries.ITEM.get(ResourceLocation.parse(metal.item(form))).getDefaultInstance();
             require(!stack.isEmpty(), "TFC metal form " + metal.item(form));
@@ -318,6 +318,15 @@ public final class TFCMAssetIntegrityGameTests {
                 requireRecipe(helper, "tfcm", "heating/metal/crossguard/" + metal.id());
                 requireRecipe(helper, "tfcm", "heating/metal/pommel/" + metal.id());
             }
+            for (String id : new String[] {"minecraft:bow", "minecraft:crossbow", "tfc:crafting/arrow"}) {
+                require(helper.getLevel().getRecipeManager().byKey(ResourceLocation.parse(id)).isEmpty(),
+                        "The part-less recipe is still active: " + id);
+            }
+            requireRecipe(helper, "tfcm", "crafting/material/arrow_obsidian");
+            for (String item : new String[] {"tfcm:plant_string", "tfcm:bamboo_string", "tfcm:leather_string"}) {
+                requireTags(item, "c:strings");
+            }
+            require(!stack("tfcm:leather_strap").is(tag("c:strings")), "Leather Strap must not count as string");
             CraftingRecipe pickaxe = (CraftingRecipe) requireRecipe(helper, "tfc", "crafting/metal/pickaxe/copper");
             ItemStack head = stack("tfc:metal/pickaxe_head/copper");
             ItemStack handle = stack("minecraft:stick");
@@ -334,14 +343,17 @@ public final class TFCMAssetIntegrityGameTests {
         helper.succeedIf(() -> {
             boolean loaded = ModList.get().isLoaded("firmalife");
             for (TfcMetal metal : new TfcMetal[] {TfcMetal.CHROMIUM, TfcMetal.STAINLESS_STEEL}) {
-                require(metal.addedForms().size() == 9, "FirmaLife metals take the nine More Items forms");
-                require(!BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(metal.item(MetalForm.PLATE))),
-                        "FirmaLife metals have no Plate");
-                for (MetalForm form : metal.addedForms()) {
+                for (MetalForm form : MetalForm.values()) {
+                    if (!form.isAddedForm()) continue;
                     String item = metal.item(form);
                     require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(item)) == loaded,
                             "FirmaLife form registration " + item);
-                    String path = (form == MetalForm.HEAVY_SHEET ? "welding" : "anvil") + "/metal/" + form.id + "/" + metal.id();
+                    String path = switch (form) {
+                        case HEAVY_SHEET -> "welding/metal/heavy_sheet/" + metal.id();
+                        case NUGGET -> "crafting/metal/nugget/" + metal.id();
+                        case DUST -> "quern/metal/dust/" + metal.id();
+                        default -> "anvil/metal/" + form.id + "/" + metal.id();
+                    };
                     require(helper.getLevel().getRecipeManager().byKey(ResourceLocation.fromNamespaceAndPath("tfcm", path))
                             .isPresent() == loaded, "FirmaLife form recipe " + path);
                 }
@@ -381,6 +393,7 @@ public final class TFCMAssetIntegrityGameTests {
         helper.succeedIf(() -> {
             String items = "assets/tfcm/textures/item/";
             for (Metal metal : Metal.values()) {
+                require(metal.color() >>> 24 == 0xFF, "Molten " + metal.id() + " tint is not opaque");
                 requireDifferent(items + "metal/plate/" + metal.id() + ".png", items + "metal/sheet/" + metal.id() + ".png");
             }
             for (String form : new String[] {"pellet", "briquet"}) {
@@ -397,6 +410,13 @@ public final class TFCMAssetIntegrityGameTests {
             require(readJson("assets/tfcm/models/item/leather_string.json").getAsJsonObject("textures")
                     .get("layer0").getAsString().equals("tfcm:item/leather_string"), "Leather String sprite");
             requireDifferent(items + "leather_string.png", items + "leather_strap.png");
+            require(!opaquePixels(items + "metal/dust/invar.png").equals(opaquePixels(items + "ore_processing/powder/galena.png"))
+                    && !opaquePixels(items + "metal/dust/invar.png").equals(opaquePixels(items + "ore_processing/powder/bismuthinite.png")),
+                    "Metal Dust shares an outline with Ore Powder");
+            for (String model : new String[] {"pan/empty", "pan/gravel/andesite_full", "pan/gravel/andesite_half",
+                    "pan/sand/black_full", "pan/rock_powder_half", "pan/rocky_chunks/galena_full", "pan/dirty_dust/galena_half"}) {
+                checkModel(ResourceLocation.fromNamespaceAndPath("tfcm", "item/" + model));
+            }
         });
     }
 
@@ -407,6 +427,7 @@ public final class TFCMAssetIntegrityGameTests {
             JsonObject japanese = readJson("assets/tfcm/lang/ja_jp.json");
             for (String key : english.keySet()) {
                 String name = english.get(key).getAsString();
+                if (key.startsWith("block.tfcm.metal.block.")) require(name.contains(" Plated "), "Metal block name " + name);
                 require(japanese.has(key), "Japanese key " + key);
                 String translated = japanese.get(key).getAsString();
                 require(key.equals("itemGroup.tfcm") || !translated.replace("HSLA", "").matches(".*[A-Za-z].*"),
@@ -437,6 +458,19 @@ public final class TFCMAssetIntegrityGameTests {
 
     private static void requireTags(String item, String... tags) {
         for (String tag : tags) require(stack(item).is(tag(tag)), item + " is missing from " + tag);
+    }
+
+    private static Set<Integer> opaquePixels(String path) {
+        try (var stream = TFCMAssetIntegrityGameTests.class.getClassLoader().getResourceAsStream(path)) {
+            require(stream != null, "Sprite " + path);
+            var image = ImageIO.read(stream);
+            Set<Integer> pixels = new HashSet<>();
+            for (int y = 0; y < image.getWidth(); y++) for (int x = 0; x < image.getWidth(); x++)
+                if (image.getRGB(x, y) >>> 24 != 0) pixels.add(y * image.getWidth() + x);
+            return pixels;
+        } catch (IOException exception) {
+            throw new GameTestAssertException("Cannot read " + path);
+        }
     }
 
     private static void requireDifferent(String first, String second) {

@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/naquadah"
   },
-  "second_input": {
-    "tag": "c:sheets/naquadah"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/naquadah"
   },
-  "tier": 7
+  "second_input": {
+    "tag": "c:sheets/naquadah"
+  },
+  "tier": 6
 }

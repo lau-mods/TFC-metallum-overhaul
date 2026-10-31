@@ -30,4 +30,14 @@ public enum AreaToolType {
     public int radius() {
         return radius;
     }
+
+    /** Metal in the Head: 200 mB, and the Quarry Hammer's is a Mining Hammer Head welded to a 600 mB Heavy Sheet. */
+    public int headAmount() {
+        return this == QUARRY_HAMMER ? 800 : 200;
+    }
+
+    /** Metal in the finished tool: the Head and 50 mB of assembly parts. */
+    public int toolAmount() {
+        return headAmount() + 50;
+    }
 }

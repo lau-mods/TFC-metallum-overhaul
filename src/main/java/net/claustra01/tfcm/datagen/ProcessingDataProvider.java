@@ -88,19 +88,13 @@ public final class ProcessingDataProvider implements DataProvider {
         } else {
             addHammer(output, files, series, null, series.nonMetal() ? 7 : 5);
         }
-        files.add(save(output, data, "tfcm/tfc/deposit/ore_processing/rocky_chunks/" + series.id(),
-                conditional(series, deposit(item(series, ProcessingForm.ROCKY_CHUNKS),
-                        "tfcm:ore_processing/rocky_chunks/" + series.id(),
-                        "tfcm:item/ore_processing/rocky_chunks/" + series.id()))));
+        addDeposit(output, files, series, ProcessingForm.ROCKY_CHUNKS);
         files.add(save(output, data, "tfcm/loot_table/ore_processing/rocky_chunks/" + series.id(),
                 conditional(series, primaryWash(series))));
         files.add(save(output, data, "tfcm/recipe/quern/ore_processing/" + series.id(),
                 conditional(series, quern(item(series, ProcessingForm.CHUNKS),
                         item(series, ProcessingForm.DIRTY_DUST)))));
-        files.add(save(output, data, "tfcm/tfc/deposit/ore_processing/dirty_dust/" + series.id(),
-                conditional(series, deposit(item(series, ProcessingForm.DIRTY_DUST),
-                        "tfcm:ore_processing/dirty_dust/" + series.id(),
-                        "tfcm:item/ore_processing/dirty_dust/" + series.id()))));
+        addDeposit(output, files, series, ProcessingForm.DIRTY_DUST);
         files.add(save(output, data, "tfcm/loot_table/ore_processing/dirty_dust/" + series.id(),
                 conditional(series, secondaryWash(series))));
         addCompression(output, files, series);
@@ -141,7 +135,7 @@ public final class ProcessingDataProvider implements DataProvider {
                 conditionalRecovery(series, heating(item(series, form), series.recoveryFluid(), amount,
                         series.recoveryTemperature()))));
         files.add(save(output, data, "tfcm/tfc/item_heat/ore_processing/" + form.id() + "/" + series.id(),
-                conditionalRecovery(series, itemHeat(item(series, form), amount, specificHeat(series)))));
+                conditionalRecovery(series, itemHeat(foreignIngredient(series, form), amount, specificHeat(series)))));
     }
 
     private static JsonObject primaryWash(ProcessingSeries series) {
@@ -160,9 +154,12 @@ public final class ProcessingDataProvider implements DataProvider {
         pools.add(pool("powder", item(series, ProcessingForm.POWDER), null));
         pools.add(pool("sand_pile_15_percent", "tfcm:ore_processing/sand_pile/" + series.sand().id(), 0.15f));
         pools.add(pool("same_dirty_dust_5_percent", item(series, ProcessingForm.DIRTY_DUST), 0.05f));
-        pools.add(pool("byproduct_dirty_dust_1_percent",
+        JsonObject byproduct = pool("byproduct_dirty_dust_1_percent",
                 "tfcm:ore_processing/dirty_dust/" + series.byproduct(), 0.01f,
-                ContentConditions.ore(series.byproduct())));
+                ContentConditions.ore(series.byproduct()));
+        if (series.byproduct().equals(ProcessingSeries.CHROMITE.id()))
+            byproduct.getAsJsonArray("neoforge:conditions").add(ContentConditions.firmaLife());
+        pools.add(byproduct);
         return json;
     }
 
@@ -203,17 +200,24 @@ public final class ProcessingDataProvider implements DataProvider {
         return pool;
     }
 
-    private static JsonObject deposit(String ingredientItem, String lootTable, String model) {
+    // Chromite's Deposits are added in code, see TFCM; its Pan models are the same.
+    private void addDeposit(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series,
+            ProcessingForm form) {
+        String name = form.id() + "/" + series.id();
+        JsonArray stages = SurfaceResourceDataProvider.panStages(output, files, assets, name,
+                "tfcm:item/ore_processing/" + name);
+        if (series.firmaLifeOnly()) return;
         JsonObject json = new JsonObject();
-        json.add("ingredient", ingredient(ingredientItem));
-        json.addProperty("loot_table", lootTable);
-        // TFC deposits require three fill stages; processing items have one appearance at every stage.
-        JsonArray stages = new JsonArray();
-        stages.add(model);
-        stages.add(model);
-        stages.add(model);
+        json.add("ingredient", ingredient(item(series, form)));
+        json.addProperty("loot_table", "tfcm:ore_processing/" + name);
         json.add("model_stages", stages);
-        return json;
+        files.add(save(output, data, "tfcm/tfc/deposit/ore_processing/" + name, conditional(series, json)));
+    }
+
+    // TFC's item heat ignores load conditions, so Chromite's items are only reached through their optional tag
+    private static JsonObject foreignIngredient(ProcessingSeries series, ProcessingForm form) {
+        return series.firmaLifeOnly() ? tagIngredient("c:metal/" + form.id() + "/" + series.id())
+                : ingredient(item(series, form));
     }
 
     private static JsonObject hammer(String input, String output, int count) {
@@ -265,9 +269,9 @@ public final class ProcessingDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject itemHeat(String item, int amount, float specificHeat) {
+    private static JsonObject itemHeat(JsonObject ingredient, int amount, float specificHeat) {
         JsonObject json = new JsonObject();
-        json.add("ingredient", ingredient(item));
+        json.add("ingredient", ingredient);
         // TFC metal item heat scales the fluid specific heat by contained metal amount.
         json.addProperty("heat_capacity", specificHeat * 333.33334f * amount / 100f);
         return json;
@@ -296,12 +300,7 @@ public final class ProcessingDataProvider implements DataProvider {
         JsonArray conditions = json.has("neoforge:conditions")
                 ? json.getAsJsonArray("neoforge:conditions") : new JsonArray();
         conditions.add(ContentConditions.ore(series.id()));
-        if (series.firmaLifeOnly()) {
-            JsonObject condition = new JsonObject();
-            condition.addProperty("type", "neoforge:mod_loaded");
-            condition.addProperty("modid", "firmalife");
-            conditions.add(condition);
-        }
+        if (series.firmaLifeOnly()) conditions.add(ContentConditions.firmaLife());
         json.add("neoforge:conditions", conditions);
         return json;
     }
@@ -315,7 +314,7 @@ public final class ProcessingDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject disabledRecipe() {
+    static JsonObject disabledRecipe() {
         JsonObject condition = new JsonObject();
         condition.addProperty("type", "neoforge:false");
         JsonArray conditions = new JsonArray();

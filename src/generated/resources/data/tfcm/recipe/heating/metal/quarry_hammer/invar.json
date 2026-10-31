@@ -10,7 +10,7 @@
     "item": "tfcm:metal/quarry_hammer/invar"
   },
   "result_fluid": {
-    "amount": 250,
+    "amount": 850,
     "id": "tfcm:metal/invar"
   },
   "temperature": 1250.0,

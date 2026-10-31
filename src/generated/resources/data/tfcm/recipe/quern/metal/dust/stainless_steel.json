@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/stainless_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/stainless_steel"
+  }
+}

@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:ingots/beryllium"
   },
-  "second_input": {
-    "tag": "c:ingots/beryllium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_ingot/beryllium"
   },
-  "tier": 3
+  "second_input": {
+    "tag": "c:ingots/beryllium"
+  },
+  "tier": 2
 }

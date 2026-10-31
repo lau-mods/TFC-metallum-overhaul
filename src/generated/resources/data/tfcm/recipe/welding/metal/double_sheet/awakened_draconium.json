@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/awakened_draconium"
   },
-  "second_input": {
-    "tag": "c:sheets/awakened_draconium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/awakened_draconium"
   },
-  "tier": 7
+  "second_input": {
+    "tag": "c:sheets/awakened_draconium"
+  },
+  "tier": 6
 }

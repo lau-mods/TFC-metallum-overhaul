@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/native_copper",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/native_copper",
-    "tfcm:item/ore_processing/dirty_dust/native_copper",
-    "tfcm:item/ore_processing/dirty_dust/native_copper"
+    "tfcm:item/pan/dirty_dust/native_copper_full",
+    "tfcm:item/pan/dirty_dust/native_copper_half",
+    "tfcm:item/pan/empty"
   ]
 }

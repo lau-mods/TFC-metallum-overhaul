@@ -4,7 +4,7 @@
     "item": "tfcm:metal/quarry_hammer_head/bronze"
   },
   "result_fluid": {
-    "amount": 200,
+    "amount": 800,
     "id": "tfc:metal/bronze"
   },
   "temperature": 950.0

@@ -54,6 +54,10 @@
         {
           "type": "tfcm:ore_enabled",
           "ore": "chromite"
+        },
+        {
+          "type": "neoforge:mod_loaded",
+          "modid": "firmalife"
         }
       ],
       "conditions": [

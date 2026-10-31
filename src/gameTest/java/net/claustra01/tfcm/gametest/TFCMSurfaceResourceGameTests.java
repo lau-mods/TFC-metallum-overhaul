@@ -195,9 +195,10 @@ public final class TFCMSurfaceResourceGameTests {
         require(deposit.lootTable().location().equals(ResourceLocation.parse(lootTable)),
                 "TFC Deposit has the wrong loot table: " + input);
         if (genericModels) {
-            List<ResourceLocation> models = List.of(ResourceLocation.parse("tfc:item/pan/full"),
-                    ResourceLocation.parse("tfc:item/pan/half"), ResourceLocation.parse("tfc:item/pan/empty"));
-            require(deposit.modelStages().equals(models), "TFC Deposit has the wrong generic model stages: " + input);
+            List<ResourceLocation> models = deposit.modelStages();
+            require(models.size() == 3 && models.get(0).getPath().endsWith("_full") && models.get(1).getPath().endsWith("_half")
+                    && models.get(2).equals(ResourceLocation.parse("tfcm:item/pan/empty")),
+                    "TFC Deposit has the wrong model stages: " + input);
             for (ResourceLocation model : models)
                 require(resourceExists("assets/" + model.getNamespace() + "/models/" + model.getPath() + ".json"),
                         "TFC Deposit model is missing: " + model);

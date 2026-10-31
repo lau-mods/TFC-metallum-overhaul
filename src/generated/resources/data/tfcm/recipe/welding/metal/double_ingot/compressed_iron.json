@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:ingots/compressed_iron"
   },
-  "second_input": {
-    "tag": "c:ingots/compressed_iron"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_ingot/compressed_iron"
   },
-  "tier": 3
+  "second_input": {
+    "tag": "c:ingots/compressed_iron"
+  },
+  "tier": 2
 }

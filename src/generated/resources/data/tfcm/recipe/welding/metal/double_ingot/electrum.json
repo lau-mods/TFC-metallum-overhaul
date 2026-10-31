@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:ingots/electrum"
   },
-  "second_input": {
-    "tag": "c:ingots/electrum"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_ingot/electrum"
   },
-  "tier": 1
+  "second_input": {
+    "tag": "c:ingots/electrum"
+  },
+  "tier": 0
 }

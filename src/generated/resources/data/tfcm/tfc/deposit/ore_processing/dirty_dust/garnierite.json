@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/garnierite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/garnierite",
-    "tfcm:item/ore_processing/dirty_dust/garnierite",
-    "tfcm:item/ore_processing/dirty_dust/garnierite"
+    "tfcm:item/pan/dirty_dust/garnierite_full",
+    "tfcm:item/pan/dirty_dust/garnierite_half",
+    "tfcm:item/pan/empty"
   ]
 }

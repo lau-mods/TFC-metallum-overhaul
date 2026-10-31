@@ -1,0 +1,15 @@
+{
+  "type": "tfc:welding",
+  "bonus": "copy_best",
+  "first_input": {
+    "item": "tfcm:metal/mining_hammer_head/wrought_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/quarry_hammer_head/wrought_iron"
+  },
+  "second_input": {
+    "tag": "c:heavy_sheets/wrought_iron"
+  },
+  "tier": 3
+}

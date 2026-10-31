@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/hematite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/hematite",
-    "tfcm:item/ore_processing/dirty_dust/hematite",
-    "tfcm:item/ore_processing/dirty_dust/hematite"
+    "tfcm:item/pan/dirty_dust/hematite_full",
+    "tfcm:item/pan/dirty_dust/hematite_half",
+    "tfcm:item/pan/empty"
   ]
 }

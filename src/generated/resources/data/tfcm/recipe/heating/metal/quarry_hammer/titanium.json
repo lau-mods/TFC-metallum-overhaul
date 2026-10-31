@@ -10,7 +10,7 @@
     "item": "tfcm:metal/quarry_hammer/titanium"
   },
   "result_fluid": {
-    "amount": 250,
+    "amount": 850,
     "id": "tfcm:metal/titanium"
   },
   "temperature": 1700.0,

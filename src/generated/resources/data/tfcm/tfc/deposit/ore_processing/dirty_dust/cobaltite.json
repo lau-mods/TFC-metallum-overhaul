@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/cobaltite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/cobaltite",
-    "tfcm:item/ore_processing/dirty_dust/cobaltite",
-    "tfcm:item/ore_processing/dirty_dust/cobaltite"
+    "tfcm:item/pan/dirty_dust/cobaltite_full",
+    "tfcm:item/pan/dirty_dust/cobaltite_half",
+    "tfcm:item/pan/empty"
   ]
 }

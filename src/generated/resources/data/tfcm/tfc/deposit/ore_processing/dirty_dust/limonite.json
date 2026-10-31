@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/limonite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/limonite",
-    "tfcm:item/ore_processing/dirty_dust/limonite",
-    "tfcm:item/ore_processing/dirty_dust/limonite"
+    "tfcm:item/pan/dirty_dust/limonite_full",
+    "tfcm:item/pan/dirty_dust/limonite_half",
+    "tfcm:item/pan/empty"
   ]
 }

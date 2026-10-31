@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/cryolite",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/cryolite",
-    "tfcm:item/ore_processing/rocky_chunks/cryolite",
-    "tfcm:item/ore_processing/rocky_chunks/cryolite"
+    "tfcm:item/pan/rocky_chunks/cryolite_full",
+    "tfcm:item/pan/rocky_chunks/cryolite_half",
+    "tfcm:item/pan/empty"
   ]
 }

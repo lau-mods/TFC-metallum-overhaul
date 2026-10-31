@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/malachite",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/malachite",
-    "tfcm:item/ore_processing/rocky_chunks/malachite",
-    "tfcm:item/ore_processing/rocky_chunks/malachite"
+    "tfcm:item/pan/rocky_chunks/malachite_full",
+    "tfcm:item/pan/rocky_chunks/malachite_half",
+    "tfcm:item/pan/empty"
   ]
 }

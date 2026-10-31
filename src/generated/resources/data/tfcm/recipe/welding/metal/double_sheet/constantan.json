@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/constantan"
   },
-  "second_input": {
-    "tag": "c:sheets/constantan"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/constantan"
   },
-  "tier": 1
+  "second_input": {
+    "tag": "c:sheets/constantan"
+  },
+  "tier": 0
 }

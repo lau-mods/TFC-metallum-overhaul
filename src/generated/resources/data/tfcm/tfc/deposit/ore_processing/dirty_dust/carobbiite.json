@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/carobbiite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/carobbiite",
-    "tfcm:item/ore_processing/dirty_dust/carobbiite",
-    "tfcm:item/ore_processing/dirty_dust/carobbiite"
+    "tfcm:item/pan/dirty_dust/carobbiite_full",
+    "tfcm:item/pan/dirty_dust/carobbiite_half",
+    "tfcm:item/pan/empty"
   ]
 }

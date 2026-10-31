@@ -1,0 +1,6 @@
+{
+  "parent": "tfc:item/pan/half",
+  "textures": {
+    "material": "tfcm:item/ore_processing/dirty_dust/limonite"
+  }
+}

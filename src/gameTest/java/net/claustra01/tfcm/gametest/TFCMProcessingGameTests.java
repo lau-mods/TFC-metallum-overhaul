@@ -93,6 +93,11 @@ public final class TFCMProcessingGameTests {
                     "Chromite Sluice input availability does not match FirmaLife");
             for (ExpectedSeries expected : EXPECTED) {
                 ProcessingSeries actual = ProcessingSeries.valueOf(expected.id().toUpperCase());
+                if (actual == ProcessingSeries.CHROMITE) {
+                    require(TFCMItems.ORE_PROCESSING.containsKey(actual) == firmaLife,
+                            "Chromite items must only exist with FirmaLife");
+                    if (!firmaLife) continue;
+                }
                 require(TFCMItems.ORE_PROCESSING.get(actual).size() == ProcessingForm.values().length - (expected.nonMetal() && !expected.id().equals("borax") ? 1 : 0),
                         "Missing processing form for " + expected.id());
             }

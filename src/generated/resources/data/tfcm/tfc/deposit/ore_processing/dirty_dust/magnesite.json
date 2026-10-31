@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/magnesite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/magnesite",
-    "tfcm:item/ore_processing/dirty_dust/magnesite",
-    "tfcm:item/ore_processing/dirty_dust/magnesite"
+    "tfcm:item/pan/dirty_dust/magnesite_full",
+    "tfcm:item/pan/dirty_dust/magnesite_half",
+    "tfcm:item/pan/empty"
   ]
 }

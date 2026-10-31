@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/bismuthinite",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/bismuthinite",
-    "tfcm:item/ore_processing/rocky_chunks/bismuthinite",
-    "tfcm:item/ore_processing/rocky_chunks/bismuthinite"
+    "tfcm:item/pan/rocky_chunks/bismuthinite_full",
+    "tfcm:item/pan/rocky_chunks/bismuthinite_half",
+    "tfcm:item/pan/empty"
   ]
 }

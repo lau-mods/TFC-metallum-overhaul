@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/zircon",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/zircon",
-    "tfcm:item/ore_processing/dirty_dust/zircon",
-    "tfcm:item/ore_processing/dirty_dust/zircon"
+    "tfcm:item/pan/dirty_dust/zircon_full",
+    "tfcm:item/pan/dirty_dust/zircon_half",
+    "tfcm:item/pan/empty"
   ]
 }

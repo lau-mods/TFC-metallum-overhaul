@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:ingots/super_alloy"
   },
-  "second_input": {
-    "tag": "c:ingots/super_alloy"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_ingot/super_alloy"
   },
-  "tier": 5
+  "second_input": {
+    "tag": "c:ingots/super_alloy"
+  },
+  "tier": 4
 }

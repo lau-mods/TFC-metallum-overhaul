@@ -4,8 +4,8 @@
   },
   "loot_table": "tfcm:surface_resource/gravel/andesite",
   "model_stages": [
-    "tfc:item/pan/full",
-    "tfc:item/pan/half",
-    "tfc:item/pan/empty"
+    "tfcm:item/pan/gravel/andesite_full",
+    "tfcm:item/pan/gravel/andesite_half",
+    "tfcm:item/pan/empty"
   ]
 }

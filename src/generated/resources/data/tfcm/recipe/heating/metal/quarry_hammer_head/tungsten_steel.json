@@ -10,7 +10,7 @@
     "item": "tfcm:metal/quarry_hammer_head/tungsten_steel"
   },
   "result_fluid": {
-    "amount": 200,
+    "amount": 800,
     "id": "tfcm:metal/tungsten_steel"
   },
   "temperature": 1535.0

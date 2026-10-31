@@ -4,8 +4,8 @@
   },
   "loot_table": "tfcm:surface_resource/sand/brown",
   "model_stages": [
-    "tfc:item/pan/full",
-    "tfc:item/pan/half",
-    "tfc:item/pan/empty"
+    "tfcm:item/pan/sand/brown_full",
+    "tfcm:item/pan/sand/brown_half",
+    "tfcm:item/pan/empty"
   ]
 }

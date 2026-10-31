@@ -366,9 +366,9 @@ public final class TFCMMetalGameTests {
             require(!sheet.matches(anvilInput(itemValue("metal/double_ingot/titanium").getDefaultInstance(), 4), helper.getLevel()),
                     "Titanium sheet accepts tier 4");
             require(rodRecipe.matches(anvilInput(ingot, 5), helper.getLevel()), "Titanium rod input does not match");
-            require(doubleIngot.matches(weldingInput(ingot, ingot, 5)), "Titanium double ingot does not match");
-            require(!doubleIngot.isCorrectTier(4), "Titanium welding accepts tier 4");
-            require(doubleSheet.matches(weldingInput(sheetStack, sheetStack, 5)), "Titanium double sheet does not match");
+            require(doubleIngot.matches(weldingInput(ingot, ingot, 4)), "Titanium double ingot does not match at tier 4");
+            require(!doubleIngot.isCorrectTier(3), "Titanium welding accepts tier 3");
+            require(doubleSheet.matches(weldingInput(sheetStack, sheetStack, 4)), "Titanium double sheet does not match at tier 4");
             HeatingRecipe rod = (HeatingRecipe) recipe(helper, "heating/metal/rod/titanium");
             HeatingRecipe block = (HeatingRecipe) recipe(helper, "heating/metal/block/titanium");
             require(rod.getDisplayOutputFluid().getAmount() == 50, "Rod does not melt to 50 mB");

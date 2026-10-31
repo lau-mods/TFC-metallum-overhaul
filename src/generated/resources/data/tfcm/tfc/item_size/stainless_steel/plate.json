@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "ingredient": {
+    "tag": "c:plates/stainless_steel"
+  },
+  "size": "normal",
+  "weight": "medium"
+}

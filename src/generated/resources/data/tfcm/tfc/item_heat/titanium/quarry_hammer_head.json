@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 1020.0,
-  "heat_capacity": 6.666667,
+  "heat_capacity": 26.666668,
   "ingredient": {
     "item": "tfcm:metal/quarry_hammer_head/titanium"
   },

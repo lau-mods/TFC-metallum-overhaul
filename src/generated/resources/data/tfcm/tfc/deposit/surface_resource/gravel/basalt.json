@@ -4,8 +4,8 @@
   },
   "loot_table": "tfcm:surface_resource/gravel/basalt",
   "model_stages": [
-    "tfc:item/pan/full",
-    "tfc:item/pan/half",
-    "tfc:item/pan/empty"
+    "tfcm:item/pan/gravel/basalt_full",
+    "tfcm:item/pan/gravel/basalt_half",
+    "tfcm:item/pan/empty"
   ]
 }

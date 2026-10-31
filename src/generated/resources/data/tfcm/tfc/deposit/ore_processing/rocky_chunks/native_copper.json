@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/native_copper",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/native_copper",
-    "tfcm:item/ore_processing/rocky_chunks/native_copper",
-    "tfcm:item/ore_processing/rocky_chunks/native_copper"
+    "tfcm:item/pan/rocky_chunks/native_copper_full",
+    "tfcm:item/pan/rocky_chunks/native_copper_half",
+    "tfcm:item/pan/empty"
   ]
 }

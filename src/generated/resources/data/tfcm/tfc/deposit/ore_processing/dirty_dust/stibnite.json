@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/stibnite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/stibnite",
-    "tfcm:item/ore_processing/dirty_dust/stibnite",
-    "tfcm:item/ore_processing/dirty_dust/stibnite"
+    "tfcm:item/pan/dirty_dust/stibnite_full",
+    "tfcm:item/pan/dirty_dust/stibnite_half",
+    "tfcm:item/pan/empty"
   ]
 }

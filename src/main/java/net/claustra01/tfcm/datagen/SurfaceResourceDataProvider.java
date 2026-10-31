@@ -100,7 +100,8 @@ public final class SurfaceResourceDataProvider implements DataProvider {
 
             String lootTable = "tfcm:surface_resource/gravel/" + rock.id();
             files.add(save(output, data, "tfcm/tfc/deposit/surface_resource/gravel/" + rock.id(),
-                    deposit("tfc:rock/gravel/" + rock.id(), lootTable)));
+                    deposit("tfc:rock/gravel/" + rock.id(), lootTable, panStages(output, files, assets,
+                            "gravel/" + rock.id(), "tfc:block/rock/gravel/" + rock.id()))));
             JsonObject gravel = loot();
             JsonArray gravelPools = gravel.getAsJsonArray("pools");
             gravelPools.add(pool("copper_powder_50_percent", powder("native_copper"), 0.50f));
@@ -114,7 +115,8 @@ public final class SurfaceResourceDataProvider implements DataProvider {
         for (SandOutput sand : SANDS) {
             String lootTable = "tfcm:surface_resource/sand/" + sand.id();
             files.add(save(output, data, "tfcm/tfc/deposit/surface_resource/sand/" + sand.id(),
-                    deposit("tfc:sand/" + sand.id(), lootTable)));
+                    deposit("tfc:sand/" + sand.id(), lootTable, panStages(output, files, assets,
+                            "sand/" + sand.id(), "tfc:block/sand/" + sand.id()))));
             JsonObject loot = loot();
             JsonArray pools = loot.getAsJsonArray("pools");
             for (int index = 0; index < sand.outputs().size(); index++) {
@@ -124,10 +126,12 @@ public final class SurfaceResourceDataProvider implements DataProvider {
             files.add(save(output, data, "tfcm/loot_table/surface_resource/sand/" + sand.id(), loot));
         }
 
+        files.add(save(output, assets, "tfcm/models/item/pan/empty", emptyPan()));
         files.add(save(output, assets, "tfcm/models/item/ore_processing/rock_powder",
                 model("tfcm:item/ore_processing/rock_powder")));
         files.add(save(output, data, "tfcm/tfc/deposit/surface_resource/rock_powder",
-                deposit("tfcm:ore_processing/rock_powder", "tfcm:surface_resource/rock_powder")));
+                deposit("tfcm:ore_processing/rock_powder", "tfcm:surface_resource/rock_powder",
+                        panStages(output, files, assets, "rock_powder", "tfcm:item/ore_processing/rock_powder"))));
         JsonObject rockPowder = loot();
         JsonArray pools = rockPowder.getAsJsonArray("pools");
         pools.add(pool("black_sand_pile_15_percent", "tfcm:ore_processing/sand_pile/black", 0.15f));
@@ -192,17 +196,37 @@ public final class SurfaceResourceDataProvider implements DataProvider {
         return null;
     }
 
-    private static JsonObject deposit(String ingredientItem, String lootTable) {
+    private static JsonObject deposit(String ingredientItem, String lootTable, JsonArray stages) {
         JsonObject json = new JsonObject();
         JsonObject ingredient = new JsonObject();
         ingredient.addProperty("item", ingredientItem);
         json.add("ingredient", ingredient);
         json.addProperty("loot_table", lootTable);
-        JsonArray stages = new JsonArray();
-        stages.add("tfc:item/pan/full");
-        stages.add("tfc:item/pan/half");
-        stages.add("tfc:item/pan/empty");
         json.add("model_stages", stages);
+        return json;
+    }
+
+    /** Saves the Pan models of one material and returns the stages a Deposit shows them in. */
+    static JsonArray panStages(CachedOutput output, List<CompletableFuture<?>> files, Path assets, String name,
+            String material) {
+        JsonArray stages = new JsonArray();
+        for (String stage : List.of("full", "half")) {
+            JsonObject textures = new JsonObject();
+            textures.addProperty("material", material);
+            JsonObject model = new JsonObject();
+            model.addProperty("parent", "tfc:item/pan/" + stage);
+            model.add("textures", textures);
+            files.add(DataProvider.saveStable(output, model,
+                    assets.resolve("tfcm/models/item/pan/" + name + "_" + stage + ".json")));
+            stages.add("tfcm:item/pan/" + name + "_" + stage);
+        }
+        stages.add("tfcm:item/pan/empty");
+        return stages;
+    }
+
+    private static JsonObject emptyPan() {
+        JsonObject json = new JsonObject();
+        json.addProperty("parent", "tfc:item/pan/empty");
         return json;
     }
 

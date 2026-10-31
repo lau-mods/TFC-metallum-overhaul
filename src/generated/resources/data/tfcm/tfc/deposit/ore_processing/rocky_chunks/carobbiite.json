@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/carobbiite",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/carobbiite",
-    "tfcm:item/ore_processing/rocky_chunks/carobbiite",
-    "tfcm:item/ore_processing/rocky_chunks/carobbiite"
+    "tfcm:item/pan/rocky_chunks/carobbiite_full",
+    "tfcm:item/pan/rocky_chunks/carobbiite_half",
+    "tfcm:item/pan/empty"
   ]
 }

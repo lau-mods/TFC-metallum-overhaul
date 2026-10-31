@@ -6,7 +6,7 @@
     }
   ],
   "forging_temperature": 921.0,
-  "heat_capacity": 12.5,
+  "heat_capacity": 42.5,
   "ingredient": {
     "item": "tfcm:metal/quarry_hammer/netherite"
   },

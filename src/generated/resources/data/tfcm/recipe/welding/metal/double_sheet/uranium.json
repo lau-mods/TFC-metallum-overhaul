@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/uranium"
   },
-  "second_input": {
-    "tag": "c:sheets/uranium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/uranium"
   },
-  "tier": 3
+  "second_input": {
+    "tag": "c:sheets/uranium"
+  },
+  "tier": 2
 }

@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:ingots/draconium"
   },
-  "second_input": {
-    "tag": "c:ingots/draconium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_ingot/draconium"
   },
-  "tier": 7
+  "second_input": {
+    "tag": "c:ingots/draconium"
+  },
+  "tier": 6
 }

@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/uraninite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/uraninite",
-    "tfcm:item/ore_processing/dirty_dust/uraninite",
-    "tfcm:item/ore_processing/dirty_dust/uraninite"
+    "tfcm:item/pan/dirty_dust/uraninite_full",
+    "tfcm:item/pan/dirty_dust/uraninite_half",
+    "tfcm:item/pan/empty"
   ]
 }

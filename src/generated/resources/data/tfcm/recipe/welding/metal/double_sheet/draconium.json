@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:sheets/draconium"
   },
-  "second_input": {
-    "tag": "c:sheets/draconium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_sheet/draconium"
   },
-  "tier": 7
+  "second_input": {
+    "tag": "c:sheets/draconium"
+  },
+  "tier": 6
 }

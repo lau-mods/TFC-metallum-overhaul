@@ -28,6 +28,10 @@ public final class MaterialDataProvider implements DataProvider {
         for (MaterialPart part : MaterialPart.values()) {
             files.add(save(output, data, "tfcm/tfc/item_size/material/" + part.id(), size(part)));
         }
+        // the assembled recipes in crafting/material replace these
+        for (String recipe : List.of("minecraft/recipe/bow", "minecraft/recipe/crossbow", "tfc/recipe/crafting/arrow")) {
+            files.add(save(output, data, recipe, ProcessingDataProvider.disabledRecipe()));
+        }
         files.add(save(output, data, "tfcm/tfc/item_size/material/plant_block", size("tfcm:plant_block", "large", "medium")));
         files.add(save(output, assets, "tfcm/models/item/plant_block", blockItemModel()));
         files.add(save(output, assets, "tfcm/blockstates/plant_block", blockState()));

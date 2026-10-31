@@ -67,6 +67,12 @@ public final class TFCMMaterialGameTests {
                     null, null, knife.getDefaultInstance());
             require(count(handDrops, MaterialPart.PLANT_FIBER) == 1, "Grass by hand did not yield one plant fiber");
             require(count(knifeDrops, MaterialPart.PLANT_FIBER) == 2, "Grass with a knife did not yield two plant fibers");
+            Block tfcGrass = BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath("tfc", "plant/bluegrass"));
+            require(count(Block.getDrops(tfcGrass.defaultBlockState(), helper.getLevel(), grassPos, null, null,
+                    knife.getDefaultInstance()), MaterialPart.PLANT_FIBER) == 2, "TFC grass did not yield plant fiber");
+            Block notGrass = BuiltInRegistries.BLOCK.get(ResourceLocation.fromNamespaceAndPath("tfc", "plant/goldenrod"));
+            require(count(Block.getDrops(notGrass.defaultBlockState(), helper.getLevel(), grassPos, null, null,
+                    knife.getDefaultInstance()), MaterialPart.PLANT_FIBER) == 0, "A flower yielded plant fiber");
 
             assertKnifeCraft(helper, "bamboo_fiber", MaterialPart.BAMBOO_FIBER, 4, Items.BAMBOO.getDefaultInstance());
             assertCraft(helper, "bamboo_string", MaterialPart.BAMBOO_STRING, 1,

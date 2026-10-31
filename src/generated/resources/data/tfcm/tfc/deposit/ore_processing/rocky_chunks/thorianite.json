@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/thorianite",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/thorianite",
-    "tfcm:item/ore_processing/rocky_chunks/thorianite",
-    "tfcm:item/ore_processing/rocky_chunks/thorianite"
+    "tfcm:item/pan/rocky_chunks/thorianite_full",
+    "tfcm:item/pan/rocky_chunks/thorianite_half",
+    "tfcm:item/pan/empty"
   ]
 }

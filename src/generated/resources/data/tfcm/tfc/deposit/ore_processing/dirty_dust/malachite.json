@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/malachite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/malachite",
-    "tfcm:item/ore_processing/dirty_dust/malachite",
-    "tfcm:item/ore_processing/dirty_dust/malachite"
+    "tfcm:item/pan/dirty_dust/malachite_full",
+    "tfcm:item/pan/dirty_dust/malachite_half",
+    "tfcm:item/pan/empty"
   ]
 }

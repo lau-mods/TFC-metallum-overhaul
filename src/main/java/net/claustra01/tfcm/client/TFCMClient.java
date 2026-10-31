@@ -9,18 +9,21 @@ import net.dries007.tfc.common.items.TFCFishingRodItem;
 import net.dries007.tfc.common.items.JavelinItem;
 import net.dries007.tfc.client.extensions.ItemRendererExtension;
 import net.dries007.tfc.client.render.blockentity.JavelinItemRenderer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.item.ItemProperties;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.monster.Monster;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.dries007.tfc.client.extensions.FluidRendererExtension;
+import net.neoforged.neoforge.client.event.ModelEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 
 @EventBusSubscriber(modid = TFCM.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
@@ -59,6 +62,15 @@ public final class TFCMClient {
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
         TFCMBlocks.CHROMITE_ORES.values().forEach(
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
+    }
+
+    // TFC only registers the Pan models of its own deposits
+    @SubscribeEvent
+    public static void registerPanModels(ModelEvent.RegisterAdditional event) {
+        Minecraft.getInstance().getResourceManager().listResources("models/item/pan",
+                file -> file.getNamespace().equals(TFCM.MOD_ID) && file.getPath().endsWith(".json")).keySet()
+                .forEach(file -> event.register(ModelResourceLocation.standalone(file.withPath(path -> path
+                        .substring("models/".length(), path.length() - ".json".length())))));
     }
 
     @SubscribeEvent

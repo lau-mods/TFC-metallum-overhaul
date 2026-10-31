@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:ingots/antimony"
   },
-  "second_input": {
-    "tag": "c:ingots/antimony"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_ingot/antimony"
   },
-  "tier": 1
+  "second_input": {
+    "tag": "c:ingots/antimony"
+  },
+  "tier": 0
 }

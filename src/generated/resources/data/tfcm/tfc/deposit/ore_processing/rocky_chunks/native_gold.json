@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/native_gold",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/native_gold",
-    "tfcm:item/ore_processing/rocky_chunks/native_gold",
-    "tfcm:item/ore_processing/rocky_chunks/native_gold"
+    "tfcm:item/pan/rocky_chunks/native_gold_full",
+    "tfcm:item/pan/rocky_chunks/native_gold_half",
+    "tfcm:item/pan/empty"
   ]
 }

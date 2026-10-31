@@ -368,7 +368,8 @@ public final class TFCMAreaToolGameTests {
                 for (AreaToolMetal metal : AreaToolMetal.values()) {
                     boolean castingMatchesTfc = recipeExists(helper,
                             "casting/" + metal.id() + "_" + type.id() + "_head") == metal.isCastable();
-                    require(recipeExists(helper, "anvil/metal/" + type.id() + "_head/" + metal.id())
+                    require(recipeExists(helper, (type == AreaToolType.QUARRY_HAMMER ? "welding" : "anvil")
+                            + "/metal/" + type.id() + "_head/" + metal.id())
                             && castingMatchesTfc && recipeExists(helper,
                                     "crafting/metal/" + type.id() + "/" + metal.id()),
                             "Area tool head processing or assembly is missing");
@@ -398,14 +399,15 @@ public final class TFCMAreaToolGameTests {
                             "tfcm:heating/metal/" + type.id() + "_head/" + metal.id())).orElseThrow().value();
                     HeatingRecipe toolHeating = (HeatingRecipe) manager.byKey(ResourceLocation.parse(
                             "tfcm:heating/metal/" + type.id() + "/" + metal.id())).orElseThrow().value();
-                    require(headHeating.assembleFluid(head).getAmount() == 200
-                            && toolHeating.assembleFluid(finished).getAmount() == 250, "Area tool metal amounts");
+                    require(headHeating.assembleFluid(head).getAmount() == (type == AreaToolType.QUARRY_HAMMER ? 800 : 200)
+                            && toolHeating.assembleFluid(finished).getAmount() == (type == AreaToolType.QUARRY_HAMMER ? 850 : 250),
+                            "Area tool metal amounts");
                     if (metal.isCastable()) {
                         ItemStack moldStack = TFCMItems.AREA_TOOL_MOLDS.get(type).toStack();
                         IMold mold = IMold.get(moldStack);
                         require(mold != null && mold.fill(new FluidStack(BuiltInRegistries.FLUID.get(ResourceLocation.parse(
-                                metal.namespace() + ":metal/" + metal.id())), 200), FluidAction.EXECUTE) == 200,
-                                "Head mold must hold 200 mB");
+                                metal.namespace() + ":metal/" + metal.id())), type.headAmount()), FluidAction.EXECUTE) == type.headAmount(),
+                                "Head mold must hold the metal of its Head");
                         HeatCapability.setTemperature(moldStack, 0);
                         CastingRecipe casting = (CastingRecipe) manager.byKey(ResourceLocation.parse(
                                 "tfcm:casting/" + metal.id() + "_" + type.id() + "_head")).orElseThrow().value();

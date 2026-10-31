@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/rocky_chunks/cassiterite",
   "model_stages": [
-    "tfcm:item/ore_processing/rocky_chunks/cassiterite",
-    "tfcm:item/ore_processing/rocky_chunks/cassiterite",
-    "tfcm:item/ore_processing/rocky_chunks/cassiterite"
+    "tfcm:item/pan/rocky_chunks/cassiterite_full",
+    "tfcm:item/pan/rocky_chunks/cassiterite_half",
+    "tfcm:item/pan/empty"
   ]
 }

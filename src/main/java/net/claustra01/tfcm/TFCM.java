@@ -1,10 +1,13 @@
 package net.claustra01.tfcm;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.function.Supplier;
 
 import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
 import net.claustra01.tfcm.common.condition.OreEnabledCondition;
+import net.claustra01.tfcm.common.processing.ProcessingForm;
+import net.claustra01.tfcm.common.processing.ProcessingSeries;
 import net.claustra01.tfcm.config.TFCMConfig;
 import net.claustra01.tfcm.compat.firmalife.FirmaLifeCompat;
 import net.claustra01.tfcm.compat.hotornot.HotOrNotCompat;
@@ -19,6 +22,7 @@ import net.claustra01.tfcm.worldgen.YamlWorldgenLoader;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.capabilities.ItemCapabilities;
 import net.dries007.tfc.util.data.Deposit;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -26,6 +30,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.bus.api.IEventBus;
@@ -93,11 +98,17 @@ public final class TFCM {
     private static void addReloadListeners(AddReloadListenerEvent event) {
         event.addListener((ResourceManagerReloadListener) resourceManager -> {
             var deposits = new HashMap<>(Deposit.MANAGER.getElements());
-            if (!ModList.get().isLoaded("firmalife")) {
-                deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
-                        "ore_processing/rocky_chunks/chromite"));
-                deposits.remove(ResourceLocation.fromNamespaceAndPath(MOD_ID,
-                        "ore_processing/dirty_dust/chromite"));
+            // Chromite's items only exist with FirmaLife, and TFC's Deposit data ignores load conditions
+            if (ModList.get().isLoaded("firmalife") && TFCMConfig.isOreEnabled("chromite")) {
+                for (ProcessingForm form : List.of(ProcessingForm.ROCKY_CHUNKS, ProcessingForm.DIRTY_DUST)) {
+                    String name = form.id() + "/chromite";
+                    deposits.put(ResourceLocation.fromNamespaceAndPath(MOD_ID, "ore_processing/" + name), new Deposit(
+                            Ingredient.of(TFCMItems.ORE_PROCESSING.get(ProcessingSeries.CHROMITE).get(form).get()),
+                            ResourceKey.create(Registries.LOOT_TABLE, ResourceLocation.fromNamespaceAndPath(MOD_ID, "ore_processing/" + name)),
+                            List.of(ResourceLocation.fromNamespaceAndPath(MOD_ID, "item/pan/" + name + "_full"),
+                                    ResourceLocation.fromNamespaceAndPath(MOD_ID, "item/pan/" + name + "_half"),
+                                    ResourceLocation.fromNamespaceAndPath(MOD_ID, "item/pan/empty"))));
+                }
             }
             for (String ore : TFCMConfig.oreIds()) {
                 if (TFCMConfig.isOreEnabled(ore)) continue;

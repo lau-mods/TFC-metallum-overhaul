@@ -9,12 +9,12 @@
   "first_input": {
     "tag": "c:ingots/zirconium"
   },
-  "second_input": {
-    "tag": "c:ingots/zirconium"
-  },
   "result": {
     "count": 1,
     "id": "tfcm:metal/double_ingot/zirconium"
   },
-  "tier": 2
+  "second_input": {
+    "tag": "c:ingots/zirconium"
+  },
+  "tier": 1
 }

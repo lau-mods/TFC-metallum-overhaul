@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "ingredient": {
+    "tag": "c:nuggets/stainless_steel"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

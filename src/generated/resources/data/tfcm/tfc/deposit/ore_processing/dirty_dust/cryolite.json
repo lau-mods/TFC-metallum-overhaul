@@ -10,8 +10,8 @@
   },
   "loot_table": "tfcm:ore_processing/dirty_dust/cryolite",
   "model_stages": [
-    "tfcm:item/ore_processing/dirty_dust/cryolite",
-    "tfcm:item/ore_processing/dirty_dust/cryolite",
-    "tfcm:item/ore_processing/dirty_dust/cryolite"
+    "tfcm:item/pan/dirty_dust/cryolite_full",
+    "tfcm:item/pan/dirty_dust/cryolite_half",
+    "tfcm:item/pan/empty"
   ]
 }
