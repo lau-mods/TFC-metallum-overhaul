@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_iridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "heat_capacity": 0.57142866,
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/native_iridium"
+  }
+}

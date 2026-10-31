@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfc:ore/borax"
-  },
-  "heat_capacity": 1.333,
-  "forging_temperature": 108,
-  "welding_temperature": 145
-}

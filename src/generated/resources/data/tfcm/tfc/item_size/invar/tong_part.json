@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfchotornot"
+    }
+  ],
+  "ingredient": {
+    "tag": "tfcm:hotornot/tong_part/invar"
+  },
+  "size": "large",
+  "weight": "medium"
+}

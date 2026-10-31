@@ -1,8 +1,0 @@
-{
-  "parent": "tfc:block/ore",
-  "textures": {
-    "all": "minecraft:block/netherrack",
-    "particle": "minecraft:block/netherrack",
-    "overlay": "tfc:block/ore/rich_malachite"
-  }
-}

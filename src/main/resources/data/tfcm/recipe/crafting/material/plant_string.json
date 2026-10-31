@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:plant_fiber/grass"
+    },
+    {
+      "tag": "c:plant_fiber/grass"
+    },
+    {
+      "tag": "c:plant_fiber/grass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:plant_string"
+  }
+}

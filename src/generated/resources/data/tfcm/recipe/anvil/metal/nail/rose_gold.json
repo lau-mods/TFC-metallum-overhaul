@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/rose_gold"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/nail/rose_gold"
+  },
+  "rules": [
+    "punch_last",
+    "hit_not_last",
+    "bend_not_last"
+  ]
+}

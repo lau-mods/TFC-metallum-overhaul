@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/tong_part/titanium",
+      "required": false
+    }
+  ],
+  "replace": false
+}

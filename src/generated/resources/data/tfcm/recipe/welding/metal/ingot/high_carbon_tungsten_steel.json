@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/tungsten"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/ingot/high_carbon_tungsten_steel"
+  },
+  "second_input": {
+    "item": "tfc:metal/ingot/black_steel"
+  },
+  "tier": 6
+}

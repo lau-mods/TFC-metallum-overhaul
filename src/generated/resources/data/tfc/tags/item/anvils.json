@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/anvil/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/anvil/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/anvil/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/anvil/tungsten_steel",
+      "required": false
+    }
+  ]
+}

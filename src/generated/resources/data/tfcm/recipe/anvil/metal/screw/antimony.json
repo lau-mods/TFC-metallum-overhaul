@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/antimony"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/antimony"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ],
+  "tier": 1
+}

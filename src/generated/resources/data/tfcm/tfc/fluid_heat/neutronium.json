@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "fluid": "tfcm:metal/neutronium",
+  "melt_temperature": 3000,
+  "specific_heat_capacity": 0.008571429
+}

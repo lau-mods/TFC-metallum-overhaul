@@ -1,0 +1,73 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/shovel/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/tungsten_steel",
+      "required": false
+    }
+  ]
+}

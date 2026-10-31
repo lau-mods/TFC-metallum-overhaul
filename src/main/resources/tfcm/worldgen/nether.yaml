@@ -1,0 +1,25 @@
+# TFCM nether world generation. Copied to config/tfcm/nether.yaml on first start and never overwritten.
+# Delete the file in config/tfcm to get this default back on the next start.
+# Nothing generates in the Nether until an entry is added here, for example:
+#  - id: tfcm:veins/nether_native_gold
+#    blocks:
+#      - block: tfcm:ore/{tier}_native_gold/netherrack
+#    type: tfc:cluster_vein
+#    ymax: 130
+#    ymin: 40
+#    rarity: 32
+#    density: 0.25
+#    size: 40
+#    random_name: nether_native_gold
+#    tier:
+#      poor: 10
+#      normal: 25
+#      rich: 65
+#    indicator:
+#      block: tfc:ore/small_native_gold
+#      rarity: 0
+#      depth: 35
+#      underground_rarity: 1
+#      underground_count: 5
+veins: []
+geodes: []

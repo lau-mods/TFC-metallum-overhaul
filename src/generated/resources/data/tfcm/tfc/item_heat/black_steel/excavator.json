@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 891.00006,
+  "heat_capacity": 7.142857,
+  "ingredient": {
+    "item": "tfcm:metal/excavator/black_steel"
+  },
+  "welding_temperature": 1188.0
+}

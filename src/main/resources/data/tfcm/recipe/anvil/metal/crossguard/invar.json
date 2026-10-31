@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:rods/invar"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:metal/crossguard/invar"
+  },
+  "tier": 3,
+  "rules": [
+    "bend_last",
+    "draw_second_last",
+    "draw_third_last"
+  ]
+}

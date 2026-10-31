@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/screw/arcane"
+  },
+  "welding_temperature": 752.0
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_obsidian"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/refined_obsidian"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

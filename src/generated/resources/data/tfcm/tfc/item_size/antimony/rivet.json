@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rivet/antimony"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "bismuthinite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/bismuthinite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/bismuthinite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/bismuthinite_full",
+    "tfcm:item/pan/dirty_dust/bismuthinite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

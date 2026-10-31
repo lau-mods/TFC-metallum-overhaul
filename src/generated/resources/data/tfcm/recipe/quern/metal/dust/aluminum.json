@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/aluminum"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/aluminum"
+  }
+}

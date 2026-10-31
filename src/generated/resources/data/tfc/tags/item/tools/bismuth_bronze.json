@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/mining_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/bismuth_bronze",
+      "required": false
+    }
+  ]
+}

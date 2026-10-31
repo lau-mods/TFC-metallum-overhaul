@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/saltpeter"
+      },
+      {
+        "model": "tfcm:block/groundcover/saltpeter",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/saltpeter",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/saltpeter",
+        "y": 270
+      }
+    ]
+  }
+}

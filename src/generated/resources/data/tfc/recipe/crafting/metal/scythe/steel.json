@@ -1,0 +1,44 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:handle/long"
+    },
+    "K": {
+      "tag": "c:handle/saw"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/steel"
+    },
+    "R": {
+      "tag": "c:rings/steel"
+    },
+    "X": {
+      "item": "tfc:metal/scythe_blade/steel"
+    }
+  },
+  "pattern": [
+    " NX",
+    "GHR",
+    "RLK"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/scythe/steel"
+    }
+  }
+}

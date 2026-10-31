@@ -1,0 +1,26 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "key": {
+    "S": {
+      "tag": "c:bamboo_stick"
+    },
+    "K": {
+      "tag": "c:tools/knife"
+    }
+  },
+  "pattern": [
+    "K",
+    "S"
+  ],
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 4,
+    "id": "tfcm:bamboo_fiber"
+  }
+}

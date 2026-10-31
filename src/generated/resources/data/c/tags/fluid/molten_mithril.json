@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "values": [
+    "tfcm:metal/mithril",
+    "tfcm:metal/flowing_mithril"
+  ]
+}

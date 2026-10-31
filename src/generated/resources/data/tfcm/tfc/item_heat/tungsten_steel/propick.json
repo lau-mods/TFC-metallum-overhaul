@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 5.0,
+  "ingredient": {
+    "item": "tfcm:metal/propick/tungsten_steel"
+  },
+  "welding_temperature": 1228.0
+}

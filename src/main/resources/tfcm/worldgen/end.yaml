@@ -1,0 +1,5 @@
+# TFCM end world generation. Copied to config/tfcm/end.yaml on first start and never overwritten.
+# Delete the file in config/tfcm to get this default back on the next start.
+# Nothing generates in the End until an entry is added here.
+veins: []
+geodes: []

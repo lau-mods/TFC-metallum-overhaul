@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:sheets/titanium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/unfinished_boots/titanium"
+  },
+  "rules": [
+    "bend_last",
+    "bend_second_last",
+    "shrink_third_last"
+  ],
+  "tier": 5
+}

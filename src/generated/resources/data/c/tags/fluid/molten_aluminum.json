@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "values": [
+    "tfcm:metal/aluminum",
+    "tfcm:metal/flowing_aluminum"
+  ]
+}

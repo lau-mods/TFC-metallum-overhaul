@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "all":  "tfcm:block/metal/block/electrum"
-                 },
-    "parent":  "minecraft:block/cube_all"
-}

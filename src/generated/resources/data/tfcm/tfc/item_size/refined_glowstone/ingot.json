@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_glowstone"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ingot/refined_glowstone"
+  },
+  "size": "large",
+  "weight": "medium"
+}

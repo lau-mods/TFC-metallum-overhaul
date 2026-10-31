@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tfcm:item/metal/excavator_head/black_bronze"
+  }
+}

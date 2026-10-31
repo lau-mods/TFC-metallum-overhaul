@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_silver"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/native_silver"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/native_silver",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/native_silver_full",
+    "tfcm:item/pan/rocky_chunks/native_silver_half",
+    "tfcm:item/pan/empty"
+  ]
+}

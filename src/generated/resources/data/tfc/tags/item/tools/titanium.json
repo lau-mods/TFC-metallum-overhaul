@@ -1,0 +1,81 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/tuyere/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/titanium",
+      "required": false
+    }
+  ]
+}

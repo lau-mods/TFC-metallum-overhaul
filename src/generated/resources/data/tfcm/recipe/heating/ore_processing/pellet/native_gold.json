@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_gold"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/native_gold"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfc:metal/gold"
+  },
+  "temperature": 1060
+}

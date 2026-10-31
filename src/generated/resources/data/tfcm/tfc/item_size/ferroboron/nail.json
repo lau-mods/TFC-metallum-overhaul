@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/ferroboron"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

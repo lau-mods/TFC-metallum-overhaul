@@ -1,0 +1,7 @@
+{
+  "parent": "tfc:block/groundcover/native_copper",
+  "textures": {
+    "0": "tfcm:item/ore/small_thorianite",
+    "particle": "tfcm:item/ore/small_thorianite"
+  }
+}

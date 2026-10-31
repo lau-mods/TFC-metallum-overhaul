@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/draconium_stairs"
+  },
+  "size": "small",
+  "weight": "light"
+}

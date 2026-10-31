@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/red_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/red_steel"
+  }
+}

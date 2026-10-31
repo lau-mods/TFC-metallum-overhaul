@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "minecraft:stick"
+    },
+    "K": {
+      "tag": "c:string"
+    }
+  },
+  "pattern": [
+    "KL",
+    "LK"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:long_stick"
+  }
+}

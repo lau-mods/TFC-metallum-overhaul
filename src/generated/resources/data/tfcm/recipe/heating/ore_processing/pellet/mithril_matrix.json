@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "mithril_matrix"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/mithril_matrix"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfcm:metal/mithril"
+  },
+  "temperature": 940
+}

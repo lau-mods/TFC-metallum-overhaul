@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/tough_alloy"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

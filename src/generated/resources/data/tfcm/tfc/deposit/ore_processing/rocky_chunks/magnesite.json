@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "magnesite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/magnesite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/magnesite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/magnesite_full",
+    "tfcm:item/pan/rocky_chunks/magnesite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

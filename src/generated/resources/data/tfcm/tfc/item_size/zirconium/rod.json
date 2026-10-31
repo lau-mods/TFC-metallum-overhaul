@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/zirconium"
+  },
+  "size": "normal",
+  "weight": "light"
+}

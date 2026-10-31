@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 5.7142863,
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/iridium"
+  },
+  "welding_temperature": 1228.0
+}

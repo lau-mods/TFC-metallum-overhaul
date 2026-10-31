@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "forging_temperature": 1113.0,
+  "heat_capacity": 17.142859,
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/zircaloy"
+  },
+  "welding_temperature": 1484.0
+}

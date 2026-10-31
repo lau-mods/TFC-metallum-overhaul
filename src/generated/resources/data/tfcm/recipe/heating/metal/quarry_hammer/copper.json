@@ -1,0 +1,12 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/quarry_hammer/copper"
+  },
+  "result_fluid": {
+    "amount": 850,
+    "id": "tfc:metal/copper"
+  },
+  "temperature": 1080.0,
+  "use_durability": true
+}

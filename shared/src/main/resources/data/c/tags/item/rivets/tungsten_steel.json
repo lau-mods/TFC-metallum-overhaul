@@ -1,8 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/rivet/tungsten_steel",
-                       "required":  false
-                   }
-               ]
-}

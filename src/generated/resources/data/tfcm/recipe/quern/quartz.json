@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "quartz"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfcm:ore/quartz"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfcm:powder/quartz"
+  }
+}

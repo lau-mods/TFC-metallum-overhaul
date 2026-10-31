@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 648.0,
+  "heat_capacity": 24.285715,
+  "ingredient": {
+    "item": "tfcm:metal/quarry_hammer/copper"
+  },
+  "welding_temperature": 864.0
+}

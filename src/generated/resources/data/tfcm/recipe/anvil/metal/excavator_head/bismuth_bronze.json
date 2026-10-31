@@ -1,0 +1,17 @@
+{
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:sheets/bismuth_bronze"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/excavator_head/bismuth_bronze"
+  },
+  "rules": [
+    "bend_last",
+    "upset_second_last",
+    "draw_third_last"
+  ],
+  "tier": 2
+}

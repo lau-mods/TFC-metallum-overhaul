@@ -1,9 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:wires/naquadah"
-                   },
-    "heat_capacity":  1.428,
-    "forging_temperature":  1038,
-    "welding_temperature":  1384
-}
-

@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/marble",
+    "overlay": "tfcm:block/ore/quartz",
+    "particle": "tfc:block/rock/raw/marble"
+  }
+}

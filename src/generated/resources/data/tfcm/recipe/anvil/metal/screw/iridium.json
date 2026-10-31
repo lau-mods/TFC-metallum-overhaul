@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/iridium"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/iridium"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ],
+  "tier": 3
+}

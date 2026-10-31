@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/axe_head/tungsten_steel"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/tungsten_steel"
+  },
+  "temperature": 1535
+}

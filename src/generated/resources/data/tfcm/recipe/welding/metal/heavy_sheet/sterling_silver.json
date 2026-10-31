@@ -1,0 +1,13 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/sterling_silver"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/sterling_silver"
+  },
+  "second_input": {
+    "tag": "c:sheets/sterling_silver"
+  }
+}

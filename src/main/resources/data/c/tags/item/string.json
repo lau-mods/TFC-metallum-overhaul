@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:leather_strap",
+    "tfcm:plant_string",
+    "tfcm:bamboo_string",
+    "minecraft:string",
+    "tfcm:leather_string"
+  ]
+}

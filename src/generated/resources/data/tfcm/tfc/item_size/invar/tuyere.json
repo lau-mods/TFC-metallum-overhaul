@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/tuyere/invar"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

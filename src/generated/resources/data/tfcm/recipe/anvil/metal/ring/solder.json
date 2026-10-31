@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/solder"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:metal/ring/solder"
+  },
+  "rules": [
+    "hit_last",
+    "draw_second_last",
+    "draw_third_last"
+  ],
+  "tier": 3
+}

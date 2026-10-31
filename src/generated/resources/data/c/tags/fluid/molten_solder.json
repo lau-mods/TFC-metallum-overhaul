@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "values": [
+    "tfcm:metal/solder",
+    "tfcm:metal/flowing_solder"
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:double_ingots/aluminum"
-  },
-  "heat_capacity": 2.857572,
-  "forging_temperature": 1044,
-  "welding_temperature": 1392
-}

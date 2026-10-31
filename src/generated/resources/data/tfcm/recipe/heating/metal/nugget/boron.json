@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nugget/boron"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfcm:metal/boron"
+  },
+  "temperature": 2076
+}

@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/constantan"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tfcm:metal/nugget/constantan"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_gold"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/briquet/native_gold"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfcm:ore_processing/pellet/native_gold"
+  }
+}

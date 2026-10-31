@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/pyrite"
+      },
+      {
+        "model": "tfcm:block/groundcover/pyrite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/pyrite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/pyrite",
+        "y": 270
+      }
+    ]
+  }
+}

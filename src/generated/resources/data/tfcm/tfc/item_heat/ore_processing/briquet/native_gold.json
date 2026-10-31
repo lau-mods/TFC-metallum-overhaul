@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_gold"
+    }
+  ],
+  "heat_capacity": 1.3333333,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/native_gold"
+  }
+}

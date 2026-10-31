@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/marble",
+    "overlay": "tfcm:block/ore/rich_magnesite",
+    "particle": "tfc:block/rock/raw/marble"
+  }
+}

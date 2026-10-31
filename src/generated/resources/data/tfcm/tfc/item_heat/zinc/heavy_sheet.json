@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 252.00002,
+  "heat_capacity": 28.57143,
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/zinc"
+  },
+  "welding_temperature": 336.0
+}

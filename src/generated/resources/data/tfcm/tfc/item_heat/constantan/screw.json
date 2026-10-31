@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "forging_temperature": 750.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/screw/constantan"
+  },
+  "welding_temperature": 1000.0
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "carobbiite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/carobbiite"
+  }
+}

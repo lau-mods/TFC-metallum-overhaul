@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "ingredient": {
+    "tag": "c:stamens/chromium"
+  },
+  "size": "small",
+  "weight": "light"
+}

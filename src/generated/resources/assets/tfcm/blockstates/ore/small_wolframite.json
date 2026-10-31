@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/wolframite"
+      },
+      {
+        "model": "tfcm:block/groundcover/wolframite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/wolframite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/wolframite",
+        "y": 270
+      }
+    ]
+  }
+}

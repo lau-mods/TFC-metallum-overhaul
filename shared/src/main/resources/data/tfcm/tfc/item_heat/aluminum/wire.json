@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:wires/aluminum"
-  },
-  "heat_capacity": 0.7145,
-  "forging_temperature": 1044,
-  "welding_temperature": 1392
-}

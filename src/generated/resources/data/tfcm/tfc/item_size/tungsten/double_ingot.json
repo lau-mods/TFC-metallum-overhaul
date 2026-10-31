@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/tungsten"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

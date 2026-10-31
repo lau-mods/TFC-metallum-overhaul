@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorianite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/thorianite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/thorianite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/thorianite_full",
+    "tfcm:item/pan/dirty_dust/thorianite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

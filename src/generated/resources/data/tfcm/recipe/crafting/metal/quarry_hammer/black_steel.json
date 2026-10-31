@@ -1,0 +1,40 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/black_steel"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/black_steel"
+    },
+    "R": {
+      "tag": "c:rings/black_steel"
+    },
+    "X": {
+      "item": "tfcm:metal/quarry_hammer_head/black_steel"
+    }
+  },
+  "pattern": [
+    " NX",
+    "GHR",
+    "RL "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfcm:metal/quarry_hammer/black_steel"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 162.0,
+  "heat_capacity": 0.85714287,
+  "ingredient": {
+    "item": "tfcm:metal/ring/bismuth"
+  },
+  "welding_temperature": 216.0
+}

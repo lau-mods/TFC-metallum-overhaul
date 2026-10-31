@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "wolframite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/wolframite"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/tungsten"
+  },
+  "temperature": 1535
+}

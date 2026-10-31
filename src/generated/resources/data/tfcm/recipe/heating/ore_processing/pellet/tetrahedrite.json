@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "tetrahedrite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/tetrahedrite"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfc:metal/copper"
+  },
+  "temperature": 1080
+}

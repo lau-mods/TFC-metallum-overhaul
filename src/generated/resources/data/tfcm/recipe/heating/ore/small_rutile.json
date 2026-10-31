@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "rutile"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore/small_rutile"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfcm:metal/titanium"
+  },
+  "temperature": 1700
+}

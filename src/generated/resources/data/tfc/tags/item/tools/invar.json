@@ -1,0 +1,81 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/tuyere/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/invar",
+      "required": false
+    }
+  ]
+}

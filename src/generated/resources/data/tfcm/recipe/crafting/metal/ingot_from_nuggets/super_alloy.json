@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "tag": "c:nuggets/super_alloy"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/ingot/super_alloy"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:sand/yellow"
+  },
+  "loot_table": "tfcm:surface_resource/sand/yellow",
+  "model_stages": [
+    "tfcm:item/pan/sand/yellow_full",
+    "tfcm:item/pan/sand/yellow_half",
+    "tfcm:item/pan/empty"
+  ]
+}

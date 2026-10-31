@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "heat_capacity": 1.2,
+  "ingredient": {
+    "item": "tfc:rock/loose/andesite"
+  }
+}

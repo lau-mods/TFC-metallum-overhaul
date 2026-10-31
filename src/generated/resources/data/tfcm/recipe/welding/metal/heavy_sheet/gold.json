@@ -1,0 +1,13 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/gold"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/gold"
+  },
+  "second_input": {
+    "tag": "c:sheets/gold"
+  }
+}

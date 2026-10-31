@@ -1,0 +1,201 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:ore/poor_native_platinum",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite",
+      "required": false
+    }
+  ]
+}

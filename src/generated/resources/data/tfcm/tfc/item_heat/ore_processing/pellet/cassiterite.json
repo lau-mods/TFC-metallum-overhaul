@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cassiterite"
+    }
+  ],
+  "heat_capacity": 1.4285715,
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/cassiterite"
+  }
+}

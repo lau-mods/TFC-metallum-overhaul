@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/nickel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/nickel"
+  }
+}

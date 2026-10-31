@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/magnesium"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tfcm:metal/nugget/magnesium"
+  }
+}

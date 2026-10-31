@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:heavy_sheets/ferroboron"
-  },
-  "heat_capacity": 14.286,
-  "forging_temperature": 900,
-  "welding_temperature": 1200
-}

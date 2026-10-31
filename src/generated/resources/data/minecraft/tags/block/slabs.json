@@ -1,0 +1,160 @@
+{
+  "values": [
+    {
+      "id": "tfcm:metal/block/compressed_iron_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/platinum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/naquadah_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/iridium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/osmium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/osmiridium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/mithril_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/arcane_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/refined_glowstone_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/refined_obsidian_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/antimony_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/titanium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/cobalt_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lithium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/aluminum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/constantan_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/invar_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/electrum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lead_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/uranium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/tungsten_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/solder_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/tungsten_steel_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/netherite_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/dawnstone_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/andesite_alloy_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/draconium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/awakened_draconium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/boron_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/thorium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/magnesium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/beryllium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/zirconium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/neutronium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/ferroboron_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/tough_alloy_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/zircaloy_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/hsla_steel_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/super_alloy_slab",
+      "required": false
+    }
+  ]
+}

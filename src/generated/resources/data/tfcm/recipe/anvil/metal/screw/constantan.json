@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/constantan"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/constantan"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ],
+  "tier": 1
+}

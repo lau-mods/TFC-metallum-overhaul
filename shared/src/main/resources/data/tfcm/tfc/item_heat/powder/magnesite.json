@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:metal/powder/magnesite"
-  },
-  "heat_capacity": 3.333,
-  "forging_temperature": 390,
-  "welding_temperature": 520
-}

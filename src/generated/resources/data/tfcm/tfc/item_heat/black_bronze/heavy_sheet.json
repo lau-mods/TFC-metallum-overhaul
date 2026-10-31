@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 642.0,
+  "heat_capacity": 17.142859,
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/black_bronze"
+  },
+  "welding_temperature": 856.0
+}

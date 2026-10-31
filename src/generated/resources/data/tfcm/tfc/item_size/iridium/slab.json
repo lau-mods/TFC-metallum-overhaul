@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/iridium_slab"
+  },
+  "size": "small",
+  "weight": "very_light"
+}

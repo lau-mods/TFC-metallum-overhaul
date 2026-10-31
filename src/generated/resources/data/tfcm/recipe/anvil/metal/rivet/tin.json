@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/tin"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/rivet/tin"
+  },
+  "rules": [
+    "draw_not_last",
+    "bend_any",
+    "hit_any"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "fluorite"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfcm:ore/fluorite"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfcm:powder/fluorite"
+  }
+}

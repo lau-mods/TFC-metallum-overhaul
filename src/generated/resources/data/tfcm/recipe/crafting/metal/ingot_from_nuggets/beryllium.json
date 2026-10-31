@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "key": {
+    "N": {
+      "tag": "c:nuggets/beryllium"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/ingot/beryllium"
+  }
+}

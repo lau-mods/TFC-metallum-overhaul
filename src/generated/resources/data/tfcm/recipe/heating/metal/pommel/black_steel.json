@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/pommel/black_steel"
+  },
+  "result_fluid": {
+    "amount": 24,
+    "id": "tfc:metal/black_steel"
+  },
+  "temperature": 1485.0
+}

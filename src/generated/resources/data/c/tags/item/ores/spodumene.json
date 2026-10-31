@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/spodumene/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/spodumene/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/spodumene/rich",
+      "required": false
+    }
+  ]
+}

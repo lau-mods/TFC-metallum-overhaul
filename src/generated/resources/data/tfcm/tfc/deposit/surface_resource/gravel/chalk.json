@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/chalk"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/chalk",
+  "model_stages": [
+    "tfcm:item/pan/gravel/chalk_full",
+    "tfcm:item/pan/gravel/chalk_half",
+    "tfcm:item/pan/empty"
+  ]
+}

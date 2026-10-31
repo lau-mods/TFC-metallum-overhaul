@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:ore/rich_native_osmium",
+      "required": false
+    }
+  ]
+}

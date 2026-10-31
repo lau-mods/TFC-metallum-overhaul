@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "forging_temperature": 772.2,
+  "heat_capacity": 5.7142863,
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/beryllium"
+  },
+  "welding_temperature": 1029.6
+}

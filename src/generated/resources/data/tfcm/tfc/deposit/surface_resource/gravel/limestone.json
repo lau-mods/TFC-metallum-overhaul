@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/limestone"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/limestone",
+  "model_stages": [
+    "tfcm:item/pan/gravel/limestone_full",
+    "tfcm:item/pan/gravel/limestone_half",
+    "tfcm:item/pan/empty"
+  ]
+}

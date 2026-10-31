@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/sheet/arcane"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfcm:metal/arcane"
+  },
+  "temperature": 940.0
+}

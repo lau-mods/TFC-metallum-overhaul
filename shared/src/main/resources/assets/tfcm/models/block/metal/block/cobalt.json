@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "all":  "tfcm:block/metal/block/cobalt"
-                 },
-    "parent":  "minecraft:block/cube_all"
-}

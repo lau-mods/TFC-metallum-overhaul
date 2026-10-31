@@ -1,0 +1,128 @@
+{
+  "values": [
+    {
+      "id": "#c:metal/powder/native_copper",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/native_gold",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/hematite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/native_silver",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/cassiterite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/bismuthinite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/garnierite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/malachite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/limonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/sphalerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/tetrahedrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/galena",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/magnesite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/bauxite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/uraninite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/chromite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/rutile",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/zircon",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/cobaltite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/stibnite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/native_platinum",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/wolframite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/thorianite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/native_iridium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/native_osmium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/spodumene",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/carobbiite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/native_naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/borax",
+      "required": false
+    }
+  ]
+}

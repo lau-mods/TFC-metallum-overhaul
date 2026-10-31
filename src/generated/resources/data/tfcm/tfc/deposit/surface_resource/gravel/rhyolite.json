@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/rhyolite"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/rhyolite",
+  "model_stages": [
+    "tfcm:item/pan/gravel/rhyolite_full",
+    "tfcm:item/pan/gravel/rhyolite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_gold"
+    }
+  ],
+  "type": "tfc:advanced_shapeless_crafting",
+  "ingredients": [
+    {
+      "tag": "c:tools/hammer"
+    },
+    {
+      "item": "tfc:ore/small_native_gold"
+    }
+  ],
+  "primary_ingredient": {
+    "tag": "c:tools/hammer"
+  },
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/rocky_chunks/native_gold"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/arcane"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/rivet/arcane"
+  },
+  "rules": [
+    "draw_not_last",
+    "bend_any",
+    "hit_any"
+  ],
+  "tier": 2
+}

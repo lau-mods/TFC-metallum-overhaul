@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/helmet/invar"
+  },
+  "size": "large",
+  "weight": "very_heavy"
+}

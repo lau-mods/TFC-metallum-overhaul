@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/sand_pile/red"
+    },
+    {
+      "item": "tfcm:ore_processing/sand_pile/red"
+    },
+    {
+      "item": "tfcm:ore_processing/sand_pile/red"
+    },
+    {
+      "item": "tfcm:ore_processing/sand_pile/red"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfc:sand/red"
+  }
+}

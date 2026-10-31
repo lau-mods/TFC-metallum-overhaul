@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/tungsten_steel",
+      "required": false
+    }
+  ]
+}

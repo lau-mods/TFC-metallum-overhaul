@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "galena"
+    }
+  ],
+  "type": "tfc:advanced_shapeless_crafting",
+  "ingredients": [
+    {
+      "tag": "c:tools/hammer"
+    },
+    {
+      "item": "tfcm:ore/normal_galena"
+    }
+  ],
+  "primary_ingredient": {
+    "tag": "c:tools/hammer"
+  },
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:ore_processing/rocky_chunks/galena"
+  }
+}

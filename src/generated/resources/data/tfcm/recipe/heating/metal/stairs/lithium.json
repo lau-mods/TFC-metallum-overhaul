@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/lithium_stairs"
+  },
+  "result_fluid": {
+    "amount": 75,
+    "id": "tfcm:metal/lithium"
+  },
+  "temperature": 181.0
+}

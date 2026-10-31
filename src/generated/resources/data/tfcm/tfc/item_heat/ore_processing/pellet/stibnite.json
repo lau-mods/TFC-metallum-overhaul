@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "stibnite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "heat_capacity": 0.8,
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/stibnite"
+  }
+}

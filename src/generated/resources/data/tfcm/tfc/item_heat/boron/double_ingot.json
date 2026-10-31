@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    }
+  ],
+  "forging_temperature": 1245.6,
+  "heat_capacity": 5.7142863,
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/boron"
+  },
+  "welding_temperature": 1660.8
+}

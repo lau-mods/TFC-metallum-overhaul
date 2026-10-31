@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/solder"
+  },
+  "size": "normal",
+  "weight": "light"
+}

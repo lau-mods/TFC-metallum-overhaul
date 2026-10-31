@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "forging_temperature": 924.00006,
+  "heat_capacity": 0.14285715,
+  "ingredient": {
+    "tag": "c:screws/stainless_steel"
+  },
+  "welding_temperature": 1232.0
+}

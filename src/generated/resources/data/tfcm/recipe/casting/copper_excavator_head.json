@@ -1,0 +1,14 @@
+{
+  "type": "tfc:casting",
+  "fluid": {
+    "amount": 200,
+    "fluid": "tfc:metal/copper"
+  },
+  "mold": {
+    "item": "tfcm:ceramic/excavator_head_mold"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/excavator_head/copper"
+  }
+}

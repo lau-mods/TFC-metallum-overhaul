@@ -1,0 +1,862 @@
+{
+  "gameTests": [
+    {
+      "acId": "AC-F001-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "standaloneenvironmentloads"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeenvironmentmatchesrun"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeenvironmentmatchesrun"
+    },
+    {
+      "acId": "AC-F001-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "dependencymetadatarejectsunsupportedenvironments"
+    },
+    {
+      "acId": "AC-F002-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsandbasicformsareregistered"
+    },
+    {
+      "acId": "AC-F002-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalspecificationvaluesmatch"
+    },
+    {
+      "acId": "AC-F002-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "highcarbontungstensteelisanintermediate"
+    },
+    {
+      "acId": "AC-F003-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "bothingotmoldscastwithspecifiedbreakchance"
+    },
+    {
+      "acId": "AC-F003-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "anvilweldingandheatingpreservemetalamounts"
+    },
+    {
+      "acId": "AC-F003-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "onlyspecifiedalloyrecipesload"
+    },
+    {
+      "acId": "AC-F003-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "andesitemeltsandalloysatspecifiedamounts"
+    },
+    {
+      "acId": "AC-F004-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allextendedformsareregistered"
+    },
+    {
+      "acId": "AC-F004-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "extendedformshaveworkingandheating"
+    },
+    {
+      "acId": "AC-F005-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "platesuseanvilandmelttooneingot"
+    },
+    {
+      "acId": "AC-F005-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "nuggetscraftbothwaysandmeltatten"
+    },
+    {
+      "acId": "AC-F005-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "ingotsquerntoseparatemetaldust"
+    },
+    {
+      "acId": "AC-F005-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalshaveplatenuggetdustdataandassets"
+    },
+    {
+      "acId": "AC-F006-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "materialpartshaveregistrationnamesmodelsandsize"
+    },
+    {
+      "acId": "AC-F006-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "grassbambooandplantblockproduceanddry"
+    },
+    {
+      "acId": "AC-F006-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "bowcrossbowarrowandtoolpartsassemblewithknifedamage"
+    },
+    {
+      "acId": "AC-F007-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "fourmetalsprovidecompletetfcequipment"
+    },
+    {
+      "acId": "AC-F007-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "assemblyrequiresspecifiedpartsandrepairswithingot"
+    },
+    {
+      "acId": "AC-F007-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "equipmentheatsizerackandtooltagsagree"
+    },
+    {
+      "acId": "AC-F007-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tongsexistonlywithhotornot"
+    },
+    {
+      "acId": "AC-F007-004",
+      "report": "build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tongsexistonlywithhotornot"
+    },
+    {
+      "acId": "AC-F008-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customanvilsusetfcuitierandsevendoubleingots"
+    },
+    {
+      "acId": "AC-F008-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customanvilsmelttofourteenhundred"
+    },
+    {
+      "acId": "AC-F009-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customoreitemsandgradesarecomplete"
+    },
+    {
+      "acId": "AC-F009-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customorehostsuserockanddimensionstrength"
+    },
+    {
+      "acId": "AC-F009-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "smalloreandgroundcoverhavedistinctacquisition"
+    },
+    {
+      "acId": "AC-F022-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quartzgemsregisterandpolishliketfcgems"
+    },
+    {
+      "acId": "AC-F022-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quartzandfluoritequerntofourtaggedpowders"
+    },
+    {
+      "acId": "AC-F025-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tfcoreshavetwodimensionvariants"
+    },
+    {
+      "acId": "AC-F025-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chromiteexistsonlywithfirmalife"
+    },
+    {
+      "acId": "AC-F025-002",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chromiteexistsonlywithfirmalife"
+    },
+    {
+      "acId": "AC-F025-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "dimensionoresareprospectablemineableanddroptheirore"
+    },
+    {
+      "acId": "AC-F010-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "processingtablehasthirtymetalandfivenonmetalseries"
+    },
+    {
+      "acId": "AC-F010-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "processingtablehasthirtymetalandfivenonmetalseries"
+    },
+    {
+      "acId": "AC-F010-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "naquadahandmithriluseprojectprocessingdefinitions"
+    },
+    {
+      "acId": "AC-F010-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "processinglootusesonlydefinedoutputs"
+    },
+    {
+      "acId": "AC-F011-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "gradedhammercrushingyieldsonethreefivesevenanddamageshammer"
+    },
+    {
+      "acId": "AC-F011-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "ungradedmetalandmineralhammercrushingyieldfiveandseven"
+    },
+    {
+      "acId": "AC-F012-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "primarysluicealwayshaschunkoutput"
+    },
+    {
+      "acId": "AC-F012-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "primarysluiceusesindependentthirtyfifteenandgempools"
+    },
+    {
+      "acId": "AC-F013-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chunkquernstoonlymatchingdirtydust"
+    },
+    {
+      "acId": "AC-F014-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "secondarysluiceusesfourspecifiedindependentpools"
+    },
+    {
+      "acId": "AC-F014-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "dirtypileisabsentwhilesevensandpilesremain"
+    },
+    {
+      "acId": "AC-F014-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "naquadahandmithrilsecondaryoutputsstaydistinct"
+    },
+    {
+      "acId": "AC-F015-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalpowderheatingreturnsfivemillibuckets"
+    },
+    {
+      "acId": "AC-F015-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalpowderheatingreturnsfivemillibuckets"
+    },
+    {
+      "acId": "AC-F015-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "pelletandbriquetcompressionpreservesamounts"
+    },
+    {
+      "acId": "AC-F015-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "nonmetalpowdershavenoinventedheatingfluid"
+    },
+    {
+      "acId": "AC-F015-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "onlysmallraworemeltsdirectly"
+    },
+    {
+      "acId": "AC-F015-004",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "onlysmallraworemeltsdirectly"
+    },
+    {
+      "acId": "AC-F016-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "alldepositsusefiveindependentspecifiedpools"
+    },
+    {
+      "acId": "AC-F016-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allrockgravelusesspecifiedpoolswithoutgoldnuggets"
+    },
+    {
+      "acId": "AC-F016-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMSurfaceResourceGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "sandandrockpowderusespecifiedpoolswithoutdirtypile"
+    },
+    {
+      "acId": "AC-F017-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "mininghammerusescenteredplanesandfilterscandidates"
+    },
+    {
+      "acId": "AC-F017-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "normalplayerbreaktriggerscenteredareamining"
+    },
+    {
+      "acId": "AC-F017-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "mininghammerusescenteredplanesandfilterscandidates"
+    },
+    {
+      "acId": "AC-F017-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsregistermatchingtoolsheadsandtiers"
+    },
+    {
+      "acId": "AC-F018-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryhammerusesspecifiedplanesineverydirection"
+    },
+    {
+      "acId": "AC-F018-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryhammerusesspecifiedplanesineverydirection"
+    },
+    {
+      "acId": "AC-F018-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryandalltoolsrespectcandidateprotection"
+    },
+    {
+      "acId": "AC-F018-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsregistermatchingtoolsheadsandtiers"
+    },
+    {
+      "acId": "AC-F019-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "excavatoronlybreaksshovelcandidates"
+    },
+    {
+      "acId": "AC-F019-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsregistermatchingtoolsheadsandtiers"
+    },
+    {
+      "acId": "AC-F020-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryandalltoolsrespectcandidateprotection"
+    },
+    {
+      "acId": "AC-F020-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "areabreakpreserveslootandblockentities"
+    },
+    {
+      "acId": "AC-F020-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "durabilitystopsandcreativehasnocostordrops"
+    },
+    {
+      "acId": "AC-F020-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "layerspeelonceandareadoesnotrecurse"
+    },
+    {
+      "acId": "AC-F021-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "moldsforgecastandassemblealltools"
+    },
+    {
+      "acId": "AC-F021-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "moldsforgecastandassemblealltools"
+    },
+    {
+      "acId": "AC-F021-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "moldsforgecastandassemblealltools"
+    },
+    {
+      "acId": "AC-F023-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "threemineralshaveeveryblockitemmodelanddrop"
+    },
+    {
+      "acId": "AC-F023-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "geodesusespecifiedlayersplacementgrowthanddrops"
+    },
+    {
+      "acId": "AC-F024-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "threedimensionfileskeeptheirowndefinitions"
+    },
+    {
+      "acId": "AC-F024-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "templatesweightsrockstiersandindicatorsreachtfcconfig"
+    },
+    {
+      "acId": "AC-F024-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "invalidduplicateandemptydefinitionsusedimensionfallbackrules"
+    },
+    {
+      "acId": "AC-F026-001",
+      "report": "build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml",
+      "classname": "tfcm_m12:empty",
+      "name": "disabledmetalremovesonlyitscontent"
+    },
+    {
+      "acId": "AC-F026-002",
+      "report": "build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml",
+      "classname": "tfcm_m12:empty",
+      "name": "disabledoreremovesonlyitsseries"
+    },
+    {
+      "acId": "AC-F026-003",
+      "report": "build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml",
+      "classname": "tfcm_m12:empty",
+      "name": "unknownnamesareignored"
+    },
+    {
+      "acId": "AC-F026-004",
+      "report": "build/test-results/gametest-fresh-config/TEST-net.claustra01.tfcm.gametest.TFCMFreshConfigGameTests.xml",
+      "classname": "tfcm_m12_fresh:empty",
+      "name": "generatedconfiglistseveryacceptedidwithoutdisablingcontent"
+    },
+    {
+      "acId": "AC-F027-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
+    },
+    {
+      "acId": "AC-F027-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "metalsoresandtoolshavetfcattributes"
+    },
+    {
+      "acId": "AC-F028-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
+    },
+    {
+      "acId": "AC-F028-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "neutroniumtextureshaveanimationframes"
+    },
+    {
+      "acId": "AC-F027-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "equipmentheatsizerackandtooltagsagree"
+    },
+    {
+      "acId": "AC-F027-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
+    },
+    {
+      "acId": "AC-F028-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "registeredcontenthasmodelstranslationsandblockloot"
+    },
+    {
+      "acId": "AC-F029-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "standaloneenvironmentloads"
+    },
+    {
+      "acId": "AC-F029-001",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMFoundationGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeenvironmentmatchesrun"
+    },
+    {
+      "acId": "AC-F029-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "everyseriescompletesfiveprocessingsteps"
+    },
+    {
+      "acId": "AC-F029-002",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMProcessingGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "everyseriescompletesfiveprocessingsteps"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "fourmetalsprovidecompletetfcequipment"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customanvilsusetfcuitierandsevendoubleingots"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryhammerusesspecifiedplanesineverydirection"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quarryandalltoolsrespectcandidateprotection"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "areabreakpreserveslootandblockentities"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "durabilitystopsandcreativehasnocostordrops"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "dimensionoresareprospectablemineableanddroptheirore"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "threedimensionfileskeeptheirowndefinitions"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "assemblyrequiresspecifiedpartsandrepairswithingot"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "equipmentheatsizerackandtooltagsagree"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tongsexistonlywithhotornot"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest-hotornot/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tongsexistonlywithhotornot"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMEquipmentGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "customanvilsmelttofourteenhundred"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quartzgemsregisterandpolishliketfcgems"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "quartzandfluoritequerntofourtaggedpowders"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tfcoreshavetwodimensionvariants"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chromiteexistsonlywithfirmalife"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMOreGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "chromiteexistsonlywithfirmalife"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "mininghammerusescenteredplanesandfilterscandidates"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "normalplayerbreaktriggerscenteredareamining"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "allmetalsregistermatchingtoolsheadsandtiers"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "excavatoronlybreaksshovelcandidates"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "layerspeelonceandareadoesnotrecurse"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAreaToolGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "moldsforgecastandassemblealltools"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "threemineralshaveeveryblockitemmodelanddrop"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMGeodeGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "geodesusespecifiedlayersplacementgrowthanddrops"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "templatesweightsrockstiersandindicatorsreachtfcconfig"
+    },
+    {
+      "acId": "AC-F029-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "invalidduplicateandemptydefinitionsusedimensionfallbackrules"
+    },
+    {
+      "acId": "AC-F002-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "restoredrecipesandforgingbonusload"
+    },
+    {
+      "acId": "AC-F007-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tfctoolsassemblefromparts"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeformsfollowthemod"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeformsfollowthemod"
+    },
+    {
+      "acId": "AC-F027-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "restoredtagscontaintheiritems"
+    },
+    {
+      "acId": "AC-F028-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "distinctitemshavedistinctsprites"
+    },
+    {
+      "acId": "AC-F025-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "orenamesfollowtfcandjapaneseistranslated"
+    },
+    {
+      "acId": "AC-F024-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "bundleddefaultsloadandneverreplaceexistingfiles"
+    },
+    {
+      "acId": "AC-F024-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "veinreplacementkeepsnonoreveins"
+    },
+    {
+      "acId": "AC-F016-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "sluicerecipesreachclientswithlootchances"
+    }
+  ],
+  "e2e": [
+    {
+      "acId": "AC-F001-001",
+      "scenario": "tests/e2e/foundation-boot.mjs"
+    },
+    {
+      "acId": "AC-F004-001",
+      "scenario": "tests/e2e/metal-forms.mjs"
+    },
+    {
+      "acId": "AC-F005-004",
+      "scenario": "tests/e2e/metal-forms.mjs"
+    },
+    {
+      "acId": "AC-F006-001",
+      "scenario": "tests/e2e/material-parts.mjs"
+    },
+    {
+      "acId": "AC-F007-001",
+      "scenario": "tests/e2e/equipment-anvils.mjs"
+    },
+    {
+      "acId": "AC-F008-001",
+      "scenario": "tests/e2e/equipment-anvils.mjs"
+    },
+    {
+      "acId": "AC-F009-003",
+      "scenario": "tests/e2e/ore-samples.mjs"
+    },
+    {
+      "acId": "AC-F017-003",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F018-004",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F019-002",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F021-001",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F021-003",
+      "scenario": "tests/e2e/area-tools.mjs"
+    },
+    {
+      "acId": "AC-F023-001",
+      "scenario": "tests/e2e/geodes.mjs"
+    },
+    {
+      "acId": "AC-F028-001",
+      "scenario": "tests/e2e/asset-integrity.mjs"
+    },
+    {
+      "acId": "AC-F028-002",
+      "scenario": "tests/e2e/asset-integrity.mjs"
+    },
+    {
+      "acId": "AC-F028-001",
+      "scenario": "tests/e2e/molten-fluids-and-pans.mjs"
+    }
+  ]
+}

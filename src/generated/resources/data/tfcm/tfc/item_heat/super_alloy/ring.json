@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "forging_temperature": 1080.0,
+  "heat_capacity": 0.34285718,
+  "ingredient": {
+    "item": "tfcm:metal/ring/super_alloy"
+  },
+  "welding_temperature": 1440.0
+}

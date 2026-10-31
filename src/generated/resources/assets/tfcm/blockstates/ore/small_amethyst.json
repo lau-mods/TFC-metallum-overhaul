@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/amethyst"
+      },
+      {
+        "model": "tfcm:block/groundcover/amethyst",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/amethyst",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/amethyst",
+        "y": 270
+      }
+    ]
+  }
+}

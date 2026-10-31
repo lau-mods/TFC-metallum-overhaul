@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/sulfur"
+      },
+      {
+        "model": "tfcm:block/groundcover/sulfur",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/sulfur",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/sulfur",
+        "y": 270
+      }
+    ]
+  }
+}

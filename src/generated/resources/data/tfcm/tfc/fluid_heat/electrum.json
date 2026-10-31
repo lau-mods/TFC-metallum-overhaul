@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "fluid": "tfcm:metal/electrum",
+  "melt_temperature": 1000,
+  "specific_heat_capacity": 0.0054545454
+}

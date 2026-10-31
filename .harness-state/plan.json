@@ -1,0 +1,304 @@
+{
+  "milestones": [
+    {
+      "id": "M01",
+      "features": [
+        "F-001"
+      ],
+      "dependsOn": [],
+      "approach": "Replace the MDK scaffold with the real mod. Rename the mod ID to `tfcm` and the package to `net.claustra01.tfcm`, and update NeoForge to 21.1.265. Add TFC 4.2.12 and Patchouli 1.21.1-93-NEOFORGE as required dependencies, FirmaLife 3.0.15 as compileOnly/optional, and TFC Hot or Not as compileOnly/optional, all checked against the actual JARs extracted to `.tmp/`. Declare required/optional dependencies and ordering, with a Minecraft 1.21.1 range, in `neoforge.mods.toml`. Set up the shared foundation: DeferredRegister classes, creative tab, Data Generation (client/server providers, generated resource dir), and a client-only event class kept apart from common code. Add a `ModCompat` helper (FirmaLife and Hot or Not detection via ModList) that never class-loads optional mod classes. Add a Common Config skeleton plus the `isMetalEnabled`/`isOreEnabled` hooks and a shared NeoForge load condition. These are infrastructure only; F-026 behaviour comes later. Verify with compileJava/build and a dedicated server + client boot with TFC only and with FirmaLife added. Update `AGENTS.md` and `README.md` to the new mod ID and versions.",
+      "scope": [
+        "build.gradle",
+        "gradle.properties",
+        "settings.gradle",
+        "src/main/templates/META-INF/neoforge.mods.toml",
+        "src/main/java/com/example/examplemod (remove)",
+        "src/main/java/net/claustra01/tfcm/TFCM.java",
+        "src/main/java/net/claustra01/tfcm/client/",
+        "src/main/java/net/claustra01/tfcm/config/",
+        "src/main/java/net/claustra01/tfcm/compat/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/",
+        "src/main/resources/assets/tfcm/lang/",
+        "AGENTS.md",
+        "README.md",
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "id": "M02",
+      "features": [
+        "F-002",
+        "F-003"
+      ],
+      "dependsOn": [
+        "M01"
+      ],
+      "approach": "Define a `Metal` enum with all 39 metals: ID, forging tier, melting point, tool flag, colour, and specific heat. Hard-code Draconium-family forge/weld temperatures to 1200/1600 °C; all other metals use 60%/80% of their melting point. Register the 8 basic forms (ingot, double_ingot, sheet, double_sheet, rod, block, slab, stairs), one molten fluid per metal (FluidType + bucket + fluid block), `high_carbon_tungsten_steel`, and the `molten_andesite` fluid. Datagen produces the TFC metal definitions (`tfc/metal`), item heat, size/weight, and fluid/metal tags. It also produces casting recipes for the ingot mold (10% break) and fire ingot mold (1% break), anvil recipes for sheet/rod at the metal's tier, welding recipes for double ingot/sheet, heating/melting recipes with metal amounts matching each form, and alloy recipes exactly as listed in the alloy table. Andesite: loose andesite at 1300 °C → 90 mB, alloyed at 89–91% with Zinc or Tin. High-carbon tungsten steel gets the TFC steel-style working (anvil) route that produces the tungsten steel ingot. Every generated JSON is wrapped in the metal-enabled load condition. Import base metal textures from the published asset version into `.tmp/` and adapt them.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/metal/",
+        "src/main/java/net/claustra01/tfcm/registry/ (items, blocks, fluids)",
+        "src/main/java/net/claustra01/tfcm/datagen/ (metal, heat, recipes, tags)",
+        "src/main/resources/assets/tfcm/ (metal textures, fluid textures)",
+        "src/generated/resources/data/tfcm/tfc/metal/",
+        "src/generated/resources/data/tfcm/recipe/",
+        "src/generated/resources/data/c/tags/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M03",
+      "features": [
+        "F-004",
+        "F-005"
+      ],
+      "dependsOn": [
+        "M02"
+      ],
+      "approach": "Extend the metal form table and register the 9 extended forms (foil, gear, heavy_sheet, nail, ring, rivet, screw, stamen, wire) plus plate, nugget, and dust for every metal, independent of any optional mod. Copy input amounts, output counts, and forging rules from the TFC reference anvil/welding recipes; heavy_sheet is welding-only. Plate is anvil-made at the metal's tier, 100 mB. Nugget uses ingot↔9 crafting and melts at 10 mB each (no correction). Dust is ingot → 1 via quern, 100 mB, and carries its own tags separate from ore powders. Datagen generates heat, size/weight, common per-metal and per-form tags (`c:plates/<metal>`, `c:nuggets`, `c:dusts`, ...), translations, and models, all under the metal-enabled condition.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/metal/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/",
+        "src/main/resources/assets/tfcm/textures/item/metal/",
+        "src/generated/resources/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M04",
+      "features": [
+        "F-006"
+      ],
+      "dependsOn": [
+        "M01"
+      ],
+      "approach": "Register the leather (string, strap, strip), plant (fiber, string, fabric, plant block, clothing), bamboo (fiber, string), bow/crossbow (limb, chord, related parts), arrow (tread, fletch, shaft), and tool-assembly helper (handle, binding, riveting, ...) items, each with size/weight. Plant fiber comes from grass by hand or knife via loot modifiers or TFC recipes. The plant block is a block that dries into Thatch over time, implemented with a TFC-style ticking/random-tick approach. Bamboo and leather processing, bows, crossbows, and arrows use TFC advanced shapeless recipes with knife damage as crafting remainder. Recipe quantities follow the matching TFC recipes. Do not add new tiers or effects.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/material/",
+        "src/main/java/net/claustra01/tfcm/common/block/PlantBlock*",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/",
+        "src/main/resources/assets/tfcm/",
+        "src/generated/resources/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M05",
+      "features": [
+        "F-007",
+        "F-008"
+      ],
+      "dependsOn": [
+        "M03",
+        "M04"
+      ],
+      "approach": "For invar, titanium, netherite, and tungsten_steel, create custom Tier and ArmorMaterial values from the spec tables. Register every TFC metal tool category the same way TFC does: tool heads, tools, weapons, shears, tuyere, fishing rod, shield, horse armor, armor, and unfinished armor. Assembly recipes use F-004/F-006 parts (crossguard, pommel, handle, ring, rivet, binding, wire). Add repair ingredients, heat, size, tool rack, and tool tags. Tongs and tong parts are registered only when TFC Hot or Not is loaded, using its public API, behind a class-loading-safe compat class. Add four TFC AnvilBlock variants (tiers 3/5/6/7), registered into the TFC anvil block entity type and the `tfc:anvils` tag, each crafted by welding 7 double ingots and melting back to 1400 mB. All recipes stay metal-conditioned.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/tool/",
+        "src/main/java/net/claustra01/tfcm/common/armor/",
+        "src/main/java/net/claustra01/tfcm/common/block/anvil/",
+        "src/main/java/net/claustra01/tfcm/compat/hotornot/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/",
+        "src/main/resources/assets/tfcm/ (tool/armor/anvil textures, armor layers)",
+        "src/generated/resources/",
+        "build.gradle (Hot or Not compileOnly)",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M06",
+      "features": [
+        "F-009",
+        "F-022",
+        "F-025"
+      ],
+      "dependsOn": [
+        "M01"
+      ],
+      "approach": "Define an `Ore` table: 16 graded ores and 3 ungraded (fluorite, quartz, carobbiite). Register `tfcm:ore/<grade>_<ore>`, `tfcm:ore/<ore>`, small ores, and block variants per TFC rock (`/<rock>`) plus netherrack and end_stone. TFC-rock variants use TFC hardness; Nether ores are 3/10 and End ores 3/9. Fluorite and quartz get groundcover-style small-ore blocks with no BlockItem. Add Netherrack/End Stone versions of TFC's 12×3 graded ores and 17 ungraded ores; their loot drops TFC's own ore items. The FirmaLife chromite ×3 variants are registered only when FirmaLife is present, with data wrapped in a mod-loaded condition. Add `.prospected` translations, pickaxe/ore tags, and Small Ore direct-melt heating. Register Cut Quartz and Certus Quartz, plus Quartz/Fluorite powders: quern ×4, tagged as TFC gem powder and bowl powder, and polishing follows TFC's gem recipe.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/ore/",
+        "src/main/java/net/claustra01/tfcm/common/block/ore/",
+        "src/main/java/net/claustra01/tfcm/compat/firmalife/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/ (blockstates, loot, tags, lang)",
+        "src/main/resources/assets/tfcm/textures/block/ore/",
+        "src/generated/resources/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M07",
+      "features": [
+        "F-010",
+        "F-011",
+        "F-012",
+        "F-013",
+        "F-014",
+        "F-015"
+      ],
+      "dependsOn": [
+        "M02",
+        "M06"
+      ],
+      "approach": "Encode the F-010 table as a single datagen data table: 35 series with sand, primary/secondary rock, optional gem, byproduct B, final output, and FirmaLife-only chromite. From it, register rocky_chunks, chunks, dirty_dust, powder, pellet, and briquet per series, plus the 7 Sand Pile items. Never register a Dirty Pile. Generate: Step 1 TFC advanced shapeless recipes with `#c:tools/hammer` damaged as crafting remainder (1/3/5/7, ungraded metal 5, non-metal 7). Step 2 sluice loot with independent pools (chunk 100%, rock 30%, rock 15%, gem 0.02% only when defined). Step 3 quern to dirty dust ×1. Step 4 sluice (powder 100%, sand pile 15%, same dirty dust 5%, byproduct B dirty dust 1%). Step 5: powder 5 mB, pellet 20 mB, briquet 80 mB heating, and 4:1 compression/decompression. Non-metal series produce their defined powder, and Borax connects to Boron recovery. Do not add direct melting for poor/normal/rich ores. Include a datagen validation that asserts the absence of `dirty_pile`.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/processing/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/ (processing table, loot, recipes)",
+        "src/main/resources/assets/tfcm/textures/item/ore_processing/",
+        "src/generated/resources/data/tfcm/loot_table/",
+        "src/generated/resources/data/tfcm/recipe/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M08",
+      "features": [
+        "F-016"
+      ],
+      "dependsOn": [
+        "M07"
+      ],
+      "approach": "Generate TFC pan/sluice data and loot for: deposits (4 ores × 21 rocks: small ore 50%/10%, loose rock 50%, rock-specific first item 25% and second item 5.33%); rock gravel ×21 (copper powder 50%/25%, loose rock 50%, flint 15%, bone 10%, no gold nugget); 7 sand colours; and rock powder, with dirty dust replacing any former dirty pile output. Every pool is an independent draw. Where TFC data must be overridden, write it into the `tfc` namespace only as intended compatibility data, and record this in AGENTS.md.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/datagen/ (pan/sluice providers)",
+        "src/generated/resources/data/tfc/",
+        "src/generated/resources/data/tfcm/loot_table/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M09",
+      "features": [
+        "F-017",
+        "F-018",
+        "F-019",
+        "F-020",
+        "F-021"
+      ],
+      "dependsOn": [
+        "M05"
+      ],
+      "approach": "Implement a shared `AreaMiningTool` and server-side `AreaBreakHandler` triggered from BlockEvent.BreakEvent / the item's mineBlock. It checks the origin tool's correctness, plans per-face local (u,v) coordinates (3×3 centred for both; 5×5 with vertical origin at (0,-1) and up mapped to world +Y), and then evaluates each candidate for correct tool tag, tier, and its own fired BreakEvent. It uses `ServerPlayerGameMode`-style destroy logic with block entity loot context, consumes 1 durability per break and stops on break, skips drops and damage in Creative, peels LAYERS one layer at a time, and uses a ThreadLocal re-entry guard. Register Mining Hammer, Quarry Hammer, and Excavator plus heads, unfired/fired head molds (knapping, heating, casting), and anvil/assembly recipes for every TFC pickaxe/shovel metal and the 4 TFCM metals, at 40% mining speed. Quarry Hammer copies Mining Hammer's quantities. Add GameTests for orientation, protection, durability, and layers.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/tool/area/",
+        "src/main/java/net/claustra01/tfcm/common/item/mold/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/",
+        "src/main/resources/assets/tfcm/textures/item/ (hammer/excavator/quarry assets)",
+        "src/test or src/main/java/net/claustra01/tfcm/gametest/",
+        "src/generated/resources/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M10",
+      "features": [
+        "F-023"
+      ],
+      "dependsOn": [
+        "M06"
+      ],
+      "approach": "Register the mineral block, budding block, small/medium/large bud, and cluster for Quartz, Amethyst, and Certus Quartz, using vanilla AmethystCluster/Budding behaviour adapted for TFC blocks. Mature clusters drop Cut Quartz ×2, TFC amethyst ×2, or Certus Quartz ×2. Define a geode configured/placed feature per type: outer TFC hardened basalt, middle raw quartzite, inner budding:mineral:raw quartzite = 2:5:1, Y -48..32, rarity 1/300 chunks. Attach it to TFC overworld biomes through a NeoForge biome modifier.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/common/block/geode/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/datagen/ (worldgen, biome modifiers, loot)",
+        "src/main/resources/assets/tfcm/textures/block/geode/",
+        "src/generated/resources/data/tfcm/worldgen/",
+        "src/generated/resources/data/tfcm/neoforge/biome_modifier/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M11",
+      "features": [
+        "F-024"
+      ],
+      "dependsOn": [
+        "M06",
+        "M10"
+      ],
+      "approach": "Add `enableCustomVeinGeneration` to the config and a YAML loader (SnakeYAML from the Minecraft runtime, so no new runtime dependency) for `config/tfcm/{overworld,nether,end}.yaml`. Validate and expand entries: `{rock}`/`{tier}` templating, weights, default rocks per dimension, the four TFC vein types and their parameters, indicators, and geodes. Invalid or duplicate entries produce a warning and are skipped; for duplicates, the first wins. Build TFC VeinConfig/feature instances at runtime. In the overworld, replace TFC's vein placed features when at least one valid vein exists (otherwise fall back to TFC's), keep non-vein features, and drop standard TFCM geodes in favour of YAML geodes. Nether/End add only what is explicitly configured. Inject through a biome modifier or registry hook verified against the TFC 4.2.12 source.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/worldgen/",
+        "src/main/java/net/claustra01/tfcm/config/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/generated/resources/data/tfcm/neoforge/biome_modifier/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M12",
+      "features": [
+        "F-026"
+      ],
+      "dependsOn": [
+        "M02",
+        "M03",
+        "M05",
+        "M06",
+        "M07",
+        "M08",
+        "M09",
+        "M11"
+      ],
+      "approach": "Wire up `disabledMetals` and `disabledOres` in the Common Config, which loads early before registration. Auto-generate a comment that lists every accepted metal/ore name from the enum tables. Unknown names are ignored, and changes need a restart. Guard every registration loop with the enabled check. Apply the same check through the shared load condition on every recipe, tag (conditional tag entries), heat, size, loot, pan/sluice entry, and YAML vein candidate. Make sure cross-references (alloy inputs, byproduct dirty dust, sand loot) disable only the referencing entry, never another metal or ore. Test with `disabledMetals=[\"lead\"]`, `disabledOres=[\"galena\"]`, and unknown names.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/config/",
+        "src/main/java/net/claustra01/tfcm/registry/",
+        "src/main/java/net/claustra01/tfcm/common/condition/",
+        "src/main/java/net/claustra01/tfcm/datagen/",
+        "src/main/java/net/claustra01/tfcm/worldgen/",
+        "src/generated/resources/",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M13",
+      "features": [
+        "F-027",
+        "F-028"
+      ],
+      "dependsOn": [
+        "M05",
+        "M07",
+        "M08",
+        "M09",
+        "M10",
+        "M12"
+      ],
+      "approach": "Audit all registries and data: add a datagen/GameTest validator that checks every item/block/fluid has a model, blockstate, lang entry, heat/size where applicable, tags, and loot, and that tools have category, rack, and repair data. Fill any gaps. Finish importing assets from the published version: textures, models, blockstates, animation mcmeta (Neutronium animation), and lang. Create the missing plate/nugget/dust/mining hammer/quarry hammer art. Record source version, file paths, and licence in `LICENCE`. Verify in the client that no model or texture is missing.",
+      "scope": [
+        "src/main/resources/assets/tfcm/",
+        "src/main/java/net/claustra01/tfcm/datagen/",
+        "src/main/java/net/claustra01/tfcm/client/",
+        "src/generated/resources/",
+        "LICENCE",
+        "AGENTS.md"
+      ]
+    },
+    {
+      "id": "M14",
+      "features": [
+        "F-029"
+      ],
+      "dependsOn": [
+        "M13",
+        "M11"
+      ],
+      "approach": "Run the integrated verification: `./gradlew build`, runData determinism check, JSON parsing of all resources, registry ID cross-check against the spec tables (39 metals × all forms, 35 series), and GameTests for ore processing Steps 1–5, area tools (direction, protection, loot, durability), and anvils. Then run harness E2E with server+client (`tfcm-a`, 127.0.0.1:25583) with and without FirmaLife 3.0.15, plus 3-dimension worldgen with sample YAML. Record results, unverified areas, and any Open Questions in AGENTS.md.",
+      "scope": [
+        "src/main/java/net/claustra01/tfcm/gametest/",
+        "tests/acceptance.json",
+        ".harness-config.json",
+        "AGENTS.md",
+        ".tmp/ (verification scripts, not committed)"
+      ]
+    }
+  ]
+}

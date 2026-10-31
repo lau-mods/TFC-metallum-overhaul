@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/tongs/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tong_part/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/crossguard/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pommel/netherite",
+      "required": false
+    }
+  ]
+}

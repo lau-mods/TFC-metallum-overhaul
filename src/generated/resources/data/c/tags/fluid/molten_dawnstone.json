@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    }
+  ],
+  "values": [
+    "tfcm:metal/dawnstone",
+    "tfcm:metal/flowing_dawnstone"
+  ]
+}

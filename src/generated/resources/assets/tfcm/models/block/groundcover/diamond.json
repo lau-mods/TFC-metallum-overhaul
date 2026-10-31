@@ -1,0 +1,7 @@
+{
+  "parent": "tfc:block/groundcover/native_copper",
+  "textures": {
+    "0": "tfc:item/ore/diamond",
+    "particle": "tfc:item/ore/diamond"
+  }
+}

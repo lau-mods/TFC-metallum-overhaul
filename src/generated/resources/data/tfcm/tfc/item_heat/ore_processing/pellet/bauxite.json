@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "bauxite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "heat_capacity": 0.28571433,
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/bauxite"
+  }
+}

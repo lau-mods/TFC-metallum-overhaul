@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/magnesium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

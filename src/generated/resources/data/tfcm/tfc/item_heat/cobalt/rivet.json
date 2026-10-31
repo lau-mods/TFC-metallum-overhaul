@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "forging_temperature": 1020.0,
+  "heat_capacity": 0.16666666,
+  "ingredient": {
+    "item": "tfcm:metal/rivet/cobalt"
+  },
+  "welding_temperature": 1360.0
+}

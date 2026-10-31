@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "stibnite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/stibnite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/stibnite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/stibnite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/stibnite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/stibnite"
+  }
+}

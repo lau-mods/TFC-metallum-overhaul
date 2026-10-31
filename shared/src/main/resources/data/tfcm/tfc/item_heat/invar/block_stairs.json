@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/invar_stairs"
-  },
-  "heat_capacity": 2.143072,
-  "forging_temperature": 870,
-  "welding_temperature": 1160
-}

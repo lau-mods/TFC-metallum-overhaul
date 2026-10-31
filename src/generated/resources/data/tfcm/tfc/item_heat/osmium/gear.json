@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 11.428573,
+  "ingredient": {
+    "item": "tfcm:metal/gear/osmium"
+  },
+  "welding_temperature": 1228.0
+}

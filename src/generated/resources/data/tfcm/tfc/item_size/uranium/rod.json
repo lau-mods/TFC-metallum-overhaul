@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/uranium"
+  },
+  "size": "normal",
+  "weight": "light"
+}

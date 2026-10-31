@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:rods/super_alloy"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:metal/stamen/super_alloy"
+  },
+  "rules": [
+    "bend_last",
+    "draw_second_last",
+    "draw_third_last"
+  ],
+  "tier": 5
+}

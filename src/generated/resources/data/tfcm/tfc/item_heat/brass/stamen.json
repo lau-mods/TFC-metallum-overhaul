@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 558.0,
+  "heat_capacity": 0.71428573,
+  "ingredient": {
+    "item": "tfcm:metal/stamen/brass"
+  },
+  "welding_temperature": 744.0
+}

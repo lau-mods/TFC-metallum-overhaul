@@ -1,0 +1,8 @@
+{
+  "values": [
+    "tfcm:ceramic/unfired_mining_hammer_head_mold",
+    "tfcm:ceramic/unfired_quarry_hammer_head_mold",
+    "tfcm:ceramic/unfired_excavator_head_mold"
+  ],
+  "replace": false
+}

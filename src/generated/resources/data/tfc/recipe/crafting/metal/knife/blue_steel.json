@@ -1,0 +1,38 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:handle/short"
+    },
+    "N": {
+      "tag": "c:rivets/blue_steel"
+    },
+    "R": {
+      "tag": "c:rings/blue_steel"
+    },
+    "X": {
+      "item": "tfc:metal/knife_blade/blue_steel"
+    }
+  },
+  "pattern": [
+    " NX",
+    "NHR",
+    "G  "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/knife/blue_steel"
+    }
+  }
+}

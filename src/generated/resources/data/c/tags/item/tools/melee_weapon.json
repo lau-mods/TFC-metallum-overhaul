@@ -1,0 +1,53 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/sword/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/tungsten_steel",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "native_silver"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/small_native_silver"
+        }
+      ],
+      "name": "small_ore_50_percent",
+      "rolls": 1
+    },
+    {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "native_silver"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.1,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:ore/small_native_silver"
+        }
+      ],
+      "name": "small_ore_10_percent",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.5,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:rock/loose/claystone"
+        }
+      ],
+      "name": "loose_rock_50_percent",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.25,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:rock/loose/claystone"
+        }
+      ],
+      "name": "primary_material_25_percent",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.0533,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfc:gem/amethyst"
+        }
+      ],
+      "name": "secondary_material_5_33_percent",
+      "rolls": 1
+    }
+  ]
+}

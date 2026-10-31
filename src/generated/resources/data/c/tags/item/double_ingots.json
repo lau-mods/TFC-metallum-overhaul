@@ -1,0 +1,160 @@
+{
+  "values": [
+    {
+      "id": "#c:double_ingots/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/invar",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/lead",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/solder",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/boron",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/super_alloy",
+      "required": false
+    }
+  ]
+}

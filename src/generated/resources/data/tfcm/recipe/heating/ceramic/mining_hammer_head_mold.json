@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ceramic/unfired_mining_hammer_head_mold"
+  },
+  "result_item": {
+    "count": 1,
+    "id": "tfcm:ceramic/mining_hammer_head_mold"
+  },
+  "temperature": 1399
+}

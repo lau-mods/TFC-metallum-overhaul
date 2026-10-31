@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "forging_temperature": 750.0,
+  "heat_capacity": 0.71416664,
+  "ingredient": {
+    "item": "tfcm:metal/crossguard/invar"
+  },
+  "welding_temperature": 1000.0
+}

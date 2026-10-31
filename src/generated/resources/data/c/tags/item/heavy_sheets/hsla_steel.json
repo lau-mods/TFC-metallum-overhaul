@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    }
+  ],
+  "values": [
+    "tfcm:metal/heavy_sheet/hsla_steel"
+  ]
+}

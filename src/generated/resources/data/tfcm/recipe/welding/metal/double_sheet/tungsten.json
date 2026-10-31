@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:sheets/tungsten"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/double_sheet/tungsten"
+  },
+  "second_input": {
+    "tag": "c:sheets/tungsten"
+  },
+  "tier": 2
+}

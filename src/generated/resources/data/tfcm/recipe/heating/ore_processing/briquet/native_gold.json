@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_gold"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/native_gold"
+  },
+  "result_fluid": {
+    "amount": 80,
+    "id": "tfc:metal/gold"
+  },
+  "temperature": 1060
+}

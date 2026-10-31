@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 871.80005,
+  "heat_capacity": 0.10416666,
+  "ingredient": {
+    "item": "tfcm:metal/screw/nickel"
+  },
+  "welding_temperature": 1162.4
+}

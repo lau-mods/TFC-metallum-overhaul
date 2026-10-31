@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "wolframite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/wolframite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/wolframite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/wolframite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/wolframite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/wolframite"
+  }
+}

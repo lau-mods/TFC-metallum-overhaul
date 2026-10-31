@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/tough_alloy"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/tough_alloy"
+  }
+}

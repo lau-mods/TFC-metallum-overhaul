@@ -1,6 +1,0 @@
-{
-    "textures":  {
-                     "all":  "tfcm:block/metal/block/uranium"
-                 },
-    "parent":  "minecraft:block/cube_all"
-}

@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "type": "tfc:welding",
+  "bonus": "copy_best",
+  "first_input": {
+    "item": "tfcm:metal/unfinished_greaves/tungsten_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/greaves/tungsten_steel"
+  },
+  "second_input": {
+    "tag": "c:sheets/tungsten_steel"
+  },
+  "tier": 6
+}

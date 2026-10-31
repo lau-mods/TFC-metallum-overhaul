@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/sword/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/tungsten_steel",
+      "required": false
+    }
+  ]
+}

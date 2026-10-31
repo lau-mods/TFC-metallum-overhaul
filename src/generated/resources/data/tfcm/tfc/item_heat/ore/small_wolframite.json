@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "wolframite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 0.5,
+  "ingredient": {
+    "item": "tfcm:ore/small_wolframite"
+  },
+  "welding_temperature": 1228.0
+}

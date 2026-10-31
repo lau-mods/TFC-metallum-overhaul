@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:heavy_sheets/super_alloy"
-  },
-  "heat_capacity": 14.286,
-  "forging_temperature": 1080,
-  "welding_temperature": 1440
-}

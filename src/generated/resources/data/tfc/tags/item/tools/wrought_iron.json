@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/mining_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/wrought_iron",
+      "required": false
+    }
+  ]
+}

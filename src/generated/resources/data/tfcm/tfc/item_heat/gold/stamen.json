@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 636.0,
+  "heat_capacity": 0.41666663,
+  "ingredient": {
+    "item": "tfcm:metal/stamen/gold"
+  },
+  "welding_temperature": 848.0
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:rings/netherite"
+  },
+  "second_input": {
+    "tag": "c:rings/netherite"
+  },
+  "tier": 5,
+  "result": {
+    "id": "tfcm:metal/pommel/netherite"
+  }
+}

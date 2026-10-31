@@ -1,9 +1,0 @@
-{
-  "values": [
-    "tfcm:metal/ingot/draconium",
-    {
-      "id": "draconicevolution:draconium_ingot",
-      "required": false
-    }
-  ]
-}

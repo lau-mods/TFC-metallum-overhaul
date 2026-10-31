@@ -1,9 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/rivet/uranium",
-                       "required":  false
-                   }
-               ]
-}
-

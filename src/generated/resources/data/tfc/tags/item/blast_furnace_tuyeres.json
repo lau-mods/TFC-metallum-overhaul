@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/tuyere/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tuyere/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tuyere/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tuyere/tungsten_steel",
+      "required": false
+    }
+  ]
+}

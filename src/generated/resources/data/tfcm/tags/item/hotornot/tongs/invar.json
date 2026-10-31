@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/tongs/invar",
+      "required": false
+    }
+  ],
+  "replace": false
+}

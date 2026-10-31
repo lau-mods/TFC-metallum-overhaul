@@ -1,0 +1,41 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:handle/saw"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/wrought_iron"
+    },
+    "R": {
+      "tag": "c:wires/wrought_iron"
+    },
+    "X": {
+      "item": "tfc:metal/saw_blade/wrought_iron"
+    }
+  },
+  "pattern": [
+    " NX",
+    "GHN",
+    "RL "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/saw/wrought_iron"
+    }
+  }
+}

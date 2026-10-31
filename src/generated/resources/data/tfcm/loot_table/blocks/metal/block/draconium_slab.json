@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    }
+  ],
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "add": false,
+              "conditions": [
+                {
+                  "block": "tfcm:metal/block/draconium_slab",
+                  "condition": "minecraft:block_state_property",
+                  "properties": {
+                    "type": "double"
+                  }
+                }
+              ],
+              "count": 2,
+              "function": "minecraft:set_count"
+            }
+          ],
+          "name": "tfcm:metal/block/draconium_slab"
+        }
+      ],
+      "rolls": 1
+    }
+  ],
+  "random_sequence": "tfcm:blocks/metal/block/draconium_slab"
+}

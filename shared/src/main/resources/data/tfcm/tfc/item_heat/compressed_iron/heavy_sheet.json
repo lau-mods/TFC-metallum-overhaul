@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:heavy_sheets/compressed_iron"
-                   },
-    "heat_capacity":  14.285,
-    "forging_temperature":  921,
-    "welding_temperature":  1228
-}

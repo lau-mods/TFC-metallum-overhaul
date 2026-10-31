@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/andesite_alloy"
+  },
+  "size": "large",
+  "weight": "medium"
+}

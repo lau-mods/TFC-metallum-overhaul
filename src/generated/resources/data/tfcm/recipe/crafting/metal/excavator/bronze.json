@@ -1,0 +1,33 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:rods/bronze"
+    },
+    "N": {
+      "tag": "c:rivets/bronze"
+    },
+    "X": {
+      "item": "tfcm:metal/excavator_head/bronze"
+    }
+  },
+  "pattern": [
+    " NX",
+    " HG"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfcm:metal/excavator/bronze"
+    }
+  }
+}

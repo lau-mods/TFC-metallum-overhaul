@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 138.0,
+  "heat_capacity": 1.7857143,
+  "ingredient": {
+    "item": "tfcm:metal/stamen/tin"
+  },
+  "welding_temperature": 184.0
+}

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "forging_temperature": 960.0,
+  "heat_capacity": 5.7142863,
+  "ingredient": {
+    "item": "tfcm:metal/sheet/tough_alloy"
+  },
+  "welding_temperature": 1280.0
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "tfc:block/anvil",
+  "textures": {
+    "all": "tfcm:block/metal/smooth/titanium",
+    "particle": "tfcm:block/metal/smooth/titanium"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "mithril_matrix"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfcm:ore_processing/chunks/mithril_matrix"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/dirty_dust/mithril_matrix"
+  }
+}

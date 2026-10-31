@@ -1,0 +1,41 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "H": {
+      "item": "tfcm:metal/pommel/steel"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "R": {
+      "tag": "c:rivets/steel"
+    },
+    "T": {
+      "tag": "c:rings/steel"
+    },
+    "X": {
+      "item": "tfc:metal/sword_blade/steel"
+    },
+    "Y": {
+      "item": "tfcm:metal/crossguard/steel"
+    }
+  },
+  "pattern": [
+    "L X",
+    "RY ",
+    "HTL"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/sword/steel"
+    }
+  }
+}

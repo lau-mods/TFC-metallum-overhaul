@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/osmiridium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

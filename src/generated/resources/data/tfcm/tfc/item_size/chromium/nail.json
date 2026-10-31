@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "ingredient": {
+    "tag": "c:nails/chromium"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

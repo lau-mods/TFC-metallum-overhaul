@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 252.00002,
+  "heat_capacity": 0.47619054,
+  "ingredient": {
+    "item": "tfcm:metal/nugget/zinc"
+  },
+  "welding_temperature": 336.0
+}

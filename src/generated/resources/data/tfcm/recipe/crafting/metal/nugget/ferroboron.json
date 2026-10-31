@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/ferroboron"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tfcm:metal/nugget/ferroboron"
+  }
+}

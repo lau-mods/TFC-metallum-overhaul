@@ -1,0 +1,15 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/tong_part/netherite",
+      "required": false
+    }
+  ],
+  "replace": false
+}

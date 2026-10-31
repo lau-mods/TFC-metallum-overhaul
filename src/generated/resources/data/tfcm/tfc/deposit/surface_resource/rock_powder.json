@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfcm:ore_processing/rock_powder"
+  },
+  "loot_table": "tfcm:surface_resource/rock_powder",
+  "model_stages": [
+    "tfcm:item/pan/rock_powder_full",
+    "tfcm:item/pan/rock_powder_half",
+    "tfcm:item/pan/empty"
+  ]
+}

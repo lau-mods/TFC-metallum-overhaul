@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "forging_temperature": 390.0,
+  "heat_capacity": 2.8571432,
+  "ingredient": {
+    "item": "tfcm:metal/plate/magnesium"
+  },
+  "welding_temperature": 520.0
+}

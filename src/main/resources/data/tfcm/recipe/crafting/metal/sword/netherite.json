@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "type": "tfc:advanced_shaped_crafting",
+  "pattern": [
+    "L X",
+    "RY ",
+    "HTL"
+  ],
+  "key": {
+    "R": {
+      "tag": "c:rivets/netherite"
+    },
+    "X": {
+      "item": "tfcm:metal/sword_blade/netherite"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "T": {
+      "tag": "c:rings/netherite"
+    },
+    "Y": {
+      "item": "tfcm:metal/crossguard/netherite"
+    },
+    "H": {
+      "item": "tfcm:metal/pommel/netherite"
+    }
+  },
+  "result": {
+    "stack": {
+      "count": 1,
+      "id": "tfcm:metal/sword/netherite"
+    },
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ]
+  },
+  "input_row": 0,
+  "input_column": 2
+}

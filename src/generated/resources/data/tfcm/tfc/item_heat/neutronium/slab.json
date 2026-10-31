@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "forging_temperature": 1800.0,
+  "heat_capacity": 1.4285716,
+  "ingredient": {
+    "item": "tfcm:metal/block/neutronium_slab"
+  },
+  "welding_temperature": 2400.0
+}

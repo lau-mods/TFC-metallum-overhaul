@@ -1,0 +1,5125 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:ore/poor_native_platinum/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_platinum/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_platinum/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_platinum/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_naquadah/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_naquadah/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_naquadah/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_iridium/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_iridium/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_iridium/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_osmium/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_osmium/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_osmium/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_rutile/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_rutile/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_rutile/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cobaltite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cobaltite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cobaltite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_spodumene/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_spodumene/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_spodumene/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bauxite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bauxite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bauxite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_galena/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_galena/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_galena/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_uraninite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_uraninite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_uraninite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_mithril_matrix/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_mithril_matrix/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_mithril_matrix/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_stibnite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_stibnite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_stibnite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_wolframite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_wolframite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_wolframite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorianite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorianite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorianite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnesite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnesite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnesite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_zircon/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_zircon/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_zircon/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/fluorite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/quartz/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/granite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/diorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/gabbro",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/shale",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/claystone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/limestone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/conglomerate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/dolomite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/chert",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/chalk",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/tuff",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/rhyolite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/basalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/andesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/dacite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/quartzite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/slate",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/phyllite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/schist",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/gneiss",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/marble",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/carobbiite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bismuthinite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_bismuthinite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bismuthinite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_bismuthinite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bismuthinite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_bismuthinite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cassiterite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cassiterite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cassiterite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cassiterite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cassiterite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cassiterite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_garnierite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_garnierite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_garnierite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_garnierite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_garnierite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_garnierite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_hematite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_hematite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_hematite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_hematite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_hematite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_hematite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_limonite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_limonite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_limonite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_limonite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_limonite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_limonite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnetite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_magnetite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnetite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_magnetite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnetite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_magnetite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_malachite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_malachite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_malachite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_malachite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_malachite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_malachite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_copper/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_copper/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_copper/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_copper/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_copper/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_copper/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_gold/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_gold/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_gold/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_gold/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_gold/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_gold/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_silver/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_silver/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_silver/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_silver/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_silver/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_silver/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_sphalerite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_sphalerite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_sphalerite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_sphalerite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_sphalerite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_sphalerite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_tetrahedrite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_tetrahedrite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_tetrahedrite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_tetrahedrite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_tetrahedrite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_tetrahedrite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/amethyst/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/amethyst/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/borax/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/borax/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/cinnabar/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/cinnabar/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/cryolite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/cryolite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/diamond/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/diamond/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/emerald/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/emerald/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/graphite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/graphite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/gypsum/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/gypsum/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/lapis_lazuli/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/lapis_lazuli/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/opal/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/opal/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/pyrite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/pyrite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/ruby/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/ruby/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/saltpeter/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/saltpeter/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/sapphire/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/sapphire/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/sulfur/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/sulfur/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/sylvite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/sylvite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/topaz/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/topaz/end_stone",
+      "required": false
+    },
+    {
+      "id": "#tfcm:firmalife_ores",
+      "required": false
+    }
+  ]
+}

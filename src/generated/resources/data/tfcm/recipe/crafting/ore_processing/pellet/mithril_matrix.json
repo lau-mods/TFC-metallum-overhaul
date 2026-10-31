@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "mithril_matrix"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/powder/mithril_matrix"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/mithril_matrix"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/mithril_matrix"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/mithril_matrix"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/pellet/mithril_matrix"
+  }
+}

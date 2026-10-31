@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/andesite_alloy"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tfcm:metal/nugget/andesite_alloy"
+  }
+}

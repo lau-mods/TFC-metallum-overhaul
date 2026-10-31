@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/gear/iridium"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/iridium"
+  },
+  "temperature": 1535
+}

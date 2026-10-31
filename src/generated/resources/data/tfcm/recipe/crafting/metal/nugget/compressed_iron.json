@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "c:ingots/compressed_iron"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "tfcm:metal/nugget/compressed_iron"
+  }
+}

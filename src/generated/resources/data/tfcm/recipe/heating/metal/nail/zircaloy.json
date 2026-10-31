@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nail/zircaloy"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/zircaloy"
+  },
+  "temperature": 1855
+}

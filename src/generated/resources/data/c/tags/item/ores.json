@@ -1,0 +1,213 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/platinum/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/platinum/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/platinum/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/naquadah/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/naquadah/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/naquadah/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/iridium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/iridium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/iridium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/osmium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/osmium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/osmium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/titanium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/titanium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/titanium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/cobalt/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/cobalt/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/cobalt/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/lithium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/lithium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/lithium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/aluminum/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/aluminum/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/aluminum/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/lead/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/lead/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/lead/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/uranium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/uranium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/uranium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/mithril/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/mithril/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/mithril/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/antimony/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/antimony/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/antimony/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/tungsten/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/tungsten/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/tungsten/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/thorium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/thorium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/thorium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/magnesium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/magnesium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/magnesium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/zirconium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/zirconium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/zirconium/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/fluorite",
+      "required": false
+    },
+    {
+      "id": "#c:ores/quartz",
+      "required": false
+    },
+    {
+      "id": "#c:ores/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:ores/carobbiite",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/dacite"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/dacite",
+  "model_stages": [
+    "tfcm:item/pan/gravel/dacite_full",
+    "tfcm:item/pan/gravel/dacite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

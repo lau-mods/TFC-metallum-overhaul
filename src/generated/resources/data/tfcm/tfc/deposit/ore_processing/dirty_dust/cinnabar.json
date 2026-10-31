@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cinnabar"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/cinnabar"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/cinnabar",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/cinnabar_full",
+    "tfcm:item/pan/dirty_dust/cinnabar_half",
+    "tfcm:item/pan/empty"
+  ]
+}

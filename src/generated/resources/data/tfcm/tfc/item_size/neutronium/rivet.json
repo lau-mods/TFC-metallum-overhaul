@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rivet/neutronium"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

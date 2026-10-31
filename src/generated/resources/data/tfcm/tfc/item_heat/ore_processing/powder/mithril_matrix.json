@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "mithril_matrix"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/mithril_matrix"
+  }
+}

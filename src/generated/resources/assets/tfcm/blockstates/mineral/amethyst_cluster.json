@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "tfcm:block/mineral/amethyst_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "tfcm:block/mineral/amethyst_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "tfcm:block/mineral/amethyst_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "tfcm:block/mineral/amethyst_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "tfcm:block/mineral/amethyst_cluster"
+    },
+    "facing=west": {
+      "model": "tfcm:block/mineral/amethyst_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

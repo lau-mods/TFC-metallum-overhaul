@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/stamen/arcane"
+  },
+  "size": "small",
+  "weight": "light"
+}

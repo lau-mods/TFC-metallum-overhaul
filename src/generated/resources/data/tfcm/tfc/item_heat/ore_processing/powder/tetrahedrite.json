@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "tetrahedrite"
+    }
+  ],
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfc:powder/tetrahedrite"
+  }
+}

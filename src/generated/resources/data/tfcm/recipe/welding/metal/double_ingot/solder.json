@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/solder"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/double_ingot/solder"
+  },
+  "second_input": {
+    "tag": "c:ingots/solder"
+  },
+  "tier": 2
+}

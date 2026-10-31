@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:heavy_sheets/osmiridium"
-                   },
-    "heat_capacity":  14.285,
-    "forging_temperature":  900,
-    "welding_temperature":  1200
-}

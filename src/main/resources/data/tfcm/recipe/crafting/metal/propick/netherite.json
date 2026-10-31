@@ -1,0 +1,47 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "type": "tfc:advanced_shaped_crafting",
+  "pattern": [
+    " NX",
+    "GHR",
+    "RL "
+  ],
+  "key": {
+    "N": {
+      "tag": "c:rivets/netherite"
+    },
+    "X": {
+      "item": "tfcm:metal/propick_head/netherite"
+    },
+    "G": {
+      "tag": "c:glue"
+    },
+    "R": {
+      "tag": "c:rings/netherite"
+    },
+    "H": {
+      "tag": "c:handle/medium"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    }
+  },
+  "result": {
+    "stack": {
+      "count": 1,
+      "id": "tfcm:metal/propick/netherite"
+    },
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ]
+  },
+  "input_row": 0,
+  "input_column": 2
+}

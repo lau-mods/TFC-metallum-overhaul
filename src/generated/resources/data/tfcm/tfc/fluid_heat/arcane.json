@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "arcane"
+    }
+  ],
+  "fluid": "tfcm:metal/arcane",
+  "melt_temperature": 940.0,
+  "specific_heat_capacity": 0.008571429
+}

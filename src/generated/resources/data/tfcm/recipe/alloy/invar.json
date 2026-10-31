@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfc:metal/wrought_iron",
+      "max": 0.7,
+      "min": 0.6
+    },
+    {
+      "fluid": "tfc:metal/nickel",
+      "max": 0.4,
+      "min": 0.3
+    }
+  ],
+  "result": "tfcm:metal/invar"
+}

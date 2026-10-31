@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "solder"
+    }
+  ],
+  "forging_temperature": 240.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/nail/solder"
+  },
+  "welding_temperature": 320.0
+}

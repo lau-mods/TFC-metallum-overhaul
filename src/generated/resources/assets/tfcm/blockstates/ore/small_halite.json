@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/halite"
+      },
+      {
+        "model": "tfcm:block/groundcover/halite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/halite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/halite",
+        "y": 270
+      }
+    ]
+  }
+}

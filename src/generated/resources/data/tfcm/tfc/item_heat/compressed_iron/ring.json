@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 0.34285718,
+  "ingredient": {
+    "item": "tfcm:metal/ring/compressed_iron"
+  },
+  "welding_temperature": 1228.0
+}

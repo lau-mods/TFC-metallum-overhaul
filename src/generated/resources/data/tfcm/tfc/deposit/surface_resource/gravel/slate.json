@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/slate"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/slate",
+  "model_stages": [
+    "tfcm:item/pan/gravel/slate_full",
+    "tfcm:item/pan/gravel/slate_half",
+    "tfcm:item/pan/empty"
+  ]
+}

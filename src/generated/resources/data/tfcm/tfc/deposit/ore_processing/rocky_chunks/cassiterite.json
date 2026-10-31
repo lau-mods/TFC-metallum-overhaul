@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cassiterite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/cassiterite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/cassiterite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/cassiterite_full",
+    "tfcm:item/pan/rocky_chunks/cassiterite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

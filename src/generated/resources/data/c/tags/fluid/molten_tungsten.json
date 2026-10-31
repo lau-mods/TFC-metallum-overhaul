@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "values": [
+    "tfcm:metal/tungsten",
+    "tfcm:metal/flowing_tungsten"
+  ]
+}

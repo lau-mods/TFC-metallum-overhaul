@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "tetrahedrite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/tetrahedrite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/tetrahedrite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/tetrahedrite_full",
+    "tfcm:item/pan/rocky_chunks/tetrahedrite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

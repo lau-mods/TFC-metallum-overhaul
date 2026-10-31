@@ -1,10 +1,15 @@
-MIT License
+Textures and models keep the licence of the work they come from:
+
+- TFC Metallum: GNU General Public License v3.0, Copyright (c) TFC-Metallum contributors
+- TFC Metallum Unofficial: MIT, Copyright (c) Mrthomas20121
+- TFC: Hammer Time: MIT, Copyright (c) RTCornejo
+- TFC Ore Washing: Academic Free License v3.0, Copyright (c) sirRobson
+- TFC More Items: GNU Lesser General Public License v3.0, Copyright (c) sirRobson
+- TFC Metal Tools: GNU Lesser General Public License v3.0, Copyright (c) sirRobson
+
+Everything else is under the MIT License:
 
 Copyright (c) 2026 claustra01
-Copyright (c) 2023 NMagpie
-Copyright (c) 2022 eerussianguy
-Copyright (c) 2023 BluSunrize
-Copyright (c) 2023 NeoForged project
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "forging_temperature": 1080.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/rivet/super_alloy"
+  },
+  "welding_temperature": 1440.0
+}

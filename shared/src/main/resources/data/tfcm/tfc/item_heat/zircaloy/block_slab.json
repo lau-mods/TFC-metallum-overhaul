@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/zircaloy_slab"
-  },
-  "heat_capacity": 1.429,
-  "forging_temperature": 1113,
-  "welding_temperature": 1484
-}

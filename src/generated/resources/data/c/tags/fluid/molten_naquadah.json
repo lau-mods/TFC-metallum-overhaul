@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    }
+  ],
+  "values": [
+    "tfcm:metal/naquadah",
+    "tfcm:metal/flowing_naquadah"
+  ]
+}

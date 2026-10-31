@@ -1,0 +1,187 @@
+{
+  "values": [
+    {
+      "id": "#c:rivets/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/invar",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/lead",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/solder",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/boron",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/super_alloy",
+      "required": false
+    },
+    "#c:rivets/bismuth",
+    "#c:rivets/bismuth_bronze",
+    "#c:rivets/black_bronze",
+    "#c:rivets/black_steel",
+    "#c:rivets/blue_steel",
+    "#c:rivets/brass",
+    "#c:rivets/bronze",
+    "#c:rivets/cast_iron",
+    "#c:rivets/copper",
+    "#c:rivets/gold",
+    "#c:rivets/nickel",
+    "#c:rivets/red_steel",
+    "#c:rivets/rose_gold",
+    "#c:rivets/silver",
+    "#c:rivets/steel",
+    "#c:rivets/sterling_silver",
+    "#c:rivets/tin",
+    "#c:rivets/wrought_iron",
+    "#c:rivets/zinc",
+    {
+      "id": "#c:rivets/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/stainless_steel",
+      "required": false
+    }
+  ]
+}

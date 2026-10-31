@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "mithril_matrix"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/mithril_matrix"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/mithril_matrix",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/mithril_matrix_full",
+    "tfcm:item/pan/rocky_chunks/mithril_matrix_half",
+    "tfcm:item/pan/empty"
+  ]
+}

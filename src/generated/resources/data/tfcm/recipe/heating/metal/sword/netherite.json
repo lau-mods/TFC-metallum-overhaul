@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/sword/netherite"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfcm:metal/netherite"
+  },
+  "temperature": 1535,
+  "use_durability": true
+}

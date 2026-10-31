@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "magnetite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/magnetite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfc:powder/magnetite"
+  }
+}

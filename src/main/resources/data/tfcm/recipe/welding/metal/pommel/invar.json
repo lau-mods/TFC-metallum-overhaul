@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:rings/invar"
+  },
+  "second_input": {
+    "tag": "c:rings/invar"
+  },
+  "tier": 2,
+  "result": {
+    "id": "tfcm:metal/pommel/invar"
+  }
+}

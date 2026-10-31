@@ -1,0 +1,160 @@
+{
+  "values": [
+    {
+      "id": "tfcm:metal/block/compressed_iron_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/platinum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/naquadah_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/iridium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/osmium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/osmiridium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/mithril_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/arcane_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/refined_glowstone_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/refined_obsidian_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/antimony_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/titanium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/cobalt_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lithium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/aluminum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/constantan_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/invar_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/electrum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lead_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/uranium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/tungsten_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/solder_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/tungsten_steel_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/netherite_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/dawnstone_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/andesite_alloy_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/draconium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/awakened_draconium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/boron_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/thorium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/magnesium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/beryllium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/zirconium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/neutronium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/ferroboron_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/tough_alloy_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/zircaloy_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/hsla_steel_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/super_alloy_stairs",
+      "required": false
+    }
+  ]
+}

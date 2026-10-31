@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "borax"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/borax"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/borax",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/borax_full",
+    "tfcm:item/pan/dirty_dust/borax_half",
+    "tfcm:item/pan/empty"
+  ]
+}

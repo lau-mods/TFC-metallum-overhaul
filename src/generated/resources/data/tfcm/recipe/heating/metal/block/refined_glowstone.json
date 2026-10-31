@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_glowstone"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/block/refined_glowstone"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/refined_glowstone"
+  },
+  "temperature": 940.0
+}

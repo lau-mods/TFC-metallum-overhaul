@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "fluid": "tfcm:metal/constantan",
+  "melt_temperature": 1250,
+  "specific_heat_capacity": 0.008571429
+}

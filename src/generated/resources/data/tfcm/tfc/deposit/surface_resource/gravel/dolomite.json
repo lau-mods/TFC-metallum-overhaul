@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/dolomite"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/dolomite",
+  "model_stages": [
+    "tfcm:item/pan/gravel/dolomite_full",
+    "tfcm:item/pan/gravel/dolomite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

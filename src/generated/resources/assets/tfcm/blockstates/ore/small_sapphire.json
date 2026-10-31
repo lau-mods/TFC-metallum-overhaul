@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/sapphire"
+      },
+      {
+        "model": "tfcm:block/groundcover/sapphire",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/sapphire",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/sapphire",
+        "y": 270
+      }
+    ]
+  }
+}

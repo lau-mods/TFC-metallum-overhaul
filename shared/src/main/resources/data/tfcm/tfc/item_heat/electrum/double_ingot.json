@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:double_ingots/electrum"
-  },
-  "heat_capacity": 3.636909,
-  "forging_temperature": 600,
-  "welding_temperature": 800
-}

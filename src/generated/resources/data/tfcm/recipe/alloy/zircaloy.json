@@ -1,0 +1,26 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zircaloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfcm:metal/zirconium",
+      "max": 0.875,
+      "min": 0.875
+    },
+    {
+      "fluid": "tfc:metal/tin",
+      "max": 0.125,
+      "min": 0.125
+    }
+  ],
+  "result": "tfcm:metal/zircaloy"
+}

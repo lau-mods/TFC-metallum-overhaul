@@ -1,7 +1,0 @@
-{
-  "parent": "tfcm:block/ore/small_ore_piece",
-  "textures": {
-    "ore": "tfc:item/ore/amethyst"
-  }
-}
-

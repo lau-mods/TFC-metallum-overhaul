@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/foil/antimony"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/antimony"
+  },
+  "temperature": 630
+}

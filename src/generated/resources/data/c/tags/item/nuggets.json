@@ -1,0 +1,187 @@
+{
+  "values": [
+    {
+      "id": "#c:nuggets/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/invar",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/lead",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/solder",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/boron",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/super_alloy",
+      "required": false
+    },
+    "#c:nuggets/bismuth",
+    "#c:nuggets/bismuth_bronze",
+    "#c:nuggets/black_bronze",
+    "#c:nuggets/black_steel",
+    "#c:nuggets/blue_steel",
+    "#c:nuggets/brass",
+    "#c:nuggets/bronze",
+    "#c:nuggets/cast_iron",
+    "#c:nuggets/copper",
+    "#c:nuggets/gold",
+    "#c:nuggets/nickel",
+    "#c:nuggets/red_steel",
+    "#c:nuggets/rose_gold",
+    "#c:nuggets/silver",
+    "#c:nuggets/steel",
+    "#c:nuggets/sterling_silver",
+    "#c:nuggets/tin",
+    "#c:nuggets/wrought_iron",
+    "#c:nuggets/zinc",
+    {
+      "id": "#c:nuggets/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/stainless_steel",
+      "required": false
+    }
+  ]
+}

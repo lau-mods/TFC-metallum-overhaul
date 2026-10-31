@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/cast_iron"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/rivet/cast_iron"
+  },
+  "rules": [
+    "draw_not_last",
+    "bend_any",
+    "hit_any"
+  ]
+}

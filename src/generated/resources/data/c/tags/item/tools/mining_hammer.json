@@ -1,0 +1,57 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/mining_hammer/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/tungsten_steel",
+      "required": false
+    }
+  ]
+}

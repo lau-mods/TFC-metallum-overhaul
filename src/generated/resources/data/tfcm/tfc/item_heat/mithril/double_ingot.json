@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 5.7142863,
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/mithril"
+  },
+  "welding_temperature": 752.0
+}

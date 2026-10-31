@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/constantan_stairs"
+  },
+  "size": "small",
+  "weight": "light"
+}

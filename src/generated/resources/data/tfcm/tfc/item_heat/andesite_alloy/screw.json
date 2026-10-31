@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "forging_temperature": 312.0,
+  "heat_capacity": 0.2,
+  "ingredient": {
+    "item": "tfcm:metal/screw/andesite_alloy"
+  },
+  "welding_temperature": 416.0
+}

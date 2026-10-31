@@ -1,8 +1,0 @@
-{
-    "ingredient": {
-        "item": "tfcm:metal/block/netherite_stairs"
-    },
-    "heat_capacity": 3.75,
-    "forging_temperature": 921,
-    "welding_temperature": 1228
-}

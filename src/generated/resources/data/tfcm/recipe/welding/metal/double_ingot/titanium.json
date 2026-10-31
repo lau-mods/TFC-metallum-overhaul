@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/titanium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/double_ingot/titanium"
+  },
+  "second_input": {
+    "tag": "c:ingots/titanium"
+  },
+  "tier": 4
+}

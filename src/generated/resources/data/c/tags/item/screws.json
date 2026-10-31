@@ -1,0 +1,187 @@
+{
+  "values": [
+    {
+      "id": "#c:screws/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:screws/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:screws/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:screws/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:screws/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:screws/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:screws/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:screws/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:screws/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:screws/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:screws/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:screws/invar",
+      "required": false
+    },
+    {
+      "id": "#c:screws/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:screws/lead",
+      "required": false
+    },
+    {
+      "id": "#c:screws/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:screws/solder",
+      "required": false
+    },
+    {
+      "id": "#c:screws/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:screws/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:screws/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:screws/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:screws/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/boron",
+      "required": false
+    },
+    {
+      "id": "#c:screws/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:screws/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:screws/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:screws/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:screws/super_alloy",
+      "required": false
+    },
+    "#c:screws/bismuth",
+    "#c:screws/bismuth_bronze",
+    "#c:screws/black_bronze",
+    "#c:screws/black_steel",
+    "#c:screws/blue_steel",
+    "#c:screws/brass",
+    "#c:screws/bronze",
+    "#c:screws/cast_iron",
+    "#c:screws/copper",
+    "#c:screws/gold",
+    "#c:screws/nickel",
+    "#c:screws/red_steel",
+    "#c:screws/rose_gold",
+    "#c:screws/silver",
+    "#c:screws/steel",
+    "#c:screws/sterling_silver",
+    "#c:screws/tin",
+    "#c:screws/wrought_iron",
+    "#c:screws/zinc",
+    {
+      "id": "#c:screws/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/stainless_steel",
+      "required": false
+    }
+  ]
+}

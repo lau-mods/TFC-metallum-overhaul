@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "forging_temperature": 1113.0,
+  "heat_capacity": 1.4285716,
+  "ingredient": {
+    "item": "tfcm:metal/block/zirconium_slab"
+  },
+  "welding_temperature": 1484.0
+}

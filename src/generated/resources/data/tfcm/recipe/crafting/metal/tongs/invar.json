@@ -1,0 +1,29 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfchotornot"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "tfcm:metal/tong_part/invar"
+    },
+    "R": {
+      "tag": "c:rivets/invar"
+    }
+  },
+  "pattern": [
+    "PP",
+    " R"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/tongs/invar"
+  }
+}

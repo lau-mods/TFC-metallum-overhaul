@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorianite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "heat_capacity": 2.2857146,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/thorianite"
+  }
+}

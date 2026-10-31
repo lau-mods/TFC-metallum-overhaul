@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/wire/thorium"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfcm:metal/thorium"
+  },
+  "temperature": 1750
+}

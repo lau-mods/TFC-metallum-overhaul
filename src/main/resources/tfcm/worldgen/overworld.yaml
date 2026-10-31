@@ -1,0 +1,1211 @@
+# TFCM overworld world generation. Copied to config/tfcm/overworld.yaml on first start and never overwritten.
+# Delete the file in config/tfcm to get this default back on the next start.
+veins:
+
+  # TFC (with indicator)
+  - id: tfc:vein/surface_native_copper
+    blocks:
+      - block: tfc:ore/{tier}_native_copper/{rock}
+    type: tfc:cluster_vein
+    ymax: 130
+    ymin: 40
+    rarity: 24
+    density: 0.25
+    size: 20
+    random_name: surface_native_copper
+    rocks:
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfc:ore/small_native_copper
+      rarity: 14
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/surface_malachite
+    blocks:
+      - block: tfc:ore/{tier}_malachite/{rock}
+    type: tfc:cluster_vein
+    ymax: 130
+    ymin: 40
+    rarity: 32
+    density: 0.25
+    size: 20
+    random_name: surface_malachite
+    rocks:
+      - marble
+      - limestone
+      - chalk
+      - dolomite
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfc:ore/small_malachite
+      rarity: 14
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/surface_tetrahedrite
+    blocks:
+      - block: tfc:ore/{tier}_tetrahedrite/{rock}
+    type: tfc:cluster_vein
+    ymax: 170
+    ymin: 90
+    rarity: 7
+    density: 0.25
+    size: 20
+    random_name: surface_tetrahedrite
+    rocks:
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfc:ore/small_tetrahedrite
+      rarity: 8
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/normal_malachite
+    blocks:
+      - block: tfc:ore/{tier}_malachite/{rock}
+    type: tfc:cluster_vein
+    ymax: 70
+    ymin: -30
+    rarity: 45
+    density: 0.5
+    size: 30
+    random_name: normal_malachite
+    rocks:
+      - marble
+      - limestone
+      - chalk
+      - dolomite
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_malachite
+      rarity: 25
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/normal_tetrahedrite
+    blocks:
+      - block: tfc:ore/{tier}_tetrahedrite/{rock}
+    type: tfc:cluster_vein
+    ymax: 70
+    ymin: -30
+    rarity: 40
+    density: 0.5
+    size: 30
+    random_name: normal_tetrahedrite
+    rocks:
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_tetrahedrite
+      rarity: 25
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/normal_native_gold
+    blocks:
+      - block: tfc:ore/{tier}_native_gold/{rock}
+    type: tfc:cluster_vein
+    ymax: 70
+    ymin: 0
+    rarity: 90
+    density: 0.25
+    size: 15
+    random_name: normal_native_gold
+    rocks:
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_native_gold
+      rarity: 40
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/rich_native_gold
+    blocks:
+      - block: tfc:ore/{tier}_native_gold/{rock}
+    type: tfc:cluster_vein
+    ymax: 20
+    ymin: -80
+    rarity: 50
+    density: 0.5
+    size: 40
+    random_name: rich_native_gold
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfc:ore/small_native_gold
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 4
+
+  - id: tfc:vein/surface_native_silver
+    blocks:
+      - block: tfc:ore/{tier}_native_silver/{rock}
+    type: tfc:cluster_vein
+    ymax: 180
+    ymin: 90
+    rarity: 15
+    density: 0.2
+    size: 10
+    random_name: surface_native_silver
+    rocks:
+      - granite
+      - diorite
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfc:ore/small_native_silver
+      rarity: 12
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/normal_native_silver
+    blocks:
+      - block: tfc:ore/{tier}_native_silver/{rock}
+    type: tfc:cluster_vein
+    ymax: 20
+    ymin: -80
+    rarity: 25
+    density: 0.6
+    size: 25
+    random_name: normal_native_silver
+    rocks:
+      - granite
+      - diorite
+      - gneiss
+      - schist
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfc:ore/small_native_silver
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 9
+
+  - id: tfc:vein/surface_cassiterite
+    blocks:
+      - block: tfc:ore/{tier}_cassiterite/{rock}
+    type: tfc:cluster_vein
+    ymax: 180
+    ymin: 80
+    rarity: 5
+    density: 0.4
+    size: 15
+    random_name: surface_cassiterite
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_cassiterite
+      rarity: 12
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/surface_bismuthinite
+    blocks:
+      - block: tfc:ore/{tier}_bismuthinite/{rock}
+    type: tfc:cluster_vein
+    ymax: 130
+    ymin: 40
+    rarity: 32
+    density: 0.3
+    size: 20
+    random_name: surface_bismuthinite
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfc:ore/small_bismuthinite
+      rarity: 14
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/normal_bismuthinite
+    blocks:
+      - block: tfc:ore/{tier}_bismuthinite/{rock}
+    type: tfc:cluster_vein
+    ymax: 20
+    ymin: -80
+    rarity: 45
+    density: 0.6
+    size: 40
+    random_name: normal_bismuthinite
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfc:ore/small_bismuthinite
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 4
+
+  - id: tfc:vein/surface_sphalerite
+    blocks:
+      - block: tfc:ore/{tier}_sphalerite/{rock}
+    type: tfc:cluster_vein
+    ymax: 130
+    ymin: 40
+    rarity: 30
+    density: 0.3
+    size: 20
+    random_name: surface_sphalerite
+    rocks:
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfc:ore/small_sphalerite
+      rarity: 12
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/normal_sphalerite
+    blocks:
+      - block: tfc:ore/{tier}_sphalerite/{rock}
+    type: tfc:cluster_vein
+    ymax: 20
+    ymin: -80
+    rarity: 45
+    density: 0.6
+    size: 40
+    random_name: normal_sphalerite
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfc:ore/small_sphalerite
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 5
+
+  - id: tfc:vein/surface_hematite
+    blocks:
+      - block: tfc:ore/{tier}_hematite/{rock}
+    type: tfc:cluster_vein
+    ymax: 90
+    ymin: 10
+    rarity: 45
+    density: 0.4
+    size: 20
+    random_name: surface_hematite
+    rocks:
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_hematite
+      rarity: 24
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/surface_magnetite
+    blocks:
+      - block: tfc:ore/{tier}_magnetite/{rock}
+    type: tfc:cluster_vein
+    ymax: 90
+    ymin: 10
+    rarity: 90
+    density: 0.4
+    size: 20
+    random_name: surface_magnetite
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_magnetite
+      rarity: 24
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/surface_limonite
+    blocks:
+      - block: tfc:ore/{tier}_limonite/{rock}
+    type: tfc:cluster_vein
+    ymax: 90
+    ymin: 10
+    rarity: 90
+    density: 0.4
+    size: 20
+    random_name: surface_limonite
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_limonite
+      rarity: 24
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/normal_garnierite
+    blocks:
+      - block: tfc:ore/{tier}_garnierite/{rock}
+    type: tfc:cluster_vein
+    ymax: 0
+    ymin: -80
+    rarity: 25
+    density: 0.3
+    size: 18
+    random_name: normal_garnierite
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 35
+      normal: 40
+      rich: 25
+    indicator:
+      block: tfc:ore/small_garnierite
+      rarity: 12
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfc:vein/gabbro_garnierite
+    blocks:
+      - block: tfc:ore/{tier}_garnierite/{rock}
+    type: tfc:cluster_vein
+    ymax: 0
+    ymin: -80
+    rarity: 20
+    density: 0.6
+    size: 30
+    random_name: gabbro_garnierite
+    rocks:
+      - gabbro
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfc:ore/small_garnierite
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 7
+
+  # TFC (no indicator, not gems)
+  - id: tfc:vein/fake_native_gold
+    blocks:
+      - block: tfc:ore/pyrite/{rock}
+    type: tfc:cluster_vein
+    ymax: 70
+    ymin: -50
+    rarity: 16
+    density: 0.35
+    size: 15
+    random_name: fake_native_gold
+    rocks:
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+      - granite
+      - diorite
+      - gabbro
+
+  - id: tfc:vein/graphite
+    blocks:
+      - block: tfc:ore/graphite/{rock}
+    type: tfc:cluster_vein
+    ymax: 60
+    ymin: -30
+    rarity: 20
+    density: 0.4
+    size: 20
+    random_name: graphite
+    rocks:
+      - gneiss
+      - marble
+      - quartzite
+      - schist
+
+  - id: tfc:vein/lignite
+    blocks:
+      - block: tfc:lignite
+    type: tfc:disc_vein
+    ymax: -8
+    ymin: -20
+    rarity: 160
+    density: 0.85
+    size: 40
+    height: 2
+    project: true
+    project_offset: true
+    random_name: lignite
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+
+  - id: tfc:vein/bituminous_coal
+    blocks:
+      - block: tfc:bituminous_coal
+    type: tfc:disc_vein
+    ymax: -12
+    ymin: -35
+    rarity: 210
+    density: 0.9
+    size: 50
+    height: 3
+    project: true
+    project_offset: true
+    random_name: bituminous_coal
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+
+  - id: tfc:vein/sulfur
+    blocks:
+      - block: tfc:ore/sulfur/{rock}
+    type: tfc:disc_vein
+    ymax: -45
+    ymin: -64
+    rarity: 4
+    density: 0.25
+    size: 18
+    height: 5
+    near_lava: true
+    random_name: sulfur
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+
+  - id: tfc:vein/tuff_sulfur
+    blocks:
+      - block: tfc:ore/sulfur/{rock}
+    type: tfc:disc_vein
+    ymax: 120
+    ymin: 40
+    rarity: 4
+    density: 0.45
+    size: 18
+    height: 4
+    random_name: tuff_sulfur
+    rocks:
+      - tuff
+
+  - id: tfc:vein/cryolite
+    blocks:
+      - block: tfc:ore/cryolite/{rock}
+    type: tfc:cluster_vein
+    ymax: -10
+    ymin: -70
+    rarity: 16
+    density: 0.7
+    size: 18
+    random_name: cryolite
+    rocks:
+      - granite
+      - diorite
+
+  - id: tfc:vein/cinnabar
+    blocks:
+      - block: tfc:ore/cinnabar/{rock}
+    type: tfc:cluster_vein
+    ymax: 10
+    ymin: -70
+    rarity: 14
+    density: 0.6
+    size: 18
+    random_name: cinnabar
+    rocks:
+      - quartzite
+      - phyllite
+      - gneiss
+      - schist
+
+  - id: tfc:vein/saltpeter
+    blocks:
+      - block: tfc:ore/saltpeter/{rock}
+    type: tfc:disc_vein
+    ymax: 100
+    ymin: 40
+    rarity: 110
+    density: 0.4
+    size: 35
+    height: 5
+    random_name: saltpeter
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+
+  - id: tfc:vein/sylvite
+    blocks:
+      - block: tfc:ore/sylvite/{rock}
+    type: tfc:disc_vein
+    ymax: 100
+    ymin: 40
+    rarity: 60
+    density: 0.35
+    size: 35
+    height: 5
+    random_name: sylvite
+    rocks:
+      - shale
+      - claystone
+      - chert
+
+  - id: tfc:vein/borax
+    blocks:
+      - block: tfc:ore/borax/{rock}
+    type: tfc:disc_vein
+    ymax: 100
+    ymin: 40
+    rarity: 40
+    density: 0.2
+    size: 23
+    height: 3
+    random_name: borax
+    rocks:
+      - claystone
+      - limestone
+      - shale
+
+  - id: tfc:vein/gypsum
+    blocks:
+      - block: tfc:ore/gypsum/{rock}
+    type: tfc:disc_vein
+    ymax: 100
+    ymin: 40
+    rarity: 70
+    density: 0.3
+    size: 25
+    height: 5
+    random_name: gypsum
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+
+  - id: tfc:vein/halite
+    blocks:
+      - block: tfc:halite
+    type: tfc:disc_vein
+    ymax: -12
+    ymin: -45
+    rarity: 110
+    density: 0.85
+    size: 35
+    height: 4
+    project: true
+    project_offset: true
+    random_name: halite
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+
+  # TFC (gems)
+  - id: tfc:vein/lapis_lazuli
+    blocks:
+      - block: tfc:ore/lapis_lazuli/{rock}
+    type: tfc:cluster_vein
+    ymax: 80
+    ymin: -20
+    rarity: 30
+    density: 0.12
+    size: 30
+    random_name: lapis_lazuli
+    rocks:
+      - limestone
+      - marble
+
+  - id: tfc:vein/diamond
+    blocks:
+      - block: tfc:ore/diamond/{rock}
+    type: tfc:pipe_vein
+    ymax: 100
+    ymin: -64
+    rarity: 30
+    density: 0.15
+    height: 60
+    radius: 5
+    min_skew: 5
+    max_skew: 13
+    min_slant: 0
+    max_slant: 2
+    sign: 0
+    random_name: diamond
+    rocks:
+      - gabbro
+
+  - id: tfc:vein/emerald
+    blocks:
+      - block: tfc:ore/emerald/{rock}
+    type: tfc:pipe_vein
+    ymax: 100
+    ymin: -64
+    rarity: 80
+    density: 0.15
+    height: 60
+    radius: 5
+    min_skew: 5
+    max_skew: 13
+    min_slant: 0
+    max_slant: 2
+    sign: 0
+    random_name: emerald
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+
+  - id: tfc:vein/ruby
+    blocks:
+      - block: tfc:ore/ruby/{rock}
+    type: tfc:cluster_vein
+    ymax: -10
+    ymin: -70
+    rarity: 12
+    density: 0.2
+    size: 22
+    random_name: ruby
+    rocks:
+      - schist
+      - gneiss
+
+  - id: tfc:vein/amethyst
+    blocks:
+      - block: tfc:ore/amethyst/{rock}
+    type: tfc:disc_vein
+    ymax: 60
+    ymin: 40
+    rarity: 25
+    density: 0.2
+    size: 8
+    height: 4
+    random_name: amethyst
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+
+  - id: tfc:vein/opal
+    blocks:
+      - block: tfc:ore/opal/{rock}
+    type: tfc:disc_vein
+    ymax: 60
+    ymin: 40
+    rarity: 25
+    density: 0.2
+    size: 8
+    height: 4
+    random_name: opal
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+
+  # Firmalife
+  - id: firmalife:vein/normal_chromite
+    blocks:
+      - block: firmalife:ore/{tier}_chromite/{rock}
+    type: tfc:cluster_vein
+    ymax: 130
+    ymin: 40
+    rarity: 50
+    density: 0.25
+    size: 8
+    random_name: normal_chromite
+    rocks:
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: firmalife:ore/small_chromite
+      rarity: 14
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: firmalife:vein/deep_chromite
+    blocks:
+      - block: firmalife:ore/{tier}_chromite/{rock}
+    type: tfc:cluster_vein
+    ymax: 20
+    ymin: -80
+    rarity: 90
+    density: 0.6
+    size: 15
+    random_name: deep_chromite
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: firmalife:ore/small_chromite
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 4
+
+  # TFCM IE-derived ores
+  - id: tfcm:vein/surface_bauxite
+    blocks:
+      - block: tfcm:ore/{tier}_bauxite/{rock}
+    type: tfc:cluster_vein
+    ymax: 100
+    ymin: 48
+    rarity: 40
+    density: 0.3
+    size: 15
+    random_name: surface_bauxite
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfcm:ore/small_bauxite
+      rarity: 12
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfcm:vein/normal_bauxite
+    blocks:
+      - block: tfcm:ore/{tier}_bauxite/{rock}
+    type: tfc:cluster_vein
+    ymax: 32
+    ymin: -64
+    rarity: 60
+    density: 0.6
+    size: 25
+    random_name: normal_bauxite
+    rocks:
+      - shale
+      - claystone
+      - limestone
+      - conglomerate
+      - dolomite
+      - chert
+      - chalk
+      - tuff
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfcm:ore/small_bauxite
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 4
+
+  - id: tfcm:vein/surface_galena
+    blocks:
+      - block: tfcm:ore/{tier}_galena/{rock}
+    type: tfc:cluster_vein
+    ymax: 75
+    ymin: 32
+    rarity: 40
+    density: 0.3
+    size: 15
+    random_name: surface_galena
+    rocks:
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 70
+      normal: 25
+      rich: 5
+    indicator:
+      block: tfcm:ore/small_galena
+      rarity: 12
+      depth: 35
+      underground_rarity: 1
+      underground_count: 0
+
+  - id: tfcm:vein/normal_galena
+    blocks:
+      - block: tfcm:ore/{tier}_galena/{rock}
+    type: tfc:cluster_vein
+    ymax: 20
+    ymin: -80
+    rarity: 60
+    density: 0.6
+    size: 25
+    random_name: normal_galena
+    rocks:
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+      - granite
+      - diorite
+      - gabbro
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfcm:ore/small_galena
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 4
+
+  - id: tfcm:vein/normal_uraninite
+    blocks:
+      - block: tfcm:ore/{tier}_uraninite/{rock}
+    type: tfc:cluster_vein
+    ymax: 20
+    ymin: -80
+    rarity: 50
+    density: 0.6
+    size: 25
+    random_name: normal_uraninite
+    rocks:
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+      - rhyolite
+      - basalt
+      - andesite
+      - dacite
+    tier:
+      poor: 15
+      normal: 25
+      rich: 60
+    indicator:
+      block: tfcm:ore/small_uraninite
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 4
+
+  - id: tfcm:vein/carobbiite
+    blocks:
+      - block: tfcm:ore/carobbiite/{rock}
+    type: tfc:cluster_vein
+    ymax: 32
+    ymin: -64
+    rarity: 70
+    density: 0.5
+    size: 18
+    random_name: carobbiite
+    rocks:
+      - granite
+      - diorite
+      - gabbro
+      - quartzite
+      - slate
+      - phyllite
+      - schist
+      - gneiss
+      - marble
+    indicator:
+      block: tfcm:ore/small_carobbiite
+      rarity: 0
+      depth: 35
+      underground_rarity: 1
+      underground_count: 4
+
+geodes:
+  - id: tfcm:quartz_geode
+    ymin: -48
+    ymax: 32
+    rarity: 300
+    outer: tfc:rock/hardened/basalt
+    middle: tfc:rock/raw/quartzite
+    inner:
+      - block: tfcm:mineral/budding_quartz
+        weight: 2
+      - block: tfcm:mineral/quartz_block
+        weight: 5
+      - block: tfc:rock/raw/quartzite
+    filling:
+      - block: minecraft:air
+    inner_placements:
+      - block: tfcm:mineral/quartz_cluster
+        weight: 1
+      - block: tfcm:mineral/large_quartz_bud
+        weight: 3
+      - block: tfcm:mineral/medium_quartz_bud
+        weight: 5
+      - block: tfcm:mineral/small_quartz_bud
+        weight: 8
+  - id: tfcm:amethyst_geode
+    ymin: -48
+    ymax: 32
+    rarity: 300
+    outer: tfc:rock/hardened/basalt
+    middle: tfc:rock/raw/quartzite
+    inner:
+      - block: tfcm:mineral/budding_amethyst
+        weight: 2
+      - block: tfcm:mineral/amethyst_block
+        weight: 5
+      - block: tfc:rock/raw/quartzite
+    filling:
+      - block: minecraft:air
+    inner_placements:
+      - block: tfcm:mineral/amethyst_cluster
+        weight: 1
+      - block: tfcm:mineral/large_amethyst_bud
+        weight: 3
+      - block: tfcm:mineral/medium_amethyst_bud
+        weight: 5
+      - block: tfcm:mineral/small_amethyst_bud
+        weight: 8
+  - id: tfcm:certus_quartz_geode
+    ymin: -48
+    ymax: 32
+    rarity: 300
+    outer: tfc:rock/hardened/basalt
+    middle: tfc:rock/raw/quartzite
+    inner:
+      - block: tfcm:mineral/budding_certus_quartz
+        weight: 2
+      - block: tfcm:mineral/certus_quartz_block
+        weight: 5
+      - block: tfc:rock/raw/quartzite
+    filling:
+      - block: minecraft:air
+    inner_placements:
+      - block: tfcm:mineral/certus_quartz_cluster
+        weight: 1
+      - block: tfcm:mineral/large_certus_quartz_bud
+        weight: 3
+      - block: tfcm:mineral/medium_certus_quartz_bud
+        weight: 5
+      - block: tfcm:mineral/small_certus_quartz_bud
+        weight: 8

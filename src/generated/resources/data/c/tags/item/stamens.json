@@ -1,0 +1,187 @@
+{
+  "values": [
+    {
+      "id": "#c:stamens/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/invar",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/lead",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/solder",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/boron",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/super_alloy",
+      "required": false
+    },
+    "#c:stamens/bismuth",
+    "#c:stamens/bismuth_bronze",
+    "#c:stamens/black_bronze",
+    "#c:stamens/black_steel",
+    "#c:stamens/blue_steel",
+    "#c:stamens/brass",
+    "#c:stamens/bronze",
+    "#c:stamens/cast_iron",
+    "#c:stamens/copper",
+    "#c:stamens/gold",
+    "#c:stamens/nickel",
+    "#c:stamens/red_steel",
+    "#c:stamens/rose_gold",
+    "#c:stamens/silver",
+    "#c:stamens/steel",
+    "#c:stamens/sterling_silver",
+    "#c:stamens/tin",
+    "#c:stamens/wrought_iron",
+    "#c:stamens/zinc",
+    {
+      "id": "#c:stamens/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/stainless_steel",
+      "required": false
+    }
+  ]
+}

@@ -1,8 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "minecraft:block/budding_amethyst",
-    "particle": "minecraft:block/budding_amethyst"
-  }
-}

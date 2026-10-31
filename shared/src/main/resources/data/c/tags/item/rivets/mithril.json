@@ -1,8 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/rivet/mithril",
-                       "required":  false
-                   }
-               ]
-}

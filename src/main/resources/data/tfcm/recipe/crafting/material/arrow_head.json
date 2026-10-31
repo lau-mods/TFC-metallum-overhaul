@@ -1,0 +1,17 @@
+{
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:rods/wrought_iron"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:arrow_head"
+  },
+  "rules": [
+    "upset_third_last",
+    "hit_second_last",
+    "punch_last"
+  ],
+  "tier": 3
+}

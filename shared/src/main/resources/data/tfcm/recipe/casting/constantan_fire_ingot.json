@@ -1,1 +1,0 @@
-{"type":"tfc:casting","mold":{"item":"tfc:ceramic/fire_ingot_mold"},"fluid":{"amount":100,"fluid":"tfc:metal/constantan"},"result":{"count":1,"id":"tfcm:metal/ingot/constantan"},"break_chance":0.01}

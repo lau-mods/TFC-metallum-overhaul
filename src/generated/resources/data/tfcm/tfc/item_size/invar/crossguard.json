@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/crossguard/invar"
+  },
+  "size": "small",
+  "weight": "light"
+}

@@ -1,0 +1,187 @@
+{
+  "values": [
+    {
+      "id": "#c:dusts/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/invar",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/lead",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/solder",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/boron",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/super_alloy",
+      "required": false
+    },
+    "#c:dusts/bismuth",
+    "#c:dusts/bismuth_bronze",
+    "#c:dusts/black_bronze",
+    "#c:dusts/black_steel",
+    "#c:dusts/blue_steel",
+    "#c:dusts/brass",
+    "#c:dusts/bronze",
+    "#c:dusts/cast_iron",
+    "#c:dusts/copper",
+    "#c:dusts/gold",
+    "#c:dusts/nickel",
+    "#c:dusts/red_steel",
+    "#c:dusts/rose_gold",
+    "#c:dusts/silver",
+    "#c:dusts/steel",
+    "#c:dusts/sterling_silver",
+    "#c:dusts/tin",
+    "#c:dusts/wrought_iron",
+    "#c:dusts/zinc",
+    {
+      "id": "#c:dusts/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/stainless_steel",
+      "required": false
+    }
+  ]
+}

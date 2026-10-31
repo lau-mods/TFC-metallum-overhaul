@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/bituminous_coal"
+      },
+      {
+        "model": "tfcm:block/groundcover/bituminous_coal",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/bituminous_coal",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/bituminous_coal",
+        "y": 270
+      }
+    ]
+  }
+}

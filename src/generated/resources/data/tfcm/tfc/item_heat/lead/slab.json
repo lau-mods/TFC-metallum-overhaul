@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "forging_temperature": 198.0,
+  "heat_capacity": 3.846154,
+  "ingredient": {
+    "item": "tfcm:metal/block/lead_slab"
+  },
+  "welding_temperature": 264.0
+}

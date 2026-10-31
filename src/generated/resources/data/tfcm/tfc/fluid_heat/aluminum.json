@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "fluid": "tfcm:metal/aluminum",
+  "melt_temperature": 1740,
+  "specific_heat_capacity": 0.0042857146
+}

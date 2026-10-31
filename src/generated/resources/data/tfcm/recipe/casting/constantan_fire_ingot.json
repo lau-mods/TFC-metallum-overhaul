@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "constantan"
+    }
+  ],
+  "type": "tfc:casting",
+  "break_chance": 0.01,
+  "fluid": {
+    "amount": 100,
+    "fluid": "tfcm:metal/constantan"
+  },
+  "mold": {
+    "item": "tfc:ceramic/fire_ingot_mold"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/ingot/constantan"
+  }
+}

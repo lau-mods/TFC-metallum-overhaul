@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/titanium"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

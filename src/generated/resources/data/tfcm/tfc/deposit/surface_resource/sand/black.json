@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:sand/black"
+  },
+  "loot_table": "tfcm:surface_resource/sand/black",
+  "model_stages": [
+    "tfcm:item/pan/sand/black_full",
+    "tfcm:item/pan/sand/black_half",
+    "tfcm:item/pan/empty"
+  ]
+}

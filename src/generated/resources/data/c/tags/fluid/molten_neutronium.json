@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/neutronium",
+    "tfcm:metal/flowing_neutronium"
+  ]
+}

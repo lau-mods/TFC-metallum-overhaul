@@ -1,8 +1,0 @@
-{
-    "ingredient": {
-        "item": "tfcm:metal/block/refined_glowstone_slab"
-    },
-    "heat_capacity": 1.429,
-    "forging_temperature": 564,
-    "welding_temperature": 752
-}

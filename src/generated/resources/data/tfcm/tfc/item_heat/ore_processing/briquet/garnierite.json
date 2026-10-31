@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "garnierite"
+    }
+  ],
+  "heat_capacity": 1.6666669,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/garnierite"
+  }
+}

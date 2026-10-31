@@ -1,7 +1,0 @@
-{
-    "variants":  {
-                     "":  {
-                              "model":  "tfcm:block/metal/block/uranium"
-                          }
-                 }
-}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "zircon"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/zircon"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/zircon",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/zircon_full",
+    "tfcm:item/pan/rocky_chunks/zircon_half",
+    "tfcm:item/pan/empty"
+  ]
+}

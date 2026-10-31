@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:double_ingots/neutronium"
-  },
-  "heat_capacity": 5.714,
-  "forging_temperature": 1800,
-  "welding_temperature": 2400
-}

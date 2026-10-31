@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "values": [
+    "tfcm:metal/double_ingot/compressed_iron"
+  ]
+}

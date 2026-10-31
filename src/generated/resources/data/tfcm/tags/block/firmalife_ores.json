@@ -1,0 +1,29 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:ore/poor_chromite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_chromite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_chromite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_chromite/end_stone",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_chromite/netherrack",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_chromite/end_stone",
+      "required": false
+    }
+  ]
+}

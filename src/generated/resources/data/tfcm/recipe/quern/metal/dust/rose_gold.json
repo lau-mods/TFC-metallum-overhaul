@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/rose_gold"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/rose_gold"
+  }
+}

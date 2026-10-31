@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:sand/pink"
+  },
+  "loot_table": "tfcm:surface_resource/sand/pink",
+  "model_stages": [
+    "tfcm:item/pan/sand/pink_full",
+    "tfcm:item/pan/sand/pink_half",
+    "tfcm:item/pan/empty"
+  ]
+}

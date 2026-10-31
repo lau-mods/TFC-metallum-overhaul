@@ -1,0 +1,316 @@
+{
+  "values": [
+    {
+      "id": "tfcm:metal/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_compressed_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/platinum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_platinum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/naquadah",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_naquadah",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/iridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_iridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/osmium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_osmium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/osmiridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_osmiridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mithril",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_mithril",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/arcane",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_arcane",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/antimony",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_antimony",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/cobalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_cobalt",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/lithium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_lithium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/aluminum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_aluminum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/constantan",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_constantan",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/electrum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_electrum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/uranium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_uranium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tungsten",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_tungsten",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/solder",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_solder",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/dawnstone",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_dawnstone",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/draconium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_draconium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/boron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_boron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/thorium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_thorium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/magnesium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_magnesium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/beryllium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_beryllium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/zirconium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_zirconium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/neutronium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_neutronium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/ferroboron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_ferroboron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_tough_alloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/zircaloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_zircaloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_hsla_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/super_alloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_super_alloy",
+      "required": false
+    }
+  ]
+}

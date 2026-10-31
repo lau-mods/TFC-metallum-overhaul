@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "carobbiite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/carobbiite"
+  },
+  "result_fluid": {
+    "amount": 80,
+    "id": "tfcm:metal/beryllium"
+  },
+  "temperature": 1287
+}

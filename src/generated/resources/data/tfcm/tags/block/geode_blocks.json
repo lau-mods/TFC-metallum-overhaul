@@ -1,0 +1,23 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:mineral/quartz_block",
+    "tfcm:mineral/budding_quartz",
+    "tfcm:mineral/small_quartz_bud",
+    "tfcm:mineral/medium_quartz_bud",
+    "tfcm:mineral/large_quartz_bud",
+    "tfcm:mineral/quartz_cluster",
+    "tfcm:mineral/amethyst_block",
+    "tfcm:mineral/budding_amethyst",
+    "tfcm:mineral/small_amethyst_bud",
+    "tfcm:mineral/medium_amethyst_bud",
+    "tfcm:mineral/large_amethyst_bud",
+    "tfcm:mineral/amethyst_cluster",
+    "tfcm:mineral/certus_quartz_block",
+    "tfcm:mineral/budding_certus_quartz",
+    "tfcm:mineral/small_certus_quartz_bud",
+    "tfcm:mineral/medium_certus_quartz_bud",
+    "tfcm:mineral/large_certus_quartz_bud",
+    "tfcm:mineral/certus_quartz_cluster"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sphalerite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/sphalerite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/sphalerite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/sphalerite_full",
+    "tfcm:item/pan/rocky_chunks/sphalerite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

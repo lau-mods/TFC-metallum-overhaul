@@ -1,0 +1,7 @@
+{
+  "parent": "tfc:block/anvil",
+  "textures": {
+    "all": "tfcm:block/metal/smooth/tungsten_steel",
+    "particle": "tfcm:block/metal/smooth/tungsten_steel"
+  }
+}

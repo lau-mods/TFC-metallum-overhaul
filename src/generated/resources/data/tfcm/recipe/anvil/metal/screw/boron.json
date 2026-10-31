@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/boron"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/boron"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ],
+  "tier": 3
+}

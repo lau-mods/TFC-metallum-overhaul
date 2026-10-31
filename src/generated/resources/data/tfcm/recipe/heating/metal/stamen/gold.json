@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/stamen/gold"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfc:metal/gold"
+  },
+  "temperature": 1060.0
+}

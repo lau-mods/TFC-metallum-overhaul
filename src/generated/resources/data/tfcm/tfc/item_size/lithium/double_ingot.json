@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/lithium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

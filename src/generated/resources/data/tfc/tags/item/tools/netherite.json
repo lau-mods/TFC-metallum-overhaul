@@ -1,0 +1,81 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/tuyere/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/fishing_rod/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pickaxe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/propick/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/axe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shovel/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hoe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/chisel/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/javelin/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/sword/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mace/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/scythe/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/mining_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/netherite",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chromite"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/briquet/chromite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfcm:ore_processing/pellet/chromite"
+  }
+}

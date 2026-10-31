@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "magnesite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/magnesite"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfcm:metal/magnesium"
+  },
+  "temperature": 650
+}

@@ -1,0 +1,128 @@
+{
+  "values": [
+    {
+      "id": "#c:metal/pellet/native_copper",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/native_gold",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/hematite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/native_silver",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/cassiterite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/bismuthinite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/garnierite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/malachite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/limonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/sphalerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/tetrahedrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/galena",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/magnesite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/bauxite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/uraninite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/chromite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/rutile",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/zircon",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/cobaltite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/stibnite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/native_platinum",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/wolframite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/thorianite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/native_iridium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/native_osmium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/spodumene",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/carobbiite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/native_naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/borax",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ferroboron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/ferroboron"
+  },
+  "size": "large",
+  "weight": "medium"
+}

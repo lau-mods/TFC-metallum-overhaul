@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 591.0,
+  "heat_capacity": 0.14285715,
+  "ingredient": {
+    "item": "tfcm:metal/screw/bismuth_bronze"
+  },
+  "welding_temperature": 788.0
+}

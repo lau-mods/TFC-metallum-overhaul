@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "F F",
+    "FFF",
+    "FFF"
+  ],
+  "key": {
+    "F": {
+      "item": "tfcm:plant_fabric"
+    }
+  },
+  "result": {
+    "id": "tfcm:plant_clothing",
+    "count": 1
+  }
+}

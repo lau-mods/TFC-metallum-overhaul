@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/titanium"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/nail/titanium"
+  },
+  "rules": [
+    "punch_last",
+    "hit_not_last",
+    "bend_not_last"
+  ],
+  "tier": 5
+}

@@ -1,0 +1,57 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/quarry_hammer/copper",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bismuth_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/black_bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/wrought_iron",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/black_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/blue_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/red_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/tungsten_steel",
+      "required": false
+    }
+  ]
+}

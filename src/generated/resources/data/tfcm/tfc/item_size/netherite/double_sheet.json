@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/netherite"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

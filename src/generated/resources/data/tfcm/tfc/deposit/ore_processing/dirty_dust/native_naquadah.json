@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_naquadah"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/native_naquadah"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/native_naquadah",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/native_naquadah_full",
+    "tfcm:item/pan/dirty_dust/native_naquadah_half",
+    "tfcm:item/pan/empty"
+  ]
+}

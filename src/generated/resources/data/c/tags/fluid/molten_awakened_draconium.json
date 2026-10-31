@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/awakened_draconium",
+    "tfcm:metal/flowing_awakened_draconium"
+  ]
+}

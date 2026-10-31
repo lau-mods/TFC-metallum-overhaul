@@ -1,8 +1,0 @@
-{
-  "parent": "block/inner_stairs",
-  "textures": {
-    "bottom": "tfcm:block/metal/block/draconium",
-    "top": "tfcm:block/metal/block/draconium",
-    "side": "tfcm:block/metal/block/draconium"
-  }
-}

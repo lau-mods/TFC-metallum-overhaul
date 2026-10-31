@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "fluid": "tfcm:metal/antimony",
+  "melt_temperature": 630.0,
+  "specific_heat_capacity": 0.012
+}

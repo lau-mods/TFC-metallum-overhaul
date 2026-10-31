@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "bismuthinite"
+    }
+  ],
+  "heat_capacity": 5.714286,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/bismuthinite"
+  }
+}

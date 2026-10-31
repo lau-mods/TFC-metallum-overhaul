@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    }
+  ],
+  "forging_temperature": 600.0,
+  "heat_capacity": 1.8181819,
+  "ingredient": {
+    "item": "tfcm:metal/plate/dawnstone"
+  },
+  "welding_temperature": 800.0
+}

@@ -1,0 +1,8 @@
+{
+  "loader": "tfc:fluid_container",
+  "parent": "neoforge:item/default",
+  "textures": {
+    "base": "tfcm:item/ceramic/excavator_head_empty",
+    "fluid": "tfcm:item/ceramic/excavator_head_overlay"
+  }
+}

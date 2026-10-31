@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/andesite_alloy"
+  },
+  "result_fluid": {
+    "amount": 600,
+    "id": "tfcm:metal/andesite_alloy"
+  },
+  "temperature": 520
+}

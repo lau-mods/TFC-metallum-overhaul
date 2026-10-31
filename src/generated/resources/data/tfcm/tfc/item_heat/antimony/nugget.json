@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "antimony"
+    }
+  ],
+  "forging_temperature": 378.0,
+  "heat_capacity": 0.4,
+  "ingredient": {
+    "item": "tfcm:metal/nugget/antimony"
+  },
+  "welding_temperature": 504.0
+}

@@ -1,0 +1,16 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/black_steel"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/black_steel"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ],
+  "tier": 5
+}

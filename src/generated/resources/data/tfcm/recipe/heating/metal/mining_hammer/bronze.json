@@ -1,0 +1,12 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/mining_hammer/bronze"
+  },
+  "result_fluid": {
+    "amount": 250,
+    "id": "tfc:metal/bronze"
+  },
+  "temperature": 950.0,
+  "use_durability": true
+}

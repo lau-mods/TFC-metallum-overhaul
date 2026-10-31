@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:rods/naquadah"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:metal/stamen/naquadah"
+  },
+  "rules": [
+    "bend_last",
+    "draw_second_last",
+    "draw_third_last"
+  ],
+  "tier": 7
+}

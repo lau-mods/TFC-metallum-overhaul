@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "refined_glowstone"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/refined_glowstone"
+  },
+  "size": "normal",
+  "weight": "light"
+}

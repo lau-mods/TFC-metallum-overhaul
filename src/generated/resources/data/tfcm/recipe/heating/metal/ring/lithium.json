@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ring/lithium"
+  },
+  "result_fluid": {
+    "amount": 12,
+    "id": "tfcm:metal/lithium"
+  },
+  "temperature": 181
+}

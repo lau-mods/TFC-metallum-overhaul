@@ -1,0 +1,12 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/excavator/wrought_iron"
+  },
+  "result_fluid": {
+    "amount": 250,
+    "id": "tfc:metal/cast_iron"
+  },
+  "temperature": 1535.0,
+  "use_durability": true
+}

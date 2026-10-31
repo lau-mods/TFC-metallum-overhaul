@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "limonite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/limonite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/limonite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/limonite_full",
+    "tfcm:item/pan/rocky_chunks/limonite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

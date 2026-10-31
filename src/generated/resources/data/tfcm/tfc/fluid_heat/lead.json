@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "fluid": "tfcm:metal/lead",
+  "melt_temperature": 330,
+  "specific_heat_capacity": 0.023076924
+}

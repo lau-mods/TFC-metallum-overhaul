@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/dawnstone"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/dawnstone"
+  },
+  "temperature": 1000.0
+}

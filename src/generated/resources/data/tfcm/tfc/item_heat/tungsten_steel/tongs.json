@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfchotornot"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 10.0,
+  "ingredient": {
+    "tag": "tfcm:hotornot/tongs/tungsten_steel"
+  },
+  "welding_temperature": 1228.0
+}

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_gold"
+    }
+  ],
+  "heat_capacity": 0.08333333,
+  "ingredient": {
+    "item": "tfc:powder/native_gold"
+  }
+}

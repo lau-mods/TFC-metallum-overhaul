@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "hematite"
+    }
+  ],
+  "heat_capacity": 2.2857146,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/hematite"
+  }
+}

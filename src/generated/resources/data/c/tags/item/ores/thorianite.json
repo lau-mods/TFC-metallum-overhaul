@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/thorianite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/thorianite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/thorianite/rich",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_silver"
+    }
+  ],
+  "heat_capacity": 0.41666672,
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/native_silver"
+  }
+}

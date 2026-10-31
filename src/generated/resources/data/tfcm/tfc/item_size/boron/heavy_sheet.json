@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "boron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/boron"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

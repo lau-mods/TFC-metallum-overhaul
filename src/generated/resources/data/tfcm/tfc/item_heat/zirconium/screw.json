@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "forging_temperature": 1113.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/screw/zirconium"
+  },
+  "welding_temperature": 1484.0
+}

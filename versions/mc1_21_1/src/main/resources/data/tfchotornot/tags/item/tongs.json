@@ -1,9 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "tfcm:metal/tongs/invar",
-    "tfcm:metal/tongs/titanium",
-    "tfcm:metal/tongs/tungsten_steel",
-    "tfcm:metal/tongs/netherite"
-  ]
-}

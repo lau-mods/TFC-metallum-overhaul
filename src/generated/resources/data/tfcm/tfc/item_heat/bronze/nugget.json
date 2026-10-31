@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 570.0,
+  "heat_capacity": 0.2857143,
+  "ingredient": {
+    "item": "tfcm:metal/nugget/bronze"
+  },
+  "welding_temperature": 760.0
+}

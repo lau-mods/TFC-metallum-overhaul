@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/naquadah"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfcm:metal/naquadah"
+  },
+  "temperature": 2000.0
+}

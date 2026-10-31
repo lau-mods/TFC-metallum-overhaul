@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "tfcm:plant_string",
+    "tfcm:bamboo_string",
+    "tfcm:leather_string"
+  ]
+}

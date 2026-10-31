@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/mithril"
+  },
+  "size": "normal",
+  "weight": "light"
+}

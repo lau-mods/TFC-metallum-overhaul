@@ -1,9 +1,0 @@
-{
-    "values":  [
-                   {
-                       "id":  "tfcm:metal/ring/constantan",
-                       "required":  false
-                   }
-               ]
-}
-

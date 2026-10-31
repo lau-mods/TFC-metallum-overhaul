@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "forging_temperature": 921.0,
+  "heat_capacity": 0.25,
+  "ingredient": {
+    "item": "tfcm:metal/rivet/tungsten"
+  },
+  "welding_temperature": 1228.0
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/tungsten"
+  },
+  "size": "large",
+  "weight": "medium"
+}

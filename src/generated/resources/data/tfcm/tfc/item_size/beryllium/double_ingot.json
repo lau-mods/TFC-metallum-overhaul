@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "beryllium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/beryllium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

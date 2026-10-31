@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "fluid": "tfcm:metal/platinum",
+  "melt_temperature": 1730.0,
+  "specific_heat_capacity": 0.008571429
+}

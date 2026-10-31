@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_platinum"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfcm:ore_processing/chunks/native_platinum"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/dirty_dust/native_platinum"
+  }
+}

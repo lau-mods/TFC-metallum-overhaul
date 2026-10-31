@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/osmium"
+  },
+  "size": "large",
+  "weight": "medium"
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/stamen/compressed_iron"
+  },
+  "size": "small",
+  "weight": "light"
+}

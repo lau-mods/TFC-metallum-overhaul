@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "zircon"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/zircon"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/zirconium"
+  },
+  "temperature": 1855
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/claystone",
+    "overlay": "tfcm:block/ore/poor_bauxite",
+    "particle": "tfc:block/rock/raw/claystone"
+  }
+}

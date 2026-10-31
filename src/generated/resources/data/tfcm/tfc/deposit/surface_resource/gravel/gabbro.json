@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/gabbro"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/gabbro",
+  "model_stages": [
+    "tfcm:item/pan/gravel/gabbro_full",
+    "tfcm:item/pan/gravel/gabbro_half",
+    "tfcm:item/pan/empty"
+  ]
+}

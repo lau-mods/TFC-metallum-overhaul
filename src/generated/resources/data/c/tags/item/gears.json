@@ -1,0 +1,187 @@
+{
+  "values": [
+    {
+      "id": "#c:gears/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:gears/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:gears/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:gears/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:gears/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:gears/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:gears/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:gears/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:gears/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:gears/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:gears/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:gears/invar",
+      "required": false
+    },
+    {
+      "id": "#c:gears/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:gears/lead",
+      "required": false
+    },
+    {
+      "id": "#c:gears/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:gears/solder",
+      "required": false
+    },
+    {
+      "id": "#c:gears/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:gears/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:gears/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:gears/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:gears/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/boron",
+      "required": false
+    },
+    {
+      "id": "#c:gears/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:gears/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:gears/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:gears/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:gears/super_alloy",
+      "required": false
+    },
+    "#c:gears/bismuth",
+    "#c:gears/bismuth_bronze",
+    "#c:gears/black_bronze",
+    "#c:gears/black_steel",
+    "#c:gears/blue_steel",
+    "#c:gears/brass",
+    "#c:gears/bronze",
+    "#c:gears/cast_iron",
+    "#c:gears/copper",
+    "#c:gears/gold",
+    "#c:gears/nickel",
+    "#c:gears/red_steel",
+    "#c:gears/rose_gold",
+    "#c:gears/silver",
+    "#c:gears/steel",
+    "#c:gears/sterling_silver",
+    "#c:gears/tin",
+    "#c:gears/wrought_iron",
+    "#c:gears/zinc",
+    {
+      "id": "#c:gears/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/stainless_steel",
+      "required": false
+    }
+  ]
+}

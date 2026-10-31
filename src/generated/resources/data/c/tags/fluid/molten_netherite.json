@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    }
+  ],
+  "values": [
+    "tfcm:metal/netherite",
+    "tfcm:metal/flowing_netherite"
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ring/compressed_iron"
+  },
+  "size": "small",
+  "weight": "light"
+}

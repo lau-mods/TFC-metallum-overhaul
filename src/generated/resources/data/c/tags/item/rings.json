@@ -1,0 +1,187 @@
+{
+  "values": [
+    {
+      "id": "#c:rings/compressed_iron",
+      "required": false
+    },
+    {
+      "id": "#c:rings/platinum",
+      "required": false
+    },
+    {
+      "id": "#c:rings/naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:rings/iridium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/osmium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/osmiridium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/mithril",
+      "required": false
+    },
+    {
+      "id": "#c:rings/arcane",
+      "required": false
+    },
+    {
+      "id": "#c:rings/refined_glowstone",
+      "required": false
+    },
+    {
+      "id": "#c:rings/refined_obsidian",
+      "required": false
+    },
+    {
+      "id": "#c:rings/antimony",
+      "required": false
+    },
+    {
+      "id": "#c:rings/titanium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/cobalt",
+      "required": false
+    },
+    {
+      "id": "#c:rings/lithium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/aluminum",
+      "required": false
+    },
+    {
+      "id": "#c:rings/constantan",
+      "required": false
+    },
+    {
+      "id": "#c:rings/invar",
+      "required": false
+    },
+    {
+      "id": "#c:rings/electrum",
+      "required": false
+    },
+    {
+      "id": "#c:rings/lead",
+      "required": false
+    },
+    {
+      "id": "#c:rings/uranium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/tungsten",
+      "required": false
+    },
+    {
+      "id": "#c:rings/solder",
+      "required": false
+    },
+    {
+      "id": "#c:rings/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "#c:rings/netherite",
+      "required": false
+    },
+    {
+      "id": "#c:rings/dawnstone",
+      "required": false
+    },
+    {
+      "id": "#c:rings/andesite_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:rings/draconium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/awakened_draconium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/boron",
+      "required": false
+    },
+    {
+      "id": "#c:rings/thorium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/magnesium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/beryllium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/zirconium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/neutronium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/ferroboron",
+      "required": false
+    },
+    {
+      "id": "#c:rings/tough_alloy",
+      "required": false
+    },
+    {
+      "id": "#c:rings/zircaloy",
+      "required": false
+    },
+    {
+      "id": "#c:rings/hsla_steel",
+      "required": false
+    },
+    {
+      "id": "#c:rings/super_alloy",
+      "required": false
+    },
+    "#c:rings/bismuth",
+    "#c:rings/bismuth_bronze",
+    "#c:rings/black_bronze",
+    "#c:rings/black_steel",
+    "#c:rings/blue_steel",
+    "#c:rings/brass",
+    "#c:rings/bronze",
+    "#c:rings/cast_iron",
+    "#c:rings/copper",
+    "#c:rings/gold",
+    "#c:rings/nickel",
+    "#c:rings/red_steel",
+    "#c:rings/rose_gold",
+    "#c:rings/silver",
+    "#c:rings/steel",
+    "#c:rings/sterling_silver",
+    "#c:rings/tin",
+    "#c:rings/wrought_iron",
+    "#c:rings/zinc",
+    {
+      "id": "#c:rings/chromium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/stainless_steel",
+      "required": false
+    }
+  ]
+}

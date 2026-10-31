@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "super_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/super_alloy"
+  },
+  "size": "normal",
+  "weight": "light"
+}

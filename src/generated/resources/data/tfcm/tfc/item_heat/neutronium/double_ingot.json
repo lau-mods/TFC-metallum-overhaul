@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "forging_temperature": 1800.0,
+  "heat_capacity": 5.7142863,
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/neutronium"
+  },
+  "welding_temperature": 2400.0
+}

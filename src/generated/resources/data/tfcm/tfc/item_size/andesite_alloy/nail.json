@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "andesite_alloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/andesite_alloy"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

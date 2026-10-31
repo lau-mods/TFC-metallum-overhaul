@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/heavy_sheet/magnesium"
+  ]
+}

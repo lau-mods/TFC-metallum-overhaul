@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 648.0,
+  "heat_capacity": 7.142857,
+  "ingredient": {
+    "item": "tfcm:metal/mining_hammer/copper"
+  },
+  "welding_temperature": 864.0
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "naquadah"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rivet/naquadah"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

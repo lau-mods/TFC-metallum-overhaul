@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "spodumene"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/spodumene"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/spodumene",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/spodumene_full",
+    "tfcm:item/pan/rocky_chunks/spodumene_half",
+    "tfcm:item/pan/empty"
+  ]
+}

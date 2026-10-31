@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 576.60004,
+  "heat_capacity": 0.10416666,
+  "ingredient": {
+    "item": "tfcm:metal/nail/silver"
+  },
+  "welding_temperature": 768.8
+}

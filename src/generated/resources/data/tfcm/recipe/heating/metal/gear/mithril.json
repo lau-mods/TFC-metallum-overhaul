@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/gear/mithril"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/mithril"
+  },
+  "temperature": 940
+}

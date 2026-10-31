@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:sheets/invar"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/fish_hook/invar"
+  },
+  "rules": [
+    "hit_any",
+    "bend_any",
+    "draw_not_last"
+  ],
+  "tier": 3
+}

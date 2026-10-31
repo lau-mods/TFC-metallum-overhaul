@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cobaltite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "heat_capacity": 2.6666665,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/cobaltite"
+  }
+}

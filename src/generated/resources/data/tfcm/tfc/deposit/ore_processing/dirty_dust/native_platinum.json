@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_platinum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/native_platinum"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/native_platinum",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/native_platinum_full",
+    "tfcm:item/pan/dirty_dust/native_platinum_half",
+    "tfcm:item/pan/empty"
+  ]
+}

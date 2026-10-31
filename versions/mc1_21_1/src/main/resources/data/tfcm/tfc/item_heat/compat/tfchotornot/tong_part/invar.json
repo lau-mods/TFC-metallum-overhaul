@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/tong_part/invar"
-  },
-  "heat_capacity": 2.857143,
-  "forging_temperature": 870,
-  "welding_temperature": 1160
-}

@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/shale",
+    "overlay": "tfcm:block/ore/normal_uraninite",
+    "particle": "tfc:block/rock/raw/shale"
+  }
+}

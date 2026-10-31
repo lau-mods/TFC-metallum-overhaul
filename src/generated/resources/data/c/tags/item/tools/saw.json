@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/saw/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/saw/tungsten_steel",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lithium"
+    }
+  ],
+  "forging_temperature": 108.6,
+  "heat_capacity": 3.333333,
+  "ingredient": {
+    "item": "tfcm:metal/foil/lithium"
+  },
+  "welding_temperature": 144.8
+}

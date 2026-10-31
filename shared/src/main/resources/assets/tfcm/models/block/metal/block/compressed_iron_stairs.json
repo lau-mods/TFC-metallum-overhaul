@@ -1,8 +1,0 @@
-{
-    "parent":  "block/stairs",
-    "textures":  {
-                     "bottom":  "tfcm:block/metal/block/compressed_iron",
-                     "top":  "tfcm:block/metal/block/compressed_iron",
-                     "side":  "tfcm:block/metal/block/compressed_iron"
-                 }
-}

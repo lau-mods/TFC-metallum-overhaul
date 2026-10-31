@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:foils/invar"
-  },
-  "heat_capacity": 2.857143,
-  "forging_temperature": 870,
-  "welding_temperature": 1160
-}

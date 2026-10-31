@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/electrum"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/schist"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/schist",
+  "model_stages": [
+    "tfcm:item/pan/gravel/schist_full",
+    "tfcm:item/pan/gravel/schist_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_platinum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/native_platinum"
+  }
+}

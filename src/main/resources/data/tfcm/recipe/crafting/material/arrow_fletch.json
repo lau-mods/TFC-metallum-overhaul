@@ -1,0 +1,26 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "key": {
+    "K": {
+      "tag": "c:tools/knife"
+    },
+    "F": {
+      "tag": "c:feathers"
+    }
+  },
+  "pattern": [
+    "K",
+    "F"
+  ],
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:arrow_fletch"
+  }
+}

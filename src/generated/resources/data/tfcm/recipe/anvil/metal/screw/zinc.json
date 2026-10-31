@@ -1,0 +1,15 @@
+{
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/zinc"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/screw/zinc"
+  },
+  "rules": [
+    "hit_any",
+    "hit_any",
+    "draw_last"
+  ]
+}

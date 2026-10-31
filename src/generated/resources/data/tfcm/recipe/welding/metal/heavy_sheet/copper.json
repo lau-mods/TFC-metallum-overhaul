@@ -1,0 +1,13 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/copper"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/copper"
+  },
+  "second_input": {
+    "tag": "c:sheets/copper"
+  }
+}

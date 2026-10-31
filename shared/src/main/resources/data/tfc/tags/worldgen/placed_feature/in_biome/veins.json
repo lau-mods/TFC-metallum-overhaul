@@ -1,8 +1,0 @@
-{
-  "replace": false,
-  "values": [
-    "tfcm:quartz_geode",
-    "tfcm:amethyst_geode",
-    "tfcm:certus_quartz_geode"
-  ]
-}

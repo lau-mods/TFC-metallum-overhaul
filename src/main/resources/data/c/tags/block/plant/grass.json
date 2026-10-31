@@ -1,0 +1,59 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:short_grass",
+    "minecraft:tall_grass",
+    {
+      "id": "tfc:plant/bluegrass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/bromegrass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/fountain_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/manatee_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/orchard_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/ryegrass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/scutch_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/star_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/timothy_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/raddia_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/red_oat_grass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/switchgrass",
+      "required": false
+    },
+    {
+      "id": "tfc:plant/tall_fescue_grass",
+      "required": false
+    }
+  ]
+}

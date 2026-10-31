@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "uraninite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "heat_capacity": 1.6666669,
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/uraninite"
+  }
+}

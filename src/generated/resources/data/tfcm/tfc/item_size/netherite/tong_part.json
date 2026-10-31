@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "netherite"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "tfchotornot"
+    }
+  ],
+  "ingredient": {
+    "tag": "tfcm:hotornot/tong_part/netherite"
+  },
+  "size": "large",
+  "weight": "medium"
+}

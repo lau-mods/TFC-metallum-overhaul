@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sulfur"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/sulfur"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/sulfur",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/sulfur_full",
+    "tfcm:item/pan/dirty_dust/sulfur_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "garnierite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/garnierite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/garnierite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/garnierite_full",
+    "tfcm:item/pan/dirty_dust/garnierite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:rings/tungsten_steel"
+  },
+  "second_input": {
+    "tag": "c:rings/tungsten_steel"
+  },
+  "tier": 6,
+  "result": {
+    "id": "tfcm:metal/pommel/tungsten_steel"
+  }
+}

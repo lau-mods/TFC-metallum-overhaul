@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/rod/electrum"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfcm:metal/electrum"
+  },
+  "temperature": 1000.0
+}

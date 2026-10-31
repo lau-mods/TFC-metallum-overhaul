@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 636.0,
+  "heat_capacity": 6.666666,
+  "ingredient": {
+    "item": "tfcm:metal/gear/gold"
+  },
+  "welding_temperature": 848.0
+}

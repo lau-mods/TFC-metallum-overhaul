@@ -1,8 +1,0 @@
-{
-    "ingredient":  {
-                       "tag":  "c:rings/antimony"
-                   },
-    "heat_capacity":  2,
-    "forging_temperature":  378,
-    "welding_temperature":  504
-}

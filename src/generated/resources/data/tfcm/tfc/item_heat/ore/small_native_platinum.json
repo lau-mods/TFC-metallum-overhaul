@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_platinum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "forging_temperature": 1038.0,
+  "heat_capacity": 0.28571433,
+  "ingredient": {
+    "item": "tfcm:ore/small_native_platinum"
+  },
+  "welding_temperature": 1384.0
+}

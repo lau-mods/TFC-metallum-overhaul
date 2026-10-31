@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "forging_temperature": 600.0,
+  "heat_capacity": 0.90909094,
+  "ingredient": {
+    "item": "tfcm:metal/block/electrum_slab"
+  },
+  "welding_temperature": 800.0
+}

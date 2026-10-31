@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "zirconium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ring/zirconium"
+  },
+  "result_fluid": {
+    "amount": 12,
+    "id": "tfcm:metal/zirconium"
+  },
+  "temperature": 1855
+}

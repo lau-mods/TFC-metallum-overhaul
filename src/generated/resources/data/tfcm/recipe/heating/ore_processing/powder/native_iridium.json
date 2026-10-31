@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_iridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/native_iridium"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/iridium"
+  },
+  "temperature": 1535
+}

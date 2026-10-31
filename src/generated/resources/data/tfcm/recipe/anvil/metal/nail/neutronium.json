@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neutronium"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:stamens/neutronium"
+  },
+  "result": {
+    "count": 5,
+    "id": "tfcm:metal/nail/neutronium"
+  },
+  "rules": [
+    "punch_last",
+    "hit_not_last",
+    "bend_not_last"
+  ],
+  "tier": 7
+}

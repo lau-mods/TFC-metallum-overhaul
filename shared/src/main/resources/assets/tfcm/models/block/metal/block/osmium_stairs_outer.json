@@ -1,8 +1,0 @@
-{
-    "parent":  "block/outer_stairs",
-    "textures":  {
-                     "bottom":  "tfcm:block/metal/block/osmium",
-                     "top":  "tfcm:block/metal/block/osmium",
-                     "side":  "tfcm:block/metal/block/osmium"
-                 }
-}

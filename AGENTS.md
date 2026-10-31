@@ -1,353 +1,159 @@
-# tfcm 開発仕様
-
-## 1. 共通・固有運用ルール
-
-- 仕様、形状、ID、有効化条件、生成規則を変更した場合はこのファイルを更新する。
-- 共通実装は `shared/src/main`、Minecraft・loader固有実装は `versions/<version>/src/main` に置く。
-- loader固有sourceをrootの `src` へ戻さない。
-- 依存Modのjar、展開物、比較画像、一時解析scriptはrootの `.tmp/` に置いてGit管理外にする。
-- `tools/textures/` は例外として正式な保守・再生成・検証toolをGit管理する。生成規則は本書とtoolの双方で維持する。
-- JSONはBOMなしUTF-8で保存する。
-- 既存リリースのregistry IDや名前空間を変更する場合は、ワールド互換性を最優先する。
-- 本書は作業規約と実装仕様を兼ねる。数値、ID、条件、例外、優先順位は残し、作業履歴とdataから機械的に得られる重複一覧は載せない。
-- READMEは利用者向けの名称、配布先、build入口に絞り、詳細仕様や作業履歴を重複掲載しない。
-- ライセンスと第三者表示はrootの `LICENCE` 一つへ統合し、別のlicense/noticeファイルを作らない。
-- 対象版の実JAR・公式ソースを確認し、client/server境界、optional依存なしのclass loading、無関係な既存差分を守る。
-- release用Mod ID、resource namespace、Java package、class prefixは `tfcm` / `Tfcm` に統一し、旧namespaceとの互換aliasは持たない。
-
-## 2. build構成
-
-対応対象:
-
-| Minecraft | Loader | TFC | JEI | Java | project |
-| --- | --- | --- | --- | --- | --- |
-| 1.20.1 | Forge 47.4.20 | 3.2.23 | 15.20.0.133 | 17 | `versions/mc1_20_1` |
-| 1.21.1 | NeoForge 21.1.235 | 4.2.5 | 19.27.0.346 | 21 | `versions/mc1_21_1` |
-
-- 全対象: `./gradlew build`
-- 個別: `./gradlew :versions:mc1_20_1:build` / `./gradlew :versions:mc1_21_1:build`
-- `build` と `collectArtifacts` はrelease jarをrootの `build/libs` に集約する。
-- root `build.gradle` は集約用。共通Mod metadataはroot `gradle.properties`、対象別versionは各projectの `gradle.properties` に置く。
-- Gradle wrapperは8.xを維持する。ForgeGradle 6はGradle 9非対応で、configuration cacheも無効とする。
-- 各version projectは対象に合う `pack.mcmeta` とloader metadataを持つ。
-- 共通dataはMinecraft 1.21レイアウトで保持する。1.20.1の `processResources` でpath、tag名前空間、recipe JSONを変換する。
-- 1.20.1変換はTFC casting fluid、alloy metal reference、advanced shapedの `input_row`、`item_size` -> `item_sizes`、`#c` / `#neoforge` -> `#forge`、tuff ore tag除去を含む。
-- 1.20.1では `tfcm/tfc/fluid_heat` からTFC metal manager JSONを生成する。
-- 金属・鉱石・tool tier等の仕様値とloader非依存worldgen処理は `shared/src/main/java` に置く。各versionにはregistry holder、loader event、serializer、TFC API constructor等のadapterだけを置く。
-- loader差分は各versionの `TfcmPlatform` とworldgen adapterへ閉じ込め、同一ロジックをversion別に複製しない。
-
-## 3. 独自金属
-
-対象金属:
-
-`compressed_iron`, `platinum`, `naquadah`, `iridium`, `osmium`, `osmiridium`, `mithril`, `arcane`, `refined_glowstone`, `refined_obsidian`, `antimony`, `titanium`, `cobalt`, `lithium`, `aluminum`, `constantan`, `invar`, `electrum`, `lead`, `uranium`, `tungsten`, `solder`, `tungsten_steel`, `netherite`, `dawnstone`, `andesite_alloy`, `boron`, `thorium`, `magnesium`, `beryllium`, `zirconium`, `neutronium`, `ferroboron`, `tough_alloy`, `zircaloy`, `hsla_steel`, `super_alloy`
-
-常時生成する形状:
-
-- `ingot`, `double_ingot`, `sheet`, `double_sheet`, `rod`
-- `block`, `block_slab`, `block_stairs`
-- 特殊: `metal/ingot/high_carbon_tungsten_steel`
-
-基本ID:
-
-- item: `tfcm:metal/<form>/<metal>`
-- block: `tfcm:metal/block/<metal>`
-- slab: `tfcm:metal/block/<metal>_slab`
-- stairs: `tfcm:metal/block/<metal>_stairs`
-
-`tfc_items` 導入時のみ生成する形状:
-
-`foil`, `gear`, `heavy_sheet`, `nail`, `ring`, `rivet`, `screw`, `stamen`, `wire`
-
-追加形状のIDも `tfcm:metal/<form>/<metal>` とする。
-
-Andesite Alloyは鍛造tier 2、融点520℃、比熱0.012とする。optionalな `create:andesite_alloy` を `#c:ingots/andesite_alloy` で受け入れ、溶融fluidは `tfc:metal/andesite_alloy` とする。Metallumと同じTFC流体構成で `tfcm:metal/andesite` も登録し、loose andesite 1個を1300℃で90 mBへ溶融する。molten andesite 89-91%とzincまたはtin 9-11%からAndesite Alloyを合金化する。TFC More Itemsの全追加形状にも対応する。
-
-工具・防具対応金属:
-
-- `invar`: wrought ironと同等
-- `titanium`: 鍛冶tierと耐久値はsteel相当の4 / 3300、それ以外はblack steelと同等
-- `tungsten_steel`: red / blue steelより上位。tool level 7、耐久8125、採掘速度13、攻撃補正10.5、enchantment 25とする。
-- `netherite`: 工具・防具性能はred / blue steel相当。tool level 6、耐久6500、採掘速度12、攻撃補正9、enchantment 22とし、金属色、rarity、鍛冶tierはblack steel相当の`0x111111`、`RARE`、5とする。
-
-上記4金属はTFC標準の工具、工具頭、shears、tuyere、fishing rod、shield、horse armor、防具、中間防具をすべて持つ。IDは `tfcm:metal/<tfc_item_type>/<metal>` とする。
-
-## 4. 独自鉱石・Gem
-
-品位あり鉱石:
-
-`native_platinum`, `native_naquadah`, `native_iridium`, `native_osmium`, `rutile`, `cobaltite`, `spodumene`, `bauxite`, `galena`, `uraninite`, `mithril_matrix`, `stibnite`, `wolframite`, `thorianite`, `magnesite`, `zircon`
-
-品位なし鉱石:
-
-`fluorite`, `quartz`, `carobbiite`
-
-ID規則:
-
-- 品位ありitem: `tfcm:ore/{poor|normal|rich}_<ore>`
-- 品位なしitem: `tfcm:ore/<ore>`
-- 母岩内block: item IDに `/<tfc_rock>`、`/netherrack`、`/endstone` を付ける。全独自鉱石はTFC母岩版に加えてNether/End版を持つ。
-- `endstone` のasset modelは、Minecraftの実texture ID `minecraft:block/end_stone` を参照する。
-- 地表サンプル: 品位あり鉱石は `tfcm:ore/small_<ore>`。
-- `small_fluorite` と `small_quartz` はgroundcover blockのみでblock itemを持たない。
-- QuartzはTFCのRuby等と同じ非品位宝石鉱石として、全TFC母岩、Nether、Endの `tfcm:ore/quartz/<rock_or_stone>` blockと `tfcm:ore/small_quartz` groundcover blockを持つ。
-- Quartz block modelは `tfcm:block/ore/quartz` overlayを参照する。overlay PNGは別途提供される正式素材を使用する。
-- 全Nether鉱石blockはBeneathと同じ硬度3、爆発耐性10とする。End鉱石blockはVanilla End Stone相当の硬度3、爆発耐性9とする。
-
-`tfcorewashing` 導入時のみ、全品位あり鉱石へ次の形状を追加する。
-
-`pellet`, `briquet`, `chunks`, `rocky_chunks`, `dirty_dust`, `dirty_pile`, `powder`
-
-IDは `tfcm:metal/<form>/<ore>` とする。
-
-Gem関連:
-
-- raw Quartz item/block: `tfcm:ore/quartz` / `tfcm:ore/quartz/<tfc_rock>`、tag `c:ores/quartz`
-- Cut Quartz: `tfcm:gem/cut_quartz`、tag `c:gems/quartz`
-- Quartzをsandpaperで研磨してCut Quartzにする。
-- Quartz晶洞は `tfcm:mineral/{quartz_block,budding_quartz,quartz_cluster,large_quartz_bud,medium_quartz_bud,small_quartz_bud}` で構成する。外殻はTFC hardened basalt、中間層はraw quartzite、内層はbudding quartz : quartz block : raw quartzite = 2 : 5 : 1とする。
-- Quartz晶洞はoverworldのvein配置へ追加し、Y -48から32に平均300chunkに1回生成する。Quartz Clusterは `tfcm:gem/cut_quartz` を2個落とす。
-- Amethyst晶洞とCertus Quartz晶洞もQuartz晶洞と同じ外殻、中間層、内層比率、成長段階、配置範囲、頻度を使う。各block IDは `tfcm:mineral/<name>` とする。
-- Amethyst Clusterは `tfc:gem/amethyst` を2個落とす。blockとbudのmodelはVanilla Amethyst textureを直接参照する。
-- Certus Quartz Crystalは `tfcm:gem/certus_quartz`、tagは `c:gems/certus_quartz` とする。Certus Quartz Clusterは同itemを2個落とす。
-- Fluorite Powder: `tfcm:powder/fluorite`
-- Quartz Powder: `tfcm:powder/quartz`
-- FluoriteまたはQuartzをquernで粉砕して対応するPowderを4個生成し、両方を `tfc:gem_powders` と `tfc:bowl_powders` に含める。
-
-## 5. IE由来コンテンツ
-
-次のコンテンツはTFC IE Crossoverを実行時依存にせず、TFCMの独自コンテンツとして常時登録する。
-
-- 金属: `aluminum`, `constantan`, `electrum`, `lead`, `uranium`
-- 鉱石: `bauxite` -> `aluminum`, `galena` -> `lead`
-- Electrum alloy: Gold 40-60% + Silver 40-60%
-- Constantan alloy: Copper 40-60% + Nickel 40-60%
-
-鉱石block、small ore、鉱脈featureは必ず `tfcm` 名前空間を使う。TFC IE CrossoverのIDをconfigやloader dependencyへ追加しない。Crossover由来素材を使用してよいのはテクスチャ生成時だけである。
-
-## 6. compat鉱石
-
-TFC由来:
-
-- `TfcmCompatOres.TFC_ORES` の鉱石へ `netherrack` / `endstone` blockを追加する。
-- ID: `tfcm:ore/<ore_name>/{netherrack|endstone}`
-- 一部の非品位鉱石pieceへ `small_<ore_piece_name>` groundcover blockを追加する。block itemは持たない。
-
-Firmalife由来:
-
-- 対象: `normal_chromite`, `poor_chromite`, `rich_chromite`
-- `firmalife` 導入時のみ `netherrack` / `endstone` blockを追加する。
-- ID: `tfcm:ore/<ore_name>/{netherrack|endstone}`
-
-compat層はingot等の金属形状や専用加工recipeを追加しない。単体鉱石itemを持つのはTFCM独自鉱石だけである。
-
-### 6.1 optional Mod連携
-
-- 対象金属は `invar`, `titanium`, `tungsten_steel`, `netherite` とする。
-- `tfc_metal_tools` は1.20.1/1.21.1のoptional dependency。導入時は `crossguard`, `pommel` を有効化し、標準工具の組立recipeを同Mod方式へ切り替える。
-- `tfchotornot` は1.21.1のみoptional dependency。導入時は `tongs`, `tong_part` を有効化する。tongsは同Mod本来の `TongsItem` として生成し、`tfchotornot:tongs` tagへ含める。
-- 1.21.1で両Modを導入した場合もtongsはHot or Not本来のrecipeを維持し、shearsのみTFC Metal Tools方式で組み立てる。
-- Metal Toolsの互換recipe、item heat、tag、assetは `shared/src/main/resources`、Hot or Not固有分は `versions/mc1_21_1/src/main/resources` に置く。
-- optional item IDはresource reload時の未登録参照を避けるため対応versionのregistryへ常設し、対象Mod未導入時はcreative tabとrecipeから隠す。IDは `tfcm:metal/<form>/<metal>` とする。
-
-## 7. data・model規約
-
-主要resource root:
-
-- data: `shared/src/main/resources/data`
-- assets: `shared/src/main/resources/assets`
-
-金属recipe:
-
-- `casting/<metal>_ingot` と `casting/<metal>_fire_ingot`。通常moldは破損率0.1、fire moldは0.01とし、必ず対で追加する。
-- `anvil/metal/{sheet,rod}`
-- `welding/metal/{double_ingot,double_sheet}`
-- `crafting/metal/block`
-- `heating/metal/{ingot,double_ingot,sheet,double_sheet,rod,block}`
-- 工具・防具対応金属: `anvil/metal/<part>`, `crafting/metal/<tool>`, `welding/metal/<armor_or_shears>`, `heating/metal/<tool_or_armor>`
-
-`tfc_items` 条件付きrecipe:
-
-- `anvil/more_items/{foil,gear,nail,ring,rivet,screw,stamen,wire}`
-- `welding/more_items/heavy_sheet`
-- `heating/more_items/{foil,gear,heavy_sheet,nail,ring,rivet,screw,stamen,wire}`
-
-鉱石・Ore Washing recipe:
-
-- clean powder全体は `#c:metal/powder` に集約し、互換用の `#c:ores/clean_dusts` から参照する。
-- `heating/ore/{poor,normal,rich,small}`
-- `ore_washing/ores/*`
-- `ore_washing/chunks/{quern,milling,crusher}`
-- `ore_washing/rocky_chunks/splashing` と `ore_washing/dirt_dusts/splashing` は `create` 併用条件を持つ。
-- `crafting/ore_washing/{pellet,briquet,dirty_dust,uncompress_pellet,uncompress_briquet,uncompress_dust}`
-- `tfc/heating/ore_washing/{pellet,briquet,powder}`
-- `tfcorewashing` 導入時は独自品位あり鉱石の `poor` / `normal` / `rich` 直接溶融を無効化する。`small` の直接溶融は維持する。
-
-model pathはregistry IDと同じ階層を基本とする。
-
-- item metal: `assets/tfcm/models/item/metal/<form>`
-- 工具・防具modelもregistry IDと同じ `assets/tfcm/models/item/metal/<tfc_item_type>` に置く。
-- metal block: `assets/tfcm/models/block/metal/block`
-- ore item: `assets/tfcm/models/item/ore/<ore_or_grade>`
-- ore block: `assets/tfcm/models/block/ore/<ore_or_grade>/<rock_or_stone>`
-- groundcover: `assets/tfcm/models/block/ore/small_*`
-
-## 8. tag・TFC属性
-
-- 独自鉱石とcompat鉱石blockは `#c:ores` を介して `minecraft:mineable/pickaxe` に含める。
-- これにより通常pickaxeとTFC Mining HammerのSledgehammerの対象にする。
-- TFC標準のsize/weightを継承させるため、トップレベルcommon item tagにTFCMの金属別tagを含める。
-- 金属block、slab、stairs、TFC More Items形状、Ore Washing形状には明示的なitem sizeを定義する。
-- item sizeの正本は `shared/src/main/resources/data/tfc/tfc/item_size`。1.20.1 buildで `item_sizes` へ変換する。
-- item heatは `shared/src/main/resources/data/tfcm/tfc/item_heat` に置く。
-- 全独自金属は `tfcm/tfc/fluid_heat/<metal>.json` を持ち、1.20.1では同じ定義からTFC metal JSONを生成する。各形状のitem heatはTFC本体と同じく融点の60%を鍛造可能温度、80%を溶接可能温度とし、Draconium系のように明示した例外だけ個別値を使う。
-- 全独自金属は形状別common item tag、item/block両方の `c:storage_blocks/<metal>`、`c:molten_<metal>` を持つ。形状別item tagは対応するトップレベルcommon tagから参照し、溶融fluidは `tfc:molten_metals` に含める。
-- 金属block、slab、stairsは個別heat定義を持ち、slab/stairsはitem IDを直接指定する。
-- 品位あり鉱石は鉱石ごとに `small`, `poor`, `normal`, `rich` を一つのheat定義で扱う。
-- Ore Washingは `pellet_briquet/<ore>.json` と `powder/<ore>.json` を使う。
-- TFC propickはblock translation keyの末尾に `.prospected` を付けたkeyを表示する。
-- 独自鉱石の全品位・全母岩blockと、TFC/Firmalife由来Nether/End blockへ `en_us.json` の `.prospected` を定義する。
-- `.prospected` の値は元Modと一致させ、品位・母岩名を含めない。
-
-## 9. 溶融fluid互換性
-
-- 独自molten fluidのregistry IDは既存ワールド互換性のため `tfc:metal/<metal>` を維持する。
-- 1.20.1ではcreative tabが空bucket stackを受け取らないよう、`tfcm:bucket/metal/<metal>` itemと `tfc:fluid/metal/<metal>` blockを登録する。
-
-## 10. カスタム鉱脈config
-
-- 詳細仕様は `config_doc.md` を正本とする。
-- bundled configは `shared/src/main/resources/tfcm/overworld.yaml`。
-- 出力は `blocks` listで定義し、各要素に `block` と省略可能な `weight`（既定値1）を指定する。
-- `tier` は品位名から整数weightへのmappingとする。
-- 既存config互換のため、parserは旧 `block` とlist風 `tier` も受け入れる。
-- YAML parser本体は `shared/src/main/java`、TFC API差分は各versionの `TfcmVeinPlatform` に限定する。
-- bauxite、galenaの鉱脈はCrossoverではなく `tfcm:ore/*` と `tfcm:ore/small_*` を生成する。
-- `uraninite` は品位あり鉱石として登録し、Ore Washing導入時はuraniumへ、未導入時は直接溶融でuraniumへ変換する。`borax` はTFC本体の鉱石を入力にOre Washingでboronへ変換する。
-- `spodumene`、`thorianite`、`magnesite`、`zircon` は過去版のgrade textureを使う品位あり鉱石で、それぞれlithium、thorium、magnesium、zirconiumへ変換する。`carobbiite` は過去版にgrade textureがないため、normal textureのみの非品位鉱石として登録し、`tfcorewashing` 導入時はOre Washingでberylliumへ変換する。
-- `overworld.yaml`、`nether.yaml`、`end.yaml` はルート `geodes` で晶洞も定義できる。晶洞定義はtype、Y範囲、rarity、outer、middle、weightedなinner/filling/inner_placementsを持つ。
-- custom worldgen有効時はdata pack由来のTFCM晶洞を除外し、configの `geodes` に定義された晶洞だけを対象ディメンションへ追加する。`geodes` がない、空、または有効な定義がない場合は晶洞を生成しない。
-- common configの `content.disabledMetals` と `content.disabledOres` は、指定名のregistry登録だけを無効化する。未知の名前は無視し、変更にはゲームの再起動が必要である。
-- content無効化時もrecipeやtagなどのserver data resourceは削除しない。無効registryを参照するrecipeはMinecraft/TFC側で個別に読み込み失敗となり、creative tab・JEIには無効コンテンツを表示しない。
-- custom veinの `tfcm:ore/...` 出力は無効鉱石を候補から除外し、出力候補がなくなった鉱脈は生成しない。金属の無効化は鉱脈のblock出力を自動では無効化しない。
-
-## 11. テクスチャ生成
-
-### 11.1 共通方式: 分位パレット転写
-
-金属、More Items、Ore Washingの再着色はすべて `tools/textures/color_transfer.py` の同一方式を使う。平均色乗算、通常版/高輝度版の分類、事前の淡色化は使用しない。
-
-1. 元素材の非透過pixelを相対輝度順に並べ、RGB列 `S` を作る。
-2. 形状ベースの非透過pixelの相対輝度列 `B` を作る。
-3. 各base pixel `x` の輝度 `L(x)` について、同輝度pixelの中央順位を使って分位 `p` を求める。
-4. `u = p * (|S| - 1)` とし、`S[floor(u)]` と `S[ceil(u)]` のRGBを線形補間する。
-5. alphaとpixel位置は形状ベースのものを維持する。
-
-式:
-
-```text
-lum(rgb) = (0.2126 R + 0.7152 G + 0.0722 B) / 255
-p = (lower_bound(B, L(x)) + upper_bound(B, L(x)) - 1) / (2 * (|B| - 1))
-out.rgb = lerp(S[floor(u)].rgb, S[ceil(u)].rgb, fract(u))
-out.a = x.a
-```
-
-この方式はTFC側の形状と陰影位置を保ちながら、元素材のshadow、mid、highlight、彩度、色相変化の分布を移す。元素材と生成物の輝度分位・平均彩度を比較し、分布が大きく崩れていないことを確認する。
-
-plated blockとingot pileは面積の大きい模様でコントラストが過剰にならないよう、`p' = 0.5 + (p - 0.5) * 0.55` として元素材パレットの中央55%を使う。item、More Items、Ore Washingにはこの圧縮を適用しない。
-
-### 11.2 金属・More Items
-
-形状ベース:
-
-- `block`, `smooth`, `ingot`, `double_ingot`, `sheet`, `double_sheet`, `rod` は、卑金属、貴金属、鉄系・高度合金などの属性に応じて近いTFC金属を使う。
-- `foil`, `gear`, `heavy_sheet`, `nail`, `ring`, `rivet`, `screw`, `stamen`, `wire` は同じ分類を使い、TFC More Itemsに同名金属がある場合はその形状を優先する。
-- 金属ごとの割り当ては `docs/metals.md` の「テクスチャ形状ベース」を正本とし、`tools/textures/regenerate_metals.py` のmappingと一致させる。
-- 元Modから直接取得して無加工で使うtextureは再生成対象に含めない。`high_carbon_tungsten_steel` はTFC `high_carbon_steel` の形状へ元素材のパレットを転写する。
-
-色・パレット元:
-
-- Immersive Engineering: `aluminum`, `constantan`, `electrum`, `lead`, `uranium`
-- Iron's Spells 'n Spellbooks: `mithril`, `arcane`
-- PneumaticCraft: Repressurized: `compressed_iron`
-- Mekanism Extras: `naquadah`
-- Mekanism: `osmium`, `refined_glowstone`, `refined_obsidian`
-- Thermal Foundation: `invar`
-- TFC Metallum U: `antimony`, `cobalt`, `high_carbon_tungsten_steel`, `iridium`, `osmiridium`, `platinum`, `solder`, `titanium`, `tungsten`, `tungsten_steel`
-- TFC Metallum 1.12.2: `lithium`
-- Minecraft: `netherite`
-- Embers Re-Ignited: `dawnstone`
-- Create: `andesite_alloy`
-- Draconic Evolution: `draconium`, `awakened_draconium`
-
-Metallumが他Modの素材を移植している場合は、Metallum版ではなく移植元Mod本体のingotを優先する。全金属にsourceを明示し、現在の生成済みtextureをsourceへフォールバックさせない。
-
-生成script:
-
-```bash
-python3 tools/textures/regenerate_metals.py
-```
-
-- Python 3とPillowが必要。
-- 依存jarとIron's Spellsの抽出画像は `.tmp` に置き、リポジトリへコピーしない。
-- Ore Washingの形状ベースと生成規則は金属形状のmappingから独立させ、変更しない。
-- ingot pileと金床が共通参照する `assets/tfc/textures/block/metal/smooth/<metal>.png` も同時生成する。
-- InvarのalloyはWrought Iron 60-70% + Nickel 30-40%。
-- Dawnstoneは工具とalloy recipeを追加しない。
-- Draconium系は工具、金床、鉱石、独自alloy recipeを追加しない。両方とも鍛造tier 7とし、double ingot溶接はtier 6とする。item rarityは両方ともEPIC。融点2000℃、鍛造可能温度1200℃、溶接可能温度1600℃とし、TFC最高級鋼より明確に高温を要求する。Draconic Evolutionのingotをoptional common tagで受け入れる。
-- `invar`、`titanium`、`tungsten_steel`、`netherite` のtool tierはTFC本体を直接参照せず、各versionの `TfcmTiers` に固定値で定義する。InvarはWrought Iron相当、Titaniumは耐久値3300（Steel相当）以外をBlack Steel相当とし、鍛冶tierはBlack Steelより1段低い4とする。Netheriteは工具・防具性能をRed / Blue Steel相当、鍛冶tierと金属色をBlack Steel相当とする。
-- 対象TFC versionがsheet pileに対応しない限り、sheet pile assetは追加しない。
-- 工具・防具の形状元はTFC 1.21.1のtexture/modelを正本とする。工具とjavelinは `invar` がwrought iron、`titanium` が通常steel、`tungsten_steel` と `netherite` がred steelを使う。shield、防具、中間防具、horse armor、防具layerは `invar` がwrought iron、`titanium` がblack steel、`tungsten_steel` が通常steel、`netherite` がblack bronzeを使う。Netheriteのこれらのmodel JSONもblack bronzeを正本とする。
-- 完成工具、shears、javelin projectileは、`invar` / `titanium` ではwrought ironと通常steel、`tungsten_steel` / `netherite` ではred steelとblue steelの同色pixelを固定材maskとして扱う。木柄・紐・支点などは再着色せず、金属部分だけにパレット転写を適用する。
-- horse armorはTFC 1.21.1の全金属texture間で同色のpixelを固定材maskとし、サドル部分を再着色しない。
-- 完成knife/javelinとknife blade/javelin headのitem textureはTFC 1.21.1の形状を生成時に水平反転し、両versionで同じ共有textureを使う。version別の追加反転は行わない。javelin projectileは両versionとも反転しない。
-- optional連携のcrossguard/pommelはTFC Metal Toolsの形状を使ってshared assetへ、tongs/tong partはTFC Hot or Notの形状を使って1.21.1固有assetへ生成する。いずれも同じ金属パレット転写を使い、tongsとtong partは元Mod内の比較金属間で同色のpixelを固定材として保持する。
-
-### 11.3 Ore Washing
-
-- 色・パレット元は各鉱石の `assets/tfcm/textures/item/ore/normal_<ore>.png`。
-- TFC本体由来の `borax` は、TFC本体の `assets/tfc/textures/item/ore/borax.png` をパレット元にする。
-- `chunks`, `rocky_chunks`, `dirty_dust`, `dirty_pile` はtfcorewashingのgraphite形状を使う。
-- `pellet`, `briquet` はgraphite形状がないためchromium形状をmaskとして使う。
-- `powder` はTFC `item/powder/graphite` の形状を使う。
-- `rocky_chunks` は岩部分を転写対象から除外し、item modelの `layer1` に固定色 `_rocky_overlay.png` を重ねる。
-- `mithril_matrix` は正式素材が提供されるまで現在の仮鉱石textureをパレット元とする。
-
-生成script:
-
-```bash
-python3 tools/textures/regenerate_ore_washing.py
-```
-
-### 11.4 鉱石・Gem補助texture
-
-- `bauxite`, `galena` の鉱石item/block overlayとCut QuartzはTFC IE Crossover由来素材を使用する。
-- Cut QuartzはCrossoverのQuartz Shardをそのまま使う。
-- Quartz晶洞のblock/bud textureとmodel、生成形状はTFC IE Crossover 1.21.xを正本とする。
-- Certus Quartzのitem/block/bud textureはApplied Energistics 2 1.21.1を正本とする。非成長blockは枠・中心紋・芽模様のない `quartz_block_empty`、成長blockは `flawless_budding_quartz` を使い、加工済み `quartz_block` は使わない。必要な第三者表示はルート `LICENCE` 内へ統合する。
-- raw QuartzはTFC `item/ore/amethyst` 形状へCut Quartzのパレットを転写する。
-- Fluorite PowderとQuartz PowderはTFC `item/powder/amethyst` 形状へ各鉱石itemのパレットを転写する。
-- `cobaltite`、`spodumene`、`thorianite`、`magnesite`、`carobbiite`、`zircon` の鉱石素材は、TFC Metallum UまたはTFC Metallum 1.12.2由来とする。`carobbiite` だけはlegacy normal textureをそのまま使う。
-- `boron`, `thorium`, `magnesium`, `beryllium`, `zirconium`, `neutronium`, `ferroboron`, `tough_alloy`, `zircaloy`, `hsla_steel`, `super_alloy` の金属色はNuclearCraftのingot textureを参照する。`neutronium` はingot、double ingot、sheet、rod、block、More Items形状を含む全item textureを同じフレーム数のanimated PNGとして生成し、NuclearCraftのanimation metadataを維持する。
-
-生成script:
-
-```bash
-python3 tools/textures/regenerate_misc.py
-python3 tools/textures/regenerate_metals.py
-python3 tools/textures/generate_metal_models.py
-python3 tools/textures/regenerate_ore_grades.py
-python3 tools/textures/regenerate_carobbiite.py
-python3 tools/textures/regenerate_neutronium.py
-```
-
-## 12. 主要コード
-
-- 共通名一覧: sharedの `TfcmContentNames.java`
-- 金属・鉱石仕様: sharedの `TfcmMetalSpec.java`, `TfcmOre.java`
-- item/block登録: 各versionの `TfcmMetal.java`, `TfcmItems.java`, `TfcmBlocks.java`
-- compat鉱石: sharedの `TfcmCompatOres.java`
-- Mod entry: 各versionの `TfcmMod.java`
-- 鉱脈parser: sharedの `worldgen/TfcmVeinsYamlParser.java`
-- 鉱脈platform: 各versionの `TfcmVeinPlatform.java`
-- content選択: sharedの `TfcmEnableContent.java`
+# TFCM 開発ガイド
+
+## 仕様と実装状態
+
+- 新規実装の要求仕様は `PROJECT.md`。JavaコードとGradle設定にはM01の対応環境・依存関係基盤を実装済みであり、後続機能の実装済みを意味しない。
+- GradleはNeoForge `21.1.265`、Mod IDは `tfcm`、基本パッケージは `net.claustra01.tfcm` を使用する。
+- Minecraftは `[1.21.1]` に限定する。TFC `[4.2.12,)` とPatchouli `[1.21.1-93-NEOFORGE,)` は必須、FirmaLife `[3.0.15,)` は任意で、3 ModともTFCMより先に読み込む。
+
+## M01 verification
+
+- `gameTest` source setを使用し、`runGameTestServer` はTFC・Patchouliのみ、続けて`runGameTestServerFirmaLife` はFirmaLife 3.0.15を追加して実行する。
+- 各runは`tfcm.gametest.report`と`tfcm.gametest.structures`を設定する。JUnit XMLはそれぞれ`build/test-results/gametest/`と`build/test-results/gametest-firmalife/`に出力する。
+- `./gradlew classes build runGameTestServer`でcompile、build、両GameTest環境を検証する。`tests/e2e/foundation-boot.mjs`はTFC・Patchouliのみの専用サーバーとclient `tfcm-a`の接続を検証する。
+
+## M02 metals
+
+- 39金属の通常item IDは`tfcm:metal/<form>/<metal>`、block IDは`tfcm:metal/block/<metal>`、slab/stairsはblock ID末尾に`_slab`/`_stairs`を付ける。溶融流体は`tfcm:metal/<metal>`、bucketは`tfcm:bucket/metal/<metal>`を使用する。
+- 高炭素中間素材は`tfcm:metal/ingot/high_carbon_tungsten_steel`、独立流体は`tfcm:molten_andesite`とする。金属別データには`tfcm:metal_enabled` load conditionを付ける。
+- `MetalDataProvider`がcasting、anvil、welding、heating、alloy、fluid/item heat、item size、common item/block/fluid tag、採掘tag、block lootを`src/generated/resources`へ生成する。変更後は`./gradlew runData`で生成物を同期する。
+- Double IngotとDouble SheetのWelding tierはTFCと同じく金属tierの1つ下（最小0）とし、同金属の金床を作る前に製作できるようにする。Metal Block、Slab、Stairsの表示名はTFCと同じ`<Metal> Plated Block/Slab/Stairs`とする。
+- Metal BlockはTFCと同じくHammer損耗、Sheet 4個、`#minecraft:planks`から8個、Slabは3個から6個、Stairsは6個から8個を作る。High Carbon Tungsten SteelはTungsten IngotとBlack Steel Ingotのtier 6 Welding、Netherite IngotはNetherite ScrapとBlack Steel Ingotのtier 6 Weldingでも作り、Netherite ScrapにはNetherite Ingotと同じheatを定義する。
+- M02のGameTestは登録参照、仕様値とheat、鋳造、金床・溶接、合金、Andesite Alloyを検証する。`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを実行する。
+
+## M03 metal forms
+
+- 39金属すべてに`foil`、`gear`、`heavy_sheet`、`nail`、`ring`、`rivet`、`screw`、`stamen`、`wire`、`plate`、`nugget`、`dust`を常設し、IDは`tfcm:metal/<form>/<metal>`とする。
+- FoilはSheet 1→2、GearはDouble Sheet 1→1、Nail/Rivet/ScrewはStamen 1→5、RingはStamen 1→2、Stamen/WireはRod 1→2、PlateはIngot 1→1を金属tierのAnvilで作る。Heavy SheetはDouble Sheet 1とSheet 1→1のWeldingだけで作る。
+- Gearは`punch_last,hit_second_last,upset_third_last`、Nailは`punch_last,hit_not_last,bend_not_last`、Ringは`hit_last,draw_second_last,draw_third_last`、Rivetは`draw_not_last,bend_any,hit_any`、Screwは`hit_any,hit_any,draw_last`、Stamenは`bend_last,draw_second_last,draw_third_last`、それ以外のAnvil形状はTFC Sheet/Rodと同じ`hit_last,hit_second_last,hit_third_last`を使用する。TFC 4.2.12本体には拡張形状とPlateの同名レシピはないため、拡張形状の数値・操作列はTFC本体からは照合できない。
+- NuggetはIngot 1→9、Nugget 9→Ingot 1のCrafting Grid加工。溶融量はNugget 1個10 mB、9個90 mBとし、100 mBへの補正を行わない。DustはIngot 1→Dust 1のTFC Quern加工、PlateとDustの溶融量は各100 mB。Dustは鉱石Powderと別アイテム・別タグにする。
+- 金属別common item tagは`c:<form>s/<metal>`（Heavy Sheetは`c:heavy_sheets/<metal>`）を用い、集合タグ`c:<form>s`にも含める。各形状のHeating、item heat、size/weight、翻訳、modelとtextureを生成・登録する。
+- TFC More Items・TFC Metal Tools相当として、SheetとRodを持つTFC 4.2.12の19金属（`TfcMetal`: Bismuth、Bismuth Bronze、Black Bronze、Black Steel、Blue Steel、Brass、Bronze、Cast Iron、Copper、Gold、Nickel、Red Steel、Rose Gold、Silver、Steel、Sterling Silver、Tin、Wrought Iron、Zinc）にもF-004・F-005の12形状を`tfcm:metal/<form>/<metal>`で常設する。加工規則、個数、溶融量、size/weightは上記の同形状と同じとし、Anvil・Welding tierはTFC本体の同金属Rod/Sheetレシピに合わせる（TFCがtierを持たない金属は省略）。熱特性はTFCの同金属Ingot item heatとfluid heat、溶融先は`tfc:metal/<metal>`、Nugget 9個はTFC Ingotへ戻す。`c:<form>s/<metal>`と集合タグへ含め、textureはInvarの同形状をTFCの同金属Ingot配色へ置き換えた派生物とする。
+- FirmaLife 3.0.15のChromium、Stainless Steel（`TfcMetal`内）はFirmaLife導入時だけ上記12形状を登録する。tierは4、溶融先は`firmalife:metal/<metal>`、Nugget 9個はFirmaLifeのIngotへ戻し、熱特性はFirmaLifeの値で、recipeには`neoforge:mod_loaded`条件を付ける。TFCのitem heat/sizeとtagは読込条件を見ないため、heat/sizeは`c:<form>s/<metal>`経由、tagは任意entryとする。textureはInvarの同形状をFirmaLifeのIngot配色へ置き換えた派生物とする。
+- `./gradlew runData`で生成物を同期し、`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両GameTest runを検証する。M03 GameTestは9拡張形状の登録・加工・熱、Plate、Nugget、Dust、39金属への適用を確認する。
+
+## M04 material parts
+
+- Bow、Crossbow、Arrowは部品組立だけで作り、TFCの`minecraft:bow`、`minecraft:crossbow`、`tfc:crafting/arrow`とVanillaの火打石の`minecraft:arrow`は同一IDで無効化する。Iron Arrow Headの代わりにObsidian Shardを使う`tfcm:crafting/material/arrow_obsidian`を追加する。Plant String、Bamboo String、Leather Stringは`c:string`に加えてTFCの`c:strings`へ登録し、Leather Strapは入れない。
+- 革、植物、竹、弓・弩、矢、工具組立用の部品は部品名のflat item IDを使用する。Plant Blockだけは`tfcm:plant_block`のblock/itemとして登録する。
+- `c:plant/grass`（TFC More Items準拠でVanillaの草とTFCの草13種）を右クリックするとPlant Fiberを落とす。空の主手は1個を80%と追加1個を30%、Knifeは3個を90%と追加2個を50%の独立抽選とする。1回ごとに1秒のcooldown、灰のparticle、植付音を出し、40%で草を除去し、Knifeは耐久を1消費する。破壊時のdropはない。Knifeを使う加工はTFC Advanced Shapeless Craftingの`damage_crafting_remainder`で1耐久を消費する。
+- Plant Blockはrandom tickごとに10%で`tfc:thatch`へ置換する。itemの三人称表示はTFC More Itemsの値を`thirdperson_righthand`へ適用する。独自tierや効果は持たせない。
+- 完成Bow、Crossbow、Arrowは独自完成品を登録せず、各中間部品からVanillaの完成品へ組み立てる。全素材部品とPlant BlockにTFC item size/weightを定義する。
+- `MaterialDataProvider`がrecipe、grass/block loot、item size、model、blockstateを`src/generated/resources`へ生成する。M04 GameTestは登録と属性、植物・竹加工と乾燥、完成品組立とKnife損耗を検証し、`tests/e2e/material-parts.mjs`は全素材モデルを一画面で検証する。
+
+## M05 equipment and anvils
+
+- Invar、Titanium、Netherite、Tungsten Steelの工具・工具頭・武器・防具・補助装備は`tfcm:metal/<part>/<metal>`、金床は`tfcm:metal/anvil/<metal>`を使用する。工具tierは順にlevel `3/5/6/7`、耐久`2200/3300/6500/8125`、速度`8/11/12/13`、攻撃補正`4.75/7/9/10.5`、Enchantability `12/17/22/25`とする。
+- 防具のBoots/Leggings/Chestplate/Helmet防御はInvar `1/4/5/2`、Titanium `2/5/6/2`、Netherite `3/6/8/3`、Tungsten Steel `4/7/9/4`。耐久は順に`429/495/528/370`、`650/750/800/550`、`884/1020/1010/715`、`1105/1275/1360/935`、Enchantabilityは`12/17/23/25`、Toughnessは`0/2/3/4`、Knockback抵抗は`0/0.05/0.10/0.15`とする。
+- 工具組立にはF-006のHandle、Binding、Tool Riveting由来のCrossguard/Pommelと、F-004のRing・Rivet・Wireを使用する。Crossguard/Pommelは専用アートが確定するまで中立な小金属部品モデルを用いる。
+- Tong PartとTongsは`tfchotornot`導入時だけ登録し、Tongsは同Modの公開`TongsItem`を使用する。`tfchotornot:tongs`へ統合するが`insulating`には追加せず、独自の耐熱倍率や保持効果を付けない。
+- Heavy SheetのWelding tierはDouble Sheetと同じ金属tierの1つ下とする。TFC More Itemsの一律tier 1は採らない。形状のAnvil tierと熱特性はF-002、TFCの同金属Sheet/Rodレシピと量比例の計算を正とし、参照元の値へ揃えない。Crossguard 25 mBとPommel 24 mBの熱容量も同じ計算とする。
+- Fishing RodはTFCと同じ` S/ SL/SXL`（X=Fish Hook）で組み立てる。
+- `TfcToolAssemblyDataProvider`はTFC Metal Tools 1.0.7の組立をTFCの工具金属9種へ適用する。13工具の完成品はTFCの同一ID `tfc:crafting/metal/<tool>/<metal>`を置換し、tier 2以下は`NX/HG`、tier 3以上は` NX/GHR/RL `を基本にする。CopperのPickaxe/Propickは`NX/HN`（`#c:string/plant`）、Sawは`GX/HG`（`#c:string`）の紐組立とする。工具ごとの例外は同classの表を正本とし、Headの鍛造bonusは`input_row`/`input_column`で引き継ぐ。Shearsは`tfcm:crafting/metal/shears/<metal>`を追加し、TFCのWeldingも残す。
+- 9金属のCrossguardはRod 1→2のAnvil（`bend_last,draw_second_last,draw_third_last`、bonusあり）、PommelはRing 2個のtier 1 Weldingで作り、溶融量は25/24 mBとする。textureはTFC Metal Toolsの各金属の画像をそのまま使う（金属ごとに輪郭が異なる）。
+- 4金属の金床tierは`3/5/6/7`。同金属のDouble Ingot 7個で製作し、Heatingで同金属1400 mBへ戻す。TFC Anvil block entityと`tfc:anvils`、pickaxe採掘tagへ統合する。
+- `tfc:blast_furnace_tuyeres`、`tfc:trip_hammers`、`tfc:holds_large_fishing_bait`、`tfc:anvils`（item）、`tfc:tools/<metal>`、`tfc:metal_item/<metal>`へ該当品を追加する。`tfc:sheets`、`tfc:double_sheets`、`tfc:double_ingots`は旧TFCMの別名で`c:`の同名tagを含む。Anvil recipeの鍛造bonus指定はTFC 4.2.12のcodecどおり`apply_bonus`であり、`apply_forging_bonus`ではない。
+- `EquipmentDataProvider`が装備のAnvil/Welding/Crafting/Heating、item heat・size、tool/tag、model、金床のrecipe・loot・blockstateを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/equipment-anvils.mjs`で検証する。
+
+## M06 ores and gems
+
+- 独自鉱石は品位あり16種と品位なし3種を`Ore`で定義する。各TFC母岩、Netherrack、End Stone版は`tfcm:ore/<ore item name>/<host>`、Small Oreと地表sampleは`tfcm:ore/small_<ore>`を使用する。
+- TFCの12×3品位鉱石と17品位なし鉱石にはNetherrack・End Stone版を追加し、元のTFC鉱石itemをdropする。FirmaLife Chromite 3品位×2版はFirmaLife導入時だけ登録し、生成データはmod-loaded conditionを付ける。
+- Nether鉱石は硬度3・耐爆10、End鉱石は硬度3・耐爆9、TFC母岩版はTFCの母岩category hardnessを使用する。全鉱石blockを`c:ores`、`minecraft:mineable/pickaxe`、`tfc:prospectable`、`tfc:mineable/propick`へ追加する。探鉱表示は標準block translation key末尾の`.prospected`を使用する。
+- 鉱石blockの英語名はTFCと同じ`<Grade> <Host> <Ore>`（品位なしは`<Host> <Ore>`）、`.prospected`は品位と母岩を含まない鉱石名とする。
+- Small OreのitemはTFCと同じく`tfcm:item/ore/small_<ore>`を貼った平面modelとし、地表の立体modelはblockだけに使う。
+- 品位なし鉱石の地表sampleは`tfcm:ore/small_<ore>`のblockだけを登録し、BlockItemを作らない。対象はFluorite、Quartz、Carobbiite、`TfcOre.UNGRADED`の17種、Bituminous Coal、Halite、Lignite、Nether Quartzの計24種で、壊すと元のraw item（Nether Quartzは`minecraft:quartz`）を落とす。
+- 鉱石itemを`tfc:metal_ores`、`tfc:ore_pieces`、`tfc:small_ore_pieces`、`c:ores`、`c:ores/<ore>`、`c:ores/<ore>/<grade>`、`c:ores/<metal>/<grade>`へ追加する。
+- QuartzとFluoriteはQuernで各Powder 4個にし、両PowderをTFC gem powder・bowl powder tagへ追加する。Cut QuartzはTFC Sandpaperの損耗を使い、Certus Quartzとは別itemとして登録する。
+- `OreDataProvider`がblockstate、model、loot、tag、heating、quern、研磨を`src/generated/resources`へ生成し、langは`src/main/resources/assets/tfcm/lang/`で手動管理する。変更後は`./gradlew runData`と両GameTest runで機能を検証し、`node tests/e2e/ore-samples.mjs`で地表sampleの表示を検証する。
+
+## M07 ore processing
+
+- 35系列の中間item IDは`tfcm:ore_processing/<form>/<series>`（`rocky_chunks`、`chunks`、`dirty_dust`、`powder`、`pellet`、`briquet`）、7色の砂は`tfcm:ore_processing/sand_pile/<color>`を用いる。Dirty Pileはitem、recipe、loot、tag、lang、modelのいずれにも生成しない。
+- `ProcessingSeries`をF-010表の正本とし、各行を`砂/主岩/副岩/Gem/副産物B/回収先`で表す。Native Copper=`red/basalt/andesite/opal/hematite/copper`、Native Gold=`yellow/quartzite/granite/quartz/native_silver/gold`、Hematite=`red/quartzite/shale/なし/sulfur/cast_iron`、Native Silver=`white/gneiss/granite/amethyst/galena/silver`、Cassiterite=`white/granite/gneiss/topaz/bismuthinite/tin`、Bismuthinite=`black/granite/schist/pyrite/galena/bismuth`、Garnierite=`green/gabbro/basalt/opal/limonite/nickel`、Malachite=`green/limestone/dolomite/opal/limonite/copper`、Magnetite=`black/gabbro/basalt/なし/hematite/cast_iron`、Limonite=`brown/claystone/shale/opal/sulfur/cast_iron`、Sphalerite=`brown/dolomite/limestone/amethyst/galena/zinc`、Tetrahedrite=`black/schist/dolomite/pyrite/sphalerite/copper`、Galena=`black/limestone/dolomite/amethyst/sphalerite/lead`、Magnesite=`white/dolomite/gabbro/opal/limonite/magnesium`、Bauxite=`red/claystone/shale/sapphire/hematite/aluminum`、Uraninite=`black/granite/gneiss/なし/galena/uranium`、Chromite=`black/gabbro/basalt/ruby/cobaltite/chromium`、Rutile=`red/gneiss/schist/sapphire/hematite/titanium`、Zircon=`brown/granite/gneiss/topaz/cassiterite/zirconium`、Cobaltite=`black/gabbro/schist/pyrite/sulfur/cobalt`、Stibnite=`black/shale/slate/amethyst/galena/antimony`、Native Platinum=`black/gabbro/basalt/なし/chromite/platinum`、Wolframite=`black/granite/gneiss/quartz/cassiterite/tungsten`、Thorianite=`black/granite/gneiss/なし/galena/thorium`、Native Iridium=`black/gabbro/basalt/なし/native_platinum/iridium`、Native Osmium=`black/gabbro/basalt/なし/native_platinum/osmium`、Spodumene=`white/granite/gneiss/topaz/cassiterite/lithium`、Carobbiite=`white/granite/gneiss/emerald/native_platinum/beryllium`、Native Naquadah=`black/gabbro/basalt/なし/native_osmium/naquadah`、Mithril Matrix=`white/gneiss/granite/amethyst/native_platinum/mithril`、Cinnabar=`red/quartzite/schist/ruby/sulfur/redstone_dust`、Cryolite=`white/granite/gneiss/topaz/spodumene/redstone_dust`、Graphite=`black/schist/phyllite/diamond/hematite/graphite_powder`、Sulfur=`yellow/tuff/basalt/pyrite/hematite/sulfur_powder`、Borax=`white/granite/gneiss/topaz/graphite/borax_powder`とする。Chromiteの加工itemとdataはFirmaLife導入時だけ有効にする。TFCのitem heatとDepositは読込条件を見ないため、heatは`c:metal/<form>/chromite`経由で参照し、DepositはFirmaLife導入時に`TFCM`のreload listenerで追加し、Native Platinumの副産物poolにも導入条件を付ける。
+- Hammerは`#c:tools/hammer`をTFC remainderで1損耗させ、Small/Poor/Normal/Richを`1/3/5/7`個、品位なし金属を5個、非金属を7個のRocky Chunkへ加工する。一次SluiceはChunk 100%、主岩30%、副岩15%、定義済みGemだけ0.02%の独立pool、QuernはChunk 1→同系列Dirty Dust 1とする。
+- 二次SluiceはPowder 100%、Sand Pile 15%、同系列Dirty Dust 5%、副産物BのDirty Dust 1%を独立poolで出す。Powder 4→Pellet 1、Pellet 4→Briquet 1と逆変換を用意し、金属系列のHeatingは5/20/80 mBとする。Boraxも同じ5/20/80 mBでBoronへ回収する。溶融レシピのないCinnabar、Cryolite、Graphite、Sulfurは流体を定義せず、Pellet、Briquetも登録しない。
+- TFC 4.2.12の12系列とFirmaLife 3.0.15のChromiteについて、Poor/Normal/Richの既存Heating IDを同名のfalse conditionで無効化する。Small Oreの直接溶融は維持し、TFCM鉱石には元からPoor/Normal/Rich直接溶融を生成しない。
+- Sand Pile 4個とSand 1個は7色とも相互にクラフトできる。洗浄工程を迂回するTFCのQuern（品位あり12系列の4段階、Sulfur、Graphite、Redstone）は同一IDで無効化する。TFC 4.2.12に同名のPowderがある12系列、Graphite、Sulfurの洗浄結果は`tfc:powder/<系列>`そのもので、TFCMに同じPowderを登録しない。
+- 中間itemを`c:metal/<form>`と`c:metal/<form>/<series>`へ追加し、`c:ores/clean_dusts`は`c:metal/powder`を含む。Dirty Pileのtagは作らない。
+- 処理itemのmodelはM06の鉱石ごとの`textureSource`とTFC powderを意図的に再利用する。Rocky/Chunkおよび粉体の工程差は形状別modelで表し、新しい第三者textureは追加しない。
+- 変更後は`./gradlew runData`で生成物を同期し、`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを検証する。GameTestは独立した35行の期待表と生成loot JSONを照合する。
+
+## M08 surface resources
+
+- 4鉱石×21岩石のTFC既存Deposit lootだけは、TFC 4.2.12の同一IDを置換する互換データとして`data/tfc/loot_table/deposit/`へ生成する。その他のDeposit定義とlootは`tfcm`名前空間を使用する。
+- Gravel、Sand、Rock PowderのDeposit定義は`data/tfcm/tfc/deposit/surface_resource/`、loot IDは`tfcm:surface_resource/...`とし、loot pool名は出力と確率を表す一意名（Sandだけは表順の`output_<index>`）を使用する。
+- Deposit、Gravel、7色Sand、Rock Powderの各出力は確率を正規化せず、出力ごとに独立したloot poolを生成する。GravelとSandのPowder、およびRock PowderのDirty DustはM07の処理itemへ直接接続する。
+- Deposit 99件のPan表示はmaterialごとの`tfcm:item/pan/<name>_full`、`_half`と共通の`tfcm:item/pan/empty`を使う。`<name>`は`gravel/<rock>`、`sand/<color>`、`rock_powder`、`rocky_chunks/<series>`、`dirty_dust/<series>`で、親はTFCの同名modelとする。materialは不透明なblock textureとし、Gravel/Sandは同じ素材、Rock Powderは`minecraft:block/gravel`、Rocky Chunkは系列の主岩のGravel、Dirty Dustは系列のSandを使う。TFCは自身の4鉱石分しかPan modelを登録しないため、`TFCMClient`が`models/item/pan`を`ModelEvent.RegisterAdditional`へ登録する。
+- Sluiceの内容はJEI（任意、API `19.32.0.358`をcompileOnly）の`tfcm:sluice`カテゴリに表示する。レシピの起点はTFCの`tfc:sluices`タグの全アイテムで、Panは起点にしない。追加アドオンのSluiceもこのタグへ入れれば同じ扱いになる。loot tableはクライアントへ同期されないため、`SluiceRecipe.build`がサーバーのDeposit全件と読込済みloot tableから入力・出力・確率を作り、`OnDatapackSyncEvent`（ログインと`/reload`）で`tfcm:sluice_recipes`ペイロードとして送る。データパックの変更も表示へ反映され、TFCのDepositも含む。
+- Rock Powderは`tfcm:ore_processing/rock_powder`として登録し、専用texture `tfcm:item/ore_processing/rock_powder`を使用するが、製作・採取レシピは追加しない。変更後は`./gradlew runData`と両GameTest runで生成データとTFC Deposit登録を検証する。
+
+## M09 範囲採掘工具
+
+- Mining HammerとExcavatorは起点中央の3×3、Quarry Hammerは床・天井で起点中央の5×5、壁で起点の上3・下1・左右2の5×5を処理する。各工具の採掘速度は素材tierの40%とする。
+- 追加候補ごとにmineable tagとtierを確認し、個別のBreak Eventと通常のサーバー破壊・loot処理を通す。Survivalでは1ブロックごとに耐久1を消費し、Creativeではdropと耐久消費を行わない。多層blockは通常破壊経路を通して1層だけ減らし、追加破壊を再帰起動しない。
+- 3工具の攻撃補正はMining/Quarry Hammer 1.0、Excavator 0.9、攻撃速度補正は-3.1で、属性はTFCの`ToolItem.productAttributes`で作る。工具とHeadのrarityは金属のrarityとする。Quarry Hammer HeadはMining Hammer HeadとHeavy Sheetの金属tier Welding（bonusは`copy_best`）または焼成済みMoldへの800 mB鋳造で作る。金属量はHead 800 mB、完成工具850 mB、Moldの容量は800 mBで、Mining HammerとExcavatorはHead 200 mB、完成工具250 mBとする。
+- 3工具とHeadはTFCの工具金属9種とInvar、Titanium、Netherite、Tungsten Steelへ展開する。Mining Hammer HeadはDouble Ingot 1個から`punch_last,upset_second_last,upset_third_last`、Excavator HeadはSheet 1個から`bend_last,upset_second_last,draw_third_last`を金属tierの金床で加工する。鋳造可能な4金属は焼成済みMoldで鋳造する。
+- 完成工具の組立はTFC Mining HammerのTFC Metal Tools版を常に使い、`crafting/metal/<tool>/<metal>`へ条件なしで生成する。tier 2以下は` NX/ HG`（`#c:rivets/<metal>`、Head、`#c:rods/<metal>`、`#c:glue`）、tier 3以上は` NX/GHR/RL `で`#c:rings/<metal>`とLeather（Mining/Quarry Hammerは`#c:leather/string`、Excavatorは`#c:leather/strip`）を加え、Headの鍛造bonusを引き継ぐ。
+- 3工具の持ち手は同金属のHammer（TFC金属はTFC 4.2.12、TFCM金属はTFCM）の柄に合わせ、木材色は共通、Head直下の上3段と末端3段の金属部（キャップ・カラーの有無と形）だけを金属ごとに変える。
+- 未焼成MoldのKnapping patternはMining Hammer=`  ###/    #/#   #/#    /###  `、Quarry Hammer=`##   /##   /     /   ##/   ##`、Excavator=`#####/#   #/#   #/#   #/#   #`とし、1399℃で焼成する。
+- 完成工具・Headのitem heatは金属固有値を使う。サイズ/重量は完成工具が`very_large/very_heavy`、Headが`large/medium`、Moldが`small/light`とする。外観はTFCのHammer、Mace、Shovelと各Head/Mold modelを再利用する。
+- 3工具を`c:tools`と`tfc:tools/<metal>`へ、Mining HammerとQuarry Hammerを`tfc:deals_crushing_damage`へ追加する。
+- 範囲工具データ変更後は`./gradlew runData`で同期し、`./gradlew classes build runGameTestServer`と`node tests/e2e/area-tools.mjs`で検証する。
+
+## M10 geodes
+
+- Quartz、Amethyst、Certus Quartzは`mineral/<mineral>_block`、`mineral/budding_<mineral>`、`mineral/small_<mineral>_bud`、`mineral/medium_<mineral>_bud`、`mineral/large_<mineral>_bud`、`mineral/<mineral>_cluster`を使用する。
+- 成熟ClusterはQuartzがCut Quartz 2個、AmethystがTFC Amethyst Gem 2個、Certus QuartzがCertus Quartz 2個を落とす。Budding BlockはSmall、Medium、Large、Clusterの順に成長させる。
+- Budding Blockはrandom tickの1/5で6方向から1方向を等確率に選び、その方向の空気または水源に成長する。既存Budは向きを保ち、最初のSmall Budは選択方向を向く。
+- Bud/Clusterの高さと底面幅はSmall=`3/4`、Medium=`4/3`、Large=`5/3`、Cluster=`7/3`。Amethyst系はVanilla Amethystのblock・bud・cluster textureを再利用し、全Bud/Cluster modelはcutoutで描画する。
+- 3種の標準晶洞は外殻TFC Hardened Basalt、中間Raw Quartzite、内層Budding:鉱物:Raw Quartziteを2:5:1とする。層厚設定はfilling/inner/middle/outer=`1.7/2.2/3.2/4.2`。Bud配置はalternate層を必須とせず、内層候補に含まれるBudding Blockから成長できる。
+- 配置はY -48..32、各300チャンクに平均1回、`underground_ores` stepで行う。TFC 4.2.12に全Overworld biome用tagがないため`tfcm:tfc_overworld`をTFC biome registryから生成し、`tfcm:geode_blocks`には6 block種すべてを含めてpickaxe採掘tagへ接続する。
+- `GeodeDataProvider`がmodel、blockstate、loot、configured/placed feature、biome modifierを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/geodes.mjs`で検証する。
+
+## M11 YAML worldgen
+
+- Common Configの`enableCustomVeinGeneration`が有効な場合、`config/tfcm/overworld.yaml`、`nether.yaml`、`end.yaml`を正規パスとして読み込む。旧パス・旧構文は扱わない。
+- 起動時に、存在しないファイルだけを同梱の`src/main/resources/tfcm/worldgen/*.yaml`からコピーし、既存ファイルは上書きしない。同梱Overworldは旧実装の鉱脈46件（FirmaLife未導入時は該当2件を警告で除外）と3種の標準晶洞、Nether/Endは空定義とする。旧実装の既定に鉱脈がある独自鉱石はBauxite、Galena、Uraninite、Carobbiiteだけで、他の独自鉱石は既定では生成しない。
+- 各YAMLは`veins`と`geodes`の配列を持つ。Veinは`id`、`type`、`ymin`、`ymax`、`blocks`が必須で、`type`は`tfc:cluster_vein`、`tfc:disc_vein`、`tfc:kaolin_disc_vein`、`tfc:pipe_vein`のいずれかとする。`blocks`は`block`と省略時1の正有限`weight`を持ち、`rocks`はOverworldで必須、Nether/Endでは省略時にそれぞれ`minecraft:netherrack`/`minecraft:end_stone`を使う。
+- Veinの既定値は`rarity=1`、`density=1`、`size=1`、`height=1`、`radius=1`、`min_skew=max_skew=min_slant=max_slant=0`、`sign=0`、`project=false`、`project_offset=false`、`near_lava=false`。`tier`は品位名から正整数weightへのmapで、`{rock}`と`{tier}`を展開し、最終weightはblock weight×tier weightとする。`seed`指定を優先し、未指定時は`random_name`（既定は`id`）のMinecraft hash seedの上下64 bitをXORした値を使う。
+- `indicator`は`block`が必須で、`rarity`は0を許容し、既定値は`rarity=1`、`depth=0`、`underground_rarity=1`、`underground_count=0`。Veinの`ymin`/`ymax`は必須で、type別の`density`、`size`、`height`、`radius`、`min_skew`、`max_skew`、`min_slant`、`max_slant`、`sign`と投影・溶岩条件をTFC configへ渡す。
+- Geodeは`id`、`ymin`、`ymax`、`outer`、`middle`、`inner`、`filling`、`inner_placements`を持ち、`type`は省略時を含め`minecraft:geode`、`rarity`は省略時1とする。`inner`、`filling`、`inner_placements`は`{block, weight}`配列で、`outer`と`middle`は単一blockを指定する。
+- Overworldに有効なYAML鉱脈があればTFCの鉱石鉱脈だけを置換し、なければTFC鉱脈を維持する。既存のGravel・Dike等は維持する。標準TFCM晶洞は除外してYAML晶洞だけを追加する。
+- 置換対象は`tfc:vein/`と`firmalife:vein/`配下のplaced featureのうち`vein/gravel`、`vein/kaolin_disc`、`*_dike`以外とする。`GeodeDataProvider`がmodifier入口の`custom_worldgen.json`を生成する。
+- Nether・Endは各YAMLに明示された鉱脈・晶洞だけを追加し、空設定では追加しない。未登録block、不正type・数値、重複IDは警告してエントリ単位で除外し、重複は先頭を採用する。
+- M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallbackを検証する。
+
+## M12 content toggles
+
+- Common Configの`disabledMetals`は`Metal`の39 ID、`disabledOres`は`Ore`、`ProcessingSeries`、`TfcOre`（地表sampleのみの4種を含む）のIDを受け付ける。指定可能な全IDは設定ファイルのコメントへ自動出力する。
+- 未知名は無視する。設定はレジストリ登録前に読み込み、変更反映にはゲーム再起動が必要。
+- 登録対象と生成データには`tfcm:metal_enabled`、`tfcm:ore_enabled`のload conditionを適用し、集合tagでは任意entryを用いる。参照元のloot poolや合金入力は該当entryだけを無効化する。
+- `runGameTestServerContentConfig`でLead、Galena、未知名を検証し、続く`runGameTestServerFreshConfig`で新規設定のコメントと既定値を検証する。
+
+## Harness runtime
+
+- 設定は `.harness-config.json`。ローカル生成物はGit管理外の `.harness-state/runtime/` に置く。
+- MC Pilot `0.20.2` は `pilot/node_modules/.bin/mct`。`MCT_HOME` と `MCT_CACHE_DIR` はそれぞれruntime内の `mct-home` と `mct-cache` を指定する。
+- Java 21、Minecraft `1.21.1`、NeoForge `21.1.265` をserver/client双方で使用する。
+- serverは `server/`、接続先は `127.0.0.1:25583`、検証worldは `harness-world`。harnessは起動時にこのworldを作り直す。
+- client名は `tfcm-a`、offline accountは `tfcm_a`。作成時のWebSocket portは `25584`。harness起動時には空きportへ割り当て直される。
+- server/client双方にTFC `4.2.12` とPatchouli `1.21.1-93-NEOFORGE` を配置する。現状はFirmaLifeなしの基本構成。FirmaLife `3.0.15` の有無を比較する試験では別途双方へ配置・除去する。
+- `node .harness/dist/cli/main.js doctor` と `validate` で構成を確認する。`plan` はClaude CLIへ仕様を送って計画を生成し、仕様・plan・progressをローカルGitへcommitする。
+- runtime準備だけではTFCMの受入条件を検証したことにならない。Modの実装・build・GameTest・E2Eは後続の開発工程で行う。
+
+## M13 content audit and assets
+
+- GameTest `TFCMAssetIntegrityGameTests` audits registered resources, tags, heat and size, and Neutronium animation metadata. Its JUnit cases are registered in `tests/acceptance.json`.
+- Equipment and Excavator models inherit TFC parent geometry. Their texture overrides must use texture keys from the actual TFC 4.2.12 parent models; armor uses the `tfcm` armor layer namespace. Mining Hammer and Quarry Hammer use dedicated item and head textures. The hammer tools belong to `c:tools/mining_tool`.
+- Licence: `LICENCE` separates textures and models, which keep the licence of their source work, from everything else, which is MIT. Heavy Sheet sprites of Bismuth, Bismuth Bronze, Black Bronze, Black Steel, Blue Steel, Brass, Bronze, Cast Iron, and Copper are TFC More Items' own. Bauxite, Galena, and Uraninite Rocky Chunk and Powder keep the TFC Metallum Overhaul 1.5.1 sprites shared by the 18 Metallum series, not TFC Ore Washing's.
+- Asset source: published TFC Metallum Overhaul `tfcm-1.5.1-mc1.21.1.jar`, https://www.curseforge.com/minecraft/mc-mods/tfc-metallum-overhaul/files/8553056, MIT licence (https://www.curseforge.com/minecraft/mc-mods/tfc-metallum-overhaul/license). Imported paths are `assets/tfcm/textures/block/metal/`, `block/mineral/`, `block/ore/`, `entity/projectiles/`, `item/gem/`, `item/metal/`, `item/ore/`, `item/powder/`, and `models/armor/`. Neutronium textures and `.png.mcmeta` animation files are in the metal paths. The nugget, Mining Hammer, and Quarry Hammer textures are project-created derivatives of the imported metal palette. The plate textures are project-created: a riveted plate shaded from the same metal's sheet palette (for TFC and FirmaLife metals, their own sheet palette), frame by frame for Neutronium. The dust textures recolor the Quartz Powder shape, the same shape as Rock Powder, with that palette. Rock Powder (Quartz Powder shape) and Leather String (Bamboo String shape) are project-created recolors. `ja_jp` translates every name except the mod name; TFC terms come from TFC's own `ja_jp`.
+- Run `./gradlew runData`, `./gradlew classes build runGameTestServer`, then `node tests/e2e/asset-integrity.mjs` with the client harness running.
+
+## M14 integrated verification
+
+- `TFCMProcessingGameTests.everySeriesCompletesFiveProcessingSteps` verifies every enabled series against the hammer output and damage, both Sluice inputs and independent loot pools, Quern output, compression and unpacking, and appropriate heating. The FirmaLife GameTest run includes Chromite; the TFC-only run excludes it. The test also checks Native Naquadah, Mithril Matrix, and Dirty Pile absence.
+- Verify static resources by parsing all JSON under `src/main/resources` and `src/generated/resources`, comparing the 39 metal IDs and forms and 35 processing series against `PROJECT.md`, and checking generated Quern and Sluice resources. Run `./gradlew runData` and inspect the generated resource diff for determinism.
+- Run `./gradlew classes build runGameTestServer`, followed by the FirmaLife GameTest task, dedicated server and client startup, TFC equipment interactions, three-dimension generation with sample YAML, and client E2E in both configurations. The F-029 entries in `tests/acceptance.json` identify the GameTest evidence.
+- Verification status: JSON parsing, metal model coverage, and processing resource coverage passed by direct inspection of the repository. Four compression recipes per metal series and Borax, and models, were also checked statically. Gradle commands remain unverified in this restricted environment. The wrapper could not write its lock file in the default Gradle cache; a writable cache allowed Gradle to start, but Gradle's file-lock socket was denied. A fresh cache could not download Gradle because network access was unavailable. Build, data generation determinism, both GameTest runs, server and client startup, manual TFC equipment use, sample-YAML world generation, and client E2E therefore have no new M14 runtime result. Static checks do not substitute for those runs.
+- Open Questions: None. No new gameplay values were introduced for M14.

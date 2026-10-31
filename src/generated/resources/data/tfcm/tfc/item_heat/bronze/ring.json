@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 570.0,
+  "heat_capacity": 0.34285712,
+  "ingredient": {
+    "item": "tfcm:metal/ring/bronze"
+  },
+  "welding_temperature": 760.0
+}

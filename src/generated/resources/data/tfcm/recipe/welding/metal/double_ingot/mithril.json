@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:ingots/mithril"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/double_ingot/mithril"
+  },
+  "second_input": {
+    "tag": "c:ingots/mithril"
+  },
+  "tier": 1
+}

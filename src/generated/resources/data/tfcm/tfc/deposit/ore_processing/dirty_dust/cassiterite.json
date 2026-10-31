@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cassiterite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/cassiterite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/cassiterite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/cassiterite_full",
+    "tfcm:item/pan/dirty_dust/cassiterite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

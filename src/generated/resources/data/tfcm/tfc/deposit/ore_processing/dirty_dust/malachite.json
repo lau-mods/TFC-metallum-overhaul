@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "malachite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/malachite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/malachite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/malachite_full",
+    "tfcm:item/pan/dirty_dust/malachite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

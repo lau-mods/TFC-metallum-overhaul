@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/mithril_matrix/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/mithril_matrix/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/mithril_matrix/rich",
+      "required": false
+    }
+  ]
+}

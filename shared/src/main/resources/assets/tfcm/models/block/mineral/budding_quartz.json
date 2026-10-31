@@ -1,8 +1,0 @@
-{
-  "__comment__": "This file was automatically created by mcresources",
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "tfcm:block/mineral/budding_quartz",
-    "particle": "tfcm:block/mineral/budding_quartz"
-  }
-}

@@ -1,0 +1,31 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 1,
+  "input_row": 0,
+  "key": {
+    "G": {
+      "tag": "c:string"
+    },
+    "H": {
+      "tag": "c:handle/saw"
+    },
+    "X": {
+      "item": "tfc:metal/saw_blade/copper"
+    }
+  },
+  "pattern": [
+    "GX",
+    "HG"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/saw/copper"
+    }
+  }
+}

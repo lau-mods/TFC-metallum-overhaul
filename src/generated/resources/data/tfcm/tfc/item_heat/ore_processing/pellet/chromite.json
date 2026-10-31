@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chromite"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "heat_capacity": 0.57142866,
+  "ingredient": {
+    "tag": "c:metal/pellet/chromite"
+  }
+}

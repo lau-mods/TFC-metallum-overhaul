@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/rutile/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/rutile/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/rutile/rich",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "forging_temperature": 1044.0,
+  "heat_capacity": 0.07142858,
+  "ingredient": {
+    "item": "tfcm:metal/nail/aluminum"
+  },
+  "welding_temperature": 1392.0
+}

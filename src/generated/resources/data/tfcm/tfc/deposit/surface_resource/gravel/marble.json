@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/marble"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/marble",
+  "model_stages": [
+    "tfcm:item/pan/gravel/marble_full",
+    "tfcm:item/pan/gravel/marble_half",
+    "tfcm:item/pan/empty"
+  ]
+}

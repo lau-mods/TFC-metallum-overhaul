@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/block/uranium_stairs"
-  },
-  "heat_capacity": 6.250625,
-  "forging_temperature": 678,
-  "welding_temperature": 904
-}

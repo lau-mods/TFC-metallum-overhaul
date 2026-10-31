@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    }
+  ],
+  "fluid": "tfcm:metal/magnesium",
+  "melt_temperature": 650,
+  "specific_heat_capacity": 0.008571429
+}

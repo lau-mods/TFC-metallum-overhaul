@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_silver"
+    }
+  ],
+  "heat_capacity": 0.10416668,
+  "ingredient": {
+    "item": "tfc:powder/native_silver"
+  }
+}

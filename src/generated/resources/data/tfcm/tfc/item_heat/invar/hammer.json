@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "forging_temperature": 750.0,
+  "heat_capacity": 2.8566666,
+  "ingredient": {
+    "item": "tfcm:metal/hammer/invar"
+  },
+  "welding_temperature": 1000.0
+}

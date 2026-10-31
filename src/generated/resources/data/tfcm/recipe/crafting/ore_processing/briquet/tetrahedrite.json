@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "tetrahedrite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/tetrahedrite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/tetrahedrite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/tetrahedrite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/tetrahedrite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/tetrahedrite"
+  }
+}

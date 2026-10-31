@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "stibnite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/stibnite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/stibnite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/stibnite_full",
+    "tfcm:item/pan/rocky_chunks/stibnite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

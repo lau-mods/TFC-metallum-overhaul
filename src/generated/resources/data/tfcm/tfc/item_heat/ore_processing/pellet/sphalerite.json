@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sphalerite"
+    }
+  ],
+  "heat_capacity": 0.9523811,
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/sphalerite"
+  }
+}

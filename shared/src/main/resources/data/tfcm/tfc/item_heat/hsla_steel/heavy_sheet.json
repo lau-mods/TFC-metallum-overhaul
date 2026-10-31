@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:heavy_sheets/hsla_steel"
-  },
-  "heat_capacity": 14.286,
-  "forging_temperature": 870,
-  "welding_temperature": 1160
-}

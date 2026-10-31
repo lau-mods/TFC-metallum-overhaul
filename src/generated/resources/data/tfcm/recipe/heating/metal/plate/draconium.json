@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "draconium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/plate/draconium"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/draconium"
+  },
+  "temperature": 2000
+}

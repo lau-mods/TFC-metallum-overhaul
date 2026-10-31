@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "malachite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/briquet/malachite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfcm:ore_processing/pellet/malachite"
+  }
+}

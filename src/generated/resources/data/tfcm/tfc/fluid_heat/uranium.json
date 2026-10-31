@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "fluid": "tfcm:metal/uranium",
+  "melt_temperature": 1130,
+  "specific_heat_capacity": 0.025
+}

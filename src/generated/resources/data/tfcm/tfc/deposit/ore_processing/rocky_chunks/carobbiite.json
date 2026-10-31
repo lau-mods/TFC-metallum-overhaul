@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "carobbiite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/carobbiite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/carobbiite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/carobbiite_full",
+    "tfcm:item/pan/rocky_chunks/carobbiite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -1,6 +1,0 @@
-{
-  "parent": "tfcm:block/ore/small_ore_piece",
-  "textures": {
-    "ore": "tfcm:item/ore/small_spodumene"
-  }
-}

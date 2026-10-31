@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:gears/invar"
-  },
-  "heat_capacity": 11.429429,
-  "forging_temperature": 870,
-  "welding_temperature": 1160
-}

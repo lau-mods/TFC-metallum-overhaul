@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_gold"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/native_gold"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/native_gold",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/native_gold_full",
+    "tfcm:item/pan/rocky_chunks/native_gold_half",
+    "tfcm:item/pan/empty"
+  ]
+}

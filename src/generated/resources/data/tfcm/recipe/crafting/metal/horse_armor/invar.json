@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "H": {
+      "item": "minecraft:leather_horse_armor"
+    },
+    "R": {
+      "tag": "c:rivets/invar"
+    },
+    "S": {
+      "tag": "c:double_sheets/invar"
+    }
+  },
+  "pattern": [
+    "RHR",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/horse_armor/invar"
+  }
+}

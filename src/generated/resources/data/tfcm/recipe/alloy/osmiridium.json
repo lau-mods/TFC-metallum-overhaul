@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmiridium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "osmium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "iridium"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfcm:metal/osmium",
+      "max": 0.8,
+      "min": 0.6
+    },
+    {
+      "fluid": "tfcm:metal/iridium",
+      "max": 0.4,
+      "min": 0.2
+    }
+  ],
+  "result": "tfcm:metal/osmiridium"
+}

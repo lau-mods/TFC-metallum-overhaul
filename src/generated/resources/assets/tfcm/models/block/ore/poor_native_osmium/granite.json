@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/granite",
+    "overlay": "tfcm:block/ore/poor_native_osmium",
+    "particle": "tfc:block/rock/raw/granite"
+  }
+}

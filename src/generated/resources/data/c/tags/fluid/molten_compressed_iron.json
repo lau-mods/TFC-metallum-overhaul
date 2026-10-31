@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "compressed_iron"
+    }
+  ],
+  "values": [
+    "tfcm:metal/compressed_iron",
+    "tfcm:metal/flowing_compressed_iron"
+  ]
+}

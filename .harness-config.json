@@ -1,0 +1,43 @@
+{
+  "gradle": {
+    "compile": "classes",
+    "build": "build",
+    "gameTest": "runGameTestServer"
+  },
+  "agents": {
+    "implementation": {
+      "command": "codex",
+      "model": "gpt-6-sol",
+      "effort": "medium",
+      "fast": false,
+      "provider": null
+    },
+    "codeReview": {
+      "command": "claude",
+      "model": "claude-sonnet-5-5",
+      "effort": "medium"
+    },
+    "e2eReview": {
+      "command": "claude",
+      "model": "claude-sonnet-5-5",
+      "effort": "high"
+    }
+  },
+  "runtime": {
+    "command": ".harness-state/runtime/pilot/node_modules/.bin/mct",
+    "server": {
+      "directory": ".harness-state/runtime/server",
+      "command": [
+        "./run.sh",
+        "--nogui"
+      ],
+      "address": "127.0.0.1:25583",
+      "world": "harness-world"
+    },
+    "clients": [
+      "tfcm-a"
+    ],
+    "deploy": [],
+    "logs": []
+  }
+}

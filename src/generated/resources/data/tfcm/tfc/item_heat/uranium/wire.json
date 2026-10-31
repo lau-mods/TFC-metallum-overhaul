@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "forging_temperature": 678.0,
+  "heat_capacity": 2.0833335,
+  "ingredient": {
+    "item": "tfcm:metal/wire/uranium"
+  },
+  "welding_temperature": 904.0
+}

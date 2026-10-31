@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sphalerite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/sphalerite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/sphalerite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/sphalerite_full",
+    "tfcm:item/pan/dirty_dust/sphalerite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

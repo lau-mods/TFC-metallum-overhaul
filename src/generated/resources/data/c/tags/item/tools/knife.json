@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/knife/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/knife/tungsten_steel",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "forging_temperature": 600.0,
+  "heat_capacity": 0.09090909,
+  "ingredient": {
+    "item": "tfcm:metal/nail/electrum"
+  },
+  "welding_temperature": 800.0
+}

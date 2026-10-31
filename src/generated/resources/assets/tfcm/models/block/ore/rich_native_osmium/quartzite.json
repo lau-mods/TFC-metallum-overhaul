@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/quartzite",
+    "overlay": "tfcm:block/ore/rich_native_osmium",
+    "particle": "tfc:block/rock/raw/quartzite"
+  }
+}

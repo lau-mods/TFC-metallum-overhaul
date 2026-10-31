@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "uraninite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore/small_uraninite"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfcm:metal/uranium"
+  },
+  "temperature": 1130
+}

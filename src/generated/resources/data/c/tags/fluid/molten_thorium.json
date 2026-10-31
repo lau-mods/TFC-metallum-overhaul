@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/thorium",
+    "tfcm:metal/flowing_thorium"
+  ]
+}

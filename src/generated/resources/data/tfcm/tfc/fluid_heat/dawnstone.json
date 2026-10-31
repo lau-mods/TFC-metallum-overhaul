@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "dawnstone"
+    }
+  ],
+  "fluid": "tfcm:metal/dawnstone",
+  "melt_temperature": 1000,
+  "specific_heat_capacity": 0.0054545454
+}

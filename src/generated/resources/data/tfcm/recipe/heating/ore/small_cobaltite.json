@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cobaltite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "cobalt"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore/small_cobaltite"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfcm:metal/cobalt"
+  },
+  "temperature": 1700
+}

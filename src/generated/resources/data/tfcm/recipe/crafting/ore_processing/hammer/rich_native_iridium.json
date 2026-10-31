@@ -1,0 +1,31 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_iridium"
+    }
+  ],
+  "type": "tfc:advanced_shapeless_crafting",
+  "ingredients": [
+    {
+      "tag": "c:tools/hammer"
+    },
+    {
+      "item": "tfcm:ore/rich_native_iridium"
+    }
+  ],
+  "primary_ingredient": {
+    "tag": "c:tools/hammer"
+  },
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 7,
+    "id": "tfcm:ore_processing/rocky_chunks/native_iridium"
+  }
+}

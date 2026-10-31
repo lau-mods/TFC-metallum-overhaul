@@ -1,0 +1,28 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "H": {
+      "item": "minecraft:leather_horse_armor"
+    },
+    "R": {
+      "tag": "c:rivets/tungsten_steel"
+    },
+    "S": {
+      "tag": "c:double_sheets/tungsten_steel"
+    }
+  },
+  "pattern": [
+    "RHR",
+    "SSS"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/horse_armor/tungsten_steel"
+  }
+}

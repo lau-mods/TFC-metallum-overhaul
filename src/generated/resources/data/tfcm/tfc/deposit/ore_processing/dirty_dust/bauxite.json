@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "bauxite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/bauxite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/bauxite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/bauxite_full",
+    "tfcm:item/pan/dirty_dust/bauxite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

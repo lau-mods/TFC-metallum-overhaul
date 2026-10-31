@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/native_osmium"
+      },
+      {
+        "model": "tfcm:block/groundcover/native_osmium",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/native_osmium",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/native_osmium",
+        "y": 270
+      }
+    ]
+  }
+}

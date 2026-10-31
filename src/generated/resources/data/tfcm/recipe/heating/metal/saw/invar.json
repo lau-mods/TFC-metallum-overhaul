@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/saw/invar"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/invar"
+  },
+  "temperature": 1250,
+  "use_durability": true
+}

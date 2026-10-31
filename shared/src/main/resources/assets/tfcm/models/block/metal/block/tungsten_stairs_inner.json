@@ -1,8 +1,0 @@
-{
-    "parent":  "block/inner_stairs",
-    "textures":  {
-                     "bottom":  "tfcm:block/metal/block/tungsten",
-                     "top":  "tfcm:block/metal/block/tungsten",
-                     "side":  "tfcm:block/metal/block/tungsten"
-                 }
-}

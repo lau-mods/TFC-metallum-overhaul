@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:double_sheets/invar"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/heavy_sheet/invar"
+  },
+  "second_input": {
+    "tag": "c:sheets/invar"
+  },
+  "tier": 2
+}

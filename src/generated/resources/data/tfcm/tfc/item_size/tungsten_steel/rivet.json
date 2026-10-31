@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rivet/tungsten_steel"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

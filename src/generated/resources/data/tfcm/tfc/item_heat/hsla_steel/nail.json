@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hsla_steel"
+    }
+  ],
+  "forging_temperature": 870.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/nail/hsla_steel"
+  },
+  "welding_temperature": 1160.0
+}

@@ -1,0 +1,11 @@
+{
+  "ingredient": {
+    "item": "tfc:rock/gravel/gneiss"
+  },
+  "loot_table": "tfcm:surface_resource/gravel/gneiss",
+  "model_stages": [
+    "tfcm:item/pan/gravel/gneiss_full",
+    "tfcm:item/pan/gravel/gneiss_half",
+    "tfcm:item/pan/empty"
+  ]
+}

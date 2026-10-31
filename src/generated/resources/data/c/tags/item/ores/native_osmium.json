@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/native_osmium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_osmium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_osmium/rich",
+      "required": false
+    }
+  ]
+}

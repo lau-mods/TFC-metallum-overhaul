@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/lead"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

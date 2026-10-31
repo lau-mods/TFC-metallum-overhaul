@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "tag": "c:foils/tough_alloy"
-  },
-  "heat_capacity": 2.857,
-  "forging_temperature": 960,
-  "welding_temperature": 1280
-}

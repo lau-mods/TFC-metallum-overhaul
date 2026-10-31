@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tough_alloy"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/nail/tough_alloy"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/tough_alloy"
+  },
+  "temperature": 1600
+}

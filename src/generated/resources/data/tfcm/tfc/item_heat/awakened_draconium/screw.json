@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "awakened_draconium"
+    }
+  ],
+  "forging_temperature": 1200.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/screw/awakened_draconium"
+  },
+  "welding_temperature": 1600.0
+}

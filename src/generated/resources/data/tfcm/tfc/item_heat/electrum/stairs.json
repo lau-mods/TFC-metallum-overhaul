@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "electrum"
+    }
+  ],
+  "forging_temperature": 600.0,
+  "heat_capacity": 1.3636365,
+  "ingredient": {
+    "item": "tfcm:metal/block/electrum_stairs"
+  },
+  "welding_temperature": 800.0
+}

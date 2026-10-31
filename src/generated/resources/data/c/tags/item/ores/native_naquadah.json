@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/native_naquadah/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_naquadah/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_naquadah/rich",
+      "required": false
+    }
+  ]
+}

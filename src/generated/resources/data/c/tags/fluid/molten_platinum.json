@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "platinum"
+    }
+  ],
+  "values": [
+    "tfcm:metal/platinum",
+    "tfcm:metal/flowing_platinum"
+  ]
+}

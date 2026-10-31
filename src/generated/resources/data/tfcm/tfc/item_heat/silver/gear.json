@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 576.60004,
+  "heat_capacity": 8.333333,
+  "ingredient": {
+    "item": "tfcm:metal/gear/silver"
+  },
+  "welding_temperature": 768.8
+}

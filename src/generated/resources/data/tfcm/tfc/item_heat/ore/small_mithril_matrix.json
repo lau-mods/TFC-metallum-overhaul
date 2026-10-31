@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "mithril_matrix"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "mithril"
+    }
+  ],
+  "forging_temperature": 564.0,
+  "heat_capacity": 0.28571433,
+  "ingredient": {
+    "item": "tfcm:ore/small_mithril_matrix"
+  },
+  "welding_temperature": 752.0
+}

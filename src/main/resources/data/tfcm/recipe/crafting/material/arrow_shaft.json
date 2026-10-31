@@ -1,0 +1,25 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "key": {
+    "K": {
+      "tag": "c:tools/knife"
+    },
+    "S": {
+      "tag": "c:handle/stick"
+    }
+  },
+  "pattern": [
+    "KS"
+  ],
+  "remainder": {
+    "modifiers": [
+      {
+        "type": "tfc:damage_crafting_remainder"
+      }
+    ]
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:arrow_shaft"
+  }
+}

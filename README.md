@@ -1,20 +1,9 @@
-# TFC Metallum Overhaul
-https://www.curseforge.com/minecraft/mc-mods/tfc-metallum-overhaul
+TFC Metallum
+=======
 
-## Build
+TFC Metallum is a NeoForge mod for Minecraft 1.21.1 that extends TerraFirmaCraft's
+metallurgy and mining systems. It uses the `tfcm` mod ID and requires Java 21,
+NeoForge 21.1.265, TerraFirmaCraft 4.2.12, and Patchouli 1.21.1-93-NEOFORGE.
+FirmaLife 3.0.15 is an optional integration.
 
-Requirements:
-- JDK 17 and JDK 21
-
-Build all supported Minecraft versions:
-
-```sh
-./gradlew build
-```
-
-Build a single target:
-
-```sh
-./gradlew :versions:mc1_20_1:build
-./gradlew :versions:mc1_21_1:build
-```
+Build the mod with `./gradlew build`. The distributable JAR is written to `build/libs`.

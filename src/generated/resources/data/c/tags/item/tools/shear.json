@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/shears/invar",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/netherite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/shears/tungsten_steel",
+      "required": false
+    }
+  ]
+}

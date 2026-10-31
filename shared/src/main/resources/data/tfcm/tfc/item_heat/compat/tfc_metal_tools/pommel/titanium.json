@@ -1,8 +1,0 @@
-{
-  "ingredient": {
-    "item": "tfcm:metal/pommel/titanium"
-  },
-  "heat_capacity": 1.6665,
-  "forging_temperature": 921,
-  "welding_temperature": 1228
-}

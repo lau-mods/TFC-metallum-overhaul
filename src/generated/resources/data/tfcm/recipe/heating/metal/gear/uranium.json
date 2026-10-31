@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "uranium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/gear/uranium"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/uranium"
+  },
+  "temperature": 1130
+}

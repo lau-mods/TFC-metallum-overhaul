@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "tfcm:block/mineral/certus_quartz_block"
+    }
+  }
+}

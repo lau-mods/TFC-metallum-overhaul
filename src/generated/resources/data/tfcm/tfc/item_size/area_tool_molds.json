@@ -1,0 +1,24 @@
+{
+  "ingredient": [
+    {
+      "item": "tfcm:ceramic/unfired_mining_hammer_head_mold"
+    },
+    {
+      "item": "tfcm:ceramic/mining_hammer_head_mold"
+    },
+    {
+      "item": "tfcm:ceramic/unfired_quarry_hammer_head_mold"
+    },
+    {
+      "item": "tfcm:ceramic/quarry_hammer_head_mold"
+    },
+    {
+      "item": "tfcm:ceramic/unfired_excavator_head_mold"
+    },
+    {
+      "item": "tfcm:ceramic/excavator_head_mold"
+    }
+  ],
+  "size": "small",
+  "weight": "light"
+}

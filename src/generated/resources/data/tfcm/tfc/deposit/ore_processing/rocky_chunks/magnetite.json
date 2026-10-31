@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "magnetite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/magnetite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/magnetite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/magnetite_full",
+    "tfcm:item/pan/rocky_chunks/magnetite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

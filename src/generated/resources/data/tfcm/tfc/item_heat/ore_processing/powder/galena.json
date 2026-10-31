@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "galena"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "heat_capacity": 0.3846154,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/galena"
+  }
+}

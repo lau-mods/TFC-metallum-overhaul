@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "tfcm:block/metal/block/beryllium",
-    "top": "tfcm:block/metal/block/beryllium",
-    "side": "tfcm:block/metal/block/beryllium"
-  }
-}

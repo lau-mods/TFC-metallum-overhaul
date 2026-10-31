@@ -1,0 +1,8 @@
+{
+  "parent": "tfc:block/ore",
+  "textures": {
+    "all": "tfc:block/rock/raw/claystone",
+    "overlay": "tfcm:block/ore/normal_magnesite",
+    "particle": "tfc:block/rock/raw/claystone"
+  }
+}

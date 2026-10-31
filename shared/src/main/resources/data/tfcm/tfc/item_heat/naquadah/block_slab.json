@@ -1,8 +1,0 @@
-{
-    "ingredient": {
-        "item": "tfcm:metal/block/naquadah_slab"
-    },
-    "heat_capacity": 1.429,
-    "forging_temperature": 1038,
-    "welding_temperature": 1384
-}

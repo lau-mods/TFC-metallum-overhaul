@@ -1,0 +1,10 @@
+{
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/brass"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/brass"
+  }
+}

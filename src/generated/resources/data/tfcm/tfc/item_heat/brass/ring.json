@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 558.0,
+  "heat_capacity": 0.34285712,
+  "ingredient": {
+    "item": "tfcm:metal/ring/brass"
+  },
+  "welding_temperature": 744.0
+}
