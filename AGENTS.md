@@ -36,8 +36,8 @@
 
 - Bow、Crossbow、Arrowは部品組立だけで作り、TFCの`minecraft:bow`、`minecraft:crossbow`、`tfc:crafting/arrow`とVanillaの火打石の`minecraft:arrow`は同一IDで無効化する。Iron Arrow Headの代わりにObsidian Shardを使う`tfcm:crafting/material/arrow_obsidian`を追加する。Plant String、Bamboo String、Leather Stringは`c:string`に加えてTFCの`c:strings`へ登録し、Leather Strapは入れない。
 - 革、植物、竹、弓・弩、矢、工具組立用の部品は部品名のflat item IDを使用する。Plant Blockだけは`tfcm:plant_block`のblock/itemとして登録する。
-- `c:plant/grass`（TFC More Items準拠でVanillaの草とTFCの草13種）は素手でPlant Fiber 1個、Knifeで2個を落とす。Knifeを使う加工はTFC Advanced Shapeless Craftingの`damage_crafting_remainder`で1耐久を消費する。
-- Plant Blockはrandom tickごとに`drying=0..3`を進め、その次のtickで`tfc:thatch`へ置換する。独自tierや効果は持たせない。
+- `c:plant/grass`（TFC More Items準拠でVanillaの草とTFCの草13種）を右クリックするとPlant Fiberを落とす。空の主手は1個を80%と追加1個を30%、Knifeは3個を90%と追加2個を50%の独立抽選とする。1回ごとに1秒のcooldown、灰のparticle、植付音を出し、40%で草を除去し、Knifeは耐久を1消費する。破壊時のdropはない。Knifeを使う加工はTFC Advanced Shapeless Craftingの`damage_crafting_remainder`で1耐久を消費する。
+- Plant Blockはrandom tickごとに10%で`tfc:thatch`へ置換する。itemの三人称表示はTFC More Itemsの値を`thirdperson_righthand`へ適用する。独自tierや効果は持たせない。
 - 完成Bow、Crossbow、Arrowは独自完成品を登録せず、各中間部品からVanillaの完成品へ組み立てる。全素材部品とPlant BlockにTFC item size/weightを定義する。
 - `MaterialDataProvider`がrecipe、grass/block loot、item size、model、blockstateを`src/generated/resources`へ生成する。M04 GameTestは登録と属性、植物・竹加工と乾燥、完成品組立とKnife損耗を検証し、`tests/e2e/material-parts.mjs`は全素材モデルを一画面で検証する。
 
@@ -47,9 +47,10 @@
 - 防具のBoots/Leggings/Chestplate/Helmet防御はInvar `1/4/5/2`、Titanium `2/5/6/2`、Netherite `3/6/8/3`、Tungsten Steel `4/7/9/4`。耐久は順に`429/495/528/370`、`650/750/800/550`、`884/1020/1010/715`、`1105/1275/1360/935`、Enchantabilityは`12/17/23/25`、Toughnessは`0/2/3/4`、Knockback抵抗は`0/0.05/0.10/0.15`とする。
 - 工具組立にはF-006のHandle、Binding、Tool Riveting由来のCrossguard/Pommelと、F-004のRing・Rivet・Wireを使用する。Crossguard/Pommelは専用アートが確定するまで中立な小金属部品モデルを用いる。
 - Tong PartとTongsは`tfchotornot`導入時だけ登録し、Tongsは同Modの公開`TongsItem`を使用する。`tfchotornot:tongs`へ統合するが`insulating`には追加せず、独自の耐熱倍率や保持効果を付けない。
+- Heavy SheetのWelding tierはDouble Sheetと同じ金属tierの1つ下とする。TFC More Itemsの一律tier 1は採らない。形状のAnvil tierと熱特性はF-002、TFCの同金属Sheet/Rodレシピと量比例の計算を正とし、参照元の値へ揃えない。Crossguard 25 mBとPommel 24 mBの熱容量も同じ計算とする。
 - Fishing RodはTFCと同じ` S/ SL/SXL`（X=Fish Hook）で組み立てる。
 - `TfcToolAssemblyDataProvider`はTFC Metal Tools 1.0.7の組立をTFCの工具金属9種へ適用する。13工具の完成品はTFCの同一ID `tfc:crafting/metal/<tool>/<metal>`を置換し、tier 2以下は`NX/HG`、tier 3以上は` NX/GHR/RL `を基本にする。CopperのPickaxe/Propickは`NX/HN`（`#c:string/plant`）、Sawは`GX/HG`（`#c:string`）の紐組立とする。工具ごとの例外は同classの表を正本とし、Headの鍛造bonusは`input_row`/`input_column`で引き継ぐ。Shearsは`tfcm:crafting/metal/shears/<metal>`を追加し、TFCのWeldingも残す。
-- 9金属のCrossguardはRod 1→2のAnvil（`bend_last,draw_second_last,draw_third_last`、bonusあり）、PommelはRing 2個のtier 1 Weldingで作り、溶融量は25/24 mBとする。textureはInvarの同部品を同金属Ingot配色へ置き換えた派生物とする。
+- 9金属のCrossguardはRod 1→2のAnvil（`bend_last,draw_second_last,draw_third_last`、bonusあり）、PommelはRing 2個のtier 1 Weldingで作り、溶融量は25/24 mBとする。textureはTFC Metal Toolsの各金属の画像をそのまま使う（金属ごとに輪郭が異なる）。
 - 4金属の金床tierは`3/5/6/7`。同金属のDouble Ingot 7個で製作し、Heatingで同金属1400 mBへ戻す。TFC Anvil block entityと`tfc:anvils`、pickaxe採掘tagへ統合する。
 - `tfc:blast_furnace_tuyeres`、`tfc:trip_hammers`、`tfc:holds_large_fishing_bait`、`tfc:anvils`（item）、`tfc:tools/<metal>`、`tfc:metal_item/<metal>`へ該当品を追加する。`tfc:sheets`、`tfc:double_sheets`、`tfc:double_ingots`は旧TFCMの別名で`c:`の同名tagを含む。Anvil recipeの鍛造bonus指定はTFC 4.2.12のcodecどおり`apply_bonus`であり、`apply_forging_bonus`ではない。
 - `EquipmentDataProvider`が装備のAnvil/Welding/Crafting/Heating、item heat・size、tool/tag、model、金床のrecipe・loot・blockstateを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/equipment-anvils.mjs`で検証する。
@@ -73,6 +74,7 @@
 - Hammerは`#c:tools/hammer`をTFC remainderで1損耗させ、Small/Poor/Normal/Richを`1/3/5/7`個、品位なし金属を5個、非金属を7個のRocky Chunkへ加工する。一次SluiceはChunk 100%、主岩30%、副岩15%、定義済みGemだけ0.02%の独立pool、QuernはChunk 1→同系列Dirty Dust 1とする。
 - 二次SluiceはPowder 100%、Sand Pile 15%、同系列Dirty Dust 5%、副産物BのDirty Dust 1%を独立poolで出す。Powder 4→Pellet 1、Pellet 4→Briquet 1と逆変換を用意し、金属系列のHeatingは5/20/80 mBとする。Boraxも同じ5/20/80 mBでBoronへ回収する。溶融レシピのないCinnabar、Cryolite、Graphite、Sulfurは流体を定義せず、Pellet、Briquetも登録しない。
 - TFC 4.2.12の12系列とFirmaLife 3.0.15のChromiteについて、Poor/Normal/Richの既存Heating IDを同名のfalse conditionで無効化する。Small Oreの直接溶融は維持し、TFCM鉱石には元からPoor/Normal/Rich直接溶融を生成しない。
+- Sand Pile 4個とSand 1個は7色とも相互にクラフトできる。洗浄工程を迂回するTFCのQuern（品位あり12系列の4段階、Sulfur、Graphite、Redstone）は同一IDで無効化する。TFC 4.2.12に同名のPowderがある12系列、Graphite、Sulfurの洗浄結果は`tfc:powder/<系列>`そのもので、TFCMに同じPowderを登録しない。
 - 中間itemを`c:metal/<form>`と`c:metal/<form>/<series>`へ追加し、`c:ores/clean_dusts`は`c:metal/powder`を含む。Dirty Pileのtagは作らない。
 - 処理itemのmodelはM06の鉱石ごとの`textureSource`とTFC powderを意図的に再利用する。Rocky/Chunkおよび粉体の工程差は形状別modelで表し、新しい第三者textureは追加しない。
 - 変更後は`./gradlew runData`で生成物を同期し、`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを検証する。GameTestは独立した35行の期待表と生成loot JSONを照合する。
@@ -90,7 +92,7 @@
 
 - Mining HammerとExcavatorは起点中央の3×3、Quarry Hammerは床・天井で起点中央の5×5、壁で起点の上3・下1・左右2の5×5を処理する。各工具の採掘速度は素材tierの40%とする。
 - 追加候補ごとにmineable tagとtierを確認し、個別のBreak Eventと通常のサーバー破壊・loot処理を通す。Survivalでは1ブロックごとに耐久1を消費し、Creativeではdropと耐久消費を行わない。多層blockは通常破壊経路を通して1層だけ減らし、追加破壊を再帰起動しない。
-- Quarry Hammer HeadはMining Hammer HeadとHeavy Sheetの金属tier Welding（bonusは`copy_best`）または焼成済みMoldへの800 mB鋳造で作る。金属量はHead 800 mB、完成工具850 mB、Moldの容量は800 mBで、Mining HammerとExcavatorはHead 200 mB、完成工具250 mBとする。
+- 3工具の攻撃補正はMining/Quarry Hammer 1.0、Excavator 0.9、攻撃速度補正は-3.1で、属性はTFCの`ToolItem.productAttributes`で作る。工具とHeadのrarityは金属のrarityとする。Quarry Hammer HeadはMining Hammer HeadとHeavy Sheetの金属tier Welding（bonusは`copy_best`）または焼成済みMoldへの800 mB鋳造で作る。金属量はHead 800 mB、完成工具850 mB、Moldの容量は800 mBで、Mining HammerとExcavatorはHead 200 mB、完成工具250 mBとする。
 - 3工具とHeadはTFCの工具金属9種とInvar、Titanium、Netherite、Tungsten Steelへ展開する。Mining Hammer HeadはDouble Ingot 1個から`punch_last,upset_second_last,upset_third_last`、Excavator HeadはSheet 1個から`bend_last,upset_second_last,draw_third_last`を金属tierの金床で加工する。鋳造可能な4金属は焼成済みMoldで鋳造する。
 - 完成工具の組立はTFC Mining HammerのTFC Metal Tools版を常に使い、`crafting/metal/<tool>/<metal>`へ条件なしで生成する。tier 2以下は` NX/ HG`（`#c:rivets/<metal>`、Head、`#c:rods/<metal>`、`#c:glue`）、tier 3以上は` NX/GHR/RL `で`#c:rings/<metal>`とLeather（Mining/Quarry Hammerは`#c:leather/string`、Excavatorは`#c:leather/strip`）を加え、Headの鍛造bonusを引き継ぐ。
 - 3工具の持ち手は同金属のHammer（TFC金属はTFC 4.2.12、TFCM金属はTFCM）の柄に合わせ、木材色は共通、Head直下の上3段と末端3段の金属部（キャップ・カラーの有無と形）だけを金属ごとに変える。
@@ -144,6 +146,7 @@
 
 - GameTest `TFCMAssetIntegrityGameTests` audits registered resources, tags, heat and size, and Neutronium animation metadata. Its JUnit cases are registered in `tests/acceptance.json`.
 - Equipment and Excavator models inherit TFC parent geometry. Their texture overrides must use texture keys from the actual TFC 4.2.12 parent models; armor uses the `tfcm` armor layer namespace. Mining Hammer and Quarry Hammer use dedicated item and head textures. The hammer tools belong to `c:tools/mining_tool`.
+- Licence: `LICENCE` separates textures and models, which keep the licence of their source work, from everything else, which is MIT. Heavy Sheet sprites of Bismuth, Bismuth Bronze, Black Bronze, Black Steel, Blue Steel, Brass, Bronze, Cast Iron, and Copper are TFC More Items' own. Bauxite, Galena, and Uraninite Rocky Chunk and Powder keep the TFC Metallum Overhaul 1.5.1 sprites shared by the 18 Metallum series, not TFC Ore Washing's.
 - Asset source: published TFC Metallum Overhaul `tfcm-1.5.1-mc1.21.1.jar`, https://www.curseforge.com/minecraft/mc-mods/tfc-metallum-overhaul/files/8553056, MIT licence (https://www.curseforge.com/minecraft/mc-mods/tfc-metallum-overhaul/license). Imported paths are `assets/tfcm/textures/block/metal/`, `block/mineral/`, `block/ore/`, `entity/projectiles/`, `item/gem/`, `item/metal/`, `item/ore/`, `item/powder/`, and `models/armor/`. Neutronium textures and `.png.mcmeta` animation files are in the metal paths. The nugget, Mining Hammer, and Quarry Hammer textures are project-created derivatives of the imported metal palette. The plate textures are project-created: a riveted plate shaded from the same metal's sheet palette (for TFC and FirmaLife metals, their own sheet palette), frame by frame for Neutronium. The dust textures recolor the Quartz Powder shape, the same shape as Rock Powder, with that palette. Rock Powder (Quartz Powder shape) and Leather String (Bamboo String shape) are project-created recolors. `ja_jp` translates every name except the mod name; TFC terms come from TFC's own `ja_jp`.
 - Run `./gradlew runData`, `./gradlew classes build runGameTestServer`, then `node tests/e2e/asset-integrity.mjs` with the client harness running.
 
