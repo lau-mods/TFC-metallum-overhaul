@@ -4359,5 +4359,7 @@
   "item.tfcm.metal.dust.chromium": "クロム粉末",
   "item.tfcm.metal.plate.stainless_steel": "ステンレス鋼プレート",
   "item.tfcm.metal.nugget.stainless_steel": "ステンレス鋼ナゲット",
-  "item.tfcm.metal.dust.stainless_steel": "ステンレス鋼粉末"
+  "item.tfcm.metal.dust.stainless_steel": "ステンレス鋼粉末",
+  "tfcm.jei.sluice": "水路",
+  "tfcm.jei.sluice.chance": "確率: %s%%"
 }

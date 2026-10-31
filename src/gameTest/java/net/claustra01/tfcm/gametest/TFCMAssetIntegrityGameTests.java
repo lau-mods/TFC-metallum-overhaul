@@ -23,6 +23,8 @@ import net.claustra01.tfcm.common.material.MaterialPart;
 import net.claustra01.tfcm.common.ore.Ore;
 import net.claustra01.tfcm.common.processing.ProcessingForm;
 import net.claustra01.tfcm.common.processing.ProcessingSeries;
+import net.claustra01.tfcm.common.processing.SluiceRecipe;
+import net.claustra01.tfcm.common.processing.SluiceRecipeSync;
 import net.claustra01.tfcm.common.tool.ToolMetal;
 import net.claustra01.tfcm.common.tool.ToolPart;
 import net.claustra01.tfcm.common.tool.area.AreaToolMetal;
@@ -34,11 +36,13 @@ import net.dries007.tfc.common.recipes.WeldingRecipe;
 import net.dries007.tfc.common.component.size.ItemSizeManager;
 import net.dries007.tfc.common.component.size.Size;
 import net.dries007.tfc.common.component.size.Weight;
+import io.netty.buffer.Unpooled;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestAssertException;
 import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
 import net.minecraft.tags.BlockTags;
@@ -421,6 +425,30 @@ public final class TFCMAssetIntegrityGameTests {
     }
 
     @GameTest(template = "empty", batch = BATCH)
+    public static void sluiceRecipesReachClientsWithLootChances(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            List<SluiceRecipe> recipes = SluiceRecipe.build(helper.getLevel().getServer());
+            SluiceRecipe rocky = recipes.stream().filter(recipe -> recipe.input().test(
+                    stack("tfcm:ore_processing/rocky_chunks/galena"))).findFirst().orElseThrow(
+                    () -> new GameTestAssertException("Rocky Chunk Sluice recipe is missing"));
+            require(rocky.outputs().size() == 4
+                    && rocky.outputs().getFirst().stack().is(stack("tfcm:ore_processing/chunks/galena").getItem())
+                    && rocky.outputs().getFirst().chance() == 1
+                    && rocky.outputs().get(1).chance() == .3f && rocky.outputs().get(2).chance() == .15f
+                    && rocky.outputs().get(3).chance() == .0002f, "Rocky Chunk chances: " + rocky.outputs());
+            require(recipes.stream().anyMatch(recipe -> recipe.input().test(stack("tfc:deposit/cassiterite/andesite"))),
+                    "TFC's Deposits must be listed too");
+            RegistryFriendlyByteBuf buffer = new RegistryFriendlyByteBuf(Unpooled.buffer(),
+                    helper.getLevel().registryAccess());
+            SluiceRecipeSync.Payload.STREAM_CODEC.encode(buffer, new SluiceRecipeSync.Payload(recipes));
+            List<SluiceRecipe> decoded = SluiceRecipeSync.Payload.STREAM_CODEC.decode(buffer).recipes();
+            require(decoded.size() == recipes.size() && decoded.stream().anyMatch(recipe -> recipe.input().test(
+                    stack("tfcm:ore_processing/rocky_chunks/galena")) && recipe.outputs().get(3).chance() == .0002f),
+                    "Sluice recipes did not survive the network codec");
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
     public static void oreNamesFollowTfcAndJapaneseIsTranslated(GameTestHelper helper) {
         helper.succeedIf(() -> {
             JsonObject english = readJson("assets/tfcm/lang/en_us.json");
@@ -430,7 +458,7 @@ public final class TFCMAssetIntegrityGameTests {
                 if (key.startsWith("block.tfcm.metal.block.")) require(name.contains(" Plated "), "Metal block name " + name);
                 require(japanese.has(key), "Japanese key " + key);
                 String translated = japanese.get(key).getAsString();
-                require(key.equals("itemGroup.tfcm") || !translated.replace("HSLA", "").matches(".*[A-Za-z].*"),
+                require(key.equals("itemGroup.tfcm") || !translated.replace("HSLA", "").replace("%s", "").matches(".*[A-Za-z].*"),
                         "Untranslated Japanese name " + key + ": " + translated);
                 if (!key.startsWith("block.tfcm.ore.")) continue;
                 require(!name.contains(" in "), "Mechanical ore name " + key + ": " + name);

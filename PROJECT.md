@@ -530,6 +530,8 @@ Expected Result: Small Oreの直接溶融は存在し、Poor・Normal・Richの�
 
 TFCのPan・Sluiceによる堆積物、岩石Gravel、Sand、Rock Powderのlootを追加する。TFC本体の仕組みを使用し、独自の選別機械を追加しない。
 
+JEIが導入されている場合は、Sluiceの入力・出力・確率をJEIに表示する。確率はサーバーが読み込んだloot tableから同期し、データパックの変更も反映する。JEIは任意依存とし、未導入でも他の機能に影響しない。
+
 **Deposit**：Native Copper、Native Gold、Native Silver、Cassiteriteの4種について、下表21岩石のDepositを対象とする。Deposit 1個につきSmall Oreを50%と10%の独立抽選、同岩種のLoose Rockを50%、下表の第一素材を25%、第二素材を5.33%で抽選する。
 
 **Gravel**：21種類のTFC Rock Gravelを対象とし、Native Copper Powderを50%・25%の独立抽選、同岩種のLoose Rockを50%、Flintを15%、Boneを10%で抽選する。Gold Nuggetの生成は行わない。

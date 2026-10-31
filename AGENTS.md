@@ -83,6 +83,7 @@
 - Gravel、Sand、Rock PowderのDeposit定義は`data/tfcm/tfc/deposit/surface_resource/`、loot IDは`tfcm:surface_resource/...`とし、loot pool名は出力と確率を表す一意名（Sandだけは表順の`output_<index>`）を使用する。
 - Deposit、Gravel、7色Sand、Rock Powderの各出力は確率を正規化せず、出力ごとに独立したloot poolを生成する。GravelとSandのPowder、およびRock PowderのDirty DustはM07の処理itemへ直接接続する。
 - Deposit 99件のPan表示はmaterialごとの`tfcm:item/pan/<name>_full`、`_half`と共通の`tfcm:item/pan/empty`を使う。`<name>`は`gravel/<rock>`、`sand/<color>`、`rock_powder`、`rocky_chunks/<series>`、`dirty_dust/<series>`で、親はTFCの同名modelとする。materialは不透明なblock textureとし、Gravel/Sandは同じ素材、Rock Powderは`minecraft:block/gravel`、Rocky Chunkは系列の主岩のGravel、Dirty Dustは系列のSandを使う。TFCは自身の4鉱石分しかPan modelを登録しないため、`TFCMClient`が`models/item/pan`を`ModelEvent.RegisterAdditional`へ登録する。
+- Sluiceの内容はJEI（任意、API `19.32.0.358`をcompileOnly）の`tfcm:sluice`カテゴリに表示する。Sluice自体がレシピの起点で、Panは起点にしない。loot tableはクライアントへ同期されないため、`SluiceRecipe.build`がサーバーのDeposit全件と読込済みloot tableから入力・出力・確率を作り、`OnDatapackSyncEvent`（ログインと`/reload`）で`tfcm:sluice_recipes`ペイロードとして送る。データパックの変更も表示へ反映され、TFCのDepositも含む。
 - Rock Powderは`tfcm:ore_processing/rock_powder`として登録し、専用texture `tfcm:item/ore_processing/rock_powder`を使用するが、製作・採取レシピは追加しない。変更後は`./gradlew runData`と両GameTest runで生成データとTFC Deposit登録を検証する。
 
 ## M09 範囲採掘工具

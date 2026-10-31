@@ -34,6 +34,11 @@ repositories {
         content { includeGroup 'maven.modrinth' }
     }
     maven {
+        name = 'Jared Maven'
+        url = 'https://maven.blamejared.com/'
+        content { includeGroup 'mezz.jei' }
+    }
+    maven {
         name = 'CurseMaven'
         url = 'https://www.cursemaven.com'
         content { includeGroup 'curse.maven' }
@@ -226,6 +231,8 @@ dependencies {
     implementation "maven.modrinth:patchouli:1.21.1-93-neoforge"
     implementation(jarJar("org.yaml:snakeyaml:2.2"))
     localRuntime "org.yaml:snakeyaml:2.2"
+    compileOnly "mezz.jei:jei-${minecraft_version}-common-api:${jei_version}"
+    compileOnly "mezz.jei:jei-${minecraft_version}-neoforge-api:${jei_version}"
     // TFC Hot or Not's public TongsItem API is optional at runtime.
     compileOnly("maven.modrinth:6fOyWxrE:YtVlCFtf") {
         transitive = false
@@ -321,6 +328,7 @@ var generateModMetadata = tasks.register("generateModMetadata", ProcessResources
             mod_name               : mod_name,
             mod_license            : mod_license,
             mod_version            : mod_version,
+            jei_version            : jei_version,
     ]
     inputs.properties replaceProperties
     expand replaceProperties

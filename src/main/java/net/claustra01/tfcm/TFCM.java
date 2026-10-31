@@ -8,6 +8,7 @@ import net.claustra01.tfcm.common.condition.MetalEnabledCondition;
 import net.claustra01.tfcm.common.condition.OreEnabledCondition;
 import net.claustra01.tfcm.common.processing.ProcessingForm;
 import net.claustra01.tfcm.common.processing.ProcessingSeries;
+import net.claustra01.tfcm.common.processing.SluiceRecipeSync;
 import net.claustra01.tfcm.config.TFCMConfig;
 import net.claustra01.tfcm.compat.firmalife.FirmaLifeCompat;
 import net.claustra01.tfcm.compat.hotornot.HotOrNotCompat;
@@ -79,6 +80,8 @@ public final class TFCM {
         modBus.addListener(TFCMDataGenerators::gatherData);
         modBus.addListener(TFCM::addAnvilBlocks);
         modBus.addListener(TFCM::registerCapabilities);
+        modBus.addListener(SluiceRecipeSync::registerPayloads);
+        NeoForge.EVENT_BUS.addListener(SluiceRecipeSync::onDatapackSync);
         NeoForge.EVENT_BUS.addListener(TFCM::addReloadListeners);
     }
 
