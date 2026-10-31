@@ -35,6 +35,7 @@ import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
 import net.minecraft.world.item.crafting.Recipe;
+import net.minecraft.world.level.block.Block;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
@@ -201,6 +202,12 @@ public final class TFCMEquipmentGameTests {
             for (ToolMetal metal : ToolMetal.values()) {
                 AnvilBlock anvil = TFCMBlocks.ANVILS.get(metal).get();
                 require(anvil.getTier() == metal.toolTier().level(), "Wrong anvil tier " + metal.getSerializedName());
+                Block tfcAnvil = BuiltInRegistries.BLOCK.get(ResourceLocation.parse("tfc:metal/anvil/steel"));
+                require(anvil.defaultBlockState().getSoundType(helper.getLevel(), BlockPos.ZERO, null)
+                        == tfcAnvil.defaultBlockState().getSoundType(helper.getLevel(), BlockPos.ZERO, null)
+                        && anvil.defaultDestroyTime() == tfcAnvil.defaultDestroyTime()
+                        && anvil.defaultBlockState().canOcclude() == tfcAnvil.defaultBlockState().canOcclude(),
+                        "Anvil properties differ from TFC " + metal.getSerializedName());
                 CraftingRecipe crafting = (CraftingRecipe) recipe(helper,
                         "crafting/metal/anvil/" + metal.getSerializedName());
                 ItemStack doubleIngot = item("metal/double_ingot/" + metal.getSerializedName());

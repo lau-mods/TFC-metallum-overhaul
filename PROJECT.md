@@ -121,10 +121,10 @@ TFC標準のCrucible、鋳型、Anvil、Welding、Heatingを用いる。各金�
 | Osmiridium | Osmium 60–80%、Iridium 20–40% |
 | Solder | Antimony 40–60%、Bismuth 20–40%、Tin 20–40% |
 | Andesite Alloy | Molten Andesite 89–91%、Zinc 9–11%、またはTin 9–11% |
-| Ferroboron | Boron 50%、Steel 50% |
-| Tough Alloy | Ferroboron 50%、Lithium 50% |
-| Zircaloy | Zirconium 87.5%、Tin 12.5% |
-| HSLA Steel | Iron 93.75%、Steel 6.25% |
+| Ferroboron | Boron 45–55%、Steel 45–55% |
+| Tough Alloy | Ferroboron 45–55%、Lithium 45–55% |
+| Zircaloy | Zirconium 85–90%、Tin 10–15% |
+| HSLA Steel | Cast Iron 92–96%、Steel 4–8% |
 | Super Alloy | Tough Alloy 45–55%、Titanium 45–55% |
 
 Molten Andesiteを独立流体として登録し、TFCのLoose Andesite 1個を1300℃で90 mBに溶融する。これをZincまたはTin 10 mBと混合してAndesite Alloy 100 mBを得る。表に合金配合のない特殊金属について、独自の合成レシピは追加しない。
