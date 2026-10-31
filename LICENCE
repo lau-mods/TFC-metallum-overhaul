@@ -1,13 +1,13 @@
-TFC Metallum Overhaul is licensed in two parts.
+Textures and models keep the licence of the work they come from:
 
-Part 1 applies to everything except textures and models: source code, data,
-language files and build files.
+- TFC Metallum: GNU General Public License v3.0, Copyright (c) TFC-Metallum contributors
+- TFC Metallum Unofficial: MIT, Copyright (c) Mrthomas20121
+- TFC: Hammer Time: MIT, Copyright (c) RTCornejo
+- TFC Ore Washing: Academic Free License v3.0, Copyright (c) sirRobson
+- TFC More Items: GNU Lesser General Public License v3.0, Copyright (c) sirRobson
+- TFC Metal Tools: GNU Lesser General Public License v3.0, Copyright (c) sirRobson
 
-Part 2 applies to textures and models (assets/*/textures, assets/*/models,
-including .png.mcmeta and data derived from them).
-
-
-PART 1 - MIT License
+Everything else is under the MIT License:
 
 Copyright (c) 2026 claustra01
 
@@ -28,28 +28,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-
-PART 2 - Textures and models
-
-Textures and models keep the licence of the work they come from, including
-those recolored or reshaped from it. These works are used:
-
-TFC Metallum Overhaul 1.5.1 - MIT License
-  Copyright (c) 2026 claustra01
-  Includes parts of TFC Metallum: Copyright (c) 2023 NMagpie,
-  Copyright (c) 2022 eerussianguy, Copyright (c) 2023 BluSunrize
-
-TFC Ore Washing 1.1.4 by sirRobson - Academic Free License v3.0
-
-TFC More Items 1.2.1 by sirRobson - Academic Free License v3.0
-
-TFC Metal Tools 1.0.7 by sirRobson - its metadata states "Not specified"
-
-TFC Mining Hammer - MIT License
-  Copyright (c) 2026 claustra01
-  Includes parts of TFC: Hammer Time: Copyright (c) 2024 RTCornejo
-
-TerraFirmaCraft 4.2.12 - European Union Public Licence 1.2
-
-FirmaLife 3.0.15 - MIT License
