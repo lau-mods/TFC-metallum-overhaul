@@ -117,6 +117,12 @@ public enum ProcessingSeries {
         return nonMetal;
     }
 
+    /** Powder, Pellet and Briquet only exist for series that melt into a metal. */
+    public boolean hasForm(ProcessingForm form) {
+        return recoveryFluid != null || form == ProcessingForm.ROCKY_CHUNKS || form == ProcessingForm.CHUNKS
+                || form == ProcessingForm.DIRTY_DUST;
+    }
+
     public String recoveryFluid() {
         return recoveryFluid;
     }

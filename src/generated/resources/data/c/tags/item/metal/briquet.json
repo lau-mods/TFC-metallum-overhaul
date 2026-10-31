@@ -121,22 +121,6 @@
       "required": false
     },
     {
-      "id": "#c:metal/briquet/cinnabar",
-      "required": false
-    },
-    {
-      "id": "#c:metal/briquet/cryolite",
-      "required": false
-    },
-    {
-      "id": "#c:metal/briquet/graphite",
-      "required": false
-    },
-    {
-      "id": "#c:metal/briquet/sulfur",
-      "required": false
-    },
-    {
       "id": "#c:metal/briquet/borax",
       "required": false
     }

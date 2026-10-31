@@ -121,22 +121,6 @@
       "required": false
     },
     {
-      "id": "#c:metal/pellet/cinnabar",
-      "required": false
-    },
-    {
-      "id": "#c:metal/pellet/cryolite",
-      "required": false
-    },
-    {
-      "id": "#c:metal/pellet/graphite",
-      "required": false
-    },
-    {
-      "id": "#c:metal/pellet/sulfur",
-      "required": false
-    },
-    {
       "id": "#c:metal/pellet/borax",
       "required": false
     }

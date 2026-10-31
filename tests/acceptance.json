@@ -847,6 +847,10 @@
     {
       "acId": "AC-F028-002",
       "scenario": "tests/e2e/asset-integrity.mjs"
+    },
+    {
+      "acId": "AC-F028-001",
+      "scenario": "tests/e2e/molten-fluids-and-pans.mjs"
     }
   ]
 }

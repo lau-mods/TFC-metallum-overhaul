@@ -109,7 +109,6 @@ public final class TFCMItems {
             METAL_ITEMS.put(metal, parts);
             ITEMS.registerSimpleItem("metal/crossguard/" + metal.getSerializedName());
             ITEMS.registerSimpleItem("metal/pommel/" + metal.getSerializedName());
-            ITEMS.registerSimpleItem("metal/unfinished_lamp/" + metal.getSerializedName());
             ITEMS.register("metal/anvil/" + metal.getSerializedName(),
                     () -> new BlockItem(TFCMBlocks.ANVILS.get(metal).get(), new Item.Properties()));
         }
@@ -153,7 +152,7 @@ public final class TFCMItems {
                     || series.firmaLifeOnly() && !ModList.get().isLoaded("firmalife")) continue;
             Map<ProcessingForm, DeferredItem<Item>> forms = new EnumMap<>(ProcessingForm.class);
             for (ProcessingForm form : ProcessingForm.values()) {
-                if (series.nonMetal() && series != ProcessingSeries.BORAX && form == ProcessingForm.POWDER) continue;
+                if (!series.hasForm(form)) continue;
                 forms.put(form, ITEMS.registerSimpleItem("ore_processing/" + form.id() + "/" + series.id()));
             }
             ORE_PROCESSING.put(series, forms);

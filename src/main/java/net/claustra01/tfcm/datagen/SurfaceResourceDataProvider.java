@@ -131,7 +131,7 @@ public final class SurfaceResourceDataProvider implements DataProvider {
                 model("tfcm:item/ore_processing/rock_powder")));
         files.add(save(output, data, "tfcm/tfc/deposit/surface_resource/rock_powder",
                 deposit("tfcm:ore_processing/rock_powder", "tfcm:surface_resource/rock_powder",
-                        panStages(output, files, assets, "rock_powder", "tfcm:item/ore_processing/rock_powder"))));
+                        panStages(output, files, assets, "rock_powder", "minecraft:block/gravel"))));
         JsonObject rockPowder = loot();
         JsonArray pools = rockPowder.getAsJsonArray("pools");
         pools.add(pool("black_sand_pile_15_percent", "tfcm:ore_processing/sand_pile/black", 0.15f));

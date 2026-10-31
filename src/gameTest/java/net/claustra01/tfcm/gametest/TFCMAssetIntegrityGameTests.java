@@ -281,11 +281,6 @@ public final class TFCMAssetIntegrityGameTests {
             for (ToolMetal metal : ToolMetal.values()) {
                 String id = metal.getSerializedName();
                 requireRecipe(helper, "tfcm", "crafting/metal/fishing_rod/" + id);
-                requireRecipe(helper, "tfcm", "anvil/metal/unfinished_lamp/" + id);
-                requireRecipe(helper, "tfcm", "heating/metal/unfinished_lamp/" + id);
-                ItemStack lamp = stack("tfcm:metal/unfinished_lamp/" + id);
-                require(HeatCapability.getDefinition(lamp) != null && ItemSizeManager.getDefinition(lamp) != null,
-                        "Unfinished Lamp heat or size " + id);
                 require(((AnvilRecipe) requireRecipe(helper, "tfcm", "anvil/metal/sword_blade/" + id))
                         .shouldApplyForgingBonus(), "Forging bonus is not applied to the " + id + " Sword Blade");
             }
@@ -318,7 +313,7 @@ public final class TFCMAssetIntegrityGameTests {
                 requireRecipe(helper, "tfcm", "heating/metal/crossguard/" + metal.id());
                 requireRecipe(helper, "tfcm", "heating/metal/pommel/" + metal.id());
             }
-            for (String id : new String[] {"minecraft:bow", "minecraft:crossbow", "tfc:crafting/arrow"}) {
+            for (String id : new String[] {"minecraft:bow", "minecraft:crossbow", "minecraft:arrow", "tfc:crafting/arrow"}) {
                 require(helper.getLevel().getRecipeManager().byKey(ResourceLocation.parse(id)).isEmpty(),
                         "The part-less recipe is still active: " + id);
             }
@@ -397,12 +392,12 @@ public final class TFCMAssetIntegrityGameTests {
                 requireDifferent(items + "metal/plate/" + metal.id() + ".png", items + "metal/sheet/" + metal.id() + ".png");
             }
             for (String form : new String[] {"pellet", "briquet"}) {
-                requireDifferent(items + "ore_processing/" + form + "/cinnabar.png",
-                        items + "ore_processing/" + form + "/cryolite.png");
-                for (String series : new String[] {"borax", "cinnabar", "cryolite", "graphite", "sulfur"}) {
-                    require(readJson("assets/tfcm/models/item/ore_processing/" + form + "/" + series + ".json")
-                            .getAsJsonObject("textures").get("layer0").getAsString()
-                            .equals("tfcm:item/ore_processing/" + form + "/" + series), "Model of " + form + " " + series);
+                require(readJson("assets/tfcm/models/item/ore_processing/" + form + "/borax.json")
+                        .getAsJsonObject("textures").get("layer0").getAsString()
+                        .equals("tfcm:item/ore_processing/" + form + "/borax"), "Model of Borax " + form);
+                for (String series : new String[] {"cinnabar", "cryolite", "graphite", "sulfur"}) {
+                    require(!BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(
+                            "tfcm:ore_processing/" + form + "/" + series)), "No melting recipe, no " + form + ": " + series);
                 }
             }
             require(readJson("assets/tfcm/models/item/ore_processing/rock_powder.json").getAsJsonObject("textures")
@@ -410,6 +405,11 @@ public final class TFCMAssetIntegrityGameTests {
             require(readJson("assets/tfcm/models/item/leather_string.json").getAsJsonObject("textures")
                     .get("layer0").getAsString().equals("tfcm:item/leather_string"), "Leather String sprite");
             requireDifferent(items + "leather_string.png", items + "leather_strap.png");
+            for (Ore ore : Ore.values()) {
+                if (ore.graded()) require(readJson("assets/tfcm/models/item/ore/small_" + ore.id() + ".json")
+                        .getAsJsonObject("textures").get("layer0").getAsString()
+                        .equals("tfcm:item/ore/small_" + ore.id()), "Small ore item model " + ore.id());
+            }
             require(!opaquePixels(items + "metal/dust/invar.png").equals(opaquePixels(items + "ore_processing/powder/galena.png"))
                     && !opaquePixels(items + "metal/dust/invar.png").equals(opaquePixels(items + "ore_processing/powder/bismuthinite.png")),
                     "Metal Dust shares an outline with Ore Powder");

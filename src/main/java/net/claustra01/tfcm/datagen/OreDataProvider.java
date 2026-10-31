@@ -92,7 +92,7 @@ public final class OreDataProvider implements DataProvider {
             }
             String small = "small_" + ore.id();
             files.add(save(output, assets, "tfcm/models/item/ore/" + small,
-                    parentModel("tfcm:block/groundcover/" + ore.id())));
+                    generatedModel("tfcm:item/ore/" + small)));
             files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
                     groundcoverModel("tfcm:item/ore/small_" + ore.id())));
             files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore.id())));

@@ -1,3 +1,6 @@
 {
-  "parent": "tfcm:block/groundcover/zircon"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "tfcm:item/ore/small_zircon"
+  }
 }

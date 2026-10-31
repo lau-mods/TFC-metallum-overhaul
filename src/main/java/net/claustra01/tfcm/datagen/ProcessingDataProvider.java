@@ -51,8 +51,7 @@ public final class ProcessingDataProvider implements DataProvider {
         for (ProcessingForm form : ProcessingForm.values()) {
             JsonArray collection = new JsonArray();
             for (ProcessingSeries series : ProcessingSeries.values()) {
-                // non-metal Powder other than Borax is a foreign item, not one of the processing forms
-                if (form == ProcessingForm.POWDER && series.nonMetal() && series != ProcessingSeries.BORAX) continue;
+                if (!series.hasForm(form)) continue;
                 String tag = "c:metal/" + form.id() + "/" + series.id();
                 JsonArray values = new JsonArray();
                 values.add(ContentConditions.optional(item(series, form)));
@@ -97,8 +96,10 @@ public final class ProcessingDataProvider implements DataProvider {
         addDeposit(output, files, series, ProcessingForm.DIRTY_DUST);
         files.add(save(output, data, "tfcm/loot_table/ore_processing/dirty_dust/" + series.id(),
                 conditional(series, secondaryWash(series))));
-        addCompression(output, files, series);
-        if (series.recoveryFluid() != null) addHeating(output, files, series);
+        if (series.recoveryFluid() != null) {
+            addCompression(output, files, series);
+            addHeating(output, files, series);
+        }
     }
 
     private void addHammer(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series,
@@ -204,8 +205,10 @@ public final class ProcessingDataProvider implements DataProvider {
     private void addDeposit(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series,
             ProcessingForm form) {
         String name = form.id() + "/" + series.id();
+        // Pan materials must be opaque: the series' main rock while rocky, its sand once it is dust
         JsonArray stages = SurfaceResourceDataProvider.panStages(output, files, assets, name,
-                "tfcm:item/ore_processing/" + name);
+                form == ProcessingForm.ROCKY_CHUNKS ? "tfc:block/rock/gravel/" + series.primaryRock()
+                        : "tfc:block/sand/" + series.sand().id());
         if (series.firmaLifeOnly()) return;
         JsonObject json = new JsonObject();
         json.add("ingredient", ingredient(item(series, form)));

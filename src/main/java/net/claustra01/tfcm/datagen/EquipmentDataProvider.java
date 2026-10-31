@@ -58,13 +58,6 @@ public final class EquipmentDataProvider implements DataProvider {
             }
             files.add(save(output, data, "tfcm/recipe/crafting/metal/horse_armor/" + metal.getSerializedName(), horseArmor(metal)));
             files.add(save(output, data, "tfcm/recipe/crafting/metal/fishing_rod/" + metal.getSerializedName(), fishingRod(metal)));
-            files.add(save(output, data, "tfcm/recipe/anvil/metal/unfinished_lamp/" + metal.getSerializedName(), unfinishedLamp(metal)));
-            files.add(save(output, data, "tfcm/recipe/heating/metal/unfinished_lamp/" + metal.getSerializedName(),
-                    heating(metal, "unfinished_lamp", 100, false)));
-            files.add(save(output, data, "tfcm/tfc/item_heat/" + metal.getSerializedName() + "/unfinished_lamp",
-                    itemHeat(metal, "unfinished_lamp", 100, false)));
-            files.add(save(output, data, "tfcm/tfc/item_size/" + metal.getSerializedName() + "/unfinished_lamp",
-                    itemSize(metal, "unfinished_lamp", "normal", "medium", false)));
             files.add(save(output, data, "tfc/tags/item/metal_item/" + metal.getSerializedName(), metalItemTag(metal)));
             files.add(save(output, data, "tfc/tags/item/metal_item/" + metal.getSerializedName() + "_tools",
                     optionalValues("tfcm:metal/tongs/" + metal.getSerializedName())));
@@ -325,20 +318,6 @@ public final class EquipmentDataProvider implements DataProvider {
         key.add("X", item(id(metal, ToolPart.FISH_HOOK)));
         json.add("key", key);
         json.add("result", TfcToolAssemblyDataProvider.bonusResult(id(metal, ToolPart.FISHING_ROD)));
-        return json;
-    }
-
-    private static JsonObject unfinishedLamp(ToolMetal metal) {
-        JsonObject json = conditioned(metal);
-        json.addProperty("type", "tfc:anvil");
-        json.add("ingredient", tag("c:ingots/" + metal.getSerializedName()));
-        json.add("result", result("tfcm:metal/unfinished_lamp/" + metal.getSerializedName()));
-        JsonArray rules = new JsonArray();
-        rules.add("bend_last");
-        rules.add("bend_second_last");
-        rules.add("draw_third_last");
-        json.add("rules", rules);
-        json.addProperty("tier", metal.toolTier().level());
         return json;
     }
 

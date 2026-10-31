@@ -98,7 +98,8 @@ public final class TFCMProcessingGameTests {
                             "Chromite items must only exist with FirmaLife");
                     if (!firmaLife) continue;
                 }
-                require(TFCMItems.ORE_PROCESSING.get(actual).size() == ProcessingForm.values().length - (expected.nonMetal() && !expected.id().equals("borax") ? 1 : 0),
+                require(TFCMItems.ORE_PROCESSING.get(actual).size() == (expected.nonMetal() && !expected.id().equals("borax")
+                        ? 3 : ProcessingForm.values().length),
                         "Missing processing form for " + expected.id());
             }
         });
@@ -306,15 +307,16 @@ public final class TFCMProcessingGameTests {
                 if (expected.recoveryFluid() != null) {
                     checkHeating(helper, series, ProcessingForm.POWDER, 5, expected.recoveryFluid());
                 }
-                checkCraft(helper, "pellet", series, ProcessingForm.POWDER, 4, ProcessingForm.PELLET, 1);
-                checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 4, ProcessingForm.BRIQUET, 1);
-                checkCraft(helper, "unpack_pellet", series, ProcessingForm.PELLET, 1, ProcessingForm.POWDER, 4);
-                checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 4);
-                if (expected.nonMetal() && !expected.id().equals("borax")) {
-                    require(!recipePresent(helper, "heating/ore_processing/pellet/" + expected.id())
+                if (expected.recoveryFluid() == null) {
+                    require(!recipePresent(helper, "crafting/ore_processing/pellet/" + expected.id())
+                            && !recipePresent(helper, "heating/ore_processing/pellet/" + expected.id())
                             && !recipePresent(helper, "heating/ore_processing/briquet/" + expected.id()),
-                            "Non-metal compressed form has a heating recipe: " + expected.id());
+                            "Series without a melt has compressed forms: " + expected.id());
                 } else {
+                    checkCraft(helper, "pellet", series, ProcessingForm.POWDER, 4, ProcessingForm.PELLET, 1);
+                    checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 4, ProcessingForm.BRIQUET, 1);
+                    checkCraft(helper, "unpack_pellet", series, ProcessingForm.PELLET, 1, ProcessingForm.POWDER, 4);
+                    checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 4);
                     checkHeating(helper, series, ProcessingForm.PELLET, 20, expected.recoveryFluid());
                     checkHeating(helper, series, ProcessingForm.BRIQUET, 80, expected.recoveryFluid());
                 }

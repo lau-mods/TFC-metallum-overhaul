@@ -1,6 +1,6 @@
 {
   "parent": "tfc:item/pan/full",
   "textures": {
-    "material": "tfcm:item/ore_processing/rock_powder"
+    "material": "minecraft:block/gravel"
   }
 }

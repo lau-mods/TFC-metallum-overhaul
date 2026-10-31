@@ -17,6 +17,7 @@ import net.claustra01.tfcm.registry.TFCMFluids;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.resources.ResourceLocation;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
@@ -24,7 +25,10 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.dries007.tfc.client.extensions.FluidRendererExtension;
 import net.neoforged.neoforge.client.event.ModelEvent;
+import net.neoforged.neoforge.client.event.RegisterColorHandlersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.client.model.DynamicFluidContainerModel;
+import net.neoforged.neoforge.registries.DeferredItem;
 
 @EventBusSubscriber(modid = TFCM.MOD_ID, value = Dist.CLIENT, bus = EventBusSubscriber.Bus.MOD)
 public final class TFCMClient {
@@ -62,6 +66,14 @@ public final class TFCMClient {
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
         TFCMBlocks.CHROMITE_ORES.values().forEach(
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
+    }
+
+    // apply_tint in the bucket model needs this handler to color the fluid layer
+    @SubscribeEvent
+    public static void registerItemColors(RegisterColorHandlersEvent.Item event) {
+        event.register(new DynamicFluidContainerModel.Colors(), TFCMItems.METAL_BUCKETS.values().stream()
+                .map(DeferredItem::get).toArray(ItemLike[]::new));
+        event.register(new DynamicFluidContainerModel.Colors(), TFCMItems.MOLTEN_ANDESITE_BUCKET.get());
     }
 
     // TFC only registers the Pan models of its own deposits
