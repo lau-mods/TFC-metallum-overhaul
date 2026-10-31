@@ -11,10 +11,16 @@ import net.claustra01.tfcm.TFCM;
 import net.claustra01.tfcm.common.processing.SluiceRecipe;
 import net.claustra01.tfcm.common.processing.SluiceRecipeSync;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.TagKey;
+import net.minecraft.world.item.Item;
 
 @JeiPlugin
 public final class TFCMJeiPlugin implements IModPlugin {
+    private static final TagKey<Item> SLUICES = TagKey.create(Registries.ITEM,
+            ResourceLocation.fromNamespaceAndPath("tfc", "sluices"));
+
     private IJeiRuntime runtime;
     private List<SluiceRecipe> shown = List.of();
 
@@ -31,11 +37,9 @@ public final class TFCMJeiPlugin implements IModPlugin {
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        BuiltInRegistries.ITEM.entrySet().forEach(entry -> {
-            ResourceLocation id = entry.getKey().location();
-            if (id.getNamespace().equals("tfc") && id.getPath().startsWith("wood/sluice/"))
-                registration.addRecipeCatalyst(entry.getValue(), SluiceRecipeCategory.TYPE);
-        });
+        // addons declare their Sluices through TFC's tag
+        BuiltInRegistries.ITEM.getTagOrEmpty(SLUICES).forEach(
+                item -> registration.addRecipeCatalyst(item.value(), SluiceRecipeCategory.TYPE));
     }
 
     @Override
