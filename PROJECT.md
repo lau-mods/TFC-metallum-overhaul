@@ -643,7 +643,7 @@ Quarry HammerをMining Hammerと独立した工具として登録し、Pickaxe�
 
 `u` は面内の左右、`v` は面内の上下または前後を表す。プレイヤーの向きと命中面の法線からローカル座標をワールド座標へ写す。方向反転によって「上3・下1」が逆になってはならない。
 
-Quarry Hammerには専用のHeadとHead Moldを登録する。Headの金属使用量、鋳型・金床加工、工具組立レシピはMining Hammerと同一の規則・数量を使用し、完成品だけQuarry Hammerへ置き換える。独自の耐久・攻撃力・採掘tierは設けない。
+Quarry Hammerには専用のHeadとHead Moldを登録する。HeadはMining Hammer HeadとHeavy Sheetを金属tierでWeldingして作る。金属量はHead 800 mB、完成工具850 mBとする。工具組立レシピはMining Hammerと同一の規則・数量を使用し、完成品だけQuarry Hammerへ置き換える。独自の耐久・攻撃力・採掘tierは設けない。
 
 #### Acceptance Criteria
 ##### AC-F018-001: 垂直5×5
@@ -721,7 +721,7 @@ Expected Result: Layersは1層ずつ減り、追加破壊の連鎖で範囲が�
 
 Mining HammerおよびExcavatorに対応する完成工具、Tool Head、未焼成・焼成済みの陶製Head Moldを用意する。MoldはTFCのKnapping、Heating、Castingに統合する。Headは対象金属のTFC加工・工具組立に使用し、tool heat、size、rack、tool tagを定義する。
 
-Quarry Hammerにも専用のTool Headと未焼成・焼成済みHead Moldを登録する。Knapping、Heating、Casting、Head加工、工具組立はMining Hammerと同じ材料数量・加工規則を適用する。
+Quarry Hammerにも専用のTool Headと未焼成・焼成済みHead Moldを登録する。Knapping、Moldの焼成、工具組立はMining Hammerと同じ材料数量・加工規則を適用し、Head加工とCastingはF-018に従う。Moldの容量は800 mBとする。
 
 #### Acceptance Criteria
 ##### AC-F021-001: Mining Hammer・Excavatorの鋳型
@@ -736,8 +736,8 @@ Expected Result: 対象金属に適合するTFC属性を持ち、未登録の中
 
 ##### AC-F021-003: Quarry Hammerの製作
 Preconditions: Mining HammerのHead・Mold・組立に必要な素材と加工設備がある。  
-Action: 同じ加工規則と材料数量でQuarry HammerのHead・Moldを製造し、完成工具を組み立てる。  
-Expected Result: Quarry Hammerが製作でき、Mining Hammerとの違いはF-018の採掘範囲だけである。
+Action: F-018の加工規則でQuarry HammerのHeadを製造し、Moldを作成して、完成工具を組み立てる。  
+Expected Result: Quarry Hammerが製作でき、Mining Hammerとの性能の違いはF-018の採掘範囲だけである。Headは800 mB、完成工具は850 mBへ溶融する。
 
 ### F-022: Gem・Quartz・Fluorite
 #### Description
