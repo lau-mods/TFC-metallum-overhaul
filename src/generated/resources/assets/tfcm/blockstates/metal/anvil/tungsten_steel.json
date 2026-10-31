@@ -2,18 +2,18 @@
   "variants": {
     "facing=east": {
       "model": "tfcm:block/metal/anvil/tungsten_steel",
-      "y": 90
+      "y": 180
     },
     "facing=north": {
-      "model": "tfcm:block/metal/anvil/tungsten_steel"
+      "model": "tfcm:block/metal/anvil/tungsten_steel",
+      "y": 90
     },
     "facing=south": {
       "model": "tfcm:block/metal/anvil/tungsten_steel",
-      "y": 180
+      "y": 270
     },
     "facing=west": {
-      "model": "tfcm:block/metal/anvil/tungsten_steel",
-      "y": 270
+      "model": "tfcm:block/metal/anvil/tungsten_steel"
     }
   }
 }
