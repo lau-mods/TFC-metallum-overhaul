@@ -56,6 +56,10 @@ public final class AreaToolDataProvider implements DataProvider {
         files.add(save(output, data, "c/tags/item/tools/mining_hammer", toolTag(AreaToolType.MINING_HAMMER)));
         files.add(save(output, data, "c/tags/item/tools/quarry_hammer", toolTag(AreaToolType.QUARRY_HAMMER)));
         files.add(save(output, data, "c/tags/item/tools/excavator", toolTag(AreaToolType.EXCAVATOR)));
+        files.add(save(output, data, "c/tags/item/tools", tagOf("#c:tools/mining_hammer", "#c:tools/quarry_hammer",
+                "#c:tools/excavator")));
+        files.add(save(output, data, "tfc/tags/item/deals_crushing_damage", tagOf("#c:tools/mining_hammer",
+                "#c:tools/quarry_hammer")));
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new));
     }
 
@@ -191,14 +195,7 @@ public final class AreaToolDataProvider implements DataProvider {
     }
 
     private static JsonObject assemblyResult(AreaToolMetal metal, AreaToolType type) {
-        JsonObject advancedResult = new JsonObject();
-        advancedResult.add("stack", result(id(metal, type, false)));
-        JsonArray modifiers = new JsonArray();
-        JsonObject modifier = new JsonObject();
-        modifier.addProperty("type", "tfc:copy_forging_bonus");
-        modifiers.add(modifier);
-        advancedResult.add("modifiers", modifiers);
-        return advancedResult;
+        return TfcToolAssemblyDataProvider.bonusResult(id(metal, type, false));
     }
 
     private static JsonObject heating(AreaToolMetal metal, AreaToolType type, boolean head) {
@@ -250,6 +247,15 @@ public final class AreaToolDataProvider implements DataProvider {
         for (AreaToolType type : AreaToolType.values()) {
             values.add("tfcm:ceramic/" + (unfired ? "unfired_" : "") + type.id() + "_head_mold");
         }
+        json.add("values", values);
+        json.addProperty("replace", false);
+        return json;
+    }
+
+    private static JsonObject tagOf(String... entries) {
+        JsonObject json = new JsonObject();
+        JsonArray values = new JsonArray();
+        for (String entry : entries) values.add(entry);
         json.add("values", values);
         json.addProperty("replace", false);
         return json;

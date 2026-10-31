@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/mining_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/bronze",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/bronze",
+      "required": false
+    }
+  ]
+}

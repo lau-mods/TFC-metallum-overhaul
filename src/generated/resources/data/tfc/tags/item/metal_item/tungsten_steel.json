@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/tongs/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tong_part/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/crossguard/tungsten_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pommel/tungsten_steel",
+      "required": false
+    }
+  ]
+}

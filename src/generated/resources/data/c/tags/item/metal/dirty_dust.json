@@ -1,0 +1,144 @@
+{
+  "values": [
+    {
+      "id": "#c:metal/dirty_dust/native_copper",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/native_gold",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/hematite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/native_silver",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/cassiterite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/bismuthinite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/garnierite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/malachite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/limonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/sphalerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/tetrahedrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/galena",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/magnesite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/bauxite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/uraninite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/chromite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/rutile",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/zircon",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/cobaltite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/stibnite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/native_platinum",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/wolframite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/thorianite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/native_iridium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/native_osmium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/spodumene",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/carobbiite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/native_naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/cinnabar",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/cryolite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/graphite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/sulfur",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/borax",
+      "required": false
+    }
+  ]
+}

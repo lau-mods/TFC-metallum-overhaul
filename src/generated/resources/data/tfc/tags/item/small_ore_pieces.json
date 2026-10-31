@@ -1,0 +1,69 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:ore/small_native_platinum",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_native_naquadah",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_native_iridium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_native_osmium",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_rutile",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_cobaltite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_spodumene",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_bauxite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_galena",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_uraninite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_stibnite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_wolframite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_thorianite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_magnesite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_zircon",
+      "required": false
+    }
+  ]
+}

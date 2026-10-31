@@ -53,6 +53,8 @@ public final class TFCMClient {
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
         TFCMBlocks.ORE_GROUNDCOVER.values().forEach(
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
+        TFCMBlocks.TFC_ORE_GROUNDCOVER.values().forEach(
+                block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
         TFCMBlocks.TFC_ORES.values().forEach(
                 block -> ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout()));
         TFCMBlocks.CHROMITE_ORES.values().forEach(

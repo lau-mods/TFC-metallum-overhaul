@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/ruby"
+      },
+      {
+        "model": "tfcm:block/groundcover/ruby",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/ruby",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/ruby",
+        "y": 270
+      }
+    ]
+  }
+}

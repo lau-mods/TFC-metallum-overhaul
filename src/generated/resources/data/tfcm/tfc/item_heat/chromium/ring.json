@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "forging_temperature": 750.0,
+  "heat_capacity": 0.34285712,
+  "ingredient": {
+    "tag": "c:rings/chromium"
+  },
+  "welding_temperature": 1000.0
+}

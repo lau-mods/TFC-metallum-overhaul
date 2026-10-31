@@ -1,0 +1,41 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:handle/saw"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/blue_steel"
+    },
+    "R": {
+      "tag": "c:wires/blue_steel"
+    },
+    "X": {
+      "item": "tfc:metal/saw_blade/blue_steel"
+    }
+  },
+  "pattern": [
+    " NX",
+    "GHN",
+    "RL "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/saw/blue_steel"
+    }
+  }
+}

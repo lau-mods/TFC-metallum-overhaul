@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/mining_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/quarry_hammer/steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/excavator/steel",
+      "required": false
+    }
+  ]
+}

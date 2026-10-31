@@ -731,6 +731,60 @@
       "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
       "classname": "tfcm:empty",
       "name": "invalidduplicateandemptydefinitionsusedimensionfallbackrules"
+    },
+    {
+      "acId": "AC-F002-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "restoredrecipesandforgingbonusload"
+    },
+    {
+      "acId": "AC-F007-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "tfctoolsassemblefromparts"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeformsfollowthemod"
+    },
+    {
+      "acId": "AC-F001-002",
+      "report": "build/test-results/gametest-firmalife/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "firmalifeformsfollowthemod"
+    },
+    {
+      "acId": "AC-F027-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "restoredtagscontaintheiritems"
+    },
+    {
+      "acId": "AC-F028-001",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "distinctitemshavedistinctsprites"
+    },
+    {
+      "acId": "AC-F025-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.gametest.TFCMAssetIntegrityGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "orenamesfollowtfcandjapaneseistranslated"
+    },
+    {
+      "acId": "AC-F024-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "bundleddefaultsloadandneverreplaceexistingfiles"
+    },
+    {
+      "acId": "AC-F024-003",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "veinreplacementkeepsnonoreveins"
     }
   ],
   "e2e": [

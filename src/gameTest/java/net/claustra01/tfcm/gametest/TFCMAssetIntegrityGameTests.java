@@ -6,6 +6,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.util.HexFormat;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javax.imageio.ImageIO;
@@ -28,6 +29,8 @@ import net.claustra01.tfcm.common.tool.area.AreaToolMetal;
 import net.claustra01.tfcm.common.tool.area.AreaToolType;
 import net.claustra01.tfcm.registry.TFCMItems;
 import net.dries007.tfc.common.component.heat.HeatCapability;
+import net.dries007.tfc.common.recipes.AnvilRecipe;
+import net.dries007.tfc.common.recipes.WeldingRecipe;
 import net.dries007.tfc.common.component.size.ItemSizeManager;
 import net.dries007.tfc.common.component.size.Size;
 import net.dries007.tfc.common.component.size.Weight;
@@ -43,9 +46,13 @@ import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.CraftingInput;
+import net.minecraft.world.item.crafting.CraftingRecipe;
+import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.material.Fluid;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.gametest.GameTestHolder;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
@@ -132,8 +139,8 @@ public final class TFCMAssetIntegrityGameTests {
                 require(stack.is(tag), "Metal form tag " + form.item(metal));
             }
         }
-        for (TfcMetal metal : TfcMetal.values()) for (MetalForm form : MetalForm.values()) {
-            if (!form.isAddedForm()) continue;
+        for (TfcMetal metal : TfcMetal.values()) for (MetalForm form : metal.addedForms()) {
+            if (metal.isFirmaLife() && !ModList.get().isLoaded("firmalife")) continue;
             require(metalShapes.add(metal.item(form)), "Duplicate metal shape " + metal.item(form));
             ItemStack stack = BuiltInRegistries.ITEM.get(ResourceLocation.parse(metal.item(form))).getDefaultInstance();
             require(!stack.isEmpty(), "TFC metal form " + metal.item(form));
@@ -261,6 +268,185 @@ public final class TFCMAssetIntegrityGameTests {
             }
         }
         helper.succeed();
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void restoredRecipesAndForgingBonusLoad(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (Metal metal : Metal.values()) {
+                for (String suffix : new String[] {"", "_slab", "_stairs"}) {
+                    requireRecipe(helper, "tfcm", "crafting/metal/block/" + metal.id() + suffix);
+                }
+            }
+            for (ToolMetal metal : ToolMetal.values()) {
+                String id = metal.getSerializedName();
+                requireRecipe(helper, "tfcm", "crafting/metal/fishing_rod/" + id);
+                requireRecipe(helper, "tfcm", "anvil/metal/unfinished_lamp/" + id);
+                requireRecipe(helper, "tfcm", "heating/metal/unfinished_lamp/" + id);
+                ItemStack lamp = stack("tfcm:metal/unfinished_lamp/" + id);
+                require(HeatCapability.getDefinition(lamp) != null && ItemSizeManager.getDefinition(lamp) != null,
+                        "Unfinished Lamp heat or size " + id);
+                require(((AnvilRecipe) requireRecipe(helper, "tfcm", "anvil/metal/sword_blade/" + id))
+                        .shouldApplyForgingBonus(), "Forging bonus is not applied to the " + id + " Sword Blade");
+            }
+            require(((AnvilRecipe) requireRecipe(helper, "tfcm", "anvil/metal/mining_hammer_head/copper"))
+                    .shouldApplyForgingBonus(), "Forging bonus is not applied to the Mining Hammer Head");
+            for (String id : new String[] {"high_carbon_tungsten_steel", "netherite"}) {
+                require(requireRecipe(helper, "tfcm", "welding/metal/ingot/" + id) instanceof WeldingRecipe,
+                        "Ingot welding recipe " + id);
+            }
+            require(HeatCapability.getDefinition(stack("minecraft:netherite_scrap")) != null,
+                    "Netherite Scrap cannot reach welding temperature");
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void tfcToolsAssembleFromParts(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (TfcMetal metal : TfcMetal.values()) {
+                if (!metal.hasTools()) continue;
+                requireRecipe(helper, "tfc", "crafting/metal/sword/" + metal.id());
+                requireRecipe(helper, "tfcm", "crafting/metal/shears/" + metal.id());
+                for (String part : new String[] {"crossguard", "pommel"}) {
+                    ItemStack stack = stack("tfcm:metal/" + part + "/" + metal.id());
+                    require(!stack.isEmpty() && HeatCapability.getDefinition(stack) != null
+                            && ItemSizeManager.getDefinition(stack) != null
+                            && stack.is(tag("tfc:metal_item/" + metal.id())), "TFC sword part " + part + " " + metal.id());
+                }
+                requireRecipe(helper, "tfcm", "anvil/metal/crossguard/" + metal.id());
+                requireRecipe(helper, "tfcm", "welding/metal/pommel/" + metal.id());
+                requireRecipe(helper, "tfcm", "heating/metal/crossguard/" + metal.id());
+                requireRecipe(helper, "tfcm", "heating/metal/pommel/" + metal.id());
+            }
+            CraftingRecipe pickaxe = (CraftingRecipe) requireRecipe(helper, "tfc", "crafting/metal/pickaxe/copper");
+            ItemStack head = stack("tfc:metal/pickaxe_head/copper");
+            ItemStack handle = stack("minecraft:stick");
+            ItemStack string = stack("tfcm:plant_string");
+            require(pickaxe.matches(CraftingInput.of(2, 2, List.of(string, head, handle, string)), helper.getLevel()),
+                    "Copper Pickaxe does not take the string assembly");
+            require(!pickaxe.matches(CraftingInput.of(1, 2, List.of(head, handle)), helper.getLevel()),
+                    "TFC's Head and Stick recipe is still active");
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void firmaLifeFormsFollowTheMod(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            boolean loaded = ModList.get().isLoaded("firmalife");
+            for (TfcMetal metal : new TfcMetal[] {TfcMetal.CHROMIUM, TfcMetal.STAINLESS_STEEL}) {
+                require(metal.addedForms().size() == 9, "FirmaLife metals take the nine More Items forms");
+                require(!BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(metal.item(MetalForm.PLATE))),
+                        "FirmaLife metals have no Plate");
+                for (MetalForm form : metal.addedForms()) {
+                    String item = metal.item(form);
+                    require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(item)) == loaded,
+                            "FirmaLife form registration " + item);
+                    String path = (form == MetalForm.HEAVY_SHEET ? "welding" : "anvil") + "/metal/" + form.id + "/" + metal.id();
+                    require(helper.getLevel().getRecipeManager().byKey(ResourceLocation.fromNamespaceAndPath("tfcm", path))
+                            .isPresent() == loaded, "FirmaLife form recipe " + path);
+                }
+            }
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void restoredTagsContainTheirItems(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            requireTags("tfcm:metal/tuyere/invar", "tfc:blast_furnace_tuyeres", "tfc:tools/invar");
+            requireTags("tfcm:metal/hammer/invar", "tfc:trip_hammers");
+            requireTags("tfcm:metal/fishing_rod/invar", "tfc:holds_large_fishing_bait");
+            requireTags("tfcm:metal/anvil/invar", "tfc:anvils");
+            requireTags("tfcm:metal/crossguard/invar", "tfc:metal_item/invar");
+            requireTags("tfcm:metal/sheet/invar", "tfc:sheets");
+            requireTags("tfcm:metal/double_sheet/invar", "tfc:double_sheets");
+            requireTags("tfcm:metal/double_ingot/invar", "tfc:double_ingots");
+            requireTags("tfcm:ore/normal_galena", "tfc:metal_ores", "tfc:ore_pieces", "c:ores", "c:ores/galena",
+                    "c:ores/lead/normal");
+            requireTags("tfcm:ore/carobbiite", "tfc:metal_ores", "c:ores", "c:ores/beryllium");
+            requireTags("tfcm:ore/quartz", "tfc:ore_pieces", "c:ores/quartz");
+            requireTags("tfcm:ore/small_galena", "tfc:small_ore_pieces");
+            for (ProcessingForm form : ProcessingForm.values()) {
+                requireTags("tfcm:ore_processing/" + form.id() + "/galena", "c:metal/" + form.id(),
+                        "c:metal/" + form.id() + "/galena");
+            }
+            requireTags("tfcm:ore_processing/powder/galena", "c:ores/clean_dusts");
+            requireTags("tfcm:metal/mining_hammer/steel", "tfc:deals_crushing_damage", "c:tools", "tfc:tools/steel");
+            requireTags("tfcm:metal/quarry_hammer/invar", "tfc:deals_crushing_damage", "c:tools", "tfc:tools/invar");
+            requireTags("tfcm:metal/excavator/steel", "tfc:deals_crushing_damage", "c:tools");
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void distinctItemsHaveDistinctSprites(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            String items = "assets/tfcm/textures/item/";
+            for (Metal metal : Metal.values()) {
+                requireDifferent(items + "metal/plate/" + metal.id() + ".png", items + "metal/sheet/" + metal.id() + ".png");
+            }
+            for (String form : new String[] {"pellet", "briquet"}) {
+                requireDifferent(items + "ore_processing/" + form + "/cinnabar.png",
+                        items + "ore_processing/" + form + "/cryolite.png");
+                for (String series : new String[] {"borax", "cinnabar", "cryolite", "graphite", "sulfur"}) {
+                    require(readJson("assets/tfcm/models/item/ore_processing/" + form + "/" + series + ".json")
+                            .getAsJsonObject("textures").get("layer0").getAsString()
+                            .equals("tfcm:item/ore_processing/" + form + "/" + series), "Model of " + form + " " + series);
+                }
+            }
+            require(readJson("assets/tfcm/models/item/ore_processing/rock_powder.json").getAsJsonObject("textures")
+                    .get("layer0").getAsString().equals("tfcm:item/ore_processing/rock_powder"), "Rock Powder sprite");
+            require(readJson("assets/tfcm/models/item/leather_string.json").getAsJsonObject("textures")
+                    .get("layer0").getAsString().equals("tfcm:item/leather_string"), "Leather String sprite");
+            requireDifferent(items + "leather_string.png", items + "leather_strap.png");
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void oreNamesFollowTfcAndJapaneseIsTranslated(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            JsonObject english = readJson("assets/tfcm/lang/en_us.json");
+            JsonObject japanese = readJson("assets/tfcm/lang/ja_jp.json");
+            for (String key : english.keySet()) {
+                String name = english.get(key).getAsString();
+                require(japanese.has(key), "Japanese key " + key);
+                String translated = japanese.get(key).getAsString();
+                require(key.equals("itemGroup.tfcm") || !translated.replace("HSLA", "").matches(".*[A-Za-z].*"),
+                        "Untranslated Japanese name " + key + ": " + translated);
+                if (!key.startsWith("block.tfcm.ore.")) continue;
+                require(!name.contains(" in "), "Mechanical ore name " + key + ": " + name);
+                if (!key.endsWith(".prospected")) continue;
+                require(!name.matches("(Poor|Normal|Rich) .*"), "Prospected name has a grade " + key);
+                String host = key.substring(0, key.length() - ".prospected".length());
+                String full = english.get(host).getAsString();
+                require(full.endsWith(name) && !full.equals(name), "Prospected name is not the ore name " + key);
+            }
+        });
+    }
+
+    private static Recipe<?> requireRecipe(GameTestHelper helper, String namespace, String path) {
+        return helper.getLevel().getRecipeManager().byKey(ResourceLocation.fromNamespaceAndPath(namespace, path))
+                .orElseThrow(() -> new GameTestAssertException("Missing recipe " + namespace + ":" + path)).value();
+    }
+
+    private static ItemStack stack(String id) {
+        return BuiltInRegistries.ITEM.get(ResourceLocation.parse(id)).getDefaultInstance();
+    }
+
+    private static TagKey<Item> tag(String id) {
+        return TagKey.create(Registries.ITEM, ResourceLocation.parse(id));
+    }
+
+    private static void requireTags(String item, String... tags) {
+        for (String tag : tags) require(stack(item).is(tag(tag)), item + " is missing from " + tag);
+    }
+
+    private static void requireDifferent(String first, String second) {
+        var loader = TFCMAssetIntegrityGameTests.class.getClassLoader();
+        try (var a = loader.getResourceAsStream(first); var b = loader.getResourceAsStream(second)) {
+            require(a != null && b != null, "Sprite " + first + " or " + second);
+            require(!java.util.Arrays.equals(a.readAllBytes(), b.readAllBytes()), first + " repeats " + second);
+        } catch (IOException exception) {
+            throw new GameTestAssertException("Cannot compare " + first);
+        }
     }
 
     private static void checkHash(String path, String expected) {

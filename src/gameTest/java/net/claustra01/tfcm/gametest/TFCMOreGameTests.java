@@ -89,9 +89,18 @@ public final class TFCMOreGameTests {
         helper.succeedIf(() -> {
             require(TFCMBlocks.SMALL_ORES.size() == 16 && TFCMItems.SMALL_ORES.size() == 16,
                     "Every graded ore needs a small ore block item");
-            require(TFCMBlocks.ORE_GROUNDCOVER.size() == 2, "Quartz and fluorite groundcover are missing");
+            require(TFCMBlocks.ORE_GROUNDCOVER.size() == 3 && TFCMBlocks.TFC_ORE_GROUNDCOVER.size() == 21,
+                    "Ungraded ore groundcover is missing");
             BlockPos position = helper.absolutePos(new BlockPos(1, 1, 1));
-            for (Ore ore : List.of(Ore.QUARTZ, Ore.FLUORITE)) {
+            TFCMBlocks.TFC_ORE_GROUNDCOVER.forEach((ore, block) -> {
+                require(!BuiltInRegistries.ITEM.containsKey(id("ore/small_" + ore)),
+                        "Ungraded groundcover must not have a BlockItem");
+                helper.getLevel().setBlock(position, block.get().defaultBlockState(), Block.UPDATE_ALL);
+                require(singleDrop(helper, block.get()).is(BuiltInRegistries.ITEM.get(
+                        ResourceLocation.parse(TfcOre.sampleDrop(ore)))),
+                        "Ungraded groundcover did not yield its raw item: " + ore);
+            });
+            for (Ore ore : List.of(Ore.QUARTZ, Ore.FLUORITE, Ore.CAROBBIITE)) {
                 require(!BuiltInRegistries.ITEM.containsKey(id("ore/small_" + ore.id())),
                         "Ungraded groundcover must not have a BlockItem");
                 require(BuiltInRegistries.BLOCK.containsKey(id("ore/small_" + ore.id())),

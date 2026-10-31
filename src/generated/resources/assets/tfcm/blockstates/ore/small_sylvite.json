@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/sylvite"
+      },
+      {
+        "model": "tfcm:block/groundcover/sylvite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/sylvite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/sylvite",
+        "y": 270
+      }
+    ]
+  }
+}

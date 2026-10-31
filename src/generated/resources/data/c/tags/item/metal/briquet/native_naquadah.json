@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "tfcm:ore_processing/briquet/native_naquadah",
+      "required": false
+    }
+  ]
+}

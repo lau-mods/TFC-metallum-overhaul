@@ -297,6 +297,7 @@ var stageFreshConfigGameTest = tasks.register('stageFreshConfigGameTest', Copy) 
 
 var clearFreshConfigFile = tasks.register('clearFreshConfigFile', Delete) {
     delete layout.buildDirectory.file('run-gametest-fresh-config/config/tfcm-common.toml')
+    delete layout.buildDirectory.dir('run-gametest-fresh-config/config/tfcm')
 }
 
 tasks.named('runGameTestServerFreshConfig').configure {

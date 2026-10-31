@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/graphite"
+      },
+      {
+        "model": "tfcm:block/groundcover/graphite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/graphite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/graphite",
+        "y": 270
+      }
+    ]
+  }
+}

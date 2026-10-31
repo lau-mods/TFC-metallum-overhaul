@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/galena/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/galena/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/galena/rich",
+      "required": false
+    }
+  ]
+}

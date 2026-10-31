@@ -1,0 +1,144 @@
+{
+  "values": [
+    {
+      "id": "#c:metal/briquet/native_copper",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/native_gold",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/hematite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/native_silver",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/cassiterite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/bismuthinite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/garnierite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/malachite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/limonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/sphalerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/tetrahedrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/galena",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/magnesite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/bauxite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/uraninite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/chromite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/rutile",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/zircon",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/cobaltite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/stibnite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/native_platinum",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/wolframite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/thorianite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/native_iridium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/native_osmium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/spodumene",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/carobbiite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/native_naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/cinnabar",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/cryolite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/graphite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/sulfur",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/borax",
+      "required": false
+    }
+  ]
+}

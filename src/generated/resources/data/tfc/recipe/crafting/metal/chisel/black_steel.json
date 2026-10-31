@@ -1,0 +1,41 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:handle/medium"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "N": {
+      "tag": "c:rivets/black_steel"
+    },
+    "R": {
+      "tag": "c:rings/black_steel"
+    },
+    "X": {
+      "item": "tfc:metal/chisel_head/black_steel"
+    }
+  },
+  "pattern": [
+    " NX",
+    "GHR",
+    "RL "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/chisel/black_steel"
+    }
+  }
+}

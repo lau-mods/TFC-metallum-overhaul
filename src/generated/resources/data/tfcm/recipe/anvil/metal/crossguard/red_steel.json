@@ -1,0 +1,17 @@
+{
+  "type": "tfc:anvil",
+  "apply_bonus": true,
+  "ingredient": {
+    "tag": "c:rods/red_steel"
+  },
+  "result": {
+    "count": 2,
+    "id": "tfcm:metal/crossguard/red_steel"
+  },
+  "rules": [
+    "bend_last",
+    "draw_second_last",
+    "draw_third_last"
+  ],
+  "tier": 6
+}

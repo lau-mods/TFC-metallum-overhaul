@@ -54,6 +54,8 @@ public final class OreDataProvider implements DataProvider {
             chromiteBlocks.add("tfcm:ore/" + grade.id() + "_chromite/netherrack");
             chromiteBlocks.add("tfcm:ore/" + grade.id() + "_chromite/end_stone");
         }
+        for (String ore : TfcOre.samples()) addGroundcover(output, files, ore, TfcOre.sampleTexture(ore), TfcOre.sampleDrop(ore));
+        addItemTags(output, files);
         files.add(save(output, data, "tfcm/tags/block/firmalife_ores", tag(chromiteBlocks)));
         files.add(save(output, data, "c/tags/block/ores", tag(oreBlocks)));
         files.add(save(output, data, "tfcm/tags/block/ores", tag(pickaxeBlocks)));
@@ -93,7 +95,7 @@ public final class OreDataProvider implements DataProvider {
                     parentModel("tfcm:block/groundcover/" + ore.id())));
             files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
                     groundcoverModel("tfcm:item/ore/small_" + ore.id())));
-            files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore)));
+            files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore.id())));
             files.add(save(output, data, "tfcm/loot_table/blocks/ore/" + small,
                     blockLoot("tfcm:ore/" + small, ore.id(), false)));
             Metal metal = ORE_METALS.get(ore);
@@ -106,14 +108,54 @@ public final class OreDataProvider implements DataProvider {
                     generatedModel("tfcm:item/ore/" + ore.id())));
             addHosts(output, files, ores, pickaxes, ore.id(), "tfcm:block/ore/" + ore.id(),
                     "tfcm:ore/" + ore.id(), ore.id(), false);
-            if (ore == Ore.FLUORITE || ore == Ore.QUARTZ) {
-                files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
-                        groundcoverModel("tfcm:item/ore/" + ore.id())));
-                files.add(save(output, assets, "tfcm/blockstates/ore/small_" + ore.id(), smallBlockState(ore)));
-                files.add(save(output, data, "tfcm/loot_table/blocks/ore/small_" + ore.id(),
-                        blockLoot("tfcm:ore/" + ore.id(), ore.id(), false)));
-            }
+            addGroundcover(output, files, ore.id(), "tfcm:item/ore/" + ore.id(), "tfcm:ore/" + ore.id());
         }
+    }
+
+    // Surface samples of ungraded ores: placed like a small ore, but only ever yield the raw item.
+    private void addGroundcover(CachedOutput output, List<CompletableFuture<?>> files, String ore, String texture,
+            String drop) {
+        files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore, groundcoverModel(texture)));
+        files.add(save(output, assets, "tfcm/blockstates/ore/small_" + ore, smallBlockState(ore)));
+        files.add(save(output, data, "tfcm/loot_table/blocks/ore/small_" + ore, blockLoot(drop, ore, false)));
+    }
+
+    private void addItemTags(CachedOutput output, List<CompletableFuture<?>> files) {
+        List<String> metalOres = new ArrayList<>();
+        List<String> orePieces = new ArrayList<>();
+        List<String> smallOres = new ArrayList<>();
+        List<String> commonOres = new ArrayList<>();
+        for (Ore ore : Ore.values()) {
+            if (!ore.graded()) {
+                String item = "tfcm:ore/" + ore.id();
+                if (ore == Ore.CAROBBIITE) {
+                    metalOres.add(item);
+                    files.add(save(output, data, "c/tags/item/ores/beryllium", tag(List.of(item))));
+                    commonOres.add("#c:ores/beryllium");
+                }
+                orePieces.add(item);
+                files.add(save(output, data, "c/tags/item/ores/" + ore.id(), tag(List.of(item))));
+                commonOres.add("#c:ores/" + ore.id());
+                continue;
+            }
+            smallOres.add("tfcm:ore/small_" + ore.id());
+            List<String> grades = new ArrayList<>();
+            for (OreGrade grade : OreGrade.values()) {
+                String item = "tfcm:ore/" + ore.itemName(grade);
+                metalOres.add(item);
+                orePieces.add(item);
+                grades.add("#c:ores/" + ore.id() + "/" + grade.id());
+                files.add(save(output, data, "c/tags/item/ores/" + ore.id() + "/" + grade.id(), tag(List.of(item))));
+                String metal = ORE_METALS.get(ore).id();
+                files.add(save(output, data, "c/tags/item/ores/" + metal + "/" + grade.id(), tag(List.of(item))));
+                commonOres.add("#c:ores/" + metal + "/" + grade.id());
+            }
+            files.add(save(output, data, "c/tags/item/ores/" + ore.id(), tag(grades)));
+        }
+        files.add(save(output, data, "tfc/tags/item/metal_ores", tag(metalOres)));
+        files.add(save(output, data, "tfc/tags/item/ore_pieces", tag(orePieces)));
+        files.add(save(output, data, "tfc/tags/item/small_ore_pieces", tag(smallOres)));
+        files.add(save(output, data, "c/tags/item/ores", tag(commonOres)));
     }
 
     private void addHosts(CachedOutput output, List<CompletableFuture<?>> files, List<String> ores,
@@ -189,13 +231,13 @@ public final class OreDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject smallBlockState(Ore ore) {
+    private static JsonObject smallBlockState(String ore) {
         JsonObject json = new JsonObject();
         JsonObject variants = new JsonObject();
         JsonArray models = new JsonArray();
         for (int rotation : new int[] {0, 90, 180, 270}) {
             JsonObject model = new JsonObject();
-            model.addProperty("model", "tfcm:block/groundcover/" + ore.id());
+            model.addProperty("model", "tfcm:block/groundcover/" + ore);
             if (rotation != 0) model.addProperty("y", rotation);
             models.add(model);
         }

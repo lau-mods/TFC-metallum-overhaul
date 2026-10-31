@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:metal/tongs/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/tong_part/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/crossguard/titanium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/pommel/titanium",
+      "required": false
+    }
+  ]
+}

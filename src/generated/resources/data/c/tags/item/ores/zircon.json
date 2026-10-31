@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/zircon/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/zircon/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/zircon/rich",
+      "required": false
+    }
+  ]
+}

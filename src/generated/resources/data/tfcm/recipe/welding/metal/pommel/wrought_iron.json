@@ -1,0 +1,14 @@
+{
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:rings/wrought_iron"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/pommel/wrought_iron"
+  },
+  "second_input": {
+    "tag": "c:rings/wrought_iron"
+  },
+  "tier": 1
+}

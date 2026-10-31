@@ -43,6 +43,7 @@ public final class TFCMBlocks {
     public static final Map<String, DeferredBlock<Block>> TFC_ORES = new LinkedHashMap<>();
     public static final Map<String, DeferredBlock<Block>> CHROMITE_ORES = new LinkedHashMap<>();
     public static final Map<Ore, DeferredBlock<GroundcoverBlock>> ORE_GROUNDCOVER = new EnumMap<>(Ore.class);
+    public static final Map<String, DeferredBlock<GroundcoverBlock>> TFC_ORE_GROUNDCOVER = new LinkedHashMap<>();
     public static final Map<GeodeMineral, DeferredBlock<Block>> MINERAL_BLOCKS = new EnumMap<>(GeodeMineral.class);
     public static final Map<GeodeMineral, DeferredBlock<MineralBuddingBlock>> BUDDING_BLOCKS =
             new EnumMap<>(GeodeMineral.class);
@@ -97,15 +98,11 @@ public final class TFCMBlocks {
             Map<String, DeferredBlock<Block>> blocks = new LinkedHashMap<>();
             ORES.put(ore, blocks);
             if (ore.graded()) {
-                SMALL_ORES.put(ore, BLOCKS.register("ore/small_" + ore.id(),
-                        () -> GroundcoverBlock.looseOre(BlockBehaviour.Properties.of().strength(.4f).noOcclusion())));
+                SMALL_ORES.put(ore, registerGroundcover(ore.id()));
                 for (OreGrade grade : OreGrade.values()) registerCustomOre(blocks, ore, grade);
             } else {
                 registerCustomOre(blocks, ore, null);
-                if (ore == Ore.FLUORITE || ore == Ore.QUARTZ) {
-                    ORE_GROUNDCOVER.put(ore, BLOCKS.register("ore/small_" + ore.id(),
-                            () -> GroundcoverBlock.looseOre(BlockBehaviour.Properties.of().strength(.4f).noOcclusion())));
-                }
+                ORE_GROUNDCOVER.put(ore, registerGroundcover(ore.id()));
             }
         }
         for (String ore : TfcOre.GRADED) {
@@ -115,6 +112,14 @@ public final class TFCMBlocks {
         for (String ore : TfcOre.UNGRADED) {
             if (TFCMConfig.isOreEnabled(ore)) registerDimensionOre(TFC_ORES, ore);
         }
+        for (String ore : TfcOre.samples()) {
+            if (TFCMConfig.isOreEnabled(ore)) TFC_ORE_GROUNDCOVER.put(ore, registerGroundcover(ore));
+        }
+    }
+
+    private static DeferredBlock<GroundcoverBlock> registerGroundcover(String ore) {
+        return BLOCKS.register("ore/small_" + ore,
+                () -> GroundcoverBlock.looseOre(BlockBehaviour.Properties.of().strength(.4f).noOcclusion()));
     }
 
     private static void registerGeodeBlocks() {

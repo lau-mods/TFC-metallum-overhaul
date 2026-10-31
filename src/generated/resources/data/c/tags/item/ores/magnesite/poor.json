@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:ore/poor_magnesite",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/native_platinum/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_platinum/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_platinum/rich",
+      "required": false
+    }
+  ]
+}

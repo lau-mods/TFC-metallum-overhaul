@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/magnesite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/magnesite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/magnesite/rich",
+      "required": false
+    }
+  ]
+}

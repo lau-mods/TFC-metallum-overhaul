@@ -11,6 +11,7 @@ await scenario(async ({ clients }) => {
   command(client, 'fill -3 0 -3 3 0 2 minecraft:smooth_stone');
   command(client, 'setblock -1 1 0 tfcm:ore/small_native_platinum');
   command(client, 'setblock 1 1 0 tfcm:ore/small_fluorite');
+  command(client, 'setblock 3 1 0 tfcm:ore/small_lignite');
   await new Promise(resolve => setTimeout(resolve, 12000));
   await camera(client, { x: 0.5, y: 1.7, z: -2.5, yaw: 0, pitch: 24 });
   await new Promise(resolve => setTimeout(resolve, 3000));

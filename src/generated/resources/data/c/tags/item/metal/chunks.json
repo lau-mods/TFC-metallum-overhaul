@@ -1,0 +1,144 @@
+{
+  "values": [
+    {
+      "id": "#c:metal/chunks/native_copper",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/native_gold",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/hematite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/native_silver",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/cassiterite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/bismuthinite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/garnierite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/malachite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/limonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/sphalerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/tetrahedrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/galena",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/magnesite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/bauxite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/uraninite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/chromite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/rutile",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/zircon",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/cobaltite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/stibnite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/native_platinum",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/wolframite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/thorianite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/native_iridium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/native_osmium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/spodumene",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/carobbiite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/native_naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/cinnabar",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/cryolite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/graphite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/sulfur",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/borax",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 1,
+  "input_row": 0,
+  "key": {
+    "N": {
+      "tag": "c:rivets/steel"
+    },
+    "R": {
+      "tag": "c:rings/steel"
+    },
+    "S": {
+      "tag": "c:handle/short"
+    },
+    "X": {
+      "item": "tfc:metal/knife_blade/steel"
+    },
+    "s": {
+      "tag": "c:leather/string"
+    }
+  },
+  "pattern": [
+    "sX ",
+    "SNX",
+    "RSs"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/shears/steel"
+    }
+  }
+}

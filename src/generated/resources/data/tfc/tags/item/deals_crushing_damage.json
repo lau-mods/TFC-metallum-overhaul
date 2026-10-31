@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "#c:tools/mining_hammer",
+    "#c:tools/quarry_hammer"
+  ]
+}

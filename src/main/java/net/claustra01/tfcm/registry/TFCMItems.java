@@ -31,6 +31,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.material.Fluid;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -86,8 +87,13 @@ public final class TFCMItems {
             AREA_TOOL_HEADS.put(metal, heads);
         }
         for (TfcMetal metal : TfcMetal.values()) {
-            for (MetalForm form : MetalForm.values()) {
-                if (form.isAddedForm()) ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
+            if (metal.isFirmaLife() && !ModList.get().isLoaded("firmalife")) continue;
+            for (MetalForm form : metal.addedForms()) {
+                ITEMS.registerSimpleItem("metal/" + form.id + "/" + metal.id());
+            }
+            if (metal.hasTools()) {
+                ITEMS.registerSimpleItem("metal/crossguard/" + metal.id());
+                ITEMS.registerSimpleItem("metal/pommel/" + metal.id());
             }
         }
         for (MaterialPart part : MaterialPart.values()) {
@@ -103,6 +109,7 @@ public final class TFCMItems {
             METAL_ITEMS.put(metal, parts);
             ITEMS.registerSimpleItem("metal/crossguard/" + metal.getSerializedName());
             ITEMS.registerSimpleItem("metal/pommel/" + metal.getSerializedName());
+            ITEMS.registerSimpleItem("metal/unfinished_lamp/" + metal.getSerializedName());
             ITEMS.register("metal/anvil/" + metal.getSerializedName(),
                     () -> new BlockItem(TFCMBlocks.ANVILS.get(metal).get(), new Item.Properties()));
         }

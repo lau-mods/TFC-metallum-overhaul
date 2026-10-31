@@ -131,8 +131,9 @@ public final class CustomWorldgenBiomeModifier implements BiomeModifier {
         return holder.unwrapKey().map(key -> {
             ResourceLocation id = key.location();
             String path = id.getPath();
-            return id.getNamespace().equals("tfc") && path.startsWith("vein/")
-                    && !path.endsWith("_dike") && !path.equals("vein/gravel");
+            return (id.getNamespace().equals("tfc") || id.getNamespace().equals("firmalife"))
+                    && path.startsWith("vein/") && !path.endsWith("_dike")
+                    && !path.equals("vein/gravel") && !path.equals("vein/kaolin_disc");
         }).orElse(false);
     }
 

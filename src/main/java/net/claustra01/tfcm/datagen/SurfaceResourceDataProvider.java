@@ -125,7 +125,7 @@ public final class SurfaceResourceDataProvider implements DataProvider {
         }
 
         files.add(save(output, assets, "tfcm/models/item/ore_processing/rock_powder",
-                model("tfc:item/powder/flux")));
+                model("tfcm:item/ore_processing/rock_powder")));
         files.add(save(output, data, "tfcm/tfc/deposit/surface_resource/rock_powder",
                 deposit("tfcm:ore_processing/rock_powder", "tfcm:surface_resource/rock_powder")));
         JsonObject rockPowder = loot();

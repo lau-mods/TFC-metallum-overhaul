@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/uraninite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/uraninite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/uraninite/rich",
+      "required": false
+    }
+  ]
+}

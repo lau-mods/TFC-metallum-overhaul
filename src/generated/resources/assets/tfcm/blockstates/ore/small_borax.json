@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/borax"
+      },
+      {
+        "model": "tfcm:block/groundcover/borax",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/borax",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/borax",
+        "y": 270
+      }
+    ]
+  }
+}

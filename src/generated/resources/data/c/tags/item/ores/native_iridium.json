@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/native_iridium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_iridium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_iridium/rich",
+      "required": false
+    }
+  ]
+}

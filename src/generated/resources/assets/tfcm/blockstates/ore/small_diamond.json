@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/diamond"
+      },
+      {
+        "model": "tfcm:block/groundcover/diamond",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/diamond",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/diamond",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/cryolite"
+      },
+      {
+        "model": "tfcm:block/groundcover/cryolite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/cryolite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/cryolite",
+        "y": 270
+      }
+    ]
+  }
+}

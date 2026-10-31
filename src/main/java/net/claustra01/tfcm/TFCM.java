@@ -15,6 +15,7 @@ import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
 import net.claustra01.tfcm.registry.TFCMLootModifiers;
+import net.claustra01.tfcm.worldgen.YamlWorldgenLoader;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.capabilities.ItemCapabilities;
 import net.dries007.tfc.util.data.Deposit;
@@ -45,6 +46,7 @@ public final class TFCM {
     public TFCM(IEventBus modBus, ModContainer container) {
         container.registerConfig(ModConfig.Type.COMMON, TFCMConfig.SPEC);
         TFCMConfig.loadDisabledContent();
+        YamlWorldgenLoader.installDefaults();
         TFCMBiomeModifiers.SERIALIZERS.register(modBus);
         TFCMArmorMaterials.ARMOR_MATERIALS.register(modBus);
         if (ModList.get().isLoaded("firmalife")) {

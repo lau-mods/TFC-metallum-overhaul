@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/nether_quartz"
+      },
+      {
+        "model": "tfcm:block/groundcover/nether_quartz",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/nether_quartz",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/nether_quartz",
+        "y": 270
+      }
+    ]
+  }
+}

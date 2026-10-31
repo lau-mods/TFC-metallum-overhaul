@@ -1,0 +1,11 @@
+{
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/pommel/copper"
+  },
+  "result_fluid": {
+    "amount": 24,
+    "id": "tfc:metal/copper"
+  },
+  "temperature": 1080.0
+}

@@ -1,0 +1,41 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "H": {
+      "item": "tfcm:metal/pommel/wrought_iron"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "R": {
+      "tag": "c:rivets/wrought_iron"
+    },
+    "T": {
+      "tag": "c:rings/wrought_iron"
+    },
+    "X": {
+      "item": "tfc:metal/sword_blade/wrought_iron"
+    },
+    "Y": {
+      "item": "tfcm:metal/crossguard/wrought_iron"
+    }
+  },
+  "pattern": [
+    "L X",
+    "RY ",
+    "HTL"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/sword/wrought_iron"
+    }
+  }
+}

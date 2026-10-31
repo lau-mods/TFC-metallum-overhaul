@@ -1,0 +1,38 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "H": {
+      "tag": "c:handle/short"
+    },
+    "R": {
+      "tag": "c:rivets/copper"
+    },
+    "T": {
+      "tag": "c:rings/copper"
+    },
+    "X": {
+      "item": "tfc:metal/sword_blade/copper"
+    },
+    "Y": {
+      "item": "tfcm:metal/crossguard/copper"
+    }
+  },
+  "pattern": [
+    "  X",
+    "RY ",
+    "HT "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/sword/copper"
+    }
+  }
+}

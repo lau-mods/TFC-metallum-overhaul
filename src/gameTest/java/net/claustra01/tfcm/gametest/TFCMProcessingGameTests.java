@@ -226,15 +226,19 @@ public final class TFCMProcessingGameTests {
                 checkPool(secondary(expected), 0, "powder", processingItem("powder", expected.id()), null);
                 require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(processingItem("powder", expected.id()))),
                         "Non-metal Powder item is missing: " + expected.id());
-                require(!recipePresent(helper, "heating/ore_processing/pellet/" + expected.id())
-                        && !recipePresent(helper, "heating/ore_processing/briquet/" + expected.id()),
-                        "Non-metal compressed form has an invented heating recipe: " + expected.id());
+                require(recipePresent(helper, "heating/ore_processing/pellet/" + expected.id())
+                        == expected.id().equals("borax")
+                        && recipePresent(helper, "heating/ore_processing/briquet/" + expected.id())
+                        == expected.id().equals("borax"),
+                        "Non-metal compressed form heating is wrong: " + expected.id());
                 require(recipePresent(helper, "heating/ore_processing/powder/" + expected.id())
                         == expected.id().equals("borax"), "Non-metal Powder heating is wrong: " + expected.id());
             }
             require(BuiltInRegistries.FLUID.containsKey(ResourceLocation.parse("tfcm:metal/boron")),
                     "Borax recovery fluid tfcm:metal/boron is not registered");
             checkHeating(helper, ProcessingSeries.BORAX, ProcessingForm.POWDER, 5, "tfcm:metal/boron");
+            checkHeating(helper, ProcessingSeries.BORAX, ProcessingForm.PELLET, 20, "tfcm:metal/boron");
+            checkHeating(helper, ProcessingSeries.BORAX, ProcessingForm.BRIQUET, 80, "tfcm:metal/boron");
         });
     }
 
@@ -301,7 +305,7 @@ public final class TFCMProcessingGameTests {
                 checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 4, ProcessingForm.BRIQUET, 1);
                 checkCraft(helper, "unpack_pellet", series, ProcessingForm.PELLET, 1, ProcessingForm.POWDER, 4);
                 checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 4);
-                if (expected.nonMetal()) {
+                if (expected.nonMetal() && !expected.id().equals("borax")) {
                     require(!recipePresent(helper, "heating/ore_processing/pellet/" + expected.id())
                             && !recipePresent(helper, "heating/ore_processing/briquet/" + expected.id()),
                             "Non-metal compressed form has a heating recipe: " + expected.id());

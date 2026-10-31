@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/cobaltite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/cobaltite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/cobaltite/rich",
+      "required": false
+    }
+  ]
+}

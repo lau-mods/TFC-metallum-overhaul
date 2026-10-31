@@ -37,6 +37,7 @@ public final class ProcessingDataProvider implements DataProvider {
     public CompletableFuture<?> run(CachedOutput output) {
         List<CompletableFuture<?>> files = new ArrayList<>();
         for (ProcessingSeries series : ProcessingSeries.values()) addSeries(output, files, series);
+        addCommonTags(output, files);
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new))
                 .thenRun(() -> validateNoDirtyPile(generatedFiles));
     }
@@ -44,6 +45,31 @@ public final class ProcessingDataProvider implements DataProvider {
     @Override
     public String getName() {
         return "TFCM ore processing";
+    }
+
+    private void addCommonTags(CachedOutput output, List<CompletableFuture<?>> files) {
+        for (ProcessingForm form : ProcessingForm.values()) {
+            JsonArray collection = new JsonArray();
+            for (ProcessingSeries series : ProcessingSeries.values()) {
+                // non-metal Powder other than Borax is a foreign item, not one of the processing forms
+                if (form == ProcessingForm.POWDER && series.nonMetal() && series != ProcessingSeries.BORAX) continue;
+                String tag = "c:metal/" + form.id() + "/" + series.id();
+                JsonArray values = new JsonArray();
+                values.add(ContentConditions.optional(item(series, form)));
+                JsonObject json = new JsonObject();
+                json.add("values", values);
+                files.add(save(output, data, "c/tags/item/metal/" + form.id() + "/" + series.id(), json));
+                collection.add(ContentConditions.optional("#" + tag));
+            }
+            JsonObject json = new JsonObject();
+            json.add("values", collection);
+            files.add(save(output, data, "c/tags/item/metal/" + form.id(), json));
+        }
+        JsonArray cleanDusts = new JsonArray();
+        cleanDusts.add("#c:metal/powder");
+        JsonObject json = new JsonObject();
+        json.add("values", cleanDusts);
+        files.add(save(output, data, "c/tags/item/ores/clean_dusts", json));
     }
 
     private void addSeries(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series) {
@@ -105,7 +131,6 @@ public final class ProcessingDataProvider implements DataProvider {
 
     private void addHeating(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series) {
         addHeating(output, files, series, ProcessingForm.POWDER, 5);
-        if (series.nonMetal()) return;
         addHeating(output, files, series, ProcessingForm.PELLET, 20);
         addHeating(output, files, series, ProcessingForm.BRIQUET, 80);
     }

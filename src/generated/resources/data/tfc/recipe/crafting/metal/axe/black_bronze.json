@@ -1,0 +1,34 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 1,
+  "input_row": 0,
+  "key": {
+    "G": {
+      "tag": "c:glue"
+    },
+    "H": {
+      "tag": "c:handle/medium"
+    },
+    "N": {
+      "tag": "c:rivets/black_bronze"
+    },
+    "X": {
+      "item": "tfc:metal/axe_head/black_bronze"
+    }
+  },
+  "pattern": [
+    "NX",
+    "HG"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/axe/black_bronze"
+    }
+  }
+}

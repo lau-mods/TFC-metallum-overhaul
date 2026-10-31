@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "tfc:item/powder/flux"
+    "layer0": "tfcm:item/ore_processing/rock_powder"
   }
 }

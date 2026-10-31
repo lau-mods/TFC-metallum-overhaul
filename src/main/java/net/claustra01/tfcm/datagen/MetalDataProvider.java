@@ -61,6 +61,9 @@ public final class MetalDataProvider implements DataProvider {
             files.add(save(output, "c/tags/block/storage_blocks/" + metal.id(), tag(metal, blockId(metal, ""))));
             files.add(save(output, "c/tags/fluid/molten_" + metal.id(), tag(metal,
                     "tfcm:metal/" + metal.id(), "tfcm:metal/flowing_" + metal.id())));
+            files.add(save(output, "tfcm/recipe/crafting/metal/block/" + metal.id(), blockCraft(metal)));
+            files.add(save(output, "tfcm/recipe/crafting/metal/block/" + metal.id() + "_slab", slabCraft(metal)));
+            files.add(save(output, "tfcm/recipe/crafting/metal/block/" + metal.id() + "_stairs", stairsCraft(metal)));
             files.add(save(output, "tfcm/loot_table/blocks/metal/block/" + metal.id(), blockLoot(metal, "")));
             files.add(save(output, "tfcm/loot_table/blocks/metal/block/" + metal.id() + "_slab", slabLoot(metal)));
             files.add(save(output, "tfcm/loot_table/blocks/metal/block/" + metal.id() + "_stairs", blockLoot(metal, "_stairs")));
@@ -74,75 +77,102 @@ public final class MetalDataProvider implements DataProvider {
     // the added forms for the TFC metals, made with the same rules as the TFCM metals but TFC's tier and fluid
     private void addTfcMetalForms(CachedOutput output, List<CompletableFuture<?>> files, TfcMetal metal) {
         String recipe = "tfcm/recipe/";
-        files.add(save(output, recipe + "anvil/metal/plate/" + metal.id(), tfcAnvil(metal, MetalForm.PLATE, "ingots",
-                1, forgeRules())));
-        JsonObject welding = new JsonObject();
+        if (!metal.isFirmaLife()) files.add(save(output, recipe + "anvil/metal/plate/" + metal.id(),
+                tfcAnvil(metal, MetalForm.PLATE, "ingots", 1, forgeRules())));
+        JsonObject welding = tfcConditioned(metal);
         welding.addProperty("type", "tfc:welding");
         welding.add("first_input", tagIngredient("c:double_sheets/" + metal.id()));
         welding.add("second_input", tagIngredient("c:sheets/" + metal.id()));
         welding.add("result", item(metal.item(MetalForm.HEAVY_SHEET), 1));
         if (metal.tier() > 0) welding.addProperty("tier", metal.tier());
         files.add(save(output, recipe + "welding/metal/heavy_sheet/" + metal.id(), welding));
-        JsonObject nugget = new JsonObject();
-        nugget.addProperty("type", "minecraft:crafting_shapeless");
-        JsonArray ingredients = new JsonArray();
-        ingredients.add(tagIngredient("c:ingots/" + metal.id()));
-        nugget.add("ingredients", ingredients);
-        nugget.add("result", item(metal.item(MetalForm.NUGGET), 9));
-        files.add(save(output, recipe + "crafting/metal/nugget/" + metal.id(), nugget));
-        JsonObject ingot = new JsonObject();
-        ingot.addProperty("type", "minecraft:crafting_shaped");
-        JsonArray pattern = new JsonArray();
-        for (int row = 0; row < 3; row++) pattern.add("NNN");
-        ingot.add("pattern", pattern);
-        JsonObject key = new JsonObject();
-        key.add("N", tagIngredient("c:nuggets/" + metal.id()));
-        ingot.add("key", key);
-        ingot.add("result", item("tfc:metal/ingot/" + metal.id(), 1));
-        files.add(save(output, recipe + "crafting/metal/ingot_from_nuggets/" + metal.id(), ingot));
-        JsonObject dust = new JsonObject();
-        dust.addProperty("type", "tfc:quern");
-        dust.add("ingredient", tagIngredient("c:ingots/" + metal.id()));
-        dust.add("result", item(metal.item(MetalForm.DUST), 1));
-        files.add(save(output, recipe + "quern/metal/dust/" + metal.id(), dust));
+        if (!metal.isFirmaLife()) {
+            JsonObject nugget = new JsonObject();
+            nugget.addProperty("type", "minecraft:crafting_shapeless");
+            JsonArray ingredients = new JsonArray();
+            ingredients.add(tagIngredient("c:ingots/" + metal.id()));
+            nugget.add("ingredients", ingredients);
+            nugget.add("result", item(metal.item(MetalForm.NUGGET), 9));
+            files.add(save(output, recipe + "crafting/metal/nugget/" + metal.id(), nugget));
+            JsonObject ingot = new JsonObject();
+            ingot.addProperty("type", "minecraft:crafting_shaped");
+            JsonArray pattern = new JsonArray();
+            for (int row = 0; row < 3; row++) pattern.add("NNN");
+            ingot.add("pattern", pattern);
+            JsonObject key = new JsonObject();
+            key.add("N", tagIngredient("c:nuggets/" + metal.id()));
+            ingot.add("key", key);
+            ingot.add("result", item("tfc:metal/ingot/" + metal.id(), 1));
+            files.add(save(output, recipe + "crafting/metal/ingot_from_nuggets/" + metal.id(), ingot));
+            JsonObject dust = new JsonObject();
+            dust.addProperty("type", "tfc:quern");
+            dust.add("ingredient", tagIngredient("c:ingots/" + metal.id()));
+            dust.add("result", item(metal.item(MetalForm.DUST), 1));
+            files.add(save(output, recipe + "quern/metal/dust/" + metal.id(), dust));
+        }
 
-        for (MetalForm form : MetalForm.values()) {
-            if (!form.isAddedForm()) continue;
+        for (MetalForm form : metal.addedForms()) {
             String item = metal.item(form);
             if (form.isAnvilForm() && form != MetalForm.PLATE)
                 files.add(save(output, recipe + "anvil/metal/" + form.id + "/" + metal.id(), tfcAnvil(metal, form,
                         form.anvilInput().tag(), form.anvilCount(), forgeRules(form.anvilRules().toArray(String[]::new)))));
-
-            JsonObject heating = new JsonObject();
-            heating.addProperty("type", "tfc:heating");
-            heating.add("ingredient", itemIngredient(item));
-            heating.add("result_fluid", fluid("id", "tfc:metal/" + metal.id(), form.amount));
-            heating.addProperty("temperature", metal.meltingPoint());
-            files.add(save(output, "tfcm/recipe/heating/metal/" + form.id + "/" + metal.id(), heating));
-
-            JsonObject heat = new JsonObject();
-            heat.add("ingredient", itemIngredient(item));
-            heat.addProperty("heat_capacity", metal.heatCapacity() * form.amount / 100f);
-            heat.addProperty("forging_temperature", metal.forgingTemperature());
-            heat.addProperty("welding_temperature", metal.weldingTemperature());
-            files.add(save(output, "tfcm/tfc/item_heat/" + metal.id() + "/" + form.id, heat));
-
-            JsonObject size = new JsonObject();
-            size.add("ingredient", itemIngredient(item));
-            size.addProperty("size", form.size);
-            size.addProperty("weight", form.weight);
-            files.add(save(output, "tfcm/tfc/item_size/" + metal.id() + "/" + form.id, size));
-
+            files.add(save(output, recipe + "heating/metal/" + form.id + "/" + metal.id(),
+                    tfcHeating(metal, item, form.amount)));
+            // TFC's item data and tags ignore load conditions, so FirmaLife's forms stay valid through an optional tag
+            JsonObject ingredient = metal.isFirmaLife()
+                    ? tagIngredient("c:" + form.tag() + "/" + metal.id()) : itemIngredient(item);
+            files.add(save(output, "tfcm/tfc/item_heat/" + metal.id() + "/" + form.id, tfcItemHeat(metal, ingredient, form.amount)));
+            files.add(save(output, "tfcm/tfc/item_size/" + metal.id() + "/" + form.id, tfcItemSize(metal, ingredient, form.size, form.weight)));
             JsonObject tag = new JsonObject();
             JsonArray values = new JsonArray();
-            values.add(item);
+            if (metal.isFirmaLife()) values.add(ContentConditions.optional(item));
+            else values.add(item);
             tag.add("values", values);
             files.add(save(output, "c/tags/item/" + form.tag() + "/" + metal.id(), tag));
         }
     }
 
-    private static JsonObject tfcAnvil(TfcMetal metal, MetalForm result, String input, int count, JsonArray rules) {
+    static JsonObject tfcHeating(TfcMetal metal, String item, int amount) {
+        JsonObject json = tfcConditioned(metal);
+        json.addProperty("type", "tfc:heating");
+        json.add("ingredient", itemIngredient(item));
+        json.add("result_fluid", fluid("id", metal.fluid(), amount));
+        json.addProperty("temperature", metal.meltingPoint());
+        return json;
+    }
+
+    static JsonObject tfcItemHeat(TfcMetal metal, JsonObject ingredient, int amount) {
+        JsonObject json = tfcConditioned(metal);
+        json.add("ingredient", ingredient);
+        json.addProperty("heat_capacity", metal.heatCapacity() * amount / 100f);
+        json.addProperty("forging_temperature", metal.forgingTemperature());
+        json.addProperty("welding_temperature", metal.weldingTemperature());
+        return json;
+    }
+
+    static JsonObject tfcItemSize(TfcMetal metal, JsonObject ingredient, String size, String weight) {
+        JsonObject json = tfcConditioned(metal);
+        json.add("ingredient", ingredient);
+        json.addProperty("size", size);
+        json.addProperty("weight", weight);
+        return json;
+    }
+
+    private static JsonObject tfcConditioned(TfcMetal metal) {
         JsonObject json = new JsonObject();
+        if (metal.isFirmaLife()) {
+            JsonObject condition = new JsonObject();
+            condition.addProperty("type", "neoforge:mod_loaded");
+            condition.addProperty("modid", "firmalife");
+            JsonArray conditions = new JsonArray();
+            conditions.add(condition);
+            json.add("neoforge:conditions", conditions);
+        }
+        return json;
+    }
+
+    private static JsonObject tfcAnvil(TfcMetal metal, MetalForm result, String input, int count, JsonArray rules) {
+        JsonObject json = tfcConditioned(metal);
         json.addProperty("type", "tfc:anvil");
         json.add("ingredient", tagIngredient("c:" + input + "/" + metal.id()));
         json.add("result", item(metal.item(result), count));
@@ -153,6 +183,9 @@ public final class MetalDataProvider implements DataProvider {
 
     private void addSpecialRecipes(CachedOutput output, List<CompletableFuture<?>> files) {
         files.add(save(output, "tfcm/recipe/anvil/metal/ingot/tungsten_steel", highCarbonAnvil()));
+        files.add(save(output, "tfcm/recipe/welding/metal/ingot/high_carbon_tungsten_steel", highCarbonWelding()));
+        files.add(save(output, "tfcm/recipe/welding/metal/ingot/netherite", netheriteWelding()));
+        files.add(save(output, "tfcm/tfc/item_heat/netherite/scrap", netheriteScrapHeat()));
         files.add(save(output, "tfcm/recipe/heating/metal/ingot/high_carbon_tungsten_steel", highCarbonHeating()));
         files.add(save(output, "tfcm/tfc/item_heat/tungsten_steel/high_carbon_ingot", highCarbonHeat()));
         files.add(save(output, "tfcm/tfc/item_size/tungsten_steel/high_carbon_ingot", highCarbonSize()));
@@ -258,6 +291,48 @@ public final class MetalDataProvider implements DataProvider {
         return json;
     }
 
+    // the same recipes TFC gives its own metal blocks
+    private static JsonObject blockCraft(Metal metal) {
+        JsonObject json = conditioned(metal);
+        json.addProperty("type", "tfc:advanced_shaped_crafting");
+        json.addProperty("input_column", 2);
+        json.add("pattern", forgeRules(" SH", "SWS", " S "));
+        JsonObject key = new JsonObject();
+        key.add("H", tagIngredient("c:tools/hammer"));
+        key.add("S", tagIngredient("c:sheets/" + metal.id()));
+        key.add("W", tagIngredient("minecraft:planks"));
+        json.add("key", key);
+        JsonObject modifier = new JsonObject();
+        modifier.addProperty("type", "tfc:damage_crafting_remainder");
+        JsonArray modifiers = new JsonArray();
+        modifiers.add(modifier);
+        JsonObject remainder = new JsonObject();
+        remainder.add("modifiers", modifiers);
+        json.add("remainder", remainder);
+        json.add("result", item(blockId(metal, ""), 8));
+        return json;
+    }
+
+    private static JsonObject slabCraft(Metal metal) {
+        return blockShapeCraft(metal, forgeRules("BBB"), blockId(metal, "_slab"), 6);
+    }
+
+    private static JsonObject stairsCraft(Metal metal) {
+        return blockShapeCraft(metal, forgeRules("B  ", "BB ", "BBB"), blockId(metal, "_stairs"), 8);
+    }
+
+    private static JsonObject blockShapeCraft(Metal metal, JsonArray pattern, String result, int count) {
+        JsonObject json = conditioned(metal);
+        json.addProperty("type", "minecraft:crafting_shaped");
+        json.addProperty("category", "misc");
+        json.add("pattern", pattern);
+        JsonObject key = new JsonObject();
+        key.add("B", tagIngredient("c:storage_blocks/" + metal.id()));
+        json.add("key", key);
+        json.add("result", item(result, count));
+        return json;
+    }
+
     private static JsonObject dust(Metal metal) {
         JsonObject json = conditioned(metal);
         json.addProperty("type", "tfc:quern");
@@ -300,6 +375,32 @@ public final class MetalDataProvider implements DataProvider {
         json.add("rules", forgeRules());
         json.addProperty("tier", 7);
         return json;
+    }
+
+    private static JsonObject highCarbonWelding() {
+        JsonObject json = conditioned(Metal.TUNGSTEN_STEEL);
+        json.getAsJsonArray("neoforge:conditions").add(ContentConditions.metal(Metal.TUNGSTEN.id()));
+        json.addProperty("type", "tfc:welding");
+        json.add("first_input", tagIngredient("c:ingots/tungsten"));
+        json.add("second_input", itemIngredient("tfc:metal/ingot/black_steel"));
+        json.add("result", item("tfcm:metal/ingot/high_carbon_tungsten_steel", 1));
+        json.addProperty("tier", 6);
+        return json;
+    }
+
+    private static JsonObject netheriteWelding() {
+        JsonObject json = conditioned(Metal.NETHERITE);
+        json.addProperty("type", "tfc:welding");
+        json.add("first_input", itemIngredient("minecraft:netherite_scrap"));
+        json.add("second_input", itemIngredient("tfc:metal/ingot/black_steel"));
+        json.add("result", item("tfcm:metal/ingot/netherite", 1));
+        json.addProperty("tier", 6);
+        return json;
+    }
+
+    // the scrap has to reach welding temperature; values of the Netherite ingot it becomes
+    private static JsonObject netheriteScrapHeat() {
+        return itemHeat(Metal.NETHERITE, MetalForm.INGOT, "minecraft:netherite_scrap");
     }
 
     private static JsonObject highCarbonHeating() {
@@ -365,6 +466,14 @@ public final class MetalDataProvider implements DataProvider {
         files.add(save(output, "minecraft/tags/block/stairs", allMetalBlocks("_stairs")));
         files.add(save(output, "tfc/tags/fluid/molten_metals", allMetalFluids(false)));
         files.add(save(output, "tfc/tags/fluid/usable_in_ingot_mold", allMetalFluids(false)));
+        // the old TFCM names of TFC's common form tags
+        for (String form : List.of("sheets", "double_sheets", "double_ingots")) {
+            JsonArray values = new JsonArray();
+            values.add("#c:" + form);
+            JsonObject alias = new JsonObject();
+            alias.add("values", values);
+            files.add(save(output, "tfc/tags/item/" + form, alias));
+        }
         files.add(save(output, "c/tags/fluid/molten_metal", allMetalFluids(true)));
         for (MetalForm form : MetalForm.values()) {
             if (form != MetalForm.SLAB && form != MetalForm.STAIRS)
@@ -400,7 +509,11 @@ public final class MetalDataProvider implements DataProvider {
         boolean added = false;
         for (MetalForm metalForm : MetalForm.values()) added |= metalForm.isAddedForm() && metalForm.tag().equals(form);
         if (added) {
-            for (TfcMetal metal : TfcMetal.values()) values.add("#c:" + form + "/" + metal.id());
+            for (TfcMetal metal : TfcMetal.values()) {
+                if (!metal.isFirmaLife()) values.add("#c:" + form + "/" + metal.id());
+                else if (metal.addedForms().stream().anyMatch(addedForm -> addedForm.tag().equals(form)))
+                    values.add(ContentConditions.optional("#c:" + form + "/" + metal.id()));
+            }
         }
         json.add("values", values);
         return json;
@@ -499,19 +612,19 @@ public final class MetalDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject itemIngredient(String id) {
+    static JsonObject itemIngredient(String id) {
         JsonObject json = new JsonObject();
         json.addProperty("item", id);
         return json;
     }
 
-    private static JsonObject tagIngredient(String id) {
+    static JsonObject tagIngredient(String id) {
         JsonObject json = new JsonObject();
         json.addProperty("tag", id);
         return json;
     }
 
-    private static JsonObject item(String id, int count) {
+    static JsonObject item(String id, int count) {
         JsonObject json = new JsonObject();
         json.addProperty("count", count);
         json.addProperty("id", id);
@@ -529,7 +642,7 @@ public final class MetalDataProvider implements DataProvider {
         return forgeRules("hit_last", "hit_second_last", "hit_third_last");
     }
 
-    private static JsonArray forgeRules(String... steps) {
+    static JsonArray forgeRules(String... steps) {
         JsonArray rules = new JsonArray();
         for (String step : steps) rules.add(step);
         return rules;

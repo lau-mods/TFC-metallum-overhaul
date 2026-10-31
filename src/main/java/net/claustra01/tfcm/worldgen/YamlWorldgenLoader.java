@@ -1,6 +1,7 @@
 package net.claustra01.tfcm.worldgen;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -28,16 +29,40 @@ import net.neoforged.fml.loading.FMLPaths;
 
 public final class YamlWorldgenLoader {
     private static final Logger LOGGER = LogUtils.getLogger();
+    private static final List<String> FILES = List.of("overworld", "nether", "end");
     private static final Set<String> VEIN_TYPES = Set.of("tfc:cluster_vein", "tfc:disc_vein",
             "tfc:kaolin_disc_vein", "tfc:pipe_vein");
 
     private YamlWorldgenLoader() {
     }
 
+    /** Copies the bundled defaults for files missing from the config directory; existing files are left alone. */
+    public static void installDefaults() {
+        installDefaults(FMLPaths.CONFIGDIR.get().resolve("tfcm"));
+    }
+
+    static void installDefaults(Path directory) {
+        for (String name : FILES) {
+            Path file = directory.resolve(name + ".yaml");
+            if (Files.exists(file)) continue;
+            try (InputStream defaults = YamlWorldgenLoader.class.getResourceAsStream(defaultResource(name))) {
+                if (defaults == null) throw new IOException("missing bundled default");
+                Files.createDirectories(directory);
+                Files.copy(defaults, file);
+            } catch (IOException exception) {
+                LOGGER.warn("Could not create TFCM worldgen file {}: {}", file, exception.getMessage());
+            }
+        }
+    }
+
+    static String defaultResource(String name) {
+        return "/tfcm/worldgen/" + name + ".yaml";
+    }
+
     public static Map<String, Dimension> loadAll() {
         Path directory = FMLPaths.CONFIGDIR.get().resolve("tfcm");
         Map<String, Dimension> result = new LinkedHashMap<>();
-        for (String name : List.of("overworld", "nether", "end")) {
+        for (String name : FILES) {
             Path file = directory.resolve(name + ".yaml");
             try {
                 result.put(name, Files.exists(file) ? parse(name, Files.readString(file)) : Dimension.EMPTY);
@@ -154,7 +179,7 @@ public final class YamlWorldgenLoader {
             }
         }
         unique.values().forEach(weighted -> block(weighted.block()));
-        return new Indicator(List.copyOf(unique.values()), positiveInt(entry, "rarity", 1),
+        return new Indicator(List.copyOf(unique.values()), nonNegativeInt(entry, "rarity", 1),
                 nonNegativeInt(entry, "depth", 0), positiveInt(entry, "underground_rarity", 1),
                 nonNegativeInt(entry, "underground_count", 0));
     }

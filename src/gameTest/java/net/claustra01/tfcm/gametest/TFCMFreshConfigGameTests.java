@@ -51,6 +51,10 @@ public final class TFCMFreshConfigGameTests {
                         "The complete ore ID comment is missing");
                 require(config.contains("disabledMetals = []") && config.contains("disabledOres = []"),
                         "A generated comment changed the config values");
+                for (String name : java.util.List.of("overworld", "nether", "end")) {
+                    require(Files.isRegularFile(FMLPaths.CONFIGDIR.get().resolve("tfcm/" + name + ".yaml")),
+                            "The default worldgen file was not created: " + name);
+                }
                 require(TFCMConfig.isMetalEnabled(Metal.LEAD) && TFCMConfig.isOreEnabled("galena"),
                         "A generated comment disabled content");
                 require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse("tfcm:metal/ingot/lead"))

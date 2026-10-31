@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/topaz"
+      },
+      {
+        "model": "tfcm:block/groundcover/topaz",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/topaz",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/topaz",
+        "y": 270
+      }
+    ]
+  }
+}

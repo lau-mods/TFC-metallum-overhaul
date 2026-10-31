@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/emerald"
+      },
+      {
+        "model": "tfcm:block/groundcover/emerald",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/emerald",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/emerald",
+        "y": 270
+      }
+    ]
+  }
+}

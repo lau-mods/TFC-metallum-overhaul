@@ -1,0 +1,38 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "H": {
+      "tag": "c:handle/short"
+    },
+    "R": {
+      "tag": "c:rivets/bismuth_bronze"
+    },
+    "T": {
+      "tag": "c:rings/bismuth_bronze"
+    },
+    "X": {
+      "item": "tfc:metal/sword_blade/bismuth_bronze"
+    },
+    "Y": {
+      "item": "tfcm:metal/crossguard/bismuth_bronze"
+    }
+  },
+  "pattern": [
+    "  X",
+    "RY ",
+    "HT "
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/sword/bismuth_bronze"
+    }
+  }
+}

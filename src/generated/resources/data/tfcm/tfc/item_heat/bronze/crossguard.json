@@ -1,0 +1,8 @@
+{
+  "forging_temperature": 570.0,
+  "heat_capacity": 0.71428573,
+  "ingredient": {
+    "item": "tfcm:metal/crossguard/bronze"
+  },
+  "welding_temperature": 760.0
+}

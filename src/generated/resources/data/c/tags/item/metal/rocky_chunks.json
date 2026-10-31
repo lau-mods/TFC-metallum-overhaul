@@ -1,0 +1,144 @@
+{
+  "values": [
+    {
+      "id": "#c:metal/rocky_chunks/native_copper",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/native_gold",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/hematite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/native_silver",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/cassiterite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/bismuthinite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/garnierite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/malachite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/magnetite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/limonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/sphalerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/tetrahedrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/galena",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/magnesite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/bauxite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/uraninite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/chromite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/rutile",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/zircon",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/cobaltite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/stibnite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/native_platinum",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/wolframite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/thorianite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/native_iridium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/native_osmium",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/spodumene",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/carobbiite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/native_naquadah",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/mithril_matrix",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/cinnabar",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/cryolite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/graphite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/sulfur",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/borax",
+      "required": false
+    }
+  ]
+}

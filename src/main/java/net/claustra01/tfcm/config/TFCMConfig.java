@@ -64,7 +64,7 @@ public final class TFCMConfig {
         Arrays.stream(Ore.values()).map(Ore::id).forEach(ids::add);
         Arrays.stream(ProcessingSeries.values()).map(ProcessingSeries::id).forEach(ids::add);
         ids.addAll(TfcOre.GRADED);
-        ids.addAll(TfcOre.UNGRADED);
+        ids.addAll(TfcOre.samples());
         return List.copyOf(ids);
     }
 

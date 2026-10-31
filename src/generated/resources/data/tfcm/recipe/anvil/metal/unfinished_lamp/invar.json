@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "invar"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:ingots/invar"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/unfinished_lamp/invar"
+  },
+  "rules": [
+    "bend_last",
+    "bend_second_last",
+    "draw_third_last"
+  ],
+  "tier": 3
+}

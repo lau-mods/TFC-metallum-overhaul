@@ -1,5 +1,9 @@
 package net.claustra01.tfcm.worldgen;
 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +31,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraft.world.level.levelgen.feature.configurations.GeodeConfiguration;
 import net.minecraft.world.level.levelgen.placement.PlacedFeature;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.ModifiableBiomeInfo.BiomeInfo;
 import net.neoforged.neoforge.common.world.ModifiableBiomeInfo.BiomeInfo.Builder;
@@ -261,6 +266,62 @@ public final class TFCMWorldgenGameTests {
             helper.succeed();
         } catch (Throwable throwable) {
             helper.fail(throwable.getMessage());
+        }
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void bundledDefaultsLoadAndNeverReplaceExistingFiles(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            try {
+                List<String> warnings = new ArrayList<>();
+                var overworld = YamlWorldgenLoader.parse("overworld", bundled("overworld"), warnings::add);
+                boolean firmaLife = ModList.get().isLoaded("firmalife");
+                require(warnings.stream().allMatch(warning -> !firmaLife && warning.contains("firmalife")),
+                        "Bundled overworld.yaml has invalid entries: " + warnings);
+                require(overworld.veins().size() == (firmaLife ? 46 : 44) && overworld.geodes().size() == 3,
+                        "Bundled overworld.yaml lost entries");
+                require(overworld.veins().stream().anyMatch(vein -> vein.id().equals("tfcm:vein/carobbiite")
+                        && vein.indicator().rarity() == 0), "An indicator rarity of 0 was rejected");
+                overworld.veins().forEach(CustomWorldgenBiomeModifier::placedVein);
+                var nether = YamlWorldgenLoader.parse("nether", bundled("nether"));
+                var end = YamlWorldgenLoader.parse("end", bundled("end"));
+                require(nether.veins().isEmpty() && nether.geodes().isEmpty()
+                        && end.veins().isEmpty() && end.geodes().isEmpty(),
+                        "Nether and End must not generate anything by default");
+
+                Path directory = Files.createTempDirectory("tfcm-worldgen");
+                Path existing = directory.resolve("nether.yaml");
+                Files.writeString(existing, "veins: []\n# mine\n");
+                YamlWorldgenLoader.installDefaults(directory);
+                require(Files.readString(existing).equals("veins: []\n# mine\n"), "An existing file was overwritten");
+                require(Files.readString(directory.resolve("overworld.yaml")).equals(bundled("overworld"))
+                        && Files.readString(directory.resolve("end.yaml")).equals(bundled("end")),
+                        "Missing files did not get the bundled defaults");
+            } catch (IOException exception) {
+                throw new GameTestAssertException("Cannot read worldgen defaults: " + exception.getMessage());
+            }
+        });
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void veinReplacementKeepsNonOreVeins(GameTestHelper helper) {
+        helper.succeedIf(() -> {
+            for (String kept : List.of("vein/gravel", "vein/kaolin_disc", "vein/granite_dike")) {
+                require(!CustomWorldgenBiomeModifier.isTFCVein(placed(helper, "tfc", kept)), "Replaced " + kept);
+            }
+            require(CustomWorldgenBiomeModifier.isTFCVein(placed(helper, "tfc", "vein/normal_malachite")),
+                    "An ore vein was kept");
+            if (ModList.get().isLoaded("firmalife")) {
+                require(CustomWorldgenBiomeModifier.isTFCVein(placed(helper, "firmalife", "vein/normal_chromite")),
+                        "FirmaLife's vein would generate twice");
+            }
+        });
+    }
+
+    private static String bundled(String name) throws IOException {
+        try (var stream = YamlWorldgenLoader.class.getResourceAsStream(YamlWorldgenLoader.defaultResource(name))) {
+            require(stream != null, "Missing bundled " + name);
+            return new String(stream.readAllBytes(), StandardCharsets.UTF_8);
         }
     }
 

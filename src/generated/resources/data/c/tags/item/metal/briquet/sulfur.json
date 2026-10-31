@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "tfcm:ore_processing/briquet/sulfur",
+      "required": false
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten_steel"
+    }
+  ],
+  "type": "tfc:anvil",
+  "ingredient": {
+    "tag": "c:ingots/tungsten_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/unfinished_lamp/tungsten_steel"
+  },
+  "rules": [
+    "bend_last",
+    "bend_second_last",
+    "draw_third_last"
+  ],
+  "tier": 7
+}

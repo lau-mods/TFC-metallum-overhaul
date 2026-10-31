@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/opal"
+      },
+      {
+        "model": "tfcm:block/groundcover/opal",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/opal",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/opal",
+        "y": 270
+      }
+    ]
+  }
+}

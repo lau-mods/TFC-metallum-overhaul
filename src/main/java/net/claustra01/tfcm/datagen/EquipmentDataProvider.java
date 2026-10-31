@@ -57,6 +57,17 @@ public final class EquipmentDataProvider implements DataProvider {
                         armorWelding(metal, armor)));
             }
             files.add(save(output, data, "tfcm/recipe/crafting/metal/horse_armor/" + metal.getSerializedName(), horseArmor(metal)));
+            files.add(save(output, data, "tfcm/recipe/crafting/metal/fishing_rod/" + metal.getSerializedName(), fishingRod(metal)));
+            files.add(save(output, data, "tfcm/recipe/anvil/metal/unfinished_lamp/" + metal.getSerializedName(), unfinishedLamp(metal)));
+            files.add(save(output, data, "tfcm/recipe/heating/metal/unfinished_lamp/" + metal.getSerializedName(),
+                    heating(metal, "unfinished_lamp", 100, false)));
+            files.add(save(output, data, "tfcm/tfc/item_heat/" + metal.getSerializedName() + "/unfinished_lamp",
+                    itemHeat(metal, "unfinished_lamp", 100, false)));
+            files.add(save(output, data, "tfcm/tfc/item_size/" + metal.getSerializedName() + "/unfinished_lamp",
+                    itemSize(metal, "unfinished_lamp", "normal", "medium", false)));
+            files.add(save(output, data, "tfc/tags/item/metal_item/" + metal.getSerializedName(), metalItemTag(metal)));
+            files.add(save(output, data, "tfc/tags/item/metal_item/" + metal.getSerializedName() + "_tools",
+                    optionalValues("tfcm:metal/tongs/" + metal.getSerializedName())));
             files.add(save(output, data, "tfcm/recipe/crafting/metal/anvil/" + metal.getSerializedName(), anvilCraft(metal)));
             files.add(save(output, data, "tfcm/recipe/heating/metal/anvil/" + metal.getSerializedName(), anvilHeating(metal)));
             files.add(save(output, data, "tfcm/tfc/item_heat/" + metal.getSerializedName() + "/anvil", anvilItemHeat(metal)));
@@ -65,6 +76,23 @@ public final class EquipmentDataProvider implements DataProvider {
             files.add(save(output, assets, "tfcm/blockstates/metal/anvil/" + metal.getSerializedName(), anvilBlockstate(metal)));
         }
         files.add(save(output, data, "tfc/tags/block/anvils", anvilTag()));
+        files.add(save(output, data, "tfc/tags/item/anvils", anvilTag()));
+        files.add(save(output, data, "tfc/tags/item/blast_furnace_tuyeres", toolTag(ToolPart.TUYERE)));
+        files.add(save(output, data, "tfc/tags/item/trip_hammers", toolTag(ToolPart.HAMMER)));
+        files.add(save(output, data, "tfc/tags/item/holds_large_fishing_bait", toolTag(ToolPart.FISHING_ROD)));
+        for (ToolMetal metal : ToolMetal.values()) {
+            JsonObject tools = toolTagFor(metal, ToolPart.TUYERE, ToolPart.FISHING_ROD, ToolPart.PICKAXE, ToolPart.PROPICK,
+                    ToolPart.AXE, ToolPart.SHOVEL, ToolPart.HOE, ToolPart.CHISEL, ToolPart.HAMMER, ToolPart.SAW,
+                    ToolPart.JAVELIN, ToolPart.SWORD, ToolPart.MACE, ToolPart.KNIFE, ToolPart.SCYTHE, ToolPart.SHEARS);
+            addAreaTools(tools, metal.getSerializedName());
+            files.add(save(output, data, "tfc/tags/item/tools/" + metal.getSerializedName(), tools));
+        }
+        for (AreaToolMetal metal : AreaToolMetal.values()) {
+            if (metal.isTFCM()) continue;
+            JsonObject tools = optionalValues();
+            addAreaTools(tools, metal.id());
+            files.add(save(output, data, "tfc/tags/item/tools/" + metal.id(), tools));
+        }
         files.add(save(output, data, "tfc/tags/item/usable_on_tool_rack", toolRack()));
         files.add(save(output, data, "minecraft/tags/item/pickaxes", toolTagWithArea(ToolPart.PICKAXE,
                 AreaToolType.MINING_HAMMER, AreaToolType.QUARRY_HAMMER)));
@@ -281,6 +309,55 @@ public final class EquipmentDataProvider implements DataProvider {
         return json;
     }
 
+    private static JsonObject fishingRod(ToolMetal metal) {
+        JsonObject json = conditioned(metal);
+        json.addProperty("type", "tfc:advanced_shaped_crafting");
+        json.addProperty("input_column", 1);
+        json.addProperty("input_row", 2);
+        JsonArray pattern = new JsonArray();
+        pattern.add("  S");
+        pattern.add(" SL");
+        pattern.add("SXL");
+        json.add("pattern", pattern);
+        JsonObject key = new JsonObject();
+        key.add("L", tag("c:strings"));
+        key.add("S", tag("c:rods/wooden"));
+        key.add("X", item(id(metal, ToolPart.FISH_HOOK)));
+        json.add("key", key);
+        json.add("result", TfcToolAssemblyDataProvider.bonusResult(id(metal, ToolPart.FISHING_ROD)));
+        return json;
+    }
+
+    private static JsonObject unfinishedLamp(ToolMetal metal) {
+        JsonObject json = conditioned(metal);
+        json.addProperty("type", "tfc:anvil");
+        json.add("ingredient", tag("c:ingots/" + metal.getSerializedName()));
+        json.add("result", result("tfcm:metal/unfinished_lamp/" + metal.getSerializedName()));
+        JsonArray rules = new JsonArray();
+        rules.add("bend_last");
+        rules.add("bend_second_last");
+        rules.add("draw_third_last");
+        json.add("rules", rules);
+        json.addProperty("tier", metal.toolTier().level());
+        return json;
+    }
+
+    private static JsonObject metalItemTag(ToolMetal metal) {
+        return optionalValues("tfcm:metal/tongs/" + metal.getSerializedName(),
+                "tfcm:metal/tong_part/" + metal.getSerializedName(),
+                "tfcm:metal/crossguard/" + metal.getSerializedName(),
+                "tfcm:metal/pommel/" + metal.getSerializedName());
+    }
+
+    private static JsonObject optionalValues(String... ids) {
+        JsonObject json = new JsonObject();
+        JsonArray values = new JsonArray();
+        for (String id : ids) values.add(ContentConditions.optional(id));
+        json.add("values", values);
+        json.addProperty("replace", false);
+        return json;
+    }
+
     private static JsonObject anvilCraft(ToolMetal metal) {
         JsonObject json = conditioned(metal);
         json.addProperty("type", "minecraft:crafting_shaped");
@@ -451,6 +528,17 @@ public final class EquipmentDataProvider implements DataProvider {
         json.add("values", values);
         json.addProperty("replace", false);
         return json;
+    }
+
+    private static JsonObject toolTagFor(ToolMetal metal, ToolPart... parts) {
+        String[] ids = new String[parts.length];
+        for (int index = 0; index < parts.length; index++) ids[index] = id(metal, parts[index]);
+        return optionalValues(ids);
+    }
+
+    private static void addAreaTools(JsonObject tag, String metal) {
+        for (AreaToolType type : AreaToolType.values())
+            tag.getAsJsonArray("values").add(ContentConditions.optional("tfcm:metal/" + type.id() + "/" + metal));
     }
 
     private static JsonObject toolTagWithArea(ToolPart part, AreaToolType... types) {

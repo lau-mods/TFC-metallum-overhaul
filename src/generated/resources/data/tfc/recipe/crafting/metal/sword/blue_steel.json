@@ -1,0 +1,41 @@
+{
+  "type": "tfc:advanced_shaped_crafting",
+  "input_column": 2,
+  "input_row": 0,
+  "key": {
+    "H": {
+      "item": "tfcm:metal/pommel/blue_steel"
+    },
+    "L": {
+      "tag": "c:leather/string"
+    },
+    "R": {
+      "tag": "c:rivets/blue_steel"
+    },
+    "T": {
+      "tag": "c:rings/blue_steel"
+    },
+    "X": {
+      "item": "tfc:metal/sword_blade/blue_steel"
+    },
+    "Y": {
+      "item": "tfcm:metal/crossguard/blue_steel"
+    }
+  },
+  "pattern": [
+    "L X",
+    "RY ",
+    "HTL"
+  ],
+  "result": {
+    "modifiers": [
+      {
+        "type": "tfc:copy_forging_bonus"
+      }
+    ],
+    "stack": {
+      "count": 1,
+      "id": "tfc:metal/sword/blue_steel"
+    }
+  }
+}
