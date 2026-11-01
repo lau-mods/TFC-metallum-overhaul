@@ -388,6 +388,19 @@ public final class TFCMMetalGameTests {
             for (String alloy : alloys) {
                 require(recipe(helper, "alloy/" + alloy) instanceof AlloyRecipe, "Missing alloy recipe " + alloy);
             }
+            AlloyRecipe ferroboron = (AlloyRecipe) recipe(helper, "alloy/ferroboron");
+            require(ferroboron.matches(alloy(47, "tfcm:metal/boron", 53, "tfc:metal/steel"))
+                    && !ferroboron.matches(alloy(40, "tfcm:metal/boron", 60, "tfc:metal/steel")),
+                    "Ferroboron must allow 45-55% and nothing wider");
+            AlloyRecipe zircaloy = (AlloyRecipe) recipe(helper, "alloy/zircaloy");
+            require(zircaloy.matches(alloy(875, "tfcm:metal/zirconium", 125, "tfc:metal/tin"))
+                    && zircaloy.matches(alloy(89, "tfcm:metal/zirconium", 11, "tfc:metal/tin"))
+                    && !zircaloy.matches(alloy(80, "tfcm:metal/zirconium", 20, "tfc:metal/tin")),
+                    "Zircaloy must allow 85-90% Zirconium");
+            AlloyRecipe hsla = (AlloyRecipe) recipe(helper, "alloy/hsla_steel");
+            require(hsla.matches(alloy(15, "tfc:metal/cast_iron", 1, "tfc:metal/steel"))
+                    && !hsla.matches(alloy(99, "tfc:metal/cast_iron", 1, "tfc:metal/steel")),
+                    "HSLA Steel must allow 92-96% Cast Iron");
             AlloyRecipe constantan = (AlloyRecipe) recipe(helper, "alloy/constantan");
             require(constantan.matches(alloy(50, "tfc:metal/copper", 50, "tfc:metal/nickel")),
                     "Constantan rejects a valid 50/50 alloy");

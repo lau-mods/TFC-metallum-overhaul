@@ -25,6 +25,7 @@ import net.minecraft.world.level.block.LiquidBlock;
 import net.minecraft.world.level.block.Blocks;
 import net.dries007.tfc.common.blocks.MoltenFluidBlock;
 import net.minecraft.world.level.block.SlabBlock;
+import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
@@ -77,7 +78,8 @@ public final class TFCMBlocks {
         for (ToolMetal metal : ToolMetal.values()) {
             if (!TFCMConfig.isMetalEnabled(metal.metal())) continue;
             ANVILS.put(metal, BLOCKS.register("metal/anvil/" + metal.getSerializedName(),
-                    () -> new AnvilBlock(ExtendedProperties.of(MapColor.METAL).strength(5, 10)
+                    () -> new AnvilBlock(ExtendedProperties.of().mapColor(metal.mapColor()).noOcclusion()
+                            .sound(SoundType.ANVIL).strength(10, 10)
                             .requiresCorrectToolForDrops().blockEntity(TFCBlockEntities.ANVIL),
                             metal.toolTier().level())));
         }

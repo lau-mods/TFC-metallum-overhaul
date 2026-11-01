@@ -17,13 +17,13 @@
   "contents": [
     {
       "fluid": "tfcm:metal/ferroboron",
-      "max": 0.5,
-      "min": 0.5
+      "max": 0.55,
+      "min": 0.45
     },
     {
       "fluid": "tfcm:metal/lithium",
-      "max": 0.5,
-      "min": 0.5
+      "max": 0.55,
+      "min": 0.45
     }
   ],
   "result": "tfcm:metal/tough_alloy"

@@ -13,13 +13,13 @@
   "contents": [
     {
       "fluid": "tfcm:metal/zirconium",
-      "max": 0.875,
-      "min": 0.875
+      "max": 0.9,
+      "min": 0.85
     },
     {
       "fluid": "tfc:metal/tin",
-      "max": 0.125,
-      "min": 0.125
+      "max": 0.15,
+      "min": 0.1
     }
   ],
   "result": "tfcm:metal/zircaloy"

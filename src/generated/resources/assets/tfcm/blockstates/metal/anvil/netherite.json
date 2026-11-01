@@ -2,18 +2,18 @@
   "variants": {
     "facing=east": {
       "model": "tfcm:block/metal/anvil/netherite",
-      "y": 90
+      "y": 180
     },
     "facing=north": {
-      "model": "tfcm:block/metal/anvil/netherite"
+      "model": "tfcm:block/metal/anvil/netherite",
+      "y": 90
     },
     "facing=south": {
       "model": "tfcm:block/metal/anvil/netherite",
-      "y": 180
+      "y": 270
     },
     "facing=west": {
-      "model": "tfcm:block/metal/anvil/netherite",
-      "y": 270
+      "model": "tfcm:block/metal/anvil/netherite"
     }
   }
 }

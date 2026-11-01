@@ -18,6 +18,7 @@
 - 高炭素中間素材は`tfcm:metal/ingot/high_carbon_tungsten_steel`、独立流体は`tfcm:molten_andesite`とする。金属別データには`tfcm:metal_enabled` load conditionを付ける。
 - `MetalDataProvider`がcasting、anvil、welding、heating、alloy、fluid/item heat、item size、common item/block/fluid tag、採掘tag、block lootを`src/generated/resources`へ生成する。変更後は`./gradlew runData`で生成物を同期する。
 - Double IngotとDouble SheetのWelding tierはTFCと同じく金属tierの1つ下（最小0）とし、同金属の金床を作る前に製作できるようにする。Metal Block、Slab、Stairsの表示名はTFCと同じ`<Metal> Plated Block/Slab/Stairs`とする。
+- 合金の範囲はConstantan、Electrumが各40–60%、InvarがWrought Iron 60–70%とNickel 30–40%、Osmiridiumが60–80%と20–40%、SolderがAntimony 40–60%とBismuth・Tin各20–40%、Andesite Alloyが89–91%と9–11%、Ferroboron、Tough Alloy、Super Alloyが各45–55%、ZircaloyがZirconium 85–90%とTin 10–15%、HSLA SteelがCast Iron 92–96%とSteel 4–8%とする。
 - Metal BlockはTFCと同じくHammer損耗、Sheet 4個、`#minecraft:planks`から8個、Slabは3個から6個、Stairsは6個から8個を作る。High Carbon Tungsten SteelはTungsten IngotとBlack Steel Ingotのtier 6 Welding、Netherite IngotはNetherite ScrapとBlack Steel Ingotのtier 6 Weldingでも作り、Netherite ScrapにはNetherite Ingotと同じheatを定義する。
 - M02のGameTestは登録参照、仕様値とheat、鋳造、金床・溶接、合金、Andesite Alloyを検証する。`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを実行する。
 
@@ -51,7 +52,7 @@
 - Fishing RodはTFCと同じ` S/ SL/SXL`（X=Fish Hook）で組み立てる。
 - `TfcToolAssemblyDataProvider`はTFC Metal Tools 1.0.7の組立をTFCの工具金属9種へ適用する。13工具の完成品はTFCの同一ID `tfc:crafting/metal/<tool>/<metal>`を置換し、tier 2以下は`NX/HG`、tier 3以上は` NX/GHR/RL `を基本にする。CopperのPickaxe/Propickは`NX/HN`（`#c:string/plant`）、Sawは`GX/HG`（`#c:string`）の紐組立とする。工具ごとの例外は同classの表を正本とし、Headの鍛造bonusは`input_row`/`input_column`で引き継ぐ。Shearsは`tfcm:crafting/metal/shears/<metal>`を追加し、TFCのWeldingも残す。
 - 9金属のCrossguardはRod 1→2のAnvil（`bend_last,draw_second_last,draw_third_last`、bonusあり）、PommelはRing 2個のtier 1 Weldingで作り、溶融量は25/24 mBとする。textureはTFC Metal Toolsの各金属の画像をそのまま使う（金属ごとに輪郭が異なる）。
-- 4金属の金床tierは`3/5/6/7`。同金属のDouble Ingot 7個で製作し、Heatingで同金属1400 mBへ戻す。TFC Anvil block entityと`tfc:anvils`、pickaxe採掘tagへ統合する。
+- 4金属の金床はTFCと同じく`noOcclusion`、`SoundType.ANVIL`、`strength(10, 10)`、blockstateの回転は`north=90,east=180,south=270,west=0`とする。tierは`3/5/6/7`。同金属のDouble Ingot 7個で製作し、Heatingで同金属1400 mBへ戻す。TFC Anvil block entityと`tfc:anvils`、pickaxe採掘tagへ統合する。
 - `tfc:blast_furnace_tuyeres`、`tfc:trip_hammers`、`tfc:holds_large_fishing_bait`、`tfc:anvils`（item）、`tfc:tools/<metal>`、`tfc:metal_item/<metal>`へ該当品を追加する。`tfc:sheets`、`tfc:double_sheets`、`tfc:double_ingots`は旧TFCMの別名で`c:`の同名tagを含む。Anvil recipeの鍛造bonus指定はTFC 4.2.12のcodecどおり`apply_bonus`であり、`apply_forging_bonus`ではない。
 - `EquipmentDataProvider`が装備のAnvil/Welding/Crafting/Heating、item heat・size、tool/tag、model、金床のrecipe・loot・blockstateを`src/generated/resources`へ生成する。変更後は`./gradlew runData`、`./gradlew classes build runGameTestServer`、`node tests/e2e/equipment-anvils.mjs`で検証する。
 

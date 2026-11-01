@@ -208,13 +208,13 @@ public final class MetalDataProvider implements DataProvider {
         files.add(save(output, "tfcm/recipe/alloy/andesite_alloy_tin", alloy(Metal.ANDESITE_ALLOY,
                 range("tfcm:molten_andesite", .89, .91), range("tfc:metal/tin", .09, .11))));
         files.add(save(output, "tfcm/recipe/alloy/ferroboron", alloy(Metal.FERROBORON,
-                range("tfcm:metal/boron", .5, .5), range("tfc:metal/steel", .5, .5))));
+                range("tfcm:metal/boron", .45, .55), range("tfc:metal/steel", .45, .55))));
         files.add(save(output, "tfcm/recipe/alloy/tough_alloy", alloy(Metal.TOUGH_ALLOY,
-                range("tfcm:metal/ferroboron", .5, .5), range("tfcm:metal/lithium", .5, .5))));
+                range("tfcm:metal/ferroboron", .45, .55), range("tfcm:metal/lithium", .45, .55))));
         files.add(save(output, "tfcm/recipe/alloy/zircaloy", alloy(Metal.ZIRCALOY,
-                range("tfcm:metal/zirconium", .875, .875), range("tfc:metal/tin", .125, .125))));
+                range("tfcm:metal/zirconium", .85, .9), range("tfc:metal/tin", .1, .15))));
         files.add(save(output, "tfcm/recipe/alloy/hsla_steel", alloy(Metal.HSLA_STEEL,
-                range("tfc:metal/cast_iron", .9375, .9375), range("tfc:metal/steel", .0625, .0625))));
+                range("tfc:metal/cast_iron", .92, .96), range("tfc:metal/steel", .04, .08))));
         files.add(save(output, "tfcm/recipe/alloy/super_alloy", alloy(Metal.SUPER_ALLOY,
                 range("tfcm:metal/tough_alloy", .45, .55), range("tfcm:metal/titanium", .45, .55))));
     }

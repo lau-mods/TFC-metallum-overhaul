@@ -3,6 +3,7 @@ package net.claustra01.tfcm.datagen;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
 import com.google.gson.JsonArray;
@@ -555,18 +556,14 @@ public final class EquipmentDataProvider implements DataProvider {
     private static JsonObject anvilBlockstate(ToolMetal metal) {
         JsonObject json = new JsonObject();
         JsonObject variants = new JsonObject();
-        JsonObject north = new JsonObject();
-        north.addProperty("model", "tfcm:block/metal/anvil/" + metal.getSerializedName());
-        variants.add("facing=north", north);
-        JsonObject south = north.deepCopy();
-        south.addProperty("y", 180);
-        variants.add("facing=south", south);
-        JsonObject west = north.deepCopy();
-        west.addProperty("y", 270);
-        variants.add("facing=west", west);
-        JsonObject east = north.deepCopy();
-        east.addProperty("y", 90);
-        variants.add("facing=east", east);
+        // TFC's own rotations: the model faces west
+        Map<String, Integer> rotations = Map.of("facing=north", 90, "facing=east", 180, "facing=south", 270, "facing=west", 0);
+        rotations.forEach((facing, rotation) -> {
+            JsonObject variant = new JsonObject();
+            variant.addProperty("model", "tfcm:block/metal/anvil/" + metal.getSerializedName());
+            if (rotation != 0) variant.addProperty("y", rotation);
+            variants.add(facing, variant);
+        });
         json.add("variants", variants);
         return json;
     }
