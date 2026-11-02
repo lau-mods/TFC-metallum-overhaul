@@ -5,10 +5,10 @@
       "metal": "aluminum"
     }
   ],
-  "forging_temperature": 1044.0,
+  "forging_temperature": 396.0,
   "heat_capacity": 1.4285716,
   "ingredient": {
     "item": "tfcm:metal/plate/aluminum"
   },
-  "welding_temperature": 1392.0
+  "welding_temperature": 528.0
 }

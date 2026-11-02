@@ -62,7 +62,7 @@ Expected Result: 依存関係の不一致として明確に拒否される。旧
 | `titanium` | 5 | 1700 | ○ |
 | `cobalt` | 3 | 1700 | — |
 | `lithium` | 3 | 181 | — |
-| `aluminum` | 3 | 1740 | — |
+| `aluminum` | 3 | 660 | — |
 | `constantan` | 1 | 1250 | — |
 | `invar` | 3 | 1250 | ○ |
 | `electrum` | 1 | 1000 | — |

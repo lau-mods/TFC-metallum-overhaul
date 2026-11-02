@@ -289,7 +289,7 @@ public final class TFCMMetalGameTests {
     public static void metalSpecificationValuesMatch(GameTestHelper helper) {
         helper.succeedIf(() -> {
             int[] tiers = {3,3,7,3,3,3,2,2,2,2,1,5,3,3,3,1,3,1,1,3,3,3,7,6,1,2,7,7,3,3,2,3,2,7,5,5,5,5,5};
-            int[] melts = {1535,1730,2000,1535,1535,1500,940,940,940,940,630,1700,1700,181,1740,1250,1250,1000,330,1130,1535,400,1535,1535,1000,520,2000,2000,2076,1750,650,1287,1855,3000,1500,1600,1855,1450,1800};
+            int[] melts = {1535,1730,2000,1535,1535,1500,940,940,940,940,630,1700,1700,181,660,1250,1250,1000,330,1130,1535,400,1535,1535,1000,520,2000,2000,2076,1750,650,1287,1855,3000,1500,1600,1855,1450,1800};
             // Values from Metallum 1.5.1, independent of the implementation enum.
             int[] colors = {0xFF6F6C6B, 0xFF627C8B, 0xFF4D5742, 0xFFADC4CE, 0xFFA5B4CA, 0xFF718383, 0xFF8DB4BC, 0xFF888CCC, 0xFFE2B446, 0xFF473752, 0xFFB4AFBD, 0xFF898B93, 0xFF175AB3, 0xFFC5CBD1, 0xFF929799, 0xFFA45B49, 0xFF869A97, 0xFFA67F3A, 0xFF393D4A, 0xFF4E5946, 0xFF585F6B, 0xFF888888, 0xFF2F353E, 0xFF111111, 0xFFB18143, 0xFF757E76, 0xFF6C3F99, 0xFFE06100, 0xFF676767, 0xFF242424, 0xFFBCA3BA, 0xFFD3DCC3, 0xFFDFE0B7, 0xFF120E1A, 0xFF3D3D3D, 0xFF130F1B, 0xFFBABAB0, 0xFF726C9B, 0xFF62595C};
             float[] capacities = {0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.012f, 0.01f, 0.01f, 0.01f, 0.0042857146f, 0.008571429f, 0.00857f, 0.0054545454f, 0.023076924f, 0.025f, 0.015f, 0.008571429f, 0.015f, 0.015f, 0.0054545454f, 0.012f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f};
@@ -322,6 +322,8 @@ public final class TFCMMetalGameTests {
             require(Metal.AWAKENED_DRACONIUM.forgingTemperature() == 1200
                     && Metal.AWAKENED_DRACONIUM.weldingTemperature() == 1600,
                     "Awakened Draconium temperatures are not fixed");
+            require(Metal.ALUMINUM.forgingTemperature() == 396 && Metal.ALUMINUM.weldingTemperature() == 528,
+                    "Aluminum working temperatures do not follow its 660 C melting point");
         });
     }
 

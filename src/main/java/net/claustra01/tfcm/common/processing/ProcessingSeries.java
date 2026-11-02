@@ -17,7 +17,7 @@ public enum ProcessingSeries {
     TETRAHEDRITE(SandPile.BLACK, "schist", "dolomite", "pyrite", "sphalerite", "tfc:metal/copper", 1080, true, false),
     GALENA(SandPile.BLACK, "limestone", "dolomite", "amethyst", "sphalerite", "tfcm:metal/lead", 330, true, false),
     MAGNESITE(SandPile.WHITE, "dolomite", "gabbro", "opal", "limonite", "tfcm:metal/magnesium", 650, true, false),
-    BAUXITE(SandPile.RED, "claystone", "shale", "sapphire", "hematite", "tfcm:metal/aluminum", 1740, true, false),
+    BAUXITE(SandPile.RED, "claystone", "shale", "sapphire", "hematite", "tfcm:metal/aluminum", 660, true, false),
     URANINITE(SandPile.BLACK, "granite", "gneiss", null, "galena", "tfcm:metal/uranium", 1130, true, false),
     CHROMITE(SandPile.BLACK, "gabbro", "basalt", "ruby", "cobaltite", "firmalife:metal/chromium", 1250, true, true),
     RUTILE(SandPile.RED, "gneiss", "schist", "sapphire", "hematite", "tfcm:metal/titanium", 1700, true, false),

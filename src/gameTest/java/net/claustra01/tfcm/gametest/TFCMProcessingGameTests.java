@@ -215,6 +215,13 @@ public final class TFCMProcessingGameTests {
             checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 4);
             checkHeating(helper, series, ProcessingForm.PELLET, 20, "tfc:metal/copper");
             checkHeating(helper, series, ProcessingForm.BRIQUET, 80, "tfc:metal/copper");
+            require(ProcessingSeries.BAUXITE.recoveryTemperature() == 660,
+                    "Bauxite recovery temperature differs from aluminum's melting point");
+            for (ProcessingForm form : List.of(ProcessingForm.POWDER, ProcessingForm.PELLET, ProcessingForm.BRIQUET)) {
+                HeatingRecipe aluminum = (HeatingRecipe) recipe(helper,
+                        "heating/ore_processing/" + form.id() + "/bauxite");
+                require(aluminum.getTemperature() == 660, "Wrong bauxite heating temperature for " + form.id());
+            }
         });
     }
 

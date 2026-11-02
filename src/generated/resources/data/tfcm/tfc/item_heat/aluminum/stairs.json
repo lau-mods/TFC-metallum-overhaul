@@ -5,10 +5,10 @@
       "metal": "aluminum"
     }
   ],
-  "forging_temperature": 1044.0,
+  "forging_temperature": 396.0,
   "heat_capacity": 1.0714287,
   "ingredient": {
     "item": "tfcm:metal/block/aluminum_stairs"
   },
-  "welding_temperature": 1392.0
+  "welding_temperature": 528.0
 }
