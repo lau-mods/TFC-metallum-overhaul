@@ -4,6 +4,9 @@ Uses OKLab lightness endpoints; L retains chroma and hue except for sRGB gamut
 fitting.
 """
 from PIL import Image
+from PIL import UnidentifiedImageError
+from io import BytesIO
+import zlib
 
 
 def pixels(image):
@@ -88,5 +91,31 @@ def recolor(shape, colors, fixed=()):
     return out
 
 def load(path):
-    return Image.open(path).convert('RGBA')
+    try:
+        return Image.open(path).convert('RGBA')
+    except UnidentifiedImageError:
+        # Some original TFC shears have a bad iCCP checksum, while their pixel
+        # chunks are valid. Keep the original file; ignore only that invalid
+        # optional color profile in memory for pixel decoding only.
+        raw = path.read_bytes()
+        if raw[:8] != b'\x89PNG\r\n\x1a\n':
+            raise
+        clean = bytearray(raw[:8])
+        offset,removed = 8,False
+        while offset < len(raw):
+            length = int.from_bytes(raw[offset:offset+4],'big')
+            chunk = raw[offset:offset+12+length]
+            if len(chunk) != length+12:
+                raise
+            valid = zlib.crc32(chunk[4:-4]) == int.from_bytes(chunk[-4:],'big')
+            if not valid:
+                if chunk[4:8] != b'iCCP':
+                    raise
+                removed = True
+            else:
+                clean.extend(chunk)
+            offset += length+12
+        if not removed:
+            raise
+        return Image.open(BytesIO(clean)).convert('RGBA')
 

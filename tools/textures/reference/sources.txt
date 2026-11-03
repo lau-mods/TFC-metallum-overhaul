@@ -1,6 +1,7 @@
 Named original PNGs; no resizing or color conversion. Source licences apply (see LICENCE).
 
-tfc/: TerraFirmaCraft 4.2.12
+tfc/: TerraFirmaCraft 4.2.12 (Shears originals include invalid iCCP checksums; original files are retained, and only this optional profile is ignored during pixel decoding.)
+tfc/horse_armor_entity/<metal>.png: assets/tfc/textures/entity/horse/armor/horse_armor_<metal>.png in the same TFC jar.
 moreitems/: TFC More Items 1.2.1
 metaltools/: TFC Metal Tools 1.0.7
 hotornot/: TFC Hot or Not, CurseForge file 7342480

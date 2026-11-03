@@ -86,6 +86,10 @@ METAL_BASES = {'compressed_iron': 'wrought_iron',
 TFC_METALS = set("bismuth bismuth_bronze black_bronze black_steel blue_steel brass bronze cast_iron copper gold nickel red_steel rose_gold silver steel sterling_silver tin wrought_iron zinc".split())
 ARMOR_BASES = dict(invar='wrought_iron', titanium='black_steel', tungsten_steel='steel', netherite='black_bronze')
 PROJECTILE_BASES = dict(invar=('wrought_iron','steel'), titanium=('steel','wrought_iron'), tungsten_steel=('red_steel','blue_steel'), netherite=('red_steel','blue_steel'))
+# Geometry follows the established equipment design, independently of METAL_BASES
+# (the material chosen for lightness). Red Steel tool silhouettes must not become
+# Black Steel silhouettes when the palette's lightness reference changes.
+TOOL_SHAPES = PROJECTILE_BASES
 STANDARD = {'ingot','double_ingot','sheet','double_sheet','rod'}
 EXTENDED = {'foil','gear','heavy_sheet','nail','ring','rivet','screw','stamen','wire'}
 ARMOR = {'helmet','chestplate','greaves','boots','unfinished_helmet','unfinished_chestplate','unfinished_greaves','unfinished_boots','horse_armor'}
@@ -117,10 +121,42 @@ def build_recipes(image):
         others = [pixels(image(p)) for p in comparisons]
         assert all(len(p)==len(a) for p in others)
         return [i for i,p in enumerate(a) if p[3] and all(v[i]==p for v in others)]
-    def other(base):
+    def tool_fixed(form, shape, comparisons):
+        result=set(fixed(shape,comparisons))
+        a=pixels(image(shape));others=[pixels(image(p)) for p in comparisons]
+        def brown(p):
+            return p[3] and p[0]-p[1]>=8 and p[1]-p[2]>=5
+        # Knife/shears grip shading differs by a few RGB steps across original
+        # TFC metals. Exact color equality alone would recolor those grip pixels.
+        result.update(i for i,p in enumerate(a) if brown(p) and all(
+            brown(q[i]) and max(abs(x-y) for x,y in zip(p,q[i]))<=5 for q in others))
+        if form=='shears':
+            # Shears share the same grip outline across metals. Use the neutral
+            # Wrought Iron original to identify the whole brown grip, including
+            # blended boundary pixels, then keep this shape's actual TFC colors.
+            grip=pixels(image(tfc('shears','wrought_iron')))
+            result.update(i for i,p in enumerate(grip) if brown(p))
+        return sorted(result)
+    def other(base, form=None):
+        # Red/Blue Steel fishing rods have a black grip; other tiers have wood.
+        # Compare the same grip type when identifying the fixed, nonmetal pixels.
+        if base=='black_steel' and form=='fishing_rod':
+            return 'steel'
         return 'red_steel' if base=='black_steel' else 'steel' if base=='wrought_iron' else 'wrought_iron'
+    def armor_fixed(shape):
+        # These original TFC styles have brown leather against cool metal.
+        # Restrict material detection to those styles, before palette transfer:
+        # brown pixels in a warm-colored metal are not automatically leather.
+        path=Path(shape);base=path.stem.split('_layer_')[0]
+        leather=(base in ('steel','black_steel') and
+                 path.parent.name in ('chestplate','greaves','boots','armor'))
+        # Black Bronze boots also have cream bindings and dark brown footwear.
+        bindings=base=='black_bronze' and path.parent.name=='boots'
+        return [i for i,(r,g,b,a) in enumerate(pixels(image(shape)))
+                if a and ((leather and r>g>b) or (bindings and r>=g>b))]
     def add(path, shape, palette_source=None, tone=None, **options):
-        recipe = dict(output=str(path.relative_to(ASSETS)), shape=shape, size=list(Image.open(path).size), **options)
+        size=Image.open(path).size if path.exists() else image(shape).size
+        recipe = dict(output=str(path.relative_to(ASSETS)), shape=shape, size=list(size), **options)
         if palette_source:
             recipe['palette'] = palette_source
         if tone and Path(path).stem not in SOURCE_RANGE:
@@ -149,18 +185,24 @@ def build_recipes(image):
             tool=AREA[form.removesuffix('_head')]
             tone=tfc(tool+('_head' if form.endswith('_head') else ''),base)
             if not form.endswith('_head'):
-                variants=[set(pixels(image(project(p)))) for p in path.parent.glob('*.png')]
-                wood=set.intersection(*variants)
+                # The authored area-tool handles use the TFC Hammer's wood.
+                # Some silhouettes omit its brightest shade entirely, so an
+                # intersection across all area tools loses valid wooden pixels.
+                wood=set(pixels(image(tfc('hammer','wrought_iron')))) & set(pixels(image(tfc('hammer','steel'))))
                 options['fixed']=[i for i,p in enumerate(pixels(image(shape))) if p[3] and p in wood]
                 options['tone_fixed']=fixed(tone,[tfc(tool,other(base))])
         elif form in ('crossguard','pommel'):
-            shape=tone=ref(f'metaltools/{form}/{base}.png')
+            shape_base=TOOL_SHAPES[metal][0] if metal in TOOL_SHAPES else base
+            shape=ref(f'metaltools/{form}/{shape_base}.png')
+            tone=ref(f'metaltools/{form}/{base}.png')
             if metal in TFC_METALS:
                 colors=tone=None  # Native TFC Metal Tools PNG is copied byte for byte.
         elif form in ('tongs','tong_part'):
-            shape=tone=ref(f'hotornot/{form}/{base}.png')
-            options['fixed']=fixed(shape,[ref(f'hotornot/{form}/{other(base)}.png')])
-            options['tone_fixed']=options['fixed']
+            shape_base,comparison=TOOL_SHAPES[metal]
+            shape=ref(f'hotornot/{form}/{shape_base}.png')
+            tone=ref(f'hotornot/{form}/{base}.png')
+            options['fixed']=fixed(shape,[ref(f'hotornot/{form}/{comparison}.png')])
+            options['tone_fixed']=fixed(tone,[ref(f'hotornot/{form}/{other(base)}.png')])
         elif form=='shield':
             shape=tfc(form,ARMOR_BASES[metal]+suffix)
             tone=tfc(form,base) if base=='wrought_iron' else [tfc(form,base+'_front'),tfc(form,base+'_back')] if not suffix else tfc(form,base+suffix)
@@ -169,14 +211,14 @@ def build_recipes(image):
             if form=='horse_armor':
                 comparisons=[tfc(form,m) for m in TOOL_METALS]
                 options['fixed']=fixed(shape,comparisons);options['tone_fixed']=fixed(tone,comparisons)
-        elif form=='shears':
-            # Several native TFC shears PNGs are unreadable; keep established geometry.
-            shape=tfc(form,'wrought_iron');tone=tfc('ingot',base)
+            else:
+                options['fixed']=armor_fixed(shape);options['tone_fixed']=armor_fixed(tone)
         else:
-            shape=tone=tfc(form,base)
+            shape_base,comparison=TOOL_SHAPES[metal]
+            shape=tfc(form,shape_base);tone=tfc(form,base)
             if form in FIXED_TOOLS:
-                options['fixed']=fixed(shape,[tfc(form,other(base))]);options['tone_fixed']=options['fixed']
-            if form in ('knife','knife_blade','javelin','javelin_head'):options['flip']=True
+                options['fixed']=tool_fixed(form,shape,[tfc(form,comparison)])
+                options['tone_fixed']=tool_fixed(form,tone,[tfc(form,other(base,form))])
         add(path,shape,colors,tone,**options)
     for namespace,form in [('tfcm','block'),('tfcm','smooth'),('tfc','smooth')]:
         for path in sorted((ASSETS/f'{namespace}/textures/block/metal/{form}').glob('*.png')):
@@ -185,7 +227,22 @@ def build_recipes(image):
         metal,layer=path.stem.split('_layer_')
         shape=ref(f'tfc/armor/{ARMOR_BASES[metal]}_layer_{layer}.png')
         tone=ref(f'tfc/armor/{METAL_BASES[metal]}_layer_{layer}.png')
-        add(path,shape,original(metal),tone)
+        add(path,shape,original(metal),tone,fixed=armor_fixed(shape),tone_fixed=armor_fixed(tone))
+    # AnimalArmorItem resolves this entity texture from the armor material ID;
+    # an inventory horse-armor icon alone does not cover the equipped horse.
+    horse_sources=[tfc('horse_armor_entity',m) for m in sorted(set(ARMOR_BASES.values()))]
+    # All four styles share the cloth UVs, but use different cloth colors.
+    # Black Steel's red cloth distinguishes those pixels from its gray metal;
+    # keep each source style's actual cloth color at the corresponding UVs.
+    horse_cloth={i for i,(r,g,b,a) in enumerate(pixels(image(tfc('horse_armor_entity','black_steel'))))
+                 if a and r>g and r>b}
+    def horse_fixed(shape):
+        return sorted(set(fixed(shape,horse_sources)) | horse_cloth)
+    for metal,base in ARMOR_BASES.items():
+        path=ASSETS/f'tfcm/textures/entity/horse/armor/horse_armor_{metal}.png'
+        shape=tfc('horse_armor_entity',base);tone=tfc('horse_armor_entity',METAL_BASES[metal])
+        add(path,shape,original(metal),tone,
+            fixed=horse_fixed(shape),tone_fixed=horse_fixed(tone))
     for path in sorted((ASSETS/'tfcm/textures/entity/projectiles').glob('*.png')):
         metal=path.stem.removesuffix('_javelin');old,comparison=PROJECTILE_BASES[metal];base=METAL_BASES[metal]
         def projectile(name):return ref(f'tfc/projectiles/{name}_javelin.png')
@@ -280,8 +337,6 @@ def main():
                 colored = recolor(shape,colors,fixed)
                 records.append([relative,frame,'L' if correction else 'source palette',
                                 len(colors),len(palette(colored,fixed)),len(fixed)])
-                if r.get('flip'):
-                    colored = colored.transpose(Image.Transpose.FLIP_LEFT_RIGHT)
                 result.paste(colored,(0,frame*shape.height))
         assert list(result.size) == r['size'],(relative,result.size,r['size'])
         if frames == 4:
@@ -296,12 +351,14 @@ def main():
             shutil.copyfile(REFERENCE/r['shape'],target)
         else:
             result.save(target,optimize=True)
-        current = load(ASSETS/relative)
-        if current.size != result.size or current.tobytes() != result.tobytes():
+        current = load(ASSETS/relative) if (ASSETS/relative).exists() else None
+        if current is None or current.size != result.size or current.tobytes() != result.tobytes():
             differences.append(relative)
     roots = ['tfcm/textures/item/metal','tfcm/textures/block/metal','tfc/textures/block/metal/smooth',
-             'tfcm/textures/models/armor','tfcm/textures/entity/projectiles','tfcm/textures/item/ore_processing']
+             'tfcm/textures/models/armor','tfcm/textures/entity/projectiles','tfcm/textures/item/ore_processing',
+             'tfcm/textures/entity/horse/armor']
     expected = {str(p.relative_to(ASSETS)) for directory in roots for p in (ASSETS/directory).rglob('*.png')}
+    expected.update(f'tfcm/textures/entity/horse/armor/horse_armor_{m}.png' for m in ARMOR_BASES)
     assert outputs == expected,{'missing':sorted(expected-outputs),'extra':sorted(outputs-expected)}
     assert len(ore_palettes) == 35
     assert animations == 19
@@ -319,6 +376,7 @@ def main():
         raise SystemExit(f'{len(differences)} textures differ: {differences[:5]}')
     if args.apply:
         for relative in sorted(outputs):
+            (ASSETS/relative).parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(args.output/relative,ASSETS/relative)
     print(f'{len(outputs)} textures; {len(differences)} pixel changes; {animations} four-frame animations; '
           f'{"applied" if args.apply else "checked" if args.check else "staged"}.')
