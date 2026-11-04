@@ -34,7 +34,7 @@
       "dependsOn": [
         "M01"
       ],
-      "approach": "Define a `Metal` enum with all 39 metals: ID, forging tier, melting point, tool flag, colour, and specific heat. Hard-code Draconium-family forge/weld temperatures to 1200/1600 °C; all other metals use 60%/80% of their melting point. Register the 8 basic forms (ingot, double_ingot, sheet, double_sheet, rod, block, slab, stairs), one molten fluid per metal (FluidType + bucket + fluid block), `high_carbon_tungsten_steel`, and the `molten_andesite` fluid. Datagen produces the TFC metal definitions (`tfc/metal`), item heat, size/weight, and fluid/metal tags. It also produces casting recipes for the ingot mold (10% break) and fire ingot mold (1% break), anvil recipes for sheet/rod at the metal's tier, welding recipes for double ingot/sheet, heating/melting recipes with metal amounts matching each form, and alloy recipes exactly as listed in the alloy table. Andesite: loose andesite at 1300 °C → 90 mB, alloyed at 89–91% with Zinc or Tin. High-carbon tungsten steel gets the TFC steel-style working (anvil) route that produces the tungsten steel ingot. Every generated JSON is wrapped in the metal-enabled load condition. Import base metal textures from the published asset version into `.tmp/` and adapt them.",
+      "approach": "Define a `Metal` enum with all 33 metals: ID, forging tier, melting point, tool flag, colour, and specific heat. Hard-code Draconium-family forge/weld temperatures to 1200/1600 °C; all other metals use 60%/80% of their melting point. Register the 8 basic forms (ingot, double_ingot, sheet, double_sheet, rod, block, slab, stairs), one molten fluid per metal (FluidType + bucket + fluid block), `high_carbon_tungsten_steel`, and the `molten_andesite` fluid. Datagen produces the TFC metal definitions (`tfc/metal`), item heat, size/weight, and fluid/metal tags. It also produces casting recipes for the ingot mold (10% break) and fire ingot mold (1% break), anvil recipes for sheet/rod at the metal's tier, welding recipes for double ingot/sheet, heating/melting recipes with metal amounts matching each form, and alloy recipes exactly as listed in the alloy table. Andesite: loose andesite at 1300 °C → 90 mB, alloyed at 89–91% with Zinc or Tin. High-carbon tungsten steel gets the TFC steel-style working (anvil) route that produces the tungsten steel ingot. Every generated JSON is wrapped in the metal-enabled load condition. Import base metal textures from the published asset version into `.tmp/` and adapt them.",
       "scope": [
         "src/main/java/net/claustra01/tfcm/common/metal/",
         "src/main/java/net/claustra01/tfcm/registry/ (items, blocks, fluids)",
@@ -272,7 +272,7 @@
         "M10",
         "M12"
       ],
-      "approach": "Audit all registries and data: add a datagen/GameTest validator that checks every item/block/fluid has a model, blockstate, lang entry, heat/size where applicable, tags, and loot, and that tools have category, rack, and repair data. Fill any gaps. Finish importing assets from the published version: textures, models, blockstates, animation mcmeta (Neutronium animation), and lang. Create the missing plate/nugget/dust/mining hammer/quarry hammer art. Record source version, file paths, and licence in `LICENCE`. Verify in the client that no model or texture is missing.",
+      "approach": "Audit all registries and data: add a datagen/GameTest validator that checks every item/block/fluid has a model, blockstate, lang entry, heat/size where applicable, tags, and loot, and that tools have category, rack, and repair data. Fill any gaps. Finish importing assets from the published version: textures, models, blockstates, and lang. Create the missing plate/nugget/dust/mining hammer/quarry hammer art. Record source version, file paths, and licence in `LICENCE`. Verify in the client that no model or texture is missing.",
       "scope": [
         "src/main/resources/assets/tfcm/",
         "src/main/java/net/claustra01/tfcm/datagen/",
@@ -291,7 +291,7 @@
         "M13",
         "M11"
       ],
-      "approach": "Run the integrated verification: `./gradlew build`, runData determinism check, JSON parsing of all resources, registry ID cross-check against the spec tables (39 metals × all forms, 35 series), and GameTests for ore processing Steps 1–5, area tools (direction, protection, loot, durability), and anvils. Then run harness E2E with server+client (`tfcm-a`, 127.0.0.1:25583) with and without FirmaLife 3.0.15, plus 3-dimension worldgen with sample YAML. Record results, unverified areas, and any Open Questions in AGENTS.md.",
+      "approach": "Run the integrated verification: `./gradlew build`, runData determinism check, JSON parsing of all resources, registry ID cross-check against the spec tables (33 metals × all forms, 35 series), and GameTests for ore processing Steps 1–5, area tools (direction, protection, loot, durability), and anvils. Then run harness E2E with server+client (`tfcm-a`, 127.0.0.1:25583) with and without FirmaLife 3.0.15, plus 3-dimension worldgen with sample YAML. Record results, unverified areas, and any Open Questions in AGENTS.md.",
       "scope": [
         "src/main/java/net/claustra01/tfcm/gametest/",
         "tests/acceptance.json",

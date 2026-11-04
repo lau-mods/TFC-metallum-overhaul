@@ -131,30 +131,6 @@
     {
       "id": "tfcm:metal/block/zirconium_stairs",
       "required": false
-    },
-    {
-      "id": "tfcm:metal/block/neutronium_stairs",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/ferroboron_stairs",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/tough_alloy_stairs",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/zircaloy_stairs",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/hsla_steel_stairs",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/super_alloy_stairs",
-      "required": false
     }
   ]
 }

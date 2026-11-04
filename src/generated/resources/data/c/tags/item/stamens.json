@@ -132,30 +132,6 @@
       "id": "#c:stamens/zirconium",
       "required": false
     },
-    {
-      "id": "#c:stamens/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:stamens/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:stamens/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:stamens/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:stamens/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:stamens/super_alloy",
-      "required": false
-    },
     "#c:stamens/bismuth",
     "#c:stamens/bismuth_bronze",
     "#c:stamens/black_bronze",

@@ -132,30 +132,6 @@
       "id": "#c:nuggets/zirconium",
       "required": false
     },
-    {
-      "id": "#c:nuggets/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:nuggets/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:nuggets/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:nuggets/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:nuggets/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:nuggets/super_alloy",
-      "required": false
-    },
     "#c:nuggets/bismuth",
     "#c:nuggets/bismuth_bronze",
     "#c:nuggets/black_bronze",

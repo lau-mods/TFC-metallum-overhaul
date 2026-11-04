@@ -132,30 +132,6 @@
       "id": "#c:wires/zirconium",
       "required": false
     },
-    {
-      "id": "#c:wires/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:wires/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:wires/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:wires/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:wires/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:wires/super_alloy",
-      "required": false
-    },
     "#c:wires/bismuth",
     "#c:wires/bismuth_bronze",
     "#c:wires/black_bronze",

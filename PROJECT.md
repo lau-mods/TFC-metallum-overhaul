@@ -41,10 +41,10 @@ Preconditions: Minecraft 1.21.1以外の環境、または必須依存が欠け�
 Action: TFCMをロードする。  
 Expected Result: 依存関係の不一致として明確に拒否される。旧形式を読み込むための移行処理は行われない。
 
-### F-002: 独自金属39種
+### F-002: 独自金属33種
 #### Description
 
-以下39種の独自金属を登録する。表の鍛造tierと融点は今回の設計上の基準値である。全金属に熱容量・温度・流体・色・表示名・タグを持たせ、TFCの金属取り扱いに統合する。工具対象欄の「○」だけにF-007の完全な工具・防具体系を付与する。
+以下33種の独自金属を登録する。表の鍛造tierと融点は今回の設計上の基準値である。全金属に熱容量・温度・流体・色・表示名・タグを持たせ、TFCの金属取り扱いに統合する。工具対象欄の「○」だけにF-007の完全な工具・防具体系を付与する。
 
 | 金属ID | 鍛造tier | 融点 ℃ | 工具対象 |
 |---|---:|---:|:---:|
@@ -81,12 +81,6 @@ Expected Result: 依存関係の不一致として明確に拒否される。旧
 | `magnesium` | 2 | 650 | — |
 | `beryllium` | 3 | 1287 | — |
 | `zirconium` | 2 | 1855 | — |
-| `neutronium` | 7 | 3000 | — |
-| `ferroboron` | 5 | 1500 | — |
-| `tough_alloy` | 5 | 1600 | — |
-| `zircaloy` | 5 | 1855 | — |
-| `hsla_steel` | 5 | 1450 | — |
-| `super_alloy` | 5 | 1800 | — |
 
 全金属の基本形状は `ingot`、`double_ingot`、`sheet`、`double_sheet`、`rod`、metal block、block slab、block stairsの8種とする。通常のアイテムIDは `tfcm:metal/<form>/<metal>`、ブロックIDは `tfcm:metal/block/<metal>`、スラブと階段は `<metal>_slab` と `<metal>_stairs` を使用する。高炭素中間素材 `tfcm:metal/ingot/high_carbon_tungsten_steel` を別途登録する。
 
@@ -94,17 +88,17 @@ Expected Result: 依存関係の不一致として明確に拒否される。旧
 ##### AC-F002-001: 金属と形状の完全登録
 Preconditions: 内容無効化設定が空の新規環境がある。  
 Action: 登録済みの金属・形状・block・fluidを列挙する。  
-Expected Result: 表の39金属と各8形状、固有の溶融流体がすべて存在し、重複IDや未登録参照がない。
+Expected Result: 表の33金属と各8形状、固有の溶融流体がすべて存在し、重複IDや未登録参照がない。
 
 ##### AC-F002-002: 金属固有値
-Preconditions: 39金属の仕様値を読み込んだ環境がある。  
+Preconditions: 33金属の仕様値を読み込んだ環境がある。
 Action: 融点、鍛造tier、工具提供対象を一覧表と照合する。  
 Expected Result: 各値が一致し、工具対象外の金属に架空の完全工具セットを登録しない。
 
 ##### AC-F002-003: 高炭素中間素材
 Preconditions: Tungsten Steelが有効な環境がある。  
 Action: 高炭素Tungsten Steelインゴットを確認する。  
-Expected Result: 通常の39金属とは別の中間アイテムとして存在し、F-003の鋼加工に使用される。
+Expected Result: 通常の33金属とは別の中間アイテムとして存在し、F-003の鋼加工に使用される。
 
 ### F-003: 金属の鋳造・鍛造・溶接・合金
 #### Description
@@ -121,11 +115,6 @@ TFC標準のCrucible、鋳型、Anvil、Welding、Heatingを用いる。各金�
 | Osmiridium | Osmium 60–80%、Iridium 20–40% |
 | Solder | Antimony 40–60%、Bismuth 20–40%、Tin 20–40% |
 | Andesite Alloy | Molten Andesite 89–91%、Zinc 9–11%、またはTin 9–11% |
-| Ferroboron | Boron 45–55%、Steel 45–55% |
-| Tough Alloy | Ferroboron 45–55%、Lithium 45–55% |
-| Zircaloy | Zirconium 85–90%、Tin 10–15% |
-| HSLA Steel | Cast Iron 92–96%、Steel 4–8% |
-| Super Alloy | Tough Alloy 45–55%、Titanium 45–55% |
 
 Molten Andesiteを独立流体として登録し、TFCのLoose Andesite 1個を1300℃で90 mBに溶融する。これをZincまたはTin 10 mBと混合してAndesite Alloy 100 mBを得る。表に合金配合のない特殊金属について、独自の合成レシピは追加しない。
 
@@ -155,15 +144,15 @@ Expected Result: Andesite 1個から90 mB、追加金属10 mBからAndesite Allo
 ### F-004: 拡張金属形状
 #### Description
 
-全39金属に `foil`、`gear`、`heavy_sheet`、`nail`、`ring`、`rivet`、`screw`、`stamen`、`wire` の9形状を常設する。IDは `tfcm:metal/<form>/<metal>` とする。Foil・Gear・Nail・Ring・Rivet・Screw・Stamen・WireはTFC Anvil加工、Heavy SheetはWeldingで製造する。各形状の素材投入量、完成個数、鍛造操作列は基準となるTFC加工ルールと一致させる。根拠のない独自の消費量は設定しない。
+全33金属に `foil`、`gear`、`heavy_sheet`、`nail`、`ring`、`rivet`、`screw`、`stamen`、`wire` の9形状を常設する。IDは `tfcm:metal/<form>/<metal>` とする。Foil・Gear・Nail・Ring・Rivet・Screw・Stamen・WireはTFC Anvil加工、Heavy SheetはWeldingで製造する。各形状の素材投入量、完成個数、鍛造操作列は基準となるTFC加工ルールと一致させる。根拠のない独自の消費量は設定しない。
 
 加工形状すべてにTFC Heating、item size/weight、金属別および形状別common tag、翻訳、アイコン、モデルを用意する。
 
 #### Acceptance Criteria
 ##### AC-F004-001: 9形状の登録
-Preconditions: 全39金属が有効な環境がある。  
+Preconditions: 全33金属が有効な環境がある。
 Action: 拡張形状を列挙する。  
-Expected Result: 39金属それぞれに9形状があり、特定の追加Modの有無に依存しない。
+Expected Result: 33金属それぞれに9形状があり、特定の追加Modの有無に依存しない。
 
 ##### AC-F004-002: TFC加工と熱
 Preconditions: 必要な金属材料とTFC Anvil・Welding設備がある。  
@@ -203,7 +192,7 @@ Action: Ingotを粉砕し、生成物を溶融する。
 Expected Result: Dustが1個生成され、同金属100 mBへ溶融する。鉱石のPowderへ混同・変換されない。
 
 ##### AC-F005-004: 全金属への適用
-Preconditions: 39金属を有効にした環境がある。  
+Preconditions: 33金属を有効にした環境がある。
 Action: Plate、Nugget、Dustの登録・レシピ・熱・タグ・アセットを検査する。  
 Expected Result: 対象金属間で欠落がなく、追加形状の参照に未登録IDを使用しない。
 
@@ -850,7 +839,7 @@ Expected Result: 品位・母岩を区別した正しいlootを得て、探鉱�
 ### F-026: 金属・鉱石の個別無効化
 #### Description
 
-Common Configに `disabledMetals` と `disabledOres` を設ける。設定ファイル `config/tfcm-common.toml` の該当節には、指定可能な金属・鉱石のID一覧をコメントとして自動出力する。金属39種と対応する鉱石名を漏れなく列挙し、実際に受け付ける指定名と一致させる。コメントは無効化の指定として解釈せず、既存の設定値は上書きしない。IDの小文字名で対象を指定する。未知名は無視し、変更反映にはゲーム再起動が必要である。金属を無効化した場合は基本形状、拡張形状、Plate/Nugget/Dust、金属工具・防具・金床・採掘工具など同金属由来のレジストリ登録を抑制する。鉱石を無効化した場合は鉱石アイテム・ブロック、Small Ore、加工中間体、loot、recipe、カスタム生成候補を対象として抑制する。
+Common Configに `disabledMetals` と `disabledOres` を設ける。設定ファイル `config/tfcm-common.toml` の該当節には、指定可能な金属・鉱石のID一覧をコメントとして自動出力する。金属33種と対応する鉱石名を漏れなく列挙し、実際に受け付ける指定名と一致させる。コメントは無効化の指定として解釈せず、既存の設定値は上書きしない。IDの小文字名で対象を指定する。未知名は無視し、変更反映にはゲーム再起動が必要である。金属を無効化した場合は基本形状、拡張形状、Plate/Nugget/Dust、金属工具・防具・金床・採掘工具など同金属由来のレジストリ登録を抑制する。鉱石を無効化した場合は鉱石アイテム・ブロック、Small Ore、加工中間体、loot、recipe、カスタム生成候補を対象として抑制する。
 
 不正な参照が残らないよう、registry側だけでなくレシピ・タグ・熱定義・戦利品・ワールド生成の読込み条件にも同一の有効判定を適用する。意図せず別金属・別鉱石を連動無効化しない。
 
@@ -896,7 +885,7 @@ Expected Result: TFCの属性判定が正常に機能し、Heat・Size・Weight�
 
 **現行公開版のアセットを本プロジェクトの正式な素材として再利用する。** アイテムとブロックのtexture、model、blockstate、animation metadata、翻訳、rendererに必要なassetを使用許諾を確認して取り込む。アセットを取得した配布版、ファイルパス、ライセンスを記録する。既存コードの内容を知らなくても、assetのファイル形式と見た目から参照関係を構築する。
 
-金属ごとの色は既存アセットの金属色を利用し、TFCの道具・形状では木柄や革部品等の非金属部分を保つ。Neutroniumの既存アニメーション表現を維持する。Plate、Nugget、Dust、Mining Hammer、Quarry Hammerに不足するアセットは、使用可能な既存素材の再構成または新規制作によって用意する。アセットの存在を理由にゲーム上の新機能を創作しない。
+金属ごとの色は既存アセットの金属色を利用し、TFCの道具・形状では木柄や革部品等の非金属部分を保つ。Plate、Nugget、Dust、Mining Hammer、Quarry Hammerに不足するアセットは、使用可能な既存素材の再構成または新規制作によって用意する。アセットの存在を理由にゲーム上の新機能を創作しない。
 
 #### Acceptance Criteria
 ##### AC-F028-001: 表示の完全性
@@ -904,15 +893,15 @@ Preconditions: 全登録item・block・fluidを表示する。
 Action: Creative inventory、ワールド配置、装備表示、破壊particleを確認する。  
 Expected Result: Missing Model/Textureがなく、tool・金属・鉱石・晶洞に適正な外観がある。
 
-##### AC-F028-002: アニメーションと配布条件
-Preconditions: Neutroniumと使用した第三者由来アセットがある。  
-Action: アニメーションとライセンス記録を確認する。  
-Expected Result: Neutroniumが意図したアニメーションで表示され、アセット出典・利用許可を追跡できる。
+##### AC-F028-002: 金属形状と配布条件
+Preconditions: 金属形状と使用した第三者由来アセットがある。
+Action: 金属形状の画像サイズとライセンス記録を確認する。
+Expected Result: 金属形状が正しいサイズで表示され、アセット出典・利用許可を追跡できる。
 
 ### F-029: 統合検証とリリース品質
 #### Description
 
-新規実装として以下を必須とする。専用サーバー/クライアントでの起動、Data Generation、レシピJSONの解析、全登録IDの照合、(39金属+TFC金属)×基本・追加形状の網羅、(35鉱石+TFC構成)系列のレシピ確認、TFC設備での手動実行、3ディメンションの生成、3種の範囲採掘工具の保護・loot・耐久・方向試験、FirmaLife導入時と未導入時の両試験を行う。
+新規実装として以下を必須とする。専用サーバー/クライアントでの起動、Data Generation、レシピJSONの解析、全登録IDの照合、(33金属+TFC金属)×基本・追加形状の網羅、(35鉱石+TFC構成)系列のレシピ確認、TFC設備での手動実行、3ディメンションの生成、3種の範囲採掘工具の保護・loot・耐久・方向試験、FirmaLife導入時と未導入時の両試験を行う。
 
 ゲーム内の数値は本書に列挙したものを使用する。新しい仕組みに必要な値が本書にない場合は実装側で値を作らず、Open Questionsへ記録して仕様決定後に実装する。
 

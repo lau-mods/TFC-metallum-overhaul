@@ -8,7 +8,6 @@ No downloads, archives, hash tables, Gradle or game startup are involved.
 """
 import argparse
 import csv
-import json
 from pathlib import Path
 import shutil
 
@@ -56,12 +55,6 @@ METAL_BASES = {'compressed_iron': 'wrought_iron',
  'magnesium': 'tin',
  'beryllium': 'tin',
  'zirconium': 'wrought_iron',
- 'neutronium': 'black_steel',
- 'ferroboron': 'black_steel',
- 'tough_alloy': 'cast_iron',
- 'zircaloy': 'wrought_iron',
- 'hsla_steel': 'steel',
- 'super_alloy': 'steel',
  'chromium': 'steel',
  'stainless_steel': 'steel',
  'bismuth_bronze': 'bismuth_bronze',
@@ -97,9 +90,9 @@ FIXED_TOOLS = {'fishing_rod','pickaxe','propick','axe','shovel','hoe','chisel','
 TOOL_METALS = 'copper bismuth_bronze black_bronze bronze wrought_iron steel black_steel blue_steel red_steel'.split()
 AREA = dict(mining_hammer='hammer',quarry_hammer='hammer',excavator='shovel')
 PRESERVED_TFC_FORMS = {'pommel','crossguard',*AREA,*(name+'_head' for name in AREA)}
-# TFC's ranges wash out these near-black materials, even with Cast Iron.
-# Preserve their original dark values while retaining Black Steel's geometry.
-SOURCE_RANGE = {'neutronium','naquadah'}
+# TFC's ranges wash out this near-black material, even with Cast Iron.
+# Preserve its original dark values while retaining Black Steel's geometry.
+SOURCE_RANGE = {'naquadah'}
 
 
 def build_recipes(image):
@@ -176,7 +169,6 @@ def build_recipes(image):
         elif form in ('plate','dust','nugget'):
             shape=project(path if form=='nugget' else ASSETS/f'tfcm/textures/item/metal/{form}/invar.png')
             tone=tfc('sheet' if form=='plate' else 'ingot',base)
-            if metal=='neutronium' and form=='nugget':options['first_frame']=True
         elif form.removesuffix('_head') in AREA:
             shape=project(path)
             if metal in TFC_METALS:
@@ -289,23 +281,18 @@ def main():
     differences = []
     records = []
     cache = {}
-    animations = 0
     for r in recipes:
         relative = r['output']
         assert relative not in outputs, relative
         outputs.add(relative)
         shape = image(r['shape'])
-        if r.get('first_frame'):
-            shape = shape.crop((0,0,shape.width,shape.width))
         fixed = r.get('fixed', [])
-        frames = 1
         if 'palette' not in r:
             result = shape.copy()
             records.append([relative,0,'copy',len(palette(shape)),len(palette(shape)),len(fixed)])
         else:
             source = image(r['palette'])
-            frames = 4 if relative.endswith('/neutronium.png') else 1
-            assert source.height == source.width*frames, relative
+            assert source.height == source.width, relative
             if '/ore_processing/' in relative and Path(relative).stem in ore_palettes:
                 assert r['palette'] == ore_palettes[Path(relative).stem]
                 assert '/ore/' in r['palette'] and 'tone' not in r
@@ -315,8 +302,6 @@ def main():
                 names = [r['tone']] if isinstance(r['tone'],str) else r['tone']
                 key = (r['palette'],tuple(names),tuple(r.get('tone_fixed',[])))
                 if key not in cache:
-                    # Use a shared source range for all animation frames, preserving
-                    # changes in brightness over time instead of equalizing each frame.
                     original = palette(source)
                     target = sorted({c for name in names for c in palette(image(name),r.get('tone_fixed',[]))},
                                     key=lambda c:(.2126*c[0]+.7152*c[1]+.0722*c[2],c))
@@ -329,22 +314,13 @@ def main():
                                for c in corrected),relative
                     cache[key] = dict(zip(original,corrected))
                 correction = cache[key]
-            result = Image.new('RGBA',(shape.width,shape.height*frames))
-            for frame in range(frames):
-                colors = palette(source.crop((0,frame*source.width,source.width,(frame+1)*source.width)))
-                if correction:
-                    colors = [correction[c] for c in colors]
-                colored = recolor(shape,colors,fixed)
-                records.append([relative,frame,'L' if correction else 'source palette',
-                                len(colors),len(palette(colored,fixed)),len(fixed)])
-                result.paste(colored,(0,frame*shape.height))
+            colors = palette(source)
+            if correction:
+                colors = [correction[c] for c in colors]
+            result = recolor(shape,colors,fixed)
+            records.append([relative,0,'L' if correction else 'source palette',
+                            len(colors),len(palette(result,fixed)),len(fixed)])
         assert list(result.size) == r['size'],(relative,result.size,r['size'])
-        if frames == 4:
-            metadata = json.loads((ASSETS/(relative+'.mcmeta')).read_text())['animation']
-            assert metadata['frametime'] == 2
-            assert metadata.get('frames',list(range(4))) == list(range(4))
-            assert len({result.crop((0,i*shape.height,shape.width,(i+1)*shape.height)).tobytes() for i in range(4)}) == 4,relative
-            animations += 1
         target = args.output/relative
         target.parent.mkdir(parents=True,exist_ok=True)
         if 'palette' not in r:
@@ -361,7 +337,6 @@ def main():
     expected.update(f'tfcm/textures/entity/horse/armor/horse_armor_{m}.png' for m in ARMOR_BASES)
     assert outputs == expected,{'missing':sorted(expected-outputs),'extra':sorted(outputs-expected)}
     assert len(ore_palettes) == 35
-    assert animations == 19
     args.output.mkdir(parents=True,exist_ok=True)
     with (args.output/'color-counts.csv').open('w',newline='') as f:
         writer = csv.writer(f)
@@ -378,7 +353,7 @@ def main():
         for relative in sorted(outputs):
             (ASSETS/relative).parent.mkdir(parents=True,exist_ok=True)
             shutil.copyfile(args.output/relative,ASSETS/relative)
-    print(f'{len(outputs)} textures; {len(differences)} pixel changes; {animations} four-frame animations; '
+    print(f'{len(outputs)} textures; {len(differences)} pixel changes; '
           f'{"applied" if args.apply else "checked" if args.check else "staged"}.')
 
 

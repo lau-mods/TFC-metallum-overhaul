@@ -132,30 +132,6 @@
       "id": "#c:foils/zirconium",
       "required": false
     },
-    {
-      "id": "#c:foils/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:foils/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:foils/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:foils/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:foils/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:foils/super_alloy",
-      "required": false
-    },
     "#c:foils/bismuth",
     "#c:foils/bismuth_bronze",
     "#c:foils/black_bronze",

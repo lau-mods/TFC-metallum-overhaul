@@ -131,30 +131,6 @@
     {
       "id": "#c:double_ingots/zirconium",
       "required": false
-    },
-    {
-      "id": "#c:double_ingots/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:double_ingots/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:double_ingots/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:double_ingots/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:double_ingots/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:double_ingots/super_alloy",
-      "required": false
     }
   ]
 }

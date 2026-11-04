@@ -20,17 +20,17 @@ await scenario(async ({ clients }) => {
   command(client, 'setblock -2 1 3 tfcm:metal/block/invar');
   command(client, 'setblock -1 1 3 tfcm:ore/normal_native_platinum/granite');
   command(client, 'setblock 0 1 3 tfcm:mineral/quartz_block');
-  command(client, 'setblock 1 1 3 tfcm:metal/block/neutronium');
+  command(client, 'setblock 1 1 3 tfcm:metal/block/naquadah');
   command(client, 'setblock 2 1 3 tfcm:mineral/budding_certus_quartz');
-  assert.match(JSON.stringify(mct(client, 'block', 'get', '1', '1', '3')), /tfcm:metal\/block\/neutronium/);
+  assert.match(JSON.stringify(mct(client, 'block', 'get', '1', '1', '3')), /tfcm:metal\/block\/naquadah/);
   command(client, 'summon minecraft:armor_stand 3.5 1 3.5 {NoGravity:1b,ShowArms:1b,ArmorItems:[{id:"tfcm:metal/boots/titanium",count:1},{id:"tfcm:metal/greaves/titanium",count:1},{id:"tfcm:metal/chestplate/titanium",count:1},{id:"tfcm:metal/helmet/titanium",count:1}]}');
   const items = [
     'tfcm:metal/mining_hammer/invar',
     'tfcm:metal/quarry_hammer/titanium',
     'tfcm:metal/excavator/netherite',
-    'tfcm:metal/plate/neutronium',
-    'tfcm:metal/nugget/neutronium',
-    'tfcm:metal/dust/neutronium',
+    'tfcm:metal/plate/naquadah',
+    'tfcm:metal/nugget/naquadah',
+    'tfcm:metal/dust/naquadah',
     'tfcm:metal/sword/tungsten_steel',
     'tfcm:ore_processing/powder/native_platinum',
     'tfcm:gem/certus_quartz'
@@ -42,7 +42,7 @@ await scenario(async ({ clients }) => {
   const sceneImage = screenshot(client, 'AC-F028-001', 'blocks-and-items');
   const image = PNG.sync.read(readFileSync(path.join(process.env.HARNESS_SCREENSHOT_DIR, sceneImage)));
   for (const [query, label, item] of [
-    ['neutronium', 'creative-neutronium-items', 'tfcm:metal/ingot/neutronium'],
+    ['naquadah', 'creative-naquadah-items', 'tfcm:metal/ingot/naquadah'],
     ['Mining Hammer', 'creative-hammer-items', 'tfcm:metal/mining_hammer/invar'],
     ['Normal Granite Native Platinum', 'creative-ore-items', 'tfcm:ore/normal_native_platinum/granite'],
     ['Quartz Block', 'creative-quartz-items', 'tfcm:mineral/quartz_block']
@@ -66,35 +66,6 @@ await scenario(async ({ clients }) => {
   mct(client, 'block', 'break', '-2', '1', '3');
   mct(client, 'wait', '--ticks', '1');
   screenshot(client, 'AC-F028-001', 'block-break-particles');
-  command(client, 'item replace entity @s hotbar.0 with tfcm:metal/ingot/neutronium');
-  await camera(client, { x: 1.5, y: 1, z: 0.5, yaw: 0, pitch: 20.5 });
-  const first = screenshot(client, 'AC-F028-002', 'neutronium-block-and-ingot-frame-one');
-  mct(client, 'wait', '--ticks', '1');
-  const second = screenshot(client, 'AC-F028-002', 'neutronium-block-and-ingot-frame-two');
-  const firstFrame = PNG.sync.read(readFileSync(path.join(process.env.HARNESS_SCREENSHOT_DIR, first)));
-  let animated = false;
-  for (let attempt = 0; attempt < 12 && !animated; attempt++) {
-    const nextFrame = PNG.sync.read(readFileSync(path.join(process.env.HARNESS_SCREENSHOT_DIR, second)));
-    assert.equal(firstFrame.width, nextFrame.width);
-    assert.equal(firstFrame.height, nextFrame.height);
-    for (let y = Math.floor(firstFrame.height * 0.40); y < Math.floor(firstFrame.height * 0.48) && !animated; y++) {
-      for (let x = Math.floor(firstFrame.width * 0.46); x < Math.floor(firstFrame.width * 0.55); x++) {
-        const pixel = (y * firstFrame.width + x) * 4;
-        if (firstFrame.data[pixel] !== nextFrame.data[pixel]
-            || firstFrame.data[pixel + 1] !== nextFrame.data[pixel + 1]
-            || firstFrame.data[pixel + 2] !== nextFrame.data[pixel + 2]) {
-          animated = true;
-          break;
-        }
-      }
-    }
-    if (!animated) {
-      mct(client, 'wait', '--ticks', '1');
-      mct(client, 'screenshot', '--output', path.join(process.env.HARNESS_SCREENSHOT_DIR, second));
-    }
-  }
-  assert.ok(animated, 'Placed Neutronium did not change between rendered frames');
-
   command(client, 'execute if entity @e[type=minecraft:item_frame] run kill @e[type=minecraft:item_frame]');
   command(client, 'fill 30 0 -8 42 0 6 minecraft:smooth_stone');
   command(client, 'fill 30 1 5 42 7 5 minecraft:smooth_stone');

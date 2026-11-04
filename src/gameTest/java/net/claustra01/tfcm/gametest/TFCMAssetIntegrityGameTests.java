@@ -245,14 +245,7 @@ public final class TFCMAssetIntegrityGameTests {
     }
 
     @GameTest(template = "empty", batch = BATCH)
-    public static void neutroniumTexturesHaveAnimationFrames(GameTestHelper helper) {
-        for (String form : new String[] {"ingot", "double_ingot", "sheet", "double_sheet", "rod", "foil",
-                "gear", "heavy_sheet", "nail", "ring", "rivet", "screw", "stamen", "wire"}) {
-            checkAnimation("item/metal/" + form + "/neutronium");
-        }
-        checkAnimation("block/metal/block/neutronium");
-        checkHash("assets/tfcm/textures/item/metal/ingot/neutronium.png", "dc86ab921b1202467ca6eed71c33e14ca362a50f55b80c212e35c0f6d208d2bb");
-        checkHash("assets/tfcm/textures/block/metal/block/neutronium.png", "31769d374ca6d87ed5b4ad200e735ce9b0f6868886aaa26f0b58f8ba708867a3");
+    public static void metalSpritesHaveExpectedShapes(GameTestHelper helper) {
         checkHash("assets/tfcm/textures/item/metal/mining_hammer/copper.png", "7b40b4374cdeab65a9881964604c5cc333437abfe89a5e3f71b188743f7de313");
         for (Metal metal : Metal.values()) {
             try (var nuggetStream = TFCMAssetIntegrityGameTests.class.getResourceAsStream(
@@ -261,6 +254,9 @@ public final class TFCMAssetIntegrityGameTests {
                     "/assets/tfcm/textures/item/metal/dust/" + metal.id() + ".png")) {
                 var nugget = ImageIO.read(nuggetStream);
                 var dust = ImageIO.read(dustStream);
+                require(nugget != null && dust != null && nugget.getWidth() == 16 && nugget.getHeight() == 16
+                        && dust.getWidth() == 16 && dust.getHeight() == 16,
+                        "Metal sprite dimensions " + metal.id());
                 boolean different = false;
                 boolean transparent = false;
                 for (int y = 0; y < 16; y++) for (int x = 0; x < 16; x++) {
@@ -533,29 +529,6 @@ public final class TFCMAssetIntegrityGameTests {
                     .digest(stream.readAllBytes())).equals(expected), "Changed source sprite " + path);
         } catch (java.security.NoSuchAlgorithmException | IOException exception) {
             throw new GameTestAssertException("Cannot verify sprite " + path);
-        }
-    }
-
-    private static void checkAnimation(String texture) {
-        String path = "assets/tfcm/textures/" + texture + ".png";
-        JsonObject metadata = readJson(path + ".mcmeta");
-        require(metadata.has("animation") && metadata.getAsJsonObject("animation").get("frametime").getAsInt() > 0,
-                "Animation metadata " + texture);
-        try (var stream = TFCMAssetIntegrityGameTests.class.getClassLoader().getResourceAsStream(path)) {
-            require(stream != null, "Animation texture " + texture);
-            var image = ImageIO.read(stream);
-            require(image != null && image.getWidth() == 16 && image.getHeight() > image.getWidth()
-                    && image.getHeight() % image.getWidth() == 0, "Animation frames " + texture);
-            boolean changed = false;
-            for (int y = 0; y < image.getWidth() && !changed; y++) for (int x = 0; x < image.getWidth(); x++) {
-                if (image.getRGB(x, y) != image.getRGB(x, y + image.getWidth())) {
-                    changed = true;
-                    break;
-                }
-            }
-            require(changed, "Identical animation frames " + texture);
-        } catch (java.io.IOException exception) {
-            throw new GameTestAssertException("Cannot read " + path);
         }
     }
 

@@ -131,30 +131,6 @@
     {
       "id": "#c:double_sheets/zirconium",
       "required": false
-    },
-    {
-      "id": "#c:double_sheets/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:double_sheets/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:double_sheets/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:double_sheets/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:double_sheets/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:double_sheets/super_alloy",
-      "required": false
     }
   ]
 }

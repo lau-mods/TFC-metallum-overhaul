@@ -263,54 +263,6 @@
     {
       "id": "tfcm:metal/flowing_zirconium",
       "required": false
-    },
-    {
-      "id": "tfcm:metal/neutronium",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/flowing_neutronium",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/ferroboron",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/flowing_ferroboron",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/flowing_tough_alloy",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/zircaloy",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/flowing_zircaloy",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/flowing_hsla_steel",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/super_alloy",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/flowing_super_alloy",
-      "required": false
     }
   ]
 }

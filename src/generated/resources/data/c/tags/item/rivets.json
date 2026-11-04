@@ -132,30 +132,6 @@
       "id": "#c:rivets/zirconium",
       "required": false
     },
-    {
-      "id": "#c:rivets/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:rivets/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:rivets/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:rivets/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:rivets/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:rivets/super_alloy",
-      "required": false
-    },
     "#c:rivets/bismuth",
     "#c:rivets/bismuth_bronze",
     "#c:rivets/black_bronze",

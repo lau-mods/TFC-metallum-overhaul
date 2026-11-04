@@ -25,9 +25,7 @@ original/constantan.png: ImmersiveEngineering-1.21.1-12.4.2-194.jar: assets/imme
 original/dawnstone.png: Embers Re-Ignited : assets/embers/textures/item/ingot_dawnstone.png
 original/draconium.png: https://raw.githubusercontent.com/Draconic-Inc/Draconic-Evolution/6251e32bc93eb4bfcd910236ec1eaa6546516229/src/main/resources/assets/draconicevolution/textures/item/components/draconium_ingot.png
 original/electrum.png: ImmersiveEngineering-1.21.1-12.4.2-194.jar: assets/immersiveengineering/textures/item/metal_ingot_electrum.png
-original/ferroboron.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/ferroboron.png
 original/high_carbon_tungsten_steel.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/high_carbon_tungsten_steel.png
-original/hsla_steel.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/hsla_steel.png
 original/invar.png: Thermal Foundation : assets/thermal/textures/item/invar_ingot.png
 original/iridium.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/iridium.png
 original/lead.png: ImmersiveEngineering-1.21.1-12.4.2-194.jar: assets/immersiveengineering/textures/item/metal_ingot_lead.png
@@ -36,7 +34,6 @@ original/magnesium.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/text
 original/mithril.png: https://raw.githubusercontent.com/iron431/irons-spells-n-spellbooks/9a88991f5ec6e4f076278a9c11dcaf1281980f20/src/main/resources/assets/irons_spellbooks/textures/item/mithril_ingot.png
 original/naquadah.png: mekanism_extras-1.21.1-1.4.0.jar: assets/mekanism_extras/textures/item/ingot_naquadah.png
 original/netherite.png: minecraft_1.21.1_client.jar: assets/minecraft/textures/item/netherite_ingot.png
-original/neutronium.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/neutronium.png
 original/osmiridium.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/osmiridium.png
 original/osmium.png: Mekanism v1.21.1-10.7.19.85: src/main/resources/assets/mekanism/textures/item/ingot_osmium.png
 original/platinum.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/platinum.png
@@ -44,12 +41,9 @@ original/refined_glowstone.png: Mekanism v1.21.1-10.7.19.85: textures/item/ingot
 original/refined_obsidian.png: Mekanism v1.21.1-10.7.19.85: src/main/resources/assets/mekanism/textures/item/ingot_refined_obsidian.png
 original/solder.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/solder.png
 original/stainless_steel.png: firmalife: assets/firmalife/textures/item/metal/ingot/stainless_steel.png
-original/super_alloy.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/super_alloy.png
 original/thorium.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/thorium.png
 original/titanium.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/titanium.png
-original/tough_alloy.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/tough_alloy.png
 original/tungsten.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/tungsten.png
 original/tungsten_steel.png: metallum-1.0.8.jar: assets/tfc_metallum/textures/item/metal/ingot/tungsten_steel.png
 original/uranium.png: ImmersiveEngineering-1.21.1-12.4.2-194.jar: assets/immersiveengineering/textures/item/metal_ingot_uranium.png
-original/zircaloy.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/zircaloy.png
 original/zirconium.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/zirconium.png

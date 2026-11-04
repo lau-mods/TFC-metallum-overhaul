@@ -132,30 +132,6 @@
       "id": "#c:rings/zirconium",
       "required": false
     },
-    {
-      "id": "#c:rings/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:rings/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:rings/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:rings/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:rings/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:rings/super_alloy",
-      "required": false
-    },
     "#c:rings/bismuth",
     "#c:rings/bismuth_bronze",
     "#c:rings/black_bronze",

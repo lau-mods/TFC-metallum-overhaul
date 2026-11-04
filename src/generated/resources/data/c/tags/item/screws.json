@@ -132,30 +132,6 @@
       "id": "#c:screws/zirconium",
       "required": false
     },
-    {
-      "id": "#c:screws/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:screws/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:screws/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:screws/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:screws/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:screws/super_alloy",
-      "required": false
-    },
     "#c:screws/bismuth",
     "#c:screws/bismuth_bronze",
     "#c:screws/black_bronze",

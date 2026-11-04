@@ -131,30 +131,6 @@
     {
       "id": "tfcm:metal/block/zirconium_slab",
       "required": false
-    },
-    {
-      "id": "tfcm:metal/block/neutronium_slab",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/ferroboron_slab",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/tough_alloy_slab",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/zircaloy_slab",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/hsla_steel_slab",
-      "required": false
-    },
-    {
-      "id": "tfcm:metal/block/super_alloy_slab",
-      "required": false
     }
   ]
 }

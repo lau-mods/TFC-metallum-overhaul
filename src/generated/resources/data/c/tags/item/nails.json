@@ -132,30 +132,6 @@
       "id": "#c:nails/zirconium",
       "required": false
     },
-    {
-      "id": "#c:nails/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:nails/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:nails/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:nails/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:nails/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:nails/super_alloy",
-      "required": false
-    },
     "#c:nails/bismuth",
     "#c:nails/bismuth_bronze",
     "#c:nails/black_bronze",

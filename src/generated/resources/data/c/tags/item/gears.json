@@ -132,30 +132,6 @@
       "id": "#c:gears/zirconium",
       "required": false
     },
-    {
-      "id": "#c:gears/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:gears/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:gears/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:gears/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:gears/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:gears/super_alloy",
-      "required": false
-    },
     "#c:gears/bismuth",
     "#c:gears/bismuth_bronze",
     "#c:gears/black_bronze",

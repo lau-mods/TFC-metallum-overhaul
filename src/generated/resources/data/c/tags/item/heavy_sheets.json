@@ -132,30 +132,6 @@
       "id": "#c:heavy_sheets/zirconium",
       "required": false
     },
-    {
-      "id": "#c:heavy_sheets/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:heavy_sheets/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:heavy_sheets/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:heavy_sheets/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:heavy_sheets/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:heavy_sheets/super_alloy",
-      "required": false
-    },
     "#c:heavy_sheets/bismuth",
     "#c:heavy_sheets/bismuth_bronze",
     "#c:heavy_sheets/black_bronze",

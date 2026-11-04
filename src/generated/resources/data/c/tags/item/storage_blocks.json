@@ -131,30 +131,6 @@
     {
       "id": "#c:storage_blocks/zirconium",
       "required": false
-    },
-    {
-      "id": "#c:storage_blocks/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:storage_blocks/super_alloy",
-      "required": false
     }
   ]
 }

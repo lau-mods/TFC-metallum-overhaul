@@ -131,30 +131,6 @@
     {
       "id": "#c:rods/zirconium",
       "required": false
-    },
-    {
-      "id": "#c:rods/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:rods/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:rods/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:rods/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:rods/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:rods/super_alloy",
-      "required": false
     }
   ]
 }

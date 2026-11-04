@@ -37,13 +37,7 @@ public enum Metal {
     THORIUM(3, 1750, false, 0xFF242424, 0.008571429f, Rarity.UNCOMMON),
     MAGNESIUM(2, 650, false, 0xFFBCA3BA, 0.008571429f, Rarity.COMMON),
     BERYLLIUM(3, 1287, false, 0xFFD3DCC3, 0.008571429f, Rarity.UNCOMMON),
-    ZIRCONIUM(2, 1855, false, 0xFFDFE0B7, 0.008571429f, Rarity.UNCOMMON),
-    NEUTRONIUM(7, 3000, false, 0xFF120E1A, 0.008571429f, Rarity.EPIC),
-    FERROBORON(5, 1500, false, 0xFF3D3D3D, 0.008571429f, Rarity.RARE),
-    TOUGH_ALLOY(5, 1600, false, 0xFF130F1B, 0.008571429f, Rarity.RARE),
-    ZIRCALOY(5, 1855, false, 0xFFBABAB0, 0.008571429f, Rarity.RARE),
-    HSLA_STEEL(5, 1450, false, 0xFF726C9B, 0.008571429f, Rarity.RARE),
-    SUPER_ALLOY(5, 1800, false, 0xFF62595C, 0.008571429f, Rarity.EPIC);
+    ZIRCONIUM(2, 1855, false, 0xFFDFE0B7, 0.008571429f, Rarity.UNCOMMON);
 
     private final String id;
     private final int forgingTier;

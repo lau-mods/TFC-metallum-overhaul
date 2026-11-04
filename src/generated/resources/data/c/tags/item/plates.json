@@ -132,30 +132,6 @@
       "id": "#c:plates/zirconium",
       "required": false
     },
-    {
-      "id": "#c:plates/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:plates/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:plates/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:plates/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:plates/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:plates/super_alloy",
-      "required": false
-    },
     "#c:plates/bismuth",
     "#c:plates/bismuth_bronze",
     "#c:plates/black_bronze",

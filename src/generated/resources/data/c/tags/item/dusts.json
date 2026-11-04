@@ -132,30 +132,6 @@
       "id": "#c:dusts/zirconium",
       "required": false
     },
-    {
-      "id": "#c:dusts/neutronium",
-      "required": false
-    },
-    {
-      "id": "#c:dusts/ferroboron",
-      "required": false
-    },
-    {
-      "id": "#c:dusts/tough_alloy",
-      "required": false
-    },
-    {
-      "id": "#c:dusts/zircaloy",
-      "required": false
-    },
-    {
-      "id": "#c:dusts/hsla_steel",
-      "required": false
-    },
-    {
-      "id": "#c:dusts/super_alloy",
-      "required": false
-    },
     "#c:dusts/bismuth",
     "#c:dusts/bismuth_bronze",
     "#c:dusts/black_bronze",

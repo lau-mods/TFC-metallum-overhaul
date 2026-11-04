@@ -250,7 +250,7 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void allMetalsAndBasicFormsAreRegistered(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            require(Metal.values().length == 39, "Expected exactly 39 TFCM metals");
+            require(Metal.values().length == 33, "Expected exactly 33 TFCM metals");
             Set<String> ids = new java.util.HashSet<>();
             for (Metal metal : Metal.values()) {
                 require(ids.add(metal.id()), "Duplicate metal id " + metal.id());
@@ -288,11 +288,11 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void metalSpecificationValuesMatch(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            int[] tiers = {3,3,7,3,3,3,2,2,2,2,1,5,3,3,3,1,3,1,1,3,3,3,7,6,1,2,7,7,3,3,2,3,2,7,5,5,5,5,5};
-            int[] melts = {1535,1730,2000,1535,1535,1500,940,940,940,940,630,1700,1700,181,660,1250,1250,1000,330,1130,1535,400,1535,1535,1000,520,2000,2000,2076,1750,650,1287,1855,3000,1500,1600,1855,1450,1800};
+            int[] tiers = {3,3,7,3,3,3,2,2,2,2,1,5,3,3,3,1,3,1,1,3,3,3,7,6,1,2,7,7,3,3,2,3,2};
+            int[] melts = {1535,1730,2000,1535,1535,1500,940,940,940,940,630,1700,1700,181,660,1250,1250,1000,330,1130,1535,400,1535,1535,1000,520,2000,2000,2076,1750,650,1287,1855};
             // Values from Metallum 1.5.1, independent of the implementation enum.
-            int[] colors = {0xFF6F6C6B, 0xFF627C8B, 0xFF4D5742, 0xFFADC4CE, 0xFFA5B4CA, 0xFF718383, 0xFF8DB4BC, 0xFF888CCC, 0xFFE2B446, 0xFF473752, 0xFFB4AFBD, 0xFF898B93, 0xFF175AB3, 0xFFC5CBD1, 0xFF929799, 0xFFA45B49, 0xFF869A97, 0xFFA67F3A, 0xFF393D4A, 0xFF4E5946, 0xFF585F6B, 0xFF888888, 0xFF2F353E, 0xFF111111, 0xFFB18143, 0xFF757E76, 0xFF6C3F99, 0xFFE06100, 0xFF676767, 0xFF242424, 0xFFBCA3BA, 0xFFD3DCC3, 0xFFDFE0B7, 0xFF120E1A, 0xFF3D3D3D, 0xFF130F1B, 0xFFBABAB0, 0xFF726C9B, 0xFF62595C};
-            float[] capacities = {0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.012f, 0.01f, 0.01f, 0.01f, 0.0042857146f, 0.008571429f, 0.00857f, 0.0054545454f, 0.023076924f, 0.025f, 0.015f, 0.008571429f, 0.015f, 0.015f, 0.0054545454f, 0.012f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f};
+            int[] colors = {0xFF6F6C6B, 0xFF627C8B, 0xFF4D5742, 0xFFADC4CE, 0xFFA5B4CA, 0xFF718383, 0xFF8DB4BC, 0xFF888CCC, 0xFFE2B446, 0xFF473752, 0xFFB4AFBD, 0xFF898B93, 0xFF175AB3, 0xFFC5CBD1, 0xFF929799, 0xFFA45B49, 0xFF869A97, 0xFFA67F3A, 0xFF393D4A, 0xFF4E5946, 0xFF585F6B, 0xFF888888, 0xFF2F353E, 0xFF111111, 0xFFB18143, 0xFF757E76, 0xFF6C3F99, 0xFFE06100, 0xFF676767, 0xFF242424, 0xFFBCA3BA, 0xFFD3DCC3, 0xFFDFE0B7};
+            float[] capacities = {0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.012f, 0.01f, 0.01f, 0.01f, 0.0042857146f, 0.008571429f, 0.00857f, 0.0054545454f, 0.023076924f, 0.025f, 0.015f, 0.008571429f, 0.015f, 0.015f, 0.0054545454f, 0.012f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f};
             Set<Metal> tools = Set.of(Metal.TITANIUM, Metal.INVAR, Metal.TUNGSTEN_STEEL, Metal.NETHERITE);
             Metal[] metals = Metal.values();
             for (int index = 0; index < metals.length; index++) {
@@ -385,24 +385,10 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void onlySpecifiedAlloyRecipesLoad(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            String[] alloys = {"constantan", "electrum", "invar", "osmiridium", "solder", "ferroboron",
-                    "tough_alloy", "zircaloy", "hsla_steel", "super_alloy", "andesite_alloy_zinc", "andesite_alloy_tin"};
+            String[] alloys = {"constantan", "electrum", "invar", "osmiridium", "solder", "andesite_alloy_zinc", "andesite_alloy_tin"};
             for (String alloy : alloys) {
                 require(recipe(helper, "alloy/" + alloy) instanceof AlloyRecipe, "Missing alloy recipe " + alloy);
             }
-            AlloyRecipe ferroboron = (AlloyRecipe) recipe(helper, "alloy/ferroboron");
-            require(ferroboron.matches(alloy(47, "tfcm:metal/boron", 53, "tfc:metal/steel"))
-                    && !ferroboron.matches(alloy(40, "tfcm:metal/boron", 60, "tfc:metal/steel")),
-                    "Ferroboron must allow 45-55% and nothing wider");
-            AlloyRecipe zircaloy = (AlloyRecipe) recipe(helper, "alloy/zircaloy");
-            require(zircaloy.matches(alloy(875, "tfcm:metal/zirconium", 125, "tfc:metal/tin"))
-                    && zircaloy.matches(alloy(89, "tfcm:metal/zirconium", 11, "tfc:metal/tin"))
-                    && !zircaloy.matches(alloy(80, "tfcm:metal/zirconium", 20, "tfc:metal/tin")),
-                    "Zircaloy must allow 85-90% Zirconium");
-            AlloyRecipe hsla = (AlloyRecipe) recipe(helper, "alloy/hsla_steel");
-            require(hsla.matches(alloy(15, "tfc:metal/cast_iron", 1, "tfc:metal/steel"))
-                    && !hsla.matches(alloy(99, "tfc:metal/cast_iron", 1, "tfc:metal/steel")),
-                    "HSLA Steel must allow 92-96% Cast Iron");
             AlloyRecipe constantan = (AlloyRecipe) recipe(helper, "alloy/constantan");
             require(constantan.matches(alloy(50, "tfc:metal/copper", 50, "tfc:metal/nickel")),
                     "Constantan rejects a valid 50/50 alloy");
