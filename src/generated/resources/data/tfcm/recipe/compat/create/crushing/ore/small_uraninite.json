@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "uraninite"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore/small_uraninite"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/uraninite"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/uraninite"
+    }
+  ]
+}

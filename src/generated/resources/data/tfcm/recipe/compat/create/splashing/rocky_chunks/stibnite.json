@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "stibnite"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/rocky_chunks/stibnite"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/chunks/stibnite"
+    },
+    {
+      "chance": 0.4,
+      "count": 1,
+      "id": "tfc:rock/loose/shale"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfc:rock/loose/slate"
+    },
+    {
+      "chance": 0.001,
+      "count": 1,
+      "id": "tfc:gem/amethyst"
+    }
+  ]
+}

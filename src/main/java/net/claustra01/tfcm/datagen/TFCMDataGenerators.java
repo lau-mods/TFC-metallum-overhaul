@@ -17,6 +17,8 @@ public final class TFCMDataGenerators {
         event.getGenerator().addProvider(event.includeServer(),
                 new ProcessingDataProvider(event.getGenerator().getPackOutput()));
         event.getGenerator().addProvider(event.includeServer(),
+                new MachineProcessingDataProvider(event.getGenerator().getPackOutput()));
+        event.getGenerator().addProvider(event.includeServer(),
                 new SurfaceResourceDataProvider(event.getGenerator().getPackOutput()));
         event.getGenerator().addProvider(event.includeServer(),
                 new AreaToolDataProvider(event.getGenerator().getPackOutput()));

@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chromite"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "firmalife:ore/small_chromite"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/chromite"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/chromite"
+    }
+  ]
+}

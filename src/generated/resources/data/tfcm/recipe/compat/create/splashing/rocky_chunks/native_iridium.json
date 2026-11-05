@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_iridium"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/rocky_chunks/native_iridium"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/chunks/native_iridium"
+    },
+    {
+      "chance": 0.4,
+      "count": 1,
+      "id": "tfc:rock/loose/gabbro"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfc:rock/loose/basalt"
+    }
+  ]
+}

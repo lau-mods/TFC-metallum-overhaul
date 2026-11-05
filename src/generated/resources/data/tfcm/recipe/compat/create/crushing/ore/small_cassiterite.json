@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cassiterite"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfc:ore/small_cassiterite"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/cassiterite"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/cassiterite"
+    }
+  ]
+}

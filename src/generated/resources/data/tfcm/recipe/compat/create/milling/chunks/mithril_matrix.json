@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_platinum"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "mithril_matrix"
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/chunks/mithril_matrix"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/mithril_matrix"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/mithril_matrix"
+    },
+    {
+      "chance": 0.005,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/native_platinum"
+    }
+  ]
+}

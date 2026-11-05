@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "garnierite"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/rocky_chunks/garnierite"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/chunks/garnierite"
+    },
+    {
+      "chance": 0.4,
+      "count": 1,
+      "id": "tfc:rock/loose/gabbro"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfc:rock/loose/basalt"
+    },
+    {
+      "chance": 0.001,
+      "count": 1,
+      "id": "tfc:gem/opal"
+    }
+  ]
+}

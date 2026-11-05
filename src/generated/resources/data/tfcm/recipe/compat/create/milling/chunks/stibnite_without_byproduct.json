@@ -1,0 +1,37 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "tfcm:ore_enabled",
+        "ore": "cinnabar"
+      }
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "stibnite"
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/chunks/stibnite"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/stibnite"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/stibnite"
+    }
+  ]
+}

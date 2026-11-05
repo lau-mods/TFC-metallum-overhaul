@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cobaltite"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore/small_cobaltite"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/cobaltite"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/cobaltite"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_iridium"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore/poor_native_iridium"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 3,
+      "id": "tfcm:ore_processing/rocky_chunks/native_iridium"
+    },
+    {
+      "chance": 0.6,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/native_iridium"
+    }
+  ]
+}

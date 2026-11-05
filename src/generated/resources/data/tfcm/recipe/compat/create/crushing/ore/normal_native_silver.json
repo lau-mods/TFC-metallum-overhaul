@@ -1,0 +1,25 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_silver"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfc:ore/normal_native_silver"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 6,
+      "id": "tfcm:ore_processing/rocky_chunks/native_silver"
+    }
+  ]
+}

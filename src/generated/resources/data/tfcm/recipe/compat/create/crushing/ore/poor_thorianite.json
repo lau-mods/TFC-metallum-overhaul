@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorianite"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore/poor_thorianite"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 3,
+      "id": "tfcm:ore_processing/rocky_chunks/thorianite"
+    },
+    {
+      "chance": 0.6,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/thorianite"
+    }
+  ]
+}

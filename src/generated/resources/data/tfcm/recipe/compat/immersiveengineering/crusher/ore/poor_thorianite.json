@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "immersiveengineering"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorianite"
+    }
+  ],
+  "type": "immersiveengineering:crusher",
+  "energy": 6000,
+  "input": {
+    "item": "tfcm:ore/poor_thorianite"
+  },
+  "result": {
+    "count": 4,
+    "id": "tfcm:ore_processing/rocky_chunks/thorianite"
+  },
+  "secondaries": [
+    {
+      "chance": 0.5,
+      "output": {
+        "count": 1,
+        "id": "tfcm:ore_processing/rocky_chunks/thorianite"
+      }
+    }
+  ]
+}

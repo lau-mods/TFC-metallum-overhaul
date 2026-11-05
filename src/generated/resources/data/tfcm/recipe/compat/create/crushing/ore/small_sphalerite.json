@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "sphalerite"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfc:ore/small_sphalerite"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/sphalerite"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/sphalerite"
+    }
+  ]
+}

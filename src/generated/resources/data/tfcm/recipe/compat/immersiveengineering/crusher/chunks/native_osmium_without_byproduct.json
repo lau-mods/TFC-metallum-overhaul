@@ -1,0 +1,37 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "tfcm:ore_enabled",
+        "ore": "native_iridium"
+      }
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "immersiveengineering"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_osmium"
+    }
+  ],
+  "type": "immersiveengineering:crusher",
+  "energy": 6000,
+  "input": {
+    "item": "tfcm:ore_processing/chunks/native_osmium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/dirty_dust/native_osmium"
+  },
+  "secondaries": [
+    {
+      "chance": 0.5,
+      "output": {
+        "count": 1,
+        "id": "tfcm:ore_processing/dirty_dust/native_osmium"
+      }
+    }
+  ]
+}

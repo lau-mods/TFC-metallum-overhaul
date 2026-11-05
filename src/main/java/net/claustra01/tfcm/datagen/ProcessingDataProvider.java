@@ -365,7 +365,7 @@ public final class ProcessingDataProvider implements DataProvider {
                 : "tfcm:ore_processing/" + form.id() + "/" + series.id();
     }
 
-    private static String oreItem(ProcessingSeries series, String grade) {
+    static String oreItem(ProcessingSeries series, String grade) {
         String namespace = oreNamespace(series);
         String name = grade == null ? series.id()
                 : grade.equals("small") ? "small_" + series.id() : grade + "_" + series.id();
@@ -378,7 +378,7 @@ public final class ProcessingDataProvider implements DataProvider {
         return "tfc";
     }
 
-    private static String gem(String gem) {
+    static String gem(String gem) {
         return gem.equals("quartz") ? "tfcm:ore/quartz" : "tfc:gem/" + gem;
     }
 

@@ -1,0 +1,39 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "uraninite"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorianite"
+    }
+  ],
+  "type": "create:milling",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/chunks/thorianite"
+    }
+  ],
+  "processing_time": 200,
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/thorianite"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/thorianite"
+    },
+    {
+      "chance": 0.005,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/uraninite"
+    }
+  ]
+}

@@ -331,51 +331,72 @@ Expected Result: 品位あり鉱石のSmall Oreと、品位なし鉱石の小鉱
 ### F-010: 鉱石処理定義表
 #### Description
 
-鉱石の粉砕・洗浄は、金属鉱石30種類と非金属鉱物5種類の計35系列で構成する。表の「砂」は二次洗浄で排出するSand Pileの色、「主岩」「副岩」は一次洗浄で出るLoose Rock、「宝石」は一次洗浄の極低確率出力、「副産物B」は二次洗浄で得る別鉱石のDirty Dustを示す。Gemが「なし」の系列ではGem抽選を設定しない。
+鉱石の粉砕・洗浄は、金属鉱石30種類と非金属鉱物5種類の計35系列で構成する。表の「砂」は二次洗浄で排出するSand Pileの色、「主岩」「副岩」は一次洗浄で出るLoose Rock、「宝石」は一次洗浄の極低確率出力、「副産物A」はCreate・IEのStep 3、「副産物B」はStep 4で得る別鉱石のDirty Dustを示す。副産物B欄は既存TFC経路の値とし、CreateではMithril MatrixのみNative Silverへ変更する。他の系列は共通とする。Gemが「なし」の系列ではGem抽選を設定しない。
 
 金属鉱石は一次粉砕後の `rocky_chunks`、`chunks`、`dirty_dust`、`powder` と最終の対応金属を持つ。非金属鉱物は同じ洗浄工程を持つが、最終出力を表のPowder等とし、金属流体の生成は個別に定義されている場合だけ行う。
 
-| 対象鉱石 | 砂 | 主岩 | 副岩 | 宝石 | 副産物B | 最終の金属・鉱物 |
-|---|---|---|---|---|---|---|
-| Native Copper | Red | Basalt | Andesite | Opal | Hematite | Copper |
-| Native Gold | Yellow | Quartzite | Granite | Quartz | Native Silver | Gold |
-| Hematite | Red | Quartzite | Shale | なし | Sulfur | Cast Iron |
-| Native Silver | White | Gneiss | Granite | Amethyst | Galena | Silver |
-| Cassiterite | White | Granite | Gneiss | Topaz | Bismuthinite | Tin |
-| Bismuthinite | Black | Granite | Schist | Pyrite | Galena | Bismuth |
-| Garnierite | Green | Gabbro | Basalt | Opal | Limonite | Nickel |
-| Malachite | Green | Limestone | Dolomite | Opal | Limonite | Copper |
-| Magnetite | Black | Gabbro | Basalt | なし | Hematite | Cast Iron |
-| Limonite | Brown | Claystone | Shale | Opal | Sulfur | Cast Iron |
-| Sphalerite | Brown | Dolomite | Limestone | Amethyst | Galena | Zinc |
-| Tetrahedrite | Black | Schist | Dolomite | Pyrite | Sphalerite | Copper |
-| Galena | Black | Limestone | Dolomite | Amethyst | Sphalerite | Lead |
-| Magnesite | White | Dolomite | Gabbro | Opal | Limonite | Magnesium |
-| Bauxite | Red | Claystone | Shale | Sapphire | Hematite | Aluminum |
-| Uraninite | Black | Granite | Gneiss | なし | Galena | Uranium |
-| Chromite | Black | Gabbro | Basalt | Ruby | Cobaltite | Chromium |
-| Rutile | Red | Gneiss | Schist | Sapphire | Hematite | Titanium |
-| Zircon | Brown | Granite | Gneiss | Topaz | Cassiterite | Zirconium |
-| Cobaltite | Black | Gabbro | Schist | Pyrite | Sulfur | Cobalt |
-| Stibnite | Black | Shale | Slate | Amethyst | Galena | Antimony |
-| Native Platinum | Black | Gabbro | Basalt | なし | Chromite | Platinum |
-| Wolframite | Black | Granite | Gneiss | Quartz | Cassiterite | Tungsten |
-| Thorianite | Black | Granite | Gneiss | なし | Galena | Thorium |
-| Native Iridium | Black | Gabbro | Basalt | なし | Native Platinum | Iridium |
-| Native Osmium | Black | Gabbro | Basalt | なし | Native Platinum | Osmium |
-| Spodumene | White | Granite | Gneiss | Topaz | Cassiterite | Lithium |
-| Carobbiite | White | Granite | Gneiss | Emerald | Native Platinum | Beryllium |
-| **Native Naquadah** | **Black** | **Gabbro** | **Basalt** | **なし** | **Native Osmium** | **Naquadah** |
-| **Mithril Matrix** | **White** | **Gneiss** | **Granite** | **Amethyst** | **Native Platinum** | **Mithril** |
-| Cinnabar | Red | Quartzite | Schist | Ruby | Sulfur | Redstone Dust |
-| Cryolite | White | Granite | Gneiss | Topaz | Spodumene | Redstone Dust |
-| Graphite | Black | Schist | Phyllite | Diamond | Hematite | Graphite Powder |
-| Sulfur | Yellow | Tuff | Basalt | Pyrite | Hematite | Sulfur Powder |
-| Borax | White | Granite | Gneiss | Topaz | Graphite | Borax Powder |
+| 対象鉱石 | 砂 | 主岩 | 副岩 | 宝石 | 副産物A（Create・IE） | 副産物B（TFC） | 最終の金属・鉱物 |
+|---|---|---|---|---|---|---|---|
+| Native Copper | Red | Basalt | Andesite | Opal | Malachite | Hematite | Copper |
+| Native Gold | Yellow | Quartzite | Granite | Quartz | Native Platinum | Native Silver | Gold |
+| Hematite | Red | Quartzite | Shale | なし | Magnetite | Sulfur | Cast Iron |
+| Native Silver | White | Gneiss | Granite | Amethyst | Native Gold | Galena | Silver |
+| Cassiterite | White | Granite | Gneiss | Topaz | Cryolite | Bismuthinite | Tin |
+| Bismuthinite | Black | Granite | Schist | Pyrite | Stibnite | Galena | Bismuth |
+| Garnierite | Green | Gabbro | Basalt | Opal | Chromite | Limonite | Nickel |
+| Malachite | Green | Limestone | Dolomite | Opal | Native Copper | Limonite | Copper |
+| Magnetite | Black | Gabbro | Basalt | なし | Chromite | Hematite | Cast Iron |
+| Limonite | Brown | Claystone | Shale | Opal | Garnierite | Sulfur | Cast Iron |
+| Sphalerite | Brown | Dolomite | Limestone | Amethyst | Tetrahedrite | Galena | Zinc |
+| Tetrahedrite | Black | Schist | Dolomite | Pyrite | Stibnite | Sphalerite | Copper |
+| Galena | Black | Limestone | Dolomite | Amethyst | Native Silver | Sphalerite | Lead |
+| Magnesite | White | Dolomite | Gabbro | Opal | Garnierite | Limonite | Magnesium |
+| Bauxite | Red | Claystone | Shale | Sapphire | Rutile | Hematite | Aluminum |
+| Uraninite | Black | Granite | Gneiss | なし | Bismuthinite | Galena | Uranium |
+| Chromite | Black | Gabbro | Basalt | Ruby | Garnierite | Cobaltite | Chromium |
+| Rutile | Red | Gneiss | Schist | Sapphire | Zircon | Hematite | Titanium |
+| Zircon | Brown | Granite | Gneiss | Topaz | Rutile | Cassiterite | Zirconium |
+| Cobaltite | Black | Gabbro | Schist | Pyrite | Bismuthinite | Sulfur | Cobalt |
+| Stibnite | Black | Shale | Slate | Amethyst | Cinnabar | Galena | Antimony |
+| Native Platinum | Black | Gabbro | Basalt | なし | Native Iridium | Chromite | Platinum |
+| Wolframite | Black | Granite | Gneiss | Quartz | Bismuthinite | Cassiterite | Tungsten |
+| Thorianite | Black | Granite | Gneiss | なし | Uraninite | Galena | Thorium |
+| Native Iridium | Black | Gabbro | Basalt | なし | Native Osmium | Native Platinum | Iridium |
+| Native Osmium | Black | Gabbro | Basalt | なし | Native Iridium | Native Platinum | Osmium |
+| Spodumene | White | Granite | Gneiss | Topaz | Zircon | Cassiterite | Lithium |
+| Carobbiite | White | Granite | Gneiss | Emerald | Borax | Native Platinum | Beryllium |
+| **Native Naquadah** | **Black** | **Gabbro** | **Basalt** | **なし** | Native Iridium | **Native Osmium** | **Naquadah** |
+| **Mithril Matrix** | **White** | **Gneiss** | **Granite** | **Amethyst** | Native Platinum | **Native Platinum** | **Mithril** |
+| Cinnabar | Red | Quartzite | Schist | Ruby | Stibnite | Sulfur | Redstone Dust |
+| Cryolite | White | Granite | Gneiss | Topaz | Cassiterite | Spodumene | Redstone Dust |
+| Graphite | Black | Schist | Phyllite | Diamond | Magnetite | Hematite | Graphite Powder |
+| Sulfur | Yellow | Tuff | Basalt | Pyrite | Cinnabar | Hematite | Sulfur Powder |
+| Borax | White | Granite | Gneiss | Topaz | Carobbiite | Graphite | Borax Powder |
 
 Native NaquadahとMithril Matrixの行は**本プロジェクトで確定した固有仕様**とする。これらも他の品位あり鉱石と同じ4段階（Small、Poor、Normal、Rich）のハンマー粉砕規則と二段階のSluice処理を使用する。宝石欄の「なし」はゼロ確率ではなく、抽選枠そのものを作らない意味である。
 
 本表は**鉱石の加工定義**であり、鉱脈の生成ディメンションや生成高度を指定するものではない。採掘時のワールド配置はF-024の生成設定で決まる。
+
+#### Create・Immersive Engineering（IE）の追加経路
+
+F-011〜F-014のTFC単独経路を維持し、同じOre → Rocky Chunks → Chunks → Dirty Dust → Powderを使用する。各工程で設備を自由に組み合わせられる。Create・IEのレシピは、それぞれのMod導入時のみ有効にする。
+
+Step 1のRocky Chunks出力は以下のとおり。「＋確率」は追加1個の独立抽選を示す。MineralはCarobbiiteと品位なし非金属5系列を含む。
+
+| 品位 | Create Crushing Wheels | IE Crusher |
+|---|---|---|
+| Small | 1個＋20%で1個 | 1個＋50%で1個 |
+| Poor | 3個＋60%で1個 | 4個＋50%で1個 |
+| Normal | 6個 | 7個＋50%で1個 |
+| Rich | 8個＋40%で1個 | 10個＋50%で1個 |
+| Mineral | 8個＋40%で1個 | 10個＋50%で1個 |
+
+| 工程 | 設備 | 出力（各1個、独立抽選） |
+|---|---|---|
+| Step 2: Rocky Chunks → Chunks | Create Encased Fan / Splashing | Chunk 100%、主岩Loose Rock 40%、副岩Loose Rock 20%、Gem 0.1%（定義がある場合のみ） |
+| Step 3: Chunks → Dirty Dust | Create Millstone | 同系列Dirty Dust 100%＋追加25%、副産物A Dirty Dust 0.5% |
+| Step 3: Chunks → Dirty Dust | IE Crusher | 同系列Dirty Dust 100%＋追加50%、副産物A Dirty Dust 2% |
+| Step 4: Dirty Dust → Powder | Create Encased Fan / Splashing | Powder 100%、対応色Sand Pile 25%、同系列Dirty Dust 25%、副産物B Dirty Dust 0.5% |
 
 #### Acceptance Criteria
 ##### AC-F010-001: 35系列の処理
@@ -385,13 +406,13 @@ Expected Result: 金属鉱石30系列、非金属鉱物5系列が存在し、表
 
 ##### AC-F010-002: NaquadahとMithril Matrix
 Preconditions: Native Naquadah、Mithril Matrixの鉱石と加工設備がある。  
-Action: 両系列をそれぞれ一次・二次洗浄する。  
+Action: 両系列をそれぞれTFC Sluiceで一次・二次洗浄する。  
 Expected Result: NaquadahはBlack/Gabbro/Basalt/Gemなし/Native Osmium、Mithril MatrixはWhite/Gneiss/Granite/Amethyst/Native Platinumの設定を使用し、粉末は対応金属へつながる。
 
 ##### AC-F010-003: 定義に基づく出力
 Preconditions: Gemのある鉱石とGemのない鉱石がある。  
-Action: 同じ処理を行いloot tableを調べる。  
-Expected Result: 主岩・副岩・砂・宝石・副産物Bが表に一致し、未指定の宝石や副産物Aを追加しない。
+Action: 各経路の処理を行い、loot tableと追加レシピの出力を調べる。  
+Expected Result: 主岩・副岩・砂・宝石・副産物が表と経路別の定義に一致する。Gemなしの系列にはGem抽選を追加せず、TFC単独経路では副産物Aを生成しない。
 
 ### F-011: Step 1 — 鉱石のHammer粉砕
 #### Description
@@ -421,7 +442,7 @@ Expected Result: Carobbiiteから5個、非金属鉱物から7個のRocky Chunk�
 ### F-012: Step 2 — Sluice一次洗浄
 #### Description
 
-Rocky Chunk 1個のTFC Sluice処理に対し、それぞれ独立したloot poolで以下を抽選する。一次洗浄にはTFCのSluice機構のみを使用する。
+Rocky Chunk 1個のTFC Sluice処理に対し、それぞれ独立したloot poolで以下を抽選する。TFC単独経路の一次洗浄にはSluiceを使用し、Create追加経路はF-010の定義に従う。
 
 | 出力 | 個数 | 確率 |
 |---|---:|---:|

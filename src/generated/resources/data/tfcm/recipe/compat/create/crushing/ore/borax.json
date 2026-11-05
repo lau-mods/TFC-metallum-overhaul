@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "borax"
+    }
+  ],
+  "type": "create:crushing",
+  "ingredients": [
+    {
+      "item": "tfc:ore/borax"
+    }
+  ],
+  "processing_time": 400,
+  "results": [
+    {
+      "count": 8,
+      "id": "tfcm:ore_processing/rocky_chunks/borax"
+    },
+    {
+      "chance": 0.4,
+      "count": 1,
+      "id": "tfcm:ore_processing/rocky_chunks/borax"
+    }
+  ]
+}

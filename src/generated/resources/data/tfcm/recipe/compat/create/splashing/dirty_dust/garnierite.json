@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "limonite"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "garnierite"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/dirty_dust/garnierite"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfc:powder/garnierite"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/sand_pile/green"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/garnierite"
+    },
+    {
+      "chance": 0.005,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/limonite"
+    }
+  ]
+}
