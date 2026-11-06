@@ -332,7 +332,7 @@ public final class TFCMMetalGameTests {
         helper.succeedIf(() -> {
             require(item("metal/ingot/high_carbon_tungsten_steel"), "High carbon tungsten steel is missing");
             Recipe<?> recipe = recipe(helper, "anvil/metal/ingot/tungsten_steel");
-            require(recipe instanceof AnvilRecipe anvil && anvil.getMinTier() == 7,
+            require(recipe instanceof AnvilRecipe anvil && anvil.getMinTier() == 6,
                     "High carbon tungsten steel does not use the tier 7 anvil route");
             HeatingRecipe heating = (HeatingRecipe) recipe(helper, "heating/metal/ingot/high_carbon_tungsten_steel");
             require(heating.getDisplayOutputFluid().getAmount() == 100,

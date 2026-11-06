@@ -364,7 +364,7 @@ public final class MetalDataProvider implements DataProvider {
         json.add("ingredient", itemIngredient("tfcm:metal/ingot/high_carbon_tungsten_steel"));
         json.add("result", item("tfcm:metal/ingot/tungsten_steel", 1));
         json.add("rules", forgeRules());
-        json.addProperty("tier", 7);
+        json.addProperty("tier", 6);
         return json;
     }
 
