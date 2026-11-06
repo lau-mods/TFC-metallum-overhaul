@@ -9,7 +9,7 @@
       "metal": "antimony"
     }
   ],
-  "heat_capacity": 3.2,
+  "heat_capacity": 4.0,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/stibnite"
   }

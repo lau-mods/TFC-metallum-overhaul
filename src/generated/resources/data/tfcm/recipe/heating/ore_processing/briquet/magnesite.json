@@ -14,7 +14,7 @@
     "item": "tfcm:ore_processing/briquet/magnesite"
   },
   "result_fluid": {
-    "amount": 80,
+    "amount": 100,
     "id": "tfcm:metal/magnesium"
   },
   "temperature": 650

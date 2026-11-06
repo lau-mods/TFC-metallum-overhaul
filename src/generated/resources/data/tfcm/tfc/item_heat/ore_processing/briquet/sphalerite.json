@@ -5,7 +5,7 @@
       "ore": "sphalerite"
     }
   ],
-  "heat_capacity": 3.8095243,
+  "heat_capacity": 4.761905,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/sphalerite"
   }

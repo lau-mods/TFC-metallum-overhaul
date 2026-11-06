@@ -10,7 +10,7 @@
     "item": "tfcm:ore_processing/briquet/garnierite"
   },
   "result_fluid": {
-    "amount": 80,
+    "amount": 100,
     "id": "tfc:metal/nickel"
   },
   "temperature": 1453

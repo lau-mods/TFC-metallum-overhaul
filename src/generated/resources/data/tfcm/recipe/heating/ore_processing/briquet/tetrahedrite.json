@@ -10,7 +10,7 @@
     "item": "tfcm:ore_processing/briquet/tetrahedrite"
   },
   "result_fluid": {
-    "amount": 80,
+    "amount": 100,
     "id": "tfc:metal/copper"
   },
   "temperature": 1080

@@ -10,7 +10,7 @@
     "item": "tfcm:ore_processing/briquet/sphalerite"
   },
   "result_fluid": {
-    "amount": 80,
+    "amount": 100,
     "id": "tfc:metal/zinc"
   },
   "temperature": 420

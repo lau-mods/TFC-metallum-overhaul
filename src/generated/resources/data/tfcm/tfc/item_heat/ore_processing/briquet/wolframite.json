@@ -9,7 +9,7 @@
       "metal": "tungsten"
     }
   ],
-  "heat_capacity": 4.0,
+  "heat_capacity": 5.0,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/wolframite"
   }

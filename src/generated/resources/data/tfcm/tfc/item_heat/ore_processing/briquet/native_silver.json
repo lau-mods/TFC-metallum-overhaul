@@ -5,7 +5,7 @@
       "ore": "native_silver"
     }
   ],
-  "heat_capacity": 1.6666669,
+  "heat_capacity": 2.0833335,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/native_silver"
   }

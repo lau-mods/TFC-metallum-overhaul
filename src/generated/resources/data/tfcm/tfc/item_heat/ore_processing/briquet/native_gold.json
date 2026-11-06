@@ -5,7 +5,7 @@
       "ore": "native_gold"
     }
   ],
-  "heat_capacity": 1.3333333,
+  "heat_capacity": 1.6666665,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/native_gold"
   }

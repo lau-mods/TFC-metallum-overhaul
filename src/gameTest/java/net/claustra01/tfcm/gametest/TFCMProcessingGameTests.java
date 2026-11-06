@@ -210,11 +210,11 @@ public final class TFCMProcessingGameTests {
         helper.succeedIf(() -> {
             ProcessingSeries series = ProcessingSeries.NATIVE_COPPER;
             checkCraft(helper, "pellet", series, ProcessingForm.POWDER, 4, ProcessingForm.PELLET, 1);
-            checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 4, ProcessingForm.BRIQUET, 1);
+            checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 5, ProcessingForm.BRIQUET, 1);
             checkCraft(helper, "unpack_pellet", series, ProcessingForm.PELLET, 1, ProcessingForm.POWDER, 4);
-            checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 4);
+            checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 5);
             checkHeating(helper, series, ProcessingForm.PELLET, 20, "tfc:metal/copper");
-            checkHeating(helper, series, ProcessingForm.BRIQUET, 80, "tfc:metal/copper");
+            checkHeating(helper, series, ProcessingForm.BRIQUET, 100, "tfc:metal/copper");
             require(ProcessingSeries.BAUXITE.recoveryTemperature() == 660,
                     "Bauxite recovery temperature differs from aluminum's melting point");
             for (ProcessingForm form : List.of(ProcessingForm.POWDER, ProcessingForm.PELLET, ProcessingForm.BRIQUET)) {
@@ -251,7 +251,7 @@ public final class TFCMProcessingGameTests {
                     "Borax recovery fluid tfcm:metal/boron is not registered");
             checkHeating(helper, ProcessingSeries.BORAX, ProcessingForm.POWDER, 5, "tfcm:metal/boron");
             checkHeating(helper, ProcessingSeries.BORAX, ProcessingForm.PELLET, 20, "tfcm:metal/boron");
-            checkHeating(helper, ProcessingSeries.BORAX, ProcessingForm.BRIQUET, 80, "tfcm:metal/boron");
+            checkHeating(helper, ProcessingSeries.BORAX, ProcessingForm.BRIQUET, 100, "tfcm:metal/boron");
         });
     }
 
@@ -321,11 +321,11 @@ public final class TFCMProcessingGameTests {
                             "Series without a melt has compressed forms: " + expected.id());
                 } else {
                     checkCraft(helper, "pellet", series, ProcessingForm.POWDER, 4, ProcessingForm.PELLET, 1);
-                    checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 4, ProcessingForm.BRIQUET, 1);
+                    checkCraft(helper, "briquet", series, ProcessingForm.PELLET, 5, ProcessingForm.BRIQUET, 1);
                     checkCraft(helper, "unpack_pellet", series, ProcessingForm.PELLET, 1, ProcessingForm.POWDER, 4);
-                    checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 4);
+                    checkCraft(helper, "unpack_briquet", series, ProcessingForm.BRIQUET, 1, ProcessingForm.PELLET, 5);
                     checkHeating(helper, series, ProcessingForm.PELLET, 20, expected.recoveryFluid());
-                    checkHeating(helper, series, ProcessingForm.BRIQUET, 80, expected.recoveryFluid());
+                    checkHeating(helper, series, ProcessingForm.BRIQUET, 100, expected.recoveryFluid());
                 }
             }
             checkDirtyPile(helper);
@@ -442,7 +442,9 @@ public final class TFCMProcessingGameTests {
                 "crafting/ore_processing/" + recipeName + "/" + series.id());
         List<ItemStack> items = new ArrayList<>();
         for (int i = 0; i < inputCount; i++) items.add(stack(series, inputForm));
-        CraftingInput input = CraftingInput.of(inputCount == 4 ? 2 : 1, inputCount == 4 ? 2 : 1, items);
+        int width = inputCount > 4 ? 3 : inputCount > 1 ? 2 : 1;
+        while (items.size() < width * width) items.add(ItemStack.EMPTY);
+        CraftingInput input = CraftingInput.of(width, width, items);
         require(recipe.matches(input, helper.getLevel()), "Compression recipe does not match: " + recipeName);
         ItemStack result = recipe.assemble(input, helper.getLevel().registryAccess());
         require(result.is(stack(series, outputForm).getItem()) && result.getCount() == outputCount,

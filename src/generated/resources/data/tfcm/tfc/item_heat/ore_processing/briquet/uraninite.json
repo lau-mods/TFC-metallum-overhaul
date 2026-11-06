@@ -9,7 +9,7 @@
       "metal": "uranium"
     }
   ],
-  "heat_capacity": 6.6666675,
+  "heat_capacity": 8.333334,
   "ingredient": {
     "item": "tfcm:ore_processing/briquet/uraninite"
   }

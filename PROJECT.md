@@ -506,7 +506,7 @@ Expected Result: それぞれNaquadahとMithrilのPowderを確定で得るとと
 ### F-015: Powder・Pellet・Briquetと最終加熱
 #### Description
 
-鉱石洗浄で得られたPowderを、金属回収のためTFC Heatingへ渡す。対象金属の溶融流体を5 mB/個生成する。粉末の圧縮加工としてPellet（20 mB相当）とBriquet（80 mB相当）を登録する。Powder 4個 → Pellet 1個、Pellet 4個 → Briquet 1個として加工し、逆向きにはBriquet 1個 → Pellet 4個、Pellet 1個 → Powder 4個へ解体する。BriquetはPowder 16個相当である。Heatingには鉱石系列に対応する金属の溶融・処理温度を使用する。
+鉱石洗浄で得られたPowderを、金属回収のためTFC Heatingへ渡す。対象金属の溶融流体を5 mB/個生成する。粉末の圧縮加工としてPellet（20 mB相当）とBriquet（100 mB相当）を登録する。Powder 4個 → Pellet 1個、Pellet 5個 → Briquet 1個として加工し、逆向きにはBriquet 1個 → Pellet 5個、Pellet 1個 → Powder 4個へ解体する。BriquetはPowder 20個相当である。Heatingには鉱石系列に対応する金属の溶融・処理温度を使用する。
 
 非金属鉱物ではF-010の最終粉末アイテムを生成する。Borax系列はBorax Powderを得た後、既定のBoron回収処理へ接続する。金属以外の粉末から根拠のない溶融流体を追加しない。
 
@@ -523,7 +523,7 @@ Expected Result: 対象金属の溶融流体5 mBを得る。Native NaquadahはNa
 ##### AC-F015-002: 圧縮と解体
 Preconditions: 同系列のPowderが16個ある。  
 Action: PelletとBriquetを製造・解体・加熱する。  
-Expected Result: 1 Pelletが20 mB、1 Briquetが80 mBに相当し、圧縮と解体が材料量で一致する。
+Expected Result: 1 Pelletが20 mB、1 Briquetが100 mBに相当し、圧縮と解体が材料量で一致する。
 
 ##### AC-F015-003: 非金属鉱物
 Preconditions: Cinnabar、Cryolite、Graphite、Sulfur、BoraxのPowderがある。  

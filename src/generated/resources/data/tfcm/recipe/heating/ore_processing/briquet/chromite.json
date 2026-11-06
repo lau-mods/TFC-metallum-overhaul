@@ -14,7 +14,7 @@
     "item": "tfcm:ore_processing/briquet/chromite"
   },
   "result_fluid": {
-    "amount": 80,
+    "amount": 100,
     "id": "firmalife:metal/chromium"
   },
   "temperature": 1250

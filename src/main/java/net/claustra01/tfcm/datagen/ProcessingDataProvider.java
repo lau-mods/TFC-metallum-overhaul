@@ -142,20 +142,20 @@ public final class ProcessingDataProvider implements DataProvider {
                 conditional(series, shapeless(item(series, ProcessingForm.POWDER), 4,
                         item(series, ProcessingForm.PELLET), 1))));
         files.add(save(output, data, "tfcm/recipe/crafting/ore_processing/briquet/" + series.id(),
-                conditional(series, shapeless(item(series, ProcessingForm.PELLET), 4,
+                conditional(series, shapeless(item(series, ProcessingForm.PELLET), 5,
                         item(series, ProcessingForm.BRIQUET), 1))));
         files.add(save(output, data, "tfcm/recipe/crafting/ore_processing/unpack_pellet/" + series.id(),
                 conditional(series, shapeless(item(series, ProcessingForm.PELLET), 1,
                         item(series, ProcessingForm.POWDER), 4))));
         files.add(save(output, data, "tfcm/recipe/crafting/ore_processing/unpack_briquet/" + series.id(),
                 conditional(series, shapeless(item(series, ProcessingForm.BRIQUET), 1,
-                        item(series, ProcessingForm.PELLET), 4))));
+                        item(series, ProcessingForm.PELLET), 5))));
     }
 
     private void addHeating(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series) {
         addHeating(output, files, series, ProcessingForm.POWDER, 5);
         addHeating(output, files, series, ProcessingForm.PELLET, 20);
-        addHeating(output, files, series, ProcessingForm.BRIQUET, 80);
+        addHeating(output, files, series, ProcessingForm.BRIQUET, 100);
     }
 
     private void addHeating(CachedOutput output, List<CompletableFuture<?>> files, ProcessingSeries series,
