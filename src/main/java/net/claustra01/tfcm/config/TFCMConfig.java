@@ -27,7 +27,7 @@ public final class TFCMConfig {
         ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
         ENABLE_CUSTOM_VEIN_GENERATION = builder
                 .comment("Replace TFC overworld veins and TFCM geodes with config/tfcm/*.yaml world generation")
-                .define("enableCustomVeinGeneration", true);
+                .define("enableCustomVeinGeneration", false);
         DISABLED_METALS = builder.comment("Content is disabled after the game is restarted.",
                 "Accepted metal IDs: " + String.join(", ", metalIds()))
                 .defineListAllowEmpty("disabledMetals", List::of, value -> value instanceof String);

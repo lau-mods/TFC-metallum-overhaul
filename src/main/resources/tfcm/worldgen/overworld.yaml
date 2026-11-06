@@ -1112,33 +1112,6 @@ veins:
       underground_rarity: 1
       underground_count: 4
 
-  - id: tfcm:vein/carobbiite
-    blocks:
-      - block: tfcm:ore/carobbiite/{rock}
-    type: tfc:cluster_vein
-    ymax: 32
-    ymin: -64
-    rarity: 70
-    density: 0.5
-    size: 18
-    random_name: carobbiite
-    rocks:
-      - granite
-      - diorite
-      - gabbro
-      - quartzite
-      - slate
-      - phyllite
-      - schist
-      - gneiss
-      - marble
-    indicator:
-      block: tfcm:ore/small_carobbiite
-      rarity: 0
-      depth: 35
-      underground_rarity: 1
-      underground_count: 4
-
 geodes:
   - id: tfcm:quartz_geode
     ymin: -48
@@ -1185,27 +1158,4 @@ geodes:
       - block: tfcm:mineral/medium_amethyst_bud
         weight: 5
       - block: tfcm:mineral/small_amethyst_bud
-        weight: 8
-  - id: tfcm:certus_quartz_geode
-    ymin: -48
-    ymax: 32
-    rarity: 300
-    outer: tfc:rock/hardened/basalt
-    middle: tfc:rock/raw/quartzite
-    inner:
-      - block: tfcm:mineral/budding_certus_quartz
-        weight: 2
-      - block: tfcm:mineral/certus_quartz_block
-        weight: 5
-      - block: tfc:rock/raw/quartzite
-    filling:
-      - block: minecraft:air
-    inner_placements:
-      - block: tfcm:mineral/certus_quartz_cluster
-        weight: 1
-      - block: tfcm:mineral/large_certus_quartz_bud
-        weight: 3
-      - block: tfcm:mineral/medium_certus_quartz_bud
-        weight: 5
-      - block: tfcm:mineral/small_certus_quartz_bud
         weight: 8
