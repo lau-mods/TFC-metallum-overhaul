@@ -95,7 +95,7 @@ final class SluiceRecipeCategory implements IRecipeCategory<SluiceRecipe> {
         return index / COLUMNS * CELL_HEIGHT + 1;
     }
 
-    private static String percent(float chance) {
+    static String percent(float chance) {
         return String.format(Locale.ROOT, "%.2f", chance * 100).replaceFirst("\\.?0+$", "");
     }
 }

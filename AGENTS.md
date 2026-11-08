@@ -117,8 +117,8 @@
 
 ## M11 YAML worldgen
 
-- Common Configの`enableCustomVeinGeneration`が有効な場合、`config/tfcm/overworld.yaml`、`nether.yaml`、`end.yaml`を正規パスとして読み込む。旧パス・旧構文は扱わない。
-- 起動時に、存在しないファイルだけを同梱の`src/main/resources/tfcm/worldgen/*.yaml`からコピーし、既存ファイルは上書きしない。同梱Overworldは旧実装の鉱脈46件（FirmaLife未導入時は該当2件を警告で除外）と3種の標準晶洞、Nether/Endは空定義とする。旧実装の既定に鉱脈がある独自鉱石はBauxite、Galena、Uraninite、Carobbiiteだけで、他の独自鉱石は既定では生成しない。
+- Common Configの`enableCustomVeinGeneration`（既定値`true`）が有効な場合、`config/tfcm/overworld.yaml`、`nether.yaml`、`end.yaml`を正規パスとして読み込む。旧パス・旧構文は扱わない。
+- 起動時に、存在しないファイルだけを同梱の`src/main/resources/tfcm/worldgen/*.yaml`からコピーし、既存ファイルは上書きしない。同梱Overworldは旧実装の鉱脈45件（FirmaLife未導入時は該当2件を警告で除外）とQuartz・Amethystの標準晶洞2種、Nether/Endは空定義とする。既定で鉱脈がある独自鉱石はBauxite、Galena、Uraniniteだけで、他の独自鉱石は既定では生成しない。
 - 各YAMLは`veins`と`geodes`の配列を持つ。Veinは`id`、`type`、`ymin`、`ymax`、`blocks`が必須で、`type`は`tfc:cluster_vein`、`tfc:disc_vein`、`tfc:kaolin_disc_vein`、`tfc:pipe_vein`のいずれかとする。`blocks`は`block`と省略時1の正有限`weight`を持ち、`rocks`はOverworldで必須、Nether/Endでは省略時にそれぞれ`minecraft:netherrack`/`minecraft:end_stone`を使う。
 - Veinの既定値は`rarity=1`、`density=1`、`size=1`、`height=1`、`radius=1`、`min_skew=max_skew=min_slant=max_slant=0`、`sign=0`、`project=false`、`project_offset=false`、`near_lava=false`。`tier`は品位名から正整数weightへのmapで、`{rock}`と`{tier}`を展開し、最終weightはblock weight×tier weightとする。`seed`指定を優先し、未指定時は`random_name`（既定は`id`）のMinecraft hash seedの上下64 bitをXORした値を使う。
 - `indicator`は`block`が必須で、`rarity`は0を許容し、既定値は`rarity=1`、`depth=0`、`underground_rarity=1`、`underground_count=0`。Veinの`ymin`/`ymax`は必須で、type別の`density`、`size`、`height`、`radius`、`min_skew`、`max_skew`、`min_slant`、`max_slant`、`sign`と投影・溶岩条件をTFC configへ渡す。
@@ -126,7 +126,9 @@
 - Overworldに有効なYAML鉱脈があればTFCの鉱石鉱脈だけを置換し、なければTFC鉱脈を維持する。既存のGravel・Dike等は維持する。標準TFCM晶洞は除外してYAML晶洞だけを追加する。
 - 置換対象は`tfc:vein/`と`firmalife:vein/`配下のplaced featureのうち`vein/gravel`、`vein/kaolin_disc`、`*_dike`以外とする。`GeodeDataProvider`がmodifier入口の`custom_worldgen.json`を生成する。
 - Nether・Endは各YAMLに明示された鉱脈・晶洞だけを追加し、空設定では追加しない。未登録block、不正type・数値、重複IDは警告してエントリ単位で除外し、重複は先頭を採用する。
-- M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallbackを検証する。
+- JEI（任意）の`tfcm:ore_vein`カテゴリに、`enableCustomVeinGeneration`が有効なサーバーのYAML鉱脈を表示する。値は`CustomWorldgenBiomeModifier`がサーバー起動時に読んだ定義を使い（YAMLの再読込はしない）、`OnDatapackSyncEvent`で`tfcm:ore_veins`ペイロードとして送る。無効時は空リストを送る。晶洞は表示しない。
+- 1鉱脈は母岩（入力）、`{tier}`/`blocks`展開後の各entry（出力、母岩と同じ順で揃えて同期cycle表示）、indicator（出力）で構成する。割合はentry weight÷全weight。itemのないblockは表示から除外し、割合の分母には残す。見出しは各entryの先頭blockの`<translation key>.prospected`（無ければblock名）を重複なく`, `で連結した鉱石名とし、IDは表示しない。情報欄はディメンション、type、Y範囲、rarity、density、typeが読むshape値（cluster=size、disc/kaolin=size・height、pipe=height・radius）とする。indicator tooltipはTFC `VeinFeature`どおり地表`1/rarity`（0は無し）と`depth`、地下`underground_count`×`1/underground_rarity`。出力が5個を超えるとscroll gridにする。
+- M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallback、JEI表示データの母岩対応・割合・ペイロード往復・無効時の空送信を検証する。
 
 ## M12 content toggles
 

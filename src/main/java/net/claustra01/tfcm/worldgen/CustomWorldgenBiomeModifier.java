@@ -111,6 +111,10 @@ public final class CustomWorldgenBiomeModifier implements BiomeModifier {
         undergroundOres.addAll(features.getOrDefault(dimension, List.of()));
     }
 
+    Map<String, Dimension> definitions() {
+        return definitions;
+    }
+
     List<Holder<PlacedFeature>> features(String dimension) {
         return features.getOrDefault(dimension, List.of());
     }

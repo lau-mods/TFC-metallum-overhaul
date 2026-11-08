@@ -19,6 +19,7 @@ import net.claustra01.tfcm.registry.TFCMBiomeModifiers;
 import net.claustra01.tfcm.registry.TFCMBlocks;
 import net.claustra01.tfcm.registry.TFCMFluids;
 import net.claustra01.tfcm.registry.TFCMItems;
+import net.claustra01.tfcm.worldgen.VeinDisplaySync;
 import net.claustra01.tfcm.worldgen.YamlWorldgenLoader;
 import net.dries007.tfc.common.blockentities.TFCBlockEntities;
 import net.dries007.tfc.common.capabilities.ItemCapabilities;
@@ -80,7 +81,9 @@ public final class TFCM {
         modBus.addListener(TFCM::addAnvilBlocks);
         modBus.addListener(TFCM::registerCapabilities);
         modBus.addListener(SluiceRecipeSync::registerPayloads);
+        modBus.addListener(VeinDisplaySync::registerPayloads);
         NeoForge.EVENT_BUS.addListener(SluiceRecipeSync::onDatapackSync);
+        NeoForge.EVENT_BUS.addListener(VeinDisplaySync::onDatapackSync);
         NeoForge.EVENT_BUS.addListener(PlantFiberHarvest::onRightClickBlock);
         NeoForge.EVENT_BUS.addListener(TFCM::addReloadListeners);
     }

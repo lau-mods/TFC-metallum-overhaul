@@ -815,6 +815,8 @@ config/tfcm/end.yaml
 
 参照先ブロック未登録、依存コンテンツ未導入、数値不正、type不正、ID重複などの入力は警告を出して該当エントリだけを無効とする。重複IDは先頭を採用する。古い設定パスや旧構文のための特別なfallbackは設けない。
 
+JEIが導入されていて `enableCustomVeinGeneration = true` のとき、サーバーが生成に使うYAML鉱脈をJEIの鉱脈カテゴリに表示する。各鉱脈は品位・母岩を含まない鉱石名を見出しにし、母岩、母岩ごとの鉱石とweightの割合、indicatorの地表・地下設定、ディメンション、type、Y範囲、rarity、density、typeに応じたsize・height・radiusを示す。YAMLはサーバーのものを同期し、無効時は表示しない。itemを持たないブロックは表示から除外するが、割合は全weightから計算する。晶洞は表示しない。
+
 #### Acceptance Criteria
 ##### AC-F024-001: 3ディメンションの読込み
 Preconditions: 3つのYAMLに異なる有効定義を配置する。  
@@ -830,6 +832,11 @@ Expected Result: 置換・相対weight・品位weight・母岩条件・地表/�
 Preconditions: 空の設定と無効定義を含む設定を用意する。  
 Action: ワールドを読み込む。  
 Expected Result: 無効エントリを警告で除外し、Overworldでは規定のfallback、Nether・Endでは空定義時に非生成となる。
+
+##### AC-F024-004: JEIの鉱脈表示
+Preconditions: JEIを導入し、`enableCustomVeinGeneration = true` でrocks・tier・indicatorのある鉱脈を定義する。  
+Action: サーバーへ接続し、JEIの鉱脈カテゴリを開く。  
+Expected Result: サーバーのYAML値が表示され、母岩と鉱石が対応し、割合が全weightに対する比になる。無効時は鉱脈を表示しない。
 
 ### F-025: TFC鉱石・FirmaLife Chromiteの異世界ブロック
 #### Description

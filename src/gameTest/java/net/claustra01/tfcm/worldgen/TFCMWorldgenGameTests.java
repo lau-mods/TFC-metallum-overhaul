@@ -5,12 +5,16 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import com.mojang.datafixers.util.Pair;
 
+import io.netty.buffer.Unpooled;
+
 import net.claustra01.tfcm.TFCM;
+import net.claustra01.tfcm.config.TFCMConfig;
 import net.dries007.tfc.world.feature.TFCFeatures;
 import net.dries007.tfc.world.feature.vein.ClusterVeinConfig;
 import net.dries007.tfc.world.feature.vein.DiscVeinConfig;
@@ -22,8 +26,10 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.gametest.framework.GameTest;
 import net.minecraft.gametest.framework.GameTestAssertException;
 import net.minecraft.gametest.framework.GameTestHelper;
+import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.BiomeGenerationSettings;
 import net.minecraft.world.level.biome.Biomes;
@@ -36,6 +42,7 @@ import net.neoforged.neoforge.common.world.BiomeModifier;
 import net.neoforged.neoforge.common.world.ModifiableBiomeInfo.BiomeInfo;
 import net.neoforged.neoforge.common.world.ModifiableBiomeInfo.BiomeInfo.Builder;
 import net.neoforged.neoforge.gametest.GameTestHolder;
+import net.neoforged.neoforge.network.connection.ConnectionType;
 import net.neoforged.neoforge.gametest.PrefixGameTestTemplate;
 
 @GameTestHolder(TFCM.MOD_ID)
@@ -200,6 +207,104 @@ public final class TFCMWorldgenGameTests {
     }
 
     @GameTest(template = "empty", batch = BATCH)
+    public static void veinDisplaysAlignRocksOresWeightsAndIndicators(GameTestHelper helper) {
+        try {
+            String overworldYaml = """
+                    veins:
+                      - id: graded
+                        type: tfc:cluster_vein
+                        ymin: -32
+                        ymax: 48
+                        rarity: 20
+                        density: 0.4
+                        size: 12
+                        rocks: [basalt, granite]
+                        tier: {poor: 7, normal: 3}
+                        blocks:
+                          - block: tfcm:ore/{tier}_native_platinum/{rock}
+                        indicator:
+                          block: tfcm:ore/small_native_platinum
+                          rarity: 14
+                          depth: 35
+                          underground_rarity: 2
+                          underground_count: 3
+                    """;
+            String netherYaml = """
+                    veins:
+                      - id: itemless
+                        type: tfc:pipe_vein
+                        ymin: 3
+                        ymax: 22
+                        height: 15
+                        radius: 6
+                        blocks: [{block: minecraft:nether_gold_ore, weight: 3}, {block: minecraft:water, weight: 1}]
+                    """;
+            var definitions = new LinkedHashMap<String, WorldgenDefinition.Dimension>();
+            definitions.put("overworld", YamlWorldgenLoader.parse("overworld", overworldYaml));
+            definitions.put("nether", YamlWorldgenLoader.parse("nether", netherYaml));
+            List<VeinDisplay> veins = VeinDisplay.build(definitions);
+            require(veins.size() == 2, "Each valid YAML vein did not become one display");
+
+            VeinDisplay graded = veins.get(0);
+            require(graded.dimension().equals("overworld") && graded.id().equals("graded")
+                    && graded.type().equals("tfc:cluster_vein") && graded.minY() == -32 && graded.maxY() == 48
+                    && graded.rarity() == 20 && graded.density() == 0.4F && graded.size() == 12,
+                    "Vein values were not taken from the YAML");
+            require(items(graded.rocks()).equals(List.of("tfc:rock/raw/basalt", "tfc:rock/raw/granite")),
+                    "Rocks were not shown in YAML order");
+            require(graded.ores().size() == 2
+                    && items(graded.ores().get(0).stacks()).equals(List.of(
+                            "tfcm:ore/poor_native_platinum/basalt", "tfcm:ore/poor_native_platinum/granite"))
+                    && items(graded.ores().get(1).stacks()).equals(List.of(
+                            "tfcm:ore/normal_native_platinum/basalt", "tfcm:ore/normal_native_platinum/granite")),
+                    "Ores were not aligned with the rocks they replace");
+            require(Math.abs(graded.ores().get(0).chance() - .7F) < 1e-6
+                    && Math.abs(graded.ores().get(1).chance() - .3F) < 1e-6, "Tier weights were not normalized");
+            require(graded.indicator().isPresent()
+                    && items(graded.indicator().get().stacks()).equals(List.of("tfcm:ore/small_native_platinum"))
+                    && graded.indicator().get().rarity() == 14 && graded.indicator().get().depth() == 35
+                    && graded.indicator().get().undergroundRarity() == 2
+                    && graded.indicator().get().undergroundCount() == 3, "Indicator values were not kept");
+
+            VeinDisplay itemless = veins.get(1);
+            require(itemless.dimension().equals("nether")
+                    && items(itemless.rocks()).equals(List.of("minecraft:netherrack"))
+                    && itemless.ores().size() == 1
+                    && items(itemless.ores().getFirst().stacks()).equals(List.of("minecraft:nether_gold_ore"))
+                    && Math.abs(itemless.ores().getFirst().chance() - .75F) < 1e-6
+                    && itemless.indicator().isEmpty() && itemless.height() == 15 && itemless.radius() == 6,
+                    "A block without an item was shown or changed the other blocks' share");
+
+            var buffer = new RegistryFriendlyByteBuf(Unpooled.buffer(),
+                    helper.getLevel().registryAccess(), ConnectionType.NEOFORGE);
+            VeinDisplaySync.Payload.STREAM_CODEC.encode(buffer, new VeinDisplaySync.Payload(veins));
+            List<VeinDisplay> decoded = VeinDisplaySync.Payload.STREAM_CODEC.decode(buffer).veins();
+            require(decoded.size() == 2 && decoded.get(0).id().equals("graded") && decoded.get(1).minY() == 3
+                    && items(decoded.get(0).ores().get(1).stacks()).equals(items(graded.ores().get(1).stacks()))
+                    && decoded.get(0).ores().get(0).chance() == graded.ores().get(0).chance()
+                    && decoded.get(0).indicator().orElseThrow().undergroundCount() == 3
+                    && items(decoded.get(0).indicator().orElseThrow().stacks()).equals(
+                            items(graded.indicator().orElseThrow().stacks()))
+                    && decoded.get(1).indicator().isEmpty(), "Vein displays did not survive the payload codec");
+
+            var server = helper.getLevel().getServer();
+            var registered = VeinDisplaySync.definitions(server);
+            require(registered.keySet().containsAll(List.of("overworld", "nether", "end")),
+                    "The registered TFCM biome modifier's definitions were not found");
+            require(VeinDisplaySync.build(server).size() == (TFCMConfig.ENABLE_CUSTOM_VEIN_GENERATION.get()
+                    ? VeinDisplay.build(registered).size() : 0),
+                    "Sent veins did not follow enableCustomVeinGeneration");
+            helper.succeed();
+        } catch (Throwable throwable) {
+            helper.fail(throwable.getMessage());
+        }
+    }
+
+    private static List<String> items(List<ItemStack> stacks) {
+        return stacks.stream().map(stack -> BuiltInRegistries.ITEM.getKey(stack.getItem()).toString()).toList();
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
     public static void invalidDuplicateAndEmptyDefinitionsUseDimensionFallbackRules(GameTestHelper helper) {
         try {
             List<String> warnings = new ArrayList<>();
@@ -278,9 +383,9 @@ public final class TFCMWorldgenGameTests {
                 boolean firmaLife = ModList.get().isLoaded("firmalife");
                 require(warnings.stream().allMatch(warning -> !firmaLife && warning.contains("firmalife")),
                         "Bundled overworld.yaml has invalid entries: " + warnings);
-                require(overworld.veins().size() == (firmaLife ? 46 : 44) && overworld.geodes().size() == 3,
+                require(overworld.veins().size() == (firmaLife ? 45 : 43) && overworld.geodes().size() == 2,
                         "Bundled overworld.yaml lost entries");
-                require(overworld.veins().stream().anyMatch(vein -> vein.id().equals("tfcm:vein/carobbiite")
+                require(overworld.veins().stream().anyMatch(vein -> vein.id().equals("tfcm:vein/normal_uraninite")
                         && vein.indicator().rarity() == 0), "An indicator rarity of 0 was rejected");
                 overworld.veins().forEach(CustomWorldgenBiomeModifier::placedVein);
                 var nether = YamlWorldgenLoader.parse("nether", bundled("nether"));

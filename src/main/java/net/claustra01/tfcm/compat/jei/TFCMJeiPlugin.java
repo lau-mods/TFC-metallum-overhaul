@@ -1,15 +1,17 @@
 package net.claustra01.tfcm.compat.jei;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.recipe.RecipeType;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.runtime.IJeiRuntime;
 import net.claustra01.tfcm.TFCM;
-import net.claustra01.tfcm.common.processing.SluiceRecipe;
 import net.claustra01.tfcm.common.processing.SluiceRecipeSync;
+import net.claustra01.tfcm.worldgen.VeinDisplaySync;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
@@ -22,7 +24,8 @@ public final class TFCMJeiPlugin implements IModPlugin {
             ResourceLocation.fromNamespaceAndPath("tfc", "sluices"));
 
     private IJeiRuntime runtime;
-    private List<SluiceRecipe> shown = List.of();
+    private final Synced<?> sluices = new Synced<>(SluiceRecipeCategory.TYPE, SluiceRecipeSync::received);
+    private final Synced<?> veins = new Synced<>(OreVeinRecipeCategory.TYPE, VeinDisplaySync::received);
 
     @Override
     public ResourceLocation getPluginUid() {
@@ -31,8 +34,10 @@ public final class TFCMJeiPlugin implements IModPlugin {
 
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-        registration.addRecipeCategories(new SluiceRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
-        SluiceRecipeSync.setListener(this::refresh);
+        var guiHelper = registration.getJeiHelpers().getGuiHelper();
+        registration.addRecipeCategories(new SluiceRecipeCategory(guiHelper), new OreVeinRecipeCategory(guiHelper));
+        SluiceRecipeSync.setListener(sluices::refresh);
+        VeinDisplaySync.setListener(veins::refresh);
     }
 
     @Override
@@ -45,8 +50,8 @@ public final class TFCMJeiPlugin implements IModPlugin {
     @Override
     public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
         runtime = jeiRuntime;
-        shown = List.of();
-        refresh();
+        sluices.reset();
+        veins.reset();
     }
 
     @Override
@@ -54,11 +59,27 @@ public final class TFCMJeiPlugin implements IModPlugin {
         runtime = null;
     }
 
-    // the server's recipes can arrive before JEI starts or, after /reload, while it is running
-    private void refresh() {
-        if (runtime == null) return;
-        if (!shown.isEmpty()) runtime.getRecipeManager().hideRecipes(SluiceRecipeCategory.TYPE, shown);
-        shown = SluiceRecipeSync.received();
-        if (!shown.isEmpty()) runtime.getRecipeManager().addRecipes(SluiceRecipeCategory.TYPE, shown);
+    /** Server data can arrive before JEI starts or, after /reload or a new login, while it is running. */
+    private final class Synced<T> {
+        private final RecipeType<T> type;
+        private final Supplier<List<T>> received;
+        private List<T> shown = List.of();
+
+        private Synced(RecipeType<T> type, Supplier<List<T>> received) {
+            this.type = type;
+            this.received = received;
+        }
+
+        private void reset() {
+            shown = List.of();
+            refresh();
+        }
+
+        private void refresh() {
+            if (runtime == null) return;
+            if (!shown.isEmpty()) runtime.getRecipeManager().hideRecipes(type, shown);
+            shown = received.get();
+            if (!shown.isEmpty()) runtime.getRecipeManager().addRecipes(type, shown);
+        }
     }
 }
