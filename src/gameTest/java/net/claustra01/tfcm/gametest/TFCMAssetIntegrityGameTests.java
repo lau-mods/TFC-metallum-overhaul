@@ -477,6 +477,11 @@ public final class TFCMAssetIntegrityGameTests {
                 if (!key.endsWith(".prospected")) continue;
                 require(!name.matches("(Poor|Normal|Rich) .*"), "Prospected name has a grade " + key);
                 String host = key.substring(0, key.length() - ".prospected".length());
+                // TFC deliberately reports Pyrite to the Prospector's Pick as Native Gold
+                if (host.startsWith("block.tfcm.ore.pyrite.")) {
+                    require(name.equals("Native Gold?"), "Pyrite is not prospected as TFC does " + key);
+                    continue;
+                }
                 String full = english.get(host).getAsString();
                 require(full.endsWith(name) && !full.equals(name), "Prospected name is not the ore name " + key);
             }
