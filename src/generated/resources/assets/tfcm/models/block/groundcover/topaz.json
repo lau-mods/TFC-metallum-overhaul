@@ -1,5 +1,5 @@
 {
-  "parent": "tfc:block/groundcover/native_copper",
+  "parent": "tfc:block/groundcover/magnetite",
   "textures": {
     "0": "tfc:item/ore/topaz",
     "particle": "tfc:item/ore/topaz"

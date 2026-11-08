@@ -1,7 +1,7 @@
 {
-  "parent": "tfc:block/groundcover/native_copper",
+  "parent": "tfc:block/groundcover/magnetite",
   "textures": {
-    "0": "tfcm:item/ore/small_uraninite",
-    "particle": "tfcm:item/ore/small_uraninite"
+    "0": "tfcm:item/ore/normal_uraninite",
+    "particle": "tfcm:item/ore/normal_uraninite"
   }
 }

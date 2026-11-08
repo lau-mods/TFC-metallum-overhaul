@@ -94,7 +94,7 @@ public final class OreDataProvider implements DataProvider {
             files.add(save(output, assets, "tfcm/models/item/ore/" + small,
                     generatedModel("tfcm:item/ore/" + small)));
             files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
-                    groundcoverModel("tfcm:item/ore/small_" + ore.id())));
+                    groundcoverModel("tfcm:item/ore/normal_" + ore.id())));
             files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore.id())));
             files.add(save(output, data, "tfcm/loot_table/blocks/ore/" + small,
                     blockLoot("tfcm:ore/" + small, ore.id(), false)));
@@ -246,9 +246,11 @@ public final class OreDataProvider implements DataProvider {
         return json;
     }
 
+    // Like TFC, the sample cuts its faces from an item texture; Magnetite's three pieces land on opaque pixels
+    // of every TFCM ore texture, which TFC's other ore shapes do not.
     private static JsonObject groundcoverModel(String texture) {
         JsonObject json = new JsonObject();
-        json.addProperty("parent", "tfc:block/groundcover/native_copper");
+        json.addProperty("parent", "tfc:block/groundcover/magnetite");
         JsonObject textures = new JsonObject();
         textures.addProperty("0", texture);
         textures.addProperty("particle", texture);

@@ -62,7 +62,7 @@
 - TFCの12×3品位鉱石と17品位なし鉱石にはNetherrack・End Stone版を追加し、元のTFC鉱石itemをdropする。FirmaLife Chromite 3品位×2版はFirmaLife導入時だけ登録し、生成データはmod-loaded conditionを付ける。
 - Nether鉱石は硬度3・耐爆10、End鉱石は硬度3・耐爆9、TFC母岩版はTFCの母岩category hardnessを使用する。全鉱石blockを`c:ores`、`minecraft:mineable/pickaxe`、`tfc:prospectable`、`tfc:mineable/propick`へ追加する。探鉱表示は標準block translation key末尾の`.prospected`を使用する。
 - 鉱石blockの英語名はTFCと同じ`<Grade> <Host> <Ore>`（品位なしは`<Host> <Ore>`）、`.prospected`は品位と母岩を含まない鉱石名とする。
-- Small OreのitemはTFCと同じく`tfcm:item/ore/small_<ore>`を貼った平面modelとし、地表の立体modelはblockだけに使う。
+- Small OreのitemはTFCと同じく`tfcm:item/ore/small_<ore>`を貼った平面modelとし、地表の立体modelはblockだけに使う。地表modelの親はTFC `tfc:block/groundcover/magnetite`、textureはTFCと同じく品位ありが`tfcm:item/ore/normal_<ore>`、品位なしがraw itemとする。TFCの他の鉱石形状ではUVがTFCM textureの透明部に掛かり面が欠けるため、全sampleの全面が不透明になるこの形状に統一する。
 - 品位なし鉱石の地表sampleは`tfcm:ore/small_<ore>`のblockだけを登録し、BlockItemを作らない。対象はFluorite、Quartz、Carobbiite、`TfcOre.UNGRADED`の17種、Bituminous Coal、Halite、Lignite、Nether Quartzの計24種で、壊すと元のraw item（Nether Quartzは`minecraft:quartz`）を落とす。
 - 鉱石itemを`tfc:metal_ores`、`tfc:ore_pieces`、`tfc:small_ore_pieces`、`c:ores`、`c:ores/<ore>`、`c:ores/<ore>/<grade>`、`c:ores/<metal>/<grade>`へ追加する。
 - QuartzとFluoriteはQuernで各Powder 4個にし、両PowderをTFC gem powder・bowl powder tagへ追加する。Cut QuartzはTFC Sandpaperの損耗を使い、Certus Quartzとは別itemとして登録する。
