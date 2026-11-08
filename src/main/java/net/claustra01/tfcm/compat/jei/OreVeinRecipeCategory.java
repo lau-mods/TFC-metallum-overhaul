@@ -7,9 +7,7 @@ import java.util.List;
 import mezz.jei.api.gui.builder.IRecipeLayoutBuilder;
 import mezz.jei.api.gui.drawable.IDrawable;
 import mezz.jei.api.gui.drawable.IDrawableStatic;
-import mezz.jei.api.gui.ingredient.IRecipeSlotDrawable;
 import mezz.jei.api.gui.ingredient.IRecipeSlotsView;
-import mezz.jei.api.gui.widgets.IRecipeExtrasBuilder;
 import mezz.jei.api.helpers.IGuiHelper;
 import mezz.jei.api.recipe.IFocusGroup;
 import mezz.jei.api.recipe.RecipeIngredientRole;
@@ -29,11 +27,10 @@ import net.minecraft.resources.ResourceLocation;
 /** One YAML vein: its ore names, the rock it replaces, the weighted ores it places there, its indicator and shape. */
 final class OreVeinRecipeCategory implements IRecipeCategory<VeinDisplay> {
     static final RecipeType<VeinDisplay> TYPE = RecipeType.create(TFCM.MOD_ID, "ore_vein", VeinDisplay.class);
-    private static final String ORE_SLOT = "ore_";
-    private static final int ORE_X = 48;
+    private static final int ORE_X = 45;
     private static final int SLOT_Y = 12;
-    private static final int COLUMNS = 5;
-    private static final int CELL_WIDTH = 22;
+    // six ores fit in one row; veins with more are not laid out
+    private static final int CELL_WIDTH = 20;
     private static final int INFO_X = 24;
     private static final int INFO_Y = 41;
     private static final int INFO_COLUMN_WIDTH = 73;
@@ -82,7 +79,7 @@ final class OreVeinRecipeCategory implements IRecipeCategory<VeinDisplay> {
         for (int index = 0; index < vein.ores().size(); index++) {
             VeinDisplay.Ore ore = vein.ores().get(index);
             builder.addSlot(RecipeIngredientRole.OUTPUT, oreX(index), SLOT_Y).addItemStacks(ore.stacks())
-                    .setSlotName(ORE_SLOT + index).setStandardSlotBackground()
+                    .setStandardSlotBackground()
                     .addRichTooltipCallback((view, tooltip) -> tooltip.add(Component.translatable(
                             "tfcm.jei.ore_vein.chance", SluiceRecipeCategory.percent(ore.chance()))));
         }
@@ -102,30 +99,18 @@ final class OreVeinRecipeCategory implements IRecipeCategory<VeinDisplay> {
     }
 
     @Override
-    public void createRecipeExtras(IRecipeExtrasBuilder builder, VeinDisplay vein, IFocusGroup focuses) {
-        if (vein.ores().size() <= COLUMNS) return;
-        // more ores than one row: scroll them instead of growing every vein's layout
-        List<IRecipeSlotDrawable> ores = builder.getRecipeSlots().getSlots(RecipeIngredientRole.OUTPUT).stream()
-                .filter(slot -> slot.getSlotName().filter(name -> name.startsWith(ORE_SLOT)).isPresent())
-                .toList();
-        builder.addScrollGridWidget(ores, COLUMNS, 1).setPosition(ORE_X, SLOT_Y);
-    }
-
-    @Override
     public void draw(VeinDisplay vein, IRecipeSlotsView view, GuiGraphics graphics, double mouseX, double mouseY) {
         Font font = Minecraft.getInstance().font;
         graphics.drawString(font, font.plainSubstrByWidth(name(vein), getWidth()), 0, 0, TEXT_COLOR, false);
         arrow.draw(graphics, 21, SLOT_Y);
-        if (vein.ores().size() <= COLUMNS) {
-            graphics.pose().pushPose();
-            graphics.pose().scale(.5f, .5f, 1);
-            for (int index = 0; index < vein.ores().size(); index++) {
-                String text = SluiceRecipeCategory.percent(vein.ores().get(index).chance()) + "%";
-                graphics.drawString(font, text, (oreX(index) + 8) * 2 - font.width(text) / 2,
-                        (SLOT_Y + 19) * 2, 0xFF555555, false);
-            }
-            graphics.pose().popPose();
+        graphics.pose().pushPose();
+        graphics.pose().scale(.5f, .5f, 1);
+        for (int index = 0; index < vein.ores().size(); index++) {
+            String text = SluiceRecipeCategory.percent(vein.ores().get(index).chance()) + "%";
+            graphics.drawString(font, text, (oreX(index) + 8) * 2 - font.width(text) / 2,
+                    (SLOT_Y + 19) * 2, 0xFF555555, false);
         }
+        graphics.pose().popPose();
         List<Component> info = info(vein);
         for (int index = 0; index < info.size(); index++) {
             var line = font.substrByWidth(info.get(index), INFO_COLUMN_WIDTH - 2);
@@ -160,6 +145,6 @@ final class OreVeinRecipeCategory implements IRecipeCategory<VeinDisplay> {
     }
 
     private static int oreX(int index) {
-        return ORE_X + index % COLUMNS * CELL_WIDTH + 2;
+        return ORE_X + index * CELL_WIDTH;
     }
 }
