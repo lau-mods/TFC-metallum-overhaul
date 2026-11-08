@@ -127,7 +127,7 @@
 - 置換対象は`tfc:vein/`と`firmalife:vein/`配下のplaced featureのうち`vein/gravel`、`vein/kaolin_disc`、`*_dike`以外とする。`GeodeDataProvider`がmodifier入口の`custom_worldgen.json`を生成する。
 - Nether・Endは各YAMLに明示された鉱脈・晶洞だけを追加し、空設定では追加しない。未登録block、不正type・数値、重複IDは警告してエントリ単位で除外し、重複は先頭を採用する。
 - JEI（任意）の`tfcm:ore_vein`カテゴリに、`enableCustomVeinGeneration`が有効なサーバーのYAML鉱脈を表示する。値は`CustomWorldgenBiomeModifier`がサーバー起動時に読んだ定義を使い（YAMLの再読込はしない）、`OnDatapackSyncEvent`で`tfcm:ore_veins`ペイロードとして送る。無効時は空リストを送る。晶洞は表示しない。
-- 1鉱脈は母岩（入力）、`{tier}`/`blocks`展開後の各entry（出力、母岩と同じ順で揃えて同期cycle表示）、indicator（出力）で構成する。割合はentry weight÷全weight。itemのないblockは表示から除外し、割合の分母には残す。見出しは各entryの先頭blockの`<translation key>.prospected`（無ければblock名）を重複なく`, `で連結した鉱石名とし、IDは表示しない。情報欄はディメンション、type、Y範囲、rarity、density、typeが読むshape値（cluster=size、disc/kaolin=size・height、pipe=height・radius）とする。indicator tooltipはTFC `VeinFeature`どおり地表`1/rarity`（0は無し）と`depth`、地下`underground_count`×`1/underground_rarity`。出力が5個を超えるとscroll gridにする。
+- 1鉱脈は母岩（入力）、`{tier}`/`blocks`展開後の各entry（出力、母岩と同じ順で揃えて同期cycle表示）、indicator（出力）で構成する。割合はentry weight÷全weight。itemのないblockは表示から除外し、割合の分母には残す。ただしitemのないindicator（品位なし地表sample等）は、サーバーが読み込んだそのblockのloot tableの最初のitemで表示する。見出しは各entryの先頭blockの`<translation key>.prospected`（無ければblock名）を重複なく`, `で連結した鉱石名とし、IDは表示しない。情報欄はディメンション、type、Y範囲、rarity、density、typeが読むshape値（cluster=size、disc/kaolin=size・height、pipe=height・radius）とする。indicator tooltipはTFC `VeinFeature`どおり地表`1/rarity`（0は無し）と`depth`、地下`underground_count`×`1/underground_rarity`。出力が5個を超えるとscroll gridにする。
 - M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallback、JEI表示データの母岩対応・割合・ペイロード往復・無効時の空送信を検証する。
 
 ## M12 content toggles

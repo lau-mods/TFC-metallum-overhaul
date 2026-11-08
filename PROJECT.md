@@ -815,7 +815,7 @@ config/tfcm/end.yaml
 
 参照先ブロック未登録、依存コンテンツ未導入、数値不正、type不正、ID重複などの入力は警告を出して該当エントリだけを無効とする。重複IDは先頭を採用する。古い設定パスや旧構文のための特別なfallbackは設けない。
 
-JEIが導入されていて `enableCustomVeinGeneration = true` のとき、サーバーが生成に使うYAML鉱脈をJEIの鉱脈カテゴリに表示する。各鉱脈は品位・母岩を含まない鉱石名を見出しにし、母岩、母岩ごとの鉱石とweightの割合、indicatorの地表・地下設定、ディメンション、type、Y範囲、rarity、density、typeに応じたsize・height・radiusを示す。YAMLはサーバーのものを同期し、無効時は表示しない。itemを持たないブロックは表示から除外するが、割合は全weightから計算する。晶洞は表示しない。
+JEIが導入されていて `enableCustomVeinGeneration = true` のとき、サーバーが生成に使うYAML鉱脈をJEIの鉱脈カテゴリに表示する。各鉱脈は品位・母岩を含まない鉱石名を見出しにし、母岩、母岩ごとの鉱石とweightの割合、indicatorの地表・地下設定、ディメンション、type、Y範囲、rarity、density、typeに応じたsize・height・radiusを示す。YAMLはサーバーのものを同期し、無効時は表示しない。itemを持たないブロックは表示から除外するが、割合は全weightから計算する。itemを持たないindicatorは、そのブロックが落とすitemで表示する。晶洞は表示しない。
 
 #### Acceptance Criteria
 ##### AC-F024-001: 3ディメンションの読込み

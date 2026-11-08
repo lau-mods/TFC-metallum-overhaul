@@ -238,11 +238,14 @@ public final class TFCMWorldgenGameTests {
                         height: 15
                         radius: 6
                         blocks: [{block: minecraft:nether_gold_ore, weight: 3}, {block: minecraft:water, weight: 1}]
+                        indicator:
+                          block: tfcm:ore/small_fluorite
                     """;
             var definitions = new LinkedHashMap<String, WorldgenDefinition.Dimension>();
             definitions.put("overworld", YamlWorldgenLoader.parse("overworld", overworldYaml));
             definitions.put("nether", YamlWorldgenLoader.parse("nether", netherYaml));
-            List<VeinDisplay> veins = VeinDisplay.build(definitions);
+            var server = helper.getLevel().getServer();
+            List<VeinDisplay> veins = VeinDisplay.build(definitions, server);
             require(veins.size() == 2, "Each valid YAML vein did not become one display");
 
             VeinDisplay graded = veins.get(0);
@@ -272,8 +275,10 @@ public final class TFCMWorldgenGameTests {
                     && itemless.ores().size() == 1
                     && items(itemless.ores().getFirst().stacks()).equals(List.of("minecraft:nether_gold_ore"))
                     && Math.abs(itemless.ores().getFirst().chance() - .75F) < 1e-6
-                    && itemless.indicator().isEmpty() && itemless.height() == 15 && itemless.radius() == 6,
+                    && itemless.height() == 15 && itemless.radius() == 6,
                     "A block without an item was shown or changed the other blocks' share");
+            require(itemless.indicator().isPresent() && items(itemless.indicator().get().stacks())
+                    .equals(List.of("tfcm:ore/fluorite")), "An item-less sample indicator did not show its drop");
 
             var buffer = new RegistryFriendlyByteBuf(Unpooled.buffer(),
                     helper.getLevel().registryAccess(), ConnectionType.NEOFORGE);
@@ -285,14 +290,14 @@ public final class TFCMWorldgenGameTests {
                     && decoded.get(0).indicator().orElseThrow().undergroundCount() == 3
                     && items(decoded.get(0).indicator().orElseThrow().stacks()).equals(
                             items(graded.indicator().orElseThrow().stacks()))
-                    && decoded.get(1).indicator().isEmpty(), "Vein displays did not survive the payload codec");
+                    && items(decoded.get(1).indicator().orElseThrow().stacks()).equals(List.of("tfcm:ore/fluorite")),
+                    "Vein displays did not survive the payload codec");
 
-            var server = helper.getLevel().getServer();
             var registered = VeinDisplaySync.definitions(server);
             require(registered.keySet().containsAll(List.of("overworld", "nether", "end")),
                     "The registered TFCM biome modifier's definitions were not found");
             require(VeinDisplaySync.build(server).size() == (TFCMConfig.ENABLE_CUSTOM_VEIN_GENERATION.get()
-                    ? VeinDisplay.build(registered).size() : 0),
+                    ? VeinDisplay.build(registered, server).size() : 0),
                     "Sent veins did not follow enableCustomVeinGeneration");
             helper.succeed();
         } catch (Throwable throwable) {

@@ -41,7 +41,7 @@ public final class VeinDisplaySync {
     /** Empty unless custom generation is on; uses the definitions the biome modifier read at server start. */
     public static List<VeinDisplay> build(MinecraftServer server) {
         if (!TFCMConfig.ENABLE_CUSTOM_VEIN_GENERATION.get()) return List.of();
-        return VeinDisplay.build(definitions(server));
+        return VeinDisplay.build(definitions(server), server);
     }
 
     static Map<String, Dimension> definitions(MinecraftServer server) {

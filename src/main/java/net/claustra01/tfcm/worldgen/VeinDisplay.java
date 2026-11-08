@@ -6,6 +6,10 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.mojang.serialization.JsonOps;
+
 import net.claustra01.tfcm.worldgen.WorldgenDefinition.Dimension;
 import net.claustra01.tfcm.worldgen.WorldgenDefinition.Vein;
 import net.claustra01.tfcm.worldgen.WorldgenDefinition.WeightedBlock;
@@ -14,7 +18,9 @@ import net.minecraft.network.RegistryFriendlyByteBuf;
 import net.minecraft.network.codec.ByteBufCodecs;
 import net.minecraft.network.codec.StreamCodec;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.MinecraftServer;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.storage.loot.LootTable;
 
 /**
  * What recipe viewers show of one YAML vein. {@link #rocks()} and every {@link Ore#stacks()} are aligned by index,
@@ -47,14 +53,14 @@ public record VeinDisplay(String dimension, String id, String type, int minY, in
     }
 
     /** Every vein of every dimension in file order; veins whose blocks have no item are left out. */
-    public static List<VeinDisplay> build(Map<String, Dimension> definitions) {
+    public static List<VeinDisplay> build(Map<String, Dimension> definitions, MinecraftServer server) {
         List<VeinDisplay> result = new ArrayList<>();
         definitions.forEach((dimension, definition) -> definition.veins()
-                .forEach(vein -> of(dimension, vein).ifPresent(result::add)));
+                .forEach(vein -> of(dimension, vein, server).ifPresent(result::add)));
         return List.copyOf(result);
     }
 
-    static Optional<VeinDisplay> of(String dimension, Vein vein) {
+    static Optional<VeinDisplay> of(String dimension, Vein vein, MinecraftServer server) {
         List<String> rockIds = List.copyOf(vein.blocksByRock().keySet());
         List<List<WeightedBlock>> outputs = rockIds.stream().map(vein.blocksByRock()::get).toList();
         if (outputs.isEmpty()) return Optional.empty();
@@ -75,7 +81,8 @@ public record VeinDisplay(String dimension, String id, String type, int minY, in
                 .map(row -> stack(outputs.get(row).get(column).block())).toList(),
                 (float) (first.get(column).weight() / total))).toList();
         Optional<Indicator> indicator = Optional.ofNullable(vein.indicator()).map(value -> new Indicator(
-                value.blocks().stream().map(block -> stack(block.block())).filter(stack -> !stack.isEmpty()).toList(),
+                value.blocks().stream().map(block -> indicator(block.block(), server))
+                        .filter(stack -> !stack.isEmpty()).toList(),
                 value.rarity(), value.depth(), value.undergroundRarity(), value.undergroundCount()));
         return Optional.of(new VeinDisplay(dimension, vein.id(), vein.type(), vein.minY(), vein.maxY(),
                 vein.rarity(), vein.density(), vein.size(), vein.height(), vein.radius(), rocks, ores, indicator));
@@ -83,6 +90,31 @@ public record VeinDisplay(String dimension, String id, String type, int minY, in
 
     private static ItemStack stack(String block) {
         return new ItemStack(BuiltInRegistries.BLOCK.get(ResourceLocation.parse(block)).asItem());
+    }
+
+    /** Indicators without an item, such as TFCM's ungraded samples, are shown by the first item they drop. */
+    private static ItemStack indicator(String block, MinecraftServer server) {
+        ItemStack stack = stack(block);
+        if (!stack.isEmpty()) return stack;
+        LootTable table = server.reloadableRegistries().getLootTable(
+                BuiltInRegistries.BLOCK.get(ResourceLocation.parse(block)).getLootTable());
+        var ops = server.registryAccess().createSerializationContext(JsonOps.INSTANCE);
+        return LootTable.DIRECT_CODEC.encodeStart(ops, table).result()
+                .map(json -> firstItem(json.getAsJsonObject())).orElse(ItemStack.EMPTY);
+    }
+
+    private static ItemStack firstItem(JsonObject table) {
+        if (!table.has("pools")) return ItemStack.EMPTY;
+        for (JsonElement pool : table.getAsJsonArray("pools")) {
+            for (JsonElement entry : pool.getAsJsonObject().getAsJsonArray("entries")) {
+                JsonObject json = entry.getAsJsonObject();
+                if (!json.get("type").getAsString().equals("minecraft:item")) continue;
+                ItemStack drop = BuiltInRegistries.ITEM.get(ResourceLocation.parse(json.get("name").getAsString()))
+                        .getDefaultInstance();
+                if (!drop.isEmpty()) return drop;
+            }
+        }
+        return ItemStack.EMPTY;
     }
 
     private static void encode(RegistryFriendlyByteBuf buffer, VeinDisplay value) {
