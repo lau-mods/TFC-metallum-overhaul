@@ -481,6 +481,12 @@
       "name": "veindisplaysalignrocksoresweightsandindicators"
     },
     {
+      "acId": "AC-F024-004",
+      "report": "build/test-results/gametest/TEST-net.claustra01.tfcm.worldgen.TFCMWorldgenGameTests.xml",
+      "classname": "tfcm:empty",
+      "name": "geodedisplaysshowonlyclusters"
+    },
+    {
       "acId": "AC-F026-001",
       "report": "build/test-results/gametest-content-config/TEST-net.claustra01.tfcm.gametest.TFCMContentConfigGameTests.xml",
       "classname": "tfcm_m12:empty",

@@ -4231,5 +4231,10 @@
   "tfcm.jei.ore_vein.density": "Density: %s%%",
   "tfcm.jei.ore_vein.size": "Size: %s",
   "tfcm.jei.ore_vein.height": "Height: %s",
-  "tfcm.jei.ore_vein.radius": "Radius: %s"
+  "tfcm.jei.ore_vein.radius": "Radius: %s",
+  "tfcm.jei.geode": "Geode",
+  "block.tfcm.mineral.quartz_cluster.mineral": "Quartz",
+  "block.tfcm.mineral.amethyst_cluster.mineral": "Amethyst",
+  "block.tfcm.mineral.certus_quartz_cluster.mineral": "Certus Quartz",
+  "block.minecraft.amethyst_cluster.mineral": "Amethyst"
 }

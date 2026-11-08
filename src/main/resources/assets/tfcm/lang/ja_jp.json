@@ -4231,5 +4231,10 @@
   "tfcm.jei.ore_vein.density": "密度: %s%%",
   "tfcm.jei.ore_vein.size": "大きさ: %s",
   "tfcm.jei.ore_vein.height": "高さ: %s",
-  "tfcm.jei.ore_vein.radius": "半径: %s"
+  "tfcm.jei.ore_vein.radius": "半径: %s",
+  "tfcm.jei.geode": "晶洞",
+  "block.tfcm.mineral.quartz_cluster.mineral": "石英",
+  "block.tfcm.mineral.amethyst_cluster.mineral": "アメシスト",
+  "block.tfcm.mineral.certus_quartz_cluster.mineral": "ケルタスクォーツ",
+  "block.minecraft.amethyst_cluster.mineral": "アメシスト"
 }

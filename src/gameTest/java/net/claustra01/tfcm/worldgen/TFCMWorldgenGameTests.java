@@ -282,7 +282,7 @@ public final class TFCMWorldgenGameTests {
 
             var buffer = new RegistryFriendlyByteBuf(Unpooled.buffer(),
                     helper.getLevel().registryAccess(), ConnectionType.NEOFORGE);
-            VeinDisplaySync.Payload.STREAM_CODEC.encode(buffer, new VeinDisplaySync.Payload(veins));
+            VeinDisplaySync.Payload.STREAM_CODEC.encode(buffer, new VeinDisplaySync.Payload(veins, List.of()));
             List<VeinDisplay> decoded = VeinDisplaySync.Payload.STREAM_CODEC.decode(buffer).veins();
             require(decoded.size() == 2 && decoded.get(0).id().equals("graded") && decoded.get(1).minY() == 3
                     && items(decoded.get(0).ores().get(1).stacks()).equals(items(graded.ores().get(1).stacks()))
@@ -296,9 +296,57 @@ public final class TFCMWorldgenGameTests {
             var registered = VeinDisplaySync.definitions(server);
             require(registered.keySet().containsAll(List.of("overworld", "nether", "end")),
                     "The registered TFCM biome modifier's definitions were not found");
-            require(VeinDisplaySync.build(server).size() == (TFCMConfig.ENABLE_CUSTOM_VEIN_GENERATION.get()
-                    ? VeinDisplay.build(registered, server).size() : 0),
-                    "Sent veins did not follow enableCustomVeinGeneration");
+            boolean enabled = TFCMConfig.ENABLE_CUSTOM_VEIN_GENERATION.get();
+            var sent = VeinDisplaySync.build(server);
+            require(sent.veins().size() == (enabled ? VeinDisplay.build(registered, server).size() : 0)
+                    && sent.geodes().size() == (enabled ? GeodeDisplay.build(registered).size() : 0),
+                    "Sent veins and geodes did not follow enableCustomVeinGeneration");
+            helper.succeed();
+        } catch (Throwable throwable) {
+            helper.fail(throwable.getMessage());
+        }
+    }
+
+    @GameTest(template = "empty", batch = BATCH)
+    public static void geodeDisplaysShowOnlyClusters(GameTestHelper helper) {
+        try {
+            var definitions = new LinkedHashMap<String, WorldgenDefinition.Dimension>();
+            definitions.put("end", YamlWorldgenLoader.parse("end", """
+                    geodes:
+                      - id: clusters
+                        ymin: -20
+                        ymax: 20
+                        rarity: 30
+                        outer: minecraft:smooth_basalt
+                        middle: minecraft:calcite
+                        inner: [{block: minecraft:amethyst_block, weight: 3}, {block: minecraft:budding_amethyst}]
+                        filling: [{block: minecraft:air}]
+                        inner_placements: [{block: minecraft:amethyst_cluster}, {block: minecraft:small_amethyst_bud, weight: 3},
+                          {block: tfcm:mineral/quartz_cluster}]
+                      - id: buds_only
+                        ymin: 0
+                        ymax: 10
+                        outer: minecraft:smooth_basalt
+                        middle: minecraft:calcite
+                        inner: [{block: minecraft:amethyst_block}]
+                        filling: [{block: minecraft:air}]
+                        inner_placements: [{block: minecraft:large_amethyst_bud}]
+                    """));
+            List<GeodeDisplay> geodes = GeodeDisplay.build(definitions);
+            require(geodes.size() == 1, "A geode without a cluster was shown");
+            GeodeDisplay geode = geodes.getFirst();
+            require(geode.dimension().equals("end") && geode.minY() == -20 && geode.maxY() == 20
+                    && geode.rarity() == 30, "Geode values were not taken from the YAML");
+            require(items(geode.clusters()).equals(List.of("minecraft:amethyst_cluster", "tfcm:mineral/quartz_cluster")),
+                    "Only the clusters were not shown in YAML order");
+
+            var buffer = new RegistryFriendlyByteBuf(Unpooled.buffer(),
+                    helper.getLevel().registryAccess(), ConnectionType.NEOFORGE);
+            VeinDisplaySync.Payload.STREAM_CODEC.encode(buffer, new VeinDisplaySync.Payload(List.of(), geodes));
+            GeodeDisplay decoded = VeinDisplaySync.Payload.STREAM_CODEC.decode(buffer).geodes().getFirst();
+            require(decoded.dimension().equals("end") && decoded.minY() == -20 && decoded.rarity() == 30
+                    && items(decoded.clusters()).equals(items(geode.clusters())),
+                    "Geode displays did not survive the payload codec");
             helper.succeed();
         } catch (Throwable throwable) {
             helper.fail(throwable.getMessage());

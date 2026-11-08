@@ -26,6 +26,7 @@ public final class TFCMJeiPlugin implements IModPlugin {
     private IJeiRuntime runtime;
     private final Synced<?> sluices = new Synced<>(SluiceRecipeCategory.TYPE, SluiceRecipeSync::received);
     private final Synced<?> veins = new Synced<>(OreVeinRecipeCategory.TYPE, VeinDisplaySync::received);
+    private final Synced<?> geodes = new Synced<>(GeodeRecipeCategory.TYPE, VeinDisplaySync::receivedGeodes);
 
     @Override
     public ResourceLocation getPluginUid() {
@@ -35,9 +36,13 @@ public final class TFCMJeiPlugin implements IModPlugin {
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
         var guiHelper = registration.getJeiHelpers().getGuiHelper();
-        registration.addRecipeCategories(new SluiceRecipeCategory(guiHelper), new OreVeinRecipeCategory(guiHelper));
+        registration.addRecipeCategories(new SluiceRecipeCategory(guiHelper), new OreVeinRecipeCategory(guiHelper),
+                new GeodeRecipeCategory(guiHelper));
         SluiceRecipeSync.setListener(sluices::refresh);
-        VeinDisplaySync.setListener(veins::refresh);
+        VeinDisplaySync.setListener(() -> {
+            veins.refresh();
+            geodes.refresh();
+        });
     }
 
     @Override
@@ -52,6 +57,7 @@ public final class TFCMJeiPlugin implements IModPlugin {
         runtime = jeiRuntime;
         sluices.reset();
         veins.reset();
+        geodes.reset();
     }
 
     @Override

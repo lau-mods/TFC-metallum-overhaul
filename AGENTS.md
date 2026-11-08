@@ -126,9 +126,10 @@
 - Overworldに有効なYAML鉱脈があればTFCの鉱石鉱脈だけを置換し、なければTFC鉱脈を維持する。既存のGravel・Dike等は維持する。標準TFCM晶洞は除外してYAML晶洞だけを追加する。
 - 置換対象は`tfc:vein/`と`firmalife:vein/`配下のplaced featureのうち`vein/gravel`、`vein/kaolin_disc`、`*_dike`以外とする。`GeodeDataProvider`がmodifier入口の`custom_worldgen.json`を生成する。
 - Nether・Endは各YAMLに明示された鉱脈・晶洞だけを追加し、空設定では追加しない。未登録block、不正type・数値、重複IDは警告してエントリ単位で除外し、重複は先頭を採用する。
-- JEI（任意）の`tfcm:ore_vein`カテゴリに、`enableCustomVeinGeneration`が有効なサーバーのYAML鉱脈を表示する。値は`CustomWorldgenBiomeModifier`がサーバー起動時に読んだ定義を使い（YAMLの再読込はしない）、`OnDatapackSyncEvent`で`tfcm:ore_veins`ペイロードとして送る。無効時は空リストを送る。晶洞は表示しない。
-- 1鉱脈は母岩（入力）、`{tier}`/`blocks`展開後の各entry（出力、母岩と同じ順で揃えて同期cycle表示）、indicator（出力）で構成する。割合はentry weight÷全weight。itemのないblockは表示から除外し、割合の分母には残す。ただしitemのないindicator（品位なし地表sample等）は、サーバーが読み込んだそのblockのloot tableの最初のitemで表示する。見出しは各entryの先頭blockの`<translation key>.prospected`（無ければblock名）を重複なく`, `で連結した鉱石名とし、IDは表示しない。情報欄はディメンション、type、Y範囲、rarity、density、typeが読むshape値（cluster=size、disc/kaolin=size・height、pipe=height・radius）とする。indicator tooltipはTFC `VeinFeature`どおり地表`1/rarity`（0は無し）と`depth`、地下`underground_count`×`1/underground_rarity`。出力が5個を超えるとscroll gridにする。
-- M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallback、JEI表示データの母岩対応・割合・ペイロード往復・無効時の空送信を検証する。
+- JEI（任意）の`tfcm:ore_vein`カテゴリに、`enableCustomVeinGeneration`が有効なサーバーのYAML鉱脈を、`tfcm:geode`カテゴリにYAML晶洞を表示する。値は`CustomWorldgenBiomeModifier`がサーバー起動時に読んだ定義を使い（YAMLの再読込はしない）、`OnDatapackSyncEvent`で`tfcm:ore_veins`ペイロード（鉱脈と晶洞の2リスト）として送る。無効時は両方とも空リストを送る。
+- 1鉱脈は母岩（入力）、`{tier}`/`blocks`展開後の各entry（出力、母岩と同じ順で揃えて同期cycle表示）、indicator（出力）で構成する。割合はentry weight÷全weight。itemのないblockは表示から除外し、割合の分母には残す。ただしitemのないindicator（品位なし地表sample等）は、サーバーが読み込んだそのblockのloot tableの最初のitemで表示する。見出しは各entryの先頭blockの`<translation key>.prospected`（無ければblock名）を重複なく`, `で連結した鉱石名とし、IDは表示しない。情報欄はディメンション、type、Y範囲、rarity、density、typeが読むshape値（cluster=size、disc/kaolin=size・height、pipe=height・radius）とする。indicator tooltipはTFC `VeinFeature`どおり地表`1/rarity`（0は無し）と`depth`、地下`underground_count`×`1/underground_rarity`。出力は6個までを1行に20 px間隔で並べ、scrollしない（7個以上は考慮しない）。
+- 1晶洞は`inner_placements`のうちblock IDのpathが`cluster`で終わるblock（Budは除く）だけを重複なく出力として1行に20 px間隔で並べ、Clusterが無い晶洞は表示しない。見出しは各Clusterの`<translation key>.mineral`（無ければblock名）を重複なく連結した鉱物名（TFCMの3種とVanilla Amethyst Clusterに定義）、情報欄はディメンション、Y範囲、rarityとする。
+- M11 GameTestは3ディメンション分離、rock/tier template・weight・indicatorのTFC config展開、無効入力と空設定fallback、JEI表示データの母岩対応・割合・ペイロード往復・無効時の空送信、晶洞表示データのCluster抽出・Clusterの無い晶洞の除外・ペイロード往復を検証する。
 
 ## M12 content toggles
 

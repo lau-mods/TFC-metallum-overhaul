@@ -18,9 +18,10 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import net.neoforged.neoforge.network.event.RegisterPayloadHandlersEvent;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
-/** The YAML files live on the server, so it sends clients the veins it generates for recipe viewers to show. */
+/** The YAML files live on the server, so it sends clients the veins and geodes it generates for recipe viewers. */
 public final class VeinDisplaySync {
     private static List<VeinDisplay> received = List.of();
+    private static List<GeodeDisplay> receivedGeodes = List.of();
     private static Runnable listener = () -> { };
 
     private VeinDisplaySync() {
@@ -29,19 +30,21 @@ public final class VeinDisplaySync {
     public static void registerPayloads(RegisterPayloadHandlersEvent event) {
         event.registrar("1").playToClient(Payload.TYPE, Payload.STREAM_CODEC, (payload, context) -> {
             received = payload.veins();
+            receivedGeodes = payload.geodes();
             listener.run();
         });
     }
 
     public static void onDatapackSync(OnDatapackSyncEvent event) {
-        Payload payload = new Payload(build(event.getPlayerList().getServer()));
+        Payload payload = build(event.getPlayerList().getServer());
         event.getRelevantPlayers().forEach(player -> PacketDistributor.sendToPlayer(player, payload));
     }
 
     /** Empty unless custom generation is on; uses the definitions the biome modifier read at server start. */
-    public static List<VeinDisplay> build(MinecraftServer server) {
-        if (!TFCMConfig.ENABLE_CUSTOM_VEIN_GENERATION.get()) return List.of();
-        return VeinDisplay.build(definitions(server), server);
+    public static Payload build(MinecraftServer server) {
+        if (!TFCMConfig.ENABLE_CUSTOM_VEIN_GENERATION.get()) return new Payload(List.of(), List.of());
+        Map<String, Dimension> definitions = definitions(server);
+        return new Payload(VeinDisplay.build(definitions, server), GeodeDisplay.build(definitions));
     }
 
     static Map<String, Dimension> definitions(MinecraftServer server) {
@@ -56,15 +59,21 @@ public final class VeinDisplaySync {
         return received;
     }
 
+    public static List<GeodeDisplay> receivedGeodes() {
+        return receivedGeodes;
+    }
+
     public static void setListener(Runnable newListener) {
         listener = newListener;
     }
 
-    public record Payload(List<VeinDisplay> veins) implements CustomPacketPayload {
+    public record Payload(List<VeinDisplay> veins, List<GeodeDisplay> geodes) implements CustomPacketPayload {
         public static final Type<Payload> TYPE = new Type<>(
                 ResourceLocation.fromNamespaceAndPath(TFCM.MOD_ID, "ore_veins"));
-        public static final StreamCodec<RegistryFriendlyByteBuf, Payload> STREAM_CODEC =
-                VeinDisplay.STREAM_CODEC.apply(ByteBufCodecs.list()).map(Payload::new, Payload::veins);
+        public static final StreamCodec<RegistryFriendlyByteBuf, Payload> STREAM_CODEC = StreamCodec.composite(
+                VeinDisplay.STREAM_CODEC.apply(ByteBufCodecs.list()), Payload::veins,
+                GeodeDisplay.STREAM_CODEC.apply(ByteBufCodecs.list()), Payload::geodes,
+                Payload::new);
 
         @Override
         public Type<Payload> type() {
