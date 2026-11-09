@@ -62,11 +62,11 @@
 - TFCの12×3品位鉱石と17品位なし鉱石にはNetherrack・End Stone版を追加し、元のTFC鉱石itemをdropする。FirmaLife Chromite 3品位×2版はFirmaLife導入時だけ登録し、生成データはmod-loaded conditionを付ける。
 - Nether鉱石は硬度3・耐爆10、End鉱石は硬度3・耐爆9、TFC母岩版はTFCの母岩category hardnessを使用する。全鉱石blockを`c:ores`、`minecraft:mineable/pickaxe`、`tfc:prospectable`、`tfc:mineable/propick`へ追加する。探鉱表示は標準block translation key末尾の`.prospected`を使用する。
 - 鉱石blockの英語名はTFCと同じ`<Grade> <Host> <Ore>`（品位なしは`<Host> <Ore>`）、`.prospected`は品位と母岩を含まない鉱石名とする。
-- Small OreのitemはTFCと同じく`tfcm:item/ore/small_<ore>`を貼った平面modelとし、地表の立体modelはblockだけに使う。地表modelの親はTFC `tfc:block/groundcover/magnetite`、textureはTFCと同じく品位ありが`tfcm:item/ore/normal_<ore>`、品位なしがraw itemとする。TFCの他の鉱石形状ではUVがTFCM textureの透明部に掛かり面が欠けるため、全sampleの全面が不透明になるこの形状に統一する。
+- Small OreのitemはTFCと同じく`tfcm:item/ore/small_<ore>`を貼った平面modelとし、地表の立体modelはblockだけに使う。地表modelはparentを持たず`IndicatorModels`が晶癖別の形状で全elementを生成し、textureはTFCと同じく品位ありが`tfcm:item/ore/normal_<ore>`、品位なしがraw itemとする。各面のUVは生成時にtextureを読み、面と同寸の不透明矩形（輪郭を除く内部画素を優先）から決定的に選び、透明画素を使わない。形状割当はNuggets A=Native Platinum・Native Osmium、Nuggets B=Native Iridium・Native Naquadah、Chunk A=Mithril Matrix・Magnesite・Cinnabar、Chunk B=Uraninite・Lapis Lazuli・Cryolite、Blades A=Rutile・Stibnite、Blades B=Wolframite、Cubes A=Galena・Pyrite・Sylvite、Cubes B=Fluorite・Carobbiite・Thorianite、Cubes C=Halite・Cobaltite、Crystals A=Quartz、Crystals B=Amethyst・Nether Quartz、Crystals C=Spodumene・Zircon・Emerald・Topaz、Gem A=Diamond、Gem B=Ruby・Sapphire、Pebbles=Bauxite・Opal、Crust A=Saltpeter・Sulfur・Borax、Crust B=Gypsum、Lumps A=Bituminous Coal・Graphite、Lumps B=Ligniteとし、座標は同classの表を正本とする。当たり判定はTFC `GroundcoverBlock.looseOre`のまま変えない。
 - 品位なし鉱石の地表sampleは`tfcm:ore/small_<ore>`のblockだけを登録し、BlockItemを作らない。対象はFluorite、Quartz、Carobbiite、`TfcOre.UNGRADED`の17種、Bituminous Coal、Halite、Lignite、Nether Quartzの計24種で、壊すと元のraw item（Nether Quartzは`minecraft:quartz`）を落とす。
 - 鉱石itemを`tfc:metal_ores`、`tfc:ore_pieces`、`tfc:small_ore_pieces`、`c:ores`、`c:ores/<ore>`、`c:ores/<ore>/<grade>`、`c:ores/<metal>/<grade>`へ追加する。
 - QuartzとFluoriteはQuernで各Powder 4個にし、両PowderをTFC gem powder・bowl powder tagへ追加する。Cut QuartzはTFC Sandpaperの損耗を使い、Certus Quartzとは別itemとして登録する。
-- `OreDataProvider`がblockstate、model、loot、tag、heating、quern、研磨を`src/generated/resources`へ生成し、langは`src/main/resources/assets/tfcm/lang/`で手動管理する。変更後は`./gradlew runData`と両GameTest runで機能を検証し、`node tests/e2e/ore-samples.mjs`で地表sampleの表示を検証する。
+- `OreDataProvider`がblockstate、model、loot、tag、heating、quern、研磨を`src/generated/resources`へ生成し、langは`src/main/resources/assets/tfcm/lang/`で手動管理する。変更後は`./gradlew runData`と両GameTest runで機能を検証し、`node tests/e2e/ore-samples.mjs`で全19形状の地表sampleの表示を検証する。
 
 ## M07 ore processing
 

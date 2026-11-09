@@ -13,7 +13,8 @@ public final class TFCMDataGenerators {
                 new EquipmentDataProvider(event.getGenerator().getPackOutput()));
         event.getGenerator().addProvider(event.includeServer(),
                 new TfcToolAssemblyDataProvider(event.getGenerator().getPackOutput()));
-        event.getGenerator().addProvider(event.includeServer(), new OreDataProvider(event.getGenerator().getPackOutput()));
+        event.getGenerator().addProvider(event.includeServer(), new OreDataProvider(event.getGenerator().getPackOutput(),
+                event.getExistingFileHelper()));
         event.getGenerator().addProvider(event.includeServer(),
                 new ProcessingDataProvider(event.getGenerator().getPackOutput()));
         event.getGenerator().addProvider(event.includeServer(),

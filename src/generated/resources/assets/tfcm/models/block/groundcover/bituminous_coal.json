@@ -1,5 +1,341 @@
 {
-  "parent": "tfc:block/groundcover/magnetite",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            5,
+            7,
+            9,
+            11
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            6,
+            5,
+            10,
+            7
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            6,
+            10,
+            10,
+            12
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            8,
+            8,
+            12,
+            10
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            5,
+            7,
+            9,
+            11
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            5,
+            11,
+            9,
+            13
+          ]
+        }
+      },
+      "from": [
+        5,
+        0,
+        5
+      ],
+      "to": [
+        9,
+        2,
+        9
+      ]
+    },
+    {
+      "faces": {
+        "east": {
+          "texture": "#0",
+          "uv": [
+            11,
+            9,
+            13,
+            10
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            4,
+            8,
+            6,
+            9
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            10,
+            7,
+            12,
+            8
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            6,
+            11,
+            8,
+            13
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            4,
+            5,
+            6,
+            6
+          ]
+        }
+      },
+      "from": [
+        6,
+        2,
+        6
+      ],
+      "to": [
+        8,
+        3,
+        8
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            5,
+            7,
+            7,
+            10
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            6,
+            4,
+            9,
+            6
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            9,
+            6,
+            11,
+            8
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            6,
+            4,
+            8,
+            6
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            10,
+            3,
+            12,
+            6
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            6,
+            11,
+            9,
+            13
+          ]
+        }
+      },
+      "from": [
+        9,
+        0,
+        6
+      ],
+      "to": [
+        11,
+        2,
+        9
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            5,
+            6,
+            8,
+            8
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            5,
+            13,
+            7,
+            14
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            3,
+            6,
+            6,
+            7
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            4,
+            9,
+            7,
+            10
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            6,
+            5,
+            9,
+            7
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            10,
+            7,
+            12,
+            8
+          ]
+        }
+      },
+      "from": [
+        5,
+        0,
+        9
+      ],
+      "to": [
+        8,
+        1,
+        11
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            5,
+            5,
+            6,
+            7
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            5,
+            5,
+            7,
+            6
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            10,
+            4,
+            11,
+            5
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            7,
+            5,
+            8,
+            6
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            8,
+            7,
+            9,
+            9
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            6,
+            9,
+            8,
+            10
+          ]
+        }
+      },
+      "from": [
+        4,
+        0,
+        6
+      ],
+      "to": [
+        5,
+        1,
+        8
+      ]
+    }
+  ],
   "textures": {
     "0": "tfc:item/ore/bituminous_coal",
     "particle": "tfc:item/ore/bituminous_coal"

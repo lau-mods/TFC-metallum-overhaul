@@ -1,5 +1,291 @@
 {
-  "parent": "tfc:block/groundcover/magnetite",
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            4,
+            4,
+            8,
+            6
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            10,
+            7,
+            12,
+            10
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            8,
+            5,
+            12,
+            8
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            7,
+            3,
+            11,
+            6
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            3,
+            8,
+            7,
+            10
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            11,
+            6,
+            13,
+            9
+          ]
+        }
+      },
+      "from": [
+        6,
+        0,
+        7
+      ],
+      "to": [
+        10,
+        3,
+        9
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            8,
+            8,
+            10,
+            12
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            8,
+            8,
+            12,
+            11
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            6,
+            4,
+            8,
+            7
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            9,
+            9,
+            11,
+            12
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            7,
+            5,
+            9,
+            9
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            6,
+            7,
+            10,
+            10
+          ]
+        }
+      },
+      "from": [
+        7,
+        0,
+        6
+      ],
+      "to": [
+        9,
+        3,
+        10
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            8,
+            4,
+            10,
+            6
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            3,
+            7,
+            5,
+            9
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            8,
+            9,
+            10,
+            11
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            6,
+            11,
+            8,
+            13
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            6,
+            11,
+            8,
+            13
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      },
+      "from": [
+        10,
+        0,
+        10
+      ],
+      "rotation": {
+        "angle": 45.0,
+        "axis": "y",
+        "origin": [
+          11,
+          0,
+          11
+        ]
+      },
+      "to": [
+        12,
+        2,
+        12
+      ]
+    },
+    {
+      "faces": {
+        "down": {
+          "cullface": "down",
+          "texture": "#0",
+          "uv": [
+            9,
+            4,
+            11,
+            6
+          ]
+        },
+        "east": {
+          "texture": "#0",
+          "uv": [
+            8,
+            11,
+            10,
+            12
+          ]
+        },
+        "north": {
+          "texture": "#0",
+          "uv": [
+            9,
+            11,
+            11,
+            12
+          ]
+        },
+        "south": {
+          "texture": "#0",
+          "uv": [
+            4,
+            8,
+            6,
+            9
+          ]
+        },
+        "up": {
+          "texture": "#0",
+          "uv": [
+            7,
+            11,
+            9,
+            13
+          ]
+        },
+        "west": {
+          "texture": "#0",
+          "uv": [
+            7,
+            5,
+            9,
+            6
+          ]
+        }
+      },
+      "from": [
+        4,
+        0,
+        4
+      ],
+      "to": [
+        6,
+        1,
+        6
+      ]
+    }
+  ],
   "textures": {
     "0": "tfc:item/ore/ruby",
     "particle": "tfc:item/ore/ruby"

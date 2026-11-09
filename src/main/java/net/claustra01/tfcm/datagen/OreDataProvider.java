@@ -17,6 +17,7 @@ import net.dries007.tfc.common.blocks.rock.Rock;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
+import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public final class OreDataProvider implements DataProvider {
     private static final Map<Ore, Metal> ORE_METALS = Map.ofEntries(
@@ -30,10 +31,12 @@ public final class OreDataProvider implements DataProvider {
             Map.entry(Ore.MAGNESITE, Metal.MAGNESIUM), Map.entry(Ore.ZIRCON, Metal.ZIRCONIUM));
     private final Path data;
     private final Path assets;
+    private final IndicatorModels indicators;
 
-    public OreDataProvider(PackOutput output) {
+    public OreDataProvider(PackOutput output, ExistingFileHelper existing) {
         data = output.getOutputFolder(PackOutput.Target.DATA_PACK);
         assets = output.getOutputFolder(PackOutput.Target.RESOURCE_PACK);
+        indicators = new IndicatorModels(existing);
     }
 
     @Override
@@ -94,7 +97,7 @@ public final class OreDataProvider implements DataProvider {
             files.add(save(output, assets, "tfcm/models/item/ore/" + small,
                     generatedModel("tfcm:item/ore/" + small)));
             files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore.id(),
-                    groundcoverModel("tfcm:item/ore/normal_" + ore.id())));
+                    indicators.model(ore.id(), "tfcm:item/ore/normal_" + ore.id())));
             files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore.id())));
             files.add(save(output, data, "tfcm/loot_table/blocks/ore/" + small,
                     blockLoot("tfcm:ore/" + small, ore.id(), false)));
@@ -115,7 +118,7 @@ public final class OreDataProvider implements DataProvider {
     // Surface samples of ungraded ores: placed like a small ore, but only ever yield the raw item.
     private void addGroundcover(CachedOutput output, List<CompletableFuture<?>> files, String ore, String texture,
             String drop) {
-        files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore, groundcoverModel(texture)));
+        files.add(save(output, assets, "tfcm/models/block/groundcover/" + ore, indicators.model(ore, texture)));
         files.add(save(output, assets, "tfcm/blockstates/ore/small_" + ore, smallBlockState(ore)));
         files.add(save(output, data, "tfcm/loot_table/blocks/ore/small_" + ore, blockLoot(drop, ore, false)));
     }
@@ -243,18 +246,6 @@ public final class OreDataProvider implements DataProvider {
         }
         variants.add("", models);
         json.add("variants", variants);
-        return json;
-    }
-
-    // Like TFC, the sample cuts its faces from an item texture; Magnetite's three pieces land on opaque pixels
-    // of every TFCM ore texture, which TFC's other ore shapes do not.
-    private static JsonObject groundcoverModel(String texture) {
-        JsonObject json = new JsonObject();
-        json.addProperty("parent", "tfc:block/groundcover/magnetite");
-        JsonObject textures = new JsonObject();
-        textures.addProperty("0", texture);
-        textures.addProperty("particle", texture);
-        json.add("textures", textures);
         return json;
     }
 
