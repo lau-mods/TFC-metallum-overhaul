@@ -100,7 +100,7 @@
 - 3工具とHeadはTFCの工具金属9種とInvar、Titanium、Netherite、Tungsten Steelへ展開する。Mining Hammer HeadはDouble Ingot 1個から`punch_last,upset_second_last,upset_third_last`、Excavator HeadはSheet 1個から`bend_last,upset_second_last,draw_third_last`を金属tierの金床で加工する。鋳造可能な4金属は焼成済みMoldで鋳造する。
 - 完成工具の組立はTFC Mining HammerのTFC Metal Tools版を常に使い、`crafting/metal/<tool>/<metal>`へ条件なしで生成する。tier 2以下は` NX/ HG`（`#c:rivets/<metal>`、Head、`#c:rods/<metal>`、`#c:glue`）、tier 3以上は` NX/GHR/RL `で`#c:rings/<metal>`とLeather（Mining/Quarry Hammerは`#c:leather/string`、Excavatorは`#c:leather/strip`）を加え、Headの鍛造bonusを引き継ぐ。
 - 3工具の持ち手は同金属のHammer（TFC金属はTFC 4.2.12、TFCM金属はTFCM）の柄に合わせ、木材色は共通、Head直下の上3段と末端3段の金属部（キャップ・カラーの有無と形）だけを金属ごとに変える。
-- 未焼成MoldのKnapping patternはMining Hammer=`  ###/    #/#   #/#    /###  `、Quarry Hammer=`##   /##   /     /   ##/   ##`、Excavator=`#####/#   #/#   #/#   #/#   #`とし、1399℃で焼成する。
+- 未焼成MoldのKnapping patternはMining Hammer=`  ###/    #/#   #/#    /###  `、Quarry Hammer=`   ##/   ##/     /##   /##   `、Excavator=`#####/#   #/#   #/#   #/#   #`とし、1399℃で焼成する。
 - 完成工具・Headのitem heatは金属固有値を使う。サイズ/重量は完成工具が`very_large/very_heavy`、Headが`large/medium`、Moldが`small/light`とする。外観はTFCのHammer、Mace、Shovelと各Head/Mold modelを再利用する。
 - 3工具を`c:tools`と`tfc:tools/<metal>`へ、Mining HammerとQuarry Hammerを`tfc:deals_crushing_damage`へ追加する。
 - 範囲工具データ変更後は`./gradlew runData`で同期し、`./gradlew classes build runGameTestServer`と`node tests/e2e/area-tools.mjs`で検証する。
