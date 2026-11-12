@@ -12,7 +12,7 @@ from pathlib import Path
 import shutil
 
 from PIL import Image
-from palette_transfer import lab, load, normalize, palette, pixels, recolor
+from palette_transfer import lab, load, normalize, palette, pixels, recolor, recolor_smooth
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[1]
@@ -214,7 +214,9 @@ def build_recipes(image):
         add(path,shape,colors,tone,**options)
     for namespace,form in [('tfcm','block'),('tfcm','smooth'),('tfc','smooth')]:
         for path in sorted((ASSETS/f'{namespace}/textures/block/metal/{form}').glob('*.png')):
-            shape=tfc(form,METAL_BASES[path.stem]);add(path,shape,original(path.stem),shape)
+            shape=tfc(form,METAL_BASES[path.stem])
+            options = {'smooth_ingot': tfc('ingot',METAL_BASES[path.stem])} if form == 'smooth' else {}
+            add(path,shape,original(path.stem),shape,**options)
     for path in sorted((ASSETS/'tfcm/textures/models/armor').glob('*.png')):
         metal,layer=path.stem.split('_layer_')
         shape=ref(f'tfc/armor/{ARMOR_BASES[metal]}_layer_{layer}.png')
@@ -317,8 +319,8 @@ def main():
             colors = palette(source)
             if correction:
                 colors = [correction[c] for c in colors]
-            result = recolor(shape,colors,fixed)
-            records.append([relative,0,'L' if correction else 'source palette',
+            result = recolor_smooth(shape,source,image(r['smooth_ingot']),shape) if 'smooth_ingot' in r else recolor(shape,colors,fixed)
+            records.append([relative,0,'D smooth' if 'smooth_ingot' in r else 'L' if correction else 'source palette',
                             len(colors),len(palette(result,fixed)),len(fixed)])
         assert list(result.size) == r['size'],(relative,result.size,r['size'])
         target = args.output/relative
