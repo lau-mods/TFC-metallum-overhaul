@@ -21,28 +21,28 @@
   "contents": [
     {
       "fluid": "tfc:metal/nickel",
-      "max": 0.5,
-      "min": 0.5
+      "max": 0.55,
+      "min": 0.45
     },
     {
       "fluid": "firmalife:metal/chromium",
-      "max": 0.25,
-      "min": 0.25
+      "max": 0.3,
+      "min": 0.2
     },
     {
       "fluid": "tfcm:metal/molybdenum",
-      "max": 0.125,
-      "min": 0.125
+      "max": 0.15,
+      "min": 0.1
     },
     {
       "fluid": "tfc:metal/wrought_iron",
-      "max": 0.0625,
-      "min": 0.0625
+      "max": 0.08,
+      "min": 0.05
     },
     {
       "fluid": "tfcm:metal/tungsten",
-      "max": 0.0625,
-      "min": 0.0625
+      "max": 0.08,
+      "min": 0.05
     }
   ],
   "result": "tfcm:metal/hastelloy"

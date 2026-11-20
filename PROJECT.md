@@ -119,8 +119,8 @@ TFC標準のCrucible、鋳型、Anvil、Welding、Heatingを用いる。各金�
 | Electrum | Gold 40–60%、Silver 40–60% |
 | Invar | Wrought Iron 60–70%、Nickel 30–40% |
 | Osmiridium | Osmium 60–80%、Iridium 20–40% |
-| Hastelloy | Nickel 50%、Chromium（FirmaLife）25%、Molybdenum 12.5%、Wrought Iron・Tungsten 各6.25% |
-| High Speed Steel | Steel 75%、Tungsten・Vanadium・Molybdenum・Manganese 各6.25% |
+| Hastelloy | Nickel 45–55%、Chromium（FirmaLife）20–30%、Molybdenum 10–15%、Wrought Iron・Tungsten 各5–8% |
+| High Speed Steel | Steel 70–80%、Tungsten・Vanadium・Molybdenum・Manganese 各5–8% |
 | Solder | Antimony 40–60%、Bismuth 20–40%、Tin 20–40% |
 | Andesite Alloy | Molten Andesite 89–91%、Zinc 9–11%、またはTin 9–11% |
 

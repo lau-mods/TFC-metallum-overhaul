@@ -403,12 +403,20 @@ public final class TFCMMetalGameTests {
             long count = helper.getLevel().getServer().getRecipeManager().getRecipes().stream()
                     .filter(holder -> holder.id().getNamespace().equals(TFCM.MOD_ID))
                     .filter(holder -> holder.value() instanceof AlloyRecipe).count();
-            checkAlloy(helper, Metal.HIGH_SPEED_STEEL, Map.of("tfc:metal/steel", 120, "tfcm:metal/tungsten", 10,
+            checkAlloy(helper, Metal.HIGH_SPEED_STEEL, true, Map.of("tfc:metal/steel", 120, "tfcm:metal/tungsten", 10,
                     "tfcm:metal/vanadium", 10, "tfcm:metal/molybdenum", 10, "tfcm:metal/manganese", 10));
+            checkAlloy(helper, Metal.HIGH_SPEED_STEEL, true, Map.of("tfc:metal/steel", 80, "tfcm:metal/tungsten", 5,
+                    "tfcm:metal/vanadium", 5, "tfcm:metal/molybdenum", 5, "tfcm:metal/manganese", 5));
+            checkAlloy(helper, Metal.HIGH_SPEED_STEEL, false, Map.of("tfc:metal/steel", 79, "tfcm:metal/tungsten", 4,
+                    "tfcm:metal/vanadium", 6, "tfcm:metal/molybdenum", 6, "tfcm:metal/manganese", 5));
             boolean firmaLife = ModList.get().isLoaded("firmalife");
             if (firmaLife) {
-                checkAlloy(helper, Metal.HASTELLOY, Map.of("tfc:metal/nickel", 80, "firmalife:metal/chromium", 40,
+                checkAlloy(helper, Metal.HASTELLOY, true, Map.of("tfc:metal/nickel", 80, "firmalife:metal/chromium", 40,
                         "tfcm:metal/molybdenum", 20, "tfc:metal/wrought_iron", 10, "tfcm:metal/tungsten", 10));
+                checkAlloy(helper, Metal.HASTELLOY, true, Map.of("tfc:metal/nickel", 45, "firmalife:metal/chromium", 30,
+                        "tfcm:metal/molybdenum", 10, "tfc:metal/wrought_iron", 7, "tfcm:metal/tungsten", 8));
+                checkAlloy(helper, Metal.HASTELLOY, false, Map.of("tfc:metal/nickel", 45, "firmalife:metal/chromium", 31,
+                        "tfcm:metal/molybdenum", 10, "tfc:metal/wrought_iron", 7, "tfcm:metal/tungsten", 7));
             }
             require(helper.getLevel().getRecipeManager().byKey(ResourceLocation.parse("tfcm:alloy/hastelloy")).isPresent()
                     == firmaLife, "Hastelloy needs FirmaLife chromium");
@@ -481,13 +489,13 @@ public final class TFCMMetalGameTests {
         require(recipe.assemble(mold).is(itemValue("metal/ingot/platinum")), "Casting did not produce platinum ingot");
     }
 
-    private static void checkAlloy(GameTestHelper helper, Metal metal, Map<String, Integer> amounts) {
+    private static void checkAlloy(GameTestHelper helper, Metal metal, boolean expectedMatch, Map<String, Integer> amounts) {
         FluidAlloy mixture = FluidAlloy.empty();
         amounts.forEach((id, amount) -> mixture.fill(new FluidStack(BuiltInRegistries.FLUID.get(ResourceLocation.parse(id)),
                 amount), FluidAction.EXECUTE, alloyContainer()));
         AlloyRecipe recipe = (AlloyRecipe) recipe(helper, "alloy/" + metal.id());
-        require(recipe.matches(mixture) && recipe.result() == TFCMFluids.METALS.get(metal).getSource(),
-                "Incorrect alloy composition or output for " + metal.id());
+        require(recipe.matches(mixture) == expectedMatch && recipe.result() == TFCMFluids.METALS.get(metal).getSource(),
+                "Incorrect alloy composition or output for " + metal.id() + " with " + amounts);
     }
 
     private static FluidAlloy alloy(int firstAmount, String first, int secondAmount, String second) {
