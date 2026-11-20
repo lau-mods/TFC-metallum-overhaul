@@ -155,6 +155,18 @@
     {
       "id": "tfcm:metal/block/high_speed_steel_stairs",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/block/signalum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lumium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/enderium_stairs",
+      "required": false
     }
   ]
 }

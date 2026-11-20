@@ -156,6 +156,18 @@
       "id": "#c:rivets/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:rivets/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/enderium",
+      "required": false
+    },
     "#c:rivets/bismuth",
     "#c:rivets/bismuth_bronze",
     "#c:rivets/black_bronze",

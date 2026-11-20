@@ -155,6 +155,18 @@
     {
       "id": "tfcm:metal/block/high_speed_steel_slab",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/block/signalum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lumium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/enderium_slab",
+      "required": false
     }
   ]
 }

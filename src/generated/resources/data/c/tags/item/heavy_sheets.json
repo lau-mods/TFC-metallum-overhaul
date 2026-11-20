@@ -156,6 +156,18 @@
       "id": "#c:heavy_sheets/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:heavy_sheets/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:heavy_sheets/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:heavy_sheets/enderium",
+      "required": false
+    },
     "#c:heavy_sheets/bismuth",
     "#c:heavy_sheets/bismuth_bronze",
     "#c:heavy_sheets/black_bronze",

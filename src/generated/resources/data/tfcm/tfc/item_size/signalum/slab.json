@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "signalum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/signalum_slab"
+  },
+  "size": "small",
+  "weight": "very_light"
+}

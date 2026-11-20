@@ -156,6 +156,18 @@
       "id": "#c:foils/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:foils/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:foils/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:foils/enderium",
+      "required": false
+    },
     "#c:foils/bismuth",
     "#c:foils/bismuth_bronze",
     "#c:foils/black_bronze",

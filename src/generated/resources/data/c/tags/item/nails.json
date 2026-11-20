@@ -156,6 +156,18 @@
       "id": "#c:nails/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:nails/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:nails/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:nails/enderium",
+      "required": false
+    },
     "#c:nails/bismuth",
     "#c:nails/bismuth_bronze",
     "#c:nails/black_bronze",

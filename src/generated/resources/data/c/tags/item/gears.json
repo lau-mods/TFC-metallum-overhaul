@@ -156,6 +156,18 @@
       "id": "#c:gears/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:gears/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:gears/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/enderium",
+      "required": false
+    },
     "#c:gears/bismuth",
     "#c:gears/bismuth_bronze",
     "#c:gears/black_bronze",

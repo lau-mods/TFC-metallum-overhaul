@@ -155,6 +155,18 @@
     {
       "id": "#c:double_ingots/high_speed_steel",
       "required": false
+    },
+    {
+      "id": "#c:double_ingots/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/enderium",
+      "required": false
     }
   ]
 }

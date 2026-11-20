@@ -155,6 +155,18 @@
     {
       "id": "tfcm:metal/high_speed_steel",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/signalum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/lumium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/enderium",
+      "required": false
     }
   ]
 }

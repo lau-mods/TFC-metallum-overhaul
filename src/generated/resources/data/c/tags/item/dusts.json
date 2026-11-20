@@ -156,6 +156,18 @@
       "id": "#c:dusts/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:dusts/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/enderium",
+      "required": false
+    },
     "#c:dusts/bismuth",
     "#c:dusts/bismuth_bronze",
     "#c:dusts/black_bronze",

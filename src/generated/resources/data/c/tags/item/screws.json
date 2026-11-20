@@ -156,6 +156,18 @@
       "id": "#c:screws/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:screws/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:screws/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/enderium",
+      "required": false
+    },
     "#c:screws/bismuth",
     "#c:screws/bismuth_bronze",
     "#c:screws/black_bronze",

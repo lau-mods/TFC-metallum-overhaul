@@ -156,6 +156,18 @@
       "id": "#c:rings/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:rings/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:rings/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/enderium",
+      "required": false
+    },
     "#c:rings/bismuth",
     "#c:rings/bismuth_bronze",
     "#c:rings/black_bronze",

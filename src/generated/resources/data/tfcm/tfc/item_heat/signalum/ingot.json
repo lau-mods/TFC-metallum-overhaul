@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "signalum"
+    }
+  ],
+  "forging_temperature": 900.0,
+  "heat_capacity": 2.857,
+  "ingredient": {
+    "item": "tfcm:metal/ingot/signalum"
+  },
+  "welding_temperature": 1200.0
+}

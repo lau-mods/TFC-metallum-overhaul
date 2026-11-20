@@ -49,6 +49,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.CraftingInput;
 import net.minecraft.world.item.crafting.CraftingRecipe;
@@ -252,7 +253,7 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void allMetalsAndBasicFormsAreRegistered(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            require(Metal.values().length == 39, "Expected exactly 39 TFCM metals");
+            require(Metal.values().length == 42, "Expected exactly 42 TFCM metals");
             Set<String> ids = new java.util.HashSet<>();
             for (Metal metal : Metal.values()) {
                 require(ids.add(metal.id()), "Duplicate metal id " + metal.id());
@@ -291,14 +292,14 @@ public final class TFCMMetalGameTests {
     public static void metalSpecificationValuesMatch(GameTestHelper helper) {
         helper.succeedIf(() -> {
             int[] tiers = {3,3,7,3,3,3,2,2,2,2,1,5,3,3,3,1,3,1,1,3,3,3,7,6,1,2,7,7,3,3,2,3,2,
-                    3, 3, 3, 3, 4, 5};
+                    3, 3, 3, 3, 4, 5, 4, 4, 5};
             int[] melts = {1535,1730,2000,1535,1535,1500,940,940,940,940,630,1700,1700,181,660,1250,1250,1000,330,1130,1535,400,1535,1535,1000,520,2000,2000,2076,1750,650,1287,1855,
-                    1246, 1535, 1024, 1700, 1370, 1450};
+                    1246, 1535, 1024, 1700, 1370, 1450, 1500, 1500, 1700};
             // Molten fluid tints, including the six additions based on IG ingot colors.
             int[] colors = {0xFF6F6C6B, 0xFF627C8B, 0xFF4D5742, 0xFFADC4CE, 0xFFA5B4CA, 0xFF718383, 0xFF8DB4BC, 0xFF888CCC, 0xFFE2B446, 0xFF473752, 0xFFB4AFBD, 0xFF898B93, 0xFF175AB3, 0xFFC5CBD1, 0xFF929799, 0xFFA45B49, 0xFF869A97, 0xFFA67F3A, 0xFF393D4A, 0xFF4E5946, 0xFF585F6B, 0xFF888888, 0xFF2F353E, 0xFF111111, 0xFFB18143, 0xFF757E76, 0xFF6C3F99, 0xFFE06100, 0xFF676767, 0xFF242424, 0xFFBCA3BA, 0xFFD3DCC3, 0xFFDFE0B7,
-                    0xFF736058, 0xFF8DB7B6, 0xFF756439, 0xFF8E0C0C, 0xFF779BA0, 0xFF808DA3};
+                    0xFF736058, 0xFF8DB7B6, 0xFF756439, 0xFF8E0C0C, 0xFF779BA0, 0xFF808DA3, 0xFFCE3912, 0xFFE2B773, 0xFF16576C};
             float[] capacities = {0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.012f, 0.01f, 0.01f, 0.01f, 0.0042857146f, 0.008571429f, 0.00857f, 0.0054545454f, 0.023076924f, 0.025f, 0.015f, 0.008571429f, 0.015f, 0.015f, 0.0054545454f, 0.012f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f,
-                    0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f};
+                    0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.00857f, 0.00857f, 0.00857f};
             Set<Metal> tools = Set.of(Metal.TITANIUM, Metal.INVAR, Metal.TUNGSTEN_STEEL, Metal.NETHERITE);
             Metal[] metals = Metal.values();
             for (int index = 0; index < metals.length; index++) {
@@ -322,6 +323,11 @@ public final class TFCMMetalGameTests {
                 if (!metals[index].providesTools()) {
                     require(!item("metal/pickaxe/" + metals[index].id()), "Unexpected tool set for " + metals[index].id());
                 }
+            }
+            for (Metal metal : List.of(Metal.SIGNALUM, Metal.LUMIUM, Metal.ENDERIUM)) {
+                HeatDefinition heat = HeatCapability.getDefinition(itemValue("metal/ingot/" + metal.id()).getDefaultInstance());
+                require(heat != null && heat.heatCapacity() == 2.857f && metal.rarity() == Rarity.RARE,
+                        "Metallum U ingot properties differ for " + metal.id());
             }
             require(Metal.DRACONIUM.forgingTemperature() == 1200 && Metal.DRACONIUM.weldingTemperature() == 1600,
                     "Draconium temperatures are not fixed");

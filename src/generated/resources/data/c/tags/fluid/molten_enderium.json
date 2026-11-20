@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "enderium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/enderium",
+    "tfcm:metal/flowing_enderium"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "enderium"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "N": {
+      "tag": "c:nuggets/enderium"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NNN",
+    "NNN"
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/ingot/enderium"
+  }
+}

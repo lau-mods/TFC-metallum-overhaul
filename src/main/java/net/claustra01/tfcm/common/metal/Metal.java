@@ -43,7 +43,10 @@ public enum Metal {
     NEODYMIUM(3, 1024, false, 0xFF756439, 0.008571429f, Rarity.UNCOMMON),
     VANADIUM(3, 1700, false, 0xFF8E0C0C, 0.008571429f, Rarity.UNCOMMON),
     HASTELLOY(4, 1370, false, 0xFF779BA0, 0.008571429f, Rarity.UNCOMMON),
-    HIGH_SPEED_STEEL(5, 1450, false, 0xFF808DA3, 0.008571429f, Rarity.UNCOMMON);
+    HIGH_SPEED_STEEL(5, 1450, false, 0xFF808DA3, 0.008571429f, Rarity.UNCOMMON),
+    SIGNALUM(4, 1500, false, 0xFFCE3912, 0.00857f, Rarity.RARE),
+    LUMIUM(4, 1500, false, 0xFFE2B773, 0.00857f, Rarity.RARE),
+    ENDERIUM(5, 1700, false, 0xFF16576C, 0.00857f, Rarity.RARE);
 
     private final String id;
     private final int forgingTier;
@@ -89,6 +92,14 @@ public enum Metal {
 
     public float specificHeat() {
         return specificHeat;
+    }
+
+    public float itemHeatCapacity(int amount) {
+        return switch (this) {
+            // Metallum U rounds item heat independently of its fluid specific heat.
+            case SIGNALUM, LUMIUM, ENDERIUM -> Math.round(amount * 1000f / 35f) / 1000f;
+            default -> specificHeat * 333.33334f * amount / 100f;
+        };
     }
 
     public float forgingTemperature() {

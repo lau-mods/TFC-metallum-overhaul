@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "enderium"
+    }
+  ],
+  "fluid": "tfcm:metal/enderium",
+  "melt_temperature": 1700,
+  "specific_heat_capacity": 0.00857
+}

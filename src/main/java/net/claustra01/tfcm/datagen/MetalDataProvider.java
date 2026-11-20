@@ -354,7 +354,7 @@ public final class MetalDataProvider implements DataProvider {
     private static JsonObject itemHeat(Metal metal, MetalForm form) {
         JsonObject json = conditioned(metal);
         json.add("ingredient", itemIngredient(form.item(metal)));
-        json.addProperty("heat_capacity", metal.specificHeat() * 333.33334f * form.amount / 100f);
+        json.addProperty("heat_capacity", metal.itemHeatCapacity(form.amount));
         json.addProperty("forging_temperature", metal.forgingTemperature());
         json.addProperty("welding_temperature", metal.weldingTemperature());
         return json;

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lumium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/rivet/lumium"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/lumium"
+  },
+  "temperature": 1500
+}

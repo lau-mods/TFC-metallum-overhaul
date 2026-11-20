@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lumium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/lumium_stairs"
+  },
+  "size": "small",
+  "weight": "light"
+}

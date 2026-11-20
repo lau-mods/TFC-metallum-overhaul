@@ -49,3 +49,5 @@ original/uranium.png: ImmersiveEngineering-1.21.1-12.4.2-194.jar: assets/immersi
 original/zirconium.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/textures/item/material/ingot/zirconium.png
 
 immersivegeology/: RGB swatches of the opaque colors used by the ingot item models in ImmersiveGeology-0.9.1-b5526.jar (NeoForge 1.21.1, Modrinth 5aLa4sNz). For item/colored models sample layer0 directly. For palette/item models apply the atlas palette_key to the base ingot using palette/palettes/<metal>/pristine first. Geometry is supplied by the TFCM regeneration rules.
+
+original/{signalum,lumium,enderium}.png: Thermal Foundation 1.20.1-11.0.6.70, bundled thermal_core-1.20.1-11.0.6.24.jar, assets/thermal/textures/item/<metal>_ingot.png

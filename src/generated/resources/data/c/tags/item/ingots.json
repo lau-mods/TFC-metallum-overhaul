@@ -155,6 +155,18 @@
     {
       "id": "#c:ingots/high_speed_steel",
       "required": false
+    },
+    {
+      "id": "#c:ingots/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:ingots/enderium",
+      "required": false
     }
   ]
 }

@@ -156,6 +156,18 @@
       "id": "#c:plates/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:plates/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:plates/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:plates/enderium",
+      "required": false
+    },
     "#c:plates/bismuth",
     "#c:plates/bismuth_bronze",
     "#c:plates/black_bronze",

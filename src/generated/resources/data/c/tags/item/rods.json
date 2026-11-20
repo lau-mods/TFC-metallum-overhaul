@@ -155,6 +155,18 @@
     {
       "id": "#c:rods/high_speed_steel",
       "required": false
+    },
+    {
+      "id": "#c:rods/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:rods/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:rods/enderium",
+      "required": false
     }
   ]
 }

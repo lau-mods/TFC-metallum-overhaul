@@ -156,6 +156,18 @@
       "id": "#c:nuggets/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:nuggets/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/enderium",
+      "required": false
+    },
     "#c:nuggets/bismuth",
     "#c:nuggets/bismuth_bronze",
     "#c:nuggets/black_bronze",

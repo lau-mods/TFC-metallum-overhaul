@@ -469,6 +469,42 @@
       "required": false
     },
     {
+      "id": "tfcm:metal/block/signalum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/signalum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/signalum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lumium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lumium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/lumium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/enderium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/enderium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/enderium_stairs",
+      "required": false
+    },
+    {
       "id": "tfcm:metal/anvil/invar",
       "required": false
     },

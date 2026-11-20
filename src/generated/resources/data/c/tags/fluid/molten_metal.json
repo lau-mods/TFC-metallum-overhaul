@@ -311,6 +311,30 @@
     {
       "id": "tfcm:metal/flowing_high_speed_steel",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/signalum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_signalum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/lumium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_lumium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/enderium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/flowing_enderium",
+      "required": false
     }
   ]
 }

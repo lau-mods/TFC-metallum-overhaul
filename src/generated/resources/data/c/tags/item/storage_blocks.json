@@ -155,6 +155,18 @@
     {
       "id": "#c:storage_blocks/high_speed_steel",
       "required": false
+    },
+    {
+      "id": "#c:storage_blocks/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/enderium",
+      "required": false
     }
   ]
 }

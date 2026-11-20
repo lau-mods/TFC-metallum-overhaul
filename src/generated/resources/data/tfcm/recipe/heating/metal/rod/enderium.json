@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "enderium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/rod/enderium"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfcm:metal/enderium"
+  },
+  "temperature": 1700
+}

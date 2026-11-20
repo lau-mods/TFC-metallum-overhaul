@@ -8,7 +8,7 @@ const metals = ['compressed_iron', 'platinum', 'naquadah', 'iridium', 'osmium', 
   'refined_glowstone', 'refined_obsidian', 'antimony', 'titanium', 'cobalt', 'lithium', 'aluminum', 'constantan',
   'invar', 'electrum', 'lead', 'uranium', 'tungsten', 'solder', 'tungsten_steel', 'netherite', 'dawnstone',
   'andesite_alloy', 'draconium', 'awakened_draconium', 'boron', 'thorium', 'magnesium', 'beryllium', 'zirconium',
-  'manganese', 'molybdenum', 'neodymium', 'vanadium', 'hastelloy', 'high_speed_steel'];
+  'manganese', 'molybdenum', 'neodymium', 'vanadium', 'hastelloy', 'high_speed_steel', 'signalum', 'lumium', 'enderium'];
 // TFC's own deposit first, as the reference for how a filled pan looks
 const deposits = ['tfc:deposit/cassiterite/andesite', 'tfc:rock/gravel/andesite', 'tfc:sand/red', 'tfcm:ore_processing/rock_powder',
   'tfcm:ore_processing/rocky_chunks/galena', 'tfcm:ore_processing/dirty_dust/native_gold'];
@@ -56,6 +56,15 @@ await scenario(async ({ clients }) => {
   command(client, 'item replace entity @s hotbar.8 with tfcm:ore/small_galena');
   await camera(client, { x: 0.5, y: 4.5, z: 3.5, yaw: 0, pitch: 0 });
   screenshot(client, 'AC-F028-001', 'small-ore-item');
+
+  command(client, 'kill @e[type=minecraft:item_frame]');
+  for (const [column, metal] of ['signalum', 'lumium', 'enderium'].entries()) {
+    for (const [row, form] of ['ingot', 'sheet', 'gear'].entries()) {
+      command(client, `summon minecraft:item_frame ${column - 1} ${5 - row} 7 {Facing:2b,Fixed:1b,Item:{id:"tfcm:metal/${form}/${metal}",count:1}}`);
+    }
+  }
+  await camera(client, { x: 0.5, y: 4.5, z: 3.5, yaw: 0, pitch: 0 });
+  screenshot(client, 'AC-F028-001', 'thermal-metal-colors');
 
   const log = readFileSync(path.join(process.env.MCT_HOME, 'clients', client, 'minecraft', 'logs', 'latest.log'), 'utf8');
   assert.doesNotMatch(log, /Unable to load model: 'tfcm:|Missing textures in model tfcm:item\/pan|tfcm:item\/pan[^\n]*(missing|Missing)/);

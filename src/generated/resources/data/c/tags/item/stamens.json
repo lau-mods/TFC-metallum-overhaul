@@ -156,6 +156,18 @@
       "id": "#c:stamens/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:stamens/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/enderium",
+      "required": false
+    },
     "#c:stamens/bismuth",
     "#c:stamens/bismuth_bronze",
     "#c:stamens/black_bronze",

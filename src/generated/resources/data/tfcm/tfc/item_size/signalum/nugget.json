@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "signalum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nugget/signalum"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

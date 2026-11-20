@@ -155,6 +155,18 @@
     {
       "id": "#c:double_sheets/high_speed_steel",
       "required": false
+    },
+    {
+      "id": "#c:double_sheets/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/enderium",
+      "required": false
     }
   ]
 }

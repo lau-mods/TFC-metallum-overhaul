@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "enderium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/stamen/enderium"
+  },
+  "size": "small",
+  "weight": "light"
+}

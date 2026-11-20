@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "signalum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/screw/signalum"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "enderium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/enderium"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

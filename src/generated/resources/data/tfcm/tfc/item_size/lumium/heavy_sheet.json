@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lumium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/heavy_sheet/lumium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

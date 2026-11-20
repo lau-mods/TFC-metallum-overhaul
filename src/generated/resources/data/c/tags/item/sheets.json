@@ -155,6 +155,18 @@
     {
       "id": "#c:sheets/high_speed_steel",
       "required": false
+    },
+    {
+      "id": "#c:sheets/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:sheets/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:sheets/enderium",
+      "required": false
     }
   ]
 }

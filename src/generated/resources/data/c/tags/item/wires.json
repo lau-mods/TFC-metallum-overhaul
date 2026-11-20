@@ -156,6 +156,18 @@
       "id": "#c:wires/high_speed_steel",
       "required": false
     },
+    {
+      "id": "#c:wires/signalum",
+      "required": false
+    },
+    {
+      "id": "#c:wires/lumium",
+      "required": false
+    },
+    {
+      "id": "#c:wires/enderium",
+      "required": false
+    },
     "#c:wires/bismuth",
     "#c:wires/bismuth_bronze",
     "#c:wires/black_bronze",
