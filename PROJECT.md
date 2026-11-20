@@ -538,11 +538,11 @@ Expected Result: Small Oreの直接溶融は存在し、Poor・Normal・Richの�
 ### F-016: Pan・Sluiceによる地表資源採取
 #### Description
 
-TFCのPan・Sluiceによる堆積物、岩石Gravel、Sand、Rock Powderのlootを追加する。TFC本体の仕組みを使用し、独自の選別機械を追加しない。
+TFCのPan・Sluiceで既存の堆積物を処理でき、岩石Gravel、Sand、Rock Powderのlootを追加する。TFC本体の仕組みを使用し、独自の選別機械を追加しない。
 
 JEIが導入されている場合は、Sluiceの入力・出力・確率をJEIに表示する。確率はサーバーが読み込んだloot tableから同期し、データパックの変更も反映する。JEIは任意依存とし、未導入でも他の機能に影響しない。
 
-**Deposit**：Native Copper、Native Gold、Native Silver、Cassiteriteの4種について、下表21岩石のDepositを対象とする。Deposit 1個につきSmall Oreを50%と10%の独立抽選、同岩種のLoose Rockを50%、下表の第一素材を25%、第二素材を5.33%で抽選する。
+**Deposit**：Native Copper、Native Gold、Native Silver、Cassiteriteの4種について、下表21岩石のDepositを対象とする。TFCのLoot Tableをそのまま使用する。Small Ore（50%）、Sluice限定のSmall Ore（10%）、同岩種のLoose Rock（50%）、下表の第一素材（25%）、第二素材（5.33%）の順に抽選し、最初に成立した出力を採用する。
 
 **Gravel**：21種類のTFC Rock Gravelを対象とし、Native Copper Powderを50%・25%の独立抽選、同岩種のLoose Rockを50%、Flintを15%、Boneを10%で抽選する。Gold Nuggetの生成は行わない。
 
@@ -590,7 +590,7 @@ JEIが導入されている場合は、Sluiceの入力・出力・確率をJEI�
 ##### AC-F016-001: Deposit
 Preconditions: 4種×21岩種のDepositがある。  
 Action: 各DepositをPan・Sluiceで処理しloot定義を検査する。  
-Expected Result: Small Ore 50%と10%、Loose Rock 50%、岩種固有素材25%と5.33%の独立抽選が一致する。
+Expected Result: 1回の処理で出力は最大1個。JEIではSmall Oreを55%、Loose Rockを22.5%、第一素材を5.625%、第二素材を約0.8994%として扱い、同じアイテムの排他的な出力は合算する。
 
 ##### AC-F016-002: Gravel
 Preconditions: TFCの21岩種のGravelがある。  

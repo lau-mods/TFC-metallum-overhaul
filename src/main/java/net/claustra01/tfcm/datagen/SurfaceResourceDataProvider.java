@@ -8,34 +8,12 @@ import java.util.concurrent.CompletableFuture;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
+import net.dries007.tfc.common.blocks.rock.Rock;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 
 public final class SurfaceResourceDataProvider implements DataProvider {
-    private static final List<String> ORES = List.of("native_copper", "native_gold", "native_silver", "cassiterite");
-    private static final List<RockOutput> ROCKS = List.of(
-            new RockOutput("andesite", "tfc:groundcover/pumice", "tfc:ore/pyrite"),
-            new RockOutput("basalt", "tfc:rock/loose/basalt", "tfc:ore/pyrite"),
-            new RockOutput("chalk", "tfc:rock/loose/chalk", "tfc:gem/sapphire"),
-            new RockOutput("chert", "tfc:rock/loose/chert", "tfc:gem/ruby"),
-            new RockOutput("claystone", "tfc:rock/loose/claystone", "tfc:gem/amethyst"),
-            new RockOutput("conglomerate", "tfc:rock/loose/conglomerate", "tfc:ore/lignite"),
-            new RockOutput("dacite", "tfc:groundcover/pumice", "tfc:ore/pyrite"),
-            new RockOutput("diorite", "tfc:rock/loose/diorite", "tfc:gem/emerald"),
-            new RockOutput("dolomite", "tfc:rock/loose/dolomite", "tfc:gem/amethyst"),
-            new RockOutput("gabbro", "tfc:rock/loose/gabbro", "tfc:gem/diamond"),
-            new RockOutput("gneiss", "tfc:rock/loose/gneiss", "tfc:ore/gypsum"),
-            new RockOutput("granite", "tfc:rock/loose/granite", "tfc:gem/topaz"),
-            new RockOutput("limestone", "tfc:rock/loose/limestone", "tfc:gem/lapis_lazuli"),
-            new RockOutput("marble", "tfc:rock/loose/marble", "tfc:gem/lapis_lazuli"),
-            new RockOutput("phyllite", "tfc:rock/loose/phyllite", "tfc:ore/pyrite"),
-            new RockOutput("quartzite", "tfc:rock/loose/quartzite", "tfc:gem/opal"),
-            new RockOutput("rhyolite", "tfc:groundcover/pumice", "tfc:ore/pyrite"),
-            new RockOutput("schist", "tfc:rock/loose/schist", "tfc:ore/pyrite"),
-            new RockOutput("shale", "tfc:rock/loose/shale", "tfc:ore/borax"),
-            new RockOutput("slate", "tfc:rock/loose/slate", "tfc:ore/pyrite"),
-            new RockOutput("tuff", "tfc:rock/loose/tuff", "tfc:ore/pyrite"));
     private static final List<SandOutput> SANDS = List.of(
             new SandOutput("black", new Output("tfcm:ore_processing/sand_pile/white", 1f),
                     new Output("tfcm:ore_processing/sand_pile/black", 0.30f),
@@ -86,30 +64,20 @@ public final class SurfaceResourceDataProvider implements DataProvider {
     @Override
     public CompletableFuture<?> run(CachedOutput output) {
         List<CompletableFuture<?>> files = new ArrayList<>();
-        for (RockOutput rock : ROCKS) {
-            for (String ore : ORES) {
-                JsonObject loot = loot();
-                JsonArray pools = loot.getAsJsonArray("pools");
-                pools.add(pool("small_ore_50_percent", "tfc:ore/small_" + ore, 0.50f));
-                pools.add(pool("small_ore_10_percent", "tfc:ore/small_" + ore, 0.10f));
-                pools.add(pool("loose_rock_50_percent", "tfc:rock/loose/" + rock.id(), 0.50f));
-                pools.add(pool("primary_material_25_percent", rock.first(), 0.25f));
-                pools.add(pool("secondary_material_5_33_percent", rock.second(), 0.0533f));
-                files.add(save(output, data, "tfc/loot_table/deposit/" + ore + "_" + rock.id(), loot));
-            }
-
-            String lootTable = "tfcm:surface_resource/gravel/" + rock.id();
-            files.add(save(output, data, "tfcm/tfc/deposit/surface_resource/gravel/" + rock.id(),
-                    deposit("tfc:rock/gravel/" + rock.id(), lootTable, panStages(output, files, assets,
-                            "gravel/" + rock.id(), "tfc:block/rock/gravel/" + rock.id()))));
+        for (Rock rock : Rock.values()) {
+            String rockId = rock.getSerializedName();
+            String lootTable = "tfcm:surface_resource/gravel/" + rockId;
+            files.add(save(output, data, "tfcm/tfc/deposit/surface_resource/gravel/" + rockId,
+                    deposit("tfc:rock/gravel/" + rockId, lootTable, panStages(output, files, assets,
+                            "gravel/" + rockId, "tfc:block/rock/gravel/" + rockId))));
             JsonObject gravel = loot();
             JsonArray gravelPools = gravel.getAsJsonArray("pools");
             gravelPools.add(pool("copper_powder_50_percent", powder("native_copper"), 0.50f));
             gravelPools.add(pool("copper_powder_25_percent", powder("native_copper"), 0.25f));
-            gravelPools.add(pool("loose_rock_50_percent", "tfc:rock/loose/" + rock.id(), 0.50f));
+            gravelPools.add(pool("loose_rock_50_percent", "tfc:rock/loose/" + rockId, 0.50f));
             gravelPools.add(pool("flint_15_percent", "minecraft:flint", 0.15f));
             gravelPools.add(pool("bone_10_percent", "minecraft:bone", 0.10f));
-            files.add(save(output, data, "tfcm/loot_table/surface_resource/gravel/" + rock.id(), gravel));
+            files.add(save(output, data, "tfcm/loot_table/surface_resource/gravel/" + rockId, gravel));
         }
 
         for (SandOutput sand : SANDS) {
@@ -191,7 +159,6 @@ public final class SurfaceResourceDataProvider implements DataProvider {
                 || item.startsWith("tfcm:ore_processing/dirty_dust/")) {
             return item.substring(item.lastIndexOf('/') + 1);
         }
-        if (item.startsWith("tfc:ore/small_")) return item.substring("tfc:ore/small_".length());
         if (item.equals("tfcm:ore/quartz")) return "quartz";
         return null;
     }
@@ -249,9 +216,6 @@ public final class SurfaceResourceDataProvider implements DataProvider {
 
     private static String dirtyDust(String series) {
         return "tfcm:ore_processing/dirty_dust/" + series;
-    }
-
-    private record RockOutput(String id, String first, String second) {
     }
 
     private record SandOutput(String id, List<Output> outputs) {

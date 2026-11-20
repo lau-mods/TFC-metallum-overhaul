@@ -1,7 +1,9 @@
 package net.claustra01.tfcm.common.processing;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -18,7 +20,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.storage.loot.LootTable;
 
-/** What a Sluice makes of one input: every output is its own independent chance. */
+/** What a Sluice makes of one input: outputs and their chances in the Sluice loot context. */
 public record SluiceRecipe(Ingredient input, List<Output> outputs) {
     public static final StreamCodec<RegistryFriendlyByteBuf, SluiceRecipe> STREAM_CODEC = StreamCodec.composite(
             Ingredient.CONTENTS_STREAM_CODEC, SluiceRecipe::input,
@@ -54,23 +56,50 @@ public record SluiceRecipe(Ingredient input, List<Output> outputs) {
             JsonObject poolJson = pool.getAsJsonObject();
             float chance = chance(poolJson);
             for (JsonElement entry : poolJson.getAsJsonArray("entries")) {
-                JsonObject entryJson = entry.getAsJsonObject();
-                if (!entryJson.get("type").getAsString().equals("minecraft:item")) continue;
-                outputs.add(new Output(BuiltInRegistries.ITEM.get(ResourceLocation.parse(
-                        entryJson.get("name").getAsString())).getDefaultInstance(), chance));
+                Map<ResourceLocation, Float> items = new LinkedHashMap<>();
+                collectEntry(entry.getAsJsonObject(), chance, items);
+                items.forEach((id, probability) -> outputs.add(
+                        new Output(BuiltInRegistries.ITEM.get(id).getDefaultInstance(), probability)));
             }
         }
         return outputs;
     }
 
-    private static float chance(JsonObject pool) {
-        if (!pool.has("conditions")) return 1;
-        float chance = 1;
-        for (JsonElement condition : pool.getAsJsonArray("conditions")) {
-            JsonObject json = condition.getAsJsonObject();
-            if (json.get("condition").getAsString().equals("minecraft:random_chance"))
-                chance *= json.get("chance").getAsFloat();
+    /** Returns the probability that this entry succeeds, conditional on reaching it. */
+    private static float collectEntry(JsonObject entry, float reach, Map<ResourceLocation, Float> items) {
+        float success = chance(entry);
+        if (reach == 0 || success == 0) return 0;
+        switch (entry.get("type").getAsString()) {
+            case "minecraft:item" -> items.merge(ResourceLocation.parse(entry.get("name").getAsString()),
+                    reach * success, Float::sum);
+            case "minecraft:alternatives" -> {
+                float remaining = 1;
+                for (JsonElement child : entry.getAsJsonArray("children")) {
+                    float childSuccess = collectEntry(child.getAsJsonObject(), reach * success * remaining, items);
+                    remaining *= 1 - childSuccess;
+                    if (remaining == 0) break;
+                }
+                return success * (1 - remaining);
+            }
         }
+        // An empty entry can also succeed and prevent later alternatives from being evaluated.
+        return success;
+    }
+
+    private static float chance(JsonObject node) {
+        if (!node.has("conditions")) return 1;
+        float chance = 1;
+        for (JsonElement condition : node.getAsJsonArray("conditions"))
+            chance *= conditionChance(condition.getAsJsonObject());
         return chance;
+    }
+
+    private static float conditionChance(JsonObject condition) {
+        return switch (condition.get("condition").getAsString()) {
+            case "minecraft:random_chance" -> condition.get("chance").getAsFloat();
+            case "tfc:is_sluice" -> 1;
+            case "minecraft:inverted" -> 1 - conditionChance(condition.getAsJsonObject("term"));
+            default -> 1;
+        };
     }
 }

@@ -2,13 +2,16 @@ package net.claustra01.tfcm.gametest;
 
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 import net.claustra01.tfcm.TFCM;
+import net.claustra01.tfcm.common.processing.SluiceRecipe;
 import net.claustra01.tfcm.registry.TFCMItems;
 import net.dries007.tfc.util.data.Deposit;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -28,20 +31,20 @@ public final class TFCMSurfaceResourceGameTests {
     private static final List<RockOutput> ROCKS = List.of(
             new RockOutput("andesite", "tfc:groundcover/pumice", "tfc:ore/pyrite"),
             new RockOutput("basalt", "tfc:rock/loose/basalt", "tfc:ore/pyrite"),
-            new RockOutput("chalk", "tfc:rock/loose/chalk", "tfc:gem/sapphire"),
-            new RockOutput("chert", "tfc:rock/loose/chert", "tfc:gem/ruby"),
-            new RockOutput("claystone", "tfc:rock/loose/claystone", "tfc:gem/amethyst"),
+            new RockOutput("chalk", "tfc:rock/loose/chalk", "tfc:ore/sapphire"),
+            new RockOutput("chert", "tfc:rock/loose/chert", "tfc:ore/ruby"),
+            new RockOutput("claystone", "tfc:rock/loose/claystone", "tfc:ore/amethyst"),
             new RockOutput("conglomerate", "tfc:rock/loose/conglomerate", "tfc:ore/lignite"),
             new RockOutput("dacite", "tfc:groundcover/pumice", "tfc:ore/pyrite"),
-            new RockOutput("diorite", "tfc:rock/loose/diorite", "tfc:gem/emerald"),
-            new RockOutput("dolomite", "tfc:rock/loose/dolomite", "tfc:gem/amethyst"),
-            new RockOutput("gabbro", "tfc:rock/loose/gabbro", "tfc:gem/diamond"),
+            new RockOutput("diorite", "tfc:rock/loose/diorite", "tfc:ore/emerald"),
+            new RockOutput("dolomite", "tfc:rock/loose/dolomite", "tfc:ore/amethyst"),
+            new RockOutput("gabbro", "tfc:rock/loose/gabbro", "tfc:ore/diamond"),
             new RockOutput("gneiss", "tfc:rock/loose/gneiss", "tfc:ore/gypsum"),
-            new RockOutput("granite", "tfc:rock/loose/granite", "tfc:gem/topaz"),
-            new RockOutput("limestone", "tfc:rock/loose/limestone", "tfc:gem/lapis_lazuli"),
-            new RockOutput("marble", "tfc:rock/loose/marble", "tfc:gem/lapis_lazuli"),
+            new RockOutput("granite", "tfc:rock/loose/granite", "tfc:ore/topaz"),
+            new RockOutput("limestone", "tfc:rock/loose/limestone", "tfc:ore/lapis_lazuli"),
+            new RockOutput("marble", "tfc:rock/loose/marble", "tfc:ore/lapis_lazuli"),
             new RockOutput("phyllite", "tfc:rock/loose/phyllite", "tfc:ore/pyrite"),
-            new RockOutput("quartzite", "tfc:rock/loose/quartzite", "tfc:gem/opal"),
+            new RockOutput("quartzite", "tfc:rock/loose/quartzite", "tfc:ore/opal"),
             new RockOutput("rhyolite", "tfc:groundcover/pumice", "tfc:ore/pyrite"),
             new RockOutput("schist", "tfc:rock/loose/schist", "tfc:ore/pyrite"),
             new RockOutput("shale", "tfc:rock/loose/shale", "tfc:ore/borax"),
@@ -52,19 +55,28 @@ public final class TFCMSurfaceResourceGameTests {
     }
 
     @GameTest(template = "empty", batch = BATCH)
-    public static void allDepositsUseFiveIndependentSpecifiedPools(GameTestHelper helper) {
+    public static void allTfcDepositsShowExclusiveSluiceProbabilities(GameTestHelper helper) {
         helper.succeedIf(() -> {
+            List<SluiceRecipe> recipes = SluiceRecipe.build(helper.getLevel().getServer());
             for (String ore : ORES) {
                 for (RockOutput rock : ROCKS) {
                     checkDeposit("tfc:deposit/" + ore + "/" + rock.id(), "tfc:deposit/" + ore + "_" + rock.id(),
                             false);
-                    JsonArray pools = resource(helper, "tfc", "loot_table/deposit/" + ore + "_" + rock.id() + ".json");
-                    require(pools.size() == 5, "Deposit must have five independent pools: " + ore + "/" + rock.id());
-                    checkPool(pools, 0, "tfc:ore/small_" + ore, 0.50f);
-                    checkPool(pools, 1, "tfc:ore/small_" + ore, 0.10f);
-                    checkPool(pools, 2, "tfc:rock/loose/" + rock.id(), 0.50f);
-                    checkPool(pools, 3, rock.first(), 0.25f);
-                    checkPool(pools, 4, rock.second(), 0.0533f);
+                    ItemStack input = item("tfc:deposit/" + ore + "/" + rock.id());
+                    var outputs = recipes.stream().filter(recipe -> recipe.input().test(input)).findFirst()
+                            .orElseThrow().outputs();
+                    Map<String, Float> expected = new LinkedHashMap<>();
+                    expected.put("tfc:ore/small_" + ore, 0.55f);
+                    expected.put("tfc:rock/loose/" + rock.id(), 0.225f);
+                    expected.merge(rock.first(), 0.05625f, Float::sum);
+                    expected.put(rock.second(), 0.008994375f);
+                    require(outputs.size() == expected.size(), "Wrong output count for " + input);
+                    for (var output : outputs) {
+                        String id = BuiltInRegistries.ITEM.getKey(output.stack().getItem()).toString();
+                        Float chance = expected.remove(id);
+                        require(chance != null && Math.abs(chance - output.chance()) < 0.000001f,
+                                "Wrong Sluice output for " + input + ": " + id + " at " + output.chance());
+                    }
                 }
             }
         });
