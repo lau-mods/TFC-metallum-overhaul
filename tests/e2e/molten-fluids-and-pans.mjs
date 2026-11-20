@@ -66,6 +66,20 @@ await scenario(async ({ clients }) => {
   await camera(client, { x: 0.5, y: 4.5, z: 3.5, yaw: 0, pitch: 0 });
   screenshot(client, 'AC-F028-001', 'thermal-metal-colors');
 
+  command(client, 'kill @e[type=minecraft:item_frame]');
+  const comparison = ['cobalt', 'osmium', 'thorium', 'zirconium', 'signalum', 'lumium', 'enderium'];
+  for (const [column, metal] of comparison.entries()) {
+    const x = 3 - column;
+    command(client, `summon minecraft:item_frame ${x} 6 7 {Facing:2b,Fixed:1b,Item:{id:"tfcm:metal/ingot/${metal}",count:1}}`);
+    command(client, `setblock ${x} 5 8 tfcm:metal/block/${metal}`);
+    command(client, `setblock ${x} 4 7 minecraft:glass`);
+    command(client, `setblock ${x} 4 8 tfcm:fluid/metal/${metal}`);
+    command(client, `summon minecraft:item_frame ${x} 3 7 {Facing:2b,Fixed:1b,Item:{id:"tfcm:bucket/metal/${metal}",count:1}}`);
+  }
+  command(client, 'item replace entity @s weapon.mainhand with minecraft:air');
+  await camera(client, { x: 0.5, y: 4, z: 0.5, yaw: 0, pitch: 0 });
+  screenshot(client, 'AC-F028-001', 'ingots-plated-blocks-fluids-buckets');
+
   const log = readFileSync(path.join(process.env.MCT_HOME, 'clients', client, 'minecraft', 'logs', 'latest.log'), 'utf8');
   assert.doesNotMatch(log, /Unable to load model: 'tfcm:|Missing textures in model tfcm:item\/pan|tfcm:item\/pan[^\n]*(missing|Missing)/);
 });

@@ -114,11 +114,8 @@ def build_recipes(image):
         return path
     def tfc(form, metal):
         return ref(f'tfc/{form}/{metal}.png')
-    def original(metal, *, block=False):
+    def original(metal):
         ig = f'immersivegeology/{metal}.png'
-        # Existing blocks keep their upstream palette; IG supplies the item and equipment colors.
-        if block and (REFERENCE/f'original/{metal}.png').is_file():
-            return ref(f'original/{metal}.png')
         if (REFERENCE/ig).is_file():
             return ref(ig)
         return tfc('ingot',metal) if metal in TFC_METALS else ref(f'original/{metal}.png')
@@ -234,7 +231,7 @@ def build_recipes(image):
         for path in sorted((ASSETS/f'{namespace}/textures/block/metal/{form}').glob('*.png')):
             shape=tfc(form,METAL_BASES[path.stem])
             options = {'smooth_ingot': tfc('ingot',METAL_BASES[path.stem])} if form == 'smooth' else {}
-            add(path,shape,original(path.stem, block=True),shape,**options)
+            add(path,shape,original(path.stem),shape,**options)
     for path in sorted((ASSETS/'tfcm/textures/models/armor').glob('*.png')):
         metal,layer=path.stem.split('_layer_')
         shape=ref(f'tfc/armor/{ARMOR_BASES[metal]}_layer_{layer}.png')

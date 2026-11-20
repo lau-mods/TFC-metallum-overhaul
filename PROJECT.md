@@ -930,9 +930,11 @@ Expected Result: TFCの属性判定が正常に機能し、Heat・Size・Weight�
 
 **現行公開版のアセットを本プロジェクトの正式な素材として再利用する。** アイテムとブロックのtexture、model、blockstate、animation metadata、翻訳、rendererに必要なassetを使用許諾を確認して取り込む。アセットを取得した配布版、ファイルパス、ライセンスを記録する。既存コードの内容を知らなくても、assetのファイル形式と見た目から参照関係を構築する。
 
-Manganese、Molybdenum、Neodymium、Vanadium、Hastelloy、High Speed Steel、Cobalt、Magnesium、Osmium、Platinum、Thorium、Titanium、Tungsten、Zirconiumのアイテムは、Immersive Geology 0.9.1-b5526の同素材Ingotの色を使い、各形状のTFC基準に合わせて明度を補正する。
+Manganese、Molybdenum、Neodymium、Vanadium、Hastelloy、High Speed Steel、Cobalt、Magnesium、Osmium、Platinum、Thorium、Titanium、Tungsten、Zirconiumのアイテム・ブロック・溶融流体は、Immersive Geology 0.9.1-b5526の同素材Ingotの色を使い、各形状のTFC基準に合わせて明度を補正する。
 
 Signalum、Lumium、Enderiumの金属値はTFC Metallum U 1.0.8に従う。比熱は各0.00857、rarityはRare。色はThermal Foundationの同名Ingotを使い、明度基準は順にCopper、Gold、Blue Steel、流体色は不透明画素の平均RGBとする。
+
+42金属の溶融流体とバケツのtintは元Ingotの不透明画素の平均RGBとする。IGは保存済みの色見本を等重みで平均する。
 
 金属ごとの色は既存アセットの金属色を利用し、TFCの道具・形状では木柄や革部品等の非金属部分を保つ。Plate、Nugget、Dust、Mining Hammer、Quarry Hammerに不足するアセットは、使用可能な既存素材の再構成または新規制作によって用意する。アセットの存在を理由にゲーム上の新機能を創作しない。
 

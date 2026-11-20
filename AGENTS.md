@@ -22,7 +22,7 @@
 - Metal BlockはTFCと同じくHammer損耗、Sheet 4個、`#minecraft:planks`から8個、Slabは3個から6個、Stairsは6個から8個を作る。High Carbon Tungsten SteelはTungsten IngotとBlack Steel Ingotのtier 6 Welding、Netherite IngotはNetherite ScrapとBlack Steel Ingotのtier 6 Weldingでも作り、Netherite ScrapにはNetherite Ingotと同じheatを定義する。
 - M02のGameTestは登録参照、仕様値とheat、鋳造、金床・溶接、合金、Andesite Alloyを検証する。`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを実行する。
 
-- Manganese、Molybdenum、Neodymium、Vanadium、Hastelloy、High Speed Steelと既存のCobalt、Magnesium、Osmium、Platinum、Thorium、Titanium、Tungsten、ZirconiumのアイテムパレットはIG 0.9.1-b5526のIngotから採る。合金2種の比率はPROJECT.mdに従う。
+- Manganese、Molybdenum、Neodymium、Vanadium、Hastelloy、High Speed Steelと既存のCobalt、Magnesium、Osmium、Platinum、Thorium、Titanium、Tungsten、Zirconiumのアイテム・ブロック・溶融流体のパレットはIG 0.9.1-b5526のIngotから採る。合金2種の比率はPROJECT.mdに従う。
 
 ## M03 metal forms
 
