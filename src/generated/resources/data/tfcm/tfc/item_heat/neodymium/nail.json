@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "forging_temperature": 614.4,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/nail/neodymium"
+  },
+  "welding_temperature": 819.2
+}

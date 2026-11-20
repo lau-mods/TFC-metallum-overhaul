@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "forging_temperature": 614.4,
+  "heat_capacity": 0.34285718,
+  "ingredient": {
+    "item": "tfcm:metal/ring/neodymium"
+  },
+  "welding_temperature": 819.2
+}

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nugget/neodymium"
+  },
+  "size": "tiny",
+  "weight": "very_light"
+}

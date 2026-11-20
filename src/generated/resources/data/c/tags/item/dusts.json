@@ -132,6 +132,30 @@
       "id": "#c:dusts/zirconium",
       "required": false
     },
+    {
+      "id": "#c:dusts/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/high_speed_steel",
+      "required": false
+    },
     "#c:dusts/bismuth",
     "#c:dusts/bismuth_bronze",
     "#c:dusts/black_bronze",

@@ -132,6 +132,30 @@
       "id": "#c:foils/zirconium",
       "required": false
     },
+    {
+      "id": "#c:foils/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:foils/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:foils/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:foils/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:foils/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:foils/high_speed_steel",
+      "required": false
+    },
     "#c:foils/bismuth",
     "#c:foils/bismuth_bronze",
     "#c:foils/black_bronze",

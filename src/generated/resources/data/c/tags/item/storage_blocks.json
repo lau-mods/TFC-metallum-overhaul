@@ -131,6 +131,30 @@
     {
       "id": "#c:storage_blocks/zirconium",
       "required": false
+    },
+    {
+      "id": "#c:storage_blocks/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/high_speed_steel",
+      "required": false
     }
   ]
 }

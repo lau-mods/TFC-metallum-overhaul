@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hastelloy"
+    }
+  ],
+  "fluid": "tfcm:metal/hastelloy",
+  "melt_temperature": 1370,
+  "specific_heat_capacity": 0.008571429
+}

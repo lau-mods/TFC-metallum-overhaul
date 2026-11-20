@@ -132,6 +132,30 @@
       "id": "#c:stamens/zirconium",
       "required": false
     },
+    {
+      "id": "#c:stamens/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/high_speed_steel",
+      "required": false
+    },
     "#c:stamens/bismuth",
     "#c:stamens/bismuth_bronze",
     "#c:stamens/black_bronze",

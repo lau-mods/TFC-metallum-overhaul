@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "fluid": "tfcm:metal/neodymium",
+  "melt_temperature": 1024,
+  "specific_heat_capacity": 0.008571429
+}

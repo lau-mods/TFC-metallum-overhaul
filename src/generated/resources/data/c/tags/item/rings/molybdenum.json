@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "molybdenum"
+    }
+  ],
+  "values": [
+    "tfcm:metal/ring/molybdenum"
+  ]
+}

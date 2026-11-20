@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "vanadium"
+    }
+  ],
+  "forging_temperature": 1020.0,
+  "heat_capacity": 0.7142858,
+  "ingredient": {
+    "item": "tfcm:metal/wire/vanadium"
+  },
+  "welding_temperature": 1360.0
+}

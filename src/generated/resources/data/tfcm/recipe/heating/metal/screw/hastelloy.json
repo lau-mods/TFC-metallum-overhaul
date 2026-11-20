@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hastelloy"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/screw/hastelloy"
+  },
+  "result_fluid": {
+    "amount": 5,
+    "id": "tfcm:metal/hastelloy"
+  },
+  "temperature": 1370
+}

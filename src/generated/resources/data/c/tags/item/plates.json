@@ -132,6 +132,30 @@
       "id": "#c:plates/zirconium",
       "required": false
     },
+    {
+      "id": "#c:plates/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:plates/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:plates/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:plates/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:plates/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:plates/high_speed_steel",
+      "required": false
+    },
     "#c:plates/bismuth",
     "#c:plates/bismuth_bronze",
     "#c:plates/black_bronze",

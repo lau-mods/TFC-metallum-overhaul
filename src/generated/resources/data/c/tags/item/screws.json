@@ -132,6 +132,30 @@
       "id": "#c:screws/zirconium",
       "required": false
     },
+    {
+      "id": "#c:screws/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:screws/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:screws/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:screws/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:screws/high_speed_steel",
+      "required": false
+    },
     "#c:screws/bismuth",
     "#c:screws/bismuth_bronze",
     "#c:screws/black_bronze",

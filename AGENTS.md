@@ -14,7 +14,7 @@
 
 ## M02 metals
 
-- 33金属の通常item IDは`tfcm:metal/<form>/<metal>`、block IDは`tfcm:metal/block/<metal>`、slab/stairsはblock ID末尾に`_slab`/`_stairs`を付ける。溶融流体は`tfcm:metal/<metal>`、bucketは`tfcm:bucket/metal/<metal>`を使用する。
+- 39金属の通常item IDは`tfcm:metal/<form>/<metal>`、block IDは`tfcm:metal/block/<metal>`、slab/stairsはblock ID末尾に`_slab`/`_stairs`を付ける。溶融流体は`tfcm:metal/<metal>`、bucketは`tfcm:bucket/metal/<metal>`を使用する。
 - 高炭素中間素材は`tfcm:metal/ingot/high_carbon_tungsten_steel`、独立流体は`tfcm:molten_andesite`とする。金属別データには`tfcm:metal_enabled` load conditionを付ける。
 - `MetalDataProvider`がcasting、anvil、welding、heating、alloy、fluid/item heat、item size、common item/block/fluid tag、採掘tag、block lootを`src/generated/resources`へ生成する。変更後は`./gradlew runData`で生成物を同期する。
 - Double IngotとDouble SheetのWelding tierはTFCと同じく金属tierの1つ下（最小0）とし、同金属の金床を作る前に製作できるようにする。Metal Block、Slab、Stairsの表示名はTFCと同じ`<Metal> Plated Block/Slab/Stairs`とする。
@@ -22,16 +22,18 @@
 - Metal BlockはTFCと同じくHammer損耗、Sheet 4個、`#minecraft:planks`から8個、Slabは3個から6個、Stairsは6個から8個を作る。High Carbon Tungsten SteelはTungsten IngotとBlack Steel Ingotのtier 6 Welding、Netherite IngotはNetherite ScrapとBlack Steel Ingotのtier 6 Weldingでも作り、Netherite ScrapにはNetherite Ingotと同じheatを定義する。
 - M02のGameTestは登録参照、仕様値とheat、鋳造、金床・溶接、合金、Andesite Alloyを検証する。`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両runを実行する。
 
+- Manganese、Molybdenum、Neodymium、Vanadium、Hastelloy、High Speed Steelと既存のCobalt、Magnesium、Osmium、Platinum、Thorium、Titanium、Tungsten、ZirconiumのアイテムパレットはIG 0.9.1-b5526のIngotから採る。合金2種の比率はPROJECT.mdに従う。
+
 ## M03 metal forms
 
-- 33金属すべてに`foil`、`gear`、`heavy_sheet`、`nail`、`ring`、`rivet`、`screw`、`stamen`、`wire`、`plate`、`nugget`、`dust`を常設し、IDは`tfcm:metal/<form>/<metal>`とする。
+- 39金属すべてに`foil`、`gear`、`heavy_sheet`、`nail`、`ring`、`rivet`、`screw`、`stamen`、`wire`、`plate`、`nugget`、`dust`を常設し、IDは`tfcm:metal/<form>/<metal>`とする。
 - FoilはSheet 1→2、GearはDouble Sheet 1→1、Nail/Rivet/ScrewはStamen 1→5、RingはStamen 1→2、Stamen/WireはRod 1→2、PlateはIngot 1→1を金属tierのAnvilで作る。Heavy SheetはDouble Sheet 1とSheet 1→1のWeldingだけで作る。
 - Gearは`punch_last,hit_second_last,upset_third_last`、Nailは`punch_last,hit_not_last,bend_not_last`、Ringは`hit_last,draw_second_last,draw_third_last`、Rivetは`draw_not_last,bend_any,hit_any`、Screwは`hit_any,hit_any,draw_last`、Stamenは`bend_last,draw_second_last,draw_third_last`、それ以外のAnvil形状はTFC Sheet/Rodと同じ`hit_last,hit_second_last,hit_third_last`を使用する。TFC 4.2.12本体には拡張形状とPlateの同名レシピはないため、拡張形状の数値・操作列はTFC本体からは照合できない。
 - NuggetはIngot 1→9、Nugget 9→Ingot 1のCrafting Grid加工。溶融量はNugget 1個10 mB、9個90 mBとし、100 mBへの補正を行わない。DustはIngot 1→Dust 1のTFC Quern加工、PlateとDustの溶融量は各100 mB。Dustは鉱石Powderと別アイテム・別タグにする。
 - 金属別common item tagは`c:<form>s/<metal>`（Heavy Sheetは`c:heavy_sheets/<metal>`）を用い、集合タグ`c:<form>s`にも含める。各形状のHeating、item heat、size/weight、翻訳、modelとtextureを生成・登録する。
 - TFC More Items・TFC Metal Tools相当として、SheetとRodを持つTFC 4.2.12の19金属（`TfcMetal`: Bismuth、Bismuth Bronze、Black Bronze、Black Steel、Blue Steel、Brass、Bronze、Cast Iron、Copper、Gold、Nickel、Red Steel、Rose Gold、Silver、Steel、Sterling Silver、Tin、Wrought Iron、Zinc）にもF-004・F-005の12形状を`tfcm:metal/<form>/<metal>`で常設する。加工規則、個数、溶融量、size/weightは上記の同形状と同じとし、Anvil・Welding tierはTFC本体の同金属Rod/Sheetレシピに合わせる（TFCがtierを持たない金属は省略）。熱特性はTFCの同金属Ingot item heatとfluid heat、溶融先は`tfc:metal/<metal>`、Nugget 9個はTFC Ingotへ戻す。`c:<form>s/<metal>`と集合タグへ含め、textureはTFC More Itemsの同金属形状へ同金属IngotパレットをL補正して適用する。専用形状のPlate・Nugget・Dustは既存の輪郭を維持する。
 - FirmaLife 3.0.15のChromium、Stainless Steel（`TfcMetal`内）はFirmaLife導入時だけ上記12形状を登録する。tierは4、溶融先は`firmalife:metal/<metal>`、Nugget 9個はFirmaLifeのIngotへ戻し、熱特性はFirmaLifeの値で、recipeには`neoforge:mod_loaded`条件を付ける。TFCのitem heat/sizeとtagは読込条件を見ないため、heat/sizeは`c:<form>s/<metal>`経由、tagは任意entryとする。textureはFirmaLifeのIngotパレットをSteel系の明度幅へL補正して適用する。専用形状のPlate・Nugget・Dustは既存の輪郭を維持する。
-- `./gradlew runData`で生成物を同期し、`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両GameTest runを検証する。M03 GameTestは9拡張形状の登録・加工・熱、Plate、Nugget、Dust、33金属への適用を確認する。
+- `./gradlew runData`で生成物を同期し、`./gradlew classes build runGameTestServer`でTFC単独とFirmaLife追加の両GameTest runを検証する。M03 GameTestは9拡張形状の登録・加工・熱、Plate、Nugget、Dust、39金属への適用を確認する。
 
 ## M04 material parts
 
@@ -160,14 +162,14 @@
 ## M14 integrated verification
 
 - `TFCMProcessingGameTests.everySeriesCompletesFiveProcessingSteps` verifies every enabled series against the hammer output and damage, both Sluice inputs and independent loot pools, Quern output, compression and unpacking, and appropriate heating. The FirmaLife GameTest run includes Chromite; the TFC-only run excludes it. The test also checks Native Naquadah, Mithril Matrix, and Dirty Pile absence.
-- Verify static resources by parsing all JSON under `src/main/resources` and `src/generated/resources`, comparing the 33 metal IDs and forms and 35 processing series against `PROJECT.md`, and checking generated Quern and Sluice resources. Run `./gradlew runData` and inspect the generated resource diff for determinism.
+- Verify static resources by parsing all JSON under `src/main/resources` and `src/generated/resources`, comparing the 39 metal IDs and forms and 35 processing series against `PROJECT.md`, and checking generated Quern and Sluice resources. Run `./gradlew runData` and inspect the generated resource diff for determinism.
 - Run `./gradlew classes build runGameTestServer`, followed by the FirmaLife GameTest task, dedicated server and client startup, TFC equipment interactions, three-dimension generation with sample YAML, and client E2E in both configurations. The F-029 entries in `tests/acceptance.json` identify the GameTest evidence.
 - Verification status: JSON parsing, 33-metal model/recipe coverage, and 35-series processing resource coverage passed by direct inspection. `./gradlew --offline --no-daemon runData compileGameTestJava` passed. GameTests passed with TFC/Patchouli (79 cases), FirmaLife 3.0.15 added (79 cases), and a fresh Common Config (1 case); the fresh config lists exactly 33 accepted metal IDs. The processed resources contain no removed-metal assets, and all 1,371 retained metal/processing PNGs match texture regeneration. The Hot or Not and disabled-content runs, client E2E, manual TFC equipment use, and three-dimension sample-YAML verification were not rerun for this change.
 - Open Questions: None. No new gameplay values were introduced for M14.
 
 ## Texture regeneration (L)
 
-- `python3 tools/textures/regenerate.py` stages all 1,371 metal/processing PNGs in `.tmp/texture-L/generated/`; `--apply` installs and `--check` verifies them. Texture-only work needs no Gradle invocation. Add only production scripts and needed original PNGs under `tools/textures/reference/` (origins: `sources.txt`); trials/reports stay in `.tmp/`. Do not add hash lookup tables, per-output recipe dumps, input archives or duplicate reference images.
+- `python3 tools/textures/regenerate.py` stages all metal/processing PNGs in `.tmp/texture-L/generated/`; `--apply` installs and `--check` verifies them. Texture-only work needs no Gradle invocation. Add only production scripts and needed original PNGs under `tools/textures/reference/` (origins: `sources.txt`); trials/reports stay in `.tmp/`. Do not add hash lookup tables, per-output recipe dumps, input archives or duplicate reference images.
 - Choose the TFC reference by material category, brightness and surface pattern (`METAL_BASES` in the script). Apply the original ingot palette with its OKLab lightness interval fitted to the corresponding TFC form; preserve hue/chroma except for sRGB gamut fitting. Andesite Alloy uses Wrought Iron. Naquadah retains its original palette range because TFC normalization washes out its near-black appearance; keep Black Steel geometry.
 - TFC metals' Pommel/Crossguard are TFC Metal Tools originals and must remain byte-identical. TFC-metal Mining Hammer/Quarry Hammer/Excavator and their heads also retain their project reference PNGs (`tools/textures/reference/project/`) byte for byte; only the four added equipment metals are recolored. The Mining Hammer Head reference shapes are the original 6×6 diagonal heads enlarged 1.4× along the head axis (8×8), still smaller than the Quarry Hammer Head. These preservation rules apply to every regeneration. Preserve armor/shield/projectile UV layouts, wooden handles, bindings and fixed rock pixels. Authored Plate uses the chosen Sheet range, Nugget/Dust use Ingot, and area tools use Hammer/Shovel ranges with their own shapes. Equipment geometry is independent of the lightness reference: Invar uses Wrought Iron, Titanium uses Steel, and Netherite/Tungsten Steel use Red Steel (including tool heads, Crossguard/Pommel and Tongs). Keep Knife/Javelin sprites in their original TFC orientation; their model parents already supply the intended transforms. Decode the original TFC Shears PNGs by ignoring only a bad optional iCCP checksum in memory; retain their brown grips. Fishing Rod masks must compare rods with the same grip type (Red/Blue Steel have black grips).
 - All 35 processing series use mineral-only transparent block-ore-overlay palettes. Gray is not a rock-removal criterion. Keep the existing rock overlay and native TFC powders; do not introduce Dirty Pile. Generation verifies coverage, dimensions, alpha/fixed pixels, palette ranges. Build/GameTest/client rendering are separate checks.

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "vanadium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/wire/vanadium"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfcm:metal/vanadium"
+  },
+  "temperature": 1700
+}

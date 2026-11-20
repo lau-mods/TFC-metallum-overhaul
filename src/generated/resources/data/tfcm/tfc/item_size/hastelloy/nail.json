@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hastelloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/hastelloy"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

@@ -131,6 +131,30 @@
     {
       "id": "#c:double_sheets/zirconium",
       "required": false
+    },
+    {
+      "id": "#c:double_sheets/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/high_speed_steel",
+      "required": false
     }
   ]
 }

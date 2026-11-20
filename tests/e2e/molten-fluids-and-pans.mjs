@@ -7,7 +7,8 @@ const { scenario, command, camera, screenshot, mct } = await import(process.env.
 const metals = ['compressed_iron', 'platinum', 'naquadah', 'iridium', 'osmium', 'osmiridium', 'mithril', 'arcane',
   'refined_glowstone', 'refined_obsidian', 'antimony', 'titanium', 'cobalt', 'lithium', 'aluminum', 'constantan',
   'invar', 'electrum', 'lead', 'uranium', 'tungsten', 'solder', 'tungsten_steel', 'netherite', 'dawnstone',
-  'andesite_alloy', 'draconium', 'awakened_draconium', 'boron', 'thorium', 'magnesium', 'beryllium', 'zirconium'];
+  'andesite_alloy', 'draconium', 'awakened_draconium', 'boron', 'thorium', 'magnesium', 'beryllium', 'zirconium',
+  'manganese', 'molybdenum', 'neodymium', 'vanadium', 'hastelloy', 'high_speed_steel'];
 // TFC's own deposit first, as the reference for how a filled pan looks
 const deposits = ['tfc:deposit/cassiterite/andesite', 'tfc:rock/gravel/andesite', 'tfc:sand/red', 'tfcm:ore_processing/rock_powder',
   'tfcm:ore_processing/rocky_chunks/galena', 'tfcm:ore_processing/dirty_dust/native_gold'];

@@ -131,6 +131,30 @@
     {
       "id": "tfcm:metal/block/zirconium_slab",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/block/manganese_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/molybdenum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/neodymium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/vanadium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/hastelloy_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/high_speed_steel_slab",
+      "required": false
     }
   ]
 }

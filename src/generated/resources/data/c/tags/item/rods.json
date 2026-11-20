@@ -131,6 +131,30 @@
     {
       "id": "#c:rods/zirconium",
       "required": false
+    },
+    {
+      "id": "#c:rods/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:rods/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:rods/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:rods/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:rods/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:rods/high_speed_steel",
+      "required": false
     }
   ]
 }

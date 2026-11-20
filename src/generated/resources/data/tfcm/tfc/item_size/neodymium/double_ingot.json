@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/neodymium"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

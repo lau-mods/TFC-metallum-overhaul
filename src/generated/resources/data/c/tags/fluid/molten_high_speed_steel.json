@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "high_speed_steel"
+    }
+  ],
+  "values": [
+    "tfcm:metal/high_speed_steel",
+    "tfcm:metal/flowing_high_speed_steel"
+  ]
+}

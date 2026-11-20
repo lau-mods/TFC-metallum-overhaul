@@ -132,6 +132,30 @@
       "id": "#c:nails/zirconium",
       "required": false
     },
+    {
+      "id": "#c:nails/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:nails/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:nails/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:nails/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:nails/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:nails/high_speed_steel",
+      "required": false
+    },
     "#c:nails/bismuth",
     "#c:nails/bismuth_bronze",
     "#c:nails/black_bronze",

@@ -1,0 +1,49 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hastelloy"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "molybdenum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "firmalife"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfc:metal/nickel",
+      "max": 0.5,
+      "min": 0.5
+    },
+    {
+      "fluid": "firmalife:metal/chromium",
+      "max": 0.25,
+      "min": 0.25
+    },
+    {
+      "fluid": "tfcm:metal/molybdenum",
+      "max": 0.125,
+      "min": 0.125
+    },
+    {
+      "fluid": "tfc:metal/wrought_iron",
+      "max": 0.0625,
+      "min": 0.0625
+    },
+    {
+      "fluid": "tfcm:metal/tungsten",
+      "max": 0.0625,
+      "min": 0.0625
+    }
+  ],
+  "result": "tfcm:metal/hastelloy"
+}

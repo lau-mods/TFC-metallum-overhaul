@@ -201,6 +201,16 @@ public final class MetalDataProvider implements DataProvider {
                 range("tfc:metal/wrought_iron", .6, .7), range("tfc:metal/nickel", .3, .4))));
         files.add(save(output, "tfcm/recipe/alloy/osmiridium", alloy(Metal.OSMIRIDIUM,
                 range("tfcm:metal/osmium", .6, .8), range("tfcm:metal/iridium", .2, .4))));
+        JsonObject hastelloy = alloy(Metal.HASTELLOY,
+                range("tfc:metal/nickel", .5, .5), range("firmalife:metal/chromium", .25, .25),
+                range("tfcm:metal/molybdenum", .125, .125), range("tfc:metal/wrought_iron", .0625, .0625),
+                range("tfcm:metal/tungsten", .0625, .0625));
+        hastelloy.getAsJsonArray("neoforge:conditions").add(ContentConditions.firmaLife());
+        files.add(save(output, "tfcm/recipe/alloy/hastelloy", hastelloy));
+        files.add(save(output, "tfcm/recipe/alloy/high_speed_steel", alloy(Metal.HIGH_SPEED_STEEL,
+                range("tfc:metal/steel", .75, .75), range("tfcm:metal/tungsten", .0625, .0625),
+                range("tfcm:metal/vanadium", .0625, .0625), range("tfcm:metal/molybdenum", .0625, .0625),
+                range("tfcm:metal/manganese", .0625, .0625))));
         files.add(save(output, "tfcm/recipe/alloy/solder", alloy(Metal.SOLDER,
                 range("tfcm:metal/antimony", .4, .6), range("tfc:metal/bismuth", .2, .4), range("tfc:metal/tin", .2, .4))));
         files.add(save(output, "tfcm/recipe/alloy/andesite_alloy_zinc", alloy(Metal.ANDESITE_ALLOY,

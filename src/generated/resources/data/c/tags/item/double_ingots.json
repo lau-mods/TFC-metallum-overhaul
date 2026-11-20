@@ -131,6 +131,30 @@
     {
       "id": "#c:double_ingots/zirconium",
       "required": false
+    },
+    {
+      "id": "#c:double_ingots/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/high_speed_steel",
+      "required": false
     }
   ]
 }

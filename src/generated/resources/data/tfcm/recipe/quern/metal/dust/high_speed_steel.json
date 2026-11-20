@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "high_speed_steel"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/high_speed_steel"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/high_speed_steel"
+  }
+}

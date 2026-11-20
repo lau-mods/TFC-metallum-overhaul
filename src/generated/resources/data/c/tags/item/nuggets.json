@@ -132,6 +132,30 @@
       "id": "#c:nuggets/zirconium",
       "required": false
     },
+    {
+      "id": "#c:nuggets/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/high_speed_steel",
+      "required": false
+    },
     "#c:nuggets/bismuth",
     "#c:nuggets/bismuth_bronze",
     "#c:nuggets/black_bronze",

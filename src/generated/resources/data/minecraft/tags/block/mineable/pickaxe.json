@@ -397,6 +397,78 @@
       "required": false
     },
     {
+      "id": "tfcm:metal/block/manganese",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/manganese_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/manganese_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/molybdenum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/molybdenum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/molybdenum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/neodymium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/neodymium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/neodymium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/vanadium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/vanadium_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/vanadium_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/hastelloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/hastelloy_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/hastelloy_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/high_speed_steel",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/high_speed_steel_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/high_speed_steel_stairs",
+      "required": false
+    },
+    {
       "id": "tfcm:metal/anvil/invar",
       "required": false
     },

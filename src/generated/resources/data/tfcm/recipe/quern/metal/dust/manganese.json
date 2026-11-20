@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/manganese"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/manganese"
+  }
+}

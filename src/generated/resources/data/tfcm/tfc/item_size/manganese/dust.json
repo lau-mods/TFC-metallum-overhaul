@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/dust/manganese"
+  },
+  "size": "small",
+  "weight": "light"
+}

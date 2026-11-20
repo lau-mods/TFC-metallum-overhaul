@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "vanadium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/vanadium"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

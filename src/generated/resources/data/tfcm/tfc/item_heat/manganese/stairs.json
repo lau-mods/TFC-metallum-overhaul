@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "forging_temperature": 747.6,
+  "heat_capacity": 2.1428573,
+  "ingredient": {
+    "item": "tfcm:metal/block/manganese_stairs"
+  },
+  "welding_temperature": 996.8
+}

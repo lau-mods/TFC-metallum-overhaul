@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "high_speed_steel"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/sheet/high_speed_steel"
+  },
+  "size": "large",
+  "weight": "medium"
+}

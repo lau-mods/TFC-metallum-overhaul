@@ -55,6 +55,12 @@ METAL_BASES = {'compressed_iron': 'wrought_iron',
  'magnesium': 'tin',
  'beryllium': 'tin',
  'zirconium': 'wrought_iron',
+ 'manganese': 'wrought_iron',
+ 'molybdenum': 'steel',
+ 'neodymium': 'silver',
+ 'vanadium': 'wrought_iron',
+ 'hastelloy': 'nickel',
+ 'high_speed_steel': 'steel',
  'chromium': 'steel',
  'stainless_steel': 'steel',
  'bismuth_bronze': 'bismuth_bronze',
@@ -105,7 +111,13 @@ def build_recipes(image):
         return path
     def tfc(form, metal):
         return ref(f'tfc/{form}/{metal}.png')
-    def original(metal):
+    def original(metal, *, block=False):
+        ig = f'immersivegeology/{metal}.png'
+        # Existing blocks keep their upstream palette; IG supplies the item and equipment colors.
+        if block and (REFERENCE/f'original/{metal}.png').is_file():
+            return ref(f'original/{metal}.png')
+        if (REFERENCE/ig).is_file():
+            return ref(ig)
         return tfc('ingot',metal) if metal in TFC_METALS else ref(f'original/{metal}.png')
     def project(path):
         return ref('project/'+str(path.relative_to(ASSETS)))
@@ -167,7 +179,10 @@ def build_recipes(image):
             shape=ref(f'moreitems/{form}/{"stainless_steel" if metal=="stainless_steel" else base}.png')
             tone=ref(f'moreitems/{form}/{base}.png')
         elif form in ('plate','dust','nugget'):
-            shape=project(path if form=='nugget' else ASSETS/f'tfcm/textures/item/metal/{form}/invar.png')
+            if form == 'nugget' and (REFERENCE/'project'/path.relative_to(ASSETS)).is_file():
+                shape = project(path)
+            else:
+                shape = project(ASSETS/f'tfcm/textures/item/metal/{form}/invar.png')
             tone=tfc('sheet' if form=='plate' else 'ingot',base)
         elif form.removesuffix('_head') in AREA:
             shape=project(path)
@@ -216,7 +231,7 @@ def build_recipes(image):
         for path in sorted((ASSETS/f'{namespace}/textures/block/metal/{form}').glob('*.png')):
             shape=tfc(form,METAL_BASES[path.stem])
             options = {'smooth_ingot': tfc('ingot',METAL_BASES[path.stem])} if form == 'smooth' else {}
-            add(path,shape,original(path.stem),shape,**options)
+            add(path,shape,original(path.stem, block=True),shape,**options)
     for path in sorted((ASSETS/'tfcm/textures/models/armor').glob('*.png')):
         metal,layer=path.stem.split('_layer_')
         shape=ref(f'tfc/armor/{ARMOR_BASES[metal]}_layer_{layer}.png')
@@ -294,7 +309,10 @@ def main():
             records.append([relative,0,'copy',len(palette(shape)),len(palette(shape)),len(fixed)])
         else:
             source = image(r['palette'])
-            assert source.height == source.width, relative
+            if r['palette'].startswith('immersivegeology/'):
+                assert source.height == 1, relative
+            else:
+                assert source.height == source.width, relative
             if '/ore_processing/' in relative and Path(relative).stem in ore_palettes:
                 assert r['palette'] == ore_palettes[Path(relative).stem]
                 assert '/ore/' in r['palette'] and 'tone' not in r

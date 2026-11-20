@@ -1,0 +1,53 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "high_speed_steel"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "vanadium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "molybdenum"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfc:metal/steel",
+      "max": 0.75,
+      "min": 0.75
+    },
+    {
+      "fluid": "tfcm:metal/tungsten",
+      "max": 0.0625,
+      "min": 0.0625
+    },
+    {
+      "fluid": "tfcm:metal/vanadium",
+      "max": 0.0625,
+      "min": 0.0625
+    },
+    {
+      "fluid": "tfcm:metal/molybdenum",
+      "max": 0.0625,
+      "min": 0.0625
+    },
+    {
+      "fluid": "tfcm:metal/manganese",
+      "max": 0.0625,
+      "min": 0.0625
+    }
+  ],
+  "result": "tfcm:metal/high_speed_steel"
+}

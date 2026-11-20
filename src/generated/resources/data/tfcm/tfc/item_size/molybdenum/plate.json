@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "molybdenum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/plate/molybdenum"
+  },
+  "size": "normal",
+  "weight": "medium"
+}

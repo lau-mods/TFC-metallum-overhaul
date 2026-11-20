@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/neodymium"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

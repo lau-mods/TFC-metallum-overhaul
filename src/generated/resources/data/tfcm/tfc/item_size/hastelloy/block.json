@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hastelloy"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/hastelloy"
+  },
+  "size": "large",
+  "weight": "medium"
+}

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "values": [
+    "tfcm:metal/manganese",
+    "tfcm:metal/flowing_manganese"
+  ]
+}

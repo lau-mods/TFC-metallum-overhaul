@@ -86,6 +86,18 @@ await scenario(async ({ clients }) => {
   await camera(client, { x: 36.5, y: 2.4, z: -6.5, yaw: 0, pitch: 8 });
   screenshot(client, 'AC-F028-001', 'custom-javelins-and-shields');
 
+  command(client, 'kill @e[type=minecraft:item_frame]');
+  command(client, 'kill @e[type=minecraft:armor_stand]');
+  const ingots = ['manganese', 'molybdenum', 'neodymium', 'vanadium', 'hastelloy', 'high_speed_steel',
+    'cobalt', 'magnesium', 'osmium', 'platinum', 'thorium', 'titanium', 'tungsten', 'zirconium'];
+  for (const [index, metal] of ingots.entries()) {
+    const x = 30 + (index % 7) * 2;
+    const y = 6 - Math.floor(index / 7) * 2;
+    command(client, `summon minecraft:item_frame ${x} ${y} 4.49 {Facing:2b,Fixed:1b,Item:{id:"tfcm:metal/ingot/${metal}",count:1}}`);
+  }
+  await camera(client, { x: 36.5, y: 4, z: -6, yaw: 0, pitch: 0 });
+  screenshot(client, 'AC-F028-001', 'immersive-geology-ingot-colors');
+
   const log = readFileSync(path.join(process.env.MCT_HOME, 'clients', client, 'minecraft', 'logs', 'latest.log'), 'utf8');
   assert.doesNotMatch(log, /(?:Missing textures in model|Unable to load model|Failed to load (?:model|texture)) tfcm:|tfcm:.*(?:missing model|missing texture)/i);
 });

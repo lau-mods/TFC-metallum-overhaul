@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/ingot/manganese"
+  },
+  "size": "large",
+  "weight": "medium"
+}

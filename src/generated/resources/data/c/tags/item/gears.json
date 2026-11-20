@@ -132,6 +132,30 @@
       "id": "#c:gears/zirconium",
       "required": false
     },
+    {
+      "id": "#c:gears/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:gears/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:gears/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:gears/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:gears/high_speed_steel",
+      "required": false
+    },
     "#c:gears/bismuth",
     "#c:gears/bismuth_bronze",
     "#c:gears/black_bronze",

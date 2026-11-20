@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "vanadium"
+    }
+  ],
+  "fluid": "tfcm:metal/vanadium",
+  "melt_temperature": 1700,
+  "specific_heat_capacity": 0.008571429
+}

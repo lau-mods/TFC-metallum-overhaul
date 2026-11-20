@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/gear/neodymium"
+  },
+  "result_fluid": {
+    "amount": 400,
+    "id": "tfcm:metal/neodymium"
+  },
+  "temperature": 1024
+}

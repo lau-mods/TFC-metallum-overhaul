@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "vanadium"
+    }
+  ],
+  "values": [
+    "tfcm:metal/vanadium",
+    "tfcm:metal/flowing_vanadium"
+  ]
+}

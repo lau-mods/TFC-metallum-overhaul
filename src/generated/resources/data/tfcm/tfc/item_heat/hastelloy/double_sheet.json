@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hastelloy"
+    }
+  ],
+  "forging_temperature": 822.0,
+  "heat_capacity": 11.428573,
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/hastelloy"
+  },
+  "welding_temperature": 1096.0
+}

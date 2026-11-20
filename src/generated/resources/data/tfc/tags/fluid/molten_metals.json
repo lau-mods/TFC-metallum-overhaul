@@ -131,6 +131,30 @@
     {
       "id": "tfcm:metal/zirconium",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/manganese",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/molybdenum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/neodymium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/vanadium",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/hastelloy",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/high_speed_steel",
+      "required": false
     }
   ]
 }

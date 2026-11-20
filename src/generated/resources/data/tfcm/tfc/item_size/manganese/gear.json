@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/gear/manganese"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

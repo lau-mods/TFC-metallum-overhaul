@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "fluid": "tfcm:metal/manganese",
+  "melt_temperature": 1246,
+  "specific_heat_capacity": 0.008571429
+}

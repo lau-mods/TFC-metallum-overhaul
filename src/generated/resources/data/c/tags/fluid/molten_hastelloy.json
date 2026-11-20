@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "hastelloy"
+    }
+  ],
+  "values": [
+    "tfcm:metal/hastelloy",
+    "tfcm:metal/flowing_hastelloy"
+  ]
+}

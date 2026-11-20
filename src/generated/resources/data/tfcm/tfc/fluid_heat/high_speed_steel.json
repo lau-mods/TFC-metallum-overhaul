@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "high_speed_steel"
+    }
+  ],
+  "fluid": "tfcm:metal/high_speed_steel",
+  "melt_temperature": 1450,
+  "specific_heat_capacity": 0.008571429
+}

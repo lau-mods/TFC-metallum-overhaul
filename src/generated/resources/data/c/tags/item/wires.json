@@ -132,6 +132,30 @@
       "id": "#c:wires/zirconium",
       "required": false
     },
+    {
+      "id": "#c:wires/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:wires/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:wires/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:wires/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:wires/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:wires/high_speed_steel",
+      "required": false
+    },
     "#c:wires/bismuth",
     "#c:wires/bismuth_bronze",
     "#c:wires/black_bronze",

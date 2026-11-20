@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "molybdenum"
+    }
+  ],
+  "fluid": "tfcm:metal/molybdenum",
+  "melt_temperature": 1535,
+  "specific_heat_capacity": 0.008571429
+}

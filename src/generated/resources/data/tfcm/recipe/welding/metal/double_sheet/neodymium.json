@@ -1,0 +1,20 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "type": "tfc:welding",
+  "first_input": {
+    "tag": "c:sheets/neodymium"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/double_sheet/neodymium"
+  },
+  "second_input": {
+    "tag": "c:sheets/neodymium"
+  },
+  "tier": 2
+}

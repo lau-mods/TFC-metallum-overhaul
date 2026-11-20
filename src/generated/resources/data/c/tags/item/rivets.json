@@ -132,6 +132,30 @@
       "id": "#c:rivets/zirconium",
       "required": false
     },
+    {
+      "id": "#c:rivets/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/high_speed_steel",
+      "required": false
+    },
     "#c:rivets/bismuth",
     "#c:rivets/bismuth_bronze",
     "#c:rivets/black_bronze",

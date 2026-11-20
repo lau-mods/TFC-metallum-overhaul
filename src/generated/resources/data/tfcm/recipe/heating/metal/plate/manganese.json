@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/plate/manganese"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/manganese"
+  },
+  "temperature": 1246
+}

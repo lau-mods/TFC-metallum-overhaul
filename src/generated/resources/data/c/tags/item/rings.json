@@ -132,6 +132,30 @@
       "id": "#c:rings/zirconium",
       "required": false
     },
+    {
+      "id": "#c:rings/manganese",
+      "required": false
+    },
+    {
+      "id": "#c:rings/molybdenum",
+      "required": false
+    },
+    {
+      "id": "#c:rings/neodymium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/vanadium",
+      "required": false
+    },
+    {
+      "id": "#c:rings/hastelloy",
+      "required": false
+    },
+    {
+      "id": "#c:rings/high_speed_steel",
+      "required": false
+    },
     "#c:rings/bismuth",
     "#c:rings/bismuth_bronze",
     "#c:rings/black_bronze",
