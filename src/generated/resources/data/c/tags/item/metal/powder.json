@@ -93,6 +93,14 @@
       "required": false
     },
     {
+      "id": "#c:metal/powder/pyrolusite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/monazite",
+      "required": false
+    },
+    {
       "id": "#c:metal/powder/thorianite",
       "required": false
     },

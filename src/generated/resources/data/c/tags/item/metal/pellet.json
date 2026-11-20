@@ -93,6 +93,14 @@
       "required": false
     },
     {
+      "id": "#c:metal/pellet/pyrolusite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/monazite",
+      "required": false
+    },
+    {
       "id": "#c:metal/pellet/thorianite",
       "required": false
     },

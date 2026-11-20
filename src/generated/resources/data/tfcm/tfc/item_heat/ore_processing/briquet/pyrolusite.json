@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "pyrolusite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "heat_capacity": 2.8571432,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/pyrolusite"
+  }
+}

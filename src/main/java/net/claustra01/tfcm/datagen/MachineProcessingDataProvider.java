@@ -186,7 +186,8 @@ public final class MachineProcessingDataProvider implements DataProvider {
             case LIMONITE, MAGNESITE, CHROMITE -> "garnierite";
             case SPHALERITE -> "tetrahedrite";
             case GALENA -> "native_silver";
-            case BAUXITE, ZIRCON -> "rutile";
+            case PYROLUSITE -> "hematite";
+            case MONAZITE, BAUXITE, ZIRCON -> "rutile";
             case URANINITE, COBALTITE, WOLFRAMITE -> "bismuthinite";
             case RUTILE, SPODUMENE -> "zircon";
             case STIBNITE, SULFUR -> "cinnabar";

@@ -28,6 +28,7 @@ public final class OreDataProvider implements DataProvider {
             Map.entry(Ore.GALENA, Metal.LEAD), Map.entry(Ore.URANINITE, Metal.URANIUM),
             Map.entry(Ore.MITHRIL_MATRIX, Metal.MITHRIL), Map.entry(Ore.STIBNITE, Metal.ANTIMONY),
             Map.entry(Ore.WOLFRAMITE, Metal.TUNGSTEN), Map.entry(Ore.THORIANITE, Metal.THORIUM),
+            Map.entry(Ore.PYROLUSITE, Metal.MANGANESE), Map.entry(Ore.MONAZITE, Metal.NEODYMIUM),
             Map.entry(Ore.MAGNESITE, Metal.MAGNESIUM), Map.entry(Ore.ZIRCON, Metal.ZIRCONIUM));
     private final Path data;
     private final Path assets;

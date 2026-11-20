@@ -51,3 +51,6 @@ original/zirconium.png: NuclearCraft-1.20.1-1.2.32.jar: assets/nuclearcraft/text
 immersivegeology/: RGB swatches of the opaque colors used by the ingot item models in ImmersiveGeology-0.9.1-b5526.jar (NeoForge 1.21.1, Modrinth 5aLa4sNz). For item/colored models sample layer0 directly. For palette/item models apply the atlas palette_key to the base ingot using palette/palettes/<metal>/pristine first. Geometry is supplied by the TFCM regeneration rules.
 
 original/{signalum,lumium,enderium}.png: Thermal Foundation 1.20.1-11.0.6.70, bundled thermal_core-1.20.1-11.0.6.24.jar, assets/thermal/textures/item/<metal>_ingot.png
+
+Pyrolusite: TFC Metallum 1.4.2 (MC 1.12.2), assets/tfc/textures/items/ore/{,small/,poor/,rich/}pyrolusite.png and blocks/ores/pyrolusite.png. The normal block retains the original overlay; poor and rich vary its vein coverage.
+Monazite: TFC Metallum U 1.0.8, assets/tfc_metallum/textures/{block,item}/ore/*_monazite.png. Both processing palettes use their shipped normal block overlay.

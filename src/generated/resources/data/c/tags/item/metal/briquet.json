@@ -93,6 +93,14 @@
       "required": false
     },
     {
+      "id": "#c:metal/briquet/pyrolusite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/monazite",
+      "required": false
+    },
+    {
       "id": "#c:metal/briquet/thorianite",
       "required": false
     },

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "monazite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/monazite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/monazite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/monazite_full",
+    "tfcm:item/pan/dirty_dust/monazite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

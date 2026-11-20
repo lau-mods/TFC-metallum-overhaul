@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "monazite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/briquet/monazite"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "id": "tfcm:ore_processing/pellet/monazite"
+  }
+}

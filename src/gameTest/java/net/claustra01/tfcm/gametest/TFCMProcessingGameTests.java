@@ -42,12 +42,12 @@ public final class TFCMProcessingGameTests {
             series("native_gold", "yellow", "quartzite", "granite", "quartz", "native_silver", "tfc:metal/gold", true, false, "tfc"),
             series("hematite", "red", "quartzite", "shale", null, "sulfur", "tfc:metal/cast_iron", true, false, "tfc"),
             series("native_silver", "white", "gneiss", "granite", "amethyst", "galena", "tfc:metal/silver", true, false, "tfc"),
-            series("cassiterite", "white", "granite", "gneiss", "topaz", "bismuthinite", "tfc:metal/tin", true, false, "tfc"),
+            series("cassiterite", "white", "granite", "gneiss", "topaz", "monazite", "tfc:metal/tin", true, false, "tfc"),
             series("bismuthinite", "black", "granite", "schist", "pyrite", "galena", "tfc:metal/bismuth", true, false, "tfc"),
             series("garnierite", "green", "gabbro", "basalt", "opal", "limonite", "tfc:metal/nickel", true, false, "tfc"),
             series("malachite", "green", "limestone", "dolomite", "opal", "limonite", "tfc:metal/copper", true, false, "tfc"),
             series("magnetite", "black", "gabbro", "basalt", null, "hematite", "tfc:metal/cast_iron", true, false, "tfc"),
-            series("limonite", "brown", "claystone", "shale", "opal", "sulfur", "tfc:metal/cast_iron", true, false, "tfc"),
+            series("limonite", "brown", "claystone", "shale", "opal", "pyrolusite", "tfc:metal/cast_iron", true, false, "tfc"),
             series("sphalerite", "brown", "dolomite", "limestone", "amethyst", "galena", "tfc:metal/zinc", true, false, "tfc"),
             series("tetrahedrite", "black", "schist", "dolomite", "pyrite", "sphalerite", "tfc:metal/copper", true, false, "tfc"),
             series("galena", "black", "limestone", "dolomite", "amethyst", "sphalerite", "tfcm:metal/lead", true, false, "tfcm"),
@@ -56,11 +56,13 @@ public final class TFCMProcessingGameTests {
             series("uraninite", "black", "granite", "gneiss", null, "galena", "tfcm:metal/uranium", true, false, "tfcm"),
             series("chromite", "black", "gabbro", "basalt", "ruby", "cobaltite", "firmalife:metal/chromium", true, false, "firmalife"),
             series("rutile", "red", "gneiss", "schist", "sapphire", "hematite", "tfcm:metal/titanium", true, false, "tfcm"),
-            series("zircon", "brown", "granite", "gneiss", "topaz", "cassiterite", "tfcm:metal/zirconium", true, false, "tfcm"),
+            series("zircon", "brown", "granite", "gneiss", "topaz", "monazite", "tfcm:metal/zirconium", true, false, "tfcm"),
             series("cobaltite", "black", "gabbro", "schist", "pyrite", "sulfur", "tfcm:metal/cobalt", true, false, "tfcm"),
             series("stibnite", "black", "shale", "slate", "amethyst", "galena", "tfcm:metal/antimony", true, false, "tfcm"),
             series("native_platinum", "black", "gabbro", "basalt", null, "chromite", "tfcm:metal/platinum", true, false, "tfcm"),
             series("wolframite", "black", "granite", "gneiss", "quartz", "cassiterite", "tfcm:metal/tungsten", true, false, "tfcm"),
+            series("pyrolusite", "brown", "limestone", "shale", null, "limonite", "tfcm:metal/manganese", true, false, "tfcm"),
+            series("monazite", "white", "granite", "gneiss", "quartz", "zircon", "tfcm:metal/neodymium", true, false, "tfcm"),
             series("thorianite", "black", "granite", "gneiss", null, "galena", "tfcm:metal/thorium", true, false, "tfcm"),
             series("native_iridium", "black", "gabbro", "basalt", null, "native_platinum", "tfcm:metal/iridium", true, false, "tfcm"),
             series("native_osmium", "black", "gabbro", "basalt", null, "native_platinum", "tfcm:metal/osmium", true, false, "tfcm"),
@@ -80,12 +82,12 @@ public final class TFCMProcessingGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void processingTableHasThirtyMetalAndFiveNonMetalSeries(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            require(ProcessingSeries.values().length == 35 && EXPECTED.size() == 35,
-                    "Processing table must contain exactly 35 series");
+            require(ProcessingSeries.values().length == 37 && EXPECTED.size() == 37,
+                    "Processing table must contain exactly 37 series");
             require(EXPECTED.stream().filter(ExpectedSeries::nonMetal).count() == 5,
                     "Processing table must contain exactly five non-metal series");
-            require(EXPECTED.stream().filter(expected -> !expected.nonMetal()).count() == 30,
-                    "Processing table must contain exactly 30 metal series");
+            require(EXPECTED.stream().filter(expected -> !expected.nonMetal()).count() == 32,
+                    "Processing table must contain exactly 32 metal series");
             boolean firmaLife = ModList.get().isLoaded("firmalife");
             require(recipePresent(helper, "crafting/ore_processing/hammer/normal_chromite") == firmaLife,
                     "Chromite processing availability does not match FirmaLife");

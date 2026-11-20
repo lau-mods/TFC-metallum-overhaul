@@ -47,8 +47,8 @@ public final class TFCMOreGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void customOreItemsAndGradesAreComplete(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            require(Ore.values().length == 19, "M06 must define exactly nineteen custom ores");
-            require(TFCMItems.GRADED_ORES.size() == 16 && TFCMItems.ORES.size() == 3,
+            require(Ore.values().length == 21, "M06 must define exactly twenty-one custom ores");
+            require(TFCMItems.GRADED_ORES.size() == 18 && TFCMItems.ORES.size() == 3,
                     "Wrong graded or ungraded ore count");
             for (Ore ore : Ore.values()) {
                 if (ore.graded()) {
@@ -87,7 +87,7 @@ public final class TFCMOreGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void smallOreAndGroundcoverHaveDistinctAcquisition(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            require(TFCMBlocks.SMALL_ORES.size() == 16 && TFCMItems.SMALL_ORES.size() == 16,
+            require(TFCMBlocks.SMALL_ORES.size() == 18 && TFCMItems.SMALL_ORES.size() == 18,
                     "Every graded ore needs a small ore block item");
             require(TFCMBlocks.ORE_GROUNDCOVER.size() == 3 && TFCMBlocks.TFC_ORE_GROUNDCOVER.size() == 21,
                     "Ungraded ore groundcover is missing");

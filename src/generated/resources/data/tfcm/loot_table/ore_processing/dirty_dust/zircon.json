@@ -53,7 +53,7 @@
       "neoforge:conditions": [
         {
           "type": "tfcm:ore_enabled",
-          "ore": "cassiterite"
+          "ore": "monazite"
         }
       ],
       "conditions": [
@@ -65,7 +65,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/dirty_dust/cassiterite"
+          "name": "tfcm:ore_processing/dirty_dust/monazite"
         }
       ],
       "name": "byproduct_dirty_dust_1_percent",

@@ -19,6 +19,8 @@ public enum Ore {
     THORIANITE(true),
     MAGNESITE(true),
     ZIRCON(true),
+    PYROLUSITE(true),
+    MONAZITE(true),
     FLUORITE(false),
     QUARTZ(false),
     CAROBBIITE(false);

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "monazite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/monazite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/monazite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/monazite_full",
+    "tfcm:item/pan/rocky_chunks/monazite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

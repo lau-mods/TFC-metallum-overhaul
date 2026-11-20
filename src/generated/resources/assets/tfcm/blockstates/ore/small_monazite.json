@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/monazite"
+      },
+      {
+        "model": "tfcm:block/groundcover/monazite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/monazite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/monazite",
+        "y": 270
+      }
+    ]
+  }
+}

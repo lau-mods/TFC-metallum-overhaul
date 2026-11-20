@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/monazite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/monazite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/monazite/rich",
+      "required": false
+    }
+  ]
+}

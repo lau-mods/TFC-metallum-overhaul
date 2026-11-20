@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/pyrolusite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/pyrolusite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/pyrolusite/rich",
+      "required": false
+    }
+  ]
+}

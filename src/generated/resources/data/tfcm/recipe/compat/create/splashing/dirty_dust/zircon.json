@@ -2,7 +2,7 @@
   "neoforge:conditions": [
     {
       "type": "tfcm:ore_enabled",
-      "ore": "cassiterite"
+      "ore": "monazite"
     },
     {
       "type": "neoforge:mod_loaded",
@@ -37,7 +37,7 @@
     {
       "chance": 0.005,
       "count": 1,
-      "id": "tfcm:ore_processing/dirty_dust/cassiterite"
+      "id": "tfcm:ore_processing/dirty_dust/monazite"
     }
   ]
 }

@@ -267,7 +267,10 @@ def build_recipes(image):
             found=next((f'{group}/ore/{stem}.png' for stem in ('normal_'+name,name) if (REFERENCE/f'{group}/ore/{stem}.png').is_file()),None)
             if found:
                 ores[name]=ref(found);break
-        assert name in ores,name
+        if name not in ores:
+            overlay = f'tfcm/textures/block/ore/normal_{name}.png'
+            assert (ASSETS/overlay).is_file(), name
+            ores[name] = overlay
     for path in sorted(processing.rglob('*.png')):
         form,name=path.parent.name,path.stem;options={}
         if name in ('rock_overlay','rock_powder'):
@@ -294,7 +297,7 @@ def main():
     images = {}
     def image(name):
         if name not in images:
-            images[name] = load(REFERENCE/name)
+            images[name] = load((ASSETS if name.startswith("tfcm/textures/") else REFERENCE)/name)
         return images[name]
     recipes,ore_palettes,used_references = build_recipes(image)
     outputs = set()
@@ -359,7 +362,7 @@ def main():
     expected = {str(p.relative_to(ASSETS)) for directory in roots for p in (ASSETS/directory).rglob('*.png')}
     expected.update(f'tfcm/textures/entity/horse/armor/horse_armor_{m}.png' for m in ARMOR_BASES)
     assert outputs == expected,{'missing':sorted(expected-outputs),'extra':sorted(outputs-expected)}
-    assert len(ore_palettes) == 35
+    assert len(ore_palettes) == 37
     args.output.mkdir(parents=True,exist_ok=True)
     with (args.output/'color-counts.csv').open('w',newline='') as f:
         writer = csv.writer(f)

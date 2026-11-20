@@ -194,6 +194,30 @@
       "required": false
     },
     {
+      "id": "#c:ores/manganese/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/manganese/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/manganese/rich",
+      "required": false
+    },
+    {
+      "id": "#c:ores/neodymium/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/neodymium/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/neodymium/rich",
+      "required": false
+    },
+    {
       "id": "#c:ores/fluorite",
       "required": false
     },

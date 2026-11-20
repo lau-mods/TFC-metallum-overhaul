@@ -53,7 +53,7 @@
       "neoforge:conditions": [
         {
           "type": "tfcm:ore_enabled",
-          "ore": "sulfur"
+          "ore": "pyrolusite"
         }
       ],
       "conditions": [
@@ -65,7 +65,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "tfcm:ore_processing/dirty_dust/sulfur"
+          "name": "tfcm:ore_processing/dirty_dust/pyrolusite"
         }
       ],
       "name": "byproduct_dirty_dust_1_percent",

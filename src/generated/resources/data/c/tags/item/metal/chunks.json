@@ -93,6 +93,14 @@
       "required": false
     },
     {
+      "id": "#c:metal/chunks/pyrolusite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/chunks/monazite",
+      "required": false
+    },
+    {
       "id": "#c:metal/chunks/thorianite",
       "required": false
     },

@@ -194,6 +194,30 @@
       "required": false
     },
     {
+      "id": "tfcm:ore/poor_pyrolusite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_pyrolusite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_pyrolusite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_monazite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_monazite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_monazite",
+      "required": false
+    },
+    {
       "id": "tfcm:ore/fluorite",
       "required": false
     },

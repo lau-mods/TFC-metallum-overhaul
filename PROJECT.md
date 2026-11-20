@@ -313,11 +313,13 @@ Expected Result: それぞれ対応金属1400 mBへ戻り、`tfc:anvils` 系tag�
 ### F-009: 独自鉱石と品位・母岩
 #### Description
 
-独自鉱石は19種類とする。品位あり16種類はPoor、Normal、Richの3品位とSmall Oreを持つ。品位なし3種類は単一の鉱石アイテムを持つ。
+独自鉱石は21種類とする。品位あり18種類はPoor、Normal、Richの3品位とSmall Oreを持つ。品位なし3種類は単一の鉱石アイテムを持つ。
 
-| 品位あり16鉱石 | 品位なし3鉱石 |
+Pyrolusite（軟マンガン鉱）はTFC Metallum 1.4.2（Minecraft 1.12.2）、Monazite（モナズ石）はTFC Metallum U 1.0.8のテクスチャを使用する。鉱脈の追加は任意で、Overworld YAMLのblockに `tfcm:ore/{tier}_pyrolusite/{rock}` または `tfcm:ore/{tier}_monazite/{rock}` を指定できる。
+
+| 品位あり18鉱石 | 品位なし3鉱石 |
 |---|---|
-| `native_platinum`、`native_naquadah`、`native_iridium`、`native_osmium`、`rutile`、`cobaltite`、`spodumene`、`bauxite`、`galena`、`uraninite`、`mithril_matrix`、`stibnite`、`wolframite`、`thorianite`、`magnesite`、`zircon` | `fluorite`、`quartz`、`carobbiite` |
+| `native_platinum`、`native_naquadah`、`native_iridium`、`native_osmium`、`rutile`、`cobaltite`、`spodumene`、`bauxite`、`galena`、`uraninite`、`mithril_matrix`、`stibnite`、`wolframite`、`thorianite`、`magnesite`、`zircon`、`pyrolusite`、`monazite` | `fluorite`、`quartz`、`carobbiite` |
 
 全鉱石にTFCの各母岩に埋まったブロックとNetherrack・End Stone版を登録する。品位あり鉱石のアイテムIDは `tfcm:ore/<grade>_<ore>`、品位なしアイテムは `tfcm:ore/<ore>`、母岩ブロックは末尾に `/<rock>` を付ける。Small Oreは `tfcm:ore/small_<ore>` を使用する。Fluorite・Quartzには地表の小鉱石表現を用意し、単独の取得用BlockItemを作らない。
 
@@ -327,7 +329,7 @@ Nether鉱石は硬度3・爆発耐性10、End鉱石は硬度3・爆発耐性9と
 ##### AC-F009-001: 鉱石の登録
 Preconditions: 無効化設定が空の環境がある。  
 Action: 全鉱石と品位を列挙する。  
-Expected Result: 品位あり16種、品位なし3種が指定のIDで登録される。
+Expected Result: 品位あり18種、品位なし3種が指定のIDで登録される。
 
 ##### AC-F009-002: 母岩と異世界のブロック
 Preconditions: 各種TFC母岩、Netherrack、End Stoneがある。  
@@ -342,7 +344,7 @@ Expected Result: 品位あり鉱石のSmall Oreと、品位なし鉱石の小鉱
 ### F-010: 鉱石処理定義表
 #### Description
 
-鉱石の粉砕・洗浄は、金属鉱石30種類と非金属鉱物5種類の計35系列で構成する。表の「砂」は二次洗浄で排出するSand Pileの色、「主岩」「副岩」は一次洗浄で出るLoose Rock、「宝石」は一次洗浄の極低確率出力、「副産物A」はCreate・IEのStep 3、「副産物B」はStep 4で得る別鉱石のDirty Dustを示す。副産物B欄は既存TFC経路の値とし、CreateではMithril MatrixのみNative Silverへ変更する。他の系列は共通とする。Gemが「なし」の系列ではGem抽選を設定しない。
+鉱石の粉砕・洗浄は、金属鉱石32種類と非金属鉱物5種類の計37系列で構成する。表の「砂」は二次洗浄で排出するSand Pileの色、「主岩」「副岩」は一次洗浄で出るLoose Rock、「宝石」は一次洗浄の極低確率出力、「副産物A」はCreate・IEのStep 3、「副産物B」はStep 4で得る別鉱石のDirty Dustを示す。副産物B欄は既存TFC経路の値とし、CreateではMithril MatrixのみNative Silverへ変更する。他の系列は共通とする。Gemが「なし」の系列ではGem抽選を設定しない。
 
 金属鉱石は一次粉砕後の `rocky_chunks`、`chunks`、`dirty_dust`、`powder` と最終の対応金属を持つ。非金属鉱物は同じ洗浄工程を持つが、最終出力を表のPowder等とし、金属流体の生成は個別に定義されている場合だけ行う。
 
@@ -352,12 +354,12 @@ Expected Result: 品位あり鉱石のSmall Oreと、品位なし鉱石の小鉱
 | Native Gold | Yellow | Quartzite | Granite | Quartz | Native Platinum | Native Silver | Gold |
 | Hematite | Red | Quartzite | Shale | なし | Magnetite | Sulfur | Cast Iron |
 | Native Silver | White | Gneiss | Granite | Amethyst | Native Gold | Galena | Silver |
-| Cassiterite | White | Granite | Gneiss | Topaz | Cryolite | Bismuthinite | Tin |
+| Cassiterite | White | Granite | Gneiss | Topaz | Cryolite | Monazite | Tin |
 | Bismuthinite | Black | Granite | Schist | Pyrite | Stibnite | Galena | Bismuth |
 | Garnierite | Green | Gabbro | Basalt | Opal | Chromite | Limonite | Nickel |
 | Malachite | Green | Limestone | Dolomite | Opal | Native Copper | Limonite | Copper |
 | Magnetite | Black | Gabbro | Basalt | なし | Chromite | Hematite | Cast Iron |
-| Limonite | Brown | Claystone | Shale | Opal | Garnierite | Sulfur | Cast Iron |
+| Limonite | Brown | Claystone | Shale | Opal | Garnierite | Pyrolusite | Cast Iron |
 | Sphalerite | Brown | Dolomite | Limestone | Amethyst | Tetrahedrite | Galena | Zinc |
 | Tetrahedrite | Black | Schist | Dolomite | Pyrite | Stibnite | Sphalerite | Copper |
 | Galena | Black | Limestone | Dolomite | Amethyst | Native Silver | Sphalerite | Lead |
@@ -366,11 +368,13 @@ Expected Result: 品位あり鉱石のSmall Oreと、品位なし鉱石の小鉱
 | Uraninite | Black | Granite | Gneiss | なし | Bismuthinite | Galena | Uranium |
 | Chromite | Black | Gabbro | Basalt | Ruby | Garnierite | Cobaltite | Chromium |
 | Rutile | Red | Gneiss | Schist | Sapphire | Zircon | Hematite | Titanium |
-| Zircon | Brown | Granite | Gneiss | Topaz | Rutile | Cassiterite | Zirconium |
+| Zircon | Brown | Granite | Gneiss | Topaz | Rutile | Monazite | Zirconium |
 | Cobaltite | Black | Gabbro | Schist | Pyrite | Bismuthinite | Sulfur | Cobalt |
 | Stibnite | Black | Shale | Slate | Amethyst | Cinnabar | Galena | Antimony |
 | Native Platinum | Black | Gabbro | Basalt | なし | Native Iridium | Chromite | Platinum |
 | Wolframite | Black | Granite | Gneiss | Quartz | Bismuthinite | Cassiterite | Tungsten |
+| Pyrolusite | Brown | Limestone | Shale | なし | Hematite | Limonite | Manganese |
+| Monazite | White | Granite | Gneiss | Quartz | Rutile | Zircon | Neodymium |
 | Thorianite | Black | Granite | Gneiss | なし | Uraninite | Galena | Thorium |
 | Native Iridium | Black | Gabbro | Basalt | なし | Native Osmium | Native Platinum | Iridium |
 | Native Osmium | Black | Gabbro | Basalt | なし | Native Iridium | Native Platinum | Osmium |
@@ -383,6 +387,8 @@ Expected Result: 品位あり鉱石のSmall Oreと、品位なし鉱石の小鉱
 | Graphite | Black | Schist | Phyllite | Diamond | Magnetite | Hematite | Graphite Powder |
 | Sulfur | Yellow | Tuff | Basalt | Pyrite | Cinnabar | Hematite | Sulfur Powder |
 | Borax | White | Granite | Gneiss | Topaz | Carobbiite | Graphite | Borax Powder |
+
+Pyrolusiteにはマンガン酸化鉱床に共産するHematiteとLimoniteを割り当てる。Monazite、Zircon、Rutile、Cassiteriteの組み合わせは、砂鉱床での重鉱物の共産に基づく。[USGSのマンガン鉱床調査](https://pubs.usgs.gov/bul/0979b/report.pdf)・[砂錫鉱床モデル](https://pubs.usgs.gov/bul/b1693/html/bull3pke.htm)・[重鉱物砂鉱床モデル](https://www.usgs.gov/publications/deposit-model-heavy-mineral-sands-coastal-environments)
 
 Native NaquadahとMithril Matrixの行は**本プロジェクトで確定した固有仕様**とする。これらも他の品位あり鉱石と同じ4段階（Small、Poor、Normal、Rich）のハンマー粉砕規則と二段階のSluice処理を使用する。宝石欄の「なし」はゼロ確率ではなく、抽選枠そのものを作らない意味である。
 
@@ -410,10 +416,10 @@ Step 1のRocky Chunks出力は以下のとおり。「＋確率」は追加1個�
 | Step 4: Dirty Dust → Powder | Create Encased Fan / Splashing | Powder 100%、対応色Sand Pile 25%、同系列Dirty Dust 25%、副産物B Dirty Dust 0.5% |
 
 #### Acceptance Criteria
-##### AC-F010-001: 35系列の処理
+##### AC-F010-001: 37系列の処理
 Preconditions: TFCMとTFCが動作し、FirmaLifeを必要とするChromite系列についてはFirmaLifeも導入されている。  
 Action: 鉱石処理定義を列挙し、入力と最終出力を表と照合する。  
-Expected Result: 金属鉱石30系列、非金属鉱物5系列が存在し、表にない系列を生成しない。
+Expected Result: 金属鉱石32系列、非金属鉱物5系列が存在し、表にない系列を生成しない。
 
 ##### AC-F010-002: NaquadahとMithril Matrix
 Preconditions: Native Naquadah、Mithril Matrixの鉱石と加工設備がある。  
@@ -944,7 +950,7 @@ Expected Result: 金属形状が正しいサイズで表示され、アセット
 ### F-029: 統合検証とリリース品質
 #### Description
 
-新規実装として以下を必須とする。専用サーバー/クライアントでの起動、Data Generation、レシピJSONの解析、全登録IDの照合、(42金属+TFC金属)×基本・追加形状の網羅、(35鉱石+TFC構成)系列のレシピ確認、TFC設備での手動実行、3ディメンションの生成、3種の範囲採掘工具の保護・loot・耐久・方向試験、FirmaLife導入時と未導入時の両試験を行う。
+新規実装として以下を必須とする。専用サーバー/クライアントでの起動、Data Generation、レシピJSONの解析、全登録IDの照合、(42金属+TFC金属)×基本・追加形状の網羅、(37鉱石+TFC構成)系列のレシピ確認、TFC設備での手動実行、3ディメンションの生成、3種の範囲採掘工具の保護・loot・耐久・方向試験、FirmaLife導入時と未導入時の両試験を行う。
 
 ゲーム内の数値は本書に列挙したものを使用する。新しい仕組みに必要な値が本書にない場合は実装側で値を作らず、Open Questionsへ記録して仕様決定後に実装する。
 
@@ -955,7 +961,7 @@ Action: Java 21で完全ビルドし、クライアント・専用サーバー�
 Expected Result: ビルド成功、正常ロード、レジストリ競合やresource読み込みエラーなし。
 
 ##### AC-F029-002: 鉱石処理の網羅
-Preconditions: 35系列の入力鉱石とTFC加工設備がある。  
+Preconditions: 37系列の入力鉱石とTFC加工設備がある。
 Action: Step 1〜5を必要な全系列で実行しloot・加工量を検査する。  
 Expected Result: 本書の数量と確率、Native Naquadah・Mithril Matrixの固有設定、Dirty Pile廃止が確認される。
 

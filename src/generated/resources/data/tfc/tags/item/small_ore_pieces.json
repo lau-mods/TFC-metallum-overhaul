@@ -64,6 +64,14 @@
     {
       "id": "tfcm:ore/small_zircon",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/small_pyrolusite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_monazite",
+      "required": false
     }
   ]
 }

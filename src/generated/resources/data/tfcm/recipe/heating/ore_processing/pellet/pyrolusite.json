@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "pyrolusite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "manganese"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/pyrolusite"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfcm:metal/manganese"
+  },
+  "temperature": 1246
+}

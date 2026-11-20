@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "monazite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "neodymium"
+    }
+  ],
+  "heat_capacity": 2.8571432,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/monazite"
+  }
+}

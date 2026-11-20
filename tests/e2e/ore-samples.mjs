@@ -31,4 +31,15 @@ await scenario(async ({ clients }) => {
   screenshot(client, 'AC-F009-003', 'fluorite-groundcover-closeup');
   await camera(client, { x: -1.5, y: 1.6, z: 3.4, yaw: 0, pitch: 45 });
   screenshot(client, 'AC-F009-003', 'amethyst-groundcover-closeup');
+
+  command(client, 'fill -4 1 -1 4 2 3 minecraft:air');
+  // Poor, normal and rich overlays on the same host, with the surface samples in front.
+  for (const [row, ore] of ['pyrolusite', 'monazite'].entries()) {
+    for (const [column, grade] of ['poor', 'normal', 'rich'].entries()) {
+      command(client, `setblock ${1 - column} ${2 - row} 2 tfcm:ore/${grade}_${ore}/granite`);
+    }
+    command(client, `setblock ${1 - row * 2} 1 1 tfcm:ore/small_${ore}`);
+  }
+  await camera(client, { x: 0.5, y: 2.2, z: -2.7, yaw: 0, pitch: 7 });
+  screenshot(client, 'AC-F009-003', 'pyrolusite-monazite-grades');
 });
