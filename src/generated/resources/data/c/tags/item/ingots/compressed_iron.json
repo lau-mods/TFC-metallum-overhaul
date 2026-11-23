@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/compressed_iron"
+    {
+      "id": "tfcm:metal/ingot/compressed_iron",
+      "required": false
+    }
   ]
 }

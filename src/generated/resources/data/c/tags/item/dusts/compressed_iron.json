@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/compressed_iron"
+    {
+      "id": "tfcm:metal/dust/compressed_iron",
+      "required": false
+    }
   ]
 }

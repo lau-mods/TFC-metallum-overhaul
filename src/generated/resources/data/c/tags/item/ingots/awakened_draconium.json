@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/awakened_draconium"
+    {
+      "id": "tfcm:metal/ingot/awakened_draconium",
+      "required": false
+    }
   ]
 }

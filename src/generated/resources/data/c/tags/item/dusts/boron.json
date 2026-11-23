@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/boron"
+    {
+      "id": "tfcm:metal/dust/boron",
+      "required": false
+    }
   ]
 }

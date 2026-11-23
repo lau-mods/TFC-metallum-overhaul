@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/netherite"
+    {
+      "id": "tfcm:metal/ingot/netherite",
+      "required": false
+    }
   ]
 }

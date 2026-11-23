@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/tungsten_steel"
+    {
+      "id": "tfcm:metal/dust/tungsten_steel",
+      "required": false
+    }
   ]
 }

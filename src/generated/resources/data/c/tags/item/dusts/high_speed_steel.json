@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/high_speed_steel"
+    {
+      "id": "tfcm:metal/dust/high_speed_steel",
+      "required": false
+    }
   ]
 }

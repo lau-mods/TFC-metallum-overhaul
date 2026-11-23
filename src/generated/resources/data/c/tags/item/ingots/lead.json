@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/lead"
+    {
+      "id": "tfcm:metal/ingot/lead",
+      "required": false
+    }
   ]
 }

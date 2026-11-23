@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/zirconium"
+    {
+      "id": "tfcm:metal/ingot/zirconium",
+      "required": false
+    }
   ]
 }

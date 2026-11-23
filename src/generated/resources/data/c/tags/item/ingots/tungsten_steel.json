@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/tungsten_steel"
+    {
+      "id": "tfcm:metal/ingot/tungsten_steel",
+      "required": false
+    }
   ]
 }

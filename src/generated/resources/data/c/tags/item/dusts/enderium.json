@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/enderium"
+    {
+      "id": "tfcm:metal/dust/enderium",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/lithium"
+    {
+      "id": "tfcm:metal/ingot/lithium",
+      "required": false
+    }
   ]
 }

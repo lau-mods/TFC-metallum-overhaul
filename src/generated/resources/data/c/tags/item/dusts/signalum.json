@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/signalum"
+    {
+      "id": "tfcm:metal/dust/signalum",
+      "required": false
+    }
   ]
 }

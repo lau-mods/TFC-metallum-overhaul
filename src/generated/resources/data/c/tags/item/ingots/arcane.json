@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/arcane"
+    {
+      "id": "tfcm:metal/ingot/arcane",
+      "required": false
+    }
   ]
 }

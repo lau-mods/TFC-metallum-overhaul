@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/neodymium"
+    {
+      "id": "tfcm:metal/ingot/neodymium",
+      "required": false
+    }
   ]
 }

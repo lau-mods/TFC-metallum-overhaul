@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/osmium"
+    {
+      "id": "tfcm:metal/ingot/osmium",
+      "required": false
+    }
   ]
 }

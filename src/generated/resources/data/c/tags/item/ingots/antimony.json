@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/antimony"
+    {
+      "id": "tfcm:metal/ingot/antimony",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/manganese"
+    {
+      "id": "tfcm:metal/ingot/manganese",
+      "required": false
+    }
   ]
 }

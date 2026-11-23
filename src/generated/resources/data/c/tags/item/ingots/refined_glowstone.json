@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/refined_glowstone"
+    {
+      "id": "tfcm:metal/ingot/refined_glowstone",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/zirconium"
+    {
+      "id": "tfcm:metal/dust/zirconium",
+      "required": false
+    }
   ]
 }

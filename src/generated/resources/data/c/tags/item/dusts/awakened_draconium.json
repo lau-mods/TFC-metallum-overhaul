@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/awakened_draconium"
+    {
+      "id": "tfcm:metal/dust/awakened_draconium",
+      "required": false
+    }
   ]
 }

@@ -592,8 +592,10 @@ public final class TFCMMetalGameTests {
             var values = JsonParser.parseReader(new InputStreamReader(stream, StandardCharsets.UTF_8))
                     .getAsJsonObject().getAsJsonArray("values");
             require(values.size() > 0, "Empty tag " + path);
-            values.forEach(value -> require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(value.getAsString())),
-                    "Unregistered tag item " + value.getAsString()));
+            values.forEach(value -> {
+                String id = value.isJsonObject() ? value.getAsJsonObject().get("id").getAsString() : value.getAsString();
+                require(BuiltInRegistries.ITEM.containsKey(ResourceLocation.parse(id)), "Unregistered tag item " + id);
+            });
         } catch (IOException error) {
             throw new GameTestAssertException("Cannot read tag " + path);
         }

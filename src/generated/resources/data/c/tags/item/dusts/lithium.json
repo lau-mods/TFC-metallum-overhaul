@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/lithium"
+    {
+      "id": "tfcm:metal/dust/lithium",
+      "required": false
+    }
   ]
 }

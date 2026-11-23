@@ -343,6 +343,8 @@ def main():
             result = recolor_smooth(shape,source,image(r['smooth_ingot']),shape) if 'smooth_ingot' in r else recolor(shape,colors,fixed)
             records.append([relative,0,'D smooth' if 'smooth_ingot' in r else 'L' if correction else 'source palette',
                             len(colors),len(palette(result,fixed)),len(fixed)])
+        if Path(relative).parent.name == 'nugget':
+            result = result.transpose(Image.Transpose.ROTATE_270)  # Clockwise, like the vanilla gold nugget.
         assert list(result.size) == r['size'],(relative,result.size,r['size'])
         target = args.output/relative
         target.parent.mkdir(parents=True,exist_ok=True)

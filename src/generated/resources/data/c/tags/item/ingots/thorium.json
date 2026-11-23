@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/thorium"
+    {
+      "id": "tfcm:metal/ingot/thorium",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/boron"
+    {
+      "id": "tfcm:metal/ingot/boron",
+      "required": false
+    }
   ]
 }

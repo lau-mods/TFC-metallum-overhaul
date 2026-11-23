@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/arcane"
+    {
+      "id": "tfcm:metal/dust/arcane",
+      "required": false
+    }
   ]
 }

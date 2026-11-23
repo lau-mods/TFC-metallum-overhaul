@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/draconium"
+    {
+      "id": "tfcm:metal/dust/draconium",
+      "required": false
+    }
   ]
 }

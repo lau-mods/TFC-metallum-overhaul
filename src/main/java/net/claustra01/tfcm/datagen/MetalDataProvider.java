@@ -3,6 +3,7 @@ package net.claustra01.tfcm.datagen;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 import com.google.gson.JsonArray;
@@ -17,6 +18,10 @@ import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
 
 public final class MetalDataProvider implements DataProvider {
+    // IE 12.4.2 already has tag-based ingot crusher recipes for these supported metals.
+    private static final Set<String> IE_INGOT_RECIPES = Set.of("aluminum", "brass", "bronze", "cobalt",
+            "constantan", "copper", "electrum", "gold", "invar", "lead", "nickel", "osmium", "platinum",
+            "rose_gold", "silver", "steel", "tin", "tungsten", "uranium", "zinc");
     private final Path data;
 
     public MetalDataProvider(PackOutput output) {
@@ -43,19 +48,22 @@ public final class MetalDataProvider implements DataProvider {
                     anvil(metal, "plate", "ingots", 1, forgeRules())));
             files.add(save(output, "tfcm/recipe/crafting/metal/nugget/" + metal.id(), nuggetCraft(metal, false)));
             files.add(save(output, "tfcm/recipe/crafting/metal/ingot_from_nuggets/" + metal.id(), nuggetCraft(metal, true)));
-            files.add(save(output, "tfcm/recipe/quern/metal/dust/" + metal.id(), dust(metal)));
+            addDustRecipes(output, files, metal.id(), conditioned(metal));
             for (MetalForm form : MetalForm.values()) {
                 files.add(save(output, "tfcm/recipe/heating/metal/" + form.id + "/" + metal.id(), heating(metal, form)));
                 files.add(save(output, "tfcm/tfc/item_heat/" + metal.id() + "/" + form.id, itemHeat(metal, form)));
                 files.add(save(output, "tfcm/tfc/item_size/" + metal.id() + "/" + form.id, itemSize(metal, form)));
             }
-            files.add(save(output, "c/tags/item/ingots/" + metal.id(), tag(metal, itemId(metal, "ingot"))));
+            files.add(save(output, "c/tags/item/ingots/" + metal.id(), optionalMetalItemTag(metal, MetalForm.INGOT)));
             files.add(save(output, "c/tags/item/double_ingots/" + metal.id(), tag(metal, itemId(metal, "double_ingot"))));
             files.add(save(output, "c/tags/item/sheets/" + metal.id(), tag(metal, itemId(metal, "sheet"))));
             files.add(save(output, "c/tags/item/double_sheets/" + metal.id(), tag(metal, itemId(metal, "double_sheet"))));
             files.add(save(output, "c/tags/item/rods/" + metal.id(), tag(metal, itemId(metal, "rod"))));
             for (MetalForm form : MetalForm.values()) {
-                if (form.isAddedForm()) files.add(save(output, "c/tags/item/" + form.tag() + "/" + metal.id(), tag(metal, form.item(metal))));
+                if (form.isAddedForm()) {
+                    JsonObject entries = form == MetalForm.DUST ? optionalMetalItemTag(metal, form) : tag(metal, form.item(metal));
+                    files.add(save(output, "c/tags/item/" + form.tag() + "/" + metal.id(), entries));
+                }
             }
             files.add(save(output, "c/tags/item/storage_blocks/" + metal.id(), tag(metal, blockId(metal, ""))));
             files.add(save(output, "c/tags/block/storage_blocks/" + metal.id(), tag(metal, blockId(metal, ""))));
@@ -103,11 +111,7 @@ public final class MetalDataProvider implements DataProvider {
         ingot.add("key", key);
         ingot.add("result", item(metal.ingot(), 1));
         files.add(save(output, recipe + "crafting/metal/ingot_from_nuggets/" + metal.id(), ingot));
-        JsonObject dust = tfcConditioned(metal);
-        dust.addProperty("type", "tfc:quern");
-        dust.add("ingredient", tagIngredient("c:ingots/" + metal.id()));
-        dust.add("result", item(metal.item(MetalForm.DUST), 1));
-        files.add(save(output, recipe + "quern/metal/dust/" + metal.id(), dust));
+        addDustRecipes(output, files, metal.id(), tfcConditioned(metal));
 
         for (MetalForm form : MetalForm.values()) {
             if (!form.isAddedForm()) continue;
@@ -334,12 +338,68 @@ public final class MetalDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject dust(Metal metal) {
-        JsonObject json = conditioned(metal);
-        json.addProperty("type", "tfc:quern");
-        json.add("ingredient", tagIngredient("c:ingots/" + metal.id()));
-        json.add("result", item(itemId(metal, "dust"), 1));
-        return json;
+    private void addDustRecipes(CachedOutput output, List<CompletableFuture<?>> files, String metal, JsonObject conditions) {
+        JsonObject input = tagIngredient("c:ingots/" + metal);
+        JsonObject result = item("tfcm:metal/dust/" + metal, 1);
+        JsonObject quern = conditions.deepCopy();
+        quern.addProperty("type", "tfc:quern");
+        quern.add("ingredient", input);
+        quern.add("result", result);
+        files.add(save(output, "tfcm/recipe/quern/metal/dust/" + metal, quern));
+
+        JsonObject milling = machineRecipe(conditions, "create", "milling");
+        JsonArray ingredients = new JsonArray();
+        ingredients.add(input);
+        milling.add("ingredients", ingredients);
+        JsonArray results = new JsonArray();
+        results.add(result);
+        milling.add("results", results);
+        milling.addProperty("processing_time", 200);
+        files.add(save(output, "tfcm/recipe/compat/create/milling/metal/dust/" + metal, milling));
+
+        JsonObject crusher = machineRecipe(conditions, "immersiveengineering", "crusher");
+        crusher.addProperty("energy", 3000);
+        crusher.add("input", input);
+        crusher.add("result", result);
+        String compat = "tfcm/recipe/compat/immersiveengineering/crusher/metal/dust/" + metal;
+        if (IE_INGOT_RECIPES.contains(metal)) {
+            files.add(save(output, "immersiveengineering/recipe/crusher/ingot_" + metal, crusher));
+            // Preserve IE's tag-based output for other mods when TFCM disables this metal.
+            if (conditions.has("neoforge:conditions")) {
+                JsonObject fallback = machineRecipe(new JsonObject(), "immersiveengineering", "crusher");
+                JsonArray when = fallback.getAsJsonArray("neoforge:conditions");
+                when.add(negate(ContentConditions.metal(metal)));
+                for (String form : List.of("ingots", "dusts")) {
+                    JsonObject empty = tagIngredient("c:" + form + "/" + metal);
+                    empty.addProperty("type", "neoforge:tag_empty");
+                    when.add(negate(empty));
+                }
+                fallback.addProperty("energy", 3000);
+                fallback.add("input", input);
+                fallback.add("result", tagIngredient("c:dusts/" + metal));
+                files.add(save(output, compat + "_fallback", fallback));
+            }
+        } else {
+            files.add(save(output, compat, crusher));
+        }
+    }
+
+    private static JsonObject machineRecipe(JsonObject conditions, String mod, String type) {
+        JsonObject recipe = conditions.deepCopy();
+        if (!recipe.has("neoforge:conditions")) recipe.add("neoforge:conditions", new JsonArray());
+        JsonObject loaded = new JsonObject();
+        loaded.addProperty("type", "neoforge:mod_loaded");
+        loaded.addProperty("modid", mod);
+        recipe.getAsJsonArray("neoforge:conditions").add(loaded);
+        recipe.addProperty("type", mod + ":" + type);
+        return recipe;
+    }
+
+    private static JsonObject negate(JsonObject condition) {
+        JsonObject not = new JsonObject();
+        not.addProperty("type", "neoforge:not");
+        not.add("value", condition);
+        return not;
     }
 
     private static JsonObject heating(Metal metal, MetalForm form) {
@@ -601,6 +661,16 @@ public final class MetalDataProvider implements DataProvider {
         json.addProperty("fluid", fluid);
         json.addProperty("min", min);
         json.addProperty("max", max);
+        return json;
+    }
+
+    // Tag loading ignores resource conditions. Keep other mods' ingots and dusts
+    // available to IE when this metal's TFCM registry entries are disabled.
+    private static JsonObject optionalMetalItemTag(Metal metal, MetalForm form) {
+        JsonObject json = conditioned(metal);
+        JsonArray values = new JsonArray();
+        values.add(ContentConditions.optional(form.item(metal)));
+        json.add("values", values);
         return json;
     }
 

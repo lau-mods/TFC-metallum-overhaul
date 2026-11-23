@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/invar"
+    {
+      "id": "tfcm:metal/ingot/invar",
+      "required": false
+    }
   ]
 }

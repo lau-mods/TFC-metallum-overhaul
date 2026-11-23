@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/lumium"
+    {
+      "id": "tfcm:metal/dust/lumium",
+      "required": false
+    }
   ]
 }

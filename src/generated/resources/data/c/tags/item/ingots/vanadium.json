@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/vanadium"
+    {
+      "id": "tfcm:metal/ingot/vanadium",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/titanium"
+    {
+      "id": "tfcm:metal/ingot/titanium",
+      "required": false
+    }
   ]
 }

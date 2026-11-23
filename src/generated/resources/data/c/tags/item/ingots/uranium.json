@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/uranium"
+    {
+      "id": "tfcm:metal/ingot/uranium",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/enderium"
+    {
+      "id": "tfcm:metal/ingot/enderium",
+      "required": false
+    }
   ]
 }

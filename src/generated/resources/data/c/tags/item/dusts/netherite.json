@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/netherite"
+    {
+      "id": "tfcm:metal/dust/netherite",
+      "required": false
+    }
   ]
 }

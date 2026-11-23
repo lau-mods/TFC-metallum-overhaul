@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/naquadah"
+    {
+      "id": "tfcm:metal/dust/naquadah",
+      "required": false
+    }
   ]
 }

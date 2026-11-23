@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/iridium"
+    {
+      "id": "tfcm:metal/ingot/iridium",
+      "required": false
+    }
   ]
 }

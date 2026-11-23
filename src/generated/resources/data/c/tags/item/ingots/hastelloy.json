@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/hastelloy"
+    {
+      "id": "tfcm:metal/ingot/hastelloy",
+      "required": false
+    }
   ]
 }

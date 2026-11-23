@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/aluminum"
+    {
+      "id": "tfcm:metal/ingot/aluminum",
+      "required": false
+    }
   ]
 }

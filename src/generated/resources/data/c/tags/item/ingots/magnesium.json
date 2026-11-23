@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/magnesium"
+    {
+      "id": "tfcm:metal/ingot/magnesium",
+      "required": false
+    }
   ]
 }

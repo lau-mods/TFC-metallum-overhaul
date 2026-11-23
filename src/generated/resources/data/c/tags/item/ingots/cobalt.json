@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/cobalt"
+    {
+      "id": "tfcm:metal/ingot/cobalt",
+      "required": false
+    }
   ]
 }

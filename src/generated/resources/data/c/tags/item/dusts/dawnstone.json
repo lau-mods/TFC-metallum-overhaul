@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/dawnstone"
+    {
+      "id": "tfcm:metal/dust/dawnstone",
+      "required": false
+    }
   ]
 }

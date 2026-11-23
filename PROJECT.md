@@ -180,7 +180,7 @@ Expected Result: 加工方法が形状ごとに定義され、熱・量・タグ
 | Plate | `tfcm:metal/plate/<metal>` | Ingot ×1、TFC Anvil | Plate ×1 | 100 mB |
 | Nugget | `tfcm:metal/nugget/<metal>` | Ingot ×1、Crafting Grid | Nugget ×9 | 1個10 mB |
 | Nugget逆変換 | 同上 | Nugget ×9、Crafting Grid | Ingot ×1 | Ingotは100 mB |
-| Dust | `tfcm:metal/dust/<metal>` | Ingot ×1、TFC Quern | Dust ×1 | 100 mB |
+| Dust | `tfcm:metal/dust/<metal>` | Ingot ×1、TFC Quern・Create Millstone・IE Crusherのいずれか | Dust ×1 | 100 mB |
 
 Plateの金床tierは対象金属の鍛造tierに一致させる。金床操作はTFCの通常の金属成形規則を用いる。Dustは金属インゴットを粉砕した粉であり、鉱石由来のDirty Dust・Powderとは識別する。
 
@@ -198,7 +198,7 @@ Action: Ingotを9個のNuggetに変換し、9個をIngotへ戻す。
 Expected Result: 9個単位で相互クラフトできる。Nugget 1個を溶かしたときは10 mB、9個なら90 mBとなる。
 
 ##### AC-F005-003: Dust
-Preconditions: 対象金属のIngotとTFC Quernがある。  
+Preconditions: 対象金属のIngotとTFC Quernがある。Create導入時はMillstone、IE導入時はCrusherでも同じ加工を確認する。\
 Action: Ingotを粉砕し、生成物を溶融する。  
 Expected Result: Dustが1個生成され、同金属100 mBへ溶融する。鉱石のPowderへ混同・変換されない。
 

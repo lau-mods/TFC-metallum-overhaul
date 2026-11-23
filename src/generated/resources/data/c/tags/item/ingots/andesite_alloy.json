@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/andesite_alloy"
+    {
+      "id": "tfcm:metal/ingot/andesite_alloy",
+      "required": false
+    }
   ]
 }

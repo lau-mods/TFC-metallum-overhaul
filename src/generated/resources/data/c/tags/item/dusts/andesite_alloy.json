@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/andesite_alloy"
+    {
+      "id": "tfcm:metal/dust/andesite_alloy",
+      "required": false
+    }
   ]
 }

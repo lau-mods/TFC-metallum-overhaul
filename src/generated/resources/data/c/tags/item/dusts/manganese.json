@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/manganese"
+    {
+      "id": "tfcm:metal/dust/manganese",
+      "required": false
+    }
   ]
 }

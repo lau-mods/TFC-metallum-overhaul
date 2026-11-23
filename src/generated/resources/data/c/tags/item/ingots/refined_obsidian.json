@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/refined_obsidian"
+    {
+      "id": "tfcm:metal/ingot/refined_obsidian",
+      "required": false
+    }
   ]
 }

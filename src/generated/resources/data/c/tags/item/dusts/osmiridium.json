@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/osmiridium"
+    {
+      "id": "tfcm:metal/dust/osmiridium",
+      "required": false
+    }
   ]
 }

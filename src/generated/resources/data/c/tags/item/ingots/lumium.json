@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/lumium"
+    {
+      "id": "tfcm:metal/ingot/lumium",
+      "required": false
+    }
   ]
 }

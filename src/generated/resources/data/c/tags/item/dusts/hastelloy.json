@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/hastelloy"
+    {
+      "id": "tfcm:metal/dust/hastelloy",
+      "required": false
+    }
   ]
 }

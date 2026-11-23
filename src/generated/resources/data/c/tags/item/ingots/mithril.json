@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/mithril"
+    {
+      "id": "tfcm:metal/ingot/mithril",
+      "required": false
+    }
   ]
 }

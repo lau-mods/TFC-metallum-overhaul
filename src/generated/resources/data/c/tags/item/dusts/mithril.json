@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/mithril"
+    {
+      "id": "tfcm:metal/dust/mithril",
+      "required": false
+    }
   ]
 }

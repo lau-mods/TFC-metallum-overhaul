@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/solder"
+    {
+      "id": "tfcm:metal/ingot/solder",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/draconium"
+    {
+      "id": "tfcm:metal/ingot/draconium",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/platinum"
+    {
+      "id": "tfcm:metal/ingot/platinum",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/antimony"
+    {
+      "id": "tfcm:metal/dust/antimony",
+      "required": false
+    }
   ]
 }

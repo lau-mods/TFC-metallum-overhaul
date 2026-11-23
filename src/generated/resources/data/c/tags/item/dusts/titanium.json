@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/titanium"
+    {
+      "id": "tfcm:metal/dust/titanium",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/platinum"
+    {
+      "id": "tfcm:metal/dust/platinum",
+      "required": false
+    }
   ]
 }

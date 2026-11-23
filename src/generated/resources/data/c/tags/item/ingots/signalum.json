@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/signalum"
+    {
+      "id": "tfcm:metal/ingot/signalum",
+      "required": false
+    }
   ]
 }

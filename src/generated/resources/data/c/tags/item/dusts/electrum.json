@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/electrum"
+    {
+      "id": "tfcm:metal/dust/electrum",
+      "required": false
+    }
   ]
 }

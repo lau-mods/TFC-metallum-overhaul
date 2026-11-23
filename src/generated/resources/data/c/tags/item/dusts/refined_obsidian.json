@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/refined_obsidian"
+    {
+      "id": "tfcm:metal/dust/refined_obsidian",
+      "required": false
+    }
   ]
 }

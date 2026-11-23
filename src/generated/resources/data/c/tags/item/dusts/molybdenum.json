@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/molybdenum"
+    {
+      "id": "tfcm:metal/dust/molybdenum",
+      "required": false
+    }
   ]
 }

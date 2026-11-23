@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/dawnstone"
+    {
+      "id": "tfcm:metal/ingot/dawnstone",
+      "required": false
+    }
   ]
 }

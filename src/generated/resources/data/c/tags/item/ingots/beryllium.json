@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/beryllium"
+    {
+      "id": "tfcm:metal/ingot/beryllium",
+      "required": false
+    }
   ]
 }

@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/high_speed_steel"
+    {
+      "id": "tfcm:metal/ingot/high_speed_steel",
+      "required": false
+    }
   ]
 }

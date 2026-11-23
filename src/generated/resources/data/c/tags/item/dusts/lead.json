@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/lead"
+    {
+      "id": "tfcm:metal/dust/lead",
+      "required": false
+    }
   ]
 }

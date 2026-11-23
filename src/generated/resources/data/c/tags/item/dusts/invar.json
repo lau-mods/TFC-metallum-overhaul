@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/invar"
+    {
+      "id": "tfcm:metal/dust/invar",
+      "required": false
+    }
   ]
 }

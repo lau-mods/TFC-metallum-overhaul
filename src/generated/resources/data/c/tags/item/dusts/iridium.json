@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/iridium"
+    {
+      "id": "tfcm:metal/dust/iridium",
+      "required": false
+    }
   ]
 }

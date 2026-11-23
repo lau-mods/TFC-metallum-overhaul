@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/magnesium"
+    {
+      "id": "tfcm:metal/dust/magnesium",
+      "required": false
+    }
   ]
 }

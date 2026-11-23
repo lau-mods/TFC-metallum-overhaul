@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/dust/constantan"
+    {
+      "id": "tfcm:metal/dust/constantan",
+      "required": false
+    }
   ]
 }

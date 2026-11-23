@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/naquadah"
+    {
+      "id": "tfcm:metal/ingot/naquadah",
+      "required": false
+    }
   ]
 }

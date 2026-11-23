@@ -6,6 +6,9 @@
     }
   ],
   "values": [
-    "tfcm:metal/ingot/constantan"
+    {
+      "id": "tfcm:metal/ingot/constantan",
+      "required": false
+    }
   ]
 }
