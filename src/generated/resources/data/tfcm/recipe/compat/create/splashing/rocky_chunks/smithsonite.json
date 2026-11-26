@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "smithsonite"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/rocky_chunks/smithsonite"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/chunks/smithsonite"
+    },
+    {
+      "chance": 0.4,
+      "count": 1,
+      "id": "tfc:rock/loose/limestone"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfc:rock/loose/dolomite"
+    }
+  ]
+}

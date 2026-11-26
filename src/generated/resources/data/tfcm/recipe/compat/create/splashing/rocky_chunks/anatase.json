@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "anatase"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/rocky_chunks/anatase"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/chunks/anatase"
+    },
+    {
+      "chance": 0.4,
+      "count": 1,
+      "id": "tfc:rock/loose/gneiss"
+    },
+    {
+      "chance": 0.2,
+      "count": 1,
+      "id": "tfc:rock/loose/schist"
+    }
+  ]
+}

@@ -4,6 +4,10 @@
     {
       "id": "tfcm:ore/poor_bauxite",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_alumina",
+      "required": false
     }
   ]
 }

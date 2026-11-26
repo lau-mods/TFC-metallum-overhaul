@@ -168,6 +168,22 @@
       "id": "#c:plates/enderium",
       "required": false
     },
+    {
+      "id": "#c:plates/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:plates/desh",
+      "required": false
+    },
+    {
+      "id": "#c:plates/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:plates/calorite",
+      "required": false
+    },
     "#c:plates/bismuth",
     "#c:plates/bismuth_bronze",
     "#c:plates/black_bronze",

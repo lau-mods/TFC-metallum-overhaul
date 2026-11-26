@@ -168,6 +168,22 @@
       "id": "#c:foils/enderium",
       "required": false
     },
+    {
+      "id": "#c:foils/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:foils/desh",
+      "required": false
+    },
+    {
+      "id": "#c:foils/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:foils/calorite",
+      "required": false
+    },
     "#c:foils/bismuth",
     "#c:foils/bismuth_bronze",
     "#c:foils/black_bronze",

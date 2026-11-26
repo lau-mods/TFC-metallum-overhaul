@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/native_lead"
+      },
+      {
+        "model": "tfcm:block/groundcover/native_lead",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/native_lead",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/native_lead",
+        "y": 270
+      }
+    ]
+  }
+}

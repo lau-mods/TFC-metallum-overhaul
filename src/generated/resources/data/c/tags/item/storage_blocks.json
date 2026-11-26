@@ -167,6 +167,22 @@
     {
       "id": "#c:storage_blocks/enderium",
       "required": false
+    },
+    {
+      "id": "#c:storage_blocks/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/desh",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:storage_blocks/calorite",
+      "required": false
     }
   ]
 }

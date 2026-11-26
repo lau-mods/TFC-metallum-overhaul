@@ -54,3 +54,9 @@ original/{signalum,lumium,enderium}.png: Thermal Foundation 1.20.1-11.0.6.70, bu
 
 Pyrolusite: TFC Metallum 1.4.2 (MC 1.12.2), assets/tfc/textures/items/ore/{,small/,poor/,rich/}pyrolusite.png and blocks/ores/pyrolusite.png. The normal block retains the original overlay; poor and rich vary its vein coverage.
 Monazite: TFC Metallum U 1.0.8, assets/tfc_metallum/textures/{block,item}/ore/*_monazite.png. Both processing palettes use their shipped normal block overlay.
+
+immersivetechnology/magnox-palette.json: Opaque RGB colors from assets/immersivetechnology/textures/item/metal/ingots/magnox.png in MCT-ImmersiveTechnology-1.21.1-3.0.0-b1517-alpha.jar. The silhouettes come from TFCM aluminum.
+
+immersivegeology/ores/*.json: RGB colors from assets/immersivegeology/textures/palette/palettes/<material>/pristine.png in ImmersiveGeology-0.9.1-b5526.jar. Native Lead uses the lead palette. The silhouettes and the fixed rock pixels in rocky chunks come from existing TFCM ores and processing items.
+
+ad_astra/metals/*.json: RGB colors from <metal>_ingot.png under assets/ad_astra/textures/item/ in adastra-1.21.1-1.16.26-neoforge.jar. Metal silhouettes come from TFCM.

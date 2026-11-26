@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "smithsonite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/briquet/smithsonite"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "id": "tfcm:ore_processing/pellet/smithsonite"
+  }
+}

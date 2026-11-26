@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "desh"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/ingot/desh"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/desh"
+  },
+  "temperature": 1200
+}

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "tfcm:ore/normal_chalcocite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cuprite",
+      "required": false
+    }
+  ]
+}

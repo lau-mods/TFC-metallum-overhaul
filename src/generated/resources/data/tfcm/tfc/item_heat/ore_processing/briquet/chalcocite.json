@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chalcocite"
+    }
+  ],
+  "heat_capacity": 2.8571432,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/chalcocite"
+  }
+}

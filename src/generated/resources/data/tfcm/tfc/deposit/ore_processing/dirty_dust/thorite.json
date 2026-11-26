@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/thorite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/thorite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/thorite_full",
+    "tfcm:item/pan/dirty_dust/thorite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

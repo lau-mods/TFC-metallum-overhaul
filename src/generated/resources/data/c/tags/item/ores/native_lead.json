@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/native_lead/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_lead/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/native_lead/rich",
+      "required": false
+    }
+  ]
+}

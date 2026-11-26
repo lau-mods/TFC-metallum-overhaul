@@ -1,0 +1,66 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "neoforge:and",
+        "values": [
+          {
+            "type": "tfcm:ore_enabled",
+            "ore": "chromite"
+          },
+          {
+            "type": "neoforge:mod_loaded",
+            "modid": "firmalife"
+          }
+        ]
+      }
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_osmium"
+    },
+    {
+      "type": "neoforge:not",
+      "value": {
+        "type": "tfcm:ore_enabled",
+        "ore": "native_platinum"
+      }
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "millerite"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/dirty_dust/millerite"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/powder/millerite"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/sand_pile/yellow"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/millerite"
+    },
+    {
+      "chance": 0.005,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/native_osmium"
+    }
+  ]
+}

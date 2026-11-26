@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "desh"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/desh"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

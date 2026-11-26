@@ -79,10 +79,13 @@ def sample(colors, t):
     f = pos-i
     return tuple(round(a*(1-f)+b*f) for a, b in zip(colors[i], colors[min(i+1,len(colors)-1)]))
 
-def recolor(shape, colors, fixed=()):
+def recolor(shape, colors, fixed=(), *, discrete=False):
     fixed = set(fixed)
     own = palette(shape, fixed)
-    lookup = {c: sample(colors, i/(len(own)-1) if len(own)>1 else .5) for i,c in enumerate(own)}
+    def shade(index):
+        fraction = index / (len(own) - 1) if len(own) > 1 else .5
+        return colors[round(fraction * (len(colors) - 1))] if discrete else sample(colors, fraction)
+    lookup = {color: shade(index) for index, color in enumerate(own)}
     old = pixels(shape)
     out = Image.new('RGBA', shape.size)
     out.putdata([p if i in fixed else (*lookup[p[:3]],p[3]) if p[3] else (0,0,0,0) for i,p in enumerate(old)])

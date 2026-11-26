@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "cuprite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/cuprite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/cuprite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/cuprite_full",
+    "tfcm:item/pan/dirty_dust/cuprite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

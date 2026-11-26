@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/cuprite"
+      },
+      {
+        "model": "tfcm:block/groundcover/cuprite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/cuprite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/cuprite",
+        "y": 270
+      }
+    ]
+  }
+}

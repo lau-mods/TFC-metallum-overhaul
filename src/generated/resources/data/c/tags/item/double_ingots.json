@@ -167,6 +167,22 @@
     {
       "id": "#c:double_ingots/enderium",
       "required": false
+    },
+    {
+      "id": "#c:double_ingots/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/desh",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:double_ingots/calorite",
+      "required": false
     }
   ]
 }

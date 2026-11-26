@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/thorite"
+      },
+      {
+        "model": "tfcm:block/groundcover/thorite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/thorite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/thorite",
+        "y": 270
+      }
+    ]
+  }
+}

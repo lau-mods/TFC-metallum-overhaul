@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/briquet/thorite"
+    }
+  ],
+  "result": {
+    "count": 5,
+    "id": "tfcm:ore_processing/pellet/thorite"
+  }
+}

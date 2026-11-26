@@ -1,6 +1,8 @@
 package net.claustra01.tfcm.datagen;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.claustra01.tfcm.common.processing.ProcessingSeries.Byproduct;
 
 final class ContentConditions {
     static JsonObject optional(String id) {
@@ -25,9 +27,26 @@ final class ContentConditions {
     }
 
     static JsonObject firmaLife() {
+        return modLoaded("firmalife");
+    }
+
+    static JsonObject modLoaded(String mod) {
         JsonObject condition = new JsonObject();
         condition.addProperty("type", "neoforge:mod_loaded");
-        condition.addProperty("modid", "firmalife");
+        condition.addProperty("modid", mod);
+        return condition;
+    }
+
+    static JsonObject byproduct(Byproduct byproduct) {
+        if (byproduct.metalDust()) return metal(byproduct.id());
+        JsonObject ore = ore(byproduct.id());
+        if (!byproduct.id().equals("chromite")) return ore;
+        JsonArray all = new JsonArray();
+        all.add(ore);
+        all.add(firmaLife());
+        JsonObject condition = new JsonObject();
+        condition.addProperty("type", "neoforge:and");
+        condition.add("values", all);
         return condition;
     }
 

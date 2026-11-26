@@ -4,6 +4,14 @@
     {
       "id": "tfcm:ore/normal_rutile",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_anatase",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_ilmenite",
+      "required": false
     }
   ]
 }

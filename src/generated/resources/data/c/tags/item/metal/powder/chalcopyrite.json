@@ -1,0 +1,8 @@
+{
+  "values": [
+    {
+      "id": "tfcm:ore_processing/powder/chalcopyrite",
+      "required": false
+    }
+  ]
+}

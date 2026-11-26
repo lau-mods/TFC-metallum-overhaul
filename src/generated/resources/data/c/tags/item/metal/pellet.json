@@ -131,6 +131,62 @@
     {
       "id": "#c:metal/pellet/borax",
       "required": false
+    },
+    {
+      "id": "#c:metal/pellet/acanthite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/alumina",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/anatase",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/chalcocite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/cuprite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/ilmenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/native_lead",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/millerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/molybdenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/scheelite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/smithsonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/thorite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/pellet/vanadinite",
+      "required": false
     }
   ]
 }

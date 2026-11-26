@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/alumina"
+      },
+      {
+        "model": "tfcm:block/groundcover/alumina",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/alumina",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/alumina",
+        "y": 270
+      }
+    ]
+  }
+}

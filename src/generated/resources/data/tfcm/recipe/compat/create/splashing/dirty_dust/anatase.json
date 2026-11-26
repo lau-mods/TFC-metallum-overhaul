@@ -1,0 +1,34 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "anatase"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/dirty_dust/anatase"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/powder/anatase"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/sand_pile/white"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/anatase"
+    }
+  ]
+}

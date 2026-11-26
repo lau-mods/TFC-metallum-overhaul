@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "alumina"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "forging_temperature": 396.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:ore/small_alumina"
+  },
+  "welding_temperature": 528.0
+}

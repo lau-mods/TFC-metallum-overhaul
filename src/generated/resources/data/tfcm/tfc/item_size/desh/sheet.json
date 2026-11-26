@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "desh"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/sheet/desh"
+  },
+  "size": "large",
+  "weight": "medium"
+}

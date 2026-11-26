@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "vanadinite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/vanadinite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/vanadinite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/vanadinite_full",
+    "tfcm:item/pan/dirty_dust/vanadinite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

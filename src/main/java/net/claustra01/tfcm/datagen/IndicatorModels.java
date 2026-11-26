@@ -100,7 +100,21 @@ final class IndicatorModels {
             Map.entry("saltpeter", Shape.CRUST_A), Map.entry("sulfur", Shape.CRUST_A), Map.entry("borax", Shape.CRUST_A),
             Map.entry("gypsum", Shape.CRUST_B),
             Map.entry("bituminous_coal", Shape.LUMPS_A), Map.entry("graphite", Shape.LUMPS_A),
-            Map.entry("lignite", Shape.LUMPS_B));
+            Map.entry("lignite", Shape.LUMPS_B),
+            Map.entry("acanthite", Shape.CUBES_A),
+            Map.entry("alumina", Shape.PEBBLES),
+            Map.entry("anatase", Shape.BLADES_A),
+            Map.entry("chalcocite", Shape.CUBES_A),
+            Map.entry("chalcopyrite", Shape.CUBES_C),
+            Map.entry("cuprite", Shape.NUGGETS_B),
+            Map.entry("ilmenite", Shape.BLADES_A),
+            Map.entry("native_lead", Shape.NUGGETS_B),
+            Map.entry("millerite", Shape.BLADES_A),
+            Map.entry("molybdenite", Shape.BLADES_B),
+            Map.entry("scheelite", Shape.CRYSTALS_C),
+            Map.entry("smithsonite", Shape.PEBBLES),
+            Map.entry("thorite", Shape.CUBES_B),
+            Map.entry("vanadinite", Shape.CRYSTALS_C));
 
     private static final String[] FACES = {"north", "east", "south", "west", "up", "down"};
     private final Map<String, Mask> masks = new HashMap<>();

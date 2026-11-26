@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "calorite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/rod/calorite"
+  },
+  "result_fluid": {
+    "amount": 50,
+    "id": "tfcm:metal/calorite"
+  },
+  "temperature": 1550
+}

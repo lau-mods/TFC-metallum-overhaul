@@ -1,0 +1,119 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chalcocite"
+    }
+  ],
+  "type": "minecraft:empty",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/powder/chalcocite"
+        }
+      ],
+      "name": "powder",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.15,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/sand_pile/black"
+        }
+      ],
+      "name": "sand_pile_15_percent",
+      "rolls": 1
+    },
+    {
+      "conditions": [
+        {
+          "chance": 0.05,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/dirty_dust/chalcocite"
+        }
+      ],
+      "name": "same_dirty_dust_5_percent",
+      "rolls": 1
+    },
+    {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "garnierite"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.01,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/dirty_dust/garnierite"
+        }
+      ],
+      "name": "byproduct_dirty_dust_1_percent_garnierite",
+      "rolls": 1
+    },
+    {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "native_osmium"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.01,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/dirty_dust/native_osmium"
+        }
+      ],
+      "name": "byproduct_dirty_dust_1_percent_native_osmium",
+      "rolls": 1
+    },
+    {
+      "neoforge:conditions": [
+        {
+          "type": "tfcm:ore_enabled",
+          "ore": "native_platinum"
+        }
+      ],
+      "conditions": [
+        {
+          "chance": 0.01,
+          "condition": "minecraft:random_chance"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "tfcm:ore_processing/dirty_dust/native_platinum"
+        }
+      ],
+      "name": "byproduct_dirty_dust_1_percent_native_platinum",
+      "rolls": 1
+    }
+  ]
+}

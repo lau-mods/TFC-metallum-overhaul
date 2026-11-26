@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chalcopyrite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/chalcopyrite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/chalcopyrite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/chalcopyrite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/chalcopyrite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/chalcopyrite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/chalcopyrite"
+  }
+}

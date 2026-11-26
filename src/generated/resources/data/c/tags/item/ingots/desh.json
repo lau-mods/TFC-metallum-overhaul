@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "desh"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/ingot/desh",
+      "required": false
+    }
+  ]
+}

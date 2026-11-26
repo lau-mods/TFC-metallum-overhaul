@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "molybdenite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "molybdenum"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/molybdenite"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfcm:metal/molybdenum"
+  },
+  "temperature": 1535
+}

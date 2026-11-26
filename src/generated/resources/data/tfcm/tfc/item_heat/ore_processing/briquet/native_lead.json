@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "native_lead"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "heat_capacity": 7.692308,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/native_lead"
+  }
+}

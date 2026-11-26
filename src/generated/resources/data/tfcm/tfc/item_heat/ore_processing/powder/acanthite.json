@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "acanthite"
+    }
+  ],
+  "heat_capacity": 0.10416668,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/acanthite"
+  }
+}

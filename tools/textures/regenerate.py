@@ -9,6 +9,7 @@ No downloads, archives, hash tables, Gradle or game startup are involved.
 import argparse
 import csv
 from pathlib import Path
+import json
 import shutil
 
 from PIL import Image
@@ -19,6 +20,14 @@ ROOT = HERE.parents[1]
 ASSETS = ROOT/'src/main/resources/assets'
 REFERENCE = HERE/'reference'
 
+IG_ORE_BASES = {
+    'acanthite': 'galena', 'alumina': 'bauxite', 'anatase': 'rutile',
+    'chalcocite': 'galena', 'chalcopyrite': 'cobaltite', 'cuprite': 'native_iridium',
+    'ilmenite': 'rutile', 'native_lead': 'native_iridium', 'millerite': 'stibnite',
+    'molybdenite': 'wolframite', 'scheelite': 'zircon', 'smithsonite': 'bauxite',
+    'thorite': 'thorianite', 'vanadinite': 'monazite',
+}
+AD_ASTRA_METAL_BASES = {'desh': 'aluminum', 'ostrum': 'cobalt', 'calorite': 'electrum'}
 
 # Material choices describe appearance, never gameplay tiers.
 METAL_BASES = {'compressed_iron': 'wrought_iron',
@@ -120,7 +129,7 @@ def build_recipes(image):
             return ref(ig)
         return tfc('ingot',metal) if metal in TFC_METALS else ref(f'original/{metal}.png')
     def project(path):
-        return ref('project/'+str(path.relative_to(ASSETS)))
+        return ref('project/'+path.relative_to(ASSETS).as_posix())
     def fixed(shape, comparisons):
         a = pixels(image(shape))
         others = [pixels(image(p)) for p in comparisons]
@@ -161,14 +170,34 @@ def build_recipes(image):
                 if a and ((leather and r>g>b) or (bindings and r>=g>b))]
     def add(path, shape, palette_source=None, tone=None, **options):
         size=Image.open(path).size if path.exists() else image(shape).size
-        recipe = dict(output=str(path.relative_to(ASSETS)), shape=shape, size=list(size), **options)
+        recipe = dict(output=path.relative_to(ASSETS).as_posix(), shape=shape, size=list(size), **options)
         if palette_source:
             recipe['palette'] = palette_source
         if tone and Path(path).stem not in SOURCE_RANGE:
             recipe['tone'] = tone
         recipes.append(recipe)
+    # Match Immersive Technology's unmodified RGB palette on TFCM silhouettes.
+    magnox = ref('immersivetechnology/magnox-palette.json')
+    for source in sorted(ASSETS.rglob('aluminum.png')):
+        add(source.with_name('magnox.png'), source.relative_to(ASSETS).as_posix(), magnox)
+    for metal, base in AD_ASTRA_METAL_BASES.items():
+        colors = ref(f'ad_astra/metals/{metal}.json')
+        for source in sorted(ASSETS.rglob(f'{base}.png')):
+            if '/textures/' in source.as_posix() and '/metal/' in source.as_posix():
+                add(source.with_name(f'{metal}.png'), source.relative_to(ASSETS).as_posix(), colors, discrete=True)
+    ore_textures = ASSETS/'tfcm/textures'
+    rock_mask = pixels(image(project(ore_textures/'item/ore_processing/rocky_chunks/rock_overlay.png')))
+    for ore, base in IG_ORE_BASES.items():
+        colors = ref(f'immersivegeology/ores/{ore}.json')
+        for folder in ('block/ore', 'item/ore', 'item/ore_processing'):
+            for source in sorted((ore_textures/folder).rglob(f'*{base}.png')):
+                target = source.with_name(source.stem.removesuffix(base) + ore + '.png')
+                rock_pixels = [i for i, pixel in enumerate(rock_mask) if pixel[3]] if source.parent.name == 'rocky_chunks' else []
+                add(target, source.relative_to(ASSETS).as_posix(), colors, fixed=rock_pixels, discrete=True)
     for path in sorted((ASSETS/'tfcm/textures/item/metal').glob('*/*.png')):
         form,metal = path.parent.name,path.stem
+        if metal == 'magnox' or metal in AD_ASTRA_METAL_BASES:
+            continue
         suffix = ''
         if form=='shield' and metal.endswith(('_front','_back')):
             metal,suffix=metal.rsplit('_',1);suffix='_'+suffix
@@ -229,6 +258,8 @@ def build_recipes(image):
         add(path,shape,colors,tone,**options)
     for namespace,form in [('tfcm','block'),('tfcm','smooth'),('tfc','smooth')]:
         for path in sorted((ASSETS/f'{namespace}/textures/block/metal/{form}').glob('*.png')):
+            if path.stem == 'magnox' or path.stem in AD_ASTRA_METAL_BASES:
+                continue
             shape=tfc(form,METAL_BASES[path.stem])
             options = {'smooth_ingot': tfc('ingot',METAL_BASES[path.stem])} if form == 'smooth' else {}
             add(path,shape,original(path.stem),shape,**options)
@@ -260,6 +291,8 @@ def build_recipes(image):
     ores={};processing=ASSETS/'tfcm/textures/item/ore_processing'
     for path in sorted((processing/'chunks').glob('*.png')):
         name=path.stem
+        if name in IG_ORE_BASES:
+            continue
         for group in ('tfc','firmalife','tfcm'):
             found=next((f'{group}/ore/{stem}.png' for stem in ('normal_'+name,name) if (REFERENCE/f'{group}/ore/{stem}.png').is_file()),None)
             if found:
@@ -270,6 +303,8 @@ def build_recipes(image):
             ores[name] = overlay
     for path in sorted(processing.rglob('*.png')):
         form,name=path.parent.name,path.stem;options={}
+        if name in IG_ORE_BASES:
+            continue
         if name in ('rock_overlay','rock_powder'):
             add(path,project(path));continue
         if form=='sand_pile':
@@ -294,7 +329,13 @@ def main():
     images = {}
     def image(name):
         if name not in images:
-            images[name] = load((ASSETS if name.startswith("tfcm/textures/") else REFERENCE)/name)
+            if name.endswith('.json'):
+                colors = json.loads((REFERENCE/name).read_text(encoding='utf-8'))
+                image = Image.new('RGBA', (len(colors), 1))
+                image.putdata([(*color, 255) for color in colors])
+                images[name] = image
+            else:
+                images[name] = load((ASSETS if (ASSETS/name).is_file() else REFERENCE)/name)
         return images[name]
     recipes,ore_palettes,used_references = build_recipes(image)
     outputs = set()
@@ -312,7 +353,9 @@ def main():
             records.append([relative,0,'copy',len(palette(shape)),len(palette(shape)),len(fixed)])
         else:
             source = image(r['palette'])
-            if r['palette'].startswith('immersivegeology/'):
+            if r['palette'].endswith('magnox-palette.json'):
+                assert source.height == 1, relative
+            elif r['palette'].startswith(('immersivegeology/', 'ad_astra/')):
                 assert source.height == 1, relative
             else:
                 assert source.height == source.width, relative
@@ -340,10 +383,12 @@ def main():
             colors = palette(source)
             if correction:
                 colors = [correction[c] for c in colors]
-            result = recolor_smooth(shape,source,image(r['smooth_ingot']),shape) if 'smooth_ingot' in r else recolor(shape,colors,fixed)
+            result = (recolor_smooth(shape,source,image(r['smooth_ingot']),shape) if 'smooth_ingot' in r
+                      else recolor(shape, colors, fixed, discrete=r.get('discrete', False)))
             records.append([relative,0,'D smooth' if 'smooth_ingot' in r else 'L' if correction else 'source palette',
                             len(colors),len(palette(result,fixed)),len(fixed)])
-        if Path(relative).parent.name == 'nugget':
+        if (Path(relative).parent.name == 'nugget' and Path(relative).stem != 'magnox'
+                and Path(relative).stem not in AD_ASTRA_METAL_BASES):
             result = result.transpose(Image.Transpose.ROTATE_270)  # Clockwise, like the vanilla gold nugget.
         assert list(result.size) == r['size'],(relative,result.size,r['size'])
         target = args.output/relative
@@ -358,8 +403,10 @@ def main():
     roots = ['tfcm/textures/item/metal','tfcm/textures/block/metal','tfc/textures/block/metal/smooth',
              'tfcm/textures/models/armor','tfcm/textures/entity/projectiles','tfcm/textures/item/ore_processing',
              'tfcm/textures/entity/horse/armor']
-    expected = {str(p.relative_to(ASSETS)) for directory in roots for p in (ASSETS/directory).rglob('*.png')}
+    expected = {p.relative_to(ASSETS).as_posix() for directory in roots for p in (ASSETS/directory).rglob('*.png')}
     expected.update(f'tfcm/textures/entity/horse/armor/horse_armor_{m}.png' for m in ARMOR_BASES)
+    expected.update(r['output'] for r in recipes if r.get('palette') == 'immersivetechnology/magnox-palette.json')
+    expected.update(r['output'] for r in recipes if r.get('discrete'))
     assert outputs == expected,{'missing':sorted(expected-outputs),'extra':sorted(outputs-expected)}
     assert len(ore_palettes) == 37
     args.output.mkdir(parents=True,exist_ok=True)

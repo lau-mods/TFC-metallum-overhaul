@@ -232,6 +232,18 @@
     {
       "id": "#c:ores/carobbiite",
       "required": false
+    },
+    {
+      "id": "#c:ores/magnox/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/magnox/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/magnox/rich",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    }
+  ],
+  "values": [
+    "tfcm:metal/magnox",
+    "tfcm:metal/flowing_magnox"
+  ]
+}

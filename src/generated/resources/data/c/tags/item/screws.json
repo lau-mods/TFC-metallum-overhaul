@@ -168,6 +168,22 @@
       "id": "#c:screws/enderium",
       "required": false
     },
+    {
+      "id": "#c:screws/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:screws/desh",
+      "required": false
+    },
+    {
+      "id": "#c:screws/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:screws/calorite",
+      "required": false
+    },
     "#c:screws/bismuth",
     "#c:screws/bismuth_bronze",
     "#c:screws/black_bronze",

@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/chalcocite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/chalcocite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/chalcocite/rich",
+      "required": false
+    }
+  ]
+}

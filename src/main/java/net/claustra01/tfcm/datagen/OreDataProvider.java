@@ -2,7 +2,10 @@ package net.claustra01.tfcm.datagen;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.CompletableFuture;
 
@@ -10,9 +13,11 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import net.claustra01.tfcm.common.metal.Metal;
+import net.claustra01.tfcm.common.metal.TfcMetal;
 import net.claustra01.tfcm.common.ore.Ore;
 import net.claustra01.tfcm.common.ore.OreGrade;
 import net.claustra01.tfcm.common.ore.TfcOre;
+import net.claustra01.tfcm.common.processing.ProcessingSeries;
 import net.dries007.tfc.common.blocks.rock.Rock;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
@@ -20,16 +25,6 @@ import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 public final class OreDataProvider implements DataProvider {
-    private static final Map<Ore, Metal> ORE_METALS = Map.ofEntries(
-            Map.entry(Ore.NATIVE_PLATINUM, Metal.PLATINUM), Map.entry(Ore.NATIVE_NAQUADAH, Metal.NAQUADAH),
-            Map.entry(Ore.NATIVE_IRIDIUM, Metal.IRIDIUM), Map.entry(Ore.NATIVE_OSMIUM, Metal.OSMIUM),
-            Map.entry(Ore.RUTILE, Metal.TITANIUM), Map.entry(Ore.COBALTITE, Metal.COBALT),
-            Map.entry(Ore.SPODUMENE, Metal.LITHIUM), Map.entry(Ore.BAUXITE, Metal.ALUMINUM),
-            Map.entry(Ore.GALENA, Metal.LEAD), Map.entry(Ore.URANINITE, Metal.URANIUM),
-            Map.entry(Ore.MITHRIL_MATRIX, Metal.MITHRIL), Map.entry(Ore.STIBNITE, Metal.ANTIMONY),
-            Map.entry(Ore.WOLFRAMITE, Metal.TUNGSTEN), Map.entry(Ore.THORIANITE, Metal.THORIUM),
-            Map.entry(Ore.PYROLUSITE, Metal.MANGANESE), Map.entry(Ore.MONAZITE, Metal.NEODYMIUM),
-            Map.entry(Ore.MAGNESITE, Metal.MAGNESIUM), Map.entry(Ore.ZIRCON, Metal.ZIRCONIUM));
     private final Path data;
     private final Path assets;
     private final IndicatorModels indicators;
@@ -102,11 +97,17 @@ public final class OreDataProvider implements DataProvider {
             files.add(save(output, assets, "tfcm/blockstates/ore/" + small, smallBlockState(ore.id())));
             files.add(save(output, data, "tfcm/loot_table/blocks/ore/" + small,
                     blockLoot("tfcm:ore/" + small, ore.id(), false)));
-            Metal metal = ORE_METALS.get(ore);
+            ProcessingSeries series = ProcessingSeries.valueOf(ore.name());
+            String metalId = recoveryMetal(series).toUpperCase(Locale.ROOT);
+            boolean tfcm = series.recoveryFluid().startsWith("tfcm:");
+            Metal metal = tfcm ? Metal.valueOf(metalId) : null;
             files.add(save(output, data, "tfcm/recipe/heating/ore/" + small,
-                    conditioned(ore.id(), metal, smallOreHeating(ore, metal))));
+                    conditioned(ore.id(), metal, smallOreHeating(ore, series))));
+            JsonObject heat = metal != null
+                    ? smallOreHeat(ore, metal.specificHeat() * 33.333334f, metal.forgingTemperature(), metal.weldingTemperature())
+                    : smallOreHeat(ore, TfcMetal.valueOf(metalId));
             files.add(save(output, data, "tfcm/tfc/item_heat/ore/" + small,
-                    conditioned(ore.id(), metal, smallOreHeat(ore, metal))));
+                    conditioned(ore.id(), metal, heat)));
         } else {
             files.add(save(output, assets, "tfcm/models/item/ore/" + ore.id(),
                     generatedModel("tfcm:item/ore/" + ore.id())));
@@ -128,7 +129,8 @@ public final class OreDataProvider implements DataProvider {
         List<String> metalOres = new ArrayList<>();
         List<String> orePieces = new ArrayList<>();
         List<String> smallOres = new ArrayList<>();
-        List<String> commonOres = new ArrayList<>();
+        var commonOres = new LinkedHashSet<String>();
+        Map<String, List<String>> metalGrades = new LinkedHashMap<>();
         for (Ore ore : Ore.values()) {
             if (!ore.graded()) {
                 String item = "tfcm:ore/" + ore.id();
@@ -143,6 +145,7 @@ public final class OreDataProvider implements DataProvider {
                 continue;
             }
             smallOres.add("tfcm:ore/small_" + ore.id());
+            String metal = recoveryMetal(ProcessingSeries.valueOf(ore.name()));
             List<String> grades = new ArrayList<>();
             for (OreGrade grade : OreGrade.values()) {
                 String item = "tfcm:ore/" + ore.itemName(grade);
@@ -150,16 +153,18 @@ public final class OreDataProvider implements DataProvider {
                 orePieces.add(item);
                 grades.add("#c:ores/" + ore.id() + "/" + grade.id());
                 files.add(save(output, data, "c/tags/item/ores/" + ore.id() + "/" + grade.id(), tag(List.of(item))));
-                String metal = ORE_METALS.get(ore).id();
-                files.add(save(output, data, "c/tags/item/ores/" + metal + "/" + grade.id(), tag(List.of(item))));
-                commonOres.add("#c:ores/" + metal + "/" + grade.id());
+                String metalGrade = metal + "/" + grade.id();
+                metalGrades.computeIfAbsent(metalGrade, key -> new ArrayList<>()).add(item);
+                commonOres.add("#c:ores/" + metalGrade);
             }
             files.add(save(output, data, "c/tags/item/ores/" + ore.id(), tag(grades)));
         }
+        metalGrades.forEach((id, items) ->
+                files.add(save(output, data, "c/tags/item/ores/" + id, tag(items))));
         files.add(save(output, data, "tfc/tags/item/metal_ores", tag(metalOres)));
         files.add(save(output, data, "tfc/tags/item/ore_pieces", tag(orePieces)));
         files.add(save(output, data, "tfc/tags/item/small_ore_pieces", tag(smallOres)));
-        files.add(save(output, data, "c/tags/item/ores", tag(commonOres)));
+        files.add(save(output, data, "c/tags/item/ores", tag(List.copyOf(commonOres))));
     }
 
     private void addHosts(CachedOutput output, List<CompletableFuture<?>> files, List<String> ores,
@@ -305,24 +310,32 @@ public final class OreDataProvider implements DataProvider {
         return json;
     }
 
-    private static JsonObject smallOreHeating(Ore ore, Metal metal) {
+    private static String recoveryMetal(ProcessingSeries series) {
+        return series.recoveryFluid().substring(series.recoveryFluid().indexOf('/') + 1);
+    }
+
+    private static JsonObject smallOreHeating(Ore ore, ProcessingSeries series) {
         JsonObject json = new JsonObject();
         json.addProperty("type", "tfc:heating");
         json.add("ingredient", ingredient("tfcm:ore/small_" + ore.id()));
         JsonObject fluid = new JsonObject();
-        fluid.addProperty("id", "tfcm:metal/" + metal.id());
+        fluid.addProperty("id", series.recoveryFluid());
         fluid.addProperty("amount", 10);
         json.add("result_fluid", fluid);
-        json.addProperty("temperature", metal.meltingPoint());
+        json.addProperty("temperature", series.recoveryTemperature());
         return json;
     }
 
-    private static JsonObject smallOreHeat(Ore ore, Metal metal) {
+    private static JsonObject smallOreHeat(Ore ore, TfcMetal metal) {
+        return smallOreHeat(ore, metal.heatCapacity() / 10, metal.forgingTemperature(), metal.weldingTemperature());
+    }
+
+    private static JsonObject smallOreHeat(Ore ore, float capacity, float forging, float welding) {
         JsonObject json = new JsonObject();
         json.add("ingredient", ingredient("tfcm:ore/small_" + ore.id()));
-        json.addProperty("heat_capacity", metal.specificHeat() * 33.333334f);
-        json.addProperty("forging_temperature", metal.forgingTemperature());
-        json.addProperty("welding_temperature", metal.weldingTemperature());
+        json.addProperty("heat_capacity", capacity);
+        json.addProperty("forging_temperature", forging);
+        json.addProperty("welding_temperature", welding);
         return json;
     }
 

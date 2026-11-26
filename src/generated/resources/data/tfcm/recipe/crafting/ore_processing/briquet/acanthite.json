@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "acanthite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/acanthite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/acanthite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/acanthite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/acanthite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/acanthite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/acanthite"
+  }
+}

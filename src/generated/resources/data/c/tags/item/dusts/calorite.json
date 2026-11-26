@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "calorite"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/dust/calorite",
+      "required": false
+    }
+  ]
+}

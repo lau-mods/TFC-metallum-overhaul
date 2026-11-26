@@ -1,0 +1,43 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "vanadium"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create"
+    },
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "vanadinite"
+    }
+  ],
+  "type": "create:splashing",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/dirty_dust/vanadinite"
+    }
+  ],
+  "results": [
+    {
+      "count": 1,
+      "id": "tfcm:ore_processing/powder/vanadinite"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/sand_pile/red"
+    },
+    {
+      "chance": 0.25,
+      "count": 1,
+      "id": "tfcm:ore_processing/dirty_dust/vanadinite"
+    },
+    {
+      "chance": 0.005,
+      "count": 1,
+      "id": "tfcm:metal/dust/vanadium"
+    }
+  ]
+}

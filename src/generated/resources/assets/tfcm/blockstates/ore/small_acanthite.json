@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/acanthite"
+      },
+      {
+        "model": "tfcm:block/groundcover/acanthite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/acanthite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/acanthite",
+        "y": 270
+      }
+    ]
+  }
+}

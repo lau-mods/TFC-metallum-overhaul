@@ -4,6 +4,14 @@
     {
       "id": "tfcm:ore/normal_galena",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_vanadinite",
+      "required": false
     }
   ]
 }

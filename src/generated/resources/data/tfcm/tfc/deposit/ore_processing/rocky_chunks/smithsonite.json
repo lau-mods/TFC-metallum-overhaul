@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "smithsonite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/smithsonite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/smithsonite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/smithsonite_full",
+    "tfcm:item/pan/rocky_chunks/smithsonite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

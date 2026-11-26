@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/stamen/magnox"
+  },
+  "result_fluid": {
+    "amount": 25,
+    "id": "tfcm:metal/magnox"
+  },
+  "temperature": 650
+}

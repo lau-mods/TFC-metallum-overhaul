@@ -168,6 +168,22 @@
       "id": "#c:stamens/enderium",
       "required": false
     },
+    {
+      "id": "#c:stamens/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/desh",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:stamens/calorite",
+      "required": false
+    },
     "#c:stamens/bismuth",
     "#c:stamens/bismuth_bronze",
     "#c:stamens/black_bronze",

@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "calorite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rod/calorite"
+  },
+  "size": "normal",
+  "weight": "light"
+}

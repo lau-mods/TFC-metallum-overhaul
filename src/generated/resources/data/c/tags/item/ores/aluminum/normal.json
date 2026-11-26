@@ -4,6 +4,10 @@
     {
       "id": "tfcm:ore/normal_bauxite",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_alumina",
+      "required": false
     }
   ]
 }

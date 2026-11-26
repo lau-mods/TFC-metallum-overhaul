@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/chalcopyrite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/chalcopyrite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/chalcopyrite/rich",
+      "required": false
+    }
+  ]
+}

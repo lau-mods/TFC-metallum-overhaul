@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chalcopyrite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/chalcopyrite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/chalcopyrite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/chalcopyrite_full",
+    "tfcm:item/pan/dirty_dust/chalcopyrite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

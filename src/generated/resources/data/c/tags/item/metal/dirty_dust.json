@@ -147,6 +147,62 @@
     {
       "id": "#c:metal/dirty_dust/borax",
       "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/acanthite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/alumina",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/anatase",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/chalcocite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/cuprite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/ilmenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/native_lead",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/millerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/molybdenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/scheelite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/smithsonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/thorite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/dirty_dust/vanadinite",
+      "required": false
     }
   ]
 }

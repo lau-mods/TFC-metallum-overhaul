@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/rivet/magnox"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

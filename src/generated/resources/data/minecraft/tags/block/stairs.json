@@ -167,6 +167,22 @@
     {
       "id": "tfcm:metal/block/enderium_stairs",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/block/magnox_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/desh_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/ostrum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/calorite_stairs",
+      "required": false
     }
   ]
 }

@@ -4,6 +4,10 @@
     {
       "id": "tfcm:ore/normal_wolframite",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_scheelite",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "acanthite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore/small_acanthite"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfc:metal/silver"
+  },
+  "temperature": 961
+}

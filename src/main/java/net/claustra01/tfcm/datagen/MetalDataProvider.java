@@ -182,6 +182,10 @@ public final class MetalDataProvider implements DataProvider {
     }
 
     private void addSpecialRecipes(CachedOutput output, List<CompletableFuture<?>> files) {
+        for (Metal metal : List.of(Metal.DESH, Metal.OSTRUM, Metal.CALORITE)) {
+            files.add(save(output, "tfcm/recipe/crafting/metal/ingot_from_ad_astra/" + metal.id(),
+                    adAstraIngotConversion(metal)));
+        }
         files.add(save(output, "tfcm/recipe/anvil/metal/ingot/tungsten_steel", highCarbonAnvil()));
         files.add(save(output, "tfcm/recipe/welding/metal/ingot/high_carbon_tungsten_steel", highCarbonWelding()));
         files.add(save(output, "tfcm/recipe/welding/metal/ingot/netherite", netheriteWelding()));
@@ -205,6 +209,8 @@ public final class MetalDataProvider implements DataProvider {
                 range("tfc:metal/wrought_iron", .6, .7), range("tfc:metal/nickel", .3, .4))));
         files.add(save(output, "tfcm/recipe/alloy/osmiridium", alloy(Metal.OSMIRIDIUM,
                 range("tfcm:metal/osmium", .6, .8), range("tfcm:metal/iridium", .2, .4))));
+        files.add(save(output, "tfcm/recipe/alloy/magnox", alloy(Metal.MAGNOX,
+                range("tfcm:metal/magnesium", .7, .8), range("tfcm:metal/aluminum", .2, .3))));
         JsonObject hastelloy = alloy(Metal.HASTELLOY,
                 range("tfc:metal/nickel", .45, .55), range("firmalife:metal/chromium", .2, .3),
                 range("tfcm:metal/molybdenum", .1, .15), range("tfc:metal/wrought_iron", .05, .08),
@@ -293,6 +299,17 @@ public final class MetalDataProvider implements DataProvider {
             json.add("ingredients", ingredients);
         }
         json.add("result", item(itemId(metal, reverse ? "ingot" : "nugget"), reverse ? 1 : 9));
+        return json;
+    }
+
+    private static JsonObject adAstraIngotConversion(Metal metal) {
+        JsonObject json = conditioned(metal);
+        json.getAsJsonArray("neoforge:conditions").add(ContentConditions.modLoaded("ad_astra"));
+        json.addProperty("type", "minecraft:crafting_shapeless");
+        JsonArray ingredients = new JsonArray();
+        ingredients.add(itemIngredient("ad_astra:" + metal.id() + "_ingot"));
+        json.add("ingredients", ingredients);
+        json.add("result", item(itemId(metal, "ingot"), 1));
         return json;
     }
 
