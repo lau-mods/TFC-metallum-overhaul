@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "desh"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/block/desh_stairs"
+  },
+  "size": "small",
+  "weight": "light"
+}

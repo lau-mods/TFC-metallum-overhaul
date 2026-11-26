@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "calorite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/nail/calorite"
+  },
+  "size": "very_small",
+  "weight": "very_light"
+}

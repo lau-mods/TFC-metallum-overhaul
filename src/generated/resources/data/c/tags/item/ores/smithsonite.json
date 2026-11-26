@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/smithsonite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/smithsonite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/smithsonite/rich",
+      "required": false
+    }
+  ]
+}

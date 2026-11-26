@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "ilmenite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/ilmenite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/ilmenite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/ilmenite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/ilmenite"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/ilmenite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/ilmenite"
+  }
+}

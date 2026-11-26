@@ -168,6 +168,22 @@
       "id": "#c:dusts/enderium",
       "required": false
     },
+    {
+      "id": "#c:dusts/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/desh",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:dusts/calorite",
+      "required": false
+    },
     "#c:dusts/bismuth",
     "#c:dusts/bismuth_bronze",
     "#c:dusts/black_bronze",

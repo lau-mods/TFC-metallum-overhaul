@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "molybdenite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/powder/molybdenite"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/molybdenite"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/molybdenite"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/molybdenite"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/pellet/molybdenite"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "calorite"
+    }
+  ],
+  "values": [
+    "tfcm:metal/calorite",
+    "tfcm:metal/flowing_calorite"
+  ]
+}

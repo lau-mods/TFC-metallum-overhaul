@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "tag": "c:ingots/magnox"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:metal/dust/magnox"
+  }
+}

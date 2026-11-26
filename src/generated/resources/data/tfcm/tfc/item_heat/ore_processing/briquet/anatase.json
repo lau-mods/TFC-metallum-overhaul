@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "anatase"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "titanium"
+    }
+  ],
+  "heat_capacity": 3.333333,
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/anatase"
+  }
+}

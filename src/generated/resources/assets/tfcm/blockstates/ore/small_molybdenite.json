@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/molybdenite"
+      },
+      {
+        "model": "tfcm:block/groundcover/molybdenite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/molybdenite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/molybdenite",
+        "y": 270
+      }
+    ]
+  }
+}

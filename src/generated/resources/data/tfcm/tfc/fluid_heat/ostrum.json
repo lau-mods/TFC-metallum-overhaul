@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ostrum"
+    }
+  ],
+  "fluid": "tfcm:metal/ostrum",
+  "melt_temperature": 1400,
+  "specific_heat_capacity": 0.008571429
+}

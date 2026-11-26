@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chalcopyrite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore/small_chalcopyrite"
+  },
+  "result_fluid": {
+    "amount": 10,
+    "id": "tfc:metal/copper"
+  },
+  "temperature": 1080
+}

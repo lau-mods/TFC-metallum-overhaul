@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/alumina/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/alumina/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/alumina/rich",
+      "required": false
+    }
+  ]
+}

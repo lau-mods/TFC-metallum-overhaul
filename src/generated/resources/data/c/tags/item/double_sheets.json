@@ -167,6 +167,22 @@
     {
       "id": "#c:double_sheets/enderium",
       "required": false
+    },
+    {
+      "id": "#c:double_sheets/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/desh",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:double_sheets/calorite",
+      "required": false
     }
   ]
 }

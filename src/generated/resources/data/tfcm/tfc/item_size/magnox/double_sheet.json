@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/double_sheet/magnox"
+  },
+  "size": "large",
+  "weight": "heavy"
+}

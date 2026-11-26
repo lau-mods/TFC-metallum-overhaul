@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "molybdenite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/molybdenite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/molybdenite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/molybdenite_full",
+    "tfcm:item/pan/rocky_chunks/molybdenite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -4,6 +4,10 @@
     {
       "id": "tfcm:ore/normal_thorianite",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorite",
+      "required": false
     }
   ]
 }

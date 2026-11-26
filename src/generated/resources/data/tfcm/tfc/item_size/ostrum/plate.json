@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ostrum"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/plate/ostrum"
+  },
+  "size": "normal",
+  "weight": "medium"
+}

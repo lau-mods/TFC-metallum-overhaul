@@ -4,6 +4,14 @@
     {
       "id": "tfcm:ore/rich_rutile",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_anatase",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_ilmenite",
+      "required": false
     }
   ]
 }

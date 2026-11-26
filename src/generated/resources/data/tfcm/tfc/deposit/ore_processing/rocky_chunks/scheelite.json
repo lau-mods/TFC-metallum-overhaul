@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "scheelite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/scheelite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/scheelite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/scheelite_full",
+    "tfcm:item/pan/rocky_chunks/scheelite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ostrum"
+    }
+  ],
+  "values": [
+    "tfcm:metal/ostrum",
+    "tfcm:metal/flowing_ostrum"
+  ]
+}

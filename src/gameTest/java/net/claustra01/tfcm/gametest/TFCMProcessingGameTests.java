@@ -74,7 +74,21 @@ public final class TFCMProcessingGameTests {
             series("cryolite", "white", "granite", "gneiss", "topaz", "spodumene", null, false, true, "tfc"),
             series("graphite", "black", "schist", "phyllite", "diamond", "hematite", null, false, true, "tfc"),
             series("sulfur", "yellow", "tuff", "basalt", "pyrite", "hematite", null, false, true, "tfc"),
-            series("borax", "white", "granite", "gneiss", "topaz", "graphite", "tfcm:metal/boron", false, true, "tfc"));
+            series("borax", "white", "granite", "gneiss", "topaz", "graphite", "tfcm:metal/boron", false, true, "tfc"),
+            new ExpectedSeries("acanthite", "black", "gabbro", "gneiss", null, List.of("galena", "native_osmium", "native_platinum"), "tfc:metal/silver", true, false, "tfcm"),
+            new ExpectedSeries("alumina", "white", "shale", "claystone", null, List.of(), "tfcm:metal/aluminum", true, false, "tfcm"),
+            new ExpectedSeries("anatase", "white", "gneiss", "schist", null, List.of(), "tfcm:metal/titanium", true, false, "tfcm"),
+            new ExpectedSeries("chalcocite", "black", "basalt", "shale", null, List.of("garnierite", "native_osmium", "native_platinum"), "tfc:metal/copper", true, false, "tfcm"),
+            new ExpectedSeries("chalcopyrite", "yellow", "granite", "dolomite", null, List.of("hematite"), "tfc:metal/copper", true, false, "tfcm"),
+            new ExpectedSeries("cuprite", "red", "diorite", "dolomite", null, List.of("pyrolusite"), "tfc:metal/copper", true, false, "tfcm"),
+            new ExpectedSeries("ilmenite", "black", "gabbro", "gneiss", null, List.of("hematite"), "tfcm:metal/titanium", true, false, "tfcm"),
+            new ExpectedSeries("native_lead", "black", "basalt", "limestone", null, List.of(), "tfcm:metal/lead", true, false, "tfcm"),
+            new ExpectedSeries("millerite", "yellow", "gabbro", "basalt", null, List.of("chromite", "native_osmium", "native_platinum"), "tfc:metal/nickel", true, false, "tfcm"),
+            new ExpectedSeries("molybdenite", "black", "granite", "shale", null, List.of("native_osmium", "native_platinum"), "tfcm:metal/molybdenum", true, false, "tfcm"),
+            new ExpectedSeries("scheelite", "white", "granite", "dolomite", null, List.of(), "tfcm:metal/tungsten", true, false, "tfcm"),
+            new ExpectedSeries("smithsonite", "white", "limestone", "dolomite", null, List.of("native_copper"), "tfc:metal/zinc", true, false, "tfcm"),
+            new ExpectedSeries("thorite", "black", "granite", "gneiss", null, List.of(), "tfcm:metal/thorium", true, false, "tfcm"),
+            new ExpectedSeries("vanadinite", "red", "limestone", "shale", null, List.of("metal:vanadium"), "tfcm:metal/lead", true, false, "tfcm"));
 
     private TFCMProcessingGameTests() {
     }
@@ -82,12 +96,12 @@ public final class TFCMProcessingGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void processingTableHasThirtyMetalAndFiveNonMetalSeries(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            require(ProcessingSeries.values().length == 37 && EXPECTED.size() == 37,
-                    "Processing table must contain exactly 37 series");
+            require(ProcessingSeries.values().length == 51 && EXPECTED.size() == 51,
+                    "Processing table must contain exactly 51 series");
             require(EXPECTED.stream().filter(ExpectedSeries::nonMetal).count() == 5,
                     "Processing table must contain exactly five non-metal series");
-            require(EXPECTED.stream().filter(expected -> !expected.nonMetal()).count() == 32,
-                    "Processing table must contain exactly 32 metal series");
+            require(EXPECTED.stream().filter(expected -> !expected.nonMetal()).count() == 46,
+                    "Processing table must contain exactly 46 metal series");
             boolean firmaLife = ModList.get().isLoaded("firmalife");
             require(recipePresent(helper, "crafting/ore_processing/hammer/normal_chromite") == firmaLife,
                     "Chromite processing availability does not match FirmaLife");
@@ -304,12 +318,12 @@ public final class TFCMProcessingGameTests {
                 checkSecondaryJson(expected);
                 checkExpected(expected);
                 if (expected.id().equals("native_naquadah")) {
-                    require(expected.byproduct().equals("native_osmium")
+                    require(expected.byproducts().equals(List.of("native_osmium"))
                             && expected.recoveryFluid().equals("tfcm:metal/naquadah"),
                             "Native Naquadah recovery differs from the project table");
                 }
                 if (expected.id().equals("mithril_matrix")) {
-                    require(expected.byproduct().equals("native_platinum")
+                    require(expected.byproducts().equals(List.of("native_platinum"))
                             && expected.recoveryFluid().equals("tfcm:metal/mithril"),
                             "Mithril Matrix recovery differs from the project table");
                 }
@@ -358,7 +372,8 @@ public final class TFCMProcessingGameTests {
         ProcessingSeries actual = ProcessingSeries.valueOf(expected.id().toUpperCase());
         require(actual.sand().id().equals(expected.sand()) && actual.primaryRock().equals(expected.primaryRock())
                 && actual.secondaryRock().equals(expected.secondaryRock())
-                && Objects.equals(actual.gem(), expected.gem()) && actual.byproduct().equals(expected.byproduct())
+                && Objects.equals(actual.gem(), expected.gem()) && actual.byproducts().stream().map(byproduct -> (byproduct.metalDust() ? "metal:" : "") + byproduct.id())
+                        .toList().equals(expected.byproducts())
                 && Objects.equals(actual.recoveryFluid(), expected.recoveryFluid())
                 && actual.graded() == expected.graded() && actual.nonMetal() == expected.nonMetal(),
                 "Wrong processing definition for " + expected.id());
@@ -377,12 +392,19 @@ public final class TFCMProcessingGameTests {
 
     private static void checkSecondaryJson(ExpectedSeries expected) {
         JsonArray pools = secondary(expected);
-        require(pools.size() == 4, "Unexpected secondary wash pool count: " + expected.id());
+        require(pools.size() == 3 + expected.byproducts().size(), "Unexpected secondary wash pool count: " + expected.id());
         checkPool(pools, 0, "powder", processingItem("powder", expected.id()), null);
         checkPool(pools, 1, "sand_pile_15_percent", processingItem("sand_pile", expected.sand()), 0.15f);
         checkPool(pools, 2, "same_dirty_dust_5_percent", processingItem("dirty_dust", expected.id()), 0.05f);
-        checkPool(pools, 3, "byproduct_dirty_dust_1_percent",
-                processingItem("dirty_dust", expected.byproduct()), 0.01f);
+        for (int index = 0; index < expected.byproducts().size(); index++) {
+            String byproduct = expected.byproducts().get(index);
+            boolean metal = byproduct.startsWith("metal:");
+            String id = metal ? byproduct.substring("metal:".length()) : byproduct;
+            String pool = "byproduct_" + (metal ? "metal_dust" : "dirty_dust") + "_1_percent";
+            if (expected.byproducts().size() > 1) pool += "_" + id;
+            String item = metal ? "tfcm:metal/dust/" + id : processingItem("dirty_dust", id);
+            checkPool(pools, 3 + index, pool, item, 0.01f);
+        }
     }
 
     private static void checkPool(JsonArray pools, int index, String name, String item, Float chance) {
@@ -496,7 +518,7 @@ public final class TFCMProcessingGameTests {
     private static ExpectedSeries series(String id, String sand, String primaryRock, String secondaryRock,
             String gem, String byproduct, String recoveryFluid, boolean graded, boolean nonMetal,
             String oreNamespace) {
-        return new ExpectedSeries(id, sand, primaryRock, secondaryRock, gem, byproduct, recoveryFluid,
+        return new ExpectedSeries(id, sand, primaryRock, secondaryRock, gem, List.of(byproduct), recoveryFluid,
                 graded, nonMetal, oreNamespace);
     }
 
@@ -505,6 +527,6 @@ public final class TFCMProcessingGameTests {
     }
 
     private record ExpectedSeries(String id, String sand, String primaryRock, String secondaryRock, String gem,
-            String byproduct, String recoveryFluid, boolean graded, boolean nonMetal, String oreNamespace) {
+            List<String> byproducts, String recoveryFluid, boolean graded, boolean nonMetal, String oreNamespace) {
     }
 }

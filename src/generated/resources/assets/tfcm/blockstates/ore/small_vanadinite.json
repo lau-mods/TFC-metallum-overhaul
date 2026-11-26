@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/vanadinite"
+      },
+      {
+        "model": "tfcm:block/groundcover/vanadinite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/vanadinite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/vanadinite",
+        "y": 270
+      }
+    ]
+  }
+}

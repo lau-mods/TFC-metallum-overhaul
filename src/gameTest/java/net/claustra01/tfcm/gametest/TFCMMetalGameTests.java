@@ -253,7 +253,7 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void allMetalsAndBasicFormsAreRegistered(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            require(Metal.values().length == 42, "Expected exactly 42 TFCM metals");
+            require(Metal.values().length == 46, "Expected exactly 46 TFCM metals");
             Set<String> ids = new java.util.HashSet<>();
             for (Metal metal : Metal.values()) {
                 require(ids.add(metal.id()), "Duplicate metal id " + metal.id());
@@ -292,14 +292,14 @@ public final class TFCMMetalGameTests {
     public static void metalSpecificationValuesMatch(GameTestHelper helper) {
         helper.succeedIf(() -> {
             int[] tiers = {3,3,7,3,3,3,2,2,2,2,1,5,3,3,3,1,3,1,1,3,3,3,7,6,1,2,7,7,3,3,2,3,2,
-                    3, 3, 3, 3, 4, 5, 4, 4, 5};
+                    3, 3, 3, 3, 4, 5, 4, 4, 5, 3, 4, 5, 6};
             int[] melts = {1535,1730,2000,1535,1535,1500,940,940,940,940,630,1700,1700,181,660,1250,1250,1000,330,1130,1535,400,1535,1535,1000,520,2000,2000,2076,1750,650,1287,1855,
-                    1246, 1535, 1024, 1700, 1370, 1450, 1500, 1500, 1700};
+                    1246, 1535, 1024, 1700, 1370, 1450, 1500, 1500, 1700, 650, 1200, 1400, 1550};
             // Molten fluid tints from the same source ingot palettes as the block textures.
             int[] colors = {0xFF5C5958, 0xFFB2B6B8, 0xFF23281D, 0xFFADC4CE, 0xFF5B6B83, 0xFF718383, 0xFF8DB4BC, 0xFF888CCC, 0xFFDCC37F, 0xFF6D5887, 0xFFB4AFBD, 0xFF949396, 0xFF808A9D, 0xFF9FA396, 0xFF929799, 0xFFA45B49, 0xFF869A97, 0xFFA67F3A, 0xFF393D4A, 0xFF4E5946, 0xFF728692, 0xFF888888, 0xFF2F353E, 0xFF3F393B, 0xFFB18143, 0xFF757E76, 0xFF6C3F99, 0xFFE06100, 0xFF676767, 0xFF9F75C2, 0xFF89797F, 0xFFD3DCC3, 0xFF728557,
-                    0xFF766862, 0xFF8DAEB1, 0xFF726440, 0xFF87201E, 0xFF73969B, 0xFF848E9F, 0xFFCE3912, 0xFFE2B773, 0xFF16576C};
+                    0xFF766862, 0xFF8DAEB1, 0xFF726440, 0xFF87201E, 0xFF73969B, 0xFF848E9F, 0xFFCE3912, 0xFFE2B773, 0xFF16576C, 0xFF948290, 0xFFC77142, 0xFF925E64, 0xFFB83145};
             float[] capacities = {0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.012f, 0.01f, 0.01f, 0.01f, 0.0042857146f, 0.008571429f, 0.00857f, 0.0054545454f, 0.023076924f, 0.025f, 0.015f, 0.008571429f, 0.015f, 0.015f, 0.0054545454f, 0.012f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f,
-                    0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.00857f, 0.00857f, 0.00857f};
+                    0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f, 0.00857f, 0.00857f, 0.00857f, 0.008571429f, 0.008571429f, 0.008571429f, 0.008571429f};
             Set<Metal> tools = Set.of(Metal.TITANIUM, Metal.INVAR, Metal.TUNGSTEN_STEEL, Metal.NETHERITE);
             Metal[] metals = Metal.values();
             for (int index = 0; index < metals.length; index++) {
@@ -397,10 +397,16 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void onlySpecifiedAlloyRecipesLoad(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            String[] alloys = {"constantan", "electrum", "invar", "osmiridium", "solder", "high_speed_steel", "andesite_alloy_zinc", "andesite_alloy_tin"};
+            String[] alloys = {"constantan", "electrum", "invar", "osmiridium", "magnox", "solder",
+                    "high_speed_steel", "andesite_alloy_zinc", "andesite_alloy_tin"};
             for (String alloy : alloys) {
                 require(recipe(helper, "alloy/" + alloy) instanceof AlloyRecipe, "Missing alloy recipe " + alloy);
             }
+            AlloyRecipe magnox = (AlloyRecipe) recipe(helper, "alloy/magnox");
+            require(magnox.matches(alloy(75, "tfcm:metal/magnesium", 25, "tfcm:metal/aluminum")),
+                    "Magnox alloy must accept the Immersive Technology ratio");
+            require(!magnox.matches(alloy(50, "tfcm:metal/magnesium", 50, "tfcm:metal/aluminum")),
+                    "Magnox alloy must reject an equal mixture");
             AlloyRecipe constantan = (AlloyRecipe) recipe(helper, "alloy/constantan");
             require(constantan.matches(alloy(50, "tfc:metal/copper", 50, "tfc:metal/nickel")),
                     "Constantan rejects a valid 50/50 alloy");

@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/dust/magnox",
+      "required": false
+    }
+  ]
+}

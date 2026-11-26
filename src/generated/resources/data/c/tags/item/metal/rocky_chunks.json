@@ -147,6 +147,62 @@
     {
       "id": "#c:metal/rocky_chunks/borax",
       "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/acanthite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/alumina",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/anatase",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/chalcocite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/cuprite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/ilmenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/native_lead",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/millerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/molybdenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/scheelite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/smithsonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/thorite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/rocky_chunks/vanadinite",
+      "required": false
     }
   ]
 }

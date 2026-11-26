@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    }
+  ],
+  "fluid": "tfcm:metal/magnox",
+  "melt_temperature": 650,
+  "specific_heat_capacity": 0.008571429
+}

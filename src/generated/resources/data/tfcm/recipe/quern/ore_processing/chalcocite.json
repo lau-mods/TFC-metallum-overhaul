@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chalcocite"
+    }
+  ],
+  "type": "tfc:quern",
+  "ingredient": {
+    "item": "tfcm:ore_processing/chunks/chalcocite"
+  },
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/dirty_dust/chalcocite"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/chalcopyrite"
+      },
+      {
+        "model": "tfcm:block/groundcover/chalcopyrite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/chalcopyrite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/chalcopyrite",
+        "y": 270
+      }
+    ]
+  }
+}

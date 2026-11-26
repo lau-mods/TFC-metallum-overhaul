@@ -168,6 +168,22 @@
       "id": "#c:nuggets/enderium",
       "required": false
     },
+    {
+      "id": "#c:nuggets/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/desh",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:nuggets/calorite",
+      "required": false
+    },
     "#c:nuggets/bismuth",
     "#c:nuggets/bismuth_bronze",
     "#c:nuggets/black_bronze",

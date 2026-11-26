@@ -167,6 +167,22 @@
     {
       "id": "#c:rods/enderium",
       "required": false
+    },
+    {
+      "id": "#c:rods/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:rods/desh",
+      "required": false
+    },
+    {
+      "id": "#c:rods/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:rods/calorite",
+      "required": false
     }
   ]
 }

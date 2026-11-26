@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "alumina"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/alumina"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/alumina",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/alumina_full",
+    "tfcm:item/pan/dirty_dust/alumina_half",
+    "tfcm:item/pan/empty"
+  ]
+}

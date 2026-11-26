@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ostrum"
+    }
+  ],
+  "forging_temperature": 840.0,
+  "heat_capacity": 0.14285716,
+  "ingredient": {
+    "item": "tfcm:metal/rivet/ostrum"
+  },
+  "welding_temperature": 1120.0
+}

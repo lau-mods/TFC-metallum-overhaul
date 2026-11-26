@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/anatase"
+      },
+      {
+        "model": "tfcm:block/groundcover/anatase",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/anatase",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/anatase",
+        "y": 270
+      }
+    ]
+  }
+}

@@ -1,6 +1,7 @@
 package net.claustra01.tfcm.common.processing;
 
 import java.util.Locale;
+import java.util.List;
 
 public enum ProcessingSeries {
     NATIVE_COPPER(SandPile.RED, "basalt", "andesite", "opal", "hematite", "tfc:metal/copper", 1080, true, false),
@@ -40,13 +41,27 @@ public enum ProcessingSeries {
     GRAPHITE(SandPile.BLACK, "schist", "phyllite", "diamond", "hematite", null, null, false, true, false),
     SULFUR(SandPile.YELLOW, "tuff", "basalt", "pyrite", "hematite", null, null, false, true, false),
     BORAX(SandPile.WHITE, "granite", "gneiss", "topaz", "graphite", "tfcm:metal/boron", 2076,
-            false, true, false);
+            false, true, false),
+    ACANTHITE(SandPile.BLACK, "gabbro", "gneiss", "tfc:metal/silver", 961, Byproduct.ore("galena"), Byproduct.ore("native_osmium"), Byproduct.ore("native_platinum")),
+    ALUMINA(SandPile.WHITE, "shale", "claystone", "tfcm:metal/aluminum", 660),
+    ANATASE(SandPile.WHITE, "gneiss", "schist", "tfcm:metal/titanium", 1700),
+    CHALCOCITE(SandPile.BLACK, "basalt", "shale", "tfc:metal/copper", 1080, Byproduct.ore("garnierite"), Byproduct.ore("native_osmium"), Byproduct.ore("native_platinum")),
+    CHALCOPYRITE(SandPile.YELLOW, "granite", "dolomite", "tfc:metal/copper", 1080, Byproduct.ore("hematite")),
+    CUPRITE(SandPile.RED, "diorite", "dolomite", "tfc:metal/copper", 1080, Byproduct.ore("pyrolusite")),
+    ILMENITE(SandPile.BLACK, "gabbro", "gneiss", "tfcm:metal/titanium", 1700, Byproduct.ore("hematite")),
+    NATIVE_LEAD(SandPile.BLACK, "basalt", "limestone", "tfcm:metal/lead", 330),
+    MILLERITE(SandPile.YELLOW, "gabbro", "basalt", "tfc:metal/nickel", 1453, Byproduct.ore("chromite"), Byproduct.ore("native_osmium"), Byproduct.ore("native_platinum")),
+    MOLYBDENITE(SandPile.BLACK, "granite", "shale", "tfcm:metal/molybdenum", 1535, Byproduct.ore("native_osmium"), Byproduct.ore("native_platinum")),
+    SCHEELITE(SandPile.WHITE, "granite", "dolomite", "tfcm:metal/tungsten", 1535),
+    SMITHSONITE(SandPile.WHITE, "limestone", "dolomite", "tfc:metal/zinc", 420, Byproduct.ore("native_copper")),
+    THORITE(SandPile.BLACK, "granite", "gneiss", "tfcm:metal/thorium", 1750),
+    VANADINITE(SandPile.RED, "limestone", "shale", "tfcm:metal/lead", 330, Byproduct.metal("vanadium"));
 
     private final SandPile sand;
     private final String primaryRock;
     private final String secondaryRock;
     private final String gem;
-    private final String byproduct;
+    private final List<Byproduct> byproducts;
     private final String recoveryFluid;
     private final Integer recoveryTemperature;
     private final boolean graded;
@@ -63,11 +78,24 @@ public enum ProcessingSeries {
     ProcessingSeries(SandPile sand, String primaryRock, String secondaryRock, String gem,
             String byproduct, String recoveryFluid, Integer recoveryTemperature, boolean graded,
             boolean nonMetal, boolean firmaLifeOnly) {
+        this(sand, primaryRock, secondaryRock, gem, recoveryFluid, recoveryTemperature, graded,
+                nonMetal, firmaLifeOnly, Byproduct.ore(byproduct));
+    }
+
+    ProcessingSeries(SandPile sand, String primaryRock, String secondaryRock,
+            String recoveryFluid, int recoveryTemperature, Byproduct... byproducts) {
+        this(sand, primaryRock, secondaryRock, null, recoveryFluid, recoveryTemperature,
+                true, false, false, byproducts);
+    }
+
+    private ProcessingSeries(SandPile sand, String primaryRock, String secondaryRock, String gem,
+            String recoveryFluid, Integer recoveryTemperature, boolean graded, boolean nonMetal,
+            boolean firmaLifeOnly, Byproduct... byproducts) {
         this.sand = sand;
         this.primaryRock = primaryRock;
         this.secondaryRock = secondaryRock;
         this.gem = gem;
-        this.byproduct = byproduct;
+        this.byproducts = List.of(byproducts);
         this.recoveryFluid = recoveryFluid;
         this.recoveryTemperature = recoveryTemperature;
         this.graded = graded;
@@ -104,8 +132,22 @@ public enum ProcessingSeries {
         return gem;
     }
 
-    public String byproduct() {
-        return byproduct;
+    public List<Byproduct> byproducts() {
+        return byproducts;
+    }
+
+    public record Byproduct(String id, boolean metalDust) {
+        public static Byproduct ore(String id) {
+            return new Byproduct(id, false);
+        }
+
+        public static Byproduct metal(String id) {
+            return new Byproduct(id, true);
+        }
+
+        public String item() {
+            return (metalDust ? "tfcm:metal/dust/" : "tfcm:ore_processing/dirty_dust/") + id;
+        }
     }
 
     public boolean graded() {

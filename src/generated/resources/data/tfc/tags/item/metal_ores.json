@@ -220,6 +220,174 @@
     {
       "id": "tfcm:ore/carobbiite",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_acanthite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_acanthite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_acanthite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_alumina",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_alumina",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_alumina",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_anatase",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_anatase",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_anatase",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_chalcocite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_chalcocite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_chalcocite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_cuprite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_cuprite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_cuprite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_ilmenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_ilmenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_ilmenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_native_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_millerite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_millerite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_millerite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_molybdenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_molybdenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_molybdenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_scheelite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_scheelite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_scheelite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_smithsonite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_smithsonite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_smithsonite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_thorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_thorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_thorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_vanadinite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/normal_vanadinite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_vanadinite",
+      "required": false
     }
   ]
 }

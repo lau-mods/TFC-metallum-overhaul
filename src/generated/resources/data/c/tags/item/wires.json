@@ -168,6 +168,22 @@
       "id": "#c:wires/enderium",
       "required": false
     },
+    {
+      "id": "#c:wires/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:wires/desh",
+      "required": false
+    },
+    {
+      "id": "#c:wires/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:wires/calorite",
+      "required": false
+    },
     "#c:wires/bismuth",
     "#c:wires/bismuth_bronze",
     "#c:wires/black_bronze",

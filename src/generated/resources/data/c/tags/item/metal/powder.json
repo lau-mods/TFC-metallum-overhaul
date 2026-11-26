@@ -131,6 +131,62 @@
     {
       "id": "#c:metal/powder/borax",
       "required": false
+    },
+    {
+      "id": "#c:metal/powder/acanthite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/alumina",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/anatase",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/chalcocite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/cuprite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/ilmenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/native_lead",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/millerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/molybdenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/scheelite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/smithsonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/thorite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/powder/vanadinite",
+      "required": false
     }
   ]
 }

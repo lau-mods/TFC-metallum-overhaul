@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "tfcm:block/groundcover/scheelite"
+      },
+      {
+        "model": "tfcm:block/groundcover/scheelite",
+        "y": 90
+      },
+      {
+        "model": "tfcm:block/groundcover/scheelite",
+        "y": 180
+      },
+      {
+        "model": "tfcm:block/groundcover/scheelite",
+        "y": 270
+      }
+    ]
+  }
+}

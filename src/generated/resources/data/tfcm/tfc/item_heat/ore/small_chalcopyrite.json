@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "chalcopyrite"
+    }
+  ],
+  "forging_temperature": 648.0,
+  "heat_capacity": 0.2857143,
+  "ingredient": {
+    "item": "tfcm:ore/small_chalcopyrite"
+  },
+  "welding_temperature": 864.0
+}

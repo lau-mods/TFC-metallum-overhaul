@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "acanthite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/acanthite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/acanthite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/acanthite_full",
+    "tfcm:item/pan/dirty_dust/acanthite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "scheelite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "tungsten"
+    }
+  ],
+  "heat_capacity": 0.25,
+  "ingredient": {
+    "item": "tfcm:ore_processing/powder/scheelite"
+  }
+}

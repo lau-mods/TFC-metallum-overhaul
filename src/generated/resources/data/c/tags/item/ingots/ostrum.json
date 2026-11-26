@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ostrum"
+    }
+  ],
+  "values": [
+    {
+      "id": "tfcm:metal/ingot/ostrum",
+      "required": false
+    }
+  ]
+}

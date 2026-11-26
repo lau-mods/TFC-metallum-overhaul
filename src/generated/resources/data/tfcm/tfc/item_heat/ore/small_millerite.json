@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "millerite"
+    }
+  ],
+  "forging_temperature": 871.80005,
+  "heat_capacity": 0.20833333,
+  "ingredient": {
+    "item": "tfcm:ore/small_millerite"
+  },
+  "welding_temperature": 1162.4
+}

@@ -72,6 +72,62 @@
     {
       "id": "tfcm:ore/small_monazite",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/small_acanthite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_alumina",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_anatase",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_chalcocite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_cuprite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_ilmenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_native_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_millerite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_molybdenite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_scheelite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_smithsonite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_thorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/small_vanadinite",
+      "required": false
     }
   ]
 }

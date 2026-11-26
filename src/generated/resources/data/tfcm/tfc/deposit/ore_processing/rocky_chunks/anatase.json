@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "anatase"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/anatase"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/anatase",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/anatase_full",
+    "tfcm:item/pan/rocky_chunks/anatase_half",
+    "tfcm:item/pan/empty"
+  ]
+}

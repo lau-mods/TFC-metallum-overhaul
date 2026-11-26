@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "calorite"
+    }
+  ],
+  "forging_temperature": 930.0,
+  "heat_capacity": 11.428573,
+  "ingredient": {
+    "item": "tfcm:metal/gear/calorite"
+  },
+  "welding_temperature": 1240.0
+}

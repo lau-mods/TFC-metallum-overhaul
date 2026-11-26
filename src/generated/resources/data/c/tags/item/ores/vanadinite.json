@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/vanadinite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/vanadinite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/vanadinite/rich",
+      "required": false
+    }
+  ]
+}

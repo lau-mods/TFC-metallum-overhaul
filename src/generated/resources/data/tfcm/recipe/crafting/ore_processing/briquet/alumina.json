@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "alumina"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/alumina"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/alumina"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/alumina"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/alumina"
+    },
+    {
+      "item": "tfcm:ore_processing/pellet/alumina"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/briquet/alumina"
+  }
+}

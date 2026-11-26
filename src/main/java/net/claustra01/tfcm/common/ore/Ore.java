@@ -23,7 +23,21 @@ public enum Ore {
     MONAZITE(true),
     FLUORITE(false),
     QUARTZ(false),
-    CAROBBIITE(false);
+    CAROBBIITE(false),
+    ACANTHITE(true),
+    ALUMINA(true),
+    ANATASE(true),
+    CHALCOCITE(true),
+    CHALCOPYRITE(true),
+    CUPRITE(true),
+    ILMENITE(true),
+    NATIVE_LEAD(true),
+    MILLERITE(true),
+    MOLYBDENITE(true),
+    SCHEELITE(true),
+    SMITHSONITE(true),
+    THORITE(true),
+    VANADINITE(true);
 
     private final boolean graded;
 

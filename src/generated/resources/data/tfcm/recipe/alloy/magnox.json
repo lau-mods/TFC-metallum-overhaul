@@ -1,0 +1,30 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnox"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "magnesium"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "aluminum"
+    }
+  ],
+  "type": "tfc:alloy",
+  "contents": [
+    {
+      "fluid": "tfcm:metal/magnesium",
+      "max": 0.8,
+      "min": 0.7
+    },
+    {
+      "fluid": "tfcm:metal/aluminum",
+      "max": 0.3,
+      "min": 0.2
+    }
+  ],
+  "result": "tfcm:metal/magnox"
+}

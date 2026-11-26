@@ -167,6 +167,22 @@
     {
       "id": "#c:sheets/enderium",
       "required": false
+    },
+    {
+      "id": "#c:sheets/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:sheets/desh",
+      "required": false
+    },
+    {
+      "id": "#c:sheets/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:sheets/calorite",
+      "required": false
     }
   ]
 }

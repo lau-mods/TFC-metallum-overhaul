@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/acanthite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/acanthite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/acanthite/rich",
+      "required": false
+    }
+  ]
+}

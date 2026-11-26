@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/molybdenite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/molybdenite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/molybdenite/rich",
+      "required": false
+    }
+  ]
+}

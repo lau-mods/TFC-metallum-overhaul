@@ -1,0 +1,13 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "desh"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:metal/wire/desh"
+  },
+  "size": "small",
+  "weight": "light"
+}

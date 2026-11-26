@@ -4,6 +4,14 @@
     {
       "id": "tfcm:ore/rich_galena",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_native_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_vanadinite",
+      "required": false
     }
   ]
 }

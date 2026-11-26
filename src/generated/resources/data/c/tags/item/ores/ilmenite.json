@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/ilmenite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/ilmenite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/ilmenite/rich",
+      "required": false
+    }
+  ]
+}

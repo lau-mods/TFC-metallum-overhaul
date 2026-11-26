@@ -183,12 +183,11 @@ public final class ProcessingDataProvider implements DataProvider {
         pools.add(pool("powder", item(series, ProcessingForm.POWDER), null));
         pools.add(pool("sand_pile_15_percent", "tfcm:ore_processing/sand_pile/" + series.sand().id(), 0.15f));
         pools.add(pool("same_dirty_dust_5_percent", item(series, ProcessingForm.DIRTY_DUST), 0.05f));
-        JsonObject byproduct = pool("byproduct_dirty_dust_1_percent",
-                "tfcm:ore_processing/dirty_dust/" + series.byproduct(), 0.01f,
-                ContentConditions.ore(series.byproduct()));
-        if (series.byproduct().equals(ProcessingSeries.CHROMITE.id()))
-            byproduct.getAsJsonArray("neoforge:conditions").add(ContentConditions.firmaLife());
-        pools.add(byproduct);
+        for (var byproduct : series.byproducts()) {
+            String name = byproduct.metalDust() ? "byproduct_metal_dust_1_percent" : "byproduct_dirty_dust_1_percent";
+            if (series.byproducts().size() > 1) name += "_" + byproduct.id();
+            pools.add(pool(name, byproduct.item(), 0.01f, ContentConditions.byproduct(byproduct)));
+        }
         return json;
     }
 

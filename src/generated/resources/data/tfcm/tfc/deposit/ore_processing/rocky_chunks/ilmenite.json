@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "ilmenite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/rocky_chunks/ilmenite"
+  },
+  "loot_table": "tfcm:ore_processing/rocky_chunks/ilmenite",
+  "model_stages": [
+    "tfcm:item/pan/rocky_chunks/ilmenite_full",
+    "tfcm:item/pan/rocky_chunks/ilmenite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

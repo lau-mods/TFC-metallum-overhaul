@@ -167,6 +167,22 @@
     {
       "id": "tfcm:metal/enderium",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/magnox",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/desh",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/ostrum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/calorite",
+      "required": false
     }
   ]
 }

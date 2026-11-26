@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "millerite"
+    }
+  ],
+  "ingredient": {
+    "item": "tfcm:ore_processing/dirty_dust/millerite"
+  },
+  "loot_table": "tfcm:ore_processing/dirty_dust/millerite",
+  "model_stages": [
+    "tfcm:item/pan/dirty_dust/millerite_full",
+    "tfcm:item/pan/dirty_dust/millerite_half",
+    "tfcm:item/pan/empty"
+  ]
+}

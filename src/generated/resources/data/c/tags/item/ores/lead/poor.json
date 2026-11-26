@@ -4,6 +4,14 @@
     {
       "id": "tfcm:ore/poor_galena",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_native_lead",
+      "required": false
+    },
+    {
+      "id": "tfcm:ore/poor_vanadinite",
+      "required": false
     }
   ]
 }

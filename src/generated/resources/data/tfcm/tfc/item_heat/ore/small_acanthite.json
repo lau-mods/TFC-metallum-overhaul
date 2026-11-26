@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "acanthite"
+    }
+  ],
+  "forging_temperature": 576.60004,
+  "heat_capacity": 0.20833333,
+  "ingredient": {
+    "item": "tfcm:ore/small_acanthite"
+  },
+  "welding_temperature": 768.8
+}

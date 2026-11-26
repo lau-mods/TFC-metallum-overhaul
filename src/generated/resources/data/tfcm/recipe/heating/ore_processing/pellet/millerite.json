@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "millerite"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/pellet/millerite"
+  },
+  "result_fluid": {
+    "amount": 20,
+    "id": "tfc:metal/nickel"
+  },
+  "temperature": 1453
+}

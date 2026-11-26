@@ -167,6 +167,22 @@
     {
       "id": "tfcm:metal/block/enderium_slab",
       "required": false
+    },
+    {
+      "id": "tfcm:metal/block/magnox_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/desh_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/ostrum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/calorite_slab",
+      "required": false
     }
   ]
 }

@@ -1,0 +1,27 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "anatase"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/powder/anatase"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/anatase"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/anatase"
+    },
+    {
+      "item": "tfcm:ore_processing/powder/anatase"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "tfcm:ore_processing/pellet/anatase"
+  }
+}

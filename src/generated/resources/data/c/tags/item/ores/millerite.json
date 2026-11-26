@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/millerite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/millerite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/millerite/rich",
+      "required": false
+    }
+  ]
+}

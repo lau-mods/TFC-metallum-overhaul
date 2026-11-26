@@ -168,6 +168,22 @@
       "id": "#c:nails/enderium",
       "required": false
     },
+    {
+      "id": "#c:nails/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:nails/desh",
+      "required": false
+    },
+    {
+      "id": "#c:nails/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:nails/calorite",
+      "required": false
+    },
     "#c:nails/bismuth",
     "#c:nails/bismuth_bronze",
     "#c:nails/black_bronze",

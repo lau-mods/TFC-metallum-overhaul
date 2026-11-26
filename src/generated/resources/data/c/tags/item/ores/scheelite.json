@@ -1,0 +1,17 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "#c:ores/scheelite/poor",
+      "required": false
+    },
+    {
+      "id": "#c:ores/scheelite/normal",
+      "required": false
+    },
+    {
+      "id": "#c:ores/scheelite/rich",
+      "required": false
+    }
+  ]
+}

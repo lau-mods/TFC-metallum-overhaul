@@ -8,6 +8,7 @@ import java.util.concurrent.CompletableFuture;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import net.claustra01.tfcm.common.processing.ProcessingSeries;
+import net.claustra01.tfcm.common.processing.ProcessingSeries.Byproduct;
 import net.minecraft.data.CachedOutput;
 import net.minecraft.data.DataProvider;
 import net.minecraft.data.PackOutput;
@@ -56,9 +57,10 @@ public final class MachineProcessingDataProvider implements DataProvider {
             powder.add(stack("tfcm:ore_processing/sand_pile/" + series.sand().id(), 1, .25f));
             powder.add(stack(item("dirty_dust", series), 1, .25f));
             // The machine-route table specifies Native Silver for Mithril Matrix.
-            String byproductB = series == ProcessingSeries.MITHRIL_MATRIX ? "native_silver" : series.byproduct();
+            List<Byproduct> byproducts = series == ProcessingSeries.MITHRIL_MATRIX
+                    ? List.of(Byproduct.ore("native_silver")) : series.byproducts();
             addByproductVariants(output, files, series, "create", "splashing/dirty_dust/" + series.id(),
-                    create("splashing", item("dirty_dust", series), powder), byproductB, .005f);
+                    create("splashing", item("dirty_dust", series), powder), byproducts, .005f);
         }
         return CompletableFuture.allOf(files.toArray(CompletableFuture[]::new));
     }
@@ -80,46 +82,50 @@ public final class MachineProcessingDataProvider implements DataProvider {
     // Mutually exclusive variants keep the main process available even when a
     // byproduct is disabled or requires an absent optional mod (Chromite).
     private void addByproductVariants(CachedOutput output, List<CompletableFuture<?>> files,
-            ProcessingSeries series, String mod, String path, JsonObject base, String byproduct, float chance) {
-        JsonObject available = ContentConditions.ore(byproduct);
-        if (byproduct.equals("chromite")) {
-            JsonArray all = new JsonArray();
-            all.add(available);
-            all.add(ContentConditions.firmaLife());
-            available = new JsonObject();
-            available.addProperty("type", "neoforge:and");
-            available.add("values", all);
+            ProcessingSeries series, String mod, String path, JsonObject base, List<Byproduct> byproducts,
+            float chance) {
+        addByproductVariants(output, files, series, mod, path, base, byproducts, 0, chance);
+    }
+
+    private void addByproductVariants(CachedOutput output, List<CompletableFuture<?>> files,
+            ProcessingSeries series, String mod, String path, JsonObject base, List<Byproduct> byproducts,
+            int index, float chance) {
+        if (index == byproducts.size()) {
+            files.add(save(output, series, mod, path, base));
+            return;
         }
+        Byproduct byproduct = byproducts.get(index);
+        JsonObject available = ContentConditions.byproduct(byproduct);
         JsonObject with = base.deepCopy();
         if (mod.equals("create")) {
-            with.getAsJsonArray("results").add(stack("tfcm:ore_processing/dirty_dust/" + byproduct, 1, chance));
+            with.getAsJsonArray("results").add(stack(byproduct.item(), 1, chance));
         } else {
-            with.getAsJsonArray("secondaries").add(secondary("tfcm:ore_processing/dirty_dust/" + byproduct, chance));
+            with.getAsJsonArray("secondaries").add(secondary(byproduct.item(), chance));
         }
-        JsonArray yes = new JsonArray();
-        yes.add(available);
-        with.add("neoforge:conditions", yes);
-        files.add(save(output, series, mod, path, with));
+        conditions(with).add(available);
+        addByproductVariants(output, files, series, mod, path, with, byproducts, index + 1, chance);
         JsonObject not = new JsonObject();
         not.addProperty("type", "neoforge:not");
         not.add("value", available.deepCopy());
-        JsonArray no = new JsonArray();
-        no.add(not);
-        base.add("neoforge:conditions", no);
-        files.add(save(output, series, mod, path + "_without_byproduct", base));
+        conditions(base).add(not);
+        String suffix = byproducts.size() == 1 ? "_without_byproduct" : "_without_" + byproduct.id();
+        addByproductVariants(output, files, series, mod, path + suffix, base, byproducts, index + 1, chance);
+    }
+
+    private static JsonArray conditions(JsonObject recipe) {
+        if (!recipe.has("neoforge:conditions")) recipe.add("neoforge:conditions", new JsonArray());
+        return recipe.getAsJsonArray("neoforge:conditions");
     }
 
     private CompletableFuture<?> save(CachedOutput output, ProcessingSeries series, String mod,
             String path, JsonObject recipe) {
-        JsonArray conditions = recipe.has("neoforge:conditions")
-                ? recipe.getAsJsonArray("neoforge:conditions") : new JsonArray();
+        JsonArray conditions = conditions(recipe);
         JsonObject loaded = new JsonObject();
         loaded.addProperty("type", "neoforge:mod_loaded");
         loaded.addProperty("modid", mod);
         conditions.add(loaded);
         conditions.add(ContentConditions.ore(series.id()));
         if (series.firmaLifeOnly()) conditions.add(ContentConditions.firmaLife());
-        recipe.add("neoforge:conditions", conditions);
         return DataProvider.saveStable(output, recipe, recipes.resolve(mod + "/" + path + ".json"));
     }
 
@@ -173,8 +179,8 @@ public final class MachineProcessingDataProvider implements DataProvider {
         return "tfcm:ore_processing/" + form + "/" + series.id();
     }
 
-    private static String byproductA(ProcessingSeries series) {
-        return switch (series) {
+    private static List<Byproduct> byproductA(ProcessingSeries series) {
+        String ore = switch (series) {
             case NATIVE_COPPER -> "malachite";
             case NATIVE_GOLD, MITHRIL_MATRIX -> "native_platinum";
             case HEMATITE, GRAPHITE -> "magnetite";
@@ -197,7 +203,10 @@ public final class MachineProcessingDataProvider implements DataProvider {
             case CAROBBIITE -> "borax";
             case CRYOLITE -> "cassiterite";
             case BORAX -> "carobbiite";
+            default -> null;
         };
+        if (ore != null) return List.of(Byproduct.ore(ore));
+        return series.byproducts().stream().limit(1).toList();
     }
 
     @Override

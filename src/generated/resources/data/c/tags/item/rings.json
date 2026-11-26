@@ -168,6 +168,22 @@
       "id": "#c:rings/enderium",
       "required": false
     },
+    {
+      "id": "#c:rings/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:rings/desh",
+      "required": false
+    },
+    {
+      "id": "#c:rings/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:rings/calorite",
+      "required": false
+    },
     "#c:rings/bismuth",
     "#c:rings/bismuth_bronze",
     "#c:rings/black_bronze",

@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "vanadinite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "lead"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/vanadinite"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/lead"
+  },
+  "temperature": 330
+}

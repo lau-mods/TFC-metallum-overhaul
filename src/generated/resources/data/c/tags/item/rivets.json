@@ -168,6 +168,22 @@
       "id": "#c:rivets/enderium",
       "required": false
     },
+    {
+      "id": "#c:rivets/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/desh",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:rivets/calorite",
+      "required": false
+    },
     "#c:rivets/bismuth",
     "#c:rivets/bismuth_bronze",
     "#c:rivets/black_bronze",

@@ -4,6 +4,10 @@
     {
       "id": "tfcm:ore/rich_bauxite",
       "required": false
+    },
+    {
+      "id": "tfcm:ore/rich_alumina",
+      "required": false
     }
   ]
 }

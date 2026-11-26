@@ -168,6 +168,22 @@
       "id": "#c:heavy_sheets/enderium",
       "required": false
     },
+    {
+      "id": "#c:heavy_sheets/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:heavy_sheets/desh",
+      "required": false
+    },
+    {
+      "id": "#c:heavy_sheets/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:heavy_sheets/calorite",
+      "required": false
+    },
     "#c:heavy_sheets/bismuth",
     "#c:heavy_sheets/bismuth_bronze",
     "#c:heavy_sheets/black_bronze",

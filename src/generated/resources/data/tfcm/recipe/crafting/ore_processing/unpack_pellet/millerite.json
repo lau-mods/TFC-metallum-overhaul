@@ -1,0 +1,18 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "millerite"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tfcm:ore_processing/pellet/millerite"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "tfcm:ore_processing/powder/millerite"
+  }
+}

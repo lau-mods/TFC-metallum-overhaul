@@ -1,0 +1,17 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "ostrum"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:metal/double_ingot/ostrum"
+  },
+  "result_fluid": {
+    "amount": 200,
+    "id": "tfcm:metal/ostrum"
+  },
+  "temperature": 1400
+}

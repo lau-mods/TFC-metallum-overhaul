@@ -168,6 +168,22 @@
       "id": "#c:gears/enderium",
       "required": false
     },
+    {
+      "id": "#c:gears/magnox",
+      "required": false
+    },
+    {
+      "id": "#c:gears/desh",
+      "required": false
+    },
+    {
+      "id": "#c:gears/ostrum",
+      "required": false
+    },
+    {
+      "id": "#c:gears/calorite",
+      "required": false
+    },
     "#c:gears/bismuth",
     "#c:gears/bismuth_bronze",
     "#c:gears/black_bronze",

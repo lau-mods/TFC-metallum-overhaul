@@ -46,7 +46,11 @@ public enum Metal {
     HIGH_SPEED_STEEL(5, 1450, false, 0xFF848E9F, 0.008571429f, Rarity.UNCOMMON),
     SIGNALUM(4, 1500, false, 0xFFCE3912, 0.00857f, Rarity.RARE),
     LUMIUM(4, 1500, false, 0xFFE2B773, 0.00857f, Rarity.RARE),
-    ENDERIUM(5, 1700, false, 0xFF16576C, 0.00857f, Rarity.RARE);
+    ENDERIUM(5, 1700, false, 0xFF16576C, 0.00857f, Rarity.RARE),
+    MAGNOX(3, 650, false, 0xFF948290, 0.008571429f, Rarity.COMMON),
+    DESH(4, 1200, false, 0xFFC77142, 0.008571429f, Rarity.UNCOMMON),
+    OSTRUM(5, 1400, false, 0xFF925E64, 0.008571429f, Rarity.RARE),
+    CALORITE(6, 1550, false, 0xFFB83145, 0.008571429f, Rarity.RARE);
 
     private final String id;
     private final int forgingTier;

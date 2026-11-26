@@ -1,0 +1,11 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "desh"
+    }
+  ],
+  "fluid": "tfcm:metal/desh",
+  "melt_temperature": 1200,
+  "specific_heat_capacity": 0.008571429
+}

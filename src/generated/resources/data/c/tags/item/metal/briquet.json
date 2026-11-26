@@ -131,6 +131,62 @@
     {
       "id": "#c:metal/briquet/borax",
       "required": false
+    },
+    {
+      "id": "#c:metal/briquet/acanthite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/alumina",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/anatase",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/chalcocite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/chalcopyrite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/cuprite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/ilmenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/native_lead",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/millerite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/molybdenite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/scheelite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/smithsonite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/thorite",
+      "required": false
+    },
+    {
+      "id": "#c:metal/briquet/vanadinite",
+      "required": false
     }
   ]
 }

@@ -505,6 +505,54 @@
       "required": false
     },
     {
+      "id": "tfcm:metal/block/magnox",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/magnox_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/magnox_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/desh",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/desh_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/desh_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/ostrum",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/ostrum_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/ostrum_stairs",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/calorite",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/calorite_slab",
+      "required": false
+    },
+    {
+      "id": "tfcm:metal/block/calorite_stairs",
+      "required": false
+    },
+    {
       "id": "tfcm:metal/anvil/invar",
       "required": false
     },

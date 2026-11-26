@@ -1,0 +1,14 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "smithsonite"
+    }
+  ],
+  "forging_temperature": 252.00002,
+  "heat_capacity": 0.4761905,
+  "ingredient": {
+    "item": "tfcm:ore/small_smithsonite"
+  },
+  "welding_temperature": 336.0
+}

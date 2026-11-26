@@ -1,0 +1,21 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "tfcm:ore_enabled",
+      "ore": "thorite"
+    },
+    {
+      "type": "tfcm:metal_enabled",
+      "metal": "thorium"
+    }
+  ],
+  "type": "tfc:heating",
+  "ingredient": {
+    "item": "tfcm:ore_processing/briquet/thorite"
+  },
+  "result_fluid": {
+    "amount": 100,
+    "id": "tfcm:metal/thorium"
+  },
+  "temperature": 1750
+}
