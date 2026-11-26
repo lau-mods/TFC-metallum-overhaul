@@ -397,7 +397,8 @@ public final class TFCMMetalGameTests {
     @GameTest(template = "empty", batch = BATCH)
     public static void onlySpecifiedAlloyRecipesLoad(GameTestHelper helper) {
         helper.succeedIf(() -> {
-            String[] alloys = {"constantan", "electrum", "invar", "osmiridium", "solder", "high_speed_steel", "andesite_alloy_zinc", "andesite_alloy_tin"};
+            String[] alloys = {"constantan", "electrum", "invar", "osmiridium", "magnox", "solder",
+                    "high_speed_steel", "andesite_alloy_zinc", "andesite_alloy_tin"};
             for (String alloy : alloys) {
                 require(recipe(helper, "alloy/" + alloy) instanceof AlloyRecipe, "Missing alloy recipe " + alloy);
             }

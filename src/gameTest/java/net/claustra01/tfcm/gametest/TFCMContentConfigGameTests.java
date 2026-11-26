@@ -94,9 +94,22 @@ public final class TFCMContentConfigGameTests {
             require(resource(helper, "tfcm:loot_table/blocks/metal/block/platinum.json")
                     .getAsJsonArray("pools").size() == 1,
                     "Other metal block loot was removed");
-            require(helper.getLevel().getServer().getRecipeManager().getRecipes().stream()
-                    .noneMatch(recipe -> recipe.id().getNamespace().equals(TFCM.MOD_ID)
-                            && recipe.id().getPath().contains("lead")), "A Lead recipe remains loaded");
+            var recipes = helper.getLevel().getRecipeManager();
+            require(recipes.getRecipes().stream()
+                    .filter(recipe -> recipe.id().getNamespace().equals(TFCM.MOD_ID))
+                    .map(recipe -> recipe.id().getPath())
+                    .noneMatch(path -> path.contains("lead") && !path.contains("native_lead")),
+                    "A Lead metal recipe remains loaded");
+            require(recipes.byKey(id("quern/ore_processing/native_lead")).isPresent(),
+                    "Disabling Lead removed Native Lead ore processing");
+            for (String ore : new String[] {"native_lead", "vanadinite"}) {
+                require(recipes.byKey(id("heating/ore/small_" + ore)).isEmpty(),
+                        "A recipe still melts small " + ore + " into Lead");
+                for (String form : new String[] {"powder", "pellet", "briquet"}) {
+                    require(recipes.byKey(id("heating/ore_processing/" + form + "/" + ore)).isEmpty(),
+                            "A recipe still melts " + ore + " " + form + " into Lead");
+                }
+            }
         });
     }
 

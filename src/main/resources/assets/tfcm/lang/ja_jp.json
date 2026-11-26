@@ -4364,7 +4364,7 @@
   "tfcm.jei.ore_vein.type.disc_vein": "円盤状鉱脈",
   "tfcm.jei.ore_vein.type.kaolin_disc_vein": "カオリン円盤状鉱脈",
   "tfcm.jei.ore_vein.type.pipe_vein": "パイプ状鉱脈",
-  "tfcm.jei.ore_vein.y": "Y: %s – %s",
+  "tfcm.jei.ore_vein.y": "高さ %s – %s",
   "tfcm.jei.ore_vein.rarity": "希少度: 1/%s",
   "tfcm.jei.ore_vein.density": "密度: %s%%",
   "tfcm.jei.ore_vein.size": "サイズ: %s",
